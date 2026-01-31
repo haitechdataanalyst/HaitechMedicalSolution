@@ -5,6 +5,11 @@ interface SpecificationsTableProps {
 }
 
 export default function SpecificationsTable({ data }: SpecificationsTableProps) {
+  // Guard against missing rows
+  if (!data.rows || data.rows.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       {data.title && (

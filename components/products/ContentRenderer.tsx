@@ -12,6 +12,8 @@ interface ContentRendererProps {
   blocks: ContentBlock[];
   product: Product;
   section?: 'left' | 'right' | 'all';
+  selectedVariantImage?: string;
+  onVariantSelect?: (imageUrl: string) => void;
 }
 
 // Define which blocks go in which section for the product layout
@@ -19,7 +21,7 @@ const leftSectionBlocks = ['hero', 'gallery'];
 const rightSectionBlocks = ['description', 'actions'];
 const bottomSectionBlocks = ['specifications', 'info'];
 
-export default function ContentRenderer({ blocks, product, section = 'all' }: ContentRendererProps) {
+export default function ContentRenderer({ blocks, product, section = 'all', selectedVariantImage, onVariantSelect }: ContentRendererProps) {
   const filteredBlocks = blocks.filter((block) => {
     if (section === 'all') return true;
     if (section === 'left') return leftSectionBlocks.includes(block.type);
@@ -32,7 +34,7 @@ export default function ContentRenderer({ blocks, product, section = 'all' }: Co
       {filteredBlocks.map((block, index) => {
         switch (block.type) {
           case 'hero':
-            return <HeroBlock key={index} data={block.data} />;
+            return <HeroBlock key={index} data={block.data} externalSelectedImage={selectedVariantImage} />;
           case 'description':
             return <DescriptionBlock key={index} data={block.data} />;
           case 'specifications':
@@ -40,7 +42,7 @@ export default function ContentRenderer({ blocks, product, section = 'all' }: Co
           case 'info':
             return <InfoBlock key={index} data={block.data} />;
           case 'actions':
-            return <ActionsBlock key={index} data={block.data} product={product} />;
+            return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} />;
           case 'gallery':
             return <GalleryBlock key={index} data={block.data} />;
           default:

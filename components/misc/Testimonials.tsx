@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { Carousel } from "@/components/ui";
 import { StarIcon, QuoteIcon } from "@/components/icons";
-import testimonialsData from "@/data/testimonials.json";
 
-interface Testimonial {
+export interface Testimonial {
   id: string;
   name: string;
   role: string;
@@ -14,6 +13,10 @@ interface Testimonial {
   rating: number;
   text: string;
   image?: string;
+}
+
+interface TestimonialsProps {
+  testimonials: Testimonial[];
 }
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
@@ -60,9 +63,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   );
 }
 
-export default function Testimonials() {
-  const testimonials: Testimonial[] = testimonialsData.testimonials;
-
+export default function Testimonials({ testimonials }: TestimonialsProps) {
   return (
     <section className="section bg-neutral-50">
       <div className="container">

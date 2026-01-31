@@ -1,6 +1,7 @@
-import { getTopCategories } from '@/lib/catalog';
-import ProductGrid from '@/components/products/ProductGrid';
+import { getTopCategories, getCategoryContents } from '@/lib/catalog';
+import { ProductsPageClient } from './ProductsPageClient';
 import { Breadcrumbs } from '@/components/ui';
+import { Category, Product } from '@/types';
 
 export const metadata = {
   title: 'Products | Haitech Medical',
@@ -20,18 +21,16 @@ export default function ProductsPage() {
       <Breadcrumbs items={breadcrumbs} />
       
       <div className="container mx-auto px-4 py-6 sm:py-8">
-        {/* Page Header */}
-        <div className="mb-6 sm:mb-8">
-          <h1 className="heading-1 mb-4">Our Products</h1>
-          <p className="text-base sm:text-lg text-muted max-w-3xl">
-            Explore our comprehensive range of premium medical and dental equipment. 
-            From precision loupes to powerful LED headlights, we have everything you need 
-            for exceptional clinical performance.
+        {/* Page Header - Centered */}
+        <div className="mb-6 sm:mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Products</h1>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Explore our comprehensive range of premium medical and dental equipment
           </p>
         </div>
 
-        {/* Category Grid */}
-        <ProductGrid items={categories} emptyMessage="No product categories found" />
+        {/* Category Browser */}
+        <ProductsPageClient initialCategories={categories} />
       </div>
     </>
   );

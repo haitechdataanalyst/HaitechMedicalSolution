@@ -1,16 +1,14 @@
 import Link from 'next/link';
 import { Category } from '@/types';
-import { getEntityPath } from '@/lib/catalog';
 import Card, { CardImage, CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
 
 interface CategoryCardProps {
   category: Category;
+  href: string;
   childCount?: number;
 }
 
-export default function CategoryCard({ category, childCount }: CategoryCardProps) {
-  const href = getEntityPath(category);
-
+export default function CategoryCard({ category, href, childCount }: CategoryCardProps) {
   return (
     <Link href={href}>
       <Card hover className="h-full">

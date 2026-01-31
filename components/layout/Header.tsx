@@ -18,17 +18,12 @@ export default function Header({ navigation }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-surface border-b border-neutral-200">
+    <header className="bg-surface sticky top-0 z-50 border-b border-neutral-200">
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 min-w-0">
-            <Image
-              width={200}
-              height={40}
-              src="/haitech_medical_logo.png"
-              alt="Haitech Medical Logo"
-            />
+          <Link href="/" className="flex min-w-0 items-center gap-2">
+            <Image width={200} height={40} src="/haitech_medical_logo.png" alt="Haitech Medical Logo" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,11 +40,7 @@ export default function Header({ navigation }: HeaderProps) {
               <CartButton />
 
               {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="icon-btn md:hidden"
-                aria-label="Open menu"
-              >
+              <button onClick={() => setMobileMenuOpen(true)} className="icon-btn md:hidden" aria-label="Open menu">
                 <MenuIcon size={24} />
               </button>
             </div>
@@ -58,11 +49,7 @@ export default function Header({ navigation }: HeaderProps) {
       </div>
 
       {/* Mobile Menu */}
-      <MobileMenu
-        items={navigation}
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-      />
+      <MobileMenu items={navigation} isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>
   );
 }

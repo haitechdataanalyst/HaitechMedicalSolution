@@ -10,33 +10,65 @@ export type ContentBlock =
   | ActionsBlock
   | GalleryBlock;
 
-export interface BaseEntity {
+// Category type for categories.json
+export interface Category {
+  id: number;
+  slug: string;
+  name: string;
+  type: 'category';
+  description?: string;
+  image?: string;
+  parent: number | null;
+  order: number;
+  children: number[];
+}
+
+// Product Variant type
+export interface ProductVariant {
   id: string;
-  type: EntityType;
+  frameStyle?: string;
+  color?: string;
+  grit?: string;
+  sku: string;
+  image: string;
+  priceModifier: number;
+}
+
+// Product type for products.json
+export interface Product {
+  id: number;
+  slug: string;
+  name: string;
+  description?: string;
+  category: number;
+  order: number;
+  sku: string;
+  basePrice?: number;
+  currency?: string;
+  colorCode?: string;
+  hasVariants?: boolean;
+  variantType?: string;
+  variants?: ProductVariant[];
+  defaultImage?: string;
+  gallery?: string[];
+  contentBlocks: ContentBlock[];
+  relatedProducts?: number[];
+  accessories?: number[];
+}
+
+// Union type for backwards compatibility in some components
+export type Entity = Category | Product;
+
+// Legacy BaseEntity interface for components still using it
+export interface BaseEntity {
+  id: number;
   slug: string;
   name: string;
   description?: string;
   image?: string;
-  parent: string | null;
+  parent?: number | null;
   order?: number;
 }
-
-export interface Category extends BaseEntity {
-  type: 'category';
-  children: string[];
-}
-
-export interface Product extends BaseEntity {
-  type: 'product';
-  sku: string;
-  basePrice?: number;
-  currency?: string;
-  contentBlocks: ContentBlock[];
-  accessories?: string[];
-  relatedProducts?: string[];
-}
-
-export type Entity = Category | Product;
 
 // Content Blocks
 export interface HeroBlock {
@@ -76,11 +108,12 @@ export interface InfoBlock {
 }
 
 export interface CustomField {
-  id: string;
+  id?: string;
+  name?: string;
   label: string;
   type: 'text' | 'number' | 'select' | 'textarea';
   required?: boolean;
-  options?: string[];
+  options?: (string | { value: string; label: string })[];
   min?: number;
   max?: number;
 }

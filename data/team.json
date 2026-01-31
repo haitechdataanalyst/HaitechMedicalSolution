@@ -1,0 +1,52 @@
+{
+  "team": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "designation": "Founder & CEO",
+      "image": "/images/team/john-doe.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "designation": "Operations Director",
+      "image": "/images/team/jane-smith.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Raj Patel",
+      "designation": "Sales Manager",
+      "image": "/images/team/raj-patel.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Priya Sharma",
+      "designation": "Marketing Head",
+      "image": "/images/team/priya-sharma.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Amit Kumar",
+      "designation": "Technical Support",
+      "image": "/images/team/amit-kumar.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Sunita Verma",
+      "designation": "Customer Relations",
+      "image": "/images/team/sunita-verma.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Vikram Singh",
+      "designation": "Logistics Manager",
+      "image": "/images/team/vikram-singh.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Anita Desai",
+      "designation": "Finance Manager",
+      "image": "/images/team/anita-desai.jpg"
+    }
+  ]
+}

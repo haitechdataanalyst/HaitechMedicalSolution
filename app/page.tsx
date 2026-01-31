@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { getTopCategories, getAllProducts } from "@/lib/catalog";
-import { ProductGrid } from "@/components/products";
+import { getAllProducts, getProductPath } from "@/lib/catalog";
 import { Button } from "@/components/ui";
 import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection } from "@/components/misc";
+import testimonialsData from "@/data/testimonials.json";
 
 export default function Home() {
-  const categories = getTopCategories();
-  const featuredProducts = getAllProducts().slice(0, 8);
+  const products = getAllProducts().slice(0, 8);
+  // Add paths to products for client-side linking
+  const featuredProducts = products.map(p => ({ ...p, path: getProductPath(p) }));
+  const testimonials = testimonialsData.testimonials;
 
   return (
     <>
@@ -57,7 +59,7 @@ export default function Home() {
       <WhySection />
 
       {/* Testimonials Section */}
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
 
       {/* Featured Products Section */}
       <TrendingProducts products={featuredProducts} />

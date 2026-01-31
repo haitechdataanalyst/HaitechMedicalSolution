@@ -1,4 +1,5 @@
 export { default as Hero } from "./Hero";
+export { FAQ } from "./FAQ";
 export { default as SupportBanner } from "./SupportBanner";
 export { default as Testimonials } from "./Testimonials";
 export { default as TrendingProducts } from "./TrendingProducts";

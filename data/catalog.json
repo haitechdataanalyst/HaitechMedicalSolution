@@ -1,100 +1,261 @@
 {
   "entities": [
     {
-      "id": "loupes",
+      "id": "admetec",
       "type": "category",
-      "slug": "loupes",
-      "name": "Loupes",
-      "description": "Premium dental and surgical loupes with exceptional optical clarity and ergonomic design",
-      "image": "/images/products/loupes-category.jpg",
+      "slug": "admetec",
+      "name": "Admetec",
+      "description": "Premium dental loupes and magnification systems from Israel's leading optics manufacturer",
+      "image": "/images/products/admetec/admetec-banner.jpg",
       "parent": null,
       "order": 1,
-      "children": ["ergo-v-category", "ergo-category", "galilean-category"]
+      "children": ["ergo-loupes", "ergo-v-series", "galilean-loupes", "prismatic-loupes", "admetec-frames"]
     },
     {
-      "id": "lights",
+      "id": "ergo-loupes",
       "type": "category",
-      "slug": "lights",
-      "name": "LED Headlights",
-      "description": "High-performance LED headlights designed for precision medical and dental work",
-      "image": "/images/products/lights-category.jpg",
-      "parent": null,
-      "order": 2,
-      "children": ["butterfly-evo-product", "micro-led-product"]
-    },
-    {
-      "id": "accessories",
-      "type": "category",
-      "slug": "accessories",
-      "name": "Accessories",
-      "description": "Essential accessories for your loupes and headlights",
-      "image": "/images/products/accessories-category.jpg",
-      "parent": null,
-      "order": 3,
-      "children": ["cleaning-kit-pro", "protective-case-deluxe"]
-    },
-    {
-      "id": "ergo-v-category",
-      "type": "category",
-      "slug": "ergo-v",
-      "name": "Ergo-V Series",
-      "description": "Advanced ergonomic loupes with revolutionary variable angle adjustment",
-      "image": "/images/products/ergo-v-category.jpg",
-      "parent": "loupes",
+      "slug": "ergo-loupes",
+      "name": "Ergo Loupes",
+      "description": "Ergonomic loupe systems with multiple magnification options from 3.0x to 10x",
+      "image": "/images/products/admetec/ergo/ergo-category.jpg",
+      "parent": "admetec",
       "order": 1,
-      "children": ["ergo-v-2.5x", "ergo-v-3.5x"]
+      "children": []
     },
     {
-      "id": "ergo-category",
+      "id": "ergo-v-series",
       "type": "category",
-      "slug": "ergo",
-      "name": "Ergo Series",
-      "description": "Classic ergonomic loupes for comfortable all-day use",
-      "image": "/images/products/ergo-category.jpg",
-      "parent": "loupes",
+      "slug": "ergo-v-series",
+      "name": "Ergo V Series",
+      "description": "Advanced Ergo V and Ergo V Pro loupes with enhanced ergonomics",
+      "image": "/images/products/admetec/ergo-v/ergo-v-category.jpg",
+      "parent": "admetec",
       "order": 2,
-      "children": ["ergo-3.0x"]
+      "children": []
     },
     {
-      "id": "galilean-category",
+      "id": "galilean-loupes",
       "type": "category",
-      "slug": "galilean",
-      "name": "Galilean Series",
-      "description": "Lightweight Galilean loupes ideal for general dentistry",
-      "image": "/images/products/galilean-category.jpg",
-      "parent": "loupes",
+      "slug": "galilean-loupes",
+      "name": "Galilean Loupes",
+      "description": "Lightweight Galilean optical systems ideal for general dentistry",
+      "image": "/images/products/admetec/galilean/galilean-category.jpg",
+      "parent": "admetec",
       "order": 3,
-      "children": ["galilean-2.5x"]
+      "children": []
     },
     {
-      "id": "ergo-v-2.5x",
+      "id": "prismatic-loupes",
+      "type": "category",
+      "slug": "prismatic-loupes",
+      "name": "Prismatic Loupes",
+      "description": "High-magnification prismatic loupes for precision work",
+      "image": "/images/products/admetec/prismatic/prismatic-category.jpg",
+      "parent": "admetec",
+      "order": 4,
+      "children": []
+    },
+    {
+      "id": "admetec-frames",
+      "type": "category",
+      "slug": "admetec-frames",
+      "name": "Frames",
+      "description": "Premium frames compatible with Admetec loupe systems",
+      "image": "/images/products/admetec/frames/frames-category.jpg",
+      "parent": "admetec",
+      "order": 5,
+      "children": []
+    },
+    {
+      "id": "almadent",
+      "type": "category",
+      "slug": "almadent",
+      "name": "Almadent",
+      "description": "Comprehensive dental equipment including chairs, handpieces, and auxiliary equipment",
+      "image": "/images/products/almadent/almadent-banner.jpg",
+      "parent": null,
+      "order": 2,
+      "children": ["dental-chairs", "handpieces", "auxiliary-equipment"]
+    },
+    {
+      "id": "dental-chairs",
+      "type": "category",
+      "slug": "dental-chairs",
+      "name": "Dental Chairs",
+      "description": "Anya dental chairs - ergonomic design for patient comfort and practitioner efficiency",
+      "image": "/images/products/almadent/chairs/chairs-category.jpg",
+      "parent": "almadent",
+      "order": 1,
+      "children": []
+    },
+    {
+      "id": "handpieces",
+      "type": "category",
+      "slug": "handpieces",
+      "name": "Handpieces",
+      "description": "Tealth dental handpieces with precision engineering",
+      "image": "/images/products/almadent/handpieces/handpieces-category.jpg",
+      "parent": "almadent",
+      "order": 2,
+      "children": []
+    },
+    {
+      "id": "auxiliary-equipment",
+      "type": "category",
+      "slug": "auxiliary-equipment",
+      "name": "Auxiliary Equipment",
+      "description": "PTX units, suction systems, implant motors, and lubricators",
+      "image": "/images/products/almadent/auxiliary/auxiliary-category.jpg",
+      "parent": "almadent",
+      "order": 3,
+      "children": []
+    },
+    {
+      "id": "medesy",
+      "type": "category",
+      "slug": "medesy",
+      "name": "Medesy",
+      "description": "Italian-made surgical instruments with exceptional quality and precision",
+      "image": "/images/products/medesy/medesy-banner.jpg",
+      "parent": null,
+      "order": 3,
+      "children": ["elevators", "forceps", "periosteal-elevators", "scissors"]
+    },
+    {
+      "id": "elevators",
+      "type": "category",
+      "slug": "elevators",
+      "name": "Elevators",
+      "description": "Dental elevators for tooth extraction procedures",
+      "image": "/images/products/medesy/elevators/elevators-category.jpg",
+      "parent": "medesy",
+      "order": 1,
+      "children": []
+    },
+    {
+      "id": "forceps",
+      "type": "category",
+      "slug": "forceps",
+      "name": "Forceps",
+      "description": "Extraction forceps for various dental procedures",
+      "image": "/images/products/medesy/forceps/forceps-category.jpg",
+      "parent": "medesy",
+      "order": 2,
+      "children": []
+    },
+    {
+      "id": "periosteal-elevators",
+      "type": "category",
+      "slug": "periosteal-elevators",
+      "name": "Periosteal Elevators",
+      "description": "Specialized elevators for periosteal tissue manipulation",
+      "image": "/images/products/medesy/periosteal/periosteal-category.jpg",
+      "parent": "medesy",
+      "order": 3,
+      "children": []
+    },
+    {
+      "id": "scissors",
+      "type": "category",
+      "slug": "scissors",
+      "name": "Scissors",
+      "description": "Surgical scissors for dental and oral procedures",
+      "image": "/images/products/medesy/scissors/scissors-category.jpg",
+      "parent": "medesy",
+      "order": 4,
+      "children": []
+    },
+    {
+      "id": "salli",
+      "type": "category",
+      "slug": "salli",
+      "name": "Salli",
+      "description": "Ergonomic saddle chairs designed for dental professionals",
+      "image": "/images/products/salli/salli-banner.jpg",
+      "parent": null,
+      "order": 4,
+      "children": []
+    },
+    {
+      "id": "strauss",
+      "type": "category",
+      "slug": "strauss",
+      "name": "Strauss",
+      "description": "Premium dental burs and rotary instruments from Switzerland",
+      "image": "/images/products/strauss/strauss-banner.jpg",
+      "parent": null,
+      "order": 5,
+      "children": ["carbide-burs", "diamond-burs", "bur-kits"]
+    },
+    {
+      "id": "carbide-burs",
+      "type": "category",
+      "slug": "carbide-burs",
+      "name": "Carbide Burs",
+      "description": "Tungsten carbide burs for efficient cutting and preparation",
+      "image": "/images/products/strauss/carbide/carbide-category.jpg",
+      "parent": "strauss",
+      "order": 1,
+      "children": []
+    },
+    {
+      "id": "diamond-burs",
+      "type": "category",
+      "slug": "diamond-burs",
+      "name": "Diamond Burs",
+      "description": "Diamond-coated burs for precision finishing and preparation",
+      "image": "/images/products/strauss/diamond/diamond-category.jpg",
+      "parent": "strauss",
+      "order": 2,
+      "children": []
+    },
+    {
+      "id": "bur-kits",
+      "type": "category",
+      "slug": "bur-kits",
+      "name": "Bur Kits",
+      "description": "Curated bur kits for specific procedures and applications",
+      "image": "/images/products/strauss/kits/kits-category.jpg",
+      "parent": "strauss",
+      "order": 3,
+      "children": []
+    },
+
+    {
+      "id": "ergo-3.0x",
       "type": "product",
-      "slug": "ergo-v-2.5x",
-      "name": "Ergo-V 2.5x Loupe System",
-      "description": "Entry-level Ergo-V with 2.5x magnification",
-      "image": "/images/products/ergo-v-2.5x-main.jpg",
-      "parent": "ergo-v-category",
+      "slug": "ergo-3.0x",
+      "name": "Ergo 3.0x Loupe System",
+      "description": "Entry-level ergonomic loupe with 3.0x magnification, ideal for general dentistry",
+      "image": "/images/products/admetec/ergo/ergo-3.0x-main.jpg",
+      "parent": "ergo-loupes",
       "order": 1,
-      "sku": "HT-EV-25",
-      "basePrice": 1999.00,
+      "sku": "ADM-E-30",
+      "basePrice": 1799.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/ergo-v-2.5x-main.jpg",
+            "primaryImage": "/images/products/admetec/ergo/ergo-3.0x-main.jpg",
             "gallery": [
-              "/images/products/ergo-v-2.5x-1.jpg",
-              "/images/products/ergo-v-2.5x-2.jpg",
-              "/images/products/ergo-v-2.5x-3.jpg"
+              "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-3.0x-jazz-black.jpg"
             ]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "The Ergo-V 2.5x features our revolutionary angle adjustment system, allowing you to maintain perfect posture throughout your workday. With HD optical clarity and ultra-lightweight titanium frames, this loupe system is designed for professionals who demand the best.",
-            "secondary": "Includes premium multi-coated optics for superior light transmission and reduced eye strain. The adjustable declination angle ranges from 0° to 45°, accommodating various working positions and personal preferences."
+            "primary": "The Ergo 3.0x combines classic design with modern optical technology. A versatile magnification level suitable for most dental and surgical procedures.",
+            "secondary": "Available in multiple frame styles including Blues, Soul, Indie, and Jazz. Each frame comes in various colors to match your personal style. Features fixed declination angle optimized for standard working positions."
           }
         },
         {
@@ -102,29 +263,21 @@
           "data": {
             "title": "Technical Specifications",
             "rows": [
-              { "label": "Magnification", "value": "2.5x" },
-              { "label": "Working Distance", "value": "340-450mm (adjustable)" },
-              { "label": "Field of View", "value": "100mm @ 400mm" },
-              { "label": "Depth of Field", "value": "120mm" },
-              { "label": "Weight", "value": "38g (optics only)" },
-              { "label": "Frame Material", "value": "Titanium alloy" },
-              { "label": "Angle Adjustment", "value": "0° to 45°" }
+              { "label": "Magnification", "value": "3.0x" },
+              { "label": "Working Distance", "value": "350-420mm" },
+              { "label": "Field of View", "value": "90mm @ 380mm" },
+              { "label": "Depth of Field", "value": "100mm" },
+              { "label": "Weight", "value": "35g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
             ]
           }
         },
         {
           "type": "info",
           "data": {
-            "manufacturer": "Haitech Medical Australia",
-            "warranty": "3 years comprehensive",
-            "packageContents": [
-              "Ergo-V 2.5x loupe system",
-              "Premium titanium frame",
-              "Hard protective case",
-              "Microfiber cleaning cloth",
-              "Adjustment tools",
-              "User manual"
-            ]
+            "manufacturer": "Admetec",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["Ergo 3.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
           }
         },
         {
@@ -133,6 +286,20 @@
             "addToCart": true,
             "customization": true,
             "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
               {
                 "id": "pd-distance",
                 "label": "Pupillary Distance (mm)",
@@ -144,53 +311,52 @@
               {
                 "id": "working-distance",
                 "label": "Working Distance (mm)",
-                "type": "number",
-                "required": true,
-                "min": 340,
-                "max": 450
-              },
-              {
-                "id": "frame-color",
-                "label": "Frame Color",
                 "type": "select",
                 "required": true,
-                "options": ["Black", "Silver", "Gunmetal"]
+                "options": ["350mm", "380mm", "420mm"]
               }
             ]
           }
         }
       ],
-      "accessories": ["cleaning-kit-pro", "protective-case-deluxe"],
-      "relatedProducts": ["ergo-v-3.5x", "butterfly-evo-product"]
+      "accessories": [],
+      "relatedProducts": ["ergo-4.0x", "ergo-5.0x", "galilean-2.5x"]
     },
     {
-      "id": "ergo-v-3.5x",
+      "id": "ergo-4.0x",
       "type": "product",
-      "slug": "ergo-v-3.5x",
-      "name": "Ergo-V 3.5x Loupe System",
-      "description": "Professional Ergo-V with 3.5x magnification for detailed work",
-      "image": "/images/products/ergo-v-3.5x-main.jpg",
-      "parent": "ergo-v-category",
+      "slug": "ergo-4.0x",
+      "name": "Ergo 4.0x Loupe System",
+      "description": "Mid-range ergonomic loupe with 4.0x magnification for detailed procedures",
+      "image": "/images/products/admetec/ergo/ergo-4.0x-main.jpg",
+      "parent": "ergo-loupes",
       "order": 2,
-      "sku": "HT-EV-35",
-      "basePrice": 2499.00,
+      "sku": "ADM-E-40",
+      "basePrice": 2199.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/ergo-v-3.5x-main.jpg",
+            "primaryImage": "/images/products/admetec/ergo/ergo-4.0x-main.jpg",
             "gallery": [
-              "/images/products/ergo-v-3.5x-1.jpg",
-              "/images/products/ergo-v-3.5x-2.jpg"
+              "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-4.0x-jazz-black.jpg"
             ]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "The Ergo-V 3.5x delivers exceptional magnification for intricate procedures requiring maximum detail visibility. The advanced Keplerian optical system provides edge-to-edge clarity with minimal distortion.",
-            "secondary": "Ideal for endodontics, periodontal surgery, and detailed restorative work. Features enhanced depth of field compared to traditional prism loupes."
+            "primary": "The Ergo 4.0x offers enhanced magnification for practitioners requiring greater detail visualization. Ideal for endodontics, restorative work, and surgical procedures.",
+            "secondary": "Available in multiple frame styles including Blues, Soul, Indie, and Jazz. The increased magnification provides excellent detail while maintaining a comfortable field of view."
           }
         },
         {
@@ -198,29 +364,21 @@
           "data": {
             "title": "Technical Specifications",
             "rows": [
-              { "label": "Magnification", "value": "3.5x" },
-              { "label": "Working Distance", "value": "340-500mm (adjustable)" },
-              { "label": "Field of View", "value": "85mm @ 400mm" },
-              { "label": "Depth of Field", "value": "80mm" },
-              { "label": "Weight", "value": "45g (optics only)" },
-              { "label": "Frame Material", "value": "Titanium alloy" },
-              { "label": "Angle Adjustment", "value": "0° to 45°" }
+              { "label": "Magnification", "value": "4.0x" },
+              { "label": "Working Distance", "value": "340-400mm" },
+              { "label": "Field of View", "value": "75mm @ 370mm" },
+              { "label": "Depth of Field", "value": "85mm" },
+              { "label": "Weight", "value": "38g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
             ]
           }
         },
         {
           "type": "info",
           "data": {
-            "manufacturer": "Haitech Medical Australia",
-            "warranty": "3 years comprehensive",
-            "packageContents": [
-              "Ergo-V 3.5x loupe system",
-              "Premium titanium frame",
-              "Hard protective case",
-              "Microfiber cleaning cloth",
-              "Adjustment tools",
-              "User manual"
-            ]
+            "manufacturer": "Admetec",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["Ergo 4.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
           }
         },
         {
@@ -229,6 +387,508 @@
             "addToCart": true,
             "customization": true,
             "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "370mm", "400mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ergo-3.0x", "ergo-5.0x", "ergo-6.0x"]
+    },
+    {
+      "id": "ergo-5.0x",
+      "type": "product",
+      "slug": "ergo-5.0x",
+      "name": "Ergo 5.0x Loupe System",
+      "description": "High-magnification ergonomic loupe for precision dental and surgical work",
+      "image": "/images/products/admetec/ergo/ergo-5.0x-main.jpg",
+      "parent": "ergo-loupes",
+      "order": 3,
+      "sku": "ADM-E-50",
+      "basePrice": 2499.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/ergo/ergo-5.0x-main.jpg",
+            "gallery": [
+              "/images/products/admetec/ergo/ergo-5.0x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-5.0x-jazz-black.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Ergo 5.0x delivers exceptional magnification for demanding procedures requiring superior detail. Perfect for microsurgery, complex endodontics, and precision restorations.",
+            "secondary": "Available in multiple frame styles. The 5.0x magnification provides outstanding visual clarity while the ergonomic design ensures comfort during extended procedures."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification", "value": "5.0x" },
+              { "label": "Working Distance", "value": "340-380mm" },
+              { "label": "Field of View", "value": "65mm @ 360mm" },
+              { "label": "Depth of Field", "value": "70mm" },
+              { "label": "Weight", "value": "42g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["Ergo 5.0x loupe system", "Selected frame", "Hard protective case", "Microfiber cleaning cloth", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "360mm", "380mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ergo-4.0x", "ergo-6.0x", "ergo-7.5x"]
+    },
+    {
+      "id": "ergo-6.0x",
+      "type": "product",
+      "slug": "ergo-6.0x",
+      "name": "Ergo 6.0x Loupe System",
+      "description": "Professional-grade 6.0x magnification for advanced clinical procedures",
+      "image": "/images/products/admetec/ergo/ergo-6.0x-main.jpg",
+      "parent": "ergo-loupes",
+      "order": 4,
+      "sku": "ADM-E-60",
+      "basePrice": 2899.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/ergo/ergo-6.0x-main.jpg",
+            "gallery": [
+              "/images/products/admetec/ergo/ergo-6.0x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-6.0x-jazz-black.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Ergo 6.0x provides professional-grade magnification for specialists requiring exceptional detail visualization. Ideal for periodontal surgery, implantology, and complex restorative procedures.",
+            "secondary": "Available in multiple premium frame styles. The advanced optics deliver crystal-clear images while maintaining a usable field of view and depth of field."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification", "value": "6.0x" },
+              { "label": "Working Distance", "value": "340-380mm" },
+              { "label": "Field of View", "value": "55mm @ 360mm" },
+              { "label": "Depth of Field", "value": "60mm" },
+              { "label": "Weight", "value": "45g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "3 years comprehensive",
+            "packageContents": ["Ergo 6.0x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "360mm", "380mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ergo-5.0x", "ergo-7.5x", "ergo-10x"]
+    },
+    {
+      "id": "ergo-7.5x",
+      "type": "product",
+      "slug": "ergo-7.5x",
+      "name": "Ergo 7.5x Loupe System",
+      "description": "High-performance 7.5x magnification for microsurgical procedures",
+      "image": "/images/products/admetec/ergo/ergo-7.5x-main.jpg",
+      "parent": "ergo-loupes",
+      "order": 5,
+      "sku": "ADM-E-75",
+      "basePrice": 3299.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/ergo/ergo-7.5x-main.jpg",
+            "gallery": [
+              "/images/products/admetec/ergo/ergo-7.5x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-7.5x-jazz-black.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Ergo 7.5x delivers high-performance magnification approaching microscope levels while maintaining the freedom of movement that loupes provide.",
+            "secondary": "Designed for specialists in endodontics, periodontal microsurgery, and other disciplines requiring exceptional visual detail. Available in premium frame styles."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification", "value": "7.5x" },
+              { "label": "Working Distance", "value": "340-380mm" },
+              { "label": "Field of View", "value": "45mm @ 360mm" },
+              { "label": "Depth of Field", "value": "50mm" },
+              { "label": "Weight", "value": "48g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "3 years comprehensive",
+            "packageContents": ["Ergo 7.5x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "360mm", "380mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ergo-6.0x", "ergo-10x"]
+    },
+    {
+      "id": "ergo-10x",
+      "type": "product",
+      "slug": "ergo-10x",
+      "name": "Ergo 10x Loupe System",
+      "description": "Maximum magnification loupe system for the most demanding microsurgical applications",
+      "image": "/images/products/admetec/ergo/ergo-10x-main.jpg",
+      "parent": "ergo-loupes",
+      "order": 6,
+      "sku": "ADM-E-100",
+      "basePrice": 3899.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/ergo/ergo-10x-main.jpg",
+            "gallery": [
+              "/images/products/admetec/ergo/ergo-10x-blues-blue.jpg",
+              "/images/products/admetec/ergo/ergo-10x-blues-bronze.jpg",
+              "/images/products/admetec/ergo/ergo-10x-soul-burgundy-gold.jpg",
+              "/images/products/admetec/ergo/ergo-10x-soul-navy-blue-gold.jpg",
+              "/images/products/admetec/ergo/ergo-10x-soul-pink-gold.jpg",
+              "/images/products/admetec/ergo/ergo-10x-indie-black.jpg",
+              "/images/products/admetec/ergo/ergo-10x-indie-brown.jpg",
+              "/images/products/admetec/ergo/ergo-10x-indie-tortoise.jpg",
+              "/images/products/admetec/ergo/ergo-10x-jazz-black.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Ergo 10x represents the pinnacle of loupe magnification technology. Provides microscope-level detail while maintaining the ergonomic benefits and freedom of movement that loupes offer.",
+            "secondary": "Designed for the most demanding applications in endodontic microsurgery, periodontal surgery, and specialized dental procedures. Available in premium frame styles."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification", "value": "10x" },
+              { "label": "Working Distance", "value": "350-380mm" },
+              { "label": "Field of View", "value": "35mm @ 365mm" },
+              { "label": "Depth of Field", "value": "35mm" },
+              { "label": "Weight", "value": "52g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Soul, Indie, Jazz" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "3 years comprehensive",
+            "packageContents": ["Ergo 10x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Soul", "Indie", "Jazz"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Bronze", "Burgundy Gold", "Navy Blue Gold", "Pink Gold", "Black", "Brown", "Tortoise"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["350mm", "365mm", "380mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ergo-7.5x", "ergo-6.0x"]
+    },
+    {
+      "id": "ergo-v",
+      "type": "product",
+      "slug": "ergo-v",
+      "name": "Ergo V Loupe System",
+      "description": "Next-generation ergonomic design with adjustable declination for optimal posture",
+      "image": "/images/products/admetec/ergo-v/ergo-v-main.jpg",
+      "parent": "ergo-v-series",
+      "order": 1,
+      "sku": "ADM-EV",
+      "basePrice": 2699.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/ergo-v/ergo-v-main.jpg",
+            "gallery": ["/images/products/admetec/ergo-v/ergo-v-front.jpg", "/images/products/admetec/ergo-v/ergo-v-side.jpg", "/images/products/admetec/ergo-v/ergo-v-detail.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Ergo V features Admetec's revolutionary adjustable declination system, allowing you to customize the viewing angle from 0° to 45° for optimal ergonomic posture.",
+            "secondary": "Available in multiple magnification levels and frame styles. The Ergo V significantly reduces neck and back strain during extended procedures while maintaining exceptional optical clarity."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification Options", "value": "3.5x, 4.5x, 5.5x" },
+              { "label": "Working Distance", "value": "340-500mm (adjustable)" },
+              { "label": "Declination Angle", "value": "0° to 45° (adjustable)" },
+              { "label": "Field of View", "value": "Varies by magnification" },
+              { "label": "Weight", "value": "45g (optics only)" },
+              { "label": "Frame Material", "value": "Titanium alloy" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "3 years comprehensive",
+            "packageContents": ["Ergo V loupe system", "Premium titanium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "magnification",
+                "label": "Magnification",
+                "type": "select",
+                "required": true,
+                "options": ["3.5x", "4.5x", "5.5x"]
+              },
               {
                 "id": "pd-distance",
                 "label": "Pupillary Distance (mm)",
@@ -256,37 +916,34 @@
           }
         }
       ],
-      "accessories": ["cleaning-kit-pro", "protective-case-deluxe"],
-      "relatedProducts": ["ergo-v-2.5x", "butterfly-evo-product"]
+      "accessories": [],
+      "relatedProducts": ["ergo-v-pro", "ergo-5.0x"]
     },
     {
-      "id": "ergo-3.0x",
+      "id": "ergo-v-pro",
       "type": "product",
-      "slug": "ergo-3.0x",
-      "name": "Ergo 3.0x Loupe System",
-      "description": "Classic ergonomic design with reliable 3.0x magnification",
-      "image": "/images/products/ergo-3.0x-main.jpg",
-      "parent": "ergo-category",
-      "order": 1,
-      "sku": "HT-E-30",
-      "basePrice": 1799.00,
+      "slug": "ergo-v-pro",
+      "name": "Ergo V Pro Loupe System",
+      "description": "Premium version with integrated LED lighting and enhanced ergonomics",
+      "image": "/images/products/admetec/ergo-v/ergo-v-pro-main.jpg",
+      "parent": "ergo-v-series",
+      "order": 2,
+      "sku": "ADM-EVP",
+      "basePrice": 3499.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/ergo-3.0x-main.jpg",
-            "gallery": [
-              "/images/products/ergo-3.0x-1.jpg",
-              "/images/products/ergo-3.0x-2.jpg"
-            ]
+            "primaryImage": "/images/products/admetec/ergo-v/ergo-v-pro-main.jpg",
+            "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro-front.jpg", "/images/products/admetec/ergo-v/ergo-v-pro-side.jpg", "/images/products/admetec/ergo-v/ergo-v-pro-light.jpg"]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "The Ergo 3.0x combines classic design with modern optical technology. A versatile magnification level suitable for most dental and surgical procedures.",
-            "secondary": "Features fixed declination angle optimized for standard working positions. Lightweight construction ensures comfort during extended procedures."
+            "primary": "The Ergo V Pro combines the revolutionary ergonomic design of the Ergo V with an integrated high-performance LED lighting system for complete visual enhancement.",
+            "secondary": "Features adjustable declination, premium titanium frame, and wireless LED headlight delivering 55,000 lux. The complete solution for demanding clinical environments."
           }
         },
         {
@@ -294,25 +951,28 @@
           "data": {
             "title": "Technical Specifications",
             "rows": [
-              { "label": "Magnification", "value": "3.0x" },
-              { "label": "Working Distance", "value": "350-420mm" },
-              { "label": "Field of View", "value": "90mm @ 380mm" },
-              { "label": "Depth of Field", "value": "100mm" },
-              { "label": "Weight", "value": "35g (optics only)" },
-              { "label": "Frame Material", "value": "Aluminum alloy" }
+              { "label": "Magnification Options", "value": "3.5x, 4.5x, 5.5x" },
+              { "label": "Working Distance", "value": "340-500mm (adjustable)" },
+              { "label": "Declination Angle", "value": "0° to 45° (adjustable)" },
+              { "label": "LED Output", "value": "55,000 lux @ 400mm" },
+              { "label": "Color Temperature", "value": "5500K" },
+              { "label": "Battery Life", "value": "8+ hours" },
+              { "label": "Weight", "value": "65g (complete system)" }
             ]
           }
         },
         {
           "type": "info",
           "data": {
-            "manufacturer": "Haitech Medical Australia",
-            "warranty": "2 years comprehensive",
+            "manufacturer": "Admetec",
+            "warranty": "3 years comprehensive",
             "packageContents": [
-              "Ergo 3.0x loupe system",
-              "Aluminum frame",
-              "Soft protective pouch",
-              "Cleaning cloth",
+              "Ergo V Pro loupe system",
+              "Integrated LED light unit",
+              "Premium titanium frame",
+              "Battery pack with belt clip",
+              "USB-C charging cable",
+              "Hard protective case",
               "User manual"
             ]
           }
@@ -324,6 +984,13 @@
             "customization": true,
             "customFields": [
               {
+                "id": "magnification",
+                "label": "Magnification",
+                "type": "select",
+                "required": true,
+                "options": ["3.5x", "4.5x", "5.5x"]
+              },
+              {
                 "id": "pd-distance",
                 "label": "Pupillary Distance (mm)",
                 "type": "number",
@@ -334,44 +1001,54 @@
               {
                 "id": "working-distance",
                 "label": "Working Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 340,
+                "max": 500
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
                 "type": "select",
                 "required": true,
-                "options": ["350mm", "380mm", "420mm"]
+                "options": ["Black", "Silver", "Gunmetal"]
               }
             ]
           }
         }
       ],
-      "accessories": ["cleaning-kit-pro"],
-      "relatedProducts": ["ergo-v-3.5x", "galilean-2.5x"]
+      "accessories": [],
+      "relatedProducts": ["ergo-v", "ergo-6.0x"]
     },
     {
       "id": "galilean-2.5x",
       "type": "product",
       "slug": "galilean-2.5x",
       "name": "Galilean 2.5x Loupe",
-      "description": "Lightweight Galilean loupes perfect for general dentistry",
-      "image": "/images/products/galilean-2.5x-main.jpg",
-      "parent": "galilean-category",
+      "description": "Lightweight Galilean loupes perfect for general dentistry and examinations",
+      "image": "/images/products/admetec/galilean/galilean-2.5x-main.jpg",
+      "parent": "galilean-loupes",
       "order": 1,
-      "sku": "HT-G-25",
-      "basePrice": 899.00,
+      "sku": "ADM-G-25",
+      "basePrice": 899.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/galilean-2.5x-main.jpg",
+            "primaryImage": "/images/products/admetec/galilean/galilean-2.5x-main.jpg",
             "gallery": [
-              "/images/products/galilean-2.5x-1.jpg"
+              "/images/products/admetec/galilean/galilean-2.5x-blues.jpg",
+              "/images/products/admetec/galilean/galilean-2.5x-indie.jpg",
+              "/images/products/admetec/galilean/galilean-2.5x-soul.jpg"
             ]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "Our Galilean 2.5x loupes offer an excellent entry point into magnification. The simple optical design provides a wide field of view and excellent depth of field.",
-            "secondary": "Perfect for general examinations, hygiene procedures, and practitioners new to magnification. Ultra-lightweight design reduces neck strain."
+            "primary": "The Galilean 2.5x offers an excellent entry point into magnification. The simple optical design provides a wide field of view and excellent depth of field.",
+            "secondary": "Perfect for general examinations, hygiene procedures, and practitioners new to magnification. Ultra-lightweight design reduces neck strain. Available in multiple frame styles."
           }
         },
         {
@@ -384,22 +1061,16 @@
               { "label": "Field of View", "value": "120mm @ 370mm" },
               { "label": "Depth of Field", "value": "150mm" },
               { "label": "Weight", "value": "25g (optics only)" },
-              { "label": "Frame Material", "value": "TR90 polymer" }
+              { "label": "Frame Options", "value": "Blues, Indie, Soul" }
             ]
           }
         },
         {
           "type": "info",
           "data": {
-            "manufacturer": "Haitech Medical Australia",
+            "manufacturer": "Admetec",
             "warranty": "2 years comprehensive",
-            "packageContents": [
-              "Galilean 2.5x loupes",
-              "TR90 frame",
-              "Soft case",
-              "Cleaning cloth",
-              "User manual"
-            ]
+            "packageContents": ["Galilean 2.5x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
           }
         },
         {
@@ -408,6 +1079,20 @@
             "addToCart": true,
             "customization": true,
             "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Indie", "Soul"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Black", "Brown", "Burgundy Gold"]
+              },
               {
                 "id": "pd-distance",
                 "label": "Pupillary Distance (mm)",
@@ -427,107 +1112,38 @@
           }
         }
       ],
-      "accessories": ["cleaning-kit-pro"],
-      "relatedProducts": ["ergo-3.0x", "micro-led-product"]
-    },
-    {
-      "id": "butterfly-evo-product",
-      "type": "product",
-      "slug": "butterfly-evo",
-      "name": "Butterfly EVO LED Headlight",
-      "description": "Premium wireless LED headlight with exceptional brightness",
-      "image": "/images/products/butterfly-evo-main.jpg",
-      "parent": "lights",
-      "order": 1,
-      "sku": "HT-BE-LED",
-      "basePrice": 1299.00,
-      "currency": "AUD",
-      "contentBlocks": [
-        {
-          "type": "hero",
-          "data": {
-            "primaryImage": "/images/products/butterfly-evo-main.jpg",
-            "gallery": [
-              "/images/products/butterfly-evo-1.jpg",
-              "/images/products/butterfly-evo-2.jpg"
-            ]
-          }
-        },
-        {
-          "type": "description",
-          "data": {
-            "primary": "The Butterfly EVO represents the pinnacle of dental LED technology. Delivering 65,000 lux at 400mm, this wireless headlight provides shadow-free illumination exactly where you need it.",
-            "secondary": "Features include adjustable color temperature (4500K-6500K), 8+ hours battery life, and our patented featherlight mounting system. Compatible with all major loupe brands."
-          }
-        },
-        {
-          "type": "specifications",
-          "data": {
-            "title": "Technical Specifications",
-            "rows": [
-              { "label": "Light Output", "value": "65,000 lux @ 400mm" },
-              { "label": "Color Temperature", "value": "4500K - 6500K (adjustable)" },
-              { "label": "CRI", "value": ">95" },
-              { "label": "Battery Life", "value": "8+ hours" },
-              { "label": "Charge Time", "value": "2 hours" },
-              { "label": "Weight", "value": "18g (light unit)" },
-              { "label": "Spot Size", "value": "50-80mm (adjustable)" }
-            ]
-          }
-        },
-        {
-          "type": "info",
-          "data": {
-            "manufacturer": "Haitech Medical Australia",
-            "warranty": "2 years comprehensive",
-            "packageContents": [
-              "Butterfly EVO light unit",
-              "Battery pack with belt clip",
-              "USB-C charging cable",
-              "Universal mounting kit",
-              "Carrying case",
-              "User manual"
-            ]
-          }
-        },
-        {
-          "type": "actions",
-          "data": {
-            "addToCart": true,
-            "customization": false
-          }
-        }
-      ],
       "accessories": [],
-      "relatedProducts": ["micro-led-product", "ergo-v-3.5x"]
+      "relatedProducts": ["galilean-2.7x", "galilean-3.2x", "ergo-3.0x"]
     },
     {
-      "id": "micro-led-product",
+      "id": "galilean-2.7x",
       "type": "product",
-      "slug": "micro-led",
-      "name": "Micro LED Headlight",
-      "description": "Compact and affordable LED headlight",
-      "image": "/images/products/micro-led-main.jpg",
-      "parent": "lights",
+      "slug": "galilean-2.7x",
+      "name": "Galilean 2.7x Loupe",
+      "description": "Popular mid-range Galilean loupe with excellent balance of magnification and comfort",
+      "image": "/images/products/admetec/galilean/galilean-2.7x-main.jpg",
+      "parent": "galilean-loupes",
       "order": 2,
-      "sku": "HT-ML-LED",
-      "basePrice": 599.00,
+      "sku": "ADM-G-27",
+      "basePrice": 999.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/micro-led-main.jpg",
+            "primaryImage": "/images/products/admetec/galilean/galilean-2.7x-main.jpg",
             "gallery": [
-              "/images/products/micro-led-1.jpg"
+              "/images/products/admetec/galilean/galilean-2.7x-blues.jpg",
+              "/images/products/admetec/galilean/galilean-2.7x-indie.jpg",
+              "/images/products/admetec/galilean/galilean-2.7x-soul.jpg"
             ]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "The Micro LED delivers impressive performance in an ultra-compact package. Perfect for practitioners seeking reliable illumination without the premium price tag.",
-            "secondary": "Despite its size, the Micro LED produces 40,000 lux with true-color rendering. Ideal for general dentistry and hygiene procedures."
+            "primary": "The Galilean 2.7x offers a step up in magnification while maintaining the lightweight comfort of Galilean optics. Ideal for practitioners seeking slightly more detail.",
+            "secondary": "The most popular magnification choice among general practitioners. Provides excellent balance between magnification power and field of view."
           }
         },
         {
@@ -535,26 +1151,476 @@
           "data": {
             "title": "Technical Specifications",
             "rows": [
-              { "label": "Light Output", "value": "40,000 lux @ 400mm" },
-              { "label": "Color Temperature", "value": "5500K (fixed)" },
-              { "label": "CRI", "value": ">90" },
-              { "label": "Battery Life", "value": "6 hours" },
-              { "label": "Weight", "value": "12g (light unit)" }
+              { "label": "Magnification", "value": "2.7x" },
+              { "label": "Working Distance", "value": "340-400mm" },
+              { "label": "Field of View", "value": "110mm @ 370mm" },
+              { "label": "Depth of Field", "value": "140mm" },
+              { "label": "Weight", "value": "27g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Indie, Soul" }
             ]
           }
         },
         {
           "type": "info",
           "data": {
-            "manufacturer": "Haitech Medical Australia",
-            "warranty": "2 years",
-            "packageContents": [
-              "Micro LED light unit",
-              "Rechargeable battery",
-              "USB charging cable",
-              "Mounting clip",
-              "User manual"
+            "manufacturer": "Admetec",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["Galilean 2.7x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Indie", "Soul"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Black", "Brown", "Burgundy Gold"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "370mm", "400mm"]
+              }
             ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["galilean-2.5x", "galilean-3.2x", "ergo-3.0x"]
+    },
+    {
+      "id": "galilean-3.2x",
+      "type": "product",
+      "slug": "galilean-3.2x",
+      "name": "Galilean 3.2x Loupe",
+      "description": "Maximum magnification Galilean loupe for enhanced detail visualization",
+      "image": "/images/products/admetec/galilean/galilean-3.2x-main.jpg",
+      "parent": "galilean-loupes",
+      "order": 3,
+      "sku": "ADM-G-32",
+      "basePrice": 1099.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/admetec/galilean/galilean-3.2x-main.jpg",
+            "gallery": [
+              "/images/products/admetec/galilean/galilean-3.2x-blues.jpg",
+              "/images/products/admetec/galilean/galilean-3.2x-indie.jpg",
+              "/images/products/admetec/galilean/galilean-3.2x-soul.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Galilean 3.2x provides the maximum magnification achievable with Galilean optics while maintaining their characteristic lightweight design.",
+            "secondary": "Ideal for practitioners who need more magnification but prefer the wider field of view and lighter weight of Galilean technology over prismatic loupes."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Magnification", "value": "3.2x" },
+              { "label": "Working Distance", "value": "340-400mm" },
+              { "label": "Field of View", "value": "95mm @ 370mm" },
+              { "label": "Depth of Field", "value": "120mm" },
+              { "label": "Weight", "value": "30g (optics only)" },
+              { "label": "Frame Options", "value": "Blues, Indie, Soul" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Admetec",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["Galilean 3.2x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "frame-style",
+                "label": "Frame Style",
+                "type": "select",
+                "required": true,
+                "options": ["Blues", "Indie", "Soul"]
+              },
+              {
+                "id": "frame-color",
+                "label": "Frame Color",
+                "type": "select",
+                "required": true,
+                "options": ["Blue", "Black", "Brown", "Burgundy Gold"]
+              },
+              {
+                "id": "pd-distance",
+                "label": "Pupillary Distance (mm)",
+                "type": "number",
+                "required": true,
+                "min": 50,
+                "max": 75
+              },
+              {
+                "id": "working-distance",
+                "label": "Working Distance (mm)",
+                "type": "select",
+                "required": true,
+                "options": ["340mm", "370mm", "400mm"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["galilean-2.7x", "ergo-4.0x"]
+    },
+    {
+      "id": "ay-3000",
+      "type": "product",
+      "slug": "ay-3000",
+      "name": "Anya AY-3000 Dental Chair",
+      "description": "Entry-level dental chair with essential features for modern dental practice",
+      "image": "/images/products/almadent/chairs/ay-3000-main.jpg",
+      "parent": "dental-chairs",
+      "order": 1,
+      "sku": "ALM-AY3000",
+      "basePrice": 8999.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/almadent/chairs/ay-3000-main.jpg",
+            "gallery": [
+              "/images/products/almadent/chairs/ay-3000-1.jpg",
+              "/images/products/almadent/chairs/ay-3000-2.jpg",
+              "/images/products/almadent/chairs/ay-3000-3.jpg",
+              "/images/products/almadent/chairs/ay-3000-4.jpg",
+              "/images/products/almadent/chairs/ay-3000-5.jpg",
+              "/images/products/almadent/chairs/ay-3000-6.jpg",
+              "/images/products/almadent/chairs/ay-3000-7.jpg",
+              "/images/products/almadent/chairs/ay-3000-8.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Anya AY-3000 is an entry-level dental chair that delivers excellent value without compromising on essential features. Perfect for new practices or satellite clinics.",
+            "secondary": "Features smooth hydraulic movement, comfortable patient positioning, and reliable construction. Compatible with a wide range of delivery systems and accessories."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Chair Movement", "value": "Electric hydraulic" },
+              { "label": "Max Patient Weight", "value": "150kg" },
+              { "label": "Seat Height Range", "value": "400-800mm" },
+              { "label": "Backrest Angle", "value": "0° to 70°" },
+              { "label": "Upholstery", "value": "Medical-grade PU leather" },
+              { "label": "Power Supply", "value": "220-240V, 50/60Hz" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent (Anya Dental)",
+            "warranty": "2 years comprehensive",
+            "packageContents": ["AY-3000 dental chair unit", "Standard delivery system", "Operating light", "Assistant's arm", "Installation manual", "User guide"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Ocean Blue", "Teal", "Black", "Beige", "White"]
+              },
+              {
+                "id": "delivery-system",
+                "label": "Delivery System",
+                "type": "select",
+                "required": true,
+                "options": ["Over-the-patient", "Side delivery", "Rear delivery"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ay-6000", "ay-8000"]
+    },
+    {
+      "id": "ay-6000",
+      "type": "product",
+      "slug": "ay-6000",
+      "name": "Anya AY-6000 Dental Chair",
+      "description": "Mid-range dental chair with advanced features and enhanced ergonomics",
+      "image": "/images/products/almadent/chairs/ay-6000-main.jpg",
+      "parent": "dental-chairs",
+      "order": 2,
+      "sku": "ALM-AY6000",
+      "basePrice": 14999.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/almadent/chairs/ay-6000-main.jpg",
+            "gallery": [
+              "/images/products/almadent/chairs/ay-6000-1.jpg",
+              "/images/products/almadent/chairs/ay-6000-2.jpg",
+              "/images/products/almadent/chairs/ay-6000-3.jpg",
+              "/images/products/almadent/chairs/ay-6000-4.jpg",
+              "/images/products/almadent/chairs/ay-6000-5.jpg",
+              "/images/products/almadent/chairs/ay-6000-6.jpg",
+              "/images/products/almadent/chairs/ay-6000-7.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Anya AY-6000 represents excellent value in the mid-range segment, offering advanced features typically found in premium chairs at a competitive price point.",
+            "secondary": "Features programmable positions, integrated LED lighting, enhanced patient comfort with memory foam cushioning, and a comprehensive delivery system. Ideal for growing practices."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Chair Movement", "value": "DC motor with programmable positions" },
+              { "label": "Max Patient Weight", "value": "180kg" },
+              { "label": "Seat Height Range", "value": "380-820mm" },
+              { "label": "Backrest Angle", "value": "-5° to 85°" },
+              { "label": "Memory Positions", "value": "6 programmable" },
+              { "label": "Upholstery", "value": "Premium medical-grade leather" },
+              { "label": "Operating Light", "value": "LED, adjustable intensity" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent (Anya Dental)",
+            "warranty": "3 years comprehensive",
+            "packageContents": ["AY-6000 dental chair unit", "Advanced delivery system", "LED operating light", "Assistant's instrumentation", "Foot controller", "Installation manual", "User guide"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Ocean Blue", "Teal", "Black", "Beige", "White", "Burgundy"]
+              },
+              {
+                "id": "delivery-system",
+                "label": "Delivery System",
+                "type": "select",
+                "required": true,
+                "options": ["Over-the-patient", "Side delivery", "Rear delivery", "Cart-mounted"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ay-3000", "ay-8000"]
+    },
+    {
+      "id": "ay-8000",
+      "type": "product",
+      "slug": "ay-8000",
+      "name": "Anya AY-8000 Premium Dental Chair",
+      "description": "Premium dental chair with top-tier features for discerning practitioners",
+      "image": "/images/products/almadent/chairs/ay-8000-main.jpg",
+      "parent": "dental-chairs",
+      "order": 3,
+      "sku": "ALM-AY8000",
+      "basePrice": 24999.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/almadent/chairs/ay-8000-main.jpg",
+            "gallery": [
+              "/images/products/almadent/chairs/ay-8000-1.jpg",
+              "/images/products/almadent/chairs/ay-8000-2.jpg",
+              "/images/products/almadent/chairs/ay-8000-3.jpg",
+              "/images/products/almadent/chairs/ay-8000-4.jpg"
+            ]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Anya AY-8000 is the flagship dental chair offering uncompromising quality, advanced technology, and exceptional patient comfort for premium dental practices.",
+            "secondary": "Features include touchscreen controls, integrated multimedia system, synchronized movements, premium leather upholstery with heating option, and advanced infection control features."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Chair Movement", "value": "Synchronized DC motor system" },
+              { "label": "Max Patient Weight", "value": "200kg" },
+              { "label": "Seat Height Range", "value": "360-850mm" },
+              { "label": "Backrest Angle", "value": "-10° to 90°" },
+              { "label": "Memory Positions", "value": "12 programmable + last position" },
+              { "label": "Control System", "value": "7\" touchscreen + foot controller" },
+              { "label": "Upholstery", "value": "Premium leather with heating option" },
+              { "label": "Operating Light", "value": "Sensor-activated LED, 50,000 lux" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent (Anya Dental)",
+            "warranty": "5 years comprehensive",
+            "packageContents": [
+              "AY-8000 premium dental chair",
+              "Premium delivery system",
+              "Sensor-activated LED light",
+              "Full assistant's instrumentation",
+              "Wireless foot controller",
+              "Touchscreen control panel",
+              "Installation and training",
+              "User guide"
+            ]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Ocean Blue", "Teal", "Black", "Beige", "White", "Burgundy", "Champagne"]
+              },
+              {
+                "id": "delivery-system",
+                "label": "Delivery System",
+                "type": "select",
+                "required": true,
+                "options": ["Over-the-patient", "Side delivery", "Rear delivery", "Cart-mounted"]
+              },
+              {
+                "id": "heating",
+                "label": "Seat Heating",
+                "type": "select",
+                "required": false,
+                "options": ["Yes (+$500)", "No"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ay-6000", "implant-motor"]
+    },
+    {
+      "id": "implant-motor",
+      "type": "product",
+      "slug": "implant-motor",
+      "name": "Surgical Implant Motor",
+      "description": "Precision implant motor with advanced torque control for surgical procedures",
+      "image": "/images/products/almadent/auxiliary/implant-motor-main.jpg",
+      "parent": "auxiliary-equipment",
+      "order": 1,
+      "sku": "ALM-IM-01",
+      "basePrice": 3499.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/almadent/auxiliary/implant-motor-main.jpg",
+            "gallery": ["/images/products/almadent/auxiliary/implant-motor-1.jpg", "/images/products/almadent/auxiliary/implant-motor-2.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "A precision surgical implant motor designed for dental implant placement and bone surgery. Features advanced torque control and programmable speed settings.",
+            "secondary": "LED display shows real-time torque, speed, and irrigation status. Compatible with all major implant systems. Includes foot pedal control and comprehensive accessory kit."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Speed Range", "value": "200-40,000 RPM" },
+              { "label": "Torque Range", "value": "5-80 Ncm" },
+              { "label": "Memory Programs", "value": "10 customizable" },
+              { "label": "Display", "value": "LCD with real-time feedback" },
+              { "label": "Irrigation", "value": "Internal/External options" },
+              { "label": "Motor Type", "value": "Brushless electric" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent",
+            "warranty": "2 years",
+            "packageContents": ["Implant motor control unit", "Surgical handpiece", "Foot pedal controller", "Irrigation tubing set", "Carrying case", "User manual"]
           }
         },
         {
@@ -566,33 +1632,1160 @@
         }
       ],
       "accessories": [],
-      "relatedProducts": ["butterfly-evo-product", "galilean-2.5x"]
+      "relatedProducts": ["ptx-unit", "lubricator"]
     },
     {
-      "id": "cleaning-kit-pro",
+      "id": "ptx-unit",
       "type": "product",
-      "slug": "cleaning-kit-pro",
-      "name": "Professional Cleaning Kit",
-      "description": "Complete cleaning and maintenance kit for loupes",
-      "image": "/images/products/cleaning-kit-main.jpg",
-      "parent": "accessories",
-      "order": 1,
-      "sku": "HT-CK-PRO",
-      "basePrice": 79.00,
+      "slug": "ptx-unit",
+      "name": "PTX Piezo Surgery Unit",
+      "description": "Advanced piezoelectric surgery unit for precise bone cutting",
+      "image": "/images/products/almadent/auxiliary/ptx-main.jpg",
+      "parent": "auxiliary-equipment",
+      "order": 2,
+      "sku": "ALM-PTX-01",
+      "basePrice": 4299.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/cleaning-kit-main.jpg",
+            "primaryImage": "/images/products/almadent/auxiliary/ptx-main.jpg",
+            "gallery": ["/images/products/almadent/auxiliary/ptx-1.jpg", "/images/products/almadent/auxiliary/ptx-2.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The PTX Piezo Surgery Unit delivers precise, controlled bone cutting using ultrasonic vibration technology. Minimizes soft tissue damage while providing excellent visibility.",
+            "secondary": "Ideal for implant site preparation, sinus lifts, bone grafting, and periodontal surgery. Features automatic frequency tuning and multiple power presets."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Frequency", "value": "24-36 kHz (auto-tuning)" },
+              { "label": "Power Modes", "value": "5 preset programs" },
+              { "label": "Irrigation", "value": "Peristaltic pump, adjustable" },
+              { "label": "Display", "value": "LED touchscreen" },
+              { "label": "Handpiece", "value": "Autoclavable, LED illuminated" },
+              { "label": "Tip Compatibility", "value": "Universal piezo tips" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent",
+            "warranty": "2 years",
+            "packageContents": ["PTX control unit", "LED handpiece", "Basic tip set (6 tips)", "Foot pedal", "Irrigation tubing", "Carrying case", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["implant-motor", "lubricator"]
+    },
+    {
+      "id": "lubricator",
+      "type": "product",
+      "slug": "lubricator",
+      "name": "Automatic Handpiece Lubricator",
+      "description": "Automated lubrication system for dental handpieces",
+      "image": "/images/products/almadent/auxiliary/lubricator-main.jpg",
+      "parent": "auxiliary-equipment",
+      "order": 3,
+      "sku": "ALM-LUB-01",
+      "basePrice": 1299.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/almadent/auxiliary/lubricator-main.jpg",
+            "gallery": ["/images/products/almadent/auxiliary/lubricator-1.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Automatic Handpiece Lubricator ensures consistent, thorough lubrication of dental handpieces with the press of a button. Extends handpiece life and maintains performance.",
+            "secondary": "Compatible with high-speed and low-speed handpieces. Programmable lubrication cycles ensure optimal oil distribution every time."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Capacity", "value": "2 handpieces simultaneously" },
+              { "label": "Cycle Time", "value": "15-30 seconds (adjustable)" },
+              { "label": "Oil Reservoir", "value": "500ml" },
+              { "label": "Compatibility", "value": "High-speed and low-speed" },
+              { "label": "Operation", "value": "One-touch automatic" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Almadent",
+            "warranty": "2 years",
+            "packageContents": ["Lubricator unit", "Handpiece adapters set", "Lubricant oil (500ml)", "User manual"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["ptx-unit", "implant-motor"]
+    },
+    {
+      "id": "salli-ultra",
+      "type": "product",
+      "slug": "salli-ultra",
+      "name": "Salli Ultra Saddle Chair",
+      "description": "Premium two-part saddle chair for optimal ergonomic posture",
+      "image": "/images/products/salli/salli-ultra-main.jpg",
+      "parent": "salli",
+      "order": 1,
+      "sku": "SAL-ULTRA",
+      "basePrice": 1199.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/salli/salli-ultra-main.jpg",
+            "gallery": ["/images/products/salli/salli-ultra-1.jpg", "/images/products/salli/salli-ultra-2.jpg", "/images/products/salli/salli-ultra-3.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Salli Ultra features the innovative two-part saddle seat that allows unrestricted leg movement and promotes natural spinal curvature for all-day comfort.",
+            "secondary": "Designed specifically for dental and medical professionals who spend long hours seated. The split seat design reduces pressure on soft tissues and improves circulation."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Seat Type", "value": "Two-part adjustable saddle" },
+              { "label": "Height Range", "value": "450-650mm" },
+              { "label": "Tilt Adjustment", "value": "Forward/backward tilt" },
+              { "label": "Base", "value": "5-star aluminum, 65mm castors" },
+              { "label": "Max Load", "value": "120kg" },
+              { "label": "Upholstery", "value": "Medical-grade leather" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Salli (Finland)",
+            "warranty": "5 years",
+            "packageContents": ["Salli Ultra chair", "Assembly tools", "User guide"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Black", "White", "Teal", "Burgundy", "Navy Blue"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["salli-swayfit", "salli-triplelift"]
+    },
+    {
+      "id": "salli-swayfit",
+      "type": "product",
+      "slug": "salli-swayfit",
+      "name": "Salli SwayFit Saddle Chair",
+      "description": "Dynamic saddle chair with lateral movement for active sitting",
+      "image": "/images/products/salli/salli-swayfit-main.jpg",
+      "parent": "salli",
+      "order": 2,
+      "sku": "SAL-SWAYFIT",
+      "basePrice": 1399.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/salli/salli-swayfit-main.jpg",
+            "gallery": ["/images/products/salli/salli-swayfit-1.jpg", "/images/products/salli/salli-swayfit-2.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Salli SwayFit adds dynamic lateral movement to the proven saddle chair design, engaging core muscles and promoting active sitting throughout the day.",
+            "secondary": "The swing mechanism allows natural side-to-side movement that keeps your body active while seated. Excellent for practitioners who want to combine comfort with gentle exercise."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Seat Type", "value": "Two-part saddle with swing" },
+              { "label": "Swing Range", "value": "±5° lateral movement" },
+              { "label": "Height Range", "value": "450-650mm" },
+              { "label": "Base", "value": "5-star aluminum, 65mm castors" },
+              { "label": "Max Load", "value": "120kg" },
+              { "label": "Upholstery", "value": "Medical-grade leather" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Salli (Finland)",
+            "warranty": "5 years",
+            "packageContents": ["Salli SwayFit chair", "Assembly tools", "User guide"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Black", "White", "Teal", "Burgundy", "Navy Blue"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["salli-ultra", "salli-triplelift"]
+    },
+    {
+      "id": "salli-triplelift",
+      "type": "product",
+      "slug": "salli-triplelift",
+      "name": "Salli TripleLift Saddle Chair",
+      "description": "Premium saddle chair with extended height range for standing-height work",
+      "image": "/images/products/salli/salli-triplelift-main.jpg",
+      "parent": "salli",
+      "order": 3,
+      "sku": "SAL-TRIPLE",
+      "basePrice": 1599.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/salli/salli-triplelift-main.jpg",
+            "gallery": ["/images/products/salli/salli-triplelift-1.jpg", "/images/products/salli/salli-triplelift-2.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Salli TripleLift features an extended height range that allows you to work at standing desk height while still benefiting from saddle seat support.",
+            "secondary": "Perfect for sit-stand workstations and procedures that require varying heights. The three-stage gas lift provides smooth height adjustment throughout the full range."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Seat Type", "value": "Two-part adjustable saddle" },
+              { "label": "Height Range", "value": "500-850mm" },
+              { "label": "Lift Type", "value": "Three-stage gas lift" },
+              { "label": "Base", "value": "5-star aluminum, 65mm castors" },
+              { "label": "Max Load", "value": "120kg" },
+              { "label": "Upholstery", "value": "Medical-grade leather" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Salli (Finland)",
+            "warranty": "5 years",
+            "packageContents": ["Salli TripleLift chair", "Assembly tools", "User guide"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "upholstery-color",
+                "label": "Upholstery Color",
+                "type": "select",
+                "required": true,
+                "options": ["Black", "White", "Teal", "Burgundy", "Navy Blue"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["salli-ultra", "salli-swayfit"]
+    },
+    {
+      "id": "medesy-elevator-700-8",
+      "type": "product",
+      "slug": "medesy-elevator-700-8",
+      "name": "Medesy 700/8 Dental Elevator",
+      "description": "Premium Italian dental elevator for tooth luxation and extraction",
+      "image": "/images/products/medesy/elevators/700-8-main.jpg",
+      "parent": "elevators",
+      "order": 1,
+      "sku": "MED-700-8",
+      "basePrice": 89.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/elevators/700-8-main.jpg",
             "gallery": []
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "Keep your loupes in pristine condition with our Professional Cleaning Kit. Includes everything you need for daily maintenance and deep cleaning.",
-            "secondary": "Specially formulated lens cleaner is safe for all optical coatings. Anti-static microfiber cloths prevent dust attraction."
+            "primary": "Medesy 700/8 elevator crafted from premium Italian stainless steel. Designed for efficient tooth luxation with optimal leverage and control.",
+            "secondary": "Ergonomic handle design reduces hand fatigue during procedures. Mirror-polished finish for easy cleaning and sterilization."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Mirror polished" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" },
+              { "label": "Handle", "value": "Ergonomic hexagonal" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 700/8 elevator"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-elevator-710-1", "medesy-forceps-2500-17"]
+    },
+    {
+      "id": "medesy-elevator-710-1",
+      "type": "product",
+      "slug": "medesy-elevator-710-1",
+      "name": "Medesy 710/1 Bein Elevator",
+      "description": "Classic Bein-style elevator for versatile extraction procedures",
+      "image": "/images/products/medesy/elevators/710-1-main.jpg",
+      "parent": "elevators",
+      "order": 2,
+      "sku": "MED-710-1",
+      "basePrice": 95.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/elevators/710-1-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Medesy 710/1 Bein elevator features the classic curved blade design ideal for accessing difficult extraction sites.",
+            "secondary": "Precision-ground blade edge ensures effective tooth luxation. The ergonomic handle provides excellent grip and control."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Type", "value": "Bein-style elevator" },
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Mirror polished" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 710/1 Bein elevator"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-elevator-700-8", "medesy-periosteal-1300-6"]
+    },
+    {
+      "id": "medesy-forceps-2500-17",
+      "type": "product",
+      "slug": "medesy-forceps-2500-17",
+      "name": "Medesy 2500/17 Extraction Forceps",
+      "description": "Upper molar extraction forceps with anatomical beak design",
+      "image": "/images/products/medesy/forceps/2500-17-main.jpg",
+      "parent": "forceps",
+      "order": 1,
+      "sku": "MED-2500-17",
+      "basePrice": 149.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/forceps/2500-17-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Medesy 2500/17 forceps feature anatomically designed beaks for secure grip on upper molars during extraction procedures.",
+            "secondary": "Precision joint mechanism ensures smooth operation. Spring-loaded handles reduce hand fatigue during multiple extractions."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Type", "value": "Upper molar extraction" },
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Satin" },
+              { "label": "Joint", "value": "English pattern" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 2500/17 forceps"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-forceps-2500-18", "medesy-elevator-700-8"]
+    },
+    {
+      "id": "medesy-forceps-2500-18",
+      "type": "product",
+      "slug": "medesy-forceps-2500-18",
+      "name": "Medesy 2500/18 Extraction Forceps",
+      "description": "Lower molar extraction forceps with cow horn design",
+      "image": "/images/products/medesy/forceps/2500-18-main.jpg",
+      "parent": "forceps",
+      "order": 2,
+      "sku": "MED-2500-18",
+      "basePrice": 149.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/forceps/2500-18-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Medesy 2500/18 features the classic cow horn design optimized for lower molar extractions. The pointed beaks engage the furcation for controlled luxation.",
+            "secondary": "Heavy-duty construction handles the increased forces required for lower molar extraction. Ergonomic handles provide secure grip."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Type", "value": "Lower molar (cow horn)" },
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Satin" },
+              { "label": "Joint", "value": "English pattern" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 2500/18 forceps"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-forceps-2500-17", "medesy-elevator-710-1"]
+    },
+    {
+      "id": "medesy-periosteal-1300-6",
+      "type": "product",
+      "slug": "medesy-periosteal-1300-6",
+      "name": "Medesy 1300/6 Periosteal Elevator",
+      "description": "Double-ended periosteal elevator for tissue reflection",
+      "image": "/images/products/medesy/periosteal/1300-6-main.jpg",
+      "parent": "periosteal-elevators",
+      "order": 1,
+      "sku": "MED-1300-6",
+      "basePrice": 79.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/periosteal/1300-6-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Medesy 1300/6 is a double-ended periosteal elevator designed for efficient soft tissue reflection during surgical procedures.",
+            "secondary": "Features both broad and narrow ends for versatility in different surgical situations. Smooth edges minimize tissue trauma."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Type", "value": "Double-ended periosteal" },
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Mirror polished" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 1300/6 periosteal elevator"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-elevator-710-1", "medesy-scissors-3500-14"]
+    },
+    {
+      "id": "medesy-scissors-3500-14",
+      "type": "product",
+      "slug": "medesy-scissors-3500-14",
+      "name": "Medesy 3500/14 Surgical Scissors",
+      "description": "Curved surgical scissors for soft tissue procedures",
+      "image": "/images/products/medesy/scissors/3500-14-main.jpg",
+      "parent": "scissors",
+      "order": 1,
+      "sku": "MED-3500-14",
+      "basePrice": 69.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/medesy/scissors/3500-14-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Medesy 3500/14 curved surgical scissors feature precision-ground blades for clean, accurate tissue cutting.",
+            "secondary": "The curved design provides excellent visibility and access in the oral cavity. Smooth joint action for fatigue-free operation."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Type", "value": "Curved surgical scissors" },
+              { "label": "Length", "value": "140mm" },
+              { "label": "Material", "value": "AISI 420 stainless steel" },
+              { "label": "Finish", "value": "Satin" },
+              { "label": "Sterilization", "value": "Autoclavable to 134°C" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Medesy (Italy)",
+            "warranty": "Lifetime against manufacturing defects",
+            "packageContents": ["Medesy 3500/14 scissors"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": false
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["medesy-periosteal-1300-6", "medesy-forceps-2500-17"]
+    },
+    {
+      "id": "strauss-a-series",
+      "type": "product",
+      "slug": "strauss-a-series",
+      "name": "Strauss A-Series Carbide Burs",
+      "description": "Round carbide burs for cavity preparation and access",
+      "image": "/images/products/strauss/carbide/a-series-main.jpg",
+      "parent": "carbide-burs",
+      "order": 1,
+      "sku": "STR-A",
+      "basePrice": 12.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/carbide/a-series-main.jpg",
+            "gallery": ["/images/products/strauss/carbide/a-series-1.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss A-Series round carbide burs are precision-manufactured in Switzerland for consistent performance and longevity.",
+            "secondary": "Ideal for caries removal, cavity preparation, and endo access. Available in multiple sizes from A0 to A9. Sharp cutting edges ensure efficient tooth structure removal."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Round" },
+              { "label": "Sizes Available", "value": "A0C, A1F, A2M, etc." },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Material", "value": "Tungsten carbide" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "size",
+                "label": "Size",
+                "type": "select",
+                "required": true,
+                "options": ["A0C", "A1F", "A2M", "A3G", "A4G", "A5G", "A6G", "A7G", "A8G", "A9G"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-b-series", "strauss-c-series"]
+    },
+    {
+      "id": "strauss-b-series",
+      "type": "product",
+      "slug": "strauss-b-series",
+      "name": "Strauss B-Series Carbide Burs",
+      "description": "Pear-shaped carbide burs for cavity preparation",
+      "image": "/images/products/strauss/carbide/b-series-main.jpg",
+      "parent": "carbide-burs",
+      "order": 2,
+      "sku": "STR-B",
+      "basePrice": 12.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/carbide/b-series-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss B-Series pear-shaped carbide burs provide excellent control for cavity preparation and undercut creation.",
+            "secondary": "The pear shape allows for efficient bulk material removal while maintaining precision. Available in multiple sizes."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Pear" },
+              { "label": "Sizes Available", "value": "B2M, B3G, etc." },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Material", "value": "Tungsten carbide" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "size",
+                "label": "Size",
+                "type": "select",
+                "required": true,
+                "options": ["B2M", "B3G", "B4G", "B5G"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-a-series", "strauss-c-series"]
+    },
+    {
+      "id": "strauss-c-series",
+      "type": "product",
+      "slug": "strauss-c-series",
+      "name": "Strauss C-Series Carbide Burs",
+      "description": "Inverted cone carbide burs for undercut preparation",
+      "image": "/images/products/strauss/carbide/c-series-main.jpg",
+      "parent": "carbide-burs",
+      "order": 3,
+      "sku": "STR-C",
+      "basePrice": 12.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/carbide/c-series-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss C-Series inverted cone burs excel at creating retentive undercuts and flat cavity floors.",
+            "secondary": "Essential for amalgam cavity preparation. The inverted cone shape provides excellent mechanical retention."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Inverted cone" },
+              { "label": "Sizes Available", "value": "C2M, C3G, C4G" },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Material", "value": "Tungsten carbide" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "size",
+                "label": "Size",
+                "type": "select",
+                "required": true,
+                "options": ["C2M", "C3G", "C4G"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-a-series", "strauss-b-series"]
+    },
+    {
+      "id": "strauss-d-series",
+      "type": "product",
+      "slug": "strauss-d-series",
+      "name": "Strauss D-Series Diamond Burs",
+      "description": "Round diamond burs for enamel and dentin preparation",
+      "image": "/images/products/strauss/diamond/d-series-main.jpg",
+      "parent": "diamond-burs",
+      "order": 1,
+      "sku": "STR-D",
+      "basePrice": 14.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/diamond/d-series-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss D-Series round diamond burs feature premium diamond coating for smooth, efficient cutting of enamel and dentin.",
+            "secondary": "Excellent for crown preparation, caries removal, and finishing. Available in coarse, medium, and fine grits."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Round" },
+              { "label": "Coating", "value": "Premium diamond" },
+              { "label": "Grits Available", "value": "Coarse, Medium, Fine" },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "grit",
+                "label": "Grit",
+                "type": "select",
+                "required": true,
+                "options": ["Coarse (Green)", "Medium (Blue)", "Fine (Red)", "Super Fine (Yellow)"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-e-series", "strauss-f-series"]
+    },
+    {
+      "id": "strauss-e-series",
+      "type": "product",
+      "slug": "strauss-e-series",
+      "name": "Strauss E-Series Diamond Burs",
+      "description": "Egg-shaped diamond burs for crown preparation",
+      "image": "/images/products/strauss/diamond/e-series-main.jpg",
+      "parent": "diamond-burs",
+      "order": 2,
+      "sku": "STR-E",
+      "basePrice": 14.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/diamond/e-series-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss E-Series egg-shaped diamond burs are designed for efficient crown preparation and occlusal reduction.",
+            "secondary": "The unique shape provides excellent access and visibility while reducing enamel efficiently."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Egg (Football)" },
+              { "label": "Coating", "value": "Premium diamond" },
+              { "label": "Grits Available", "value": "Coarse, Medium, Fine" },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "grit",
+                "label": "Grit",
+                "type": "select",
+                "required": true,
+                "options": ["Coarse (Green)", "Medium (Blue)", "Fine (Red)"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-d-series", "strauss-f-series"]
+    },
+    {
+      "id": "strauss-f-series",
+      "type": "product",
+      "slug": "strauss-f-series",
+      "name": "Strauss F-Series Finishing Burs",
+      "description": "Flame-shaped finishing burs for margin refinement",
+      "image": "/images/products/strauss/diamond/f-series-main.jpg",
+      "parent": "diamond-burs",
+      "order": 3,
+      "sku": "STR-F",
+      "basePrice": 14.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/diamond/f-series-main.jpg",
+            "gallery": []
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "Strauss F-Series flame-shaped burs are ideal for interproximal preparation and margin finishing.",
+            "secondary": "The tapered flame shape provides excellent access to tight spaces while maintaining control."
+          }
+        },
+        {
+          "type": "specifications",
+          "data": {
+            "title": "Technical Specifications",
+            "rows": [
+              { "label": "Shape", "value": "Flame" },
+              { "label": "Coating", "value": "Premium diamond" },
+              { "label": "Grits Available", "value": "Coarse, Medium, Fine, Super Fine" },
+              { "label": "Shank", "value": "FG (Friction Grip)" },
+              { "label": "Country of Origin", "value": "Switzerland" }
+            ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["5 burs per package"]
+          }
+        },
+        {
+          "type": "actions",
+          "data": {
+            "addToCart": true,
+            "customization": true,
+            "customFields": [
+              {
+                "id": "grit",
+                "label": "Grit",
+                "type": "select",
+                "required": true,
+                "options": ["Coarse (Green)", "Medium (Blue)", "Fine (Red)", "Super Fine (Yellow)"]
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity (packs of 5)",
+                "type": "select",
+                "required": true,
+                "options": ["1", "2", "5", "10"]
+              }
+            ]
+          }
+        }
+      ],
+      "accessories": [],
+      "relatedProducts": ["strauss-d-series", "strauss-e-series"]
+    },
+    {
+      "id": "strauss-crown-prep-kit",
+      "type": "product",
+      "slug": "strauss-crown-prep-kit",
+      "name": "Strauss Crown Preparation Kit",
+      "description": "Complete bur kit for crown and bridge preparation",
+      "image": "/images/products/strauss/kits/crown-prep-kit-main.jpg",
+      "parent": "bur-kits",
+      "order": 1,
+      "sku": "STR-KIT-CP",
+      "basePrice": 189.0,
+      "currency": "AUD",
+      "contentBlocks": [
+        {
+          "type": "hero",
+          "data": {
+            "primaryImage": "/images/products/strauss/kits/crown-prep-kit-main.jpg",
+            "gallery": ["/images/products/strauss/kits/crown-prep-kit-1.jpg", "/images/products/strauss/kits/crown-prep-kit-2.jpg"]
+          }
+        },
+        {
+          "type": "description",
+          "data": {
+            "primary": "The Strauss Crown Preparation Kit contains all essential burs for efficient crown and bridge preparation in one convenient package.",
+            "secondary": "Includes round, egg, tapered, and finishing burs in multiple grits. Organized in a reusable sterilizable bur block."
           }
         },
         {
@@ -600,11 +2793,21 @@
           "data": {
             "title": "Kit Contents",
             "rows": [
-              { "label": "Lens Cleaner", "value": "120ml spray bottle" },
-              { "label": "Microfiber Cloths", "value": "3x premium grade" },
-              { "label": "Lens Brush", "value": "Retractable soft brush" },
-              { "label": "Silicone Nosepads", "value": "2 pairs (S/M)" }
+              { "label": "Round Burs", "value": "2x coarse, 2x fine" },
+              { "label": "Egg Burs", "value": "2x coarse, 2x fine" },
+              { "label": "Tapered Burs", "value": "2x coarse, 2x fine" },
+              { "label": "Finishing Burs", "value": "4x fine, 2x super fine" },
+              { "label": "Bur Block", "value": "Autoclavable aluminum" },
+              { "label": "Total Burs", "value": "18 pieces" }
             ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["18 diamond burs", "Aluminum bur block", "Bur guide card"]
           }
         },
         {
@@ -616,45 +2819,54 @@
         }
       ],
       "accessories": [],
-      "relatedProducts": ["protective-case-deluxe"]
+      "relatedProducts": ["strauss-endo-kit", "strauss-d-series"]
     },
     {
-      "id": "protective-case-deluxe",
+      "id": "strauss-endo-kit",
       "type": "product",
-      "slug": "protective-case-deluxe",
-      "name": "Deluxe Protective Case",
-      "description": "Premium hard case for loupes and accessories",
-      "image": "/images/products/case-deluxe-main.jpg",
-      "parent": "accessories",
+      "slug": "strauss-endo-kit",
+      "name": "Strauss Endodontic Access Kit",
+      "description": "Specialized bur kit for endodontic access preparation",
+      "image": "/images/products/strauss/kits/endo-kit-main.jpg",
+      "parent": "bur-kits",
       "order": 2,
-      "sku": "HT-PC-DLX",
-      "basePrice": 149.00,
+      "sku": "STR-KIT-EN",
+      "basePrice": 149.0,
       "currency": "AUD",
       "contentBlocks": [
         {
           "type": "hero",
           "data": {
-            "primaryImage": "/images/products/case-deluxe-main.jpg",
-            "gallery": []
+            "primaryImage": "/images/products/strauss/kits/endo-kit-main.jpg",
+            "gallery": ["/images/products/strauss/kits/endo-kit-1.jpg"]
           }
         },
         {
           "type": "description",
           "data": {
-            "primary": "Protect your investment with our Deluxe Protective Case. Crush-resistant exterior with customizable foam interior adapts to any loupe configuration.",
-            "secondary": "Features TSA-approved locks and water-resistant zipper. Perfect for travel and daily protection."
+            "primary": "The Strauss Endodontic Access Kit provides all necessary burs for efficient endodontic access cavity preparation.",
+            "secondary": "Includes round carbide burs for initial penetration, tapered fissure burs for access refinement, and safe-ended burs for pulp chamber entry."
           }
         },
         {
           "type": "specifications",
           "data": {
-            "title": "Specifications",
+            "title": "Kit Contents",
             "rows": [
-              { "label": "External Dimensions", "value": "280 x 180 x 80mm" },
-              { "label": "Internal Dimensions", "value": "260 x 160 x 60mm" },
-              { "label": "Weight", "value": "420g" },
-              { "label": "Material", "value": "ABS shell, EVA foam interior" }
+              { "label": "Round Carbide", "value": "A2, A4, A6 (2 each)" },
+              { "label": "Tapered Fissure", "value": "169, 170 (2 each)" },
+              { "label": "Safe-End", "value": "Endo-Z (2 pcs)" },
+              { "label": "Total Burs", "value": "12 pieces" },
+              { "label": "Bur Block", "value": "Autoclavable" }
             ]
+          }
+        },
+        {
+          "type": "info",
+          "data": {
+            "manufacturer": "Strauss & Co (Switzerland)",
+            "warranty": "Manufacturing defects",
+            "packageContents": ["12 burs", "Endo bur block", "Procedure guide"]
           }
         },
         {
@@ -666,7 +2878,7 @@
         }
       ],
       "accessories": [],
-      "relatedProducts": ["cleaning-kit-pro"]
+      "relatedProducts": ["strauss-crown-prep-kit", "strauss-a-series"]
     }
   ]
 }

@@ -1,26 +1,27 @@
 import Link from "next/link";
-import { Entity, Product } from "@/types";
-import { getEntityPath } from "@/lib/catalog";
-import { formatCurrency } from "@/lib/cart";
+import { Product, Category } from "@/types";
 import Card, { CardImage, CardContent, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "../ui";
 
 interface ProductCardProps {
-  entity: Entity;
+  entity: Product | Category;
+  href: string;
+  image?: string;
 }
 
-function isProduct(entity: Entity): entity is Product {
-  return entity.type === "product";
+function isProduct(entity: Product | Category): entity is Product {
+  return 'sku' in entity;
 }
 
-export default function ProductCard({ entity }: ProductCardProps) {
-  const href = getEntityPath(entity);
+export default function ProductCard({ entity, href, image }: ProductCardProps) {
   const entityIsProduct = isProduct(entity);
+  
+  const displayImage = image || '/images/placeholder.jpg';
 
   return (
     <Card hover className="h-full">
       <Link href={href}>
-        <CardImage src={entity.image || ""} alt={entity.name} />
+        <CardImage src={displayImage} alt={entity.name} />
       </Link>
       <CardContent>
         <CardTitle>{entity.name}</CardTitle>

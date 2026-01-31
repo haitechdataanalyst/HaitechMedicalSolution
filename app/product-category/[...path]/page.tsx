@@ -1,13 +1,19 @@
 import { notFound } from 'next/navigation';
 import {
   getAllStaticPaths,
-  getEntityByPath,
-  getCategoryChildren,
-  getBreadcrumbs,
+  resolvePathToEntity,
+  getCategoryContents,
+  getCategoryBreadcrumbs,
+  getProductBreadcrumbs,
+  getProductPath,
+  getCategoryPath,
+  getRelatedProducts,
+  getProductAccessories,
 } from '@/lib/catalog';
 import { Product, Category } from '@/types';
-import { ProductDetail, ProductGrid } from '@/components/products';
+import { ProductDetail } from '@/components/products';
 import { Breadcrumbs } from '@/components/ui';
+import { CategoryPageClient } from './CategoryPageClient';
 
 interface PageProps {
   params: Promise<{ path: string[] }>;
@@ -20,63 +26,74 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { path } = await params;
-  const fullPath = `/product-category/${path.join('/')}`;
-  const entity = getEntityByPath(fullPath);
+  const result = resolvePathToEntity(path);
 
-  if (!entity) {
+  if (!result) {
     return {
       title: 'Not Found | Haitech Medical',
     };
   }
 
   return {
-    title: `${entity.name} | Haitech Medical`,
-    description: entity.description || `Browse ${entity.name} at Haitech Medical`,
+    title: `${result.entity.name} | Haitech Medical`,
+    description: result.entity.description || `Browse ${result.entity.name} at Haitech Medical`,
   };
 }
 
 export default async function CategoryPage({ params }: PageProps) {
   const { path } = await params;
-  const fullPath = `/product-category/${path.join('/')}`;
-  const entity = getEntityByPath(fullPath);
+  const result = resolvePathToEntity(path);
 
-  if (!entity) {
+  if (!result) {
     notFound();
   }
 
-  const breadcrumbs = getBreadcrumbs(entity);
+  // If it's a product, show product detail
+  if (result.type === 'product') {
+    const product = result.entity as Product;
+    const breadcrumbs = getProductBreadcrumbs(product);
+    const relatedProducts = getRelatedProducts(product).map(p => ({ ...p, path: getProductPath(p) }));
+    const accessories = getProductAccessories(product).map(p => ({ ...p, path: getProductPath(p) }));
 
-  // If it's a product nested in categories
-  if (entity.type === 'product') {
     return (
       <>
         <Breadcrumbs items={breadcrumbs} />
-        <ProductDetail product={entity as Product} />
+        <ProductDetail 
+          product={product} 
+          relatedProducts={relatedProducts}
+          accessories={accessories}
+        />
       </>
     );
   }
 
-  // If it's a category, show children
-  const children = getCategoryChildren(entity.id);
-  const category = entity as Category;
+  // If it's a category, show category browser starting from this category
+  const category = result.entity as Category;
+  const breadcrumbs = getCategoryBreadcrumbs(category);
+  const contents = getCategoryContents(category.id);
+
+  // Add paths to the initial items
+  const initialItemsWithPaths = contents.type === 'categories' 
+    ? (contents.items as Category[]).map(cat => ({ ...cat, path: getCategoryPath(cat) }))
+    : (contents.items as Product[]).map(prod => ({ ...prod, path: getProductPath(prod) }));
 
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
 
       <div className="container mx-auto px-4 py-6 sm:py-8">
-        {/* Category Header */}
-        <div className="mb-6 sm:mb-8">
-          <h1 className="heading-1 mb-4">{category.name}</h1>
+        {/* Category Header - Centered */}
+        <div className="mb-6 sm:mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{category.name}</h1>
           {category.description && (
-            <p className="text-base sm:text-lg text-muted max-w-3xl">{category.description}</p>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">{category.description}</p>
           )}
         </div>
 
-        {/* Products/Subcategories Grid */}
-        <ProductGrid
-          items={children}
-          emptyMessage={`No items found in ${category.name}`}
+        {/* Category Browser Client Component */}
+        <CategoryPageClient 
+          initialItems={initialItemsWithPaths}
+          initialType={contents.type}
         />
       </div>
     </>

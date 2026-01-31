@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and purchase orders from verified healthcare institutions. For large orders, we also offer financing options."
+    },
+    {
+      "id": 2,
+      "question": "How long does shipping take?",
+      "answer": "Standard shipping typically takes 5-7 business days within the continental US. Express shipping (2-3 business days) and overnight options are available at checkout. International shipping times vary by destination, usually 7-14 business days."
+    },
+    {
+      "id": 3,
+      "question": "Do you offer warranties on your products?",
+      "answer": "Yes, all our medical equipment comes with manufacturer warranties ranging from 1-5 years depending on the product. We also offer extended warranty options for additional peace of mind. Please check individual product pages for specific warranty information."
+    },
+    {
+      "id": 4,
+      "question": "Can I return or exchange a product?",
+      "answer": "We offer a 30-day return policy for unused products in their original packaging. Custom or personalized items may have different return conditions. Please contact our customer service team to initiate a return or exchange."
+    },
+    {
+      "id": 5,
+      "question": "Do you provide product training or support?",
+      "answer": "Absolutely! We provide comprehensive product training through video tutorials, user manuals, and live webinars. Our technical support team is available Monday-Friday, 9 AM - 6 PM EST to assist with any questions or issues."
+    },
+    {
+      "id": 6,
+      "question": "Are your products FDA approved?",
+      "answer": "Yes, all medical devices we sell are FDA cleared or approved as required. We only partner with manufacturers who meet strict regulatory standards and maintain proper certifications for their products."
+    },
+    {
+      "id": 7,
+      "question": "Do you offer bulk or wholesale pricing?",
+      "answer": "Yes, we offer competitive pricing for bulk orders and have special programs for dental practices, hospitals, and educational institutions. Please contact our sales team or request a quote for volume discounts."
+    },
+    {
+      "id": 8,
+      "question": "How can I track my order?",
+      "answer": "Once your order ships, you'll receive an email with tracking information. You can also log into your account on our website to view order status and tracking details in real-time."
+    }
+  ]
+}

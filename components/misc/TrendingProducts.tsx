@@ -1,10 +1,15 @@
 import Link from "next/link";
-import { Entity } from "@/types";
+import { Product } from "@/types";
 import { Button, Carousel } from "../ui";
 import { ProductCard } from "../products";
 
+// Product with computed path for linking
+interface ProductWithPath extends Product {
+  path: string;
+}
+
 interface TrendingProductsProps {
-  products: Entity[];
+  products: ProductWithPath[];
 }
 
 export default function TrendingProducts({ products }: TrendingProductsProps) {
@@ -36,7 +41,12 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
           }}
         >
           {products.map((product) => (
-            <ProductCard key={product.slug} entity={product} />
+            <ProductCard 
+              key={product.slug} 
+              entity={product} 
+              href={product.path}
+              image={product.defaultImage || product.image}
+            />
           ))}
         </Carousel>
       </div>

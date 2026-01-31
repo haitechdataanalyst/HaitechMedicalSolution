@@ -1,15 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HeroBlock as HeroBlockType } from '@/types';
 import { cn } from '@/lib/utils';
 
 interface HeroBlockProps {
   data: HeroBlockType['data'];
+  externalSelectedImage?: string;
 }
 
-export default function HeroBlock({ data }: HeroBlockProps) {
+export default function HeroBlock({ data, externalSelectedImage }: HeroBlockProps) {
   const [selectedImage, setSelectedImage] = useState(data.primaryImage);
+  
+  // Update selected image when external image changes (from variant selection)
+  useEffect(() => {
+    if (externalSelectedImage) {
+      setSelectedImage(externalSelectedImage);
+    }
+  }, [externalSelectedImage]);
+
   const allImages = [data.primaryImage, ...(data.gallery || [])];
 
   return (

@@ -1,9 +1,15 @@
-import { Entity } from '@/types';
+import { Product, Category } from '@/types';
 import ProductCard from './ProductCard';
 import { InboxIcon } from '@/components/icons';
 
+// Items should include a path property for linking
+interface ItemWithPath {
+  path: string;
+  image?: string;
+}
+
 interface ProductGridProps {
-  items: Entity[];
+  items: ((Product | Category) & ItemWithPath)[];
   emptyMessage?: string;
 }
 
@@ -20,7 +26,12 @@ export default function ProductGrid({ items, emptyMessage = 'No products found' 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
       {items.map((item) => (
-        <ProductCard key={item.id} entity={item} />
+        <ProductCard 
+          key={item.id} 
+          entity={item} 
+          href={item.path}
+          image={item.image}
+        />
       ))}
     </div>
   );
