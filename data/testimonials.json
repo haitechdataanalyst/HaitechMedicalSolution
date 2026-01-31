@@ -1,0 +1,54 @@
+{
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Dr. D N Bagadiya",
+      "role": "Dental Surgeon",
+      "company": "Melbourne Dental Clinic",
+      "location": "Melbourne, VIC",
+      "rating": 5,
+      "text": "My experience with Haitech Solutions for my admetec loupes has been very good. Using the loupes for more than 4 years.But before 2 months,I had minor problem with my loupes so needed repair and it had to go to Israel. They kept me updated until I received my loupes repaired.Thank you for the great service.",
+      "image": "/images/testimonials/sarah-mitchell.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Dr. kirti Pingale",
+      "role": "Orthodontist",
+      "company": "Sydney Orthodontics",
+      "location": "Sydney, NSW",
+      "rating": 5,
+      "text": "We ordered Admetec loupes from Haitech. The product is amazing and really comfortable to use. We received trial , prompt and thorough service always. Tiwari sir made sure all the necessary adjustments were made to get the perfect dimensions and always kept us posted about the upgrades to make the use more efficient. Highly recommended.",
+      "image": "/images/testimonials/james-chen.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Dr. Emma Thompson",
+      "role": "General Dentist",
+      "company": "Brisbane Family Dental",
+      "location": "Brisbane, QLD",
+      "rating": 5,
+      "text": "I've been using Haitech equipment for over 3 years now. The durability and precision of their products is remarkable. Their after-sales support is top-notch.",
+      "image": "/images/testimonials/emma-thompson.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Dr. Michael Roberts",
+      "role": "Endodontist",
+      "company": "Perth Endo Specialists",
+      "location": "Perth, WA",
+      "rating": 5,
+      "text": "The Micro LED light system is a game-changer for root canal procedures. Crystal clear visibility and lightweight design. Best investment I've made for my practice.",
+      "image": "/images/testimonials/michael-roberts.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Dr. Lisa Wang",
+      "role": "Periodontist",
+      "company": "Adelaide Periodontics",
+      "location": "Adelaide, SA",
+      "rating": 5,
+      "text": "From the initial consultation to delivery, Haitech exceeded my expectations. The Galilean loupes offer incredible value for money without compromising on quality.",
+      "image": "/images/testimonials/lisa-wang.jpg"
+    }
+  ]
+}

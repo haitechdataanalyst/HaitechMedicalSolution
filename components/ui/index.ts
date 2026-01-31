@@ -5,3 +5,4 @@ export { default as Textarea } from './Textarea';
 export { default as Card, CardImage, CardContent, CardTitle, CardDescription } from './Card';
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as ImageWithFallback } from './ImageWithFallback';
+export { default as Carousel } from './Carousel';

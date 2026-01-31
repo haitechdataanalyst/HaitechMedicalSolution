@@ -1,51 +1,45 @@
-import Link from 'next/link';
-import { Entity } from '@/types';
-import { getEntityPath } from '@/lib/catalog';
-import { formatCurrency } from '@/lib/cart';
-import Card, { CardImage, CardContent, CardTitle, CardDescription } from '@/components/ui/Card';
+import Link from "next/link";
+import { Entity, Product } from "@/types";
+import { getEntityPath } from "@/lib/catalog";
+import { formatCurrency } from "@/lib/cart";
+import Card, { CardImage, CardContent, CardTitle, CardDescription } from "@/components/ui/Card";
+import { Button } from "../ui";
 
 interface ProductCardProps {
   entity: Entity;
 }
 
+function isProduct(entity: Entity): entity is Product {
+  return entity.type === "product";
+}
+
 export default function ProductCard({ entity }: ProductCardProps) {
   const href = getEntityPath(entity);
-  const isProduct = entity.type === 'product';
-  const price = isProduct ? (entity as any).basePrice : null;
+  const entityIsProduct = isProduct(entity);
 
   return (
-    <Link href={href} className="block h-full">
-      <Card hover className="h-full">
-        <CardImage
-          src={entity.image || '/images/placeholder.jpg'}
-          alt={entity.name}
-        />
-        <CardContent>
-          <CardTitle>{entity.name}</CardTitle>
-          {entity.description && (
-            <CardDescription className="line-clamp-2">
-              {entity.description}
-            </CardDescription>
-          )}
-          {isProduct && (
-            <div className="mt-3 flex items-center justify-between gap-2">
-              <span className="text-lg font-semibold text-primary-600">
-                {price ? formatCurrency(price) : 'POA'}
-              </span>
-              <span className="text-xs text-subtle uppercase tracking-wide truncate">
-                {(entity as any).sku}
-              </span>
-            </div>
-          )}
-          {!isProduct && (
-            <div className="mt-3">
-              <span className="text-sm text-primary-600 font-medium">
-                View Products →
-              </span>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </Link>
+    <Card hover className="h-full">
+      <Link href={href}>
+        <CardImage src={entity.image || ""} alt={entity.name} />
+      </Link>
+      <CardContent>
+        <CardTitle>{entity.name}</CardTitle>
+        {entity.description && <CardDescription className="line-clamp-2">{entity.description}</CardDescription>}
+        {entityIsProduct && (
+          <div className="flex h-full w-full items-center justify-center pt-2">
+            <Link className="w-full" href={href}>
+              <Button variant="outline" className="w-full">
+                Get a Quote
+              </Button>
+            </Link>
+          </div>
+        )}
+        {!entityIsProduct && (
+          <div className="mt-3">
+            <span className="text-primary-600 text-sm font-medium">View Products →</span>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 }

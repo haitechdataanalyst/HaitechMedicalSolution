@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { cn } from '@/lib/utils';
-import ImageWithFallback from './ImageWithFallback';
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface CardProps {
   children: ReactNode;
@@ -9,17 +9,7 @@ interface CardProps {
 }
 
 export default function Card({ children, className, hover = false }: CardProps) {
-  return (
-    <div
-      className={cn(
-        'card',
-        hover && 'card-hover',
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
+  return <div className={cn("card", hover && "card-hover", className)}>{children}</div>;
 }
 
 interface CardImageProps {
@@ -29,13 +19,7 @@ interface CardImageProps {
 }
 
 export function CardImage({ src, alt, className }: CardImageProps) {
-  return (
-    <ImageWithFallback
-      src={src}
-      alt={alt}
-      containerClassName={cn('aspect-square', className)}
-    />
-  );
+  return <ImageWithFallback src={src} alt={alt} containerClassName={cn("aspect-square", className)} />;
 }
 
 interface CardContentProps {
@@ -44,11 +28,7 @@ interface CardContentProps {
 }
 
 export function CardContent({ children, className }: CardContentProps) {
-  return (
-    <div className={cn('p-4 md:p-5', className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("p-4 md:p-5", className)}>{children}</div>;
 }
 
 interface CardTitleProps {
@@ -57,11 +37,7 @@ interface CardTitleProps {
 }
 
 export function CardTitle({ children, className }: CardTitleProps) {
-  return (
-    <h3 className={cn('heading-4 text-[var(--foreground)]', className)}>
-      {children}
-    </h3>
-  );
+  return <h3 className={cn("heading-5 font-bold text-primary-900", className)}>{children}</h3>;
 }
 
 interface CardDescriptionProps {
@@ -70,9 +46,5 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ children, className }: CardDescriptionProps) {
-  return (
-    <p className={cn('text-sm text-muted mt-1', className)}>
-      {children}
-    </p>
-  );
+  return <p className={cn("text-muted mt-1 text-sm", className)}>{children}</p>;
 }

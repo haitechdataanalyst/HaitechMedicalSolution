@@ -393,7 +393,8 @@ body {
   }
 
   .btn-outline:hover:not(:disabled) {
-    background: var(--color-primary-50);
+    background: var(--color-primary-500);
+    color: white;
   }
 
   .btn-ghost {
