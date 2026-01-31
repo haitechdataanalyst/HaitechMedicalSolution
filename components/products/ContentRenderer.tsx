@@ -1,0 +1,53 @@
+import { ContentBlock, Product } from '@/types';
+import {
+  HeroBlock,
+  DescriptionBlock,
+  SpecificationsTable,
+  InfoBlock,
+  ActionsBlock,
+  GalleryBlock,
+} from './blocks';
+
+interface ContentRendererProps {
+  blocks: ContentBlock[];
+  product: Product;
+  section?: 'left' | 'right' | 'all';
+}
+
+// Define which blocks go in which section for the product layout
+const leftSectionBlocks = ['hero', 'gallery'];
+const rightSectionBlocks = ['description', 'actions'];
+const bottomSectionBlocks = ['specifications', 'info'];
+
+export default function ContentRenderer({ blocks, product, section = 'all' }: ContentRendererProps) {
+  const filteredBlocks = blocks.filter((block) => {
+    if (section === 'all') return true;
+    if (section === 'left') return leftSectionBlocks.includes(block.type);
+    if (section === 'right') return rightSectionBlocks.includes(block.type) || bottomSectionBlocks.includes(block.type);
+    return false;
+  });
+
+  return (
+    <div className="space-y-8">
+      {filteredBlocks.map((block, index) => {
+        switch (block.type) {
+          case 'hero':
+            return <HeroBlock key={index} data={block.data} />;
+          case 'description':
+            return <DescriptionBlock key={index} data={block.data} />;
+          case 'specifications':
+            return <SpecificationsTable key={index} data={block.data} />;
+          case 'info':
+            return <InfoBlock key={index} data={block.data} />;
+          case 'actions':
+            return <ActionsBlock key={index} data={block.data} product={product} />;
+          case 'gallery':
+            return <GalleryBlock key={index} data={block.data} />;
+          default:
+            console.warn(`Unknown block type: ${(block as any).type}`);
+            return null;
+        }
+      })}
+    </div>
+  );
+}

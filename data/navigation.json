@@ -1,0 +1,44 @@
+{
+  "header": [
+    {
+      "label": "PRODUCTS",
+      "href": "/products",
+      "children": [
+        { "label": "Loupes", "href": "/product-category/loupes" },
+        { "label": "LED Headlights", "href": "/product-category/lights" },
+        { "label": "Accessories", "href": "/product-category/accessories" }
+      ]
+    },
+    { "label": "ABOUT US", "href": "/about" },
+    { "label": "SUPPORT", "href": "/contact" }
+  ],
+  "footer": {
+    "sections": [
+      {
+        "title": "Products",
+        "links": [
+          { "label": "All Products", "href": "/products" },
+          { "label": "Loupes", "href": "/product-category/loupes" },
+          { "label": "LED Headlights", "href": "/product-category/lights" },
+          { "label": "Accessories", "href": "/product-category/accessories" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/about" },
+          { "label": "Contact", "href": "/contact" },
+          { "label": "Warranty", "href": "/warranty" }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          { "label": "Contact Support", "href": "/contact" },
+          { "label": "Shipping Info", "href": "/shipping" },
+          { "label": "Returns", "href": "/returns" }
+        ]
+      }
+    ]
+  }
+}

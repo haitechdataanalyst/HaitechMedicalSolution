@@ -1,0 +1,26 @@
+{
+  "company": {
+    "name": "Haitech Medical",
+    "email": "info@haitechmedical.com.au",
+    "phone": "+61 2 8000 1234",
+    "address": {
+      "street": "123 Medical Drive",
+      "city": "Sydney",
+      "state": "NSW",
+      "postcode": "2000",
+      "country": "Australia"
+    }
+  },
+  "emails": {
+    "quotes": "quotes@haitechmedical.com.au",
+    "contact": "info@haitechmedical.com.au",
+    "support": "support@haitechmedical.com.au"
+  },
+  "currencies": ["AUD", "NZD"],
+  "defaultCurrency": "AUD",
+  "social": {
+    "facebook": "https://facebook.com/haitechmedical",
+    "instagram": "https://instagram.com/haitechmedical",
+    "linkedin": "https://linkedin.com/company/haitechmedical"
+  }
+}
