@@ -8,13 +8,7 @@
     "image": "/images/products/admetec/admetec-banner.jpg",
     "parent": null,
     "order": 1,
-    "children": [
-      2,
-      3,
-      4,
-      5,
-      6
-    ]
+    "children": [2, 3, 4, 5, 6]
   },
   {
     "id": 2,
@@ -80,11 +74,7 @@
     "image": "/images/products/almadent/almadent-banner.jpg",
     "parent": null,
     "order": 2,
-    "children": [
-      11,
-      12,
-      13
-    ]
+    "children": [11, 12, 13]
   },
   {
     "id": 11,
@@ -128,12 +118,7 @@
     "image": "/images/products/medesy/medesy-banner.jpg",
     "parent": null,
     "order": 3,
-    "children": [
-      21,
-      22,
-      23,
-      24
-    ]
+    "children": [21, 22, 23, 24]
   },
   {
     "id": 21,

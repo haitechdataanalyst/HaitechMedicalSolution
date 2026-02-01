@@ -61,9 +61,7 @@ export function getProductBySlug(slug: string): Product | null {
 // Get top-level categories (parent = null)
 export function getTopCategories(): Category[] {
   const categories = loadCategories();
-  return categories
-    .filter((c) => c.parent === null)
-    .sort((a, b) => (a.order || 0) - (b.order || 0));
+  return categories.filter((c) => c.parent === null).sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
 // Get child categories of a parent category
@@ -81,21 +79,19 @@ export function getChildCategories(parentId: number): Category[] {
 // Get products in a category
 export function getProductsByCategory(categoryId: number): Product[] {
   const products = loadProducts();
-  return products
-    .filter((p) => p.category === categoryId)
-    .sort((a, b) => (a.order || 0) - (b.order || 0));
+  return products.filter((p) => p.category === categoryId).sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
 // Get category children (subcategories or products if no subcategories)
-export function getCategoryContents(categoryId: number): { type: 'categories' | 'products'; items: Category[] | Product[] } {
+export function getCategoryContents(categoryId: number): { type: "categories" | "products"; items: Category[] | Product[] } {
   const childCategories = getChildCategories(categoryId);
-  
+
   if (childCategories.length > 0) {
-    return { type: 'categories', items: childCategories };
+    return { type: "categories", items: childCategories };
   }
-  
+
   const products = getProductsByCategory(categoryId);
-  return { type: 'products', items: products };
+  return { type: "products", items: products };
 }
 
 // Build URL path for a category
@@ -117,18 +113,18 @@ export function getCategoryPath(category: Category): string {
 // Build URL path for a product
 export function getProductPath(product: Product): string {
   const category = getCategoryById(product.category);
-  
+
   if (category) {
     // Build full category path first
     const categoryPath = getCategoryPath(category);
     return `${categoryPath}/${product.slug}`;
   }
-  
+
   return `/product/${product.slug}`;
 }
 
 // Resolve a URL path to find the category or product
-export function resolvePathToEntity(pathSegments: string[]): { type: 'category' | 'product'; entity: Category | Product } | null {
+export function resolvePathToEntity(pathSegments: string[]): { type: "category" | "product"; entity: Category | Product } | null {
   const categories = loadCategories();
   const products = loadProducts();
 
@@ -143,21 +139,19 @@ export function resolvePathToEntity(pathSegments: string[]): { type: 'category' 
   const fullPath = pathSegments.join("/");
   const matchedCategory = categoryPathMap.get(fullPath);
   if (matchedCategory) {
-    return { type: 'category', entity: matchedCategory };
+    return { type: "category", entity: matchedCategory };
   }
 
   // Try to match as a product (last segment is product slug)
   if (pathSegments.length > 0) {
     const productSlug = pathSegments[pathSegments.length - 1];
     const categoryPath = pathSegments.slice(0, -1).join("/");
-    
+
     const parentCategory = categoryPathMap.get(categoryPath);
     if (parentCategory) {
-      const product = products.find(
-        (p) => p.slug === productSlug && p.category === parentCategory.id
-      );
+      const product = products.find((p) => p.slug === productSlug && p.category === parentCategory.id);
       if (product) {
-        return { type: 'product', entity: product };
+        return { type: "product", entity: product };
       }
     }
   }
@@ -196,7 +190,7 @@ export function getCategoryBreadcrumbs(category: Category): Breadcrumb[] {
 // Get breadcrumb trail for a product
 export function getProductBreadcrumbs(product: Product): Breadcrumb[] {
   const category = getCategoryById(product.category);
-  
+
   if (!category) {
     return [
       { name: "Home", path: "/" },
@@ -219,9 +213,7 @@ export function getRelatedProducts(product: Product): Product[] {
   if (!product.relatedProducts || product.relatedProducts.length === 0) return [];
 
   const products = loadProducts();
-  return product.relatedProducts
-    .map((id) => products.find((p) => p.id === id))
-    .filter((p): p is Product => p !== undefined);
+  return product.relatedProducts.map((id) => products.find((p) => p.id === id)).filter((p): p is Product => p !== undefined);
 }
 
 // Get product accessories
@@ -229,9 +221,7 @@ export function getProductAccessories(product: Product): Product[] {
   if (!product.accessories || product.accessories.length === 0) return [];
 
   const products = loadProducts();
-  return product.accessories
-    .map((id) => products.find((p) => p.id === id))
-    .filter((p): p is Product => p !== undefined);
+  return product.accessories.map((id) => products.find((p) => p.id === id)).filter((p): p is Product => p !== undefined);
 }
 
 // Generate all static paths for dynamic routing
