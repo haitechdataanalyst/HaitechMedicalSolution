@@ -1,21 +1,15 @@
 // Entity Types
-export type EntityType = 'category' | 'product';
+export type EntityType = "category" | "product";
 
 // Content Block Types
-export type ContentBlock =
-  | HeroBlock
-  | DescriptionBlock
-  | SpecificationsBlock
-  | InfoBlock
-  | ActionsBlock
-  | GalleryBlock;
+export type ContentBlock = HeroBlock | DescriptionBlock | SpecificationsBlock | InfoBlock | ActionsBlock | GalleryBlock;
 
 // Category type for categories.json
 export interface Category {
   id: number;
   slug: string;
   name: string;
-  type: 'category';
+  type: "category";
   description?: string;
   image?: string;
   parent: number | null;
@@ -72,7 +66,7 @@ export interface BaseEntity {
 
 // Content Blocks
 export interface HeroBlock {
-  type: 'hero';
+  type: "hero";
   data: {
     primaryImage: string;
     gallery?: string[];
@@ -80,7 +74,7 @@ export interface HeroBlock {
 }
 
 export interface DescriptionBlock {
-  type: 'description';
+  type: "description";
   data: {
     primary: string;
     secondary?: string;
@@ -88,7 +82,7 @@ export interface DescriptionBlock {
 }
 
 export interface SpecificationsBlock {
-  type: 'specifications';
+  type: "specifications";
   data: {
     title?: string;
     rows: Array<{
@@ -99,7 +93,7 @@ export interface SpecificationsBlock {
 }
 
 export interface InfoBlock {
-  type: 'info';
+  type: "info";
   data: {
     manufacturer?: string;
     warranty?: string;
@@ -111,7 +105,7 @@ export interface CustomField {
   id?: string;
   name?: string;
   label: string;
-  type: 'text' | 'number' | 'select' | 'textarea';
+  type: "text" | "number" | "select" | "textarea";
   required?: boolean;
   options?: (string | { value: string; label: string })[];
   min?: number;
@@ -119,7 +113,7 @@ export interface CustomField {
 }
 
 export interface ActionsBlock {
-  type: 'actions';
+  type: "actions";
   data: {
     addToCart: boolean;
     customization?: boolean;
@@ -128,10 +122,10 @@ export interface ActionsBlock {
 }
 
 export interface GalleryBlock {
-  type: 'gallery';
+  type: "gallery";
   data: {
     images: string[];
-    layout?: 'grid' | 'carousel';
+    layout?: "grid" | "carousel";
   };
 }
 

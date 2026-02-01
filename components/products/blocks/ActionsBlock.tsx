@@ -171,7 +171,7 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
           <button
             type="button"
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors"
+            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors cursor-pointer"
           >
             -
           </button>
@@ -179,7 +179,7 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
           <button
             type="button"
             onClick={() => setQuantity(quantity + 1)}
-            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors"
+            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors cursor-pointer"
           >
             +
           </button>
@@ -188,7 +188,7 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
 
       {/* Add to Cart Button */}
       <Button onClick={handleAddToCart} className="w-full" size="lg">
-        Add to Quote Cart
+        Add to Cart
       </Button>
 
       <p className="text-muted text-center text-xs">Add items to your cart and request a quote. We&apos;ll respond within 24 hours.</p>

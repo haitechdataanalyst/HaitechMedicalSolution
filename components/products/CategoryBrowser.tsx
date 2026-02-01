@@ -58,7 +58,7 @@ function CategoryItem({ category, isExpanded, level, onCategoryExpand }: Categor
           isExpanded ? "ring-primary-500 shadow-md ring-2" : "group-hover:shadow-md"
         }`}
       >
-        <Image src={categoryImage} alt={category.name} fill className="object-cover" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
+        <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
       </div>
       <span className={`line-clamp-2 max-w-30 text-sm font-medium transition-colors ${isExpanded ? "text-primary-600" : "group-hover:text-primary-600 text-gray-700"}`}>{category.name}</span>
     </button>
@@ -90,13 +90,7 @@ function LevelSection({ title, items, type, level, onCategoryExpand, levelExpand
       <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
         {type === "categories"
           ? (items as CategoryWithPath[]).map((category) => (
-              <CategoryItem
-                key={category.id}
-                category={category}
-                isExpanded={expandedCategoryId === category.id}
-                level={level}
-                onCategoryExpand={onCategoryExpand}
-              />
+              <CategoryItem key={category.id} category={category} isExpanded={expandedCategoryId === category.id} level={level} onCategoryExpand={onCategoryExpand} />
             ))
           : (items as ProductWithPath[]).map((product) => <ProductItem key={product.id} product={product} />)}
       </div>
@@ -157,7 +151,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
 
   // Level 0: Top categories (Products)
   displayLevels.push({
-    title: "Products",
+    title: "",
     type: "categories",
     items: initialCategories,
     level: 0,
@@ -174,7 +168,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
       let categoryName = "Items";
       // Search in previous levels' categories only
       for (const levelData of displayLevels) {
-        if (levelData.type === 'categories') {
+        if (levelData.type === "categories") {
           const found = (levelData.items as CategoryWithPath[]).find((cat) => cat.id === expandedCategoryId);
           if (found) {
             categoryName = found.name;

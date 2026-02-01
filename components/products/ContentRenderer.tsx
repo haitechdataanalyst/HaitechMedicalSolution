@@ -1,31 +1,24 @@
-import { ContentBlock, Product } from '@/types';
-import {
-  HeroBlock,
-  DescriptionBlock,
-  SpecificationsTable,
-  InfoBlock,
-  ActionsBlock,
-  GalleryBlock,
-} from './blocks';
+import { ContentBlock, Product } from "@/types";
+import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock } from "./blocks";
 
 interface ContentRendererProps {
   blocks: ContentBlock[];
   product: Product;
-  section?: 'left' | 'right' | 'all';
+  section?: "left" | "right" | "all";
   selectedVariantImage?: string;
   onVariantSelect?: (imageUrl: string) => void;
 }
 
 // Define which blocks go in which section for the product layout
-const leftSectionBlocks = ['hero', 'gallery'];
-const rightSectionBlocks = ['description', 'actions'];
-const bottomSectionBlocks = ['specifications', 'info'];
+const leftSectionBlocks = ["hero", "gallery"];
+const rightSectionBlocks = ["description", "actions"];
+const bottomSectionBlocks = ["specifications", "info"];
 
-export default function ContentRenderer({ blocks, product, section = 'all', selectedVariantImage, onVariantSelect }: ContentRendererProps) {
+export default function ContentRenderer({ blocks, product, section = "all", selectedVariantImage, onVariantSelect }: ContentRendererProps) {
   const filteredBlocks = blocks.filter((block) => {
-    if (section === 'all') return true;
-    if (section === 'left') return leftSectionBlocks.includes(block.type);
-    if (section === 'right') return rightSectionBlocks.includes(block.type) || bottomSectionBlocks.includes(block.type);
+    if (section === "all") return true;
+    if (section === "left") return leftSectionBlocks.includes(block.type);
+    if (section === "right") return rightSectionBlocks.includes(block.type) || bottomSectionBlocks.includes(block.type);
     return false;
   });
 
@@ -33,20 +26,20 @@ export default function ContentRenderer({ blocks, product, section = 'all', sele
     <div className="space-y-8">
       {filteredBlocks.map((block, index) => {
         switch (block.type) {
-          case 'hero':
+          case "hero":
             return <HeroBlock key={index} data={block.data} externalSelectedImage={selectedVariantImage} />;
-          case 'description':
+          case "description":
             return <DescriptionBlock key={index} data={block.data} />;
-          case 'specifications':
+          case "specifications":
             return <SpecificationsTable key={index} data={block.data} />;
-          case 'info':
+          case "info":
             return <InfoBlock key={index} data={block.data} />;
-          case 'actions':
+          case "actions":
             return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} />;
-          case 'gallery':
+          case "gallery":
             return <GalleryBlock key={index} data={block.data} />;
           default:
-            console.warn(`Unknown block type: ${(block as any).type}`);
+            console.warn(`Unknown block type`);
             return null;
         }
       })}

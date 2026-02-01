@@ -45,7 +45,7 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
               key={product.slug} 
               entity={product} 
               href={product.path}
-              image={product.defaultImage || product.image}
+              image={product.defaultImage}
             />
           ))}
         </Carousel>
