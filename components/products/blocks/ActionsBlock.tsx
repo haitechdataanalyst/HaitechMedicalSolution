@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
-import { Button, Input, Select } from "@/components/ui";
+import { Button, Input, Select, WhatsAppButton } from "@/components/ui";
 import FrameColorSelector from "./FrameColorSelector";
 
 interface ActionsBlockProps {
@@ -210,9 +210,17 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
       </div> */}
 
       {/* Add to Cart Button */}
-      <Button onClick={handleAddToCart} className="w-full" size="lg">
-        Add to Cart
-      </Button>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Button onClick={handleAddToCart} className="flex-1" size="lg">
+          Add to Cart
+        </Button>
+        <WhatsAppButton
+          phoneNumber="+918291939355"
+          message={`Hi, I'm interested in ${product.name} (SKU: ${product.sku}). Can you provide more details?`}
+          size="lg"
+          className="flex-1"
+        />
+      </div>
 
       <p className="text-muted text-center text-xs">Add items to your cart and request a quote. We&apos;ll respond within 24 hours.</p>
     </div>

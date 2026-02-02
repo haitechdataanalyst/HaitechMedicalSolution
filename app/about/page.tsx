@@ -153,7 +153,7 @@ export default function AboutPage() {
               dental care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/support/contact">
                 <Button size="lg" className="px-10">
                   Contact Us
                 </Button>

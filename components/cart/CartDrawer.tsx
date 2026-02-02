@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useCart } from './CartProvider';
-import { QuoteForm } from './index';
-import { formatCurrency, calculateCartTotal, getCartItemKey } from '@/lib/cart';
-import { cn } from '@/lib/utils';
-import { CloseIcon, CartIcon, TrashIcon, ImageIcon } from '@/components/icons';
+import { useEffect, useState } from "react";
+import { useCart } from "./CartProvider";
+import { QuoteForm } from "./index";
+import { formatCurrency, calculateCartTotal, getCartItemKey } from "@/lib/cart";
+import { cn } from "@/lib/utils";
+import { CloseIcon, CartIcon, TrashIcon, ImageIcon } from "@/components/icons";
+import { WhatsAppButton } from "@/components/ui";
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, updateQuantity } = useCart();
@@ -14,32 +15,32 @@ export default function CartDrawer() {
   // Prevent body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeCart();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen, closeCart]);
-  
+
   // Reset quote form state when opening/closing drawer
   const handleCloseCart = () => {
     setShowQuoteForm(false);
@@ -51,31 +52,14 @@ export default function CartDrawer() {
   return (
     <>
       {/* Overlay */}
-      <div
-        className={cn(
-          'fixed inset-0 bg-black/50 z-40 transition-opacity duration-300',
-          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        )}
-        onClick={handleCloseCart}
-      />
+      <div className={cn("fixed inset-0 z-40 bg-black/50 transition-opacity duration-300", isOpen ? "visible opacity-100" : "invisible opacity-0")} onClick={handleCloseCart} />
 
       {/* Drawer */}
-      <div
-        className={cn(
-          'fixed top-0 right-0 h-full w-full sm:max-w-md bg-surface z-50 shadow-xl transition-transform duration-300 flex flex-col',
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        )}
-      >
+      <div className={cn("bg-surface fixed top-0 right-0 z-50 flex h-full w-full flex-col shadow-xl transition-transform duration-300 sm:max-w-md", isOpen ? "translate-x-0" : "translate-x-full")}>
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-[var(--border-color)]">
-          <h2 className="text-lg font-semibold text-[var(--foreground)]">
-            {showQuoteForm ? 'Request Quote' : 'Your Cart'}
-          </h2>
-          <button
-            onClick={handleCloseCart}
-            className="icon-btn"
-            aria-label="Close cart"
-          >
+        <div className="flex items-center justify-between border-b border-[var(--border-color)] p-4">
+          <h2 className="text-lg font-semibold text-[var(--foreground)]">{showQuoteForm ? "Request Quote" : "Your Cart"}</h2>
+          <button onClick={handleCloseCart} className="icon-btn cursor-pointer" aria-label="Close cart">
             <CloseIcon size={20} />
           </button>
         </div>
@@ -91,48 +75,39 @@ export default function CartDrawer() {
               }}
             />
           ) : items.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full text-center p-8">
-              <CartIcon size={64} className="text-neutral-300 mb-4" />
-              <h3 className="text-lg font-medium text-foreground mb-1">Your cart is empty</h3>
+            <div className="flex h-full flex-col items-center justify-center p-8 text-center">
+              <CartIcon size={64} className="mb-4 text-neutral-300" />
+              <h3 className="text-foreground mb-1 text-lg font-medium">Your cart is empty</h3>
               <p className="text-muted text-sm">Add products to get started</p>
             </div>
           ) : (
-            <div className="p-4 space-y-4">
+            <div className="space-y-4 p-4">
               {items.map((item) => {
                 const itemKey = getCartItemKey(item);
 
                 return (
-                  <div
-                    key={itemKey}
-                    className="flex gap-3 sm:gap-4 p-3 bg-surface-secondary rounded-lg"
-                  >
+                  <div key={itemKey} className="bg-surface-secondary flex gap-3 rounded-lg p-3 sm:gap-4">
                     {/* Image */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-neutral-200 rounded-lg shrink-0 overflow-hidden">
+                    <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-200 sm:h-20 sm:w-20">
                       {item.image ? (
-                        <img
-                          src={item.image}
-                          alt={item.productName}
-                          className="w-full h-full object-cover"
-                        />
+                        <img src={item.image} alt={item.productName} className="h-full w-full object-cover" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-neutral-400">
+                        <div className="flex h-full w-full items-center justify-center text-neutral-400">
                           <ImageIcon size={32} />
                         </div>
                       )}
                     </div>
 
                     {/* Details */}
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-foreground truncate text-sm sm:text-base">
-                        {item.productName}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-muted">{item.sku}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-foreground truncate text-sm font-medium sm:text-base">{item.productName}</h4>
+                      <p className="text-muted text-xs sm:text-sm">{item.sku}</p>
 
                       {/* Customization */}
                       {item.customization && Object.keys(item.customization).length > 0 && (
                         <div className="mt-1 space-y-0.5">
                           {Object.entries(item.customization).map(([key, value]) => (
-                            <p key={key} className="text-xs text-subtle">
+                            <p key={key} className="text-subtle text-xs">
                               {key}: {value}
                             </p>
                           ))}
@@ -140,36 +115,28 @@ export default function CartDrawer() {
                       )}
 
                       {/* Price & Quantity */}
-                      <div className="flex items-center justify-between mt-2 gap-2">
+                      {/* <div className="mt-2 flex items-center justify-between gap-2">
                         <div className="flex items-center gap-1 sm:gap-2">
                           <button
                             onClick={() => updateQuantity(itemKey, item.quantity - 1)}
-                            className="w-7 h-7 flex items-center justify-center text-muted hover:text-foreground hover:bg-surface-tertiary rounded"
+                            className="text-muted hover:text-foreground hover:bg-surface-tertiary flex h-7 w-7 items-center justify-center rounded"
                           >
                             -
                           </button>
-                          <span className="text-sm font-medium w-6 text-center">
-                            {item.quantity}
-                          </span>
+                          <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(itemKey, item.quantity + 1)}
-                            className="w-7 h-7 flex items-center justify-center text-muted hover:text-foreground hover:bg-surface-tertiary rounded"
+                            className="text-muted hover:text-foreground hover:bg-surface-tertiary flex h-7 w-7 items-center justify-center rounded"
                           >
                             +
                           </button>
                         </div>
-                        <span className="text-sm font-medium text-foreground">
-                          {item.basePrice ? formatCurrency(item.basePrice * item.quantity) : 'POA'}
-                        </span>
-                      </div>
+                        <span className="text-foreground text-sm font-medium">{item.basePrice ? formatCurrency(item.basePrice * item.quantity) : "POA"}</span>
+                      </div> */}
                     </div>
 
                     {/* Remove Button */}
-                    <button
-                      onClick={() => removeItem(itemKey)}
-                      className="text-neutral-400 hover:text-error p-1 shrink-0"
-                      aria-label="Remove item"
-                    >
+                    <button onClick={() => removeItem(itemKey)} className="hover:text-error shrink-0 cursor-pointer p-1 text-neutral-400" aria-label="Remove item">
                       <TrashIcon size={20} />
                     </button>
                   </div>
@@ -181,26 +148,22 @@ export default function CartDrawer() {
 
         {/* Footer */}
         {items.length > 0 && !showQuoteForm && (
-          <div className="border-t border-[var(--border-color)] p-4 space-y-4">
+          <div className="space-y-4 border-t border-[var(--border-color)] p-4">
             {/* Total */}
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <span className="text-muted">Subtotal</span>
-              <span className="text-lg font-semibold text-[var(--foreground)]">
-                {formatCurrency(total)}
-              </span>
+              <span className="text-foreground text-lg font-semibold">{formatCurrency(total)}</span>
+            </div> */}
+
+            <p className="text-subtle text-center text-xs">Final pricing confirmed upon quote request</p>
+
+            {/* Request Quote & WhatsApp Buttons */}
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <button onClick={() => setShowQuoteForm(true)} className="btn btn-primary btn-lg flex-1">
+                Request Quote
+              </button>
+              <WhatsAppButton phoneNumber="+918291939355" message="Hi, I have some items in my cart and would like to inquire about pricing and availability." size="lg" className="flex-1" />
             </div>
-
-            <p className="text-xs text-subtle text-center">
-              Final pricing confirmed upon quote request
-            </p>
-
-            {/* Request Quote Button */}
-            <button
-              onClick={() => setShowQuoteForm(true)}
-              className="btn btn-primary btn-lg w-full"
-            >
-              Request Quote
-            </button>
           </div>
         )}
       </div>

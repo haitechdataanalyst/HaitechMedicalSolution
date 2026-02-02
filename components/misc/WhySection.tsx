@@ -47,7 +47,7 @@ export default function WhySection() {
         </div>
 
         <div className="text-center">
-          <Link href="/contact?demo=true">
+          <Link href="/support/contact?demo=true">
             <Button size="lg" className="text-primary-600 bg-white hover:bg-neutral-100 px-20">
               Book a Demo
             </Button>

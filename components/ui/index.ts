@@ -8,3 +8,5 @@ export { default as ImageWithFallback } from './ImageWithFallback';
 export { default as Carousel } from './Carousel';
 export { default as CountrySelect, countries } from './CountrySelect';
 export type { Country, CountrySelectProps } from './CountrySelect';
+export { default as WhatsAppButton } from './WhatsAppButton';
+export type { WhatsAppButtonProps } from './WhatsAppButton';
