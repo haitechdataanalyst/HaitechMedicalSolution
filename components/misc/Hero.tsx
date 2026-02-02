@@ -35,7 +35,7 @@ export default function Hero() {
                 Browse Products
               </Button>
             </Link>
-            <Link href="/contact" className="w-full sm:w-auto">
+            <Link href="/support/contact" className="w-full sm:w-auto">
               <Button size="lg" variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
                 Contact Us
               </Button>

@@ -7,7 +7,7 @@ import testimonialsData from "@/data/testimonials.json";
 export default function Home() {
   const products = getAllProducts().slice(0, 8);
   // Add paths to products for client-side linking
-  const featuredProducts = products.map(p => ({ ...p, path: getProductPath(p) }));
+  const featuredProducts = products.map((p) => ({ ...p, path: getProductPath(p) }));
   const testimonials = testimonialsData.testimonials;
 
   return (

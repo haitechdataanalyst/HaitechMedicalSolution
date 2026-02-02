@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { HeroBlock as HeroBlockType, Product } from "@/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -15,6 +15,11 @@ interface HeroBlockProps {
 
 export default function HeroBlock({ data, product, externalSelectedImage }: HeroBlockProps) {
   const [userSelectedImage, setUserSelectedImage] = useState<string | null>(null);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
+  const handleImageError = useCallback((imageSrc: string) => {
+    setFailedImages((prev) => new Set(prev).add(imageSrc));
+  }, []);
 
   // Build the image gallery based on variant images or static gallery
   const buildImageGallery = (): string[] => {
@@ -91,15 +96,12 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
       {/* Main Image */}
       <div className="bg-surface-secondary relative aspect-square overflow-hidden rounded-xl">
         <Image
-          src={selectedImage}
+          src={failedImages.has(selectedImage) ? PLACEHOLDER_IMAGE : selectedImage}
           alt="Product"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = PLACEHOLDER_IMAGE;
-          }}
+          onError={() => handleImageError(selectedImage)}
         />
       </div>
 
@@ -116,15 +118,12 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
               )}
             >
               <Image
-                src={image}
+                src={failedImages.has(image) ? PLACEHOLDER_IMAGE : image}
                 alt={`Product view ${index + 1}`}
                 width={80}
                 height={80}
                 className="object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = PLACEHOLDER_IMAGE;
-                }}
+                onError={() => handleImageError(image)}
               />
             </button>
           ))}

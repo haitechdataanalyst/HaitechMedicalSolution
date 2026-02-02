@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useMemo, useRef, useLayoutEffect } from "react";
+import { useState, useMemo, useRef, useLayoutEffect, useCallback } from "react";
 import { Frame, FrameVariantConfig } from "@/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+
+const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
 interface FrameColorSelectorProps {
   frames: Frame[];
@@ -43,6 +45,13 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
 
   // Track if we've notified parent of initial selection
   const hasNotifiedInitial = useRef(false);
+
+  // Track which frame images have failed to load
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
+  const handleImageError = useCallback((frameId: string) => {
+    setFailedImages((prev) => new Set(prev).add(frameId));
+  }, []);
 
   // Get currently available colors based on selected frame
   const availableColors = useMemo(() => {
@@ -112,22 +121,12 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
               type="button"
               onClick={() => handleFrameSelect(frame.id)}
               className={cn(
-                "group relative flex flex-col items-center gap-2 rounded-lg border-2 p-3 transition-all",
+                "group relative flex flex-col items-center gap-2 rounded-lg border-2 p-1 transition-all",
                 selectedFrameId === frame.id ? "border-primary-500 bg-primary-50" : "hover:border-primary-300 cursor-pointer border-neutral-200 bg-white hover:bg-neutral-50"
               )}
             >
               <div className="relative h-16 w-24 overflow-hidden rounded">
-                <Image
-                  src={frame.image}
-                  alt={frame.name}
-                  fill
-                  sizes="96px"
-                  className="object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/placeholder.svg";
-                  }}
-                />
+                <Image src={failedImages.has(frame.id) ? PLACEHOLDER_IMAGE : frame.image} alt={frame.name} fill sizes="96px" className="object-contain" onError={() => handleImageError(frame.id)} />
               </div>
               <span className={cn("text-sm font-medium", selectedFrameId === frame.id ? "text-primary-700" : "text-neutral-600")}>{frame.name}</span>
             </button>
