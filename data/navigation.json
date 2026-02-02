@@ -10,7 +10,7 @@
       ]
     },
     { "label": "ABOUT US", "href": "/about" },
-    { "label": "SUPPORT", "href": "/contact" }
+    { "label": "SUPPORT", "href": "/support" }
   ],
   "footer": {
     "sections": [

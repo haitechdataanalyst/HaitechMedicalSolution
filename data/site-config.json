@@ -1,20 +1,21 @@
 {
   "company": {
     "name": "Haitech Medical",
-    "email": "info@haitechmedical.com.au",
-    "phone": "+61 2 8000 1234",
+    "email": "sales@haitech-group.com",
+    "phone": "+91 8291939355",
     "address": {
-      "street": "123 Medical Drive",
-      "city": "Sydney",
-      "state": "NSW",
-      "postcode": "2000",
-      "country": "Australia"
-    }
+  "street": "Office No. 912, 9th Floor, Kohinoor Compound, Swastik Disa Corporate Park, Lal Bahadur Shastri Marg, Opp. Shreyas Cinema Road, Nityanand Nagar",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "postcode": "400086",
+  "country": "India"
+}
+
   },
   "emails": {
     "quotes": "quotes@haitechmedical.com.au",
     "contact": "info@haitechmedical.com.au",
-    "support": "support@haitechmedical.com.au"
+    "support": "sales@haitech-group.com"
   },
   "currencies": ["AUD", "NZD"],
   "defaultCurrency": "AUD",
