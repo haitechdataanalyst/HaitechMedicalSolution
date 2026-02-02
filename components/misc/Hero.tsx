@@ -1,44 +1,80 @@
+"use client";
+
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import Image from "next/image";
+import { Button, Carousel } from "@/components/ui";
+
+const heroSlides = [
+  {
+    image: "/images/hero/medical-equipment-1.jpg",
+  },
+  {
+    image: "/images/hero/dental-loupes-2.jpg",
+  },
+  {
+    image: "/images/hero/led-headlights-3.jpg",
+  },
+];
+
+// Static hero content that floats above the carousel
+const heroContent = {
+  title: "Premium Medical & Dental Equipment",
+  description: "Australia's trusted supplier of precision loupes, LED headlights, and professional accessories for healthcare professionals.",
+};
 
 export default function Hero() {
-  return (
-    <section className="relative bg-primary-gradient text-white overflow-hidden min-h-100 h-[calc(100vh-8rem)] flex items-center">
-      <div className="container section-lg">
-        <div className="max-w-3xl relative z-10">
-          <h1 className="heading-1 mb-6">Premium Medical & Dental Equipment</h1>
-          <p className="text-body-lg text-primary-100 mb-8">
-            Australia&apos;s trusted supplier of precision loupes, LED
-            headlights, and professional accessories for healthcare
-            professionals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+  const overlayContent = (
+    <div className="flex h-full items-center">
+      <div className="section-lg container">
+        <div className="max-w-3xl">
+          <h1 className="heading-1 animate-fade-in mb-6 text-white">{heroContent.title}</h1>
+          <p className="text-body-lg text-primary-100 animate-fade-in-delay mb-8">{heroContent.description}</p>
+          <div className="animate-fade-in-delay-2 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Link href="/products" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-white text-primary-600 hover:bg-neutral-100"
-              >
+              <Button size="lg" className="text-primary-600 w-full bg-white hover:bg-neutral-100 sm:w-auto">
                 Browse Products
               </Button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-white text-white hover:bg-white/10"
-              >
+              <Button size="lg" variant="outline" className="w-full border-white text-white hover:bg-white/10 sm:w-auto">
                 Contact Us
               </Button>
             </Link>
           </div>
         </div>
       </div>
-      {/* Decorative elements */}
-      <div className="absolute right-0 bottom-0 w-1/2 md:w-1/3 h-full opacity-10 pointer-events-none">
-        <svg viewBox="0 0 400 400" className="w-full h-full">
-          <circle cx="300" cy="300" r="200" fill="white" />
-        </svg>
-      </div>
+    </div>
+  );
+
+  return (
+    <section className="relative overflow-hidden">
+      <Carousel
+        autoPlay
+        autoPlayInterval={5000}
+        showArrows
+        showDots
+        loop
+        slidesToShow={1}
+        gap={0}
+        arrowVariant="ghost"
+        arrowSize="lg"
+        noPadding
+        dotsPosition="inside"
+        overlayContent={overlayContent}
+        className="hero-carousel"
+      >
+        {heroSlides.map((slide, index) => (
+          <div key={index} className="relative h-[calc(100vh-8rem)] min-h-150">
+            {/* Background Image */}
+            <div className="bg-primary-gradient absolute inset-0">
+              <Image src={slide.image} alt="Hero background" fill className="object-cover opacity-30" priority={index === 0} />
+            </div>
+
+            {/* Overlay gradient for better text readability */}
+            <div className="from-primary-900/80 via-primary-800/60 absolute inset-0 bg-linear-to-r to-transparent" />
+          </div>
+        ))}
+      </Carousel>
     </section>
   );
 }

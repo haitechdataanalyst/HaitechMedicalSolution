@@ -1,4 +1,4 @@
-import { ContentBlock, Product } from "@/types";
+import { ContentBlock, Product, Frame } from "@/types";
 import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock } from "./blocks";
 
 interface ContentRendererProps {
@@ -7,6 +7,7 @@ interface ContentRendererProps {
   section?: "left" | "right" | "all";
   selectedVariantImage?: string;
   onVariantSelect?: (imageUrl: string) => void;
+  frames?: Frame[];
 }
 
 // Define which blocks go in which section for the product layout
@@ -14,7 +15,7 @@ const leftSectionBlocks = ["hero", "gallery"];
 const rightSectionBlocks = ["description", "actions"];
 const bottomSectionBlocks = ["specifications", "info"];
 
-export default function ContentRenderer({ blocks, product, section = "all", selectedVariantImage, onVariantSelect }: ContentRendererProps) {
+export default function ContentRenderer({ blocks, product, section = "all", selectedVariantImage, onVariantSelect, frames = [] }: ContentRendererProps) {
   const filteredBlocks = blocks.filter((block) => {
     if (section === "all") return true;
     if (section === "left") return leftSectionBlocks.includes(block.type);
@@ -27,7 +28,7 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
       {filteredBlocks.map((block, index) => {
         switch (block.type) {
           case "hero":
-            return <HeroBlock key={index} data={block.data} externalSelectedImage={selectedVariantImage} />;
+            return <HeroBlock key={index} data={block.data} product={product} externalSelectedImage={selectedVariantImage} />;
           case "description":
             return <DescriptionBlock key={index} data={block.data} />;
           case "specifications":
@@ -35,7 +36,7 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
           case "info":
             return <InfoBlock key={index} data={block.data} />;
           case "actions":
-            return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} />;
+            return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} frames={frames} />;
           case "gallery":
             return <GalleryBlock key={index} data={block.data} />;
           default:

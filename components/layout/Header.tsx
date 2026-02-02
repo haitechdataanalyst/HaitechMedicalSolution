@@ -6,16 +6,13 @@ import Navigation from "./Navigation";
 import MobileMenu from "./MobileMenu";
 import { CartButton } from "@/components/cart";
 import { MenuIcon } from "@/components/icons";
-import { NavItem } from "@/types";
 import Image from "next/image";
 import { Button } from "../ui";
+import { useHeaderNavigation } from "./NavigationProvider";
 
-interface HeaderProps {
-  navigation: NavItem[];
-}
-
-export default function Header({ navigation }: HeaderProps) {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigation = useHeaderNavigation();
 
   return (
     <header className="bg-surface sticky top-0 z-50 border-b border-neutral-200">
@@ -27,7 +24,7 @@ export default function Header({ navigation }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <Navigation items={navigation} />
+          <Navigation />
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-1 md:gap-9">

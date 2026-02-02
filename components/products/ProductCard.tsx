@@ -10,13 +10,13 @@ interface ProductCardProps {
 }
 
 function isProduct(entity: Product | Category): entity is Product {
-  return 'sku' in entity;
+  return "sku" in entity;
 }
 
 export default function ProductCard({ entity, href, image }: ProductCardProps) {
   const entityIsProduct = isProduct(entity);
-  
-  const displayImage = image || '/images/placeholder.jpg';
+
+  const displayImage = image || "/images/placeholder.jpg";
 
   return (
     <Card hover className="h-full">

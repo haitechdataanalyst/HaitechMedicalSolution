@@ -9,6 +9,7 @@ import {
   getCategoryPath,
   getRelatedProducts,
   getProductAccessories,
+  getAllFrames,
 } from "@/lib/catalog";
 import { Product, Category } from "@/types";
 import { ProductDetail } from "@/components/products";
@@ -55,11 +56,12 @@ export default async function CategoryPage({ params }: PageProps) {
     const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
     console.log("RElated Products:", relatedProducts);
     const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
+    const frames = getAllFrames();
 
     return (
       <>
         <Breadcrumbs items={breadcrumbs} />
-        <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} />
+        <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} />
       </>
     );
   }

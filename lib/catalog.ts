@@ -1,12 +1,14 @@
 import fs from "fs";
 import path from "path";
-import { Product, Category, Breadcrumb } from "@/types";
+import { Product, Category, Breadcrumb, Frame, FramesData } from "@/types";
 
 const categoriesPath = path.join(process.cwd(), "data", "categories.json");
 const productsPath = path.join(process.cwd(), "data", "products.json");
+const framesPath = path.join(process.cwd(), "data", "frames.json");
 
 let categoriesCache: Category[] | null = null;
 let productsCache: Product[] | null = null;
+let framesCache: Frame[] | null = null;
 
 function loadCategories(): Category[] {
   if (!categoriesCache) {
@@ -22,6 +24,26 @@ function loadProducts(): Product[] {
     productsCache = JSON.parse(fileContents);
   }
   return productsCache!;
+}
+
+function loadFrames(): Frame[] {
+  if (!framesCache) {
+    const fileContents = fs.readFileSync(framesPath, "utf8");
+    const data: FramesData = JSON.parse(fileContents);
+    framesCache = data.frames;
+  }
+  return framesCache!;
+}
+
+// Get all frames
+export function getAllFrames(): Frame[] {
+  return loadFrames();
+}
+
+// Get frame by ID
+export function getFrameById(id: string): Frame | null {
+  const frames = loadFrames();
+  return frames.find((f) => f.id === id) || null;
 }
 
 // Get all categories

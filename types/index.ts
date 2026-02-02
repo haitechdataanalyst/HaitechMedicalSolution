@@ -15,9 +15,39 @@ export interface Category {
   parent: number | null;
   order: number;
   children: number[];
+  specialPage?: string; // Optional URL for categories with their own dedicated page (e.g., "/our-frames")
 }
 
-// Product Variant type
+// Frame Color type for frames.json
+export interface FrameColor {
+  id: string;
+  name: string;
+  hex: string | string[]; // Single color or array for gradients/combinations
+  image?: string; // Optional image path for this specific color variant
+}
+
+// Frame type for frames.json
+export interface Frame {
+  id: string;
+  name: string;
+  image: string;
+  priceModifier: number;
+  colors: FrameColor[];
+}
+
+// Frames data structure
+export interface FramesData {
+  frames: Frame[];
+}
+
+// Frame variant configuration for products with frame-color variants
+export interface FrameVariantConfig {
+  availableFrames: string[]; // References to frame IDs from frames.json
+  images: Record<string, string>; // Maps "frameId-colorId" to image path
+  skuPattern?: string; // Pattern for generating SKUs e.g., "{baseSku}-{frame}-{color}"
+}
+
+// Product Variant type (legacy, for non-frame variants like grit, etc.)
 export interface ProductVariant {
   id: string;
   frameStyle?: string;
@@ -42,7 +72,8 @@ export interface Product {
   colorCode?: string;
   hasVariants?: boolean;
   variantType?: string;
-  variants?: ProductVariant[];
+  variants?: ProductVariant[]; // Legacy flat variants
+  frameVariants?: FrameVariantConfig; // New structured frame variants
   defaultImage?: string;
   gallery?: string[];
   contentBlocks: ContentBlock[];
@@ -68,8 +99,9 @@ export interface BaseEntity {
 export interface HeroBlock {
   type: "hero";
   data: {
-    primaryImage: string;
+    primaryImage?: string;
     gallery?: string[];
+    useVariantImages?: boolean;
   };
 }
 

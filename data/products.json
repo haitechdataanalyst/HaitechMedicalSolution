@@ -12,48 +12,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-3.0x-indie-black",
-        "frameStyle": "Indie",
-        "color": "Black",
-        "sku": "ADM-E-30-IND-BLK",
-        "image": "/images/products/admetec/ergo/ergo-3.0x-indie-black.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-3.0x-blues-blue",
-        "frameStyle": "Blues",
-        "color": "Blue",
-        "sku": "ADM-E-30-BLU-BLU",
-        "image": "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-3.0x-blues-bronze",
-        "frameStyle": "Blues",
-        "color": "Bronze and Light Blue",
-        "sku": "ADM-E-30-BLU-BRZ",
-        "image": "/images/products/admetec/ergo/ergo-3.0x-blues-bronze.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-3.0x-soul-burgundy-gold",
-        "frameStyle": "Soul",
-        "color": "Burgundy Gold",
-        "sku": "ADM-E-30-SOL-BUR",
-        "image": "/images/products/admetec/ergo/ergo-3.0x-soul-burgundy-gold.jpg",
-        "priceModifier": 100
-      },
-      {
-        "id": "ergo-3.0x-soul-turquoise",
-        "frameStyle": "Soul",
-        "color": "Turquoise",
-        "sku": "ADM-E-30-SOL-TRQ",
-        "image": "/images/products/admetec/ergo/ergo-3.0x-soul-turquoise.jpg",
-        "priceModifier": 100
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
     "contentBlocks": [
       {
@@ -102,7 +60,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Ergo 3.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
+          "packageContents": [
+            "Ergo 3.0x loupe system",
+            "Selected frame",
+            "Protective case",
+            "Microfiber cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -163,7 +127,25 @@
         }
       }
     ],
-    "relatedProducts": [102, 103, 201]
+    "relatedProducts": [
+      102,
+      103,
+      201
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "indie",
+        "blues",
+        "soul"
+      ],
+      "images": {
+        "indie-black": "/images/products/admetec/ergo/ergo-3.0x-indie-black.jpg",
+        "blues-blue": "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
+        "blues-bronze-light-blue": "/images/products/admetec/ergo/ergo-3.0x-blues-bronze.jpg",
+        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-3.0x-soul-burgundy-gold.jpg",
+        "soul-turquoise": "/images/products/admetec/ergo/ergo-3.0x-soul-turquoise.jpg"
+      }
+    }
   },
   {
     "id": 102,
@@ -178,40 +160,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-4.0x-blues-blue",
-        "frameStyle": "Blues",
-        "color": "Blue",
-        "sku": "ADM-E-40-BLU-BLU",
-        "image": "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-4.0x-blues-pink",
-        "frameStyle": "Blues",
-        "color": "Pink",
-        "sku": "ADM-E-40-BLU-PNK",
-        "image": "/images/products/admetec/ergo/ergo-4.0x-blues-pink.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-4.0x-indie-champagne",
-        "frameStyle": "Indie",
-        "color": "Champagne",
-        "sku": "ADM-E-40-IND-CHP",
-        "image": "/images/products/admetec/ergo/ergo-4.0x-indie-champagne.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-4.0x-soul-brown",
-        "frameStyle": "Soul",
-        "color": "Brown and Light Blue",
-        "sku": "ADM-E-40-SOL-BRN",
-        "image": "/images/products/admetec/ergo/ergo-4.0x-soul-brown.jpg",
-        "priceModifier": 100
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
     "contentBlocks": [
       {
@@ -260,7 +208,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Ergo 4.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
+          "packageContents": [
+            "Ergo 4.0x loupe system",
+            "Selected frame",
+            "Protective case",
+            "Microfiber cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -321,7 +275,24 @@
         }
       }
     ],
-    "relatedProducts": [101, 103, 104]
+    "relatedProducts": [
+      101,
+      103,
+      104
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "indie",
+        "soul"
+      ],
+      "images": {
+        "blues-blue": "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
+        "blues-pink": "/images/products/admetec/ergo/ergo-4.0x-blues-pink.jpg",
+        "indie-champagne": "/images/products/admetec/ergo/ergo-4.0x-indie-champagne.jpg",
+        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-4.0x-soul-brown.jpg"
+      }
+    }
   },
   {
     "id": 103,
@@ -336,48 +307,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-5.0x-blues-purple",
-        "frameStyle": "Blues",
-        "color": "Purple",
-        "sku": "ADM-E-50-BLU-PUR",
-        "image": "/images/products/admetec/ergo/ergo-5.0x-blues-purple.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-5.0x-blues-rose-gold",
-        "frameStyle": "Blues",
-        "color": "Rose Gold",
-        "sku": "ADM-E-50-BLU-RSG",
-        "image": "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-5.0x-jazz-turquoise",
-        "frameStyle": "Jazz",
-        "color": "Turquoise Rose Gold",
-        "sku": "ADM-E-50-JAZ-TRQ",
-        "image": "/images/products/admetec/ergo/ergo-5.0x-jazz-turquoise.jpg",
-        "priceModifier": 100
-      },
-      {
-        "id": "ergo-5.0x-soul-black",
-        "frameStyle": "Soul",
-        "color": "Black",
-        "sku": "ADM-E-50-SOL-BLK",
-        "image": "/images/products/admetec/ergo/ergo-5.0x-soul-black.jpg",
-        "priceModifier": 100
-      },
-      {
-        "id": "ergo-5.0x-soul-burgundy-gold",
-        "frameStyle": "Soul",
-        "color": "Burgundy Gold",
-        "sku": "ADM-E-50-SOL-BUR",
-        "image": "/images/products/admetec/ergo/ergo-5.0x-soul-burgundy-gold.jpg",
-        "priceModifier": 100
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-5.0x-blues-purple.jpg",
     "contentBlocks": [
       {
@@ -426,7 +355,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Ergo 5.0x loupe system", "Selected frame", "Hard protective case", "Microfiber cleaning cloth", "User manual"]
+          "packageContents": [
+            "Ergo 5.0x loupe system",
+            "Selected frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -487,7 +422,25 @@
         }
       }
     ],
-    "relatedProducts": [102, 104, 105]
+    "relatedProducts": [
+      102,
+      104,
+      105
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "jazz",
+        "soul"
+      ],
+      "images": {
+        "blues-purple": "/images/products/admetec/ergo/ergo-5.0x-blues-purple.jpg",
+        "blues-rose-gold": "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/ergo/ergo-5.0x-jazz-turquoise.jpg",
+        "soul-black": "/images/products/admetec/ergo/ergo-5.0x-soul-black.jpg",
+        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-5.0x-soul-burgundy-gold.jpg"
+      }
+    }
   },
   {
     "id": 104,
@@ -502,40 +455,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-6.0x-blues-black",
-        "frameStyle": "Blues",
-        "color": "Black",
-        "sku": "ADM-E-60-BLU-BLK",
-        "image": "/images/products/admetec/ergo/ergo-6.0x-blues-black.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-6.0x-soul-burgundy-gold",
-        "frameStyle": "Soul",
-        "color": "Burgundy Gold",
-        "sku": "ADM-E-60-SOL-BUR",
-        "image": "/images/products/admetec/ergo/ergo-6.0x-burgundy-gold.jpg",
-        "priceModifier": 100
-      },
-      {
-        "id": "ergo-6.0x-indie-black",
-        "frameStyle": "Indie",
-        "color": "Black",
-        "sku": "ADM-E-60-IND-BLK",
-        "image": "/images/products/admetec/ergo/ergo-6.0x-indie-black.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-6.0x-indie-orange-lava",
-        "frameStyle": "Indie",
-        "color": "Orange Lava",
-        "sku": "ADM-E-60-IND-ORG",
-        "image": "/images/products/admetec/ergo/ergo-6.0x-indie-orange-lava.jpg",
-        "priceModifier": 75
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-6.0x-blues-black.jpg",
     "contentBlocks": [
       {
@@ -584,7 +503,14 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": ["Ergo 6.0x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": [
+            "Ergo 6.0x loupe system",
+            "Selected premium frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "Adjustment tools",
+            "User manual"
+          ]
         }
       },
       {
@@ -645,7 +571,24 @@
         }
       }
     ],
-    "relatedProducts": [103, 105, 106]
+    "relatedProducts": [
+      103,
+      105,
+      106
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "soul",
+        "indie"
+      ],
+      "images": {
+        "blues-black": "/images/products/admetec/ergo/ergo-6.0x-blues-black.jpg",
+        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-6.0x-burgundy-gold.jpg",
+        "indie-black": "/images/products/admetec/ergo/ergo-6.0x-indie-black.jpg",
+        "indie-orange-lava": "/images/products/admetec/ergo/ergo-6.0x-indie-orange-lava.jpg"
+      }
+    }
   },
   {
     "id": 105,
@@ -660,48 +603,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-7.5x-blues-black",
-        "frameStyle": "Blues",
-        "color": "Black",
-        "sku": "ADM-E-75-BLU-BLK",
-        "image": "/images/products/admetec/ergo/ergo-7.5x-blues-black.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-7.5x-blues-blue",
-        "frameStyle": "Blues",
-        "color": "Blue",
-        "sku": "ADM-E-75-BLU-BLU",
-        "image": "/images/products/admetec/ergo/ergo-7.5x-blues-blue.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-7.5x-indie-black",
-        "frameStyle": "Indie",
-        "color": "Black",
-        "sku": "ADM-E-75-IND-BLK",
-        "image": "/images/products/admetec/ergo/ergo-7.5x-indie-black.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-7.5x-indie-green",
-        "frameStyle": "Indie",
-        "color": "Green",
-        "sku": "ADM-E-75-IND-GRN",
-        "image": "/images/products/admetec/ergo/ergo-7.5x-indie-green.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-7.5x-soul-brown",
-        "frameStyle": "Soul",
-        "color": "Brown and Light Blue",
-        "sku": "ADM-E-75-SOL-BRN",
-        "image": "/images/products/admetec/ergo/ergo-7.5x-soul-brown.jpg",
-        "priceModifier": 100
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-7.5x-blues-black.jpg",
     "contentBlocks": [
       {
@@ -750,7 +651,14 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": ["Ergo 7.5x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": [
+            "Ergo 7.5x loupe system",
+            "Selected premium frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "Adjustment tools",
+            "User manual"
+          ]
         }
       },
       {
@@ -811,7 +719,24 @@
         }
       }
     ],
-    "relatedProducts": [104, 106]
+    "relatedProducts": [
+      104,
+      106
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "indie",
+        "soul"
+      ],
+      "images": {
+        "blues-black": "/images/products/admetec/ergo/ergo-7.5x-blues-black.jpg",
+        "blues-blue": "/images/products/admetec/ergo/ergo-7.5x-blues-blue.jpg",
+        "indie-black": "/images/products/admetec/ergo/ergo-7.5x-indie-black.jpg",
+        "indie-green": "/images/products/admetec/ergo/ergo-7.5x-indie-green.jpg",
+        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-7.5x-soul-brown.jpg"
+      }
+    }
   },
   {
     "id": 106,
@@ -826,40 +751,6 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "ergo-10x-blues-black",
-        "frameStyle": "Blues",
-        "color": "Black",
-        "sku": "ADM-E-100-BLU-BLK",
-        "image": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "ergo-10x-indie-black",
-        "frameStyle": "Indie",
-        "color": "Black",
-        "sku": "ADM-E-100-IND-BLK",
-        "image": "/images/products/admetec/ergo/ergo-10x-indie-black.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "ergo-10x-soul-black",
-        "frameStyle": "Soul",
-        "color": "Black",
-        "sku": "ADM-E-100-SOL-BLK",
-        "image": "/images/products/admetec/ergo/ergo-10x-soul-black.jpg",
-        "priceModifier": 100
-      },
-      {
-        "id": "ergo-10x-soul-brown",
-        "frameStyle": "Soul",
-        "color": "Brown and Light Blue",
-        "sku": "ADM-E-100-SOL-BRN",
-        "image": "/images/products/admetec/ergo/ergo-10x-soul-brown.jpg",
-        "priceModifier": 100
-      }
-    ],
     "defaultImage": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
     "contentBlocks": [
       {
@@ -908,7 +799,14 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": ["Ergo 10x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": [
+            "Ergo 10x loupe system",
+            "Selected premium frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "Adjustment tools",
+            "User manual"
+          ]
         }
       },
       {
@@ -969,7 +867,23 @@
         }
       }
     ],
-    "relatedProducts": [104, 105]
+    "relatedProducts": [
+      104,
+      105
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "indie",
+        "soul"
+      ],
+      "images": {
+        "blues-black": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
+        "indie-black": "/images/products/admetec/ergo/ergo-10x-indie-black.jpg",
+        "soul-black": "/images/products/admetec/ergo/ergo-10x-soul-black.jpg",
+        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-10x-soul-brown.jpg"
+      }
+    }
   },
   {
     "id": 107,
@@ -983,13 +897,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
-    "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"],
+    "gallery": [
+      "/images/products/admetec/ergo-v/ergo-v.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
-          "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"]
+          "gallery": [
+            "/images/products/admetec/ergo-v/ergo-v.jpg"
+          ]
         }
       },
       {
@@ -1032,7 +950,14 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": ["Ergo V loupe system", "Premium titanium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": [
+            "Ergo V loupe system",
+            "Premium titanium frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "Adjustment tools",
+            "User manual"
+          ]
         }
       },
       {
@@ -1097,7 +1022,10 @@
         }
       }
     ],
-    "relatedProducts": [108, 103]
+    "relatedProducts": [
+      108,
+      103
+    ]
   },
   {
     "id": 108,
@@ -1111,13 +1039,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
-    "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"],
+    "gallery": [
+      "/images/products/admetec/ergo-v/ergo-v-pro.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
-          "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"]
+          "gallery": [
+            "/images/products/admetec/ergo-v/ergo-v-pro.jpg"
+          ]
         }
       },
       {
@@ -1238,7 +1170,10 @@
         }
       }
     ],
-    "relatedProducts": [107, 104]
+    "relatedProducts": [
+      107,
+      104
+    ]
   },
   {
     "id": 201,
@@ -1253,32 +1188,6 @@
     "colorCode": "#6EE7B7",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "galilean-2.5x-blues-pink",
-        "frameStyle": "Blues",
-        "color": "Pink",
-        "sku": "ADM-G-25-BLU-PNK",
-        "image": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "galilean-2.5x-jazz-blue",
-        "frameStyle": "Jazz",
-        "color": "Blue",
-        "sku": "ADM-G-25-JAZ-BLU",
-        "image": "/images/products/admetec/galilean/galilean-2.5x-jazz-blue.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "galilean-2.5x-jazz-orange",
-        "frameStyle": "Jazz",
-        "color": "Orange",
-        "sku": "ADM-G-25-JAZ-ORG",
-        "image": "/images/products/admetec/galilean/galilean-2.5x-jazz-orange.jpg",
-        "priceModifier": 50
-      }
-    ],
     "defaultImage": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
     "contentBlocks": [
       {
@@ -1327,7 +1236,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Galilean 2.5x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
+          "packageContents": [
+            "Galilean 2.5x loupes",
+            "Selected frame",
+            "Soft protective case",
+            "Cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -1368,7 +1283,22 @@
         }
       }
     ],
-    "relatedProducts": [202, 203, 101]
+    "relatedProducts": [
+      202,
+      203,
+      101
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "jazz"
+      ],
+      "images": {
+        "blues-pink": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
+        "jazz-blue": "/images/products/admetec/galilean/galilean-2.5x-jazz-blue.jpg",
+        "jazz-orange": "/images/products/admetec/galilean/galilean-2.5x-jazz-orange.jpg"
+      }
+    }
   },
   {
     "id": 202,
@@ -1383,24 +1313,6 @@
     "colorCode": "#6EE7B7",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "galilean-2.7x-blues-bronze",
-        "frameStyle": "Blues",
-        "color": "Bronze",
-        "sku": "ADM-G-27-BLU-BRZ",
-        "image": "/images/products/admetec/galilean/galilean-2.7x-blues-bronze.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "galilean-2.7x-indie-blue",
-        "frameStyle": "Indie",
-        "color": "Blue",
-        "sku": "ADM-G-27-IND-BLU",
-        "image": "/images/products/admetec/galilean/galilean-2.7x-indie-blue.jpg",
-        "priceModifier": 50
-      }
-    ],
     "defaultImage": "/images/products/admetec/galilean/galilean-2.7x-blues-bronze.jpg",
     "contentBlocks": [
       {
@@ -1449,7 +1361,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Galilean 2.7x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
+          "packageContents": [
+            "Galilean 2.7x loupes",
+            "Selected frame",
+            "Soft protective case",
+            "Cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -1490,7 +1408,21 @@
         }
       }
     ],
-    "relatedProducts": [201, 203, 101]
+    "relatedProducts": [
+      201,
+      203,
+      101
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "indie"
+      ],
+      "images": {
+        "blues-bronze": "/images/products/admetec/galilean/galilean-2.7x-blues-bronze.jpg",
+        "indie-blue": "/images/products/admetec/galilean/galilean-2.7x-indie-blue.jpg"
+      }
+    }
   },
   {
     "id": 203,
@@ -1505,32 +1437,6 @@
     "colorCode": "#6EE7B7",
     "hasVariants": true,
     "variantType": "frame-color",
-    "variants": [
-      {
-        "id": "galilean-3.2x-blues-black",
-        "frameStyle": "Blues",
-        "color": "Black",
-        "sku": "ADM-G-32-BLU-BLK",
-        "image": "/images/products/admetec/galilean/galilean-3.2x-blues-black.jpg",
-        "priceModifier": 0
-      },
-      {
-        "id": "galilean-3.2x-soul-brown",
-        "frameStyle": "Soul",
-        "color": "Brown",
-        "sku": "ADM-G-32-SOL-BRN",
-        "image": "/images/products/admetec/galilean/galilean-3.2x-soul-brown.jpg",
-        "priceModifier": 50
-      },
-      {
-        "id": "galilean-3.2x-swing-black",
-        "frameStyle": "Swing",
-        "color": "Black",
-        "sku": "ADM-G-32-SWG-BLK",
-        "image": "/images/products/admetec/galilean/galilean-3.2x-swing-black.jpg",
-        "priceModifier": 75
-      }
-    ],
     "defaultImage": "/images/products/admetec/galilean/galilean-3.2x-blues-black.jpg",
     "contentBlocks": [
       {
@@ -1579,7 +1485,13 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": ["Galilean 3.2x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
+          "packageContents": [
+            "Galilean 3.2x loupes",
+            "Selected frame",
+            "Soft protective case",
+            "Cleaning cloth",
+            "User manual"
+          ]
         }
       },
       {
@@ -1620,7 +1532,23 @@
         }
       }
     ],
-    "relatedProducts": [201, 202, 102]
+    "relatedProducts": [
+      201,
+      202,
+      102
+    ],
+    "frameVariants": {
+      "availableFrames": [
+        "blues",
+        "soul",
+        "swing"
+      ],
+      "images": {
+        "blues-black": "/images/products/admetec/galilean/galilean-3.2x-blues-black.jpg",
+        "soul-brown": "/images/products/admetec/galilean/galilean-3.2x-soul-brown.jpg",
+        "swing-black": "/images/products/admetec/galilean/galilean-3.2x-swing-black.jpg"
+      }
+    }
   },
   {
     "id": 301,
@@ -1695,7 +1623,14 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": ["Prismatic loupe system", "Premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": [
+            "Prismatic loupe system",
+            "Premium frame",
+            "Hard protective case",
+            "Microfiber cleaning cloth",
+            "Adjustment tools",
+            "User manual"
+          ]
         }
       },
       {
@@ -1756,7 +1691,11 @@
         }
       }
     ],
-    "relatedProducts": [104, 105, 107]
+    "relatedProducts": [
+      104,
+      105,
+      107
+    ]
   },
   {
     "id": 401,
@@ -1841,7 +1780,14 @@
         "data": {
           "manufacturer": "Almadent (Anya Dental)",
           "warranty": "2 years comprehensive",
-          "packageContents": ["AY-3000 dental chair unit", "Standard delivery system", "Operating light", "Assistant's arm", "Installation manual", "User guide"]
+          "packageContents": [
+            "AY-3000 dental chair unit",
+            "Standard delivery system",
+            "Operating light",
+            "Assistant's arm",
+            "Installation manual",
+            "User guide"
+          ]
         }
       },
       {
@@ -1878,7 +1824,10 @@
         }
       }
     ],
-    "relatedProducts": [402, 403]
+    "relatedProducts": [
+      402,
+      403
+    ]
   },
   {
     "id": 402,
@@ -1965,7 +1914,15 @@
         "data": {
           "manufacturer": "Almadent (Anya Dental)",
           "warranty": "3 years comprehensive",
-          "packageContents": ["AY-6000 dental chair unit", "Advanced delivery system", "LED operating light", "Assistant's instrumentation", "Foot controller", "Installation manual", "User guide"]
+          "packageContents": [
+            "AY-6000 dental chair unit",
+            "Advanced delivery system",
+            "LED operating light",
+            "Assistant's instrumentation",
+            "Foot controller",
+            "Installation manual",
+            "User guide"
+          ]
         }
       },
       {
@@ -2006,7 +1963,10 @@
         }
       }
     ],
-    "relatedProducts": [401, 403]
+    "relatedProducts": [
+      401,
+      403
+    ]
   },
   {
     "id": 403,
@@ -2020,13 +1980,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
-    "gallery": ["/images/products/almadent/chairs/ay-8000-1.jpg"],
+    "gallery": [
+      "/images/products/almadent/chairs/ay-8000-1.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
-          "gallery": ["/images/products/almadent/chairs/ay-8000-1.jpg"]
+          "gallery": [
+            "/images/products/almadent/chairs/ay-8000-1.jpg"
+          ]
         }
       },
       {
@@ -2143,7 +2107,11 @@
         }
       }
     ],
-    "relatedProducts": [401, 402, 404]
+    "relatedProducts": [
+      401,
+      402,
+      404
+    ]
   },
   {
     "id": 404,
@@ -2220,7 +2188,14 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": ["Implant motor control unit", "Surgical handpiece", "Foot pedal controller", "Irrigation tubing set", "Carrying case", "User manual"]
+          "packageContents": [
+            "Implant motor control unit",
+            "Surgical handpiece",
+            "Foot pedal controller",
+            "Irrigation tubing set",
+            "Carrying case",
+            "User manual"
+          ]
         }
       },
       {
@@ -2231,7 +2206,10 @@
         }
       }
     ],
-    "relatedProducts": [405, 406]
+    "relatedProducts": [
+      405,
+      406
+    ]
   },
   {
     "id": 405,
@@ -2308,7 +2286,15 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": ["PTX control unit", "LED handpiece", "Basic tip set (6 tips)", "Foot pedal", "Irrigation tubing", "Carrying case", "User manual"]
+          "packageContents": [
+            "PTX control unit",
+            "LED handpiece",
+            "Basic tip set (6 tips)",
+            "Foot pedal",
+            "Irrigation tubing",
+            "Carrying case",
+            "User manual"
+          ]
         }
       },
       {
@@ -2319,7 +2305,10 @@
         }
       }
     ],
-    "relatedProducts": [404, 406]
+    "relatedProducts": [
+      404,
+      406
+    ]
   },
   {
     "id": 406,
@@ -2333,13 +2322,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/auxiliary/lubricator-1.png",
-    "gallery": ["/images/products/almadent/auxiliary/lubricator-1.png"],
+    "gallery": [
+      "/images/products/almadent/auxiliary/lubricator-1.png"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/almadent/auxiliary/lubricator-1.png",
-          "gallery": ["/images/products/almadent/auxiliary/lubricator-1.png"]
+          "gallery": [
+            "/images/products/almadent/auxiliary/lubricator-1.png"
+          ]
         }
       },
       {
@@ -2382,7 +2375,12 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": ["Lubricator unit", "Handpiece adapters set", "Lubricant oil (500ml)", "User manual"]
+          "packageContents": [
+            "Lubricator unit",
+            "Handpiece adapters set",
+            "Lubricant oil (500ml)",
+            "User manual"
+          ]
         }
       },
       {
@@ -2393,7 +2391,10 @@
         }
       }
     ],
-    "relatedProducts": [404, 405]
+    "relatedProducts": [
+      404,
+      405
+    ]
   },
   {
     "id": 501,
@@ -2407,13 +2408,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/700slash8.jpg",
-    "gallery": ["/images/products/medesy/elevator/700slash8.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/700slash8.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/700slash8.jpg",
-          "gallery": ["/images/products/medesy/elevator/700slash8.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/700slash8.jpg"
+          ]
         }
       },
       {
@@ -2456,7 +2461,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Heidbrink Elevator 700/8"]
+          "packageContents": [
+            "Heidbrink Elevator 700/8"
+          ]
         }
       },
       {
@@ -2467,7 +2474,10 @@
         }
       }
     ],
-    "relatedProducts": [502, 503]
+    "relatedProducts": [
+      502,
+      503
+    ]
   },
   {
     "id": 502,
@@ -2481,13 +2491,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/700slash9.jpg",
-    "gallery": ["/images/products/medesy/elevator/700slash9.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/700slash9.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/700slash9.jpg",
-          "gallery": ["/images/products/medesy/elevator/700slash9.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/700slash9.jpg"
+          ]
         }
       },
       {
@@ -2530,7 +2544,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Heidbrink Elevator 700/9 Left"]
+          "packageContents": [
+            "Heidbrink Elevator 700/9 Left"
+          ]
         }
       },
       {
@@ -2541,7 +2557,10 @@
         }
       }
     ],
-    "relatedProducts": [501, 503]
+    "relatedProducts": [
+      501,
+      503
+    ]
   },
   {
     "id": 503,
@@ -2555,13 +2574,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/700slash10.jpg",
-    "gallery": ["/images/products/medesy/elevator/700slash10.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/700slash10.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/700slash10.jpg",
-          "gallery": ["/images/products/medesy/elevator/700slash10.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/700slash10.jpg"
+          ]
         }
       },
       {
@@ -2604,7 +2627,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Heidbrink Elevator 700/10 Right"]
+          "packageContents": [
+            "Heidbrink Elevator 700/10 Right"
+          ]
         }
       },
       {
@@ -2615,7 +2640,10 @@
         }
       }
     ],
-    "relatedProducts": [501, 502]
+    "relatedProducts": [
+      501,
+      502
+    ]
   },
   {
     "id": 504,
@@ -2629,13 +2657,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/705slash6.jpg",
-    "gallery": ["/images/products/medesy/elevator/705slash6.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/705slash6.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/705slash6.jpg",
-          "gallery": ["/images/products/medesy/elevator/705slash6.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/705slash6.jpg"
+          ]
         }
       },
       {
@@ -2678,7 +2710,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Howard Apical Elevator 705/6"]
+          "packageContents": [
+            "Howard Apical Elevator 705/6"
+          ]
         }
       },
       {
@@ -2689,7 +2723,10 @@
         }
       }
     ],
-    "relatedProducts": [501, 505]
+    "relatedProducts": [
+      501,
+      505
+    ]
   },
   {
     "id": 505,
@@ -2703,13 +2740,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash3S.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash3S.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash3S.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash3S.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash3S.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash3S.jpg"
+          ]
         }
       },
       {
@@ -2756,7 +2797,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/3S"]
+          "packageContents": [
+            "Lussatore Elevator 730/3S"
+          ]
         }
       },
       {
@@ -2767,7 +2810,10 @@
         }
       }
     ],
-    "relatedProducts": [506, 507]
+    "relatedProducts": [
+      506,
+      507
+    ]
   },
   {
     "id": 506,
@@ -2781,13 +2827,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash3C.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash3C.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash3C.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash3C.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash3C.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash3C.jpg"
+          ]
         }
       },
       {
@@ -2834,7 +2884,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/3C"]
+          "packageContents": [
+            "Lussatore Elevator 730/3C"
+          ]
         }
       },
       {
@@ -2845,7 +2897,10 @@
         }
       }
     ],
-    "relatedProducts": [505, 507]
+    "relatedProducts": [
+      505,
+      507
+    ]
   },
   {
     "id": 507,
@@ -2859,13 +2914,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash4S.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash4S.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash4S.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash4S.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash4S.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash4S.jpg"
+          ]
         }
       },
       {
@@ -2912,7 +2971,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/4S"]
+          "packageContents": [
+            "Lussatore Elevator 730/4S"
+          ]
         }
       },
       {
@@ -2923,7 +2984,10 @@
         }
       }
     ],
-    "relatedProducts": [505, 508]
+    "relatedProducts": [
+      505,
+      508
+    ]
   },
   {
     "id": 508,
@@ -2937,13 +3001,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash4C.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash4C.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash4C.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash4C.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash4C.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash4C.jpg"
+          ]
         }
       },
       {
@@ -2990,7 +3058,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/4C"]
+          "packageContents": [
+            "Lussatore Elevator 730/4C"
+          ]
         }
       },
       {
@@ -3001,7 +3071,10 @@
         }
       }
     ],
-    "relatedProducts": [507, 509]
+    "relatedProducts": [
+      507,
+      509
+    ]
   },
   {
     "id": 509,
@@ -3015,13 +3088,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash5S.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash5S.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash5S.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash5S.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash5S.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash5S.jpg"
+          ]
         }
       },
       {
@@ -3068,7 +3145,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/5S"]
+          "packageContents": [
+            "Lussatore Elevator 730/5S"
+          ]
         }
       },
       {
@@ -3079,7 +3158,10 @@
         }
       }
     ],
-    "relatedProducts": [507, 510]
+    "relatedProducts": [
+      507,
+      510
+    ]
   },
   {
     "id": 510,
@@ -3093,13 +3175,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/730slash5C.jpg",
-    "gallery": ["/images/products/medesy/elevator/730slash5C.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/730slash5C.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash5C.jpg",
-          "gallery": ["/images/products/medesy/elevator/730slash5C.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/730slash5C.jpg"
+          ]
         }
       },
       {
@@ -3146,7 +3232,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Lussatore Elevator 730/5C"]
+          "packageContents": [
+            "Lussatore Elevator 730/5C"
+          ]
         }
       },
       {
@@ -3157,7 +3245,10 @@
         }
       }
     ],
-    "relatedProducts": [509, 505]
+    "relatedProducts": [
+      509,
+      505
+    ]
   },
   {
     "id": 511,
@@ -3171,13 +3262,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/796slash1.jpg",
-    "gallery": ["/images/products/medesy/elevator/796slash1.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/796slash1.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/796slash1.jpg",
-          "gallery": ["/images/products/medesy/elevator/796slash1.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/796slash1.jpg"
+          ]
         }
       },
       {
@@ -3224,7 +3319,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Warwick-James Elevator 796/1"]
+          "packageContents": [
+            "Warwick-James Elevator 796/1"
+          ]
         }
       },
       {
@@ -3235,7 +3332,10 @@
         }
       }
     ],
-    "relatedProducts": [512, 513]
+    "relatedProducts": [
+      512,
+      513
+    ]
   },
   {
     "id": 512,
@@ -3249,13 +3349,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/796slash2.jpg",
-    "gallery": ["/images/products/medesy/elevator/796slash2.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/796slash2.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/796slash2.jpg",
-          "gallery": ["/images/products/medesy/elevator/796slash2.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/796slash2.jpg"
+          ]
         }
       },
       {
@@ -3302,7 +3406,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Warwick-James Elevator 796/2 Left"]
+          "packageContents": [
+            "Warwick-James Elevator 796/2 Left"
+          ]
         }
       },
       {
@@ -3313,7 +3419,10 @@
         }
       }
     ],
-    "relatedProducts": [511, 513]
+    "relatedProducts": [
+      511,
+      513
+    ]
   },
   {
     "id": 513,
@@ -3327,13 +3436,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/796slash3.jpg",
-    "gallery": ["/images/products/medesy/elevator/796slash3.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/796slash3.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/796slash3.jpg",
-          "gallery": ["/images/products/medesy/elevator/796slash3.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/796slash3.jpg"
+          ]
         }
       },
       {
@@ -3380,7 +3493,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Warwick-James Elevator 796/3 Right"]
+          "packageContents": [
+            "Warwick-James Elevator 796/3 Right"
+          ]
         }
       },
       {
@@ -3391,7 +3506,10 @@
         }
       }
     ],
-    "relatedProducts": [511, 512]
+    "relatedProducts": [
+      511,
+      512
+    ]
   },
   {
     "id": 514,
@@ -3405,13 +3523,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/798slash1.jpg",
-    "gallery": ["/images/products/medesy/elevator/798slash1.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/798slash1.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/798slash1.jpg",
-          "gallery": ["/images/products/medesy/elevator/798slash1.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/798slash1.jpg"
+          ]
         }
       },
       {
@@ -3458,7 +3580,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Coupland Elevator 798/1"]
+          "packageContents": [
+            "Coupland Elevator 798/1"
+          ]
         }
       },
       {
@@ -3469,7 +3593,10 @@
         }
       }
     ],
-    "relatedProducts": [515, 516]
+    "relatedProducts": [
+      515,
+      516
+    ]
   },
   {
     "id": 515,
@@ -3483,13 +3610,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/798slash2.jpg",
-    "gallery": ["/images/products/medesy/elevator/798slash2.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/798slash2.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/798slash2.jpg",
-          "gallery": ["/images/products/medesy/elevator/798slash2.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/798slash2.jpg"
+          ]
         }
       },
       {
@@ -3536,7 +3667,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Coupland Elevator 798/2"]
+          "packageContents": [
+            "Coupland Elevator 798/2"
+          ]
         }
       },
       {
@@ -3547,7 +3680,10 @@
         }
       }
     ],
-    "relatedProducts": [514, 516]
+    "relatedProducts": [
+      514,
+      516
+    ]
   },
   {
     "id": 516,
@@ -3561,13 +3697,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/798slash3.jpg",
-    "gallery": ["/images/products/medesy/elevator/798slash3.jpg"],
+    "gallery": [
+      "/images/products/medesy/elevator/798slash3.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/798slash3.jpg",
-          "gallery": ["/images/products/medesy/elevator/798slash3.jpg"]
+          "gallery": [
+            "/images/products/medesy/elevator/798slash3.jpg"
+          ]
         }
       },
       {
@@ -3614,7 +3754,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Coupland Elevator 798/3"]
+          "packageContents": [
+            "Coupland Elevator 798/3"
+          ]
         }
       },
       {
@@ -3625,7 +3767,10 @@
         }
       }
     ],
-    "relatedProducts": [514, 515]
+    "relatedProducts": [
+      514,
+      515
+    ]
   },
   {
     "id": 601,
@@ -3639,13 +3784,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2400slash51-AL.jpg",
-    "gallery": ["/images/products/medesy/forceps/2400slash51-AL.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2400slash51-AL.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2400slash51-AL.jpg",
-          "gallery": ["/images/products/medesy/forceps/2400slash51-AL.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2400slash51-AL.jpg"
+          ]
         }
       },
       {
@@ -3688,7 +3837,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2400/51-AL"]
+          "packageContents": [
+            "Forceps 2400/51-AL"
+          ]
         }
       },
       {
@@ -3699,7 +3850,10 @@
         }
       }
     ],
-    "relatedProducts": [602, 604]
+    "relatedProducts": [
+      602,
+      604
+    ]
   },
   {
     "id": 602,
@@ -3713,13 +3867,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2400slash67.jpg",
-    "gallery": ["/images/products/medesy/forceps/2400slash67.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2400slash67.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2400slash67.jpg",
-          "gallery": ["/images/products/medesy/forceps/2400slash67.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2400slash67.jpg"
+          ]
         }
       },
       {
@@ -3762,7 +3920,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2400/67"]
+          "packageContents": [
+            "Forceps 2400/67"
+          ]
         }
       },
       {
@@ -3773,7 +3933,10 @@
         }
       }
     ],
-    "relatedProducts": [601, 609]
+    "relatedProducts": [
+      601,
+      609
+    ]
   },
   {
     "id": 603,
@@ -3787,13 +3950,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2400slash70.jpg",
-    "gallery": ["/images/products/medesy/forceps/2400slash70.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2400slash70.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2400slash70.jpg",
-          "gallery": ["/images/products/medesy/forceps/2400slash70.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2400slash70.jpg"
+          ]
         }
       },
       {
@@ -3836,7 +4003,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2400/70"]
+          "packageContents": [
+            "Forceps 2400/70"
+          ]
         }
       },
       {
@@ -3847,7 +4016,10 @@
         }
       }
     ],
-    "relatedProducts": [601, 602]
+    "relatedProducts": [
+      601,
+      602
+    ]
   },
   {
     "id": 604,
@@ -3861,13 +4033,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2400slash187.jpg",
-    "gallery": ["/images/products/medesy/forceps/2400slash187.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2400slash187.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2400slash187.jpg",
-          "gallery": ["/images/products/medesy/forceps/2400slash187.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2400slash187.jpg"
+          ]
         }
       },
       {
@@ -3910,7 +4086,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2400/187"]
+          "packageContents": [
+            "Forceps 2400/187"
+          ]
         }
       },
       {
@@ -3921,7 +4099,10 @@
         }
       }
     ],
-    "relatedProducts": [601, 610]
+    "relatedProducts": [
+      601,
+      610
+    ]
   },
   {
     "id": 605,
@@ -3935,13 +4116,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash17.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash17.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash17.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash17.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash17.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash17.jpg"
+          ]
         }
       },
       {
@@ -3984,7 +4169,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/17"]
+          "packageContents": [
+            "Forceps 2500/17"
+          ]
         }
       },
       {
@@ -3995,7 +4182,10 @@
         }
       }
     ],
-    "relatedProducts": [606, 607]
+    "relatedProducts": [
+      606,
+      607
+    ]
   },
   {
     "id": 606,
@@ -4009,13 +4199,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash18.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash18.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash18.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash18.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash18.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash18.jpg"
+          ]
         }
       },
       {
@@ -4058,7 +4252,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/18"]
+          "packageContents": [
+            "Forceps 2500/18"
+          ]
         }
       },
       {
@@ -4069,7 +4265,10 @@
         }
       }
     ],
-    "relatedProducts": [605, 607]
+    "relatedProducts": [
+      605,
+      607
+    ]
   },
   {
     "id": 607,
@@ -4083,13 +4282,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash51.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash51.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash51.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash51.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash51.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash51.jpg"
+          ]
         }
       },
       {
@@ -4132,7 +4335,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/51"]
+          "packageContents": [
+            "Forceps 2500/51"
+          ]
         }
       },
       {
@@ -4143,7 +4348,10 @@
         }
       }
     ],
-    "relatedProducts": [601, 611]
+    "relatedProducts": [
+      601,
+      611
+    ]
   },
   {
     "id": 608,
@@ -4157,13 +4365,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash79.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash79.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash79.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash79.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash79.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash79.jpg"
+          ]
         }
       },
       {
@@ -4206,7 +4418,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/79"]
+          "packageContents": [
+            "Forceps 2500/79"
+          ]
         }
       },
       {
@@ -4217,7 +4431,10 @@
         }
       }
     ],
-    "relatedProducts": [609, 612]
+    "relatedProducts": [
+      609,
+      612
+    ]
   },
   {
     "id": 609,
@@ -4231,13 +4448,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash86.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash86.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash86.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash86.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash86.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash86.jpg"
+          ]
         }
       },
       {
@@ -4284,7 +4505,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/86"]
+          "packageContents": [
+            "Forceps 2500/86"
+          ]
         }
       },
       {
@@ -4295,7 +4518,10 @@
         }
       }
     ],
-    "relatedProducts": [608, 612]
+    "relatedProducts": [
+      608,
+      612
+    ]
   },
   {
     "id": 610,
@@ -4309,13 +4535,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash187.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash187.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash187.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash187.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash187.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash187.jpg"
+          ]
         }
       },
       {
@@ -4358,7 +4588,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/187"]
+          "packageContents": [
+            "Forceps 2500/187"
+          ]
         }
       },
       {
@@ -4369,7 +4601,10 @@
         }
       }
     ],
-    "relatedProducts": [604, 611]
+    "relatedProducts": [
+      604,
+      611
+    ]
   },
   {
     "id": 611,
@@ -4383,13 +4618,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash221.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash221.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash221.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash221.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash221.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash221.jpg"
+          ]
         }
       },
       {
@@ -4432,7 +4671,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/221"]
+          "packageContents": [
+            "Forceps 2500/221"
+          ]
         }
       },
       {
@@ -4443,7 +4684,10 @@
         }
       }
     ],
-    "relatedProducts": [601, 607]
+    "relatedProducts": [
+      601,
+      607
+    ]
   },
   {
     "id": 612,
@@ -4457,13 +4701,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash350.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash350.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash350.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash350.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash350.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash350.jpg"
+          ]
         }
       },
       {
@@ -4506,7 +4754,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/350"]
+          "packageContents": [
+            "Forceps 2500/350"
+          ]
         }
       },
       {
@@ -4517,7 +4767,10 @@
         }
       }
     ],
-    "relatedProducts": [613, 608]
+    "relatedProducts": [
+      613,
+      608
+    ]
   },
   {
     "id": 613,
@@ -4531,13 +4784,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash351.jpg",
-    "gallery": ["/images/products/medesy/forceps/2500slash351.jpg"],
+    "gallery": [
+      "/images/products/medesy/forceps/2500slash351.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash351.jpg",
-          "gallery": ["/images/products/medesy/forceps/2500slash351.jpg"]
+          "gallery": [
+            "/images/products/medesy/forceps/2500slash351.jpg"
+          ]
         }
       },
       {
@@ -4580,7 +4837,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Forceps 2500/351"]
+          "packageContents": [
+            "Forceps 2500/351"
+          ]
         }
       },
       {
@@ -4591,7 +4850,10 @@
         }
       }
     ],
-    "relatedProducts": [612, 608]
+    "relatedProducts": [
+      612,
+      608
+    ]
   },
   {
     "id": 701,
@@ -4605,13 +4867,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/851slashHP3.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/851slashHP3.jpg"
+          ]
         }
       },
       {
@@ -4654,7 +4920,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 851/HP3"]
+          "packageContents": [
+            "Periosteal Elevator 851/HP3"
+          ]
         }
       },
       {
@@ -4665,7 +4933,10 @@
         }
       }
     ],
-    "relatedProducts": [702, 703]
+    "relatedProducts": [
+      702,
+      703
+    ]
   },
   {
     "id": 702,
@@ -4679,13 +4950,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/852slashHP3.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/852slashHP3.jpg"
+          ]
         }
       },
       {
@@ -4728,7 +5003,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 852/HP3"]
+          "packageContents": [
+            "Periosteal Elevator 852/HP3"
+          ]
         }
       },
       {
@@ -4739,7 +5016,10 @@
         }
       }
     ],
-    "relatedProducts": [701, 703]
+    "relatedProducts": [
+      701,
+      703
+    ]
   },
   {
     "id": 703,
@@ -4753,13 +5033,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/856.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/856.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/856.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/856.jpg"
+          ]
         }
       },
       {
@@ -4802,7 +5086,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 856"]
+          "packageContents": [
+            "Periosteal Elevator 856"
+          ]
         }
       },
       {
@@ -4813,7 +5099,10 @@
         }
       }
     ],
-    "relatedProducts": [701, 704]
+    "relatedProducts": [
+      701,
+      704
+    ]
   },
   {
     "id": 704,
@@ -4827,13 +5116,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/869.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/869.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/869.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/869.jpg"
+          ]
         }
       },
       {
@@ -4876,7 +5169,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 869"]
+          "packageContents": [
+            "Periosteal Elevator 869"
+          ]
         }
       },
       {
@@ -4887,7 +5182,10 @@
         }
       }
     ],
-    "relatedProducts": [703, 705]
+    "relatedProducts": [
+      703,
+      705
+    ]
   },
   {
     "id": 705,
@@ -4901,13 +5199,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/871slash2-4.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/871slash2-4.jpg"
+          ]
         }
       },
       {
@@ -4950,7 +5252,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 871/2-4"]
+          "packageContents": [
+            "Periosteal Elevator 871/2-4"
+          ]
         }
       },
       {
@@ -4961,7 +5265,10 @@
         }
       }
     ],
-    "relatedProducts": [704, 706]
+    "relatedProducts": [
+      704,
+      706
+    ]
   },
   {
     "id": 706,
@@ -4975,13 +5282,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/877slashHK4.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/877slashHK4.jpg"
+          ]
         }
       },
       {
@@ -5024,7 +5335,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 877/HK4"]
+          "packageContents": [
+            "Periosteal Elevator 877/HK4"
+          ]
         }
       },
       {
@@ -5035,7 +5348,10 @@
         }
       }
     ],
-    "relatedProducts": [705, 707]
+    "relatedProducts": [
+      705,
+      707
+    ]
   },
   {
     "id": 707,
@@ -5049,13 +5365,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/878.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/878.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/878.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/878.jpg"
+          ]
         }
       },
       {
@@ -5098,7 +5418,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 878"]
+          "packageContents": [
+            "Periosteal Elevator 878"
+          ]
         }
       },
       {
@@ -5109,7 +5431,10 @@
         }
       }
     ],
-    "relatedProducts": [706, 708]
+    "relatedProducts": [
+      706,
+      708
+    ]
   },
   {
     "id": 708,
@@ -5123,13 +5448,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/882.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/882.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/882.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/882.jpg"
+          ]
         }
       },
       {
@@ -5172,7 +5501,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 882"]
+          "packageContents": [
+            "Periosteal Elevator 882"
+          ]
         }
       },
       {
@@ -5183,7 +5514,10 @@
         }
       }
     ],
-    "relatedProducts": [707, 709]
+    "relatedProducts": [
+      707,
+      709
+    ]
   },
   {
     "id": 709,
@@ -5197,13 +5531,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/883.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/883.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/883.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/883.jpg"
+          ]
         }
       },
       {
@@ -5246,7 +5584,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 883"]
+          "packageContents": [
+            "Periosteal Elevator 883"
+          ]
         }
       },
       {
@@ -5257,7 +5597,10 @@
         }
       }
     ],
-    "relatedProducts": [708, 710]
+    "relatedProducts": [
+      708,
+      710
+    ]
   },
   {
     "id": 710,
@@ -5271,13 +5614,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/884.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/884.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/884.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/884.jpg"
+          ]
         }
       },
       {
@@ -5320,7 +5667,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 884"]
+          "packageContents": [
+            "Periosteal Elevator 884"
+          ]
         }
       },
       {
@@ -5331,7 +5680,10 @@
         }
       }
     ],
-    "relatedProducts": [709, 711]
+    "relatedProducts": [
+      709,
+      711
+    ]
   },
   {
     "id": 711,
@@ -5345,13 +5697,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/885.jpg",
-    "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"],
+    "gallery": [
+      "/images/products/medesy/periosteal-elevators/885.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/885.jpg",
-          "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"]
+          "gallery": [
+            "/images/products/medesy/periosteal-elevators/885.jpg"
+          ]
         }
       },
       {
@@ -5394,7 +5750,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Periosteal Elevator 885"]
+          "packageContents": [
+            "Periosteal Elevator 885"
+          ]
         }
       },
       {
@@ -5405,7 +5763,10 @@
         }
       }
     ],
-    "relatedProducts": [709, 710]
+    "relatedProducts": [
+      709,
+      710
+    ]
   },
   {
     "id": 801,
@@ -5419,13 +5780,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3509.jpg",
-    "gallery": ["/images/products/medesy/scissors/3509.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3509.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3509.jpg",
-          "gallery": ["/images/products/medesy/scissors/3509.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3509.jpg"
+          ]
         }
       },
       {
@@ -5476,7 +5841,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Kelly Scissors 3509"]
+          "packageContents": [
+            "Kelly Scissors 3509"
+          ]
         }
       },
       {
@@ -5487,7 +5854,10 @@
         }
       }
     ],
-    "relatedProducts": [802, 803]
+    "relatedProducts": [
+      802,
+      803
+    ]
   },
   {
     "id": 802,
@@ -5501,13 +5871,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3510.jpg",
-    "gallery": ["/images/products/medesy/scissors/3510.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3510.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3510.jpg",
-          "gallery": ["/images/products/medesy/scissors/3510.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3510.jpg"
+          ]
         }
       },
       {
@@ -5558,7 +5932,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Kelly Scissors 3510"]
+          "packageContents": [
+            "Kelly Scissors 3510"
+          ]
         }
       },
       {
@@ -5569,7 +5945,10 @@
         }
       }
     ],
-    "relatedProducts": [801, 803]
+    "relatedProducts": [
+      801,
+      803
+    ]
   },
   {
     "id": 803,
@@ -5583,13 +5962,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3518.jpg",
-    "gallery": ["/images/products/medesy/scissors/3518.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3518.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3518.jpg",
-          "gallery": ["/images/products/medesy/scissors/3518.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3518.jpg"
+          ]
         }
       },
       {
@@ -5640,7 +6023,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Goldman-Fox Scissors 3518"]
+          "packageContents": [
+            "Goldman-Fox Scissors 3518"
+          ]
         }
       },
       {
@@ -5651,7 +6036,10 @@
         }
       }
     ],
-    "relatedProducts": [801, 804]
+    "relatedProducts": [
+      801,
+      804
+    ]
   },
   {
     "id": 804,
@@ -5665,13 +6053,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3519.jpg",
-    "gallery": ["/images/products/medesy/scissors/3519.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3519.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3519.jpg",
-          "gallery": ["/images/products/medesy/scissors/3519.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3519.jpg"
+          ]
         }
       },
       {
@@ -5722,7 +6114,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Goldman-Fox Scissors 3519"]
+          "packageContents": [
+            "Goldman-Fox Scissors 3519"
+          ]
         }
       },
       {
@@ -5733,7 +6127,10 @@
         }
       }
     ],
-    "relatedProducts": [803, 805]
+    "relatedProducts": [
+      803,
+      805
+    ]
   },
   {
     "id": 805,
@@ -5747,13 +6144,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3627.jpg",
-    "gallery": ["/images/products/medesy/scissors/3627.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3627.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3627.jpg",
-          "gallery": ["/images/products/medesy/scissors/3627.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3627.jpg"
+          ]
         }
       },
       {
@@ -5804,7 +6205,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Castroviejo Scissors 3627"]
+          "packageContents": [
+            "Castroviejo Scissors 3627"
+          ]
         }
       },
       {
@@ -5815,7 +6218,10 @@
         }
       }
     ],
-    "relatedProducts": [804, 806]
+    "relatedProducts": [
+      804,
+      806
+    ]
   },
   {
     "id": 806,
@@ -5829,13 +6235,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/scissors/3628.jpg",
-    "gallery": ["/images/products/medesy/scissors/3628.jpg"],
+    "gallery": [
+      "/images/products/medesy/scissors/3628.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3628.jpg",
-          "gallery": ["/images/products/medesy/scissors/3628.jpg"]
+          "gallery": [
+            "/images/products/medesy/scissors/3628.jpg"
+          ]
         }
       },
       {
@@ -5886,7 +6296,9 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": ["Castroviejo Scissors 3628"]
+          "packageContents": [
+            "Castroviejo Scissors 3628"
+          ]
         }
       },
       {
@@ -5897,7 +6309,10 @@
         }
       }
     ],
-    "relatedProducts": [805, 803]
+    "relatedProducts": [
+      805,
+      803
+    ]
   },
   {
     "id": 901,
@@ -5959,7 +6374,9 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/ultra-triple-fit.png",
-          "gallery": ["/images/products/salli/ultra-triple-fit.png"]
+          "gallery": [
+            "/images/products/salli/ultra-triple-fit.png"
+          ]
         }
       },
       {
@@ -5973,14 +6390,38 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Saddle Chair with Armrests" },
-            { "label": "Width Adjustment", "value": "Yes" },
-            { "label": "Tilt Mechanism", "value": "Yes" },
-            { "label": "Height Adjustment", "value": "Pedal Control" },
-            { "label": "Armrests", "value": "Movable" },
-            { "label": "Stretching Support", "value": "Included" },
-            { "label": "Upholstery", "value": "100% Genuine Leather" },
-            { "label": "Origin", "value": "Finland" }
+            {
+              "label": "Type",
+              "value": "Saddle Chair with Armrests"
+            },
+            {
+              "label": "Width Adjustment",
+              "value": "Yes"
+            },
+            {
+              "label": "Tilt Mechanism",
+              "value": "Yes"
+            },
+            {
+              "label": "Height Adjustment",
+              "value": "Pedal Control"
+            },
+            {
+              "label": "Armrests",
+              "value": "Movable"
+            },
+            {
+              "label": "Stretching Support",
+              "value": "Included"
+            },
+            {
+              "label": "Upholstery",
+              "value": "100% Genuine Leather"
+            },
+            {
+              "label": "Origin",
+              "value": "Finland"
+            }
           ]
         }
       },
@@ -5989,7 +6430,11 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": ["Salli Ultra Triple Fit Chair", "Movable Armrests", "User Manual"]
+          "packageContents": [
+            "Salli Ultra Triple Fit Chair",
+            "Movable Armrests",
+            "User Manual"
+          ]
         }
       },
       {
@@ -6000,7 +6445,10 @@
         }
       }
     ],
-    "relatedProducts": [902, 903]
+    "relatedProducts": [
+      902,
+      903
+    ]
   },
   {
     "id": 902,
@@ -6062,7 +6510,9 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/triple-fit.png",
-          "gallery": ["/images/products/salli/triple-fit.png"]
+          "gallery": [
+            "/images/products/salli/triple-fit.png"
+          ]
         }
       },
       {
@@ -6076,12 +6526,30 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Saddle Chair" },
-            { "label": "Width Adjustment", "value": "Yes" },
-            { "label": "Tilt Mechanism", "value": "Yes" },
-            { "label": "Height Adjustment", "value": "Gas Lift" },
-            { "label": "Upholstery", "value": "100% Genuine Leather" },
-            { "label": "Origin", "value": "Finland" }
+            {
+              "label": "Type",
+              "value": "Saddle Chair"
+            },
+            {
+              "label": "Width Adjustment",
+              "value": "Yes"
+            },
+            {
+              "label": "Tilt Mechanism",
+              "value": "Yes"
+            },
+            {
+              "label": "Height Adjustment",
+              "value": "Gas Lift"
+            },
+            {
+              "label": "Upholstery",
+              "value": "100% Genuine Leather"
+            },
+            {
+              "label": "Origin",
+              "value": "Finland"
+            }
           ]
         }
       },
@@ -6090,7 +6558,10 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": ["Salli Triple Fit Chair", "User Manual"]
+          "packageContents": [
+            "Salli Triple Fit Chair",
+            "User Manual"
+          ]
         }
       },
       {
@@ -6101,7 +6572,11 @@
         }
       }
     ],
-    "relatedProducts": [901, 903, 904]
+    "relatedProducts": [
+      901,
+      903,
+      904
+    ]
   },
   {
     "id": 903,
@@ -6163,7 +6638,9 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/triple-fit.png",
-          "gallery": ["/images/products/salli/triple-fit.png"]
+          "gallery": [
+            "/images/products/salli/triple-fit.png"
+          ]
         }
       },
       {
@@ -6177,12 +6654,30 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Saddle Chair" },
-            { "label": "Tilt Mechanism", "value": "Yes" },
-            { "label": "Split Saddle", "value": "Yes" },
-            { "label": "Height Adjustment", "value": "Gas Lift" },
-            { "label": "Upholstery", "value": "100% Genuine Leather" },
-            { "label": "Origin", "value": "Finland" }
+            {
+              "label": "Type",
+              "value": "Saddle Chair"
+            },
+            {
+              "label": "Tilt Mechanism",
+              "value": "Yes"
+            },
+            {
+              "label": "Split Saddle",
+              "value": "Yes"
+            },
+            {
+              "label": "Height Adjustment",
+              "value": "Gas Lift"
+            },
+            {
+              "label": "Upholstery",
+              "value": "100% Genuine Leather"
+            },
+            {
+              "label": "Origin",
+              "value": "Finland"
+            }
           ]
         }
       },
@@ -6191,7 +6686,10 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": ["Salli Chin Tilt Chair", "User Manual"]
+          "packageContents": [
+            "Salli Chin Tilt Chair",
+            "User Manual"
+          ]
         }
       },
       {
@@ -6202,7 +6700,11 @@
         }
       }
     ],
-    "relatedProducts": [901, 902, 904]
+    "relatedProducts": [
+      901,
+      902,
+      904
+    ]
   },
   {
     "id": 904,
@@ -6264,7 +6766,9 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/sway-fit.png",
-          "gallery": ["/images/products/salli/sway-fit.png"]
+          "gallery": [
+            "/images/products/salli/sway-fit.png"
+          ]
         }
       },
       {
@@ -6278,12 +6782,30 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Dynamic Saddle Chair" },
-            { "label": "Swing Mechanism", "value": "Yes" },
-            { "label": "Width Adjustment", "value": "Yes" },
-            { "label": "Height Adjustment", "value": "Gas Lift" },
-            { "label": "Upholstery", "value": "100% Genuine Leather" },
-            { "label": "Origin", "value": "Finland" }
+            {
+              "label": "Type",
+              "value": "Dynamic Saddle Chair"
+            },
+            {
+              "label": "Swing Mechanism",
+              "value": "Yes"
+            },
+            {
+              "label": "Width Adjustment",
+              "value": "Yes"
+            },
+            {
+              "label": "Height Adjustment",
+              "value": "Gas Lift"
+            },
+            {
+              "label": "Upholstery",
+              "value": "100% Genuine Leather"
+            },
+            {
+              "label": "Origin",
+              "value": "Finland"
+            }
           ]
         }
       },
@@ -6292,7 +6814,10 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": ["Salli Sway Fit Chair", "User Manual"]
+          "packageContents": [
+            "Salli Sway Fit Chair",
+            "User Manual"
+          ]
         }
       },
       {
@@ -6303,7 +6828,12 @@
         }
       }
     ],
-    "relatedProducts": [901, 902, 903, 905]
+    "relatedProducts": [
+      901,
+      902,
+      903,
+      905
+    ]
   },
   {
     "id": 905,
@@ -6317,13 +6847,17 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/salli/sway-fit.png",
-    "gallery": ["/images/products/salli/sway-fit.png"],
+    "gallery": [
+      "/images/products/salli/sway-fit.png"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/sway-fit.png",
-          "gallery": ["/images/products/salli/sway-fit.png"]
+          "gallery": [
+            "/images/products/salli/sway-fit.png"
+          ]
         }
       },
       {
@@ -6337,11 +6871,26 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Saddle Chair" },
-            { "label": "Height Adjustment", "value": "Gas Lift" },
-            { "label": "Mobility", "value": "Lightweight Design" },
-            { "label": "Upholstery", "value": "Artificial Leather" },
-            { "label": "Origin", "value": "Finland" }
+            {
+              "label": "Type",
+              "value": "Saddle Chair"
+            },
+            {
+              "label": "Height Adjustment",
+              "value": "Gas Lift"
+            },
+            {
+              "label": "Mobility",
+              "value": "Lightweight Design"
+            },
+            {
+              "label": "Upholstery",
+              "value": "Artificial Leather"
+            },
+            {
+              "label": "Origin",
+              "value": "Finland"
+            }
           ]
         }
       },
@@ -6350,7 +6899,10 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "3 years",
-          "packageContents": ["Salli Light Chair", "User Manual"]
+          "packageContents": [
+            "Salli Light Chair",
+            "User Manual"
+          ]
         }
       },
       {
@@ -6361,7 +6913,11 @@
         }
       }
     ],
-    "relatedProducts": [902, 903, 904]
+    "relatedProducts": [
+      902,
+      903,
+      904
+    ]
   },
   {
     "id": 1001,
@@ -6376,9 +6932,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "a0-c", "name": "Coarse", "sku": "STR-A0-C", "price": 12.99, "image": "/images/products/strauss/a-series/A0C.jpg" },
-      { "id": "a0-m", "name": "Medium", "sku": "STR-A0-M", "price": 12.99, "image": "/images/products/strauss/a-series/A0M.jpg" },
-      { "id": "a0-f", "name": "Fine", "sku": "STR-A0-F", "price": 12.99, "image": "/images/products/strauss/a-series/A0F.jpg" }
+      {
+        "id": "a0-c",
+        "name": "Coarse",
+        "sku": "STR-A0-C",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A0C.jpg"
+      },
+      {
+        "id": "a0-m",
+        "name": "Medium",
+        "sku": "STR-A0-M",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A0M.jpg"
+      },
+      {
+        "id": "a0-f",
+        "name": "Fine",
+        "sku": "STR-A0-F",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A0F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/a-series/A0C.jpg",
     "contentBlocks": [
@@ -6386,7 +6960,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A0C.jpg",
-          "gallery": ["/images/products/strauss/a-series/A0C.jpg", "/images/products/strauss/a-series/A0M.jpg", "/images/products/strauss/a-series/A0F.jpg"]
+          "gallery": [
+            "/images/products/strauss/a-series/A0C.jpg",
+            "/images/products/strauss/a-series/A0M.jpg",
+            "/images/products/strauss/a-series/A0F.jpg"
+          ]
         }
       },
       {
@@ -6400,18 +6978,52 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Round" },
-            { "label": "Diameter", "value": "0.8mm" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Round"
+            },
+            {
+              "label": "Diameter",
+              "value": "0.8mm"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1002, 1003, 1004]
+    "relatedProducts": [
+      1002,
+      1003,
+      1004
+    ]
   },
   {
     "id": 1002,
@@ -6426,9 +7038,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "a1-c", "name": "Coarse", "sku": "STR-A1-C", "price": 12.99, "image": "/images/products/strauss/a-series/A1C.jpg" },
-      { "id": "a1-m", "name": "Medium", "sku": "STR-A1-M", "price": 12.99, "image": "/images/products/strauss/a-series/A1M.jpg" },
-      { "id": "a1-f", "name": "Fine", "sku": "STR-A1-F", "price": 12.99, "image": "/images/products/strauss/a-series/A1F.jpg" }
+      {
+        "id": "a1-c",
+        "name": "Coarse",
+        "sku": "STR-A1-C",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A1C.jpg"
+      },
+      {
+        "id": "a1-m",
+        "name": "Medium",
+        "sku": "STR-A1-M",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A1M.jpg"
+      },
+      {
+        "id": "a1-f",
+        "name": "Fine",
+        "sku": "STR-A1-F",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A1F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/a-series/A1C.jpg",
     "contentBlocks": [
@@ -6436,7 +7066,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A1C.jpg",
-          "gallery": ["/images/products/strauss/a-series/A1C.jpg", "/images/products/strauss/a-series/A1M.jpg", "/images/products/strauss/a-series/A1F.jpg"]
+          "gallery": [
+            "/images/products/strauss/a-series/A1C.jpg",
+            "/images/products/strauss/a-series/A1M.jpg",
+            "/images/products/strauss/a-series/A1F.jpg"
+          ]
         }
       },
       {
@@ -6450,18 +7084,52 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Round" },
-            { "label": "Diameter", "value": "1.0mm" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Round"
+            },
+            {
+              "label": "Diameter",
+              "value": "1.0mm"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1001, 1003, 1004]
+    "relatedProducts": [
+      1001,
+      1003,
+      1004
+    ]
   },
   {
     "id": 1003,
@@ -6476,9 +7144,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "a2-c", "name": "Coarse", "sku": "STR-A2-C", "price": 12.99, "image": "/images/products/strauss/a-series/A2C.jpg" },
-      { "id": "a2-m", "name": "Medium", "sku": "STR-A2-M", "price": 12.99, "image": "/images/products/strauss/a-series/A2M.jpg" },
-      { "id": "a2-f", "name": "Fine", "sku": "STR-A2-F", "price": 12.99, "image": "/images/products/strauss/a-series/A2F.jpg" }
+      {
+        "id": "a2-c",
+        "name": "Coarse",
+        "sku": "STR-A2-C",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A2C.jpg"
+      },
+      {
+        "id": "a2-m",
+        "name": "Medium",
+        "sku": "STR-A2-M",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A2M.jpg"
+      },
+      {
+        "id": "a2-f",
+        "name": "Fine",
+        "sku": "STR-A2-F",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A2F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/a-series/A2C.jpg",
     "contentBlocks": [
@@ -6486,7 +7172,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A2C.jpg",
-          "gallery": ["/images/products/strauss/a-series/A2C.jpg", "/images/products/strauss/a-series/A2M.jpg", "/images/products/strauss/a-series/A2F.jpg"]
+          "gallery": [
+            "/images/products/strauss/a-series/A2C.jpg",
+            "/images/products/strauss/a-series/A2M.jpg",
+            "/images/products/strauss/a-series/A2F.jpg"
+          ]
         }
       },
       {
@@ -6500,18 +7190,52 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Round" },
-            { "label": "Diameter", "value": "1.2mm" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Round"
+            },
+            {
+              "label": "Diameter",
+              "value": "1.2mm"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1001, 1002, 1004]
+    "relatedProducts": [
+      1001,
+      1002,
+      1004
+    ]
   },
   {
     "id": 1004,
@@ -6526,9 +7250,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "a3-c", "name": "Coarse", "sku": "STR-A3-C", "price": 12.99, "image": "/images/products/strauss/a-series/A3C.jpg" },
-      { "id": "a3-m", "name": "Medium", "sku": "STR-A3-M", "price": 12.99, "image": "/images/products/strauss/a-series/A3M.jpg" },
-      { "id": "a3-f", "name": "Fine", "sku": "STR-A3-F", "price": 12.99, "image": "/images/products/strauss/a-series/A3F.jpg" }
+      {
+        "id": "a3-c",
+        "name": "Coarse",
+        "sku": "STR-A3-C",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A3C.jpg"
+      },
+      {
+        "id": "a3-m",
+        "name": "Medium",
+        "sku": "STR-A3-M",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A3M.jpg"
+      },
+      {
+        "id": "a3-f",
+        "name": "Fine",
+        "sku": "STR-A3-F",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A3F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/a-series/A3C.jpg",
     "contentBlocks": [
@@ -6536,7 +7278,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A3C.jpg",
-          "gallery": ["/images/products/strauss/a-series/A3C.jpg", "/images/products/strauss/a-series/A3M.jpg", "/images/products/strauss/a-series/A3F.jpg"]
+          "gallery": [
+            "/images/products/strauss/a-series/A3C.jpg",
+            "/images/products/strauss/a-series/A3M.jpg",
+            "/images/products/strauss/a-series/A3F.jpg"
+          ]
         }
       },
       {
@@ -6550,18 +7296,52 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Round" },
-            { "label": "Diameter", "value": "1.4mm" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Round"
+            },
+            {
+              "label": "Diameter",
+              "value": "1.4mm"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1001, 1002, 1003]
+    "relatedProducts": [
+      1001,
+      1002,
+      1003
+    ]
   },
   {
     "id": 1005,
@@ -6576,9 +7356,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "a4-c", "name": "Coarse", "sku": "STR-A4-C", "price": 12.99, "image": "/images/products/strauss/a-series/A4C.jpg" },
-      { "id": "a4-m", "name": "Medium", "sku": "STR-A4-M", "price": 12.99, "image": "/images/products/strauss/a-series/A4M.jpg" },
-      { "id": "a4-f", "name": "Fine", "sku": "STR-A4-F", "price": 12.99, "image": "/images/products/strauss/a-series/A4F.jpg" }
+      {
+        "id": "a4-c",
+        "name": "Coarse",
+        "sku": "STR-A4-C",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A4C.jpg"
+      },
+      {
+        "id": "a4-m",
+        "name": "Medium",
+        "sku": "STR-A4-M",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A4M.jpg"
+      },
+      {
+        "id": "a4-f",
+        "name": "Fine",
+        "sku": "STR-A4-F",
+        "price": 12.99,
+        "image": "/images/products/strauss/a-series/A4F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/a-series/A4C.jpg",
     "contentBlocks": [
@@ -6586,7 +7384,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A4C.jpg",
-          "gallery": ["/images/products/strauss/a-series/A4C.jpg", "/images/products/strauss/a-series/A4M.jpg", "/images/products/strauss/a-series/A4F.jpg"]
+          "gallery": [
+            "/images/products/strauss/a-series/A4C.jpg",
+            "/images/products/strauss/a-series/A4M.jpg",
+            "/images/products/strauss/a-series/A4F.jpg"
+          ]
         }
       },
       {
@@ -6600,18 +7402,52 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Round" },
-            { "label": "Diameter", "value": "1.6mm" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Round"
+            },
+            {
+              "label": "Diameter",
+              "value": "1.6mm"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1001, 1002, 1003]
+    "relatedProducts": [
+      1001,
+      1002,
+      1003
+    ]
   },
   {
     "id": 1010,
@@ -6626,14 +7462,32 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "b0-c", "name": "Coarse", "sku": "STR-B0-C", "price": 13.99, "image": "/images/products/strauss/b-series/B0C.jpg" },
-      { "id": "b0-m", "name": "Medium", "sku": "STR-B0-M", "price": 13.99, "image": "/images/products/strauss/b-series/B0M.jpg" }
+      {
+        "id": "b0-c",
+        "name": "Coarse",
+        "sku": "STR-B0-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B0C.jpg"
+      },
+      {
+        "id": "b0-m",
+        "name": "Medium",
+        "sku": "STR-B0-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B0M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/b-series/B0C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/b-series/B0C.jpg", "gallery": ["/images/products/strauss/b-series/B0C.jpg", "/images/products/strauss/b-series/B0M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/b-series/B0C.jpg",
+          "gallery": [
+            "/images/products/strauss/b-series/B0C.jpg",
+            "/images/products/strauss/b-series/B0M.jpg"
+          ]
+        }
       },
       {
         "type": "description",
@@ -6646,17 +7500,48 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Pear" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Pear"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1011, 1012, 1013]
+    "relatedProducts": [
+      1011,
+      1012,
+      1013
+    ]
   },
   {
     "id": 1011,
@@ -6671,31 +7556,86 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "b1-c", "name": "Coarse", "sku": "STR-B1-C", "price": 13.99, "image": "/images/products/strauss/b-series/B1C.jpg" },
-      { "id": "b1-m", "name": "Medium", "sku": "STR-B1-M", "price": 13.99, "image": "/images/products/strauss/b-series/B1M.jpg" }
+      {
+        "id": "b1-c",
+        "name": "Coarse",
+        "sku": "STR-B1-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B1C.jpg"
+      },
+      {
+        "id": "b1-m",
+        "name": "Medium",
+        "sku": "STR-B1-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B1M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/b-series/B1C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/b-series/B1C.jpg", "gallery": ["/images/products/strauss/b-series/B1C.jpg", "/images/products/strauss/b-series/B1M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/b-series/B1C.jpg",
+          "gallery": [
+            "/images/products/strauss/b-series/B1C.jpg",
+            "/images/products/strauss/b-series/B1M.jpg"
+          ]
+        }
       },
-      { "type": "description", "data": { "primary": "The Strauss B1 pear diamond bur offers excellent control for undercut creation.", "secondary": "Available in coarse and medium grit options." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss B1 pear diamond bur offers excellent control for undercut creation.",
+          "secondary": "Available in coarse and medium grit options."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Pear" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Pear"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1010, 1012, 1013]
+    "relatedProducts": [
+      1010,
+      1012,
+      1013
+    ]
   },
   {
     "id": 1012,
@@ -6710,31 +7650,86 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "b2-c", "name": "Coarse", "sku": "STR-B2-C", "price": 13.99, "image": "/images/products/strauss/b-series/B2C.jpg" },
-      { "id": "b2-m", "name": "Medium", "sku": "STR-B2-M", "price": 13.99, "image": "/images/products/strauss/b-series/B2M.jpg" }
+      {
+        "id": "b2-c",
+        "name": "Coarse",
+        "sku": "STR-B2-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B2C.jpg"
+      },
+      {
+        "id": "b2-m",
+        "name": "Medium",
+        "sku": "STR-B2-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B2M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/b-series/B2C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/b-series/B2C.jpg", "gallery": ["/images/products/strauss/b-series/B2C.jpg", "/images/products/strauss/b-series/B2M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/b-series/B2C.jpg",
+          "gallery": [
+            "/images/products/strauss/b-series/B2C.jpg",
+            "/images/products/strauss/b-series/B2M.jpg"
+          ]
+        }
       },
-      { "type": "description", "data": { "primary": "The Strauss B2 is a versatile medium pear-shaped diamond bur.", "secondary": "Ideal for a variety of cavity preparation procedures." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss B2 is a versatile medium pear-shaped diamond bur.",
+          "secondary": "Ideal for a variety of cavity preparation procedures."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Pear" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Pear"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1010, 1011, 1013]
+    "relatedProducts": [
+      1010,
+      1011,
+      1013
+    ]
   },
   {
     "id": 1013,
@@ -6749,31 +7744,86 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "b3-c", "name": "Coarse", "sku": "STR-B3-C", "price": 13.99, "image": "/images/products/strauss/b-series/B3C.jpg" },
-      { "id": "b3-m", "name": "Medium", "sku": "STR-B3-M", "price": 13.99, "image": "/images/products/strauss/b-series/B3M.jpg" }
+      {
+        "id": "b3-c",
+        "name": "Coarse",
+        "sku": "STR-B3-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B3C.jpg"
+      },
+      {
+        "id": "b3-m",
+        "name": "Medium",
+        "sku": "STR-B3-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B3M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/b-series/B3C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/b-series/B3C.jpg", "gallery": ["/images/products/strauss/b-series/B3C.jpg", "/images/products/strauss/b-series/B3M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/b-series/B3C.jpg",
+          "gallery": [
+            "/images/products/strauss/b-series/B3C.jpg",
+            "/images/products/strauss/b-series/B3M.jpg"
+          ]
+        }
       },
-      { "type": "description", "data": { "primary": "The Strauss B3 large pear diamond bur for efficient bulk preparation.", "secondary": "Premium diamond coating for consistent performance." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss B3 large pear diamond bur for efficient bulk preparation.",
+          "secondary": "Premium diamond coating for consistent performance."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Pear" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Pear"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1010, 1011, 1012]
+    "relatedProducts": [
+      1010,
+      1011,
+      1012
+    ]
   },
   {
     "id": 1014,
@@ -6788,9 +7838,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "b4-c", "name": "Coarse", "sku": "STR-B4-C", "price": 13.99, "image": "/images/products/strauss/b-series/B4C.jpg" },
-      { "id": "b4-m", "name": "Medium", "sku": "STR-B4-M", "price": 13.99, "image": "/images/products/strauss/b-series/B4M.jpg" },
-      { "id": "b4-f", "name": "Fine", "sku": "STR-B4-F", "price": 13.99, "image": "/images/products/strauss/b-series/B4F.jpg" }
+      {
+        "id": "b4-c",
+        "name": "Coarse",
+        "sku": "STR-B4-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B4C.jpg"
+      },
+      {
+        "id": "b4-m",
+        "name": "Medium",
+        "sku": "STR-B4-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B4M.jpg"
+      },
+      {
+        "id": "b4-f",
+        "name": "Fine",
+        "sku": "STR-B4-F",
+        "price": 13.99,
+        "image": "/images/products/strauss/b-series/B4F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/b-series/B4C.jpg",
     "contentBlocks": [
@@ -6798,28 +7866,66 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B4C.jpg",
-          "gallery": ["/images/products/strauss/b-series/B4C.jpg", "/images/products/strauss/b-series/B4M.jpg", "/images/products/strauss/b-series/B4F.jpg"]
+          "gallery": [
+            "/images/products/strauss/b-series/B4C.jpg",
+            "/images/products/strauss/b-series/B4M.jpg",
+            "/images/products/strauss/b-series/B4F.jpg"
+          ]
         }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss B4 extra large pear diamond bur for major cavity preparation.", "secondary": "Available in three grit options for different preparation stages." }
+        "data": {
+          "primary": "The Strauss B4 extra large pear diamond bur for major cavity preparation.",
+          "secondary": "Available in three grit options for different preparation stages."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Pear" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Pear"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1010, 1011, 1012]
+    "relatedProducts": [
+      1010,
+      1011,
+      1012
+    ]
   },
   {
     "id": 1020,
@@ -6834,9 +7940,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "c0-c", "name": "Coarse", "sku": "STR-C0-C", "price": 13.99, "image": "/images/products/strauss/c-series/C0C.jpg" },
-      { "id": "c0-m", "name": "Medium", "sku": "STR-C0-M", "price": 13.99, "image": "/images/products/strauss/c-series/C0M.jpg" },
-      { "id": "c0-f", "name": "Fine", "sku": "STR-C0-F", "price": 13.99, "image": "/images/products/strauss/c-series/C0F.jpg" }
+      {
+        "id": "c0-c",
+        "name": "Coarse",
+        "sku": "STR-C0-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C0C.jpg"
+      },
+      {
+        "id": "c0-m",
+        "name": "Medium",
+        "sku": "STR-C0-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C0M.jpg"
+      },
+      {
+        "id": "c0-f",
+        "name": "Fine",
+        "sku": "STR-C0-F",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C0F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/c-series/C0C.jpg",
     "contentBlocks": [
@@ -6844,7 +7968,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C0C.jpg",
-          "gallery": ["/images/products/strauss/c-series/C0C.jpg", "/images/products/strauss/c-series/C0M.jpg", "/images/products/strauss/c-series/C0F.jpg"]
+          "gallery": [
+            "/images/products/strauss/c-series/C0C.jpg",
+            "/images/products/strauss/c-series/C0M.jpg",
+            "/images/products/strauss/c-series/C0F.jpg"
+          ]
         }
       },
       {
@@ -6858,17 +7986,48 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Flame" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Flame"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1021, 1022, 1023]
+    "relatedProducts": [
+      1021,
+      1022,
+      1023
+    ]
   },
   {
     "id": 1021,
@@ -6883,9 +8042,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "c1-c", "name": "Coarse", "sku": "STR-C1-C", "price": 13.99, "image": "/images/products/strauss/c-series/C1C.jpg" },
-      { "id": "c1-m", "name": "Medium", "sku": "STR-C1-M", "price": 13.99, "image": "/images/products/strauss/c-series/C1M.jpg" },
-      { "id": "c1-f", "name": "Fine", "sku": "STR-C1-F", "price": 13.99, "image": "/images/products/strauss/c-series/C1F.jpg" }
+      {
+        "id": "c1-c",
+        "name": "Coarse",
+        "sku": "STR-C1-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C1C.jpg"
+      },
+      {
+        "id": "c1-m",
+        "name": "Medium",
+        "sku": "STR-C1-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C1M.jpg"
+      },
+      {
+        "id": "c1-f",
+        "name": "Fine",
+        "sku": "STR-C1-F",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C1F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/c-series/C1C.jpg",
     "contentBlocks": [
@@ -6893,28 +8070,66 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C1C.jpg",
-          "gallery": ["/images/products/strauss/c-series/C1C.jpg", "/images/products/strauss/c-series/C1M.jpg", "/images/products/strauss/c-series/C1F.jpg"]
+          "gallery": [
+            "/images/products/strauss/c-series/C1C.jpg",
+            "/images/products/strauss/c-series/C1M.jpg",
+            "/images/products/strauss/c-series/C1F.jpg"
+          ]
         }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss C1 flame diamond bur offers excellent control for interproximal reduction.", "secondary": "Three grit options for different preparation needs." }
+        "data": {
+          "primary": "The Strauss C1 flame diamond bur offers excellent control for interproximal reduction.",
+          "secondary": "Three grit options for different preparation needs."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Flame" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Flame"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1020, 1022, 1023]
+    "relatedProducts": [
+      1020,
+      1022,
+      1023
+    ]
   },
   {
     "id": 1022,
@@ -6929,9 +8144,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "c2-c", "name": "Coarse", "sku": "STR-C2-C", "price": 13.99, "image": "/images/products/strauss/c-series/C2C.jpg" },
-      { "id": "c2-m", "name": "Medium", "sku": "STR-C2-M", "price": 13.99, "image": "/images/products/strauss/c-series/C2M.jpg" },
-      { "id": "c2-f", "name": "Fine", "sku": "STR-C2-F", "price": 13.99, "image": "/images/products/strauss/c-series/C2F.jpg" }
+      {
+        "id": "c2-c",
+        "name": "Coarse",
+        "sku": "STR-C2-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C2C.jpg"
+      },
+      {
+        "id": "c2-m",
+        "name": "Medium",
+        "sku": "STR-C2-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C2M.jpg"
+      },
+      {
+        "id": "c2-f",
+        "name": "Fine",
+        "sku": "STR-C2-F",
+        "price": 13.99,
+        "image": "/images/products/strauss/c-series/C2F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/c-series/C2C.jpg",
     "contentBlocks": [
@@ -6939,28 +8172,66 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C2C.jpg",
-          "gallery": ["/images/products/strauss/c-series/C2C.jpg", "/images/products/strauss/c-series/C2M.jpg", "/images/products/strauss/c-series/C2F.jpg"]
+          "gallery": [
+            "/images/products/strauss/c-series/C2C.jpg",
+            "/images/products/strauss/c-series/C2M.jpg",
+            "/images/products/strauss/c-series/C2F.jpg"
+          ]
         }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss C2 medium flame diamond bur for versatile interproximal preparation.", "secondary": "Premium Israeli engineering for consistent performance." }
+        "data": {
+          "primary": "The Strauss C2 medium flame diamond bur for versatile interproximal preparation.",
+          "secondary": "Premium Israeli engineering for consistent performance."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Flame" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Flame"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1020, 1021, 1023]
+    "relatedProducts": [
+      1020,
+      1021,
+      1023
+    ]
   },
   {
     "id": 1030,
@@ -6975,34 +8246,85 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "d11-c", "name": "Coarse", "sku": "STR-D11-C", "price": 14.99, "image": "/images/products/strauss/d-series/D11C.jpg" },
-      { "id": "d11-m", "name": "Medium", "sku": "STR-D11-M", "price": 14.99, "image": "/images/products/strauss/d-series/D11M.jpg" }
+      {
+        "id": "d11-c",
+        "name": "Coarse",
+        "sku": "STR-D11-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/d-series/D11C.jpg"
+      },
+      {
+        "id": "d11-m",
+        "name": "Medium",
+        "sku": "STR-D11-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/d-series/D11M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/d-series/D11C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/d-series/D11C.jpg", "gallery": ["/images/products/strauss/d-series/D11C.jpg", "/images/products/strauss/d-series/D11M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/d-series/D11C.jpg",
+          "gallery": [
+            "/images/products/strauss/d-series/D11C.jpg",
+            "/images/products/strauss/d-series/D11M.jpg"
+          ]
+        }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss D11 cylindrical diamond bur is designed for efficient crown preparation and reduction.", "secondary": "Flat end provides consistent depth of cut." }
+        "data": {
+          "primary": "The Strauss D11 cylindrical diamond bur is designed for efficient crown preparation and reduction.",
+          "secondary": "Flat end provides consistent depth of cut."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Cylinder" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Cylinder"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1031, 1032]
+    "relatedProducts": [
+      1031,
+      1032
+    ]
   },
   {
     "id": 1031,
@@ -7017,34 +8339,85 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "d12-c", "name": "Coarse", "sku": "STR-D12-C", "price": 14.99, "image": "/images/products/strauss/d-series/D12C.jpg" },
-      { "id": "d12-m", "name": "Medium", "sku": "STR-D12-M", "price": 14.99, "image": "/images/products/strauss/d-series/D12M.jpg" }
+      {
+        "id": "d12-c",
+        "name": "Coarse",
+        "sku": "STR-D12-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/d-series/D12C.jpg"
+      },
+      {
+        "id": "d12-m",
+        "name": "Medium",
+        "sku": "STR-D12-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/d-series/D12M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/d-series/D12C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/d-series/D12C.jpg", "gallery": ["/images/products/strauss/d-series/D12C.jpg", "/images/products/strauss/d-series/D12M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/d-series/D12C.jpg",
+          "gallery": [
+            "/images/products/strauss/d-series/D12C.jpg",
+            "/images/products/strauss/d-series/D12M.jpg"
+          ]
+        }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss D12 cylinder diamond bur for crown preparation procedures.", "secondary": "Excellent for creating parallel walls in crown preparation." }
+        "data": {
+          "primary": "The Strauss D12 cylinder diamond bur for crown preparation procedures.",
+          "secondary": "Excellent for creating parallel walls in crown preparation."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Cylinder" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Cylinder"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1030, 1032]
+    "relatedProducts": [
+      1030,
+      1032
+    ]
   },
   {
     "id": 1040,
@@ -7059,9 +8432,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "e11-c", "name": "Coarse", "sku": "STR-E11-C", "price": 14.99, "image": "/images/products/strauss/e-series/E11C.jpg" },
-      { "id": "e11-m", "name": "Medium", "sku": "STR-E11-M", "price": 14.99, "image": "/images/products/strauss/e-series/E11M.jpg" },
-      { "id": "e11-f", "name": "Fine", "sku": "STR-E11-F", "price": 14.99, "image": "/images/products/strauss/e-series/E11F.jpg" }
+      {
+        "id": "e11-c",
+        "name": "Coarse",
+        "sku": "STR-E11-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E11C.jpg"
+      },
+      {
+        "id": "e11-m",
+        "name": "Medium",
+        "sku": "STR-E11-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E11M.jpg"
+      },
+      {
+        "id": "e11-f",
+        "name": "Fine",
+        "sku": "STR-E11-F",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E11F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/e-series/E11C.jpg",
     "contentBlocks": [
@@ -7069,7 +8460,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E11C.jpg",
-          "gallery": ["/images/products/strauss/e-series/E11C.jpg", "/images/products/strauss/e-series/E11M.jpg", "/images/products/strauss/e-series/E11F.jpg"]
+          "gallery": [
+            "/images/products/strauss/e-series/E11C.jpg",
+            "/images/products/strauss/e-series/E11M.jpg",
+            "/images/products/strauss/e-series/E11F.jpg"
+          ]
         }
       },
       {
@@ -7083,17 +8478,47 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Taper" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Taper"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1041, 1042]
+    "relatedProducts": [
+      1041,
+      1042
+    ]
   },
   {
     "id": 1041,
@@ -7108,9 +8533,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "e3-rc", "name": "Coarse Round End", "sku": "STR-E3-RC", "price": 14.99, "image": "/images/products/strauss/e-series/E3RC.jpg" },
-      { "id": "e3-rm", "name": "Medium Round End", "sku": "STR-E3-RM", "price": 14.99, "image": "/images/products/strauss/e-series/E3RM.jpg" },
-      { "id": "e3-rf", "name": "Fine Round End", "sku": "STR-E3-RF", "price": 14.99, "image": "/images/products/strauss/e-series/E3RF.jpg" }
+      {
+        "id": "e3-rc",
+        "name": "Coarse Round End",
+        "sku": "STR-E3-RC",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E3RC.jpg"
+      },
+      {
+        "id": "e3-rm",
+        "name": "Medium Round End",
+        "sku": "STR-E3-RM",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E3RM.jpg"
+      },
+      {
+        "id": "e3-rf",
+        "name": "Fine Round End",
+        "sku": "STR-E3-RF",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E3RF.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/e-series/E3RC.jpg",
     "contentBlocks": [
@@ -7118,25 +8561,65 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E3RC.jpg",
-          "gallery": ["/images/products/strauss/e-series/E3RC.jpg", "/images/products/strauss/e-series/E3RM.jpg", "/images/products/strauss/e-series/E3RF.jpg"]
+          "gallery": [
+            "/images/products/strauss/e-series/E3RC.jpg",
+            "/images/products/strauss/e-series/E3RM.jpg",
+            "/images/products/strauss/e-series/E3RF.jpg"
+          ]
         }
       },
-      { "type": "description", "data": { "primary": "The Strauss E3 large tapered diamond bur with round end for smooth crown margins.", "secondary": "Ideal for full coverage crown preparation." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss E3 large tapered diamond bur with round end for smooth crown margins.",
+          "secondary": "Ideal for full coverage crown preparation."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Taper Round End" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Taper Round End"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1040, 1042]
+    "relatedProducts": [
+      1040,
+      1042
+    ]
   },
   {
     "id": 1042,
@@ -7151,9 +8634,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "e32-c", "name": "Coarse", "sku": "STR-E32-C", "price": 14.99, "image": "/images/products/strauss/e-series/E32C.jpg" },
-      { "id": "e32-m", "name": "Medium", "sku": "STR-E32-M", "price": 14.99, "image": "/images/products/strauss/e-series/E32M.jpg" },
-      { "id": "e32-f", "name": "Fine", "sku": "STR-E32-F", "price": 14.99, "image": "/images/products/strauss/e-series/E32F.jpg" }
+      {
+        "id": "e32-c",
+        "name": "Coarse",
+        "sku": "STR-E32-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E32C.jpg"
+      },
+      {
+        "id": "e32-m",
+        "name": "Medium",
+        "sku": "STR-E32-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E32M.jpg"
+      },
+      {
+        "id": "e32-f",
+        "name": "Fine",
+        "sku": "STR-E32-F",
+        "price": 14.99,
+        "image": "/images/products/strauss/e-series/E32F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/e-series/E32C.jpg",
     "contentBlocks": [
@@ -7161,25 +8662,65 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E32C.jpg",
-          "gallery": ["/images/products/strauss/e-series/E32C.jpg", "/images/products/strauss/e-series/E32M.jpg", "/images/products/strauss/e-series/E32F.jpg"]
+          "gallery": [
+            "/images/products/strauss/e-series/E32C.jpg",
+            "/images/products/strauss/e-series/E32M.jpg",
+            "/images/products/strauss/e-series/E32F.jpg"
+          ]
         }
       },
-      { "type": "description", "data": { "primary": "The Strauss E32 wide tapered diamond bur for efficient bulk reduction.", "secondary": "Wide profile for faster preparation times." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss E32 wide tapered diamond bur for efficient bulk reduction.",
+          "secondary": "Wide profile for faster preparation times."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Wide Taper" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Wide Taper"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1040, 1041]
+    "relatedProducts": [
+      1040,
+      1041
+    ]
   },
   {
     "id": 1050,
@@ -7194,9 +8735,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "f09r-c", "name": "Coarse", "sku": "STR-F09R-C", "price": 14.99, "image": "/images/products/strauss/f-series/F09RC.jpg" },
-      { "id": "f09r-m", "name": "Medium", "sku": "STR-F09R-M", "price": 14.99, "image": "/images/products/strauss/f-series/F09RM.jpg" },
-      { "id": "f09r-f", "name": "Fine", "sku": "STR-F09R-F", "price": 14.99, "image": "/images/products/strauss/f-series/F09RF.jpg" }
+      {
+        "id": "f09r-c",
+        "name": "Coarse",
+        "sku": "STR-F09R-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/f-series/F09RC.jpg"
+      },
+      {
+        "id": "f09r-m",
+        "name": "Medium",
+        "sku": "STR-F09R-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/f-series/F09RM.jpg"
+      },
+      {
+        "id": "f09r-f",
+        "name": "Fine",
+        "sku": "STR-F09R-F",
+        "price": 14.99,
+        "image": "/images/products/strauss/f-series/F09RF.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/f-series/F09RC.jpg",
     "contentBlocks": [
@@ -7204,28 +8763,65 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/f-series/F09RC.jpg",
-          "gallery": ["/images/products/strauss/f-series/F09RC.jpg", "/images/products/strauss/f-series/F09RM.jpg", "/images/products/strauss/f-series/F09RF.jpg"]
+          "gallery": [
+            "/images/products/strauss/f-series/F09RC.jpg",
+            "/images/products/strauss/f-series/F09RM.jpg",
+            "/images/products/strauss/f-series/F09RF.jpg"
+          ]
         }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss F09R football-shaped diamond bur is ideal for occlusal surface reduction.", "secondary": "Rounded profile follows natural tooth contours." }
+        "data": {
+          "primary": "The Strauss F09R football-shaped diamond bur is ideal for occlusal surface reduction.",
+          "secondary": "Rounded profile follows natural tooth contours."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Football" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Football"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1040, 1041]
+    "relatedProducts": [
+      1040,
+      1041
+    ]
   },
   {
     "id": 1060,
@@ -7239,28 +8835,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB557.jpg",
-    "gallery": ["/images/products/strauss/fg-series/FGB557.jpg"],
+    "gallery": [
+      "/images/products/strauss/fg-series/FGB557.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/fg-series/FGB557.jpg", "gallery": ["/images/products/strauss/fg-series/FGB557.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/fg-series/FGB557.jpg",
+          "gallery": [
+            "/images/products/strauss/fg-series/FGB557.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
-        "data": { "primary": "The Strauss FGB557 is a straight fissure carbide bur for efficient cavity preparation.", "secondary": "High-quality tungsten carbide for long-lasting performance." }
+        "data": {
+          "primary": "The Strauss FGB557 is a straight fissure carbide bur for efficient cavity preparation.",
+          "secondary": "High-quality tungsten carbide for long-lasting performance."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Straight Fissure" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Tungsten Carbide" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Straight Fissure"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Tungsten Carbide"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Carbide Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Carbide Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1061, 1062]
+    "relatedProducts": [
+      1061,
+      1062
+    ]
   },
   {
     "id": 1061,
@@ -7274,28 +8913,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB558.jpg",
-    "gallery": ["/images/products/strauss/fg-series/FGB558.jpg"],
+    "gallery": [
+      "/images/products/strauss/fg-series/FGB558.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/fg-series/FGB558.jpg", "gallery": ["/images/products/strauss/fg-series/FGB558.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/fg-series/FGB558.jpg",
+          "gallery": [
+            "/images/products/strauss/fg-series/FGB558.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
-        "data": { "primary": "The Strauss FGB558 straight fissure crosscut carbide bur for efficient cutting.", "secondary": "Crosscut design provides aggressive material removal." }
+        "data": {
+          "primary": "The Strauss FGB558 straight fissure crosscut carbide bur for efficient cutting.",
+          "secondary": "Crosscut design provides aggressive material removal."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Straight Fissure Crosscut" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Tungsten Carbide" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Straight Fissure Crosscut"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Tungsten Carbide"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Carbide Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Carbide Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1060, 1062]
+    "relatedProducts": [
+      1060,
+      1062
+    ]
   },
   {
     "id": 1062,
@@ -7309,28 +8991,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB701.jpg",
-    "gallery": ["/images/products/strauss/fg-series/FGB701.jpg"],
+    "gallery": [
+      "/images/products/strauss/fg-series/FGB701.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/fg-series/FGB701.jpg", "gallery": ["/images/products/strauss/fg-series/FGB701.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/fg-series/FGB701.jpg",
+          "gallery": [
+            "/images/products/strauss/fg-series/FGB701.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
-        "data": { "primary": "The Strauss FGB701 taper fissure carbide bur ideal for crown removal and sectioning.", "secondary": "Tapered design allows precise control during crown removal." }
+        "data": {
+          "primary": "The Strauss FGB701 taper fissure carbide bur ideal for crown removal and sectioning.",
+          "secondary": "Tapered design allows precise control during crown removal."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Taper Fissure" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Tungsten Carbide" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Taper Fissure"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Tungsten Carbide"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Carbide Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Carbide Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1060, 1061]
+    "relatedProducts": [
+      1060,
+      1061
+    ]
   },
   {
     "id": 1070,
@@ -7345,34 +9070,85 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "g1-c", "name": "Coarse", "sku": "STR-G1-C", "price": 13.99, "image": "/images/products/strauss/g-series/G1C.jpg" },
-      { "id": "g1-m", "name": "Medium", "sku": "STR-G1-M", "price": 13.99, "image": "/images/products/strauss/g-series/G1M.jpg" }
+      {
+        "id": "g1-c",
+        "name": "Coarse",
+        "sku": "STR-G1-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/g-series/G1C.jpg"
+      },
+      {
+        "id": "g1-m",
+        "name": "Medium",
+        "sku": "STR-G1-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/g-series/G1M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/g-series/G1C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/g-series/G1C.jpg", "gallery": ["/images/products/strauss/g-series/G1C.jpg", "/images/products/strauss/g-series/G1M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/g-series/G1C.jpg",
+          "gallery": [
+            "/images/products/strauss/g-series/G1C.jpg",
+            "/images/products/strauss/g-series/G1M.jpg"
+          ]
+        }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss G1 needle-point diamond bur is designed for fine detail and finishing work.", "secondary": "Sharp point allows precise contouring and detail work." }
+        "data": {
+          "primary": "The Strauss G1 needle-point diamond bur is designed for fine detail and finishing work.",
+          "secondary": "Sharp point allows precise contouring and detail work."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Needle" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Needle"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1071, 1072]
+    "relatedProducts": [
+      1071,
+      1072
+    ]
   },
   {
     "id": 1071,
@@ -7387,31 +9163,85 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "g2-c", "name": "Coarse", "sku": "STR-G2-C", "price": 13.99, "image": "/images/products/strauss/g-series/G2C.jpg" },
-      { "id": "g2-m", "name": "Medium", "sku": "STR-G2-M", "price": 13.99, "image": "/images/products/strauss/g-series/G2M.jpg" }
+      {
+        "id": "g2-c",
+        "name": "Coarse",
+        "sku": "STR-G2-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/g-series/G2C.jpg"
+      },
+      {
+        "id": "g2-m",
+        "name": "Medium",
+        "sku": "STR-G2-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/g-series/G2M.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/g-series/G2C.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/g-series/G2C.jpg", "gallery": ["/images/products/strauss/g-series/G2C.jpg", "/images/products/strauss/g-series/G2M.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/g-series/G2C.jpg",
+          "gallery": [
+            "/images/products/strauss/g-series/G2C.jpg",
+            "/images/products/strauss/g-series/G2M.jpg"
+          ]
+        }
       },
-      { "type": "description", "data": { "primary": "The Strauss G2 needle diamond bur for fine contouring and finishing.", "secondary": "Precision-engineered for optimal control." } },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss G2 needle diamond bur for fine contouring and finishing.",
+          "secondary": "Precision-engineered for optimal control."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Needle" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Needle"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1070, 1072]
+    "relatedProducts": [
+      1070,
+      1072
+    ]
   },
   {
     "id": 1080,
@@ -7426,9 +9256,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "j10-c", "name": "Coarse", "sku": "STR-J10-C", "price": 13.99, "image": "/images/products/strauss/j-series/J10C.jpg" },
-      { "id": "j10-m", "name": "Medium", "sku": "STR-J10-M", "price": 13.99, "image": "/images/products/strauss/j-series/J10M.jpg" },
-      { "id": "j10-f", "name": "Fine", "sku": "STR-J10-F", "price": 13.99, "image": "/images/products/strauss/j-series/J10F.jpg" }
+      {
+        "id": "j10-c",
+        "name": "Coarse",
+        "sku": "STR-J10-C",
+        "price": 13.99,
+        "image": "/images/products/strauss/j-series/J10C.jpg"
+      },
+      {
+        "id": "j10-m",
+        "name": "Medium",
+        "sku": "STR-J10-M",
+        "price": 13.99,
+        "image": "/images/products/strauss/j-series/J10M.jpg"
+      },
+      {
+        "id": "j10-f",
+        "name": "Fine",
+        "sku": "STR-J10-F",
+        "price": 13.99,
+        "image": "/images/products/strauss/j-series/J10F.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/j-series/J10C.jpg",
     "contentBlocks": [
@@ -7436,7 +9284,11 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/j-series/J10C.jpg",
-          "gallery": ["/images/products/strauss/j-series/J10C.jpg", "/images/products/strauss/j-series/J10M.jpg", "/images/products/strauss/j-series/J10F.jpg"]
+          "gallery": [
+            "/images/products/strauss/j-series/J10C.jpg",
+            "/images/products/strauss/j-series/J10M.jpg",
+            "/images/products/strauss/j-series/J10F.jpg"
+          ]
         }
       },
       {
@@ -7450,17 +9302,46 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "Inverted Cone" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "Inverted Cone"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1081]
+    "relatedProducts": [
+      1081
+    ]
   },
   {
     "id": 1090,
@@ -7475,9 +9356,27 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "k2r-c", "name": "Coarse", "sku": "STR-K2R-C", "price": 14.99, "image": "/images/products/strauss/k-series/K2RC.jpg" },
-      { "id": "k2r-m", "name": "Medium", "sku": "STR-K2R-M", "price": 14.99, "image": "/images/products/strauss/k-series/K2RM.jpg" },
-      { "id": "k2r-f", "name": "Fine", "sku": "STR-K2R-F", "price": 14.99, "image": "/images/products/strauss/k-series/K2RF.jpg" }
+      {
+        "id": "k2r-c",
+        "name": "Coarse",
+        "sku": "STR-K2R-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/k-series/K2RC.jpg"
+      },
+      {
+        "id": "k2r-m",
+        "name": "Medium",
+        "sku": "STR-K2R-M",
+        "price": 14.99,
+        "image": "/images/products/strauss/k-series/K2RM.jpg"
+      },
+      {
+        "id": "k2r-f",
+        "name": "Fine",
+        "sku": "STR-K2R-F",
+        "price": 14.99,
+        "image": "/images/products/strauss/k-series/K2RF.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/k-series/K2RC.jpg",
     "contentBlocks": [
@@ -7485,28 +9384,64 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/k-series/K2RC.jpg",
-          "gallery": ["/images/products/strauss/k-series/K2RC.jpg", "/images/products/strauss/k-series/K2RM.jpg", "/images/products/strauss/k-series/K2RF.jpg"]
+          "gallery": [
+            "/images/products/strauss/k-series/K2RC.jpg",
+            "/images/products/strauss/k-series/K2RM.jpg",
+            "/images/products/strauss/k-series/K2RF.jpg"
+          ]
         }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss K2R end-cutting diamond bur is designed for precise shoulder margin preparation.", "secondary": "Flat end ensures clean, defined margins." }
+        "data": {
+          "primary": "The Strauss K2R end-cutting diamond bur is designed for precise shoulder margin preparation.",
+          "secondary": "Flat end ensures clean, defined margins."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "End Cutting" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "End Cutting"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1091]
+    "relatedProducts": [
+      1091
+    ]
   },
   {
     "id": 1091,
@@ -7521,34 +9456,84 @@
     "hasVariants": true,
     "variantType": "grit",
     "variants": [
-      { "id": "k2s-c", "name": "Coarse", "sku": "STR-K2S-C", "price": 14.99, "image": "/images/products/strauss/k-series/K2SC.jpg" },
-      { "id": "k2s-f", "name": "Fine", "sku": "STR-K2S-F", "price": 14.99, "image": "/images/products/strauss/k-series/K2SF.jpg" }
+      {
+        "id": "k2s-c",
+        "name": "Coarse",
+        "sku": "STR-K2S-C",
+        "price": 14.99,
+        "image": "/images/products/strauss/k-series/K2SC.jpg"
+      },
+      {
+        "id": "k2s-f",
+        "name": "Fine",
+        "sku": "STR-K2S-F",
+        "price": 14.99,
+        "image": "/images/products/strauss/k-series/K2SF.jpg"
+      }
     ],
     "defaultImage": "/images/products/strauss/k-series/K2SC.jpg",
     "contentBlocks": [
       {
         "type": "hero",
-        "data": { "primaryImage": "/images/products/strauss/k-series/K2SC.jpg", "gallery": ["/images/products/strauss/k-series/K2SC.jpg", "/images/products/strauss/k-series/K2SF.jpg"] }
+        "data": {
+          "primaryImage": "/images/products/strauss/k-series/K2SC.jpg",
+          "gallery": [
+            "/images/products/strauss/k-series/K2SC.jpg",
+            "/images/products/strauss/k-series/K2SF.jpg"
+          ]
+        }
       },
       {
         "type": "description",
-        "data": { "primary": "The Strauss K2S end-cutting diamond bur with non-cutting safety tip to protect soft tissue.", "secondary": "Ideal for subgingival margin preparation." }
+        "data": {
+          "primary": "The Strauss K2S end-cutting diamond bur with non-cutting safety tip to protect soft tissue.",
+          "secondary": "Ideal for subgingival margin preparation."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Shape", "value": "End Cutting Safety" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Shape",
+              "value": "End Cutting Safety"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Diamond Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Diamond Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1090]
+    "relatedProducts": [
+      1090
+    ]
   },
   {
     "id": 1100,
@@ -7562,28 +9547,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR12M.jpg",
-    "gallery": ["/images/products/strauss/p-series/PR12M.jpg"],
+    "gallery": [
+      "/images/products/strauss/p-series/PR12M.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/p-series/PR12M.jpg", "gallery": ["/images/products/strauss/p-series/PR12M.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/p-series/PR12M.jpg",
+          "gallery": [
+            "/images/products/strauss/p-series/PR12M.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
-        "data": { "primary": "The Strauss PR12M polishing bur for superior finishing and surface refinement.", "secondary": "Fine grit provides smooth, polished surface finish." }
+        "data": {
+          "primary": "The Strauss PR12M polishing bur for superior finishing and surface refinement.",
+          "secondary": "Fine grit provides smooth, polished surface finish."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Polishing" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Type",
+              "value": "Polishing"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Polishing Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Polishing Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1101, 1102]
+    "relatedProducts": [
+      1101,
+      1102
+    ]
   },
   {
     "id": 1101,
@@ -7597,25 +9625,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR13M.jpg",
-    "gallery": ["/images/products/strauss/p-series/PR13M.jpg"],
+    "gallery": [
+      "/images/products/strauss/p-series/PR13M.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/p-series/PR13M.jpg", "gallery": ["/images/products/strauss/p-series/PR13M.jpg"] } },
-      { "type": "description", "data": { "primary": "The Strauss PR13M medium polishing bur for intermediate finishing.", "secondary": "Use before final polishing step." } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/p-series/PR13M.jpg",
+          "gallery": [
+            "/images/products/strauss/p-series/PR13M.jpg"
+          ]
+        }
+      },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Strauss PR13M medium polishing bur for intermediate finishing.",
+          "secondary": "Use before final polishing step."
+        }
+      },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Polishing" },
-            { "label": "Shank", "value": "FG (Friction Grip)" },
-            { "label": "Material", "value": "Diamond" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Type",
+              "value": "Polishing"
+            },
+            {
+              "label": "Shank",
+              "value": "FG (Friction Grip)"
+            },
+            {
+              "label": "Material",
+              "value": "Diamond"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Polishing Bur"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Polishing Bur"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1100, 1102]
+    "relatedProducts": [
+      1100,
+      1102
+    ]
   },
   {
     "id": 1110,
@@ -7629,13 +9703,21 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MagicT1.jpg",
-    "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"],
+    "gallery": [
+      "/images/products/strauss/kits/MagicT1.jpg",
+      "/images/products/strauss/kits/MagicT2.jpg",
+      "/images/products/strauss/kits/MagicT3.jpg"
+    ],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/kits/MagicT1.jpg",
-          "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"]
+          "gallery": [
+            "/images/products/strauss/kits/MagicT1.jpg",
+            "/images/products/strauss/kits/MagicT2.jpg",
+            "/images/products/strauss/kits/MagicT3.jpg"
+          ]
         }
       },
       {
@@ -7649,17 +9731,47 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Complete Kit" },
-            { "label": "Contents", "value": "Multiple Diamond Burs" },
-            { "label": "Case", "value": "Autoclavable Block" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Type",
+              "value": "Complete Kit"
+            },
+            {
+              "label": "Contents",
+              "value": "Multiple Diamond Burs"
+            },
+            {
+              "label": "Case",
+              "value": "Autoclavable Block"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Complete Bur Kit with Block"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Complete Bur Kit with Block"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1111, 1112]
+    "relatedProducts": [
+      1111,
+      1112
+    ]
   },
   {
     "id": 1111,
@@ -7673,28 +9785,71 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
-    "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"],
+    "gallery": [
+      "/images/products/strauss/kits/MiniMagicT1.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/kits/MiniMagicT1.jpg", "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
+          "gallery": [
+            "/images/products/strauss/kits/MiniMagicT1.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
-        "data": { "primary": "The Strauss Mini Magic Kit is a compact bur set with essential burs for everyday procedures.", "secondary": "Perfect for new practitioners or as a backup kit." }
+        "data": {
+          "primary": "The Strauss Mini Magic Kit is a compact bur set with essential burs for everyday procedures.",
+          "secondary": "Perfect for new practitioners or as a backup kit."
+        }
       },
       {
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "Compact Kit" },
-            { "label": "Contents", "value": "Essential Diamond Burs" },
-            { "label": "Case", "value": "Autoclavable Block" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Type",
+              "value": "Compact Kit"
+            },
+            {
+              "label": "Contents",
+              "value": "Essential Diamond Burs"
+            },
+            {
+              "label": "Case",
+              "value": "Autoclavable Block"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x Mini Bur Kit with Block"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x Mini Bur Kit with Block"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1110, 1112]
+    "relatedProducts": [
+      1110,
+      1112
+    ]
   },
   {
     "id": 1112,
@@ -7708,9 +9863,19 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/IPRKIT1.jpg",
-    "gallery": ["/images/products/strauss/kits/IPRKIT1.jpg"],
+    "gallery": [
+      "/images/products/strauss/kits/IPRKIT1.jpg"
+    ],
     "contentBlocks": [
-      { "type": "hero", "data": { "primaryImage": "/images/products/strauss/kits/IPRKIT1.jpg", "gallery": ["/images/products/strauss/kits/IPRKIT1.jpg"] } },
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/strauss/kits/IPRKIT1.jpg",
+          "gallery": [
+            "/images/products/strauss/kits/IPRKIT1.jpg"
+          ]
+        }
+      },
       {
         "type": "description",
         "data": {
@@ -7722,16 +9887,46 @@
         "type": "specifications",
         "data": {
           "specs": [
-            { "label": "Type", "value": "IPR Kit" },
-            { "label": "Contents", "value": "Diamond Strips and Discs" },
-            { "label": "Application", "value": "Orthodontic IPR" },
-            { "label": "Origin", "value": "Israel" }
+            {
+              "label": "Type",
+              "value": "IPR Kit"
+            },
+            {
+              "label": "Contents",
+              "value": "Diamond Strips and Discs"
+            },
+            {
+              "label": "Application",
+              "value": "Orthodontic IPR"
+            },
+            {
+              "label": "Origin",
+              "value": "Israel"
+            }
           ]
         }
       },
-      { "type": "info", "data": { "manufacturer": "Strauss", "warranty": "Satisfaction guaranteed", "packageContents": ["1x IPR Kit"] } },
-      { "type": "actions", "data": { "addToCart": true, "customization": false } }
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Strauss",
+          "warranty": "Satisfaction guaranteed",
+          "packageContents": [
+            "1x IPR Kit"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
     ],
-    "relatedProducts": [1110, 1111]
+    "relatedProducts": [
+      1110,
+      1111
+    ]
   }
 ]

@@ -1,0 +1,194 @@
+{
+  "frames": [
+    {
+      "id": "blues",
+      "name": "Blues",
+      "image": "/images/products/admetec/frames/blues.png",
+      "priceModifier": 0,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1a1a1a",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "grey",
+          "name": "Grey",
+          "hex": "#6b7280",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "bronze-light-blue",
+          "name": "Bronze and Light Blue",
+          "hex": ["#cd7f32", "#87ceeb"],
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#3b82f6",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "pink",
+          "name": "Pink",
+          "hex": "#ec4899",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "purple",
+          "name": "Purple",
+          "hex": "#8b5cf6",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "rose-gold",
+          "name": "Rose Gold",
+          "hex": "#b76e79",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "sand",
+          "name": "Sand",
+          "hex": "#c2b280",
+          "image": "/images/products/admetec/frames"
+        }
+      ]
+    },
+    {
+      "id": "indie",
+      "name": "Indie",
+      "image": "/images/products/admetec/frames/indie.png",
+      "priceModifier": 50,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1a1a1a",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "champagne",
+          "name": "Champagne",
+          "hex": "#f7e7ce",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "hex": "#22c55e",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "orange-lava",
+          "name": "Orange Lava",
+          "hex": "#ff4500",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#3b82f6",
+          "image": "/images/products/admetec/frames"
+        }
+      ]
+    },
+    {
+      "id": "jazz",
+      "name": "Jazz",
+      "image": "/images/products/admetec/frames/jazz.png",
+      "priceModifier": 100,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1a1a1a",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#3b82f6",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "hex": "#f97316",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "turquoise-rose-gold",
+          "name": "Turquoise Rose Gold",
+          "hex": ["#40e0d0", "#b76e79"],
+          "image": "/images/products/admetec/frames"
+        }
+      ]
+    },
+    {
+      "id": "soul",
+      "name": "Soul",
+      "image": "/images/products/admetec/frames/soul.png",
+      "priceModifier": 100,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1a1a1a",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "burgundy-gold",
+          "name": "Burgundy Gold",
+          "hex": ["#800020", "#ffd700"],
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "turquoise",
+          "name": "Turquoise",
+          "hex": "#40e0d0",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "brown-light-blue",
+          "name": "Brown and Light Blue",
+          "hex": ["#8b4513", "#87ceeb"],
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "brown",
+          "name": "Brown",
+          "hex": "#8b4513",
+          "image": "/images/products/admetec/frames"
+        }
+      ]
+    },
+    {
+      "id": "swing",
+      "name": "Swing",
+      "image": "/images/products/admetec/frames/swing.png",
+      "priceModifier": 75,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1a1a1a",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "grey",
+          "name": "Grey",
+          "hex": "#6b7280",
+          "image": "/images/products/admetec/frames"
+        },
+        {
+          "id": "bronze",
+          "name": "Bronze",
+          "hex": "#cd7f32",
+          "image": "/images/products/admetec/frames"
+        }
+      ]
+    }
+  ]
+}

@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NavItem } from '@/types';
 import { cn } from '@/lib/utils';
 import { CloseIcon, ChevronDownIcon } from '@/components/icons';
+import { EnhancedNavItem } from '@/lib/navigation';
 
 interface MobileMenuProps {
-  items: NavItem[];
+  items: EnhancedNavItem[];
   isOpen: boolean;
   onClose: () => void;
 }
@@ -16,6 +16,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
 
   // Close menu on route change
   useEffect(() => {
@@ -36,6 +37,14 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
 
   const toggleExpanded = (href: string) => {
     setExpandedItems((prev) =>
+      prev.includes(href)
+        ? prev.filter((item) => item !== href)
+        : [...prev, href]
+    );
+  };
+
+  const toggleCategory = (href: string) => {
+    setExpandedCategories((prev) =>
       prev.includes(href)
         ? prev.filter((item) => item !== href)
         : [...prev, href]
@@ -77,6 +86,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
           <ul className="space-y-1">
             {items.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+              const hasMegaMenu = item.megaMenu && item.megaMenu.length > 0;
               const hasChildren = item.children && item.children.length > 0;
               const isExpanded = expandedItems.includes(item.href);
 
@@ -94,7 +104,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                     >
                       {item.label}
                     </Link>
-                    {hasChildren && (
+                    {(hasMegaMenu || hasChildren) && (
                       <button
                         onClick={() => toggleExpanded(item.href)}
                         className="icon-btn"
@@ -111,8 +121,82 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                     )}
                   </div>
 
-                  {/* Children */}
-                  {hasChildren && (
+                  {/* Mega Menu Categories for Mobile */}
+                  {hasMegaMenu && (
+                    <ul
+                      className={cn(
+                        'ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-200',
+                        isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                      )}
+                    >
+                      {item.megaMenu!.map((column) => {
+                        const isCategoryExpanded = expandedCategories.includes(column.href);
+                        const hasItems = column.items && column.items.length > 0;
+
+                        return (
+                          <li key={column.href}>
+                            <div className="flex items-center">
+                              <Link
+                                href={column.href}
+                                className={cn(
+                                  'flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors',
+                                  pathname === column.href || pathname.startsWith(column.href + '/')
+                                    ? 'text-primary-600 bg-primary-50'
+                                    : 'text-neutral-700 hover:text-primary-600 hover:bg-surface-secondary'
+                                )}
+                              >
+                                {column.title}
+                              </Link>
+                              {hasItems && (
+                                <button
+                                  onClick={() => toggleCategory(column.href)}
+                                  className="icon-btn p-1"
+                                  aria-label={isCategoryExpanded ? 'Collapse' : 'Expand'}
+                                >
+                                  <ChevronDownIcon
+                                    size={16}
+                                    className={cn(
+                                      'transition-transform',
+                                      isCategoryExpanded && 'rotate-180'
+                                    )}
+                                  />
+                                </button>
+                              )}
+                            </div>
+
+                            {/* Category Sub-items */}
+                            {hasItems && (
+                              <ul
+                                className={cn(
+                                  'ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-200',
+                                  isCategoryExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                )}
+                              >
+                                {column.items.map((subItem) => (
+                                  <li key={subItem.href}>
+                                    <Link
+                                      href={subItem.href}
+                                      className={cn(
+                                        'block px-4 py-2 rounded-lg text-sm transition-colors',
+                                        pathname === subItem.href
+                                          ? 'text-primary-600 bg-primary-50'
+                                          : 'text-muted hover:text-primary-600 hover:bg-surface-secondary'
+                                      )}
+                                    >
+                                      {subItem.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+
+                  {/* Regular Children (non-mega menu) */}
+                  {!hasMegaMenu && hasChildren && (
                     <ul
                       className={cn(
                         'ml-4 mt-1 space-y-1 overflow-hidden transition-all duration-200',

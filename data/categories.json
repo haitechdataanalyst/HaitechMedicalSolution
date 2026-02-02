@@ -63,7 +63,8 @@
     "image": "/images/products/admetec/frames/frames-category.jpg",
     "parent": 1,
     "order": 5,
-    "children": []
+    "children": [],
+    "specialPage": "/our-frames"
   },
   {
     "id": 10,

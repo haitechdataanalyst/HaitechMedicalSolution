@@ -1,21 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { ActionsBlock as ActionsBlockType, Product, CartItem } from "@/types";
+import { useState, useCallback } from "react";
+import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
 import { Button, Input, Select } from "@/components/ui";
+import FrameColorSelector from "./FrameColorSelector";
 
 interface ActionsBlockProps {
   data: ActionsBlockType["data"];
   product: Product;
   onVariantSelect?: (imageUrl: string) => void;
+  frames?: Frame[];
 }
 
-export default function ActionsBlock({ data, product, onVariantSelect }: ActionsBlockProps) {
+export default function ActionsBlock({ data, product, onVariantSelect, frames = [] }: ActionsBlockProps) {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [customFields, setCustomFields] = useState<Record<string, string | number>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [selectedFrameColor, setSelectedFrameColor] = useState<{
+    frameId: string;
+    colorId: string;
+    image: string;
+  } | null>(null);
 
   const handleFieldChange = (fieldId: string, value: string | number) => {
     setCustomFields((prev) => ({ ...prev, [fieldId]: value }));
@@ -28,6 +35,17 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
       });
     }
   };
+
+  // Handle frame/color selection change
+  const handleFrameColorChange = useCallback(
+    (selection: { frameId: string; colorId: string; image: string } | null) => {
+      setSelectedFrameColor(selection);
+      if (selection && onVariantSelect) {
+        onVariantSelect(selection.image);
+      }
+    },
+    [onVariantSelect]
+  );
 
   const validateFields = (): boolean => {
     if (!data.customFields) return true;
@@ -60,14 +78,21 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
       return;
     }
 
+    // Build customization data including frame selection
+    const customization: Record<string, string | number> = { ...customFields };
+    if (selectedFrameColor) {
+      customization.frame = selectedFrameColor.frameId;
+      customization.color = selectedFrameColor.colorId;
+    }
+
     const cartItem: CartItem = {
       productId: String(product.id),
       productName: product.name,
       sku: product.sku,
       quantity,
       basePrice: product.basePrice,
-      customization: data.customization ? customFields : undefined,
-      image: product.defaultImage,
+      customization: Object.keys(customization).length > 0 ? customization : undefined,
+      image: selectedFrameColor?.image || product.defaultImage,
     };
 
     addItem(cartItem);
@@ -77,8 +102,11 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
     return null;
   }
 
-  // Handle variant/color selection
-  const handleVariantSelect = (variant: NonNullable<typeof product.variants>[number]) => {
+  // Check if product has the new frame variants structure
+  const hasFrameVariants = product.variantType === "frame-color" && product.frameVariants && frames.length > 0;
+
+  // Legacy variant handling (for products not yet migrated)
+  const handleLegacyVariantSelect = (variant: NonNullable<typeof product.variants>[number]) => {
     if (variant && onVariantSelect) {
       onVariantSelect(variant.image);
     }
@@ -86,21 +114,16 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
 
   return (
     <div className="bg-surface sticky top-24 space-y-6 rounded-xl border border-neutral-200 p-4 sm:p-6">
-      {/* Price - Commented out for quote-based system */}
-      {/* <div>
-        <span className="text-foreground text-2xl font-bold sm:text-3xl">
-          {product.basePrice ? formatCurrency(product.basePrice) : "Price on Application"}
-        </span>
-        {product.basePrice && <span className="text-muted ml-2 text-sm">excl. GST</span>}
-      </div> */}
+      {/* Frame/Color Selection for loupes */}
+      {hasFrameVariants && product.frameVariants && <FrameColorSelector frames={frames} frameVariants={product.frameVariants} onSelectionChange={handleFrameColorChange} />}
 
-      {/* Color/Variant Selection */}
-      {product.hasVariants && product.variants && product.variants.length > 0 && (
+      {/* Legacy Color/Variant Selection (for products still using old structure) */}
+      {!hasFrameVariants && product.hasVariants && product.variants && product.variants.length > 0 && (
         <div>
           <label className="mb-3 block text-sm font-medium text-neutral-700">{product.variantType === "color" ? "Select Color" : "Select Variant"}</label>
           <div className="flex flex-wrap gap-3">
             {product.variants.map((variant) => (
-              <button key={variant.id} type="button" onClick={() => handleVariantSelect(variant)} className="group relative" title={variant.color || variant.frameStyle || variant.sku}>
+              <button key={variant.id} type="button" onClick={() => handleLegacyVariantSelect(variant)} className="group relative" title={variant.color || variant.frameStyle || variant.sku}>
                 {variant.color ? (
                   <span className="hover:border-primary-500 block h-8 w-8 rounded-full border-2 border-neutral-300 shadow-sm transition-colors" style={{ backgroundColor: variant.color }} />
                 ) : (
@@ -113,7 +136,7 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
       )}
 
       {/* Customization Fields */}
-      {data.customization && data.customFields && (
+      {/* {data.customization && data.customFields && (
         <div className="space-y-4">
           <h4 className="text-foreground font-medium">Customization</h4>
 
@@ -162,16 +185,16 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
             );
           })}
         </div>
-      )}
+      )} */}
 
       {/* Quantity */}
-      <div>
+      {/* <div>
         <label className="mb-2 block text-sm font-medium text-neutral-700">Quantity</label>
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors cursor-pointer"
+            className="hover:bg-surface-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors"
           >
             -
           </button>
@@ -179,12 +202,12 @@ export default function ActionsBlock({ data, product, onVariantSelect }: Actions
           <button
             type="button"
             onClick={() => setQuantity(quantity + 1)}
-            className="hover:bg-surface-secondary flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors cursor-pointer"
+            className="hover:bg-surface-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-neutral-200 text-neutral-600 transition-colors"
           >
             +
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Add to Cart Button */}
       <Button onClick={handleAddToCart} className="w-full" size="lg">

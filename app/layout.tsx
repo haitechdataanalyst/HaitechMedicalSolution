@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
-import { TopHeader, Header, Footer } from "@/components/layout";
+import { TopHeader, Header, Footer, NavigationProvider } from "@/components/layout";
 import navigation from "@/data/navigation.json";
 import siteConfig from "@/data/site-config.json";
 
@@ -15,16 +15,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Haitech Medical | Premium Medical & Dental Equipment",
-  description:
-    "Australia's leading supplier of premium dental loupes, LED headlights, and medical equipment. Quality products with exceptional service.",
-  keywords: [
-    "dental loupes",
-    "medical equipment",
-    "LED headlights",
-    "surgical loupes",
-    "dental equipment",
-    "Australia",
-  ],
+  description: "Australia's leading supplier of premium dental loupes, LED headlights, and medical equipment. Quality products with exceptional service.",
+  keywords: ["dental loupes", "medical equipment", "LED headlights", "surgical loupes", "dental equipment", "Australia"],
 };
 
 export default function RootLayout({
@@ -34,14 +26,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased bg-surface`}>
+      <body className={`${poppins.variable} bg-surface font-sans antialiased`}>
         <Providers>
-          <div className="min-h-screen flex flex-col">
-            <TopHeader />
-            <Header navigation={navigation.header} />
-            <main className="flex-1">{children}</main>
-            <Footer sections={navigation.footer.sections} config={siteConfig} />
-          </div>
+          <NavigationProvider>
+            <div className="flex min-h-screen flex-col">
+              <TopHeader />
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer sections={navigation.footer.sections} config={siteConfig} />
+            </div>
+          </NavigationProvider>
         </Providers>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories } from '@/lib/catalog';
+import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories, getAllFrames } from '@/lib/catalog';
 import { Product } from '@/types';
 import { ProductDetail } from '@/components/products';
 import { Breadcrumbs } from '@/components/ui';
@@ -51,6 +51,7 @@ export default async function ProductPage({ params }: PageProps) {
   const breadcrumbs = getProductBreadcrumbs(product);
   const relatedProducts = getRelatedProducts(product).map(p => ({ ...p, path: getProductPath(p) }));
   const accessories = getProductAccessories(product).map(p => ({ ...p, path: getProductPath(p) }));
+  const frames = getAllFrames();
 
   return (
     <>
@@ -59,6 +60,7 @@ export default async function ProductPage({ params }: PageProps) {
         product={product} 
         relatedProducts={relatedProducts}
         accessories={accessories}
+        frames={frames}
       />
     </>
   );

@@ -631,4 +631,35 @@ body {
       width: 100%;
     }
   }
+
+  /* Hero carousel animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  }
+
+  .animate-fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  /* Hero carousel specific styles */
+  .hero-carousel .group:hover button {
+    opacity: 1 !important;
+  }
 }

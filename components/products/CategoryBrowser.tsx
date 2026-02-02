@@ -40,7 +40,7 @@ function ProductItem({ product }: ProductItemProps) {
 
   return (
     <Link href={productPath} className="group flex flex-col items-center p-4 text-center transition-transform hover:scale-105">
-      <div className="relative mb-3 h-24 w-24 overflow-hidden rounded-full bg-gray-100 shadow-sm transition-shadow group-hover:shadow-md sm:h-28 sm:w-28 md:h-32 md:w-32">
+      <div className="relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-shadow sm:h-28 sm:w-28 md:h-32 md:w-32">
         <Image src={productImage} alt={product.name} fill className="object-contain p-2" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
       </div>
       <span className="group-hover:text-primary-600 line-clamp-2 max-w-30 text-sm font-medium text-gray-700 transition-colors">{product.name}</span>
@@ -51,11 +51,23 @@ function ProductItem({ product }: ProductItemProps) {
 function CategoryItem({ category, isExpanded, level, onCategoryExpand }: CategoryItemProps) {
   const categoryImage = category.image || "/images/placeholder.jpg";
 
+  // If category has a special page, render as a Link instead of a button
+  if (category.specialPage) {
+    return (
+      <Link href={category.specialPage} className="group flex flex-col items-center p-4 text-center transition-all hover:scale-105">
+        <div className="relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all  sm:h-28 sm:w-28 md:h-32 md:w-32">
+          <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
+        </div>
+        <span className="group-hover:text-primary-600 line-clamp-2 max-w-30 text-sm font-medium text-gray-700 transition-colors">{category.name}</span>
+      </Link>
+    );
+  }
+
   return (
     <button onClick={() => onCategoryExpand(category.id, level)} className={`group flex flex-col items-center p-4 text-center transition-all ${isExpanded ? "scale-105" : "hover:scale-105"}`}>
       <div
-        className={`relative mb-3 h-24 w-24 overflow-hidden rounded-full bg-gray-100 shadow-sm transition-all sm:h-28 sm:w-28 md:h-32 md:w-32 ${
-          isExpanded ? "ring-primary-500 shadow-md ring-2" : "group-hover:shadow-md"
+        className={`relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all sm:h-28 sm:w-28 md:h-32 md:w-32 ${
+          isExpanded ? "ring-primary-500 shadow-md ring-2" : ""
         }`}
       >
         <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />

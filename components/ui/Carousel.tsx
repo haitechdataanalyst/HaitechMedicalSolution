@@ -31,6 +31,14 @@ interface CarouselProps {
   arrowVariant?: "default" | "outline" | "ghost";
   /** Responsive breakpoints: { 640: { slidesToShow: 2 }, 1024: { slidesToShow: 4 } } */
   responsive?: Record<number, ResponsiveConfig>;
+  /** Remove padding/margin around the carousel track (useful for full-bleed hero carousels) */
+  noPadding?: boolean;
+  /** Position of dot indicators: 'outside' (below carousel), 'inside' (overlaid at bottom), or 'none' */
+  dotsPosition?: "outside" | "inside" | "none";
+  /** Content to overlay on top of the carousel (useful for hero sections with floating text) */
+  overlayContent?: ReactNode;
+  /** Custom class for the dots container */
+  dotsClassName?: string;
 }
 
 export default function Carousel({
@@ -47,6 +55,10 @@ export default function Carousel({
   arrowSize = "md",
   arrowVariant = "default",
   responsive,
+  noPadding = false,
+  dotsPosition = "outside",
+  overlayContent,
+  dotsClassName = "",
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -275,7 +287,10 @@ export default function Carousel({
       }}
     >
       {/* Track Container - padding/margin trick allows shadows to show while clipping overflow */}
-      <div ref={containerRef} className="-mx-4 overflow-x-hidden px-4 py-4">
+      <div ref={containerRef} className={cn(
+        "overflow-x-hidden",
+        !noPadding && "-mx-4 px-4 py-4"
+      )}>
         <div
           ref={trackRef}
           className={cn(
@@ -347,9 +362,23 @@ export default function Carousel({
         </>
       )}
 
+      {/* Overlay Content (for hero sections with floating text/CTAs) */}
+      {overlayContent && (
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <div className="pointer-events-auto h-full">
+            {overlayContent}
+          </div>
+        </div>
+      )}
+
       {/* Dot Indicators */}
-      {showDots && totalSlides > slidesToShow && (
-        <div className="flex justify-center gap-2 mt-4">
+      {showDots && dotsPosition !== "none" && totalSlides > slidesToShow && (
+        <div className={cn(
+          "flex justify-center gap-2",
+          dotsPosition === "outside" && "mt-4",
+          dotsPosition === "inside" && "absolute bottom-6 left-1/2 -translate-x-1/2 z-30",
+          dotsClassName
+        )}>
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
@@ -357,8 +386,8 @@ export default function Carousel({
               className={cn(
                 "w-2.5 h-2.5 rounded-full transition-all duration-200",
                 index === effectiveIndex
-                  ? "bg-primary-600 w-6"
-                  : "bg-neutral-300 hover:bg-neutral-400",
+                  ? dotsPosition === "inside" ? "bg-white w-6" : "bg-primary-600 w-6"
+                  : dotsPosition === "inside" ? "bg-white/50 hover:bg-white/70" : "bg-neutral-300 hover:bg-neutral-400",
               )}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === effectiveIndex ? "true" : "false"}
