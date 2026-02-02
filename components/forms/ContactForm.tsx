@@ -1,9 +1,10 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState, useEffect } from 'react';
 import { submitContactForm, ContactFormState } from '@/app/actions/contact';
-import { Input, Textarea, Button } from '@/components/ui';
+import { Input, Textarea, Button, CountrySelect } from '@/components/ui';
 import { CheckIcon } from '@/components/icons';
+import type { Country } from '@/components/ui/CountrySelect';
 
 const initialState: ContactFormState = {
   success: false,
@@ -11,6 +12,13 @@ const initialState: ContactFormState = {
 
 export default function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const [formTimestamp, setFormTimestamp] = useState<string>('');
+
+  // Set form timestamp on mount for bot detection
+  useEffect(() => {
+    setFormTimestamp(Date.now().toString());
+  }, []);
 
   if (state.success) {
     return (
@@ -28,6 +36,19 @@ export default function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-6">
+      {/* Honeypot field - hidden from users, bots will fill it */}
+      <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+      
+      {/* Hidden timestamp for bot detection */}
+      <input type="hidden" name="formTimestamp" value={formTimestamp} />
+
       {/* Error Message */}
       {state.error && !state.fieldErrors && (
         <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
@@ -35,6 +56,7 @@ export default function ContactForm() {
         </div>
       )}
 
+      {/* Name & Email Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
           label="Full Name"
@@ -43,6 +65,7 @@ export default function ContactForm() {
           required
           placeholder="John Smith"
           error={state.fieldErrors?.name}
+          maxLength={100}
         />
 
         <Input
@@ -52,6 +75,43 @@ export default function ContactForm() {
           required
           placeholder="john@example.com"
           error={state.fieldErrors?.email}
+          maxLength={255}
+        />
+      </div>
+
+      {/* Phone & Postcode Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Input
+          label="Phone Number"
+          name="phone"
+          type="tel"
+          required
+          placeholder="+61 400 000 000"
+          error={state.fieldErrors?.phone}
+          maxLength={20}
+        />
+
+        <Input
+          label="Postcode"
+          name="postcode"
+          type="text"
+          required
+          placeholder="2000"
+          error={state.fieldErrors?.postcode}
+          maxLength={15}
+        />
+      </div>
+
+      {/* Country Select */}
+      <div className="relative">
+        <CountrySelect
+          label="Country"
+          name="country"
+          required
+          value={selectedCountry?.code}
+          onChange={setSelectedCountry}
+          error={state.fieldErrors?.country}
+          placeholder="Select your country"
         />
       </div>
 
@@ -62,6 +122,7 @@ export default function ContactForm() {
         required
         placeholder="How can we help?"
         error={state.fieldErrors?.subject}
+        maxLength={200}
       />
 
       <Textarea
@@ -71,6 +132,7 @@ export default function ContactForm() {
         placeholder="Your message..."
         rows={6}
         error={state.fieldErrors?.message}
+        maxLength={5000}
       />
 
       <Button

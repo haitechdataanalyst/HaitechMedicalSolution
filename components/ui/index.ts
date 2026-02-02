@@ -6,3 +6,5 @@ export { default as Card, CardImage, CardContent, CardTitle, CardDescription } f
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as ImageWithFallback } from './ImageWithFallback';
 export { default as Carousel } from './Carousel';
+export { default as CountrySelect, countries } from './CountrySelect';
+export type { Country, CountrySelectProps } from './CountrySelect';

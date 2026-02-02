@@ -1,0 +1,108 @@
+{
+  "sections": [
+    {
+      "id": "contact",
+      "title": "Contact Us",
+      "description": "Our customer service is always here for you!",
+      "icon": "Headset",
+      "path": "/support/contact",
+      "children": [
+        {
+          "id": "email",
+          "title": "Email Us",
+          "description": "Send us an email and we'll respond within 24 hours",
+          "icon": "Mail",
+          "path": "/support/contact#email"
+        },
+        {
+          "id": "call",
+          "title": "Call Us",
+          "description": "Speak directly with our support team",
+          "icon": "Phone",
+          "path": "/support/contact#call"
+        },
+        {
+          "id": "chat",
+          "title": "Let's Chat",
+          "description": "Start a live chat conversation",
+          "icon": "MessageCircle",
+          "path": "/support/contact#chat"
+        },
+        {
+          "id": "info",
+          "title": "General Info",
+          "description": "Business hours and location details",
+          "icon": "Info",
+          "path": "/support/contact#info"
+        }
+      ]
+    },
+    {
+      "id": "help-center",
+      "title": "Help Center",
+      "description": "Our customer service is always here for you!",
+      "icon": "LifeBuoy",
+      "path": "/support/faq",
+      "children": [
+        {
+          "id": "guides",
+          "title": "Guides",
+          "description": "Step-by-step product guides and tutorials",
+          "icon": "PlaySquare",
+          "path": "/support/faq#guides"
+        },
+        {
+          "id": "faq",
+          "title": "FAQ",
+          "description": "Frequently asked questions",
+          "icon": "HelpCircle",
+          "path": "/support/faq#faq"
+        },
+        {
+          "id": "articles",
+          "title": "Articles",
+          "description": "Helpful articles and resources",
+          "icon": "FileText",
+          "path": "/support/faq#articles"
+        },
+        {
+          "id": "compare",
+          "title": "Compare",
+          "description": "Compare products and features",
+          "icon": "GitCompare",
+          "path": "/support/faq#compare"
+        }
+      ]
+    },
+    {
+      "id": "policies",
+      "title": "Policies",
+      "description": "Our terms, warranties and return policies",
+      "icon": "FileCheck",
+      "path": "/support/policies",
+      "children": [
+        {
+          "id": "privacy",
+          "title": "Privacy Policy",
+          "description": "How we handle and protect your data",
+          "icon": "Shield",
+          "path": "/support/policies/privacy"
+        },
+        {
+          "id": "warranty",
+          "title": "Extended Warranty",
+          "description": "Extended warranty information and coverage",
+          "icon": "BadgeCheck",
+          "path": "/support/policies/warranty"
+        },
+        {
+          "id": "returns",
+          "title": "Returns & Refunds Policy",
+          "description": "Our return and refund procedures",
+          "icon": "RotateCcw",
+          "path": "/support/policies/returns"
+        }
+      ]
+    }
+  ]
+}
