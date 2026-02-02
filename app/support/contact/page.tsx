@@ -73,6 +73,32 @@ export default function ContactPage() {
         })}
       </section>
 
+      {/* Map and Location Section */}
+      <section id="location" className="mb-12">
+        <div className="bg-white border border-neutral-200 rounded-xl overflow-hidden flex">
+          <div className="p-6 flex-1">
+            <h3 className="font-semibold mb-3">Our Location</h3>
+            <address className="not-italic text-muted space-y-1">
+              <p>{siteConfig.company.address.street}</p>
+              <p>{siteConfig.company.address.city}, {siteConfig.company.address.state} {siteConfig.company.address.postcode}</p>
+              <p>{siteConfig.company.address.country}</p>
+            </address>
+          </div>
+          <div className="aspect-[4/3] flex-1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c8c8c8c8c8%3A0x8c8c8c8c8c8c8c8c!2sKohinoor%20Compound%2C%20Swastik%20Disa%20Corporate%20Park%2C%20Lal%20Bahadur%20Shastri%20Marg%2C%20Nityanand%20Nagar%2C%20Ghatkopar%20West%2C%20Mumbai%2C%20Maharashtra%20400086%2C%20India!5e0!3m2!1sen!2s!4v1703123456789!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Haitech Medical Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Form */}
