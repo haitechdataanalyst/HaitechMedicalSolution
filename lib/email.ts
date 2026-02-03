@@ -135,3 +135,27 @@ ${message}
     `,
   });
 }
+
+interface SendEmailOptions {
+  to: string;
+  from: string;
+  replyTo?: string;
+  subject: string;
+  text: string;
+  html: string;
+}
+
+export async function sendEmail(options: SendEmailOptions) {
+  const { to, from, replyTo, subject, text, html } = options;
+  
+  const transporter = createTransporter();
+  
+  await transporter.sendMail({
+    from: from,
+    to: to,
+    replyTo: replyTo || from,
+    subject: subject,
+    text: text,
+    html: html,
+  });
+}
