@@ -1,14 +1,16 @@
 import fs from "fs";
 import path from "path";
-import { Product, Category, Breadcrumb, Frame, FramesData } from "@/types";
+import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, HeadlightCategory } from "@/types";
 
 const categoriesPath = path.join(process.cwd(), "data", "categories.json");
 const productsPath = path.join(process.cwd(), "data", "products.json");
 const framesPath = path.join(process.cwd(), "data", "frames.json");
+const headlightsPath = path.join(process.cwd(), "data", "headlights.json");
 
 let categoriesCache: Category[] | null = null;
 let productsCache: Product[] | null = null;
 let framesCache: Frame[] | null = null;
+let headlightsCache: HeadlightsData | null = null;
 
 function loadCategories(): Category[] {
   if (!categoriesCache) {
@@ -35,6 +37,14 @@ function loadFrames(): Frame[] {
   return framesCache!;
 }
 
+function loadHeadlights(): HeadlightsData {
+  if (!headlightsCache) {
+    const fileContents = fs.readFileSync(headlightsPath, "utf8");
+    headlightsCache = JSON.parse(fileContents);
+  }
+  return headlightsCache!;
+}
+
 // Get all frames
 export function getAllFrames(): Frame[] {
   return loadFrames();
@@ -44,6 +54,22 @@ export function getAllFrames(): Frame[] {
 export function getFrameById(id: string): Frame | null {
   const frames = loadFrames();
   return frames.find((f) => f.id === id) || null;
+}
+
+// Get headlights data
+export function getHeadlightsData(): HeadlightsData {
+  return loadHeadlights();
+}
+
+// Get headlight categories (Wireless/Wired)
+export function getHeadlightCategories(): HeadlightCategory[] {
+  return loadHeadlights().categories;
+}
+
+// Get headlight category by ID
+export function getHeadlightCategoryById(id: string): HeadlightCategory | null {
+  const categories = loadHeadlights().categories;
+  return categories.find((c) => c.id === id) || null;
 }
 
 // Get all categories

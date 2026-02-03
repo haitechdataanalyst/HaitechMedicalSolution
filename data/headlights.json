@@ -1,0 +1,92 @@
+{
+  "intro": {
+    "title": "Admetec Headlights",
+    "description": "Loupes and lights are two elements that make up a single solution and should be considered in conjunction, not as separate products. Matching the best light for your loupes is a key step in the customization process.",
+    "features": [
+      "High-quality, durable LED",
+      "Daylight \"living color\"",
+      "Ergonomic and easy interface",
+      "Anti-curing yellow filter"
+    ]
+  },
+  "categories": [
+    {
+      "id": "wireless",
+      "name": "Wireless",
+      "description": "Powerful lighting. Ultra-lightweight. Wireless.",
+      "tagline": "Meet the Butterfly EVO, Admetec's cordless headlight series, featuring two models designed for optimal efficiency.",
+      "image": "/images/products/admetec/headlights/wireless-hero.png",
+      "products": [
+        {
+          "id": "butterfly-s-evo",
+          "name": "Butterfly-S EVO",
+          "image": "/images/products/admetec/headlights/butterfly-s-evo.png",
+          "description": "Ultra-compact wireless headlight with superior illumination",
+          "features": [
+            "Cordless operation",
+            "Ultra-lightweight design",
+            "Long battery life",
+            "Quick magnetic attachment"
+          ]
+        },
+        {
+          "id": "butterfly-evo",
+          "name": "Butterfly EVO",
+          "image": "/images/products/admetec/headlights/butterfly-evo.png",
+          "description": "Premium wireless headlight for demanding professionals",
+          "features": [
+            "Cordless operation",
+            "Enhanced brightness",
+            "Extended battery life",
+            "Ergonomic design"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wired",
+      "name": "Wired",
+      "description": "Reliable, consistent illumination with wired power.",
+      "tagline": "Professional-grade wired headlights offering uninterrupted power and exceptional brightness for extended procedures.",
+      "image": "/images/products/admetec/headlights/wired-hero.png",
+      "products": [
+        {
+          "id": "orchid-s-headlight",
+          "name": "Orchid-S Headlight",
+          "image": "/images/products/admetec/headlights/orchid-s.png",
+          "description": "Compact wired headlight with spot illumination",
+          "features": [
+            "Focused spot beam",
+            "Lightweight design",
+            "Consistent power supply",
+            "Easy adjustment"
+          ]
+        },
+        {
+          "id": "orchid-f-headlight",
+          "name": "Orchid-F Headlight",
+          "image": "/images/products/admetec/headlights/orchid-f.png",
+          "description": "Wide-field wired headlight for broader coverage",
+          "features": [
+            "Wide flood beam",
+            "Enhanced field coverage",
+            "Stable illumination",
+            "Professional grade"
+          ]
+        },
+        {
+          "id": "orchid-headlight",
+          "name": "Orchid Headlight",
+          "image": "/images/products/admetec/headlights/orchid.png",
+          "description": "Versatile wired headlight for everyday use",
+          "features": [
+            "Balanced beam pattern",
+            "Reliable performance",
+            "Comfortable wear",
+            "Cost-effective solution"
+          ]
+        }
+      ]
+    }
+  ]
+}

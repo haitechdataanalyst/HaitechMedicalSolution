@@ -40,6 +40,35 @@ export interface FramesData {
   frames: Frame[];
 }
 
+// Headlight Product type
+export interface HeadlightProduct {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  features: string[];
+}
+
+// Headlight Category type (Wireless/Wired)
+export interface HeadlightCategory {
+  id: string;
+  name: string;
+  description: string;
+  tagline: string;
+  image: string;
+  products: HeadlightProduct[];
+}
+
+// Headlights data structure
+export interface HeadlightsData {
+  intro: {
+    title: string;
+    description: string;
+    features: string[];
+  };
+  categories: HeadlightCategory[];
+}
+
 // Frame variant configuration for products with frame-color variants
 export interface FrameVariantConfig {
   availableFrames: string[]; // References to frame IDs from frames.json
