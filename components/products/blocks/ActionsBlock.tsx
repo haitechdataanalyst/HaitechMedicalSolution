@@ -3,8 +3,9 @@
 import { useState, useCallback } from "react";
 import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
-import { Button, Input, Select, WhatsAppButton } from "@/components/ui";
+import { Button } from "@/components/ui";
 import FrameColorSelector from "./FrameColorSelector";
+import ProductQuoteModal from "./ProductQuoteModal";
 
 interface ActionsBlockProps {
   data: ActionsBlockType["data"];
@@ -15,26 +16,14 @@ interface ActionsBlockProps {
 
 export default function ActionsBlock({ data, product, onVariantSelect, frames = [] }: ActionsBlockProps) {
   const { addItem } = useCart();
-  const [quantity, setQuantity] = useState(1);
-  const [customFields, setCustomFields] = useState<Record<string, string | number>>({});
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [quantity] = useState(1);
+  const [customFields] = useState<Record<string, string | number>>({});
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [selectedFrameColor, setSelectedFrameColor] = useState<{
     frameId: string;
     colorId: string;
     image: string;
   } | null>(null);
-
-  const handleFieldChange = (fieldId: string, value: string | number) => {
-    setCustomFields((prev) => ({ ...prev, [fieldId]: value }));
-    // Clear error when field is changed
-    if (errors[fieldId]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[fieldId];
-        return newErrors;
-      });
-    }
-  };
 
   // Handle frame/color selection change
   const handleFrameColorChange = useCallback(
@@ -47,36 +36,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     [onVariantSelect]
   );
 
-  const validateFields = (): boolean => {
-    if (!data.customFields) return true;
-
-    const newErrors: Record<string, string> = {};
-
-    data.customFields.forEach((field, index) => {
-      const fieldId = field.id || field.name || `field-${index}`;
-      if (field.required && !customFields[fieldId]) {
-        newErrors[fieldId] = `${field.label} is required`;
-      }
-
-      if (field.type === "number" && customFields[fieldId]) {
-        const value = Number(customFields[fieldId]);
-        if (field.min !== undefined && value < field.min) {
-          newErrors[fieldId] = `Minimum value is ${field.min}`;
-        }
-        if (field.max !== undefined && value > field.max) {
-          newErrors[fieldId] = `Maximum value is ${field.max}`;
-        }
-      }
-    });
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleAddToCart = () => {
-    if (data.customization && !validateFields()) {
-      return;
-    }
 
     // Build customization data including frame selection
     const customization: Record<string, string | number> = { ...customFields };
@@ -97,7 +57,19 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
     addItem(cartItem);
   };
+// Get variant description for quote modal
+  const getVariantDescription = (): string | undefined => {
+    if (selectedFrameColor) {
+      const frame = frames.find(f => f.id === selectedFrameColor.frameId);
+      const color = frame?.colors.find(c => c.id === selectedFrameColor.colorId);
+      if (frame && color) {
+        return `${frame.name} - ${color.name}`;
+      }
+    }
+    return undefined;
+  };
 
+  
   if (!data.addToCart) {
     return null;
   }
@@ -214,15 +186,27 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         <Button onClick={handleAddToCart} className="flex-1" size="lg">
           Add to Cart
         </Button>
-        <WhatsAppButton
-          phoneNumber="+918291939355"
-          message={`Hi, I'm interested in ${product.name} (SKU: ${product.sku}). Can you provide more details?`}
+        <Button
+          onClick={() => setIsQuoteModalOpen(true)}
+          variant="outline"
           size="lg"
           className="flex-1"
-        />
+        >
+          Get a Quote
+        </Button>
       </div>
 
       <p className="text-muted text-center text-xs">Add items to your cart and request a quote. We&apos;ll respond within 24 hours.</p>
+
+      {/* Quote Modal */}
+      <ProductQuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        productName={product.name}
+        productSku={product.sku}
+        productId={String(product.id)}
+        selectedVariant={getVariantDescription()}
+      />
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { Lordicon, type IconName } from "@/components/icons";
+import { RocketIcon } from "lucide-react";
 
 const stats: { value: string; label: string; icon: IconName }[] = [
   {
@@ -48,7 +49,8 @@ export default function WhySection() {
 
         <div className="text-center">
           <Link href="/support/contact?demo=true">
-            <Button size="lg" className="text-primary-600 bg-white hover:bg-neutral-100 px-20">
+            <Button size="lg" className="text-primary-600 bg-white hover:bg-neutral-100 px-20 gap-3">
+               <RocketIcon size={20} />
               Book a Demo
             </Button>
           </Link>

@@ -33,8 +33,8 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
             return <DescriptionBlock key={index} data={block.data} />;
           case "specifications":
             return <SpecificationsTable key={index} data={block.data} />;
-          case "info":
-            return <InfoBlock key={index} data={block.data} />;
+          // case "info":
+          //   return <InfoBlock key={index} data={block.data} />;
           case "actions":
             return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} frames={frames} />;
           case "gallery":
