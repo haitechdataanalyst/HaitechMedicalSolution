@@ -15,12 +15,12 @@
       "name": "Wireless",
       "description": "Powerful lighting. Ultra-lightweight. Wireless.",
       "tagline": "Meet the Butterfly EVO, Admetec's cordless headlight series, featuring two models designed for optimal efficiency.",
-      "image": "/images/products/admetec/headlights/wireless-hero.png",
+      "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S.webp",
       "products": [
         {
           "id": "butterfly-s-evo",
           "name": "Butterfly-S EVO",
-          "image": "/images/products/admetec/headlights/butterfly-s-evo.png",
+          "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S-Evo.webp",
           "description": "Ultra-compact wireless headlight with superior illumination",
           "features": [
             "Cordless operation",
@@ -32,7 +32,7 @@
         {
           "id": "butterfly-evo",
           "name": "Butterfly EVO",
-          "image": "/images/products/admetec/headlights/butterfly-evo.png",
+          "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-Evo.webp",
           "description": "Premium wireless headlight for demanding professionals",
           "features": [
             "Cordless operation",
@@ -48,12 +48,12 @@
       "name": "Wired",
       "description": "Reliable, consistent illumination with wired power.",
       "tagline": "Professional-grade wired headlights offering uninterrupted power and exceptional brightness for extended procedures.",
-      "image": "/images/products/admetec/headlights/wired-hero.png",
+      "image": "/images/products/admetec/Lights/HeadLights/Wired/Wired.webp",
       "products": [
         {
           "id": "orchid-s-headlight",
           "name": "Orchid-S Headlight",
-          "image": "/images/products/admetec/headlights/orchid-s.png",
+          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-S-HeadLight.webp",
           "description": "Compact wired headlight with spot illumination",
           "features": [
             "Focused spot beam",
@@ -65,7 +65,7 @@
         {
           "id": "orchid-f-headlight",
           "name": "Orchid-F Headlight",
-          "image": "/images/products/admetec/headlights/orchid-f.png",
+          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
           "description": "Wide-field wired headlight for broader coverage",
           "features": [
             "Wide flood beam",
@@ -77,7 +77,7 @@
         {
           "id": "orchid-headlight",
           "name": "Orchid Headlight",
-          "image": "/images/products/admetec/headlights/orchid.png",
+          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-HeadLight.webp",
           "description": "Versatile wired headlight for everyday use",
           "features": [
             "Balanced beam pattern",
