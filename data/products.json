@@ -2398,18 +2398,44 @@
   },
   {
     "id": 501,
-    "slug": "700-8",
-    "name": "Heidbrink Elevator 700/8",
-    "description": "Heidbrink pattern dental elevator for luxation and extraction",
+    "slug": "heidbrink-elevator",
+    "name": "Heidbrink Elevator",
+    "description": "Professional Heidbrink pattern dental elevator for luxation and extraction procedures",
     "category": 21,
     "order": 1,
-    "sku": "MED-700-8",
+    "sku": "MED-700",
     "basePrice": 89,
     "currency": "AUD",
-    "hasVariants": false,
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "700-8",
+        "name": "700/8",
+        "sku": "MED-700-8",
+        "price": 89,
+        "image": "/images/products/medesy/elevator/700slash8.jpg"
+      },
+      {
+        "id": "700-9-left",
+        "name": "700/9 Left",
+        "sku": "MED-700-9",
+        "price": 89,
+        "image": "/images/products/medesy/elevator/700slash9.jpg"
+      },
+      {
+        "id": "700-10-right",
+        "name": "700/10 Right",
+        "sku": "MED-700-10",
+        "price": 89,
+        "image": "/images/products/medesy/elevator/700slash10.jpg"
+      }
+    ],
     "defaultImage": "/images/products/medesy/elevator/700slash8.jpg",
     "gallery": [
-      "/images/products/medesy/elevator/700slash8.jpg"
+      "/images/products/medesy/elevator/700slash8.jpg",
+      "/images/products/medesy/elevator/700slash9.jpg",
+      "/images/products/medesy/elevator/700slash10.jpg"
     ],
     "contentBlocks": [
       {
@@ -2417,14 +2443,16 @@
         "data": {
           "primaryImage": "/images/products/medesy/elevator/700slash8.jpg",
           "gallery": [
-            "/images/products/medesy/elevator/700slash8.jpg"
+            "/images/products/medesy/elevator/700slash8.jpg",
+            "/images/products/medesy/elevator/700slash9.jpg",
+            "/images/products/medesy/elevator/700slash10.jpg"
           ]
         }
       },
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 700/8 Heidbrink elevator is designed for dental luxation and extraction procedures. Features ergonomic handle design for optimal control.",
+          "primary": "The Medesy Heidbrink elevator is designed for dental luxation and extraction procedures. Features ergonomic handle design for optimal control. Available in straight, left, and right configurations.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -2433,10 +2461,6 @@
         "data": {
           "title": "Technical Specifications",
           "rows": [
-            {
-              "label": "Model",
-              "value": "700/8"
-            },
             {
               "label": "Type",
               "value": "Heidbrink"
@@ -2462,7 +2486,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Heidbrink Elevator 700/8"
+            "Heidbrink Elevator (selected model)"
           ]
         }
       },
@@ -2476,182 +2500,17 @@
     ],
     "relatedProducts": [
       502,
-      503
+      503,
+      504
     ]
   },
   {
     "id": 502,
-    "slug": "700-9",
-    "name": "Heidbrink Elevator 700/9 Left",
-    "description": "Heidbrink pattern left-sided dental elevator",
+    "slug": "howard-apical-elevator",
+    "name": "Howard Apical Elevator",
+    "description": "Precision Howard pattern apical elevator for root tip removal and apical surgery",
     "category": 21,
     "order": 2,
-    "sku": "MED-700-9",
-    "basePrice": 89,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/700slash9.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/700slash9.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/700slash9.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/700slash9.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 700/9 Heidbrink Left elevator is specifically designed for left-sided dental extractions. Features ergonomic handle design for optimal control.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "700/9"
-            },
-            {
-              "label": "Type",
-              "value": "Heidbrink Left"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Heidbrink Elevator 700/9 Left"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      501,
-      503
-    ]
-  },
-  {
-    "id": 503,
-    "slug": "700-10",
-    "name": "Heidbrink Elevator 700/10 Right",
-    "description": "Heidbrink pattern right-sided dental elevator",
-    "category": 21,
-    "order": 3,
-    "sku": "MED-700-10",
-    "basePrice": 89,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/700slash10.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/700slash10.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/700slash10.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/700slash10.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 700/10 Heidbrink Right elevator is specifically designed for right-sided dental extractions. Features ergonomic handle design for optimal control.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "700/10"
-            },
-            {
-              "label": "Type",
-              "value": "Heidbrink Right"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Heidbrink Elevator 700/10 Right"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      501,
-      502
-    ]
-  },
-  {
-    "id": 504,
-    "slug": "705-6",
-    "name": "Howard Apical Elevator 705/6",
-    "description": "Howard pattern apical elevator for root tip removal",
-    "category": 21,
-    "order": 4,
     "sku": "MED-705-6",
     "basePrice": 95,
     "currency": "AUD",
@@ -2725,23 +2584,74 @@
     ],
     "relatedProducts": [
       501,
-      505
+      503,
+      504
     ]
   },
   {
-    "id": 505,
-    "slug": "730-3s",
-    "name": "Lussatore Elevator 730/3S Straight 3.0mm",
-    "description": "Lussatore straight elevator with 3.0mm blade",
+    "id": 503,
+    "slug": "lussatore-elevator",
+    "name": "Lussatore Elevator",
+    "description": "Versatile Lussatore dental elevator with straight and curved options in multiple blade widths",
     "category": 21,
-    "order": 5,
-    "sku": "MED-730-3S",
+    "order": 3,
+    "sku": "MED-730",
     "basePrice": 99,
     "currency": "AUD",
-    "hasVariants": false,
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "730-3s",
+        "name": "730/3S Straight 3.0mm",
+        "sku": "MED-730-3S",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash3S.jpg"
+      },
+      {
+        "id": "730-3c",
+        "name": "730/3C Curved 3.0mm",
+        "sku": "MED-730-3C",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash3C.jpg"
+      },
+      {
+        "id": "730-4s",
+        "name": "730/4S Straight 4.0mm",
+        "sku": "MED-730-4S",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash4S.jpg"
+      },
+      {
+        "id": "730-4c",
+        "name": "730/4C Curved 4.0mm",
+        "sku": "MED-730-4C",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash4C.jpg"
+      },
+      {
+        "id": "730-5s",
+        "name": "730/5S Straight 5.0mm",
+        "sku": "MED-730-5S",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash5S.jpg"
+      },
+      {
+        "id": "730-5c",
+        "name": "730/5C Curved 5.0mm",
+        "sku": "MED-730-5C",
+        "price": 99,
+        "image": "/images/products/medesy/elevator/730slash5C.jpg"
+      }
+    ],
     "defaultImage": "/images/products/medesy/elevator/730slash3S.jpg",
     "gallery": [
-      "/images/products/medesy/elevator/730slash3S.jpg"
+      "/images/products/medesy/elevator/730slash3S.jpg",
+      "/images/products/medesy/elevator/730slash3C.jpg",
+      "/images/products/medesy/elevator/730slash4S.jpg",
+      "/images/products/medesy/elevator/730slash4C.jpg",
+      "/images/products/medesy/elevator/730slash5S.jpg",
+      "/images/products/medesy/elevator/730slash5C.jpg"
     ],
     "contentBlocks": [
       {
@@ -2749,441 +2659,11 @@
         "data": {
           "primaryImage": "/images/products/medesy/elevator/730slash3S.jpg",
           "gallery": [
-            "/images/products/medesy/elevator/730slash3S.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 730/3S Lussatore elevator features a straight 3.0mm blade for luxation procedures. Excellent for tight spaces.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "730/3S"
-            },
-            {
-              "label": "Type",
-              "value": "Lussatore Straight"
-            },
-            {
-              "label": "Blade Width",
-              "value": "3.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator 730/3S"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      506,
-      507
-    ]
-  },
-  {
-    "id": 506,
-    "slug": "730-3c",
-    "name": "Lussatore Elevator 730/3C Curved 3.0mm",
-    "description": "Lussatore curved elevator with 3.0mm blade",
-    "category": 21,
-    "order": 6,
-    "sku": "MED-730-3C",
-    "basePrice": 99,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/730slash3C.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/730slash3C.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/730slash3C.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/730slash3C.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 730/3C Lussatore elevator features a curved 3.0mm blade for luxation procedures. Curved design for improved access.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "730/3C"
-            },
-            {
-              "label": "Type",
-              "value": "Lussatore Curved"
-            },
-            {
-              "label": "Blade Width",
-              "value": "3.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator 730/3C"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      505,
-      507
-    ]
-  },
-  {
-    "id": 507,
-    "slug": "730-4s",
-    "name": "Lussatore Elevator 730/4S Straight 4.0mm",
-    "description": "Lussatore straight elevator with 4.0mm blade",
-    "category": 21,
-    "order": 7,
-    "sku": "MED-730-4S",
-    "basePrice": 99,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/730slash4S.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/730slash4S.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/730slash4S.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/730slash4S.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 730/4S Lussatore elevator features a straight 4.0mm blade for luxation procedures. Ideal for standard extractions.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "730/4S"
-            },
-            {
-              "label": "Type",
-              "value": "Lussatore Straight"
-            },
-            {
-              "label": "Blade Width",
-              "value": "4.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator 730/4S"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      505,
-      508
-    ]
-  },
-  {
-    "id": 508,
-    "slug": "730-4c",
-    "name": "Lussatore Elevator 730/4C Curved 4.0mm",
-    "description": "Lussatore curved elevator with 4.0mm blade",
-    "category": 21,
-    "order": 8,
-    "sku": "MED-730-4C",
-    "basePrice": 99,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/730slash4C.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/730slash4C.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/730slash4C.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/730slash4C.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 730/4C Lussatore elevator features a curved 4.0mm blade for luxation procedures. Curved design for improved access.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "730/4C"
-            },
-            {
-              "label": "Type",
-              "value": "Lussatore Curved"
-            },
-            {
-              "label": "Blade Width",
-              "value": "4.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator 730/4C"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      507,
-      509
-    ]
-  },
-  {
-    "id": 509,
-    "slug": "730-5s",
-    "name": "Lussatore Elevator 730/5S Straight 5.0mm",
-    "description": "Lussatore straight elevator with 5.0mm blade",
-    "category": 21,
-    "order": 9,
-    "sku": "MED-730-5S",
-    "basePrice": 99,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/730slash5S.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/730slash5S.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/730slash5S.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/730slash5S.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 730/5S Lussatore elevator features a straight 5.0mm blade for luxation procedures. Wider blade for larger teeth.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "730/5S"
-            },
-            {
-              "label": "Type",
-              "value": "Lussatore Straight"
-            },
-            {
-              "label": "Blade Width",
-              "value": "5.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator 730/5S"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      507,
-      510
-    ]
-  },
-  {
-    "id": 510,
-    "slug": "730-5c",
-    "name": "Lussatore Elevator 730/5C Curved 5.0mm",
-    "description": "Lussatore curved elevator with 5.0mm blade",
-    "category": 21,
-    "order": 10,
-    "sku": "MED-730-5C",
-    "basePrice": 99,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/730slash5C.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/730slash5C.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/730slash5C.jpg",
-          "gallery": [
+            "/images/products/medesy/elevator/730slash3S.jpg",
+            "/images/products/medesy/elevator/730slash3C.jpg",
+            "/images/products/medesy/elevator/730slash4S.jpg",
+            "/images/products/medesy/elevator/730slash4C.jpg",
+            "/images/products/medesy/elevator/730slash5S.jpg",
             "/images/products/medesy/elevator/730slash5C.jpg"
           ]
         }
@@ -3191,7 +2671,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 730/5C Lussatore elevator features a curved 5.0mm blade for luxation procedures. Curved design with wider blade.",
+          "primary": "The Medesy Lussatore elevator features both straight and curved blade configurations with 3.0mm, 4.0mm, and 5.0mm blade widths for versatile luxation procedures. Choose the model that best suits your clinical needs.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -3201,16 +2681,16 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Model",
-              "value": "730/5C"
-            },
-            {
               "label": "Type",
-              "value": "Lussatore Curved"
+              "value": "Lussatore"
             },
             {
-              "label": "Blade Width",
-              "value": "5.0mm"
+              "label": "Blade Options",
+              "value": "Straight & Curved"
+            },
+            {
+              "label": "Blade Widths",
+              "value": "3.0mm, 4.0mm, 5.0mm"
             },
             {
               "label": "Material",
@@ -3233,7 +2713,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Lussatore Elevator 730/5C"
+            "Lussatore Elevator (selected model)"
           ]
         }
       },
@@ -3246,24 +2726,51 @@
       }
     ],
     "relatedProducts": [
-      509,
-      505
+      501,
+      502,
+      504
     ]
   },
   {
-    "id": 511,
-    "slug": "796-1",
-    "name": "Warwick-James Elevator 796/1",
-    "description": "Warwick-James root elevator 2.2mm straight",
+    "id": 504,
+    "slug": "warwick-james-elevator",
+    "name": "Warwick-James Elevator",
+    "description": "Classic Warwick-James pattern root elevator trusted by oral surgeons for precise root extraction",
     "category": 21,
-    "order": 11,
-    "sku": "MED-796-1",
+    "order": 4,
+    "sku": "MED-796",
     "basePrice": 85,
     "currency": "AUD",
-    "hasVariants": false,
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "796-1",
+        "name": "796/1 Straight",
+        "sku": "MED-796-1",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/796slash1.jpg"
+      },
+      {
+        "id": "796-2-left",
+        "name": "796/2 Left",
+        "sku": "MED-796-2",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/796slash2.jpg"
+      },
+      {
+        "id": "796-3-right",
+        "name": "796/3 Right",
+        "sku": "MED-796-3",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/796slash3.jpg"
+      }
+    ],
     "defaultImage": "/images/products/medesy/elevator/796slash1.jpg",
     "gallery": [
-      "/images/products/medesy/elevator/796slash1.jpg"
+      "/images/products/medesy/elevator/796slash1.jpg",
+      "/images/products/medesy/elevator/796slash2.jpg",
+      "/images/products/medesy/elevator/796slash3.jpg"
     ],
     "contentBlocks": [
       {
@@ -3271,180 +2778,8 @@
         "data": {
           "primaryImage": "/images/products/medesy/elevator/796slash1.jpg",
           "gallery": [
-            "/images/products/medesy/elevator/796slash1.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 796/1 Warwick-James elevator is designed for root extraction with a 2.2mm straight blade. Classic pattern trusted by oral surgeons.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "796/1"
-            },
-            {
-              "label": "Type",
-              "value": "Warwick-James Straight"
-            },
-            {
-              "label": "Blade Width",
-              "value": "2.2mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Warwick-James Elevator 796/1"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      512,
-      513
-    ]
-  },
-  {
-    "id": 512,
-    "slug": "796-2",
-    "name": "Warwick-James Elevator 796/2 Left",
-    "description": "Warwick-James root elevator 2.2mm left",
-    "category": 21,
-    "order": 12,
-    "sku": "MED-796-2",
-    "basePrice": 85,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/796slash2.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/796slash2.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/796slash2.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/796slash2.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 796/2 Warwick-James elevator is designed for left-sided root extraction with a 2.2mm blade. Classic pattern trusted by oral surgeons.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "796/2"
-            },
-            {
-              "label": "Type",
-              "value": "Warwick-James Left"
-            },
-            {
-              "label": "Blade Width",
-              "value": "2.2mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Warwick-James Elevator 796/2 Left"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      511,
-      513
-    ]
-  },
-  {
-    "id": 513,
-    "slug": "796-3",
-    "name": "Warwick-James Elevator 796/3 Right",
-    "description": "Warwick-James root elevator 2.2mm right",
-    "category": 21,
-    "order": 13,
-    "sku": "MED-796-3",
-    "basePrice": 85,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/796slash3.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/796slash3.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/796slash3.jpg",
-          "gallery": [
+            "/images/products/medesy/elevator/796slash1.jpg",
+            "/images/products/medesy/elevator/796slash2.jpg",
             "/images/products/medesy/elevator/796slash3.jpg"
           ]
         }
@@ -3452,7 +2787,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 796/3 Warwick-James elevator is designed for right-sided root extraction with a 2.2mm blade. Classic pattern trusted by oral surgeons.",
+          "primary": "The Medesy Warwick-James elevator is designed for root extraction with a 2.2mm blade. Classic pattern trusted by oral surgeons. Available in straight, left, and right configurations.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -3462,12 +2797,8 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Model",
-              "value": "796/3"
-            },
-            {
               "label": "Type",
-              "value": "Warwick-James Right"
+              "value": "Warwick-James"
             },
             {
               "label": "Blade Width",
@@ -3494,7 +2825,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Warwick-James Elevator 796/3 Right"
+            "Warwick-James Elevator (selected model)"
           ]
         }
       },
@@ -3507,24 +2838,51 @@
       }
     ],
     "relatedProducts": [
-      511,
-      512
+      501,
+      502,
+      505
     ]
   },
   {
-    "id": 514,
-    "slug": "798-1",
-    "name": "Coupland Elevator 798/1 3.0mm",
-    "description": "Coupland root elevator with 3.0mm blade",
+    "id": 505,
+    "slug": "coupland-elevator",
+    "name": "Coupland Elevator",
+    "description": "Professional Coupland pattern root elevator with multiple blade widths for versatile extraction applications",
     "category": 21,
-    "order": 14,
-    "sku": "MED-798-1",
+    "order": 5,
+    "sku": "MED-798",
     "basePrice": 85,
     "currency": "AUD",
-    "hasVariants": false,
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "798-1",
+        "name": "798/1 3.0mm",
+        "sku": "MED-798-1",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/798slash1.jpg"
+      },
+      {
+        "id": "798-2",
+        "name": "798/2 3.6mm",
+        "sku": "MED-798-2",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/798slash2.jpg"
+      },
+      {
+        "id": "798-3",
+        "name": "798/3 4.2mm",
+        "sku": "MED-798-3",
+        "price": 85,
+        "image": "/images/products/medesy/elevator/798slash3.jpg"
+      }
+    ],
     "defaultImage": "/images/products/medesy/elevator/798slash1.jpg",
     "gallery": [
-      "/images/products/medesy/elevator/798slash1.jpg"
+      "/images/products/medesy/elevator/798slash1.jpg",
+      "/images/products/medesy/elevator/798slash2.jpg",
+      "/images/products/medesy/elevator/798slash3.jpg"
     ],
     "contentBlocks": [
       {
@@ -3532,180 +2890,8 @@
         "data": {
           "primaryImage": "/images/products/medesy/elevator/798slash1.jpg",
           "gallery": [
-            "/images/products/medesy/elevator/798slash1.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 798/1 Coupland elevator features a 3.0mm blade for root extraction. Classic Coupland pattern for reliable performance.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "798/1"
-            },
-            {
-              "label": "Type",
-              "value": "Coupland"
-            },
-            {
-              "label": "Blade Width",
-              "value": "3.0mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Coupland Elevator 798/1"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      515,
-      516
-    ]
-  },
-  {
-    "id": 515,
-    "slug": "798-2",
-    "name": "Coupland Elevator 798/2 3.6mm",
-    "description": "Coupland root elevator with 3.6mm blade",
-    "category": 21,
-    "order": 15,
-    "sku": "MED-798-2",
-    "basePrice": 85,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/798slash2.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/798slash2.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/798slash2.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/798slash2.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 798/2 Coupland elevator features a 3.6mm blade for root extraction. Mid-size blade for versatile applications.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "798/2"
-            },
-            {
-              "label": "Type",
-              "value": "Coupland"
-            },
-            {
-              "label": "Blade Width",
-              "value": "3.6mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Coupland Elevator 798/2"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      514,
-      516
-    ]
-  },
-  {
-    "id": 516,
-    "slug": "798-3",
-    "name": "Coupland Elevator 798/3 4.2mm",
-    "description": "Coupland root elevator with 4.2mm blade",
-    "category": 21,
-    "order": 16,
-    "sku": "MED-798-3",
-    "basePrice": 85,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/elevator/798slash3.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/798slash3.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/elevator/798slash3.jpg",
-          "gallery": [
+            "/images/products/medesy/elevator/798slash1.jpg",
+            "/images/products/medesy/elevator/798slash2.jpg",
             "/images/products/medesy/elevator/798slash3.jpg"
           ]
         }
@@ -3713,7 +2899,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 798/3 Coupland elevator features a 4.2mm blade for root extraction. Larger blade for substantial roots.",
+          "primary": "The Medesy Coupland elevator features multiple blade widths (3.0mm, 3.6mm, 4.2mm) for versatile root extraction. Classic Coupland pattern for reliable performance.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -3723,16 +2909,12 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Model",
-              "value": "798/3"
-            },
-            {
               "label": "Type",
               "value": "Coupland"
             },
             {
-              "label": "Blade Width",
-              "value": "4.2mm"
+              "label": "Blade Widths",
+              "value": "3.0mm, 3.6mm, 4.2mm"
             },
             {
               "label": "Material",
@@ -3755,7 +2937,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Coupland Elevator 798/3"
+            "Coupland Elevator (selected model)"
           ]
         }
       },
@@ -3768,8 +2950,10 @@
       }
     ],
     "relatedProducts": [
-      514,
-      515
+      501,
+      502,
+      503,
+      504
     ]
   },
   {

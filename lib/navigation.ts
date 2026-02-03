@@ -72,7 +72,7 @@ function buildMegaMenuFromCategories(): MegaMenuColumn[] {
 
     const items: MegaMenuItem[] = childCategories.map((child) => ({
       label: child.name,
-      href: `/product-category/${rootCat.slug}/${child.slug}`,
+      href: child.specialPage || `/product-category/${rootCat.slug}/${child.slug}`,
       description: child.description,
       image: child.image,
       categoryId: child.id,
