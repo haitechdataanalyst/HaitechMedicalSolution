@@ -94,7 +94,7 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="bg-surface-secondary relative aspect-square overflow-hidden rounded-xl">
+      <div className="relative aspect-square overflow-hidden rounded-xl">
         <Image
           src={failedImages.has(selectedImage) ? PLACEHOLDER_IMAGE : selectedImage}
           alt="Product"

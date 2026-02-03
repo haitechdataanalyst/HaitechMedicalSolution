@@ -9,6 +9,7 @@ import { MenuIcon } from "@/components/icons";
 import Image from "next/image";
 import { Button } from "../ui";
 import { useHeaderNavigation } from "./NavigationProvider";
+import { RocketIcon } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +30,8 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-1 md:gap-9">
             <Link href="/support/contact">
-              <Button className="px-12" variant="solid">
+              <Button className="px-12 gap-3" variant="solid">
+                <RocketIcon size={20} />
                 Book a Demo
               </Button>
             </Link>

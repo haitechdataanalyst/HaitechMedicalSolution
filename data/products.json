@@ -2958,18 +2958,56 @@
   },
   {
     "id": 601,
-    "slug": "2400-51-al",
-    "name": "Forceps 2400/51-AL Upper Roots",
-    "description": "Extraction forceps for upper roots and fragments",
+    "slug": "forceps-2400",
+    "name": "Medesy Forceps 2400 Series",
+    "description": "Professional extraction forceps 2400 series for roots, third molars, and specialized extractions",
     "category": 22,
     "order": 1,
-    "sku": "MED-2400-51-AL",
+    "sku": "MED-2400",
     "basePrice": 149,
     "currency": "AUD",
-    "hasVariants": false,
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "2400-51-al",
+        "name": "2400/51-AL",
+        "description": "upper roots and fragments",
+        "sku": "MED-2400-51-AL",
+        "price": 149,
+        "image": "/images/products/medesy/forceps/2400slash51-AL.jpg"
+      },
+      {
+        "id": "2400-67",
+        "name": "2400/67",
+        "description": "upper third molars",
+        "sku": "MED-2400-67",
+        "price": 159,
+        "image": "/images/products/medesy/forceps/2400slash67.jpg"
+      },
+      {
+        "id": "2400-70",
+        "name": "2400/70",
+        "description": "Dr. Comella pattern extraction forceps",
+        "sku": "MED-2400-70",
+        "price": 165,
+        "image": "/images/products/medesy/forceps/2400slash70.jpg"
+      },
+      {
+        "id": "2400-187",
+        "name": "2400/187",
+        "description": "lower roots and fragments",
+        "sku": "MED-2400-187",
+        "price": 149,
+        "image": "/images/products/medesy/forceps/2400slash187.jpg"
+      }
+    ],
     "defaultImage": "/images/products/medesy/forceps/2400slash51-AL.jpg",
     "gallery": [
-      "/images/products/medesy/forceps/2400slash51-AL.jpg"
+      "/images/products/medesy/forceps/2400slash51-AL.jpg",
+      "/images/products/medesy/forceps/2400slash67.jpg",
+      "/images/products/medesy/forceps/2400slash70.jpg",
+      "/images/products/medesy/forceps/2400slash187.jpg"
     ],
     "contentBlocks": [
       {
@@ -2977,14 +3015,17 @@
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2400slash51-AL.jpg",
           "gallery": [
-            "/images/products/medesy/forceps/2400slash51-AL.jpg"
+            "/images/products/medesy/forceps/2400slash51-AL.jpg",
+            "/images/products/medesy/forceps/2400slash67.jpg",
+            "/images/products/medesy/forceps/2400slash70.jpg",
+            "/images/products/medesy/forceps/2400slash187.jpg"
           ]
         }
       },
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 2400/51-AL forceps are designed for extraction of upper roots and fragments. Precision beaks for secure grip.",
+          "primary": "The Medesy 2400 series extraction forceps provide precision instruments for upper and lower root extractions, third molars, and specialized procedures. Available in multiple configurations to suit various clinical needs.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -2994,12 +3035,8 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Model",
-              "value": "2400/51-AL"
-            },
-            {
-              "label": "Application",
-              "value": "Upper roots, fragments"
+              "label": "Series",
+              "value": "2400"
             },
             {
               "label": "Material",
@@ -3022,7 +3059,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Forceps 2400/51-AL"
+            "Forceps 2400 (selected model)"
           ]
         }
       },
@@ -3036,272 +3073,107 @@
     ],
     "relatedProducts": [
       602,
-      604
+      501,
+      502
     ]
   },
   {
     "id": 602,
-    "slug": "2400-67",
-    "name": "Forceps 2400/67 Upper Third Molar",
-    "description": "Extraction forceps for upper third molars",
+    "slug": "forceps-2500",
+    "name": "Medesy Forceps 2500 Series",
+    "description": "Comprehensive extraction forceps 2500 series for molars, roots, and universal applications",
     "category": 22,
     "order": 2,
-    "sku": "MED-2400-67",
-    "basePrice": 159,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2400slash67.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2400slash67.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2400slash67.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2400slash67.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2400/67 forceps are specifically designed for upper third molar extraction. Angled design for posterior access.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2400/67"
-            },
-            {
-              "label": "Application",
-              "value": "Upper third molar"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2400/67"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      601,
-      609
-    ]
-  },
-  {
-    "id": 603,
-    "slug": "2400-70",
-    "name": "Forceps 2400/70 Dr. Comella",
-    "description": "Dr. Comella pattern extraction forceps",
-    "category": 22,
-    "order": 3,
-    "sku": "MED-2400-70",
-    "basePrice": 165,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2400slash70.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2400slash70.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2400slash70.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2400slash70.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2400/70 Dr. Comella forceps feature a specialized design for optimal extraction. Trusted pattern used by oral surgeons worldwide.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2400/70"
-            },
-            {
-              "label": "Pattern",
-              "value": "Dr. Comella"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2400/70"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      601,
-      602
-    ]
-  },
-  {
-    "id": 604,
-    "slug": "2400-187",
-    "name": "Forceps 2400/187 Lower Roots",
-    "description": "Extraction forceps for lower roots and fragments",
-    "category": 22,
-    "order": 4,
-    "sku": "MED-2400-187",
+    "sku": "MED-2500",
     "basePrice": 149,
     "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2400slash187.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2400slash187.jpg"
-    ],
-    "contentBlocks": [
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
       {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2400slash187.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2400slash187.jpg"
-          ]
-        }
+        "id": "2500-17",
+        "name": "2500/17",
+        "description": "upper right molars",
+        "sku": "MED-2500-17",
+        "price": 169,
+        "image": "/images/products/medesy/forceps/2500slash17.jpg"
       },
       {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2400/187 forceps are designed for extraction of lower roots and fragments. Narrow beaks for precise access.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
+        "id": "2500-18",
+        "name": "2500/18",
+        "description": "upper left molars",
+        "sku": "MED-2500-18",
+        "price": 169,
+        "image": "/images/products/medesy/forceps/2500slash18.jpg"
       },
       {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2400/187"
-            },
-            {
-              "label": "Application",
-              "value": "Lower roots, fragments"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
+        "id": "2500-51",
+        "name": "2500/51",
+        "description": "upper roots with short narrow beaks",
+        "sku": "MED-2500-51",
+        "price": 159,
+        "image": "/images/products/medesy/forceps/2500slash51.jpg"
       },
       {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2400/187"
-          ]
-        }
+        "id": "2500-79",
+        "name": "2500/79",
+        "description": "lower third molars",
+        "sku": "MED-2500-79",
+        "price": 169,
+        "image": "/images/products/medesy/forceps/2500slash79.jpg"
       },
       {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
+        "id": "2500-86",
+        "name": "2500/86",
+        "description": "Cow horn forceps for lower molars with deep gripping",
+        "sku": "MED-2500-86",
+        "price": 179,
+        "image": "/images/products/medesy/forceps/2500slash86.jpg"
+      },
+      {
+        "id": "2500-187",
+        "name": "2500/187",
+        "description": "lower roots and fragments",
+        "sku": "MED-2500-187",
+        "price": 149,
+        "image": "/images/products/medesy/forceps/2500slash187.jpg"
+      },
+      {
+        "id": "2500-221",
+        "name": "2500/221",
+        "description": "Universal upper roots",
+        "sku": "MED-2500-221",
+        "price": 159,
+        "image": "/images/products/medesy/forceps/2500slash221.jpg"
+      },
+      {
+        "id": "2500-350",
+        "name": "2500/350",
+        "description": "lower molars and third molar, left side",
+        "sku": "MED-2500-350",
+        "price": 169,
+        "image": "/images/products/medesy/forceps/2500slash350.jpg"
+      },
+      {
+        "id": "2500-351",
+        "name": "2500/351",
+        "description": "lower molars and third molar, right side",
+        "sku": "MED-2500-351",
+        "price": 169,
+        "image": "/images/products/medesy/forceps/2500slash351.jpg"
       }
     ],
-    "relatedProducts": [
-      601,
-      610
-    ]
-  },
-  {
-    "id": 605,
-    "slug": "2500-17",
-    "name": "Forceps 2500/17 Upper Molars Right",
-    "description": "Extraction forceps for upper right molars",
-    "category": 22,
-    "order": 5,
-    "sku": "MED-2500-17",
-    "basePrice": 169,
-    "currency": "AUD",
-    "hasVariants": false,
     "defaultImage": "/images/products/medesy/forceps/2500slash17.jpg",
     "gallery": [
-      "/images/products/medesy/forceps/2500slash17.jpg"
+      "/images/products/medesy/forceps/2500slash17.jpg",
+      "/images/products/medesy/forceps/2500slash18.jpg",
+      "/images/products/medesy/forceps/2500slash51.jpg",
+      "/images/products/medesy/forceps/2500slash79.jpg",
+      "/images/products/medesy/forceps/2500slash86.jpg",
+      "/images/products/medesy/forceps/2500slash187.jpg",
+      "/images/products/medesy/forceps/2500slash221.jpg",
+      "/images/products/medesy/forceps/2500slash350.jpg",
+      "/images/products/medesy/forceps/2500slash351.jpg"
     ],
     "contentBlocks": [
       {
@@ -3309,674 +3181,14 @@
         "data": {
           "primaryImage": "/images/products/medesy/forceps/2500slash17.jpg",
           "gallery": [
-            "/images/products/medesy/forceps/2500slash17.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/17 forceps are designed for extraction of upper right molars. Anatomically designed beaks for secure grip.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/17"
-            },
-            {
-              "label": "Application",
-              "value": "Upper molars, right"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/17"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      606,
-      607
-    ]
-  },
-  {
-    "id": 606,
-    "slug": "2500-18",
-    "name": "Forceps 2500/18 Upper Molars Left",
-    "description": "Extraction forceps for upper left molars",
-    "category": 22,
-    "order": 6,
-    "sku": "MED-2500-18",
-    "basePrice": 169,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash18.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash18.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash18.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash18.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/18 forceps are designed for extraction of upper left molars. Anatomically designed beaks for secure grip.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/18"
-            },
-            {
-              "label": "Application",
-              "value": "Upper molars, left"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/18"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      605,
-      607
-    ]
-  },
-  {
-    "id": 607,
-    "slug": "2500-51",
-    "name": "Forceps 2500/51 Upper Roots Narrow",
-    "description": "Extraction forceps for upper roots with short narrow beaks",
-    "category": 22,
-    "order": 7,
-    "sku": "MED-2500-51",
-    "basePrice": 159,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash51.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash51.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash51.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash51.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/51 forceps feature short narrow beaks for precise extraction of upper roots. Ideal for confined spaces.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/51"
-            },
-            {
-              "label": "Application",
-              "value": "Upper roots, short narrow beaks"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/51"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      601,
-      611
-    ]
-  },
-  {
-    "id": 608,
-    "slug": "2500-79",
-    "name": "Forceps 2500/79 Lower Third Molar",
-    "description": "Extraction forceps for lower third molars",
-    "category": 22,
-    "order": 8,
-    "sku": "MED-2500-79",
-    "basePrice": 169,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash79.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash79.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash79.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash79.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/79 forceps are specifically designed for lower third molar extraction. Angled design for posterior access.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/79"
-            },
-            {
-              "label": "Application",
-              "value": "Lower third molar"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/79"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      609,
-      612
-    ]
-  },
-  {
-    "id": 609,
-    "slug": "2500-86",
-    "name": "Forceps 2500/86 Lower Molars Cow Horn",
-    "description": "Cow horn forceps for lower molars with deep gripping",
-    "category": 22,
-    "order": 9,
-    "sku": "MED-2500-86",
-    "basePrice": 179,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash86.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash86.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash86.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash86.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/86 cow horn forceps feature deep gripping lateral beaks for lower molar extraction. Excellent for difficult extractions.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/86"
-            },
-            {
-              "label": "Application",
-              "value": "Lower molars, deep gripping lateral"
-            },
-            {
-              "label": "Type",
-              "value": "Cow Horn"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/86"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      608,
-      612
-    ]
-  },
-  {
-    "id": 610,
-    "slug": "2500-187",
-    "name": "Forceps 2500/187 Lower Roots",
-    "description": "Extraction forceps for lower roots and fragments",
-    "category": 22,
-    "order": 10,
-    "sku": "MED-2500-187",
-    "basePrice": 149,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash187.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash187.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash187.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash187.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/187 forceps are designed for extraction of lower roots and fragments. Precision beaks for secure grip.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/187"
-            },
-            {
-              "label": "Application",
-              "value": "Lower roots, fragments"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/187"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      604,
-      611
-    ]
-  },
-  {
-    "id": 611,
-    "slug": "2500-221",
-    "name": "Forceps 2500/221 Universal Upper Roots",
-    "description": "Universal extraction forceps for upper roots",
-    "category": 22,
-    "order": 11,
-    "sku": "MED-2500-221",
-    "basePrice": 159,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash221.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash221.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash221.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash221.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/221 universal forceps are versatile tools for extraction of various upper roots. A must-have for any dental practice.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/221"
-            },
-            {
-              "label": "Application",
-              "value": "Universal for upper roots"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/221"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      601,
-      607
-    ]
-  },
-  {
-    "id": 612,
-    "slug": "2500-350",
-    "name": "Forceps 2500/350 Lower Molars Left",
-    "description": "Extraction forceps for lower molars and third molar, left side",
-    "category": 22,
-    "order": 12,
-    "sku": "MED-2500-350",
-    "basePrice": 169,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash350.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash350.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash350.jpg",
-          "gallery": [
-            "/images/products/medesy/forceps/2500slash350.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 2500/350 forceps are designed for extraction of lower molars and third molars on the left side. Anatomically designed beaks.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "2500/350"
-            },
-            {
-              "label": "Application",
-              "value": "Lower molars and third molar, left"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500/350"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      613,
-      608
-    ]
-  },
-  {
-    "id": 613,
-    "slug": "2500-351",
-    "name": "Forceps 2500/351 Lower Molars Right",
-    "description": "Extraction forceps for lower molars and third molar, right side",
-    "category": 22,
-    "order": 13,
-    "sku": "MED-2500-351",
-    "basePrice": 169,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/forceps/2500slash351.jpg",
-    "gallery": [
-      "/images/products/medesy/forceps/2500slash351.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/forceps/2500slash351.jpg",
-          "gallery": [
+            "/images/products/medesy/forceps/2500slash17.jpg",
+            "/images/products/medesy/forceps/2500slash18.jpg",
+            "/images/products/medesy/forceps/2500slash51.jpg",
+            "/images/products/medesy/forceps/2500slash79.jpg",
+            "/images/products/medesy/forceps/2500slash86.jpg",
+            "/images/products/medesy/forceps/2500slash187.jpg",
+            "/images/products/medesy/forceps/2500slash221.jpg",
+            "/images/products/medesy/forceps/2500slash350.jpg",
             "/images/products/medesy/forceps/2500slash351.jpg"
           ]
         }
@@ -3984,7 +3196,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Medesy 2500/351 forceps are designed for extraction of lower molars and third molars on the right side. Anatomically designed beaks.",
+          "primary": "The Medesy 2500 series extraction forceps offer a comprehensive range for upper and lower molar extractions, third molars, roots, and universal applications. Includes specialized designs like cow horn forceps for difficult extractions.",
           "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
         }
       },
@@ -3994,12 +3206,8 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Model",
-              "value": "2500/351"
-            },
-            {
-              "label": "Application",
-              "value": "Lower molars and third molar, right"
+              "label": "Series",
+              "value": "2500"
             },
             {
               "label": "Material",
@@ -4022,7 +3230,7 @@
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
           "packageContents": [
-            "Forceps 2500/351"
+            "Forceps 2500 (selected model)"
           ]
         }
       },
@@ -4035,8 +3243,311 @@
       }
     ],
     "relatedProducts": [
-      612,
-      608
+      601,
+      501,
+      502
+    ]
+  },
+  {
+    "id": 801,
+    "slug": "kelly-scissors",
+    "name": "Kelly Scissors",
+    "description": "Professional Kelly pattern surgical scissors in straight and curved configurations",
+    "category": 24,
+    "order": 1,
+    "sku": "MED-35",
+    "basePrice": 89,
+    "currency": "AUD",
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "3509",
+        "name": "3509 Straight",
+        "sku": "MED-3509",
+        "price": 89,
+        "image": "/images/products/medesy/scissors/3509.jpg"
+      },
+      {
+        "id": "3510",
+        "name": "3510 Curved",
+        "sku": "MED-3510",
+        "price": 89,
+        "image": "/images/products/medesy/scissors/3510.jpg"
+      }
+    ],
+    "defaultImage": "/images/products/medesy/scissors/3509.jpg",
+    "gallery": [
+      "/images/products/medesy/scissors/3509.jpg",
+      "/images/products/medesy/scissors/3510.jpg"
+    ],
+    "contentBlocks": [
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/medesy/scissors/3509.jpg",
+          "gallery": [
+            "/images/products/medesy/scissors/3509.jpg",
+            "/images/products/medesy/scissors/3510.jpg"
+          ]
+        }
+      },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Medesy Kelly scissors feature professional-grade blades in both straight and curved configurations. 160mm length for general surgical cutting.",
+          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
+        }
+      },
+      {
+        "type": "specifications",
+        "data": {
+          "title": "Technical Specifications",
+          "rows": [
+            {
+              "label": "Pattern",
+              "value": "Kelly"
+            },
+            {
+              "label": "Length",
+              "value": "160mm"
+            },
+            {
+              "label": "Material",
+              "value": "Surgical Stainless Steel"
+            },
+            {
+              "label": "Sterilization",
+              "value": "Autoclavable"
+            },
+            {
+              "label": "Origin",
+              "value": "Italy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Medesy",
+          "warranty": "Lifetime against defects",
+          "packageContents": [
+            "Kelly Scissors (selected model)"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
+    ],
+    "relatedProducts": [
+      802,
+      803
+    ]
+  },
+  {
+    "id": 802,
+    "slug": "goldman-fox-scissors",
+    "name": "Goldman-Fox Scissors",
+    "description": "Specialized Goldman-Fox pattern scissors for periodontal procedures",
+    "category": 24,
+    "order": 2,
+    "sku": "MED-351",
+    "basePrice": 95,
+    "currency": "AUD",
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "3518",
+        "name": "3518 Straight",
+        "sku": "MED-3518",
+        "price": 95,
+        "image": "/images/products/medesy/scissors/3518.jpg"
+      },
+      {
+        "id": "3519",
+        "name": "3519 Curved",
+        "sku": "MED-3519",
+        "price": 95,
+        "image": "/images/products/medesy/scissors/3519.jpg"
+      }
+    ],
+    "defaultImage": "/images/products/medesy/scissors/3518.jpg",
+    "gallery": [
+      "/images/products/medesy/scissors/3518.jpg",
+      "/images/products/medesy/scissors/3519.jpg"
+    ],
+    "contentBlocks": [
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/medesy/scissors/3518.jpg",
+          "gallery": [
+            "/images/products/medesy/scissors/3518.jpg",
+            "/images/products/medesy/scissors/3519.jpg"
+          ]
+        }
+      },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Medesy Goldman-Fox scissors are designed for periodontal procedures with precision blades. Available in straight and curved configurations for optimal access.",
+          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
+        }
+      },
+      {
+        "type": "specifications",
+        "data": {
+          "title": "Technical Specifications",
+          "rows": [
+            {
+              "label": "Pattern",
+              "value": "Goldman-Fox"
+            },
+            {
+              "label": "Material",
+              "value": "Surgical Stainless Steel"
+            },
+            {
+              "label": "Sterilization",
+              "value": "Autoclavable"
+            },
+            {
+              "label": "Origin",
+              "value": "Italy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Medesy",
+          "warranty": "Lifetime against defects",
+          "packageContents": [
+            "Goldman-Fox Scissors (selected model)"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
+    ],
+    "relatedProducts": [
+      801,
+      803
+    ]
+  },
+  {
+    "id": 803,
+    "slug": "castroviejo-scissors",
+    "name": "Castroviejo Scissors",
+    "description": "Precision Castroviejo pattern micro-scissors for delicate surgical procedures",
+    "category": 24,
+    "order": 3,
+    "sku": "MED-362",
+    "basePrice": 125,
+    "currency": "AUD",
+    "hasVariants": true,
+    "variantType": "model",
+    "variants": [
+      {
+        "id": "3627",
+        "name": "3627 Straight",
+        "sku": "MED-3627",
+        "price": 110,
+        "image": "/images/products/medesy/scissors/3627.jpg"
+      },
+      {
+        "id": "3628",
+        "name": "3628 Curved",
+        "sku": "MED-3628",
+        "price": 110,
+        "image": "/images/products/medesy/scissors/3628.jpg"
+      }
+    ],
+    "defaultImage": "/images/products/medesy/scissors/3627.jpg",
+    "gallery": [
+      "/images/products/medesy/scissors/3627.jpg",
+      "/images/products/medesy/scissors/3628.jpg"
+    ],
+    "contentBlocks": [
+      {
+        "type": "hero",
+        "data": {
+          "primaryImage": "/images/products/medesy/scissors/3627.jpg",
+          "gallery": [
+            "/images/products/medesy/scissors/3627.jpg",
+            "/images/products/medesy/scissors/3628.jpg"
+          ]
+        }
+      },
+      {
+        "type": "description",
+        "data": {
+          "primary": "The Medesy Castroviejo scissors provide exceptional precision for microsurgical and delicate procedures. Fine tips for meticulous cutting in both straight and curved designs.",
+          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
+        }
+      },
+      {
+        "type": "specifications",
+        "data": {
+          "title": "Technical Specifications",
+          "rows": [
+            {
+              "label": "Pattern",
+              "value": "Castroviejo"
+            },
+            {
+              "label": "Type",
+              "value": "Micro-scissors"
+            },
+            {
+              "label": "Material",
+              "value": "Surgical Stainless Steel"
+            },
+            {
+              "label": "Sterilization",
+              "value": "Autoclavable"
+            },
+            {
+              "label": "Origin",
+              "value": "Italy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "info",
+        "data": {
+          "manufacturer": "Medesy",
+          "warranty": "Lifetime against defects",
+          "packageContents": [
+            "Castroviejo Scissors (selected model)"
+          ]
+        }
+      },
+      {
+        "type": "actions",
+        "data": {
+          "addToCart": true,
+          "customization": false
+        }
+      }
+    ],
+    "relatedProducts": [
+      801,
+      802
     ]
   },
   {
@@ -4950,552 +4461,6 @@
     "relatedProducts": [
       709,
       710
-    ]
-  },
-  {
-    "id": 801,
-    "slug": "3509",
-    "name": "Kelly Scissors 3509 Straight",
-    "description": "Kelly pattern surgical scissors, straight, 160mm",
-    "category": 24,
-    "order": 1,
-    "sku": "MED-3509",
-    "basePrice": 89,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3509.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3509.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3509.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3509.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3509 Kelly scissors feature a straight blade design with 160mm length. Ideal for general surgical cutting.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3509"
-            },
-            {
-              "label": "Pattern",
-              "value": "Kelly"
-            },
-            {
-              "label": "Blade",
-              "value": "Straight"
-            },
-            {
-              "label": "Length",
-              "value": "160mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Kelly Scissors 3509"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      802,
-      803
-    ]
-  },
-  {
-    "id": 802,
-    "slug": "3510",
-    "name": "Kelly Scissors 3510 Curved",
-    "description": "Kelly pattern surgical scissors, curved, 160mm",
-    "category": 24,
-    "order": 2,
-    "sku": "MED-3510",
-    "basePrice": 89,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3510.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3510.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3510.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3510.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3510 Kelly scissors feature a curved blade design with 160mm length. Ideal for cutting in confined areas.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3510"
-            },
-            {
-              "label": "Pattern",
-              "value": "Kelly"
-            },
-            {
-              "label": "Blade",
-              "value": "Curved"
-            },
-            {
-              "label": "Length",
-              "value": "160mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Kelly Scissors 3510"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      801,
-      803
-    ]
-  },
-  {
-    "id": 803,
-    "slug": "3518",
-    "name": "Goldman-Fox Scissors 3518 Straight",
-    "description": "Goldman-Fox pattern saw edge scissors, straight, 130mm",
-    "category": 24,
-    "order": 3,
-    "sku": "MED-3518",
-    "basePrice": 95,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3518.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3518.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3518.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3518.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3518 Goldman-Fox scissors feature a straight saw edge blade with 130mm length. Excellent for periodontal surgery.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3518"
-            },
-            {
-              "label": "Pattern",
-              "value": "Goldman-Fox"
-            },
-            {
-              "label": "Blade",
-              "value": "Straight, Saw Edge"
-            },
-            {
-              "label": "Length",
-              "value": "130mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Goldman-Fox Scissors 3518"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      801,
-      804
-    ]
-  },
-  {
-    "id": 804,
-    "slug": "3519",
-    "name": "Goldman-Fox Scissors 3519 Curved",
-    "description": "Goldman-Fox pattern saw edge scissors, curved, 130mm",
-    "category": 24,
-    "order": 4,
-    "sku": "MED-3519",
-    "basePrice": 95,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3519.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3519.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3519.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3519.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3519 Goldman-Fox scissors feature a curved saw edge blade with 130mm length. Excellent for periodontal surgery.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3519"
-            },
-            {
-              "label": "Pattern",
-              "value": "Goldman-Fox"
-            },
-            {
-              "label": "Blade",
-              "value": "Curved, Saw Edge"
-            },
-            {
-              "label": "Length",
-              "value": "130mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Goldman-Fox Scissors 3519"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      803,
-      805
-    ]
-  },
-  {
-    "id": 805,
-    "slug": "3627",
-    "name": "Castroviejo Scissors 3627 Straight",
-    "description": "Castroviejo pattern microsurgical scissors, straight, 150mm",
-    "category": 24,
-    "order": 5,
-    "sku": "MED-3627",
-    "basePrice": 110,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3627.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3627.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3627.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3627.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3627 Castroviejo scissors feature a straight blade design with 150mm length. Ideal for microsurgical procedures.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3627"
-            },
-            {
-              "label": "Pattern",
-              "value": "Castroviejo"
-            },
-            {
-              "label": "Blade",
-              "value": "Straight"
-            },
-            {
-              "label": "Length",
-              "value": "150mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Castroviejo Scissors 3627"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      804,
-      806
-    ]
-  },
-  {
-    "id": 806,
-    "slug": "3628",
-    "name": "Castroviejo Scissors 3628 Curved",
-    "description": "Castroviejo pattern microsurgical scissors, curved, 150mm",
-    "category": 24,
-    "order": 6,
-    "sku": "MED-3628",
-    "basePrice": 110,
-    "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/medesy/scissors/3628.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3628.jpg"
-    ],
-    "contentBlocks": [
-      {
-        "type": "hero",
-        "data": {
-          "primaryImage": "/images/products/medesy/scissors/3628.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3628.jpg"
-          ]
-        }
-      },
-      {
-        "type": "description",
-        "data": {
-          "primary": "The Medesy 3628 Castroviejo scissors feature a curved blade design with 150mm length. Ideal for microsurgical procedures in confined areas.",
-          "secondary": "Made in Italy from premium surgical-grade stainless steel. Autoclavable and built to last."
-        }
-      },
-      {
-        "type": "specifications",
-        "data": {
-          "title": "Technical Specifications",
-          "rows": [
-            {
-              "label": "Model",
-              "value": "3628"
-            },
-            {
-              "label": "Pattern",
-              "value": "Castroviejo"
-            },
-            {
-              "label": "Blade",
-              "value": "Curved"
-            },
-            {
-              "label": "Length",
-              "value": "150mm"
-            },
-            {
-              "label": "Material",
-              "value": "Surgical Stainless Steel"
-            },
-            {
-              "label": "Sterilization",
-              "value": "Autoclavable"
-            },
-            {
-              "label": "Origin",
-              "value": "Italy"
-            }
-          ]
-        }
-      },
-      {
-        "type": "info",
-        "data": {
-          "manufacturer": "Medesy",
-          "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Castroviejo Scissors 3628"
-          ]
-        }
-      },
-      {
-        "type": "actions",
-        "data": {
-          "addToCart": true,
-          "customization": false
-        }
-      }
-    ],
-    "relatedProducts": [
-      805,
-      803
     ]
   },
   {
