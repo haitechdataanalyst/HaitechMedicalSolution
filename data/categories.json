@@ -8,7 +8,7 @@
     "image": "/images/products/admetec/admetec-banner.jpg",
     "parent": null,
     "order": 1,
-    "children": [2, 3, 4, 5, 6]
+    "children": [2, 3, 4, 5, 6, 7]
   },
   {
     "id": 2,
@@ -65,6 +65,18 @@
     "order": 5,
     "children": [],
     "specialPage": "/our-frames"
+  },
+  {
+    "id": 7,
+    "slug": "admetec-headlights",
+    "name": "Headlights",
+    "type": "category",
+    "description": "Premium LED headlights for dental loupes - wireless and wired options available",
+    "image": "/images/products/admetec/headlights/headlights-category.jpg",
+    "parent": 1,
+    "order": 6,
+    "children": [],
+    "specialPage": "/our-headlights"
   },
   {
     "id": 10,
