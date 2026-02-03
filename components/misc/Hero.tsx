@@ -6,13 +6,13 @@ import { Button, Carousel } from "@/components/ui";
 
 const heroSlides = [
   {
-    image: "/images/hero/medical-equipment-1.jpg",
+    image: "/images/hero/Website.webp",
   },
   {
-    image: "/images/hero/dental-loupes-2.jpg",
+    image: "/images/hero/Website (1).webp",
   },
   {
-    image: "/images/hero/led-headlights-3.jpg",
+    image: "/images/hero/Untitled-design-54.webp",
   },
 ];
 
