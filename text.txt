@@ -1,0 +1,5 @@
+{
+            "type": "callout",
+            "style": "info",
+            "content": "Remember: Higher magnification means smaller field of view. Balance detail work with overall visibility."
+          }

@@ -2,6 +2,7 @@ import { FAQ } from "@/components/misc";
 import data from "@/data/faq.json";
 import Link from "next/link";
 import { PlaySquare, FileText, GitCompare, ArrowRight } from "lucide-react";
+import { ArticlesPageClient } from "../articles/ArticlesPageClient";
 
 export const metadata = {
   title: 'Help Center | Haitech Medical',
@@ -71,6 +72,17 @@ export default function HelpCenterPage() {
           title="Frequently Asked Questions" 
           subtitle="Find answers to the most common questions about our products and services."
         />
+      </section>
+
+      {/* Articles Section */}
+      <section id="articles" className="mt-12">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Knowledge Base</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Find helpful articles, guides, and resources about our products and services
+          </p>
+        </div>
+        <ArticlesPageClient />
       </section>
 
       {/* Still need help CTA */}

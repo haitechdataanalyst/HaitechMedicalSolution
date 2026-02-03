@@ -28,9 +28,11 @@ export default function Header() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-1 md:gap-9">
-            <Button className="px-12" variant="solid">
-              Book a Demo
-            </Button>
+            <Link href="/support/contact">
+              <Button className="px-12" variant="solid">
+                Book a Demo
+              </Button>
+            </Link>
 
             <div className="flex items-center justify-center gap-1 md:gap-2">
               {/* Cart Button */}

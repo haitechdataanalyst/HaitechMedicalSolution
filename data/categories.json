@@ -18,7 +18,7 @@
     "description": "Ergonomic loupe systems with multiple magnification options from 3.0x to 10x. Available in various frame styles and colors.",
     "image": "/images/products/admetec/ergo/ergo-category.jpg",
     "parent": 1,
-    "order": 1,
+    "order": 2,
     "children": []
   },
   {
@@ -29,7 +29,7 @@
     "description": "Advanced Ergo V and Ergo V Pro loupes with adjustable declination for enhanced ergonomics",
     "image": "/images/products/admetec/ergo-v/ergo-v-category.jpg",
     "parent": 1,
-    "order": 2,
+    "order": 1,
     "children": []
   },
   {
@@ -74,7 +74,7 @@
     "description": "Comprehensive dental equipment including chairs, handpieces, and auxiliary equipment",
     "image": "/images/products/almadent/almadent-banner.jpg",
     "parent": null,
-    "order": 2,
+    "order": 4,
     "children": [11, 12, 13]
   },
   {
@@ -173,7 +173,7 @@
     "description": "Finnish ergonomic saddle chairs designed to promote healthy posture and reduce strain during long clinical hours",
     "image": "/images/products/salli/salli-banner.jpg",
     "parent": null,
-    "order": 4,
+    "order": 2,
     "children": []
   },
   {

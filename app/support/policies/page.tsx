@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Shield, BadgeCheck, RotateCcw, ArrowRight, FileText } from 'lucide-react';
+import { Shield, ArrowRight, FileText } from 'lucide-react';
 
 export const metadata = {
   title: 'Policies | Haitech Medical',
-  description: 'Review our privacy policy, warranty information, and returns & refunds policy.',
+  description: 'Review our privacy policy and other important information.',
 };
 
 const policies = [
@@ -17,20 +17,20 @@ const policies = [
     lastUpdated: 'January 2026',
   },
   {
-    id: 'warranty',
-    icon: BadgeCheck,
+    id: 'extended-warranty',
+    icon: Shield,
     title: 'Extended Warranty',
-    description: 'Information about our product warranties and extended coverage options',
-    href: '/support/policies/warranty',
-    color: 'bg-green-50 text-green-600 group-hover:bg-green-100',
+    description: 'Understand coverage details and terms for our extended warranty.',
+    href: '/support/policies#extended-warranty',
+    color: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100',
     lastUpdated: 'January 2026',
   },
   {
-    id: 'returns',
-    icon: RotateCcw,
+    id: 'returns-refunds',
+    icon: Shield,
     title: 'Returns & Refunds Policy',
-    description: 'Our procedures for returns, exchanges, and refunds',
-    href: '/support/policies/returns',
+    description: 'View our guidelines for returns, replacements, and refunds.',
+    href: '/support/policies#returns-refunds',
     color: 'bg-amber-50 text-amber-600 group-hover:bg-amber-100',
     lastUpdated: 'January 2026',
   },
@@ -66,7 +66,26 @@ export default function PoliciesPage() {
       </section>
 
       {/* Additional Info */}
-      <section className="mt-12 bg-surface-secondary rounded-2xl p-8">
+      <section className="mt-12 bg-surface-secondary rounded-2xl p-8 space-y-10">
+        {/* Details Anchors */}
+        <div className="space-y-8">
+          <div id="extended-warranty">
+            <h3 className="font-semibold mb-2">Extended Warranty</h3>
+            <p className="text-sm text-muted">
+              This section can outline eligibility, coverage duration, and the process for claiming
+              extended warranty support for your products.
+            </p>
+          </div>
+
+          <div id="returns-refunds">
+            <h3 className="font-semibold mb-2">Returns &amp; Refunds Policy</h3>
+            <p className="text-sm text-muted">
+              This section can describe how to initiate a return, applicable timeframes, and how
+              refunds are processed once items are received and inspected.
+            </p>
+          </div>
+        </div>
+
         <div className="flex items-start gap-4">
           <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0">
             <FileText className="w-6 h-6 text-primary-600" />

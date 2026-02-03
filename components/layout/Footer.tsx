@@ -31,55 +31,43 @@ export default function Footer({ sections, config }: FooterProps) {
             />
           </Link>
 
-          {/* Footer Links */}
-          <div className="flex flex-wrap items-center gap-4 md:gap-6">
+          <div className="flex-1" />
+
+          {/* Privacy + Social Media Icons */}
+          <div className="flex items-center gap-4">
             <Link
-              href="/privacy-policy"
+              href="/support/policies/privacy"
               className="text-sm text-neutral-400 hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
-            <Link
-              href="/extended-warranty"
-              className="text-sm text-neutral-400 hover:text-white transition-colors"
-            >
-              Extended Warranty & Refunds
-            </Link>
-            <Link
-              href="/terms"
-              className="text-sm text-neutral-400 hover:text-white transition-colors"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
-
-          {/* Social Media Icons */}
-          <div className="flex items-center gap-2">
-            <a
-              href={config.social?.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
-              aria-label="Facebook"
-            >
-              <FacebookIcon size={20} />
-            </a>
-            <a
-              href={config.social?.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
-              aria-label="Instagram"
-            >
-              <InstagramIcon size={20} />
-            </a>
-            <a
-              href={`mailto:${config.company.email}`}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
-              aria-label="Email Us"
-            >
-              <EmailIcon size={20} />
-            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href={config.social?.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <FacebookIcon size={20} />
+              </a>
+              <a
+                href={config.social?.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <InstagramIcon size={20} />
+              </a>
+              <a
+                href={`mailto:${config.company.email}`}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all duration-300"
+                aria-label="Email Us"
+              >
+                <EmailIcon size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

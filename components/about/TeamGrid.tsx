@@ -12,7 +12,7 @@ export function TeamGrid({
   subtitle = "Meet the dedicated professionals behind Haitech Medical Solutions",
 }: TeamGridProps) {
   return (
-    <section className="section bg-white">
+    <section id="team" className="section bg-white">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-12">

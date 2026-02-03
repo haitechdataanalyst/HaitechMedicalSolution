@@ -35,7 +35,7 @@ const supportSections = [
   {
     id: 'policies',
     title: 'Policies',
-    description: 'Review our privacy policy, warranty, and returns information',
+    description: 'Review our privacy policy and other important information',
     icon: FileCheck,
     path: '/support/policies',
     color: 'bg-amber-50 text-amber-600 group-hover:bg-amber-100',

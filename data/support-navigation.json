@@ -63,7 +63,7 @@
           "title": "Articles",
           "description": "Helpful articles and resources",
           "icon": "FileText",
-          "path": "/support/faq#articles"
+          "path": "/support/articles"
         },
         {
           "id": "compare",
@@ -87,20 +87,6 @@
           "description": "How we handle and protect your data",
           "icon": "Shield",
           "path": "/support/policies/privacy"
-        },
-        {
-          "id": "warranty",
-          "title": "Extended Warranty",
-          "description": "Extended warranty information and coverage",
-          "icon": "BadgeCheck",
-          "path": "/support/policies/warranty"
-        },
-        {
-          "id": "returns",
-          "title": "Returns & Refunds Policy",
-          "description": "Our return and refund procedures",
-          "icon": "RotateCcw",
-          "path": "/support/policies/returns"
         }
       ]
     }
