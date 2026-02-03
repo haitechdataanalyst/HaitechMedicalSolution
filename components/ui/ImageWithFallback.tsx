@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ImageIcon } from "@/components/icons";
+import Image from "next/image";
 
 interface ImageWithFallbackProps {
   src: string;
@@ -27,7 +28,7 @@ export default function ImageWithFallback({ src, alt, className, containerClassN
           <span className="text-sm font-medium">{fallbackText}</span>
         </div>
       ) : (
-        <img src={src} alt={alt} className={cn("h-full w-full object-cover", className)} onError={handleError} />
+        <Image src={src} alt={alt} fill sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" className={cn("h-full w-full object-cover", className)} onError={handleError} />
       )}
     </div>
   );

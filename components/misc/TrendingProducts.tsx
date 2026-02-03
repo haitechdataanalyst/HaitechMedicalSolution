@@ -30,8 +30,6 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
         <Carousel
           slidesToShow={1}
           gap={24}
-          autoPlay
-          autoPlayInterval={4000}
           showDots={true}
           arrowVariant="default"
           responsive={{
@@ -41,12 +39,7 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
           }}
         >
           {products.map((product) => (
-            <ProductCard 
-              key={product.slug} 
-              entity={product} 
-              href={product.path}
-              image={product.defaultImage}
-            />
+            <ProductCard key={product.slug} entity={product} href={product.path} image={product.defaultImage} />
           ))}
         </Carousel>
       </div>

@@ -9,13 +9,7 @@ interface AboutSectionProps {
   className?: string;
 }
 
-export function AboutSection({
-  title,
-  children,
-  variant = "default",
-  icon,
-  className,
-}: AboutSectionProps) {
+export function AboutSection({ title, children, variant = "default", icon, className }: AboutSectionProps) {
   const variants = {
     default: "bg-white",
     primary: "bg-primary-gradient text-white",
@@ -37,25 +31,14 @@ export function AboutSection({
   return (
     <section className={cn("section", variants[variant], className)}>
       <div className="container">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="mx-auto max-w-4xl text-center">
           {icon && (
-            <div className="flex justify-center mb-6">
-              <div
-                className={cn(
-                  "w-16 h-16 rounded-full flex items-center justify-center",
-                  variant === "primary"
-                    ? "bg-white/20"
-                    : "bg-primary-100 text-primary-600"
-                )}
-              >
-                {icon}
-              </div>
+            <div className="mb-6 flex justify-center">
+              <div className={cn("flex h-16 w-16 items-center justify-center rounded-full", variant === "primary" ? "bg-white/20" : "bg-primary-100 text-primary-600")}>{icon}</div>
             </div>
           )}
           <h2 className={cn("heading-2 mb-6", titleColors[variant])}>{title}</h2>
-          <div className={cn("text-body-lg leading-relaxed", textColors[variant])}>
-            {children}
-          </div>
+          <div className={cn("text-body-lg leading-relaxed", textColors[variant])}>{children}</div>
         </div>
       </div>
     </section>
