@@ -64,20 +64,13 @@
           "description": "Helpful articles and resources",
           "icon": "FileText",
           "path": "/support/articles"
-        },
-        {
-          "id": "compare",
-          "title": "Compare",
-          "description": "Compare products and features",
-          "icon": "GitCompare",
-          "path": "/support/faq#compare"
         }
       ]
     },
     {
       "id": "policies",
       "title": "Policies",
-      "description": "Our terms, warranties and return policies",
+      "description": "Our terms and policies",
       "icon": "FileCheck",
       "path": "/support/policies",
       "children": [
@@ -87,6 +80,13 @@
           "description": "How we handle and protect your data",
           "icon": "Shield",
           "path": "/support/policies/privacy"
+        },
+        {
+          "id": "terms",
+          "title": "Terms of Service",
+          "description": "The rules and regulations for using our services",
+          "icon": "FileText",
+          "path": "/support/policies/terms"
         }
       ]
     }

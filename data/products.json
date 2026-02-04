@@ -12,7 +12,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Black-Ergo-3.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -130,21 +130,35 @@
     "relatedProducts": [
       102,
       103,
-      201
+      104,
+      105
     ],
     "frameVariants": {
-      "availableFrames": [
-        "indie",
-        "blues",
-        "soul",
-        "jazz"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "indie-black": "/images/products/admetec/ergo/ergo-3.0x-indie-black.jpg",
-        "blues-blue": "/images/products/admetec/ergo/ergo-3.0x-blues-blue.jpg",
-        "blues-bronze-light-blue": "/images/products/admetec/ergo/ergo-3.0x-blues-bronze.jpg",
-        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-3.0x-soul-burgundy-gold.jpg",
-        "soul-turquoise": "/images/products/admetec/ergo/ergo-3.0x-soul-turquoise.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Black-Ergo-3.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Blue-Ergo-3.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Bronze-Ergo-3.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Pink-Ergo-3.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Purple-Grey-Ergo-3.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Rose-Gold-Ergo-3.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Black-Ergo-3.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Champagne-Ergo-3.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Midnight-Blue-Ergo-3.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Orange-Lava-Ergo-3.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Green-Ergo-3.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-3.0x/Indie-Frame/Indie-Turquoise-Ergo-3.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-3.0x/Jazz-Frame/Jazz-BlueBlack-Ergo-3.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-3.0x/Jazz-Frame/Jazz-OrangeBlack-Ergo-3.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-3.0x/Jazz-Frame/Jazz-RedBlack-Ergo-3.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-3.0x/Jazz-Frame/Jazz-Green-Black-Ergo-3.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-3.0x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-3.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-Black-Ergo-3.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-Red-Gold-Ergo-3.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-Brown-Blue-Ergo-3.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-Pink-Ergo-3.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-Turquoise-Ergo-3.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-3.0x/Soul-Frame/Soul-White-Snow-Ergo-3.jpg"
       }
     }
   },
@@ -161,7 +175,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Black-Ergo-4.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -279,19 +293,35 @@
     "relatedProducts": [
       101,
       103,
-      104
+      104,
+      105
     ],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "indie",
-        "soul"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "blues-blue": "/images/products/admetec/ergo/ergo-4.0x-blues-blue.jpg",
-        "blues-pink": "/images/products/admetec/ergo/ergo-4.0x-blues-pink.jpg",
-        "indie-champagne": "/images/products/admetec/ergo/ergo-4.0x-indie-champagne.jpg",
-        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-4.0x-soul-brown.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Black-Ergo-4.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Blue-Ergo-4.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Bronze-Ergo-4.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Pink-Ergo-4.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Purple-Grey-Ergo-4.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Rose-Gold-Ergo-4.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Black-Ergo-4.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Champagne-Ergo-4.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Midnight-Blue-Ergo-4.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Orange-Lava-Ergo-4.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Green-Ergo-4.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-4.0x/Indie-Frame/Indie-Turquoise-Ergo-4.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-4.0x/Jazz-Frame/Jazz-BlueBlack-Ergo-4.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-4.0x/Jazz-Frame/Jazz-OrangeBlack-Ergo-4.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-4.0x/Jazz-Frame/Jazz-RedBlack-Ergo-4.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-4.0x/Jazz-Frame/Jazz-Green-Black-Ergo-4.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-4.0x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-4.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-Black-Ergo-4.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-Red-Gold-Ergo-4.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-Brown-Blue-Ergo-4.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-Pink-Ergo-4.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-Turquoise-Ergo-4.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-4.0x/Soul-Frame/Soul-White-Snow-Ergo-4.jpg"
       }
     }
   },
@@ -308,7 +338,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-5.0x-blues-purple.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Black-Ergo-5.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -426,20 +456,35 @@
     "relatedProducts": [
       102,
       104,
-      105
+      105,
+      106
     ],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "jazz",
-        "soul"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "blues-purple": "/images/products/admetec/ergo/ergo-5.0x-blues-purple.jpg",
-        "blues-rose-gold": "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
-        "jazz-turquoise-rose-gold": "/images/products/admetec/ergo/ergo-5.0x-jazz-turquoise.jpg",
-        "soul-black": "/images/products/admetec/ergo/ergo-5.0x-soul-black.jpg",
-        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-5.0x-soul-burgundy-gold.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Black-Ergo-5.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Blue-Ergo-5.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Bronze-Ergo-5.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Pink-Ergo-5.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Purple-Grey-Ergo-5.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Rose-Gold-Ergo-5.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Black-Ergo-5.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Champagne-Ergo-5.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Midnight-Blue-Ergo-5.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Orange-Lava-Ergo-5.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Green-Ergo-5.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-5.0x/Indie-Frame/Indie-Turquoise-Ergo-5.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-5.0x/Jazz-Frame/Jazz-BlueBlack-Ergo-5.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-5.0x/Jazz-Frame/Jazz-OrangeBlack-Ergo-5.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-5.0x/Jazz-Frame/Jazz-RedBlack-Ergo-5.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-5.0x/Jazz-Frame/Jazz-Green-Black-Ergo-5.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-5.0x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-5.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-Black-Ergo-5.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-Red-Gold-Ergo-5.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-Brown-Blue-Ergo-5.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-Pink-Ergo-5.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-Turquoise-Ergo-5.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-5.0x/Soul-Frame/Soul-White-Snow-Ergo-5.jpg"
       }
     }
   },
@@ -456,7 +501,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-6.0x-blues-black.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Black-Ergo-6.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -575,19 +620,35 @@
     "relatedProducts": [
       103,
       105,
-      106
+      106,
+      107
     ],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "soul",
-        "indie"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "blues-black": "/images/products/admetec/ergo/ergo-6.0x-blues-black.jpg",
-        "soul-burgundy-gold": "/images/products/admetec/ergo/ergo-6.0x-burgundy-gold.jpg",
-        "indie-black": "/images/products/admetec/ergo/ergo-6.0x-indie-black.jpg",
-        "indie-orange-lava": "/images/products/admetec/ergo/ergo-6.0x-indie-orange-lava.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Black-Ergo-6.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Blue-Ergo-6.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Bronze-Ergo-6.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Pink-Ergo-6.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Purple-Grey-Ergo-6.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Rose-Gold-Ergo-6.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Black-Ergo-6.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Champagne-Ergo-6.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Midnight-Blue-Ergo-6.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Orange-Lava-Ergo-6.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Green-Ergo-6.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-6.0x/Indie-Frame/Indie-Turquoise-Ergo-6.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-6.0x/Jazz-Frame/Jazz-BlueBlack-Ergo-6.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-6.0x/Jazz-Frame/Jazz-OrangeBlack-Ergo-6.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-6.0x/Jazz-Frame/Jazz-RedBlack-Ergo-6.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-6.0x/Jazz-Frame/Jazz-Green-Black-Ergo-6.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-6.0x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-6.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-Black-Ergo-6.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-Red-Gold-Ergo-6.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-Brown-Blue-Ergo-6.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-Pink-Ergo-6.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-Turquoise-Ergo-6.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-6.0x/Soul-Frame/Soul-White-Snow-Ergo-6.jpg"
       }
     }
   },
@@ -604,7 +665,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-7.5x-blues-black.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Black-Ergo-7.5.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -721,21 +782,37 @@
       }
     ],
     "relatedProducts": [
+      103,
       104,
-      106
+      106,
+      107
     ],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "indie",
-        "soul"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "blues-black": "/images/products/admetec/ergo/ergo-7.5x-blues-black.jpg",
-        "blues-blue": "/images/products/admetec/ergo/ergo-7.5x-blues-blue.jpg",
-        "indie-black": "/images/products/admetec/ergo/ergo-7.5x-indie-black.jpg",
-        "indie-green": "/images/products/admetec/ergo/ergo-7.5x-indie-green.jpg",
-        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-7.5x-soul-brown.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Black-Ergo-7.5.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Blue-Ergo-7.5.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Bronze-Ergo-7.5.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Pink-Ergo-7.5.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Purple-Grey-Ergo-7.5.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Rose-Gold-Ergo-7.5-2048x1638.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Black-Ergo-7.5.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Champagne-Ergo-7.5.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Midnight-Blue-Ergo-7.5.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Orange-Lava-Ergo-7.5.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Green-Ergo-7.5.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-7.5x/Indie-Frame/Indie-Turquoise-Ergo-7.5.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-7.5x/Jazz-Frame/Jazz-BlueBlack-Ergo-7.5.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-7.5x/Jazz-Frame/Jazz-OrangeBlack-Ergo-7.5.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-7.5x/Jazz-Frame/Jazz-RedBlack-Ergo-7.5.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-7.5x/Jazz-Frame/Jazz-Green-Black-Ergo-7.5.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-7.5x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-7.5.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-Black-Ergo-7.5.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-Red-Gold-Ergo-7.5.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-Brown-Blue-Ergo-7.5.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-Pink-Ergo-7.5.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-Turquoise-Ergo-7.5.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-7.5x/Soul-Frame/Soul-White-Snow-Ergo-7.5.jpg"
       }
     }
   },
@@ -752,7 +829,7 @@
     "colorCode": "#10B981",
     "hasVariants": true,
     "variantType": "frame-color",
-    "defaultImage": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
+    "defaultImage": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Black-Ergo-10.jpg",
     "contentBlocks": [
       {
         "type": "hero",
@@ -869,20 +946,37 @@
       }
     ],
     "relatedProducts": [
+      103,
       104,
-      105
+      105,
+      107
     ],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "indie",
-        "soul"
-      ],
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
-        "blues-black": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
-        "indie-black": "/images/products/admetec/ergo/ergo-10x-indie-black.jpg",
-        "soul-black": "/images/products/admetec/ergo/ergo-10x-soul-black.jpg",
-        "soul-brown-light-blue": "/images/products/admetec/ergo/ergo-10x-soul-brown.jpg"
+        "blues-black": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Black-Ergo-10.jpg",
+        "blues-grey": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Blue-Ergo-10.jpg",
+        "blues-bronze-blue": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Bronze-Ergo-10.jpg",
+        "blues-pink": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Pink-Ergo-10.jpg",
+        "blues-purple-grey": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Purple-Grey-Ergo-10.jpg",
+        "blues-rose-gold": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Rose-Gold-Ergo-10.jpg",
+        "indie-black": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Black-Ergo-10.jpg",
+        "indie-champagne": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Champagne-Ergo-10.jpg",
+        "indie-midnight-blue": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Midnight-Blue-Ergo-10.jpg",
+        "indie-orange-lava": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Orange-Lava-Ergo-10.jpg",
+        "indie-green": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Green-Ergo-10.jpg",
+        "indie-turquoise": "/images/products/admetec/Loupes-Ergo-10.0x/Indie-Frame/Indie-Turquoise-Ergo-10.jpg",
+        "jazz-blue-black": "/images/products/admetec/Loupes-Ergo-10.0x/Jazz-Frame/Jazz-BlueBlack-Ergo-10.jpg",
+        "jazz-orange-black": "/images/products/admetec/Loupes-Ergo-10.0x/Jazz-Frame/Jazz-OrangeBlack-Ergo-10.jpg",
+        "jazz-red-black": "/images/products/admetec/Loupes-Ergo-10.0x/Jazz-Frame/Jazz-RedBlack-Ergo-10.jpg",
+        "jazz-green-black": "/images/products/admetec/Loupes-Ergo-10.0x/Jazz-Frame/Jazz-Green-Black-Ergo-10.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/Loupes-Ergo-10.0x/Jazz-Frame/Jazz-Turquoise-Rose-Gold-Ergo-10.jpg",
+        "soul-black": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-Black-Ergo-10.jpg",
+        "soul-red-gold": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-Red-Gold-Ergo-10.jpg",
+        "soul-brown-blue": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-Brown-Blue-Ergo-10.jpg",
+        "soul-pink": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-Pink-Ergo-10.jpg",
+        "soul-turquoise": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-Turquoise-Ergo-10.jpg",
+        "soul-white-snow": "/images/products/admetec/Loupes-Ergo-10.0x/Soul-Frame/Soul-White-Snow-Ergo-10.jpg"
       }
     }
   },
@@ -925,7 +1019,7 @@
           "rows": [
             {
               "label": "Magnification Options",
-              "value": "3.0x - 6.0x"
+              "value": "3.8x, 5.3x, 7.0x"
             },
             {
               "label": "Declination Range",
@@ -933,7 +1027,7 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm"
+              "value": "500mm"
             },
             {
               "label": "Frame Material",
@@ -1024,8 +1118,10 @@
       }
     ],
     "relatedProducts": [
-      108,
-      103
+      104,
+      105,
+      106,
+      108
     ]
   },
   {
@@ -1067,7 +1163,7 @@
           "rows": [
             {
               "label": "Magnification Options",
-              "value": "3.0x - 6.0x"
+              "value": "5.6x, 7.4x, 10.0x"
             },
             {
               "label": "Declination Range",
@@ -1083,7 +1179,7 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm"
+              "value": "500mm"
             },
             {
               "label": "Frame Material",
@@ -1172,8 +1268,10 @@
       }
     ],
     "relatedProducts": [
-      107,
-      104
+      108,
+      103,
+      104,
+      201
     ]
   },
   {
@@ -1353,7 +1451,7 @@
             {
               "label": "Optical System",
               "value": "Galilean"
-            }
+            } 
           ]
         }
       },
@@ -1587,7 +1685,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "Admetec Prismatic loupes deliver superior optical performance for demanding procedures. The prismatic optical system provides enhanced depth of field and edge-to-edge clarity.",
+          "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
           "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 4.0x to 6.0x."
         }
       },
@@ -1598,19 +1696,19 @@
           "rows": [
             {
               "label": "Magnification Options",
-              "value": "4.0x, 5.0x, 6.0x"
+              "value": "3.8x, 4.8x, 5.8x, 7.2x"
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm"
             },
             {
               "label": "Field of View",
-              "value": "Varies by magnification"
+              "value": "50mm - 90mm (varies by magnification)"
             },
             {
-              "label": "Optical System",
-              "value": "Prismatic"
+              "label": "Depth of Field",
+              "value": "50mm - 85mm (varies by magnification)"
             },
             {
               "label": "Frame Options",
@@ -2502,7 +2600,8 @@
     "relatedProducts": [
       502,
       503,
-      504
+      504,
+      505
     ]
   },
   {
@@ -2586,7 +2685,8 @@
     "relatedProducts": [
       501,
       503,
-      504
+      504,
+      505
     ]
   },
   {
@@ -2729,7 +2829,8 @@
     "relatedProducts": [
       501,
       502,
-      504
+      504,
+      505
     ]
   },
   {
@@ -2841,6 +2942,7 @@
     "relatedProducts": [
       501,
       502,
+      503,
       505
     ]
   },
@@ -3075,7 +3177,8 @@
     "relatedProducts": [
       602,
       501,
-      502
+      502,
+      503
     ]
   },
   {
@@ -3246,7 +3349,8 @@
     "relatedProducts": [
       601,
       501,
-      502
+      502,
+      503
     ]
   },
   {
@@ -3631,7 +3735,9 @@
     ],
     "relatedProducts": [
       702,
-      703
+      703,
+      704,
+      705
     ]
   },
   {
@@ -3714,7 +3820,9 @@
     ],
     "relatedProducts": [
       701,
-      703
+      703,
+      704,
+      705
     ]
   },
   {
@@ -3796,8 +3904,10 @@
       }
     ],
     "relatedProducts": [
-      701,
-      704
+      702,
+      704,
+      705,
+      706
     ]
   },
   {
@@ -3880,7 +3990,9 @@
     ],
     "relatedProducts": [
       703,
-      705
+      705,
+      706,
+      707
     ]
   },
   {
@@ -3963,7 +4075,9 @@
     ],
     "relatedProducts": [
       704,
-      706
+      706,
+      707,
+      708
     ]
   },
   {
@@ -4046,7 +4160,9 @@
     ],
     "relatedProducts": [
       705,
-      707
+      707,
+      708,
+      709
     ]
   },
   {
@@ -4129,7 +4245,9 @@
     ],
     "relatedProducts": [
       706,
-      708
+      708,
+      709,
+      710
     ]
   },
   {
@@ -4212,7 +4330,9 @@
     ],
     "relatedProducts": [
       707,
-      709
+      709,
+      710,
+      711
     ]
   },
   {
@@ -4294,8 +4414,10 @@
       }
     ],
     "relatedProducts": [
+      707,
       708,
-      710
+      710,
+      711
     ]
   },
   {
@@ -4377,6 +4499,8 @@
       }
     ],
     "relatedProducts": [
+      707,
+      708,
       709,
       711
     ]
@@ -4460,6 +4584,9 @@
       }
     ],
     "relatedProducts": [
+      
+      707,
+      708,
       709,
       710
     ]
@@ -4597,7 +4724,9 @@
     ],
     "relatedProducts": [
       902,
-      903
+      903,
+      904,
+      905
     ]
   },
   {
@@ -4725,7 +4854,8 @@
     "relatedProducts": [
       901,
       903,
-      904
+      904,
+      905
     ]
   },
   {
@@ -4853,7 +4983,8 @@
     "relatedProducts": [
       901,
       902,
-      904
+      904,
+      905
     ]
   },
   {
@@ -5072,11 +5203,11 @@
   {
     "id": 1001,
     "slug": "a0",
-    "name": "Strauss A0 Round Bur",
+    "name": "A0",
     "description": "Small round diamond bur (0.8mm) for precise cavity preparation and caries removal",
     "category": 41,
     "order": 1,
-    "sku": "STR-A0",
+    "sku": "A0",
     "basePrice": 12.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5085,21 +5216,21 @@
       {
         "id": "a0-c",
         "name": "Coarse",
-        "sku": "STR-A0-C",
+        "sku": "A0-C",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A0C.jpg"
       },
       {
         "id": "a0-m",
         "name": "Medium",
-        "sku": "STR-A0-M",
+        "sku": "A0-M",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A0M.jpg"
       },
       {
         "id": "a0-f",
         "name": "Fine",
-        "sku": "STR-A0-F",
+        "sku": "A0-F",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A0F.jpg"
       }
@@ -5178,11 +5309,11 @@
   {
     "id": 1002,
     "slug": "a1",
-    "name": "Strauss A1 Round Bur",
+    "name": "A1",
     "description": "Round diamond bur (1.0mm) for cavity preparation and caries removal",
     "category": 41,
     "order": 2,
-    "sku": "STR-A1",
+    "sku": "A1",
     "basePrice": 12.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5191,21 +5322,21 @@
       {
         "id": "a1-c",
         "name": "Coarse",
-        "sku": "STR-A1-C",
+        "sku": "A1-C",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A1C.jpg"
       },
       {
         "id": "a1-m",
         "name": "Medium",
-        "sku": "STR-A1-M",
+        "sku": "A1-M",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A1M.jpg"
       },
       {
         "id": "a1-f",
         "name": "Fine",
-        "sku": "STR-A1-F",
+        "sku": "A1-F",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A1F.jpg"
       }
@@ -5284,11 +5415,11 @@
   {
     "id": 1003,
     "slug": "a2",
-    "name": "Strauss A2 Round Bur",
+    "name": "A2",
     "description": "Medium round diamond bur (1.2mm) for versatile cavity preparation",
     "category": 41,
     "order": 3,
-    "sku": "STR-A2",
+    "sku": "A2",
     "basePrice": 12.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5297,21 +5428,21 @@
       {
         "id": "a2-c",
         "name": "Coarse",
-        "sku": "STR-A2-C",
+        "sku": "A2-C",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A2C.jpg"
       },
       {
         "id": "a2-m",
         "name": "Medium",
-        "sku": "STR-A2-M",
+        "sku": "A2-M",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A2M.jpg"
       },
       {
         "id": "a2-f",
         "name": "Fine",
-        "sku": "STR-A2-F",
+        "sku": "A2-F",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A2F.jpg"
       }
@@ -5390,11 +5521,11 @@
   {
     "id": 1004,
     "slug": "a3",
-    "name": "Strauss A3 Round Bur",
+    "name": "A3",
     "description": "Large round diamond bur (1.4mm) for efficient bulk removal",
     "category": 41,
     "order": 4,
-    "sku": "STR-A3",
+    "sku": "A3",
     "basePrice": 12.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5403,21 +5534,21 @@
       {
         "id": "a3-c",
         "name": "Coarse",
-        "sku": "STR-A3-C",
+        "sku": "A3-C",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A3C.jpg"
       },
       {
         "id": "a3-m",
         "name": "Medium",
-        "sku": "STR-A3-M",
+        "sku": "A3-M",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A3M.jpg"
       },
       {
         "id": "a3-f",
         "name": "Fine",
-        "sku": "STR-A3-F",
+        "sku": "A3-F",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A3F.jpg"
       }
@@ -5496,11 +5627,11 @@
   {
     "id": 1005,
     "slug": "a4",
-    "name": "Strauss A4 Round Bur",
+    "name": "A4",
     "description": "Extra large round diamond bur (1.6mm) for major cavity preparation",
     "category": 41,
     "order": 5,
-    "sku": "STR-A4",
+    "sku": "A4",
     "basePrice": 12.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5509,21 +5640,21 @@
       {
         "id": "a4-c",
         "name": "Coarse",
-        "sku": "STR-A4-C",
+        "sku": "A4-C",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A4C.jpg"
       },
       {
         "id": "a4-m",
         "name": "Medium",
-        "sku": "STR-A4-M",
+        "sku": "A4-M",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A4M.jpg"
       },
       {
         "id": "a4-f",
         "name": "Fine",
-        "sku": "STR-A4-F",
+        "sku": "A4-F",
         "price": 12.99,
         "image": "/images/products/strauss/a-series/A4F.jpg"
       }
@@ -5602,11 +5733,11 @@
   {
     "id": 1010,
     "slug": "b0",
-    "name": "Strauss B0 Pear Bur",
+    "name": "B0",
     "description": "Small pear-shaped diamond bur for undercut preparation",
     "category": 42,
     "order": 1,
-    "sku": "STR-B0",
+    "sku": "B0",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5615,14 +5746,14 @@
       {
         "id": "b0-c",
         "name": "Coarse",
-        "sku": "STR-B0-C",
+        "sku": "B0-C",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B0C.jpg"
       },
       {
         "id": "b0-m",
         "name": "Medium",
-        "sku": "STR-B0-M",
+        "sku": "B0-M",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B0M.jpg"
       }
@@ -5696,11 +5827,11 @@
   {
     "id": 1011,
     "slug": "b1",
-    "name": "Strauss B1 Pear Bur",
+    "name": "B1",
     "description": "Pear-shaped diamond bur for cavity preparation and undercuts",
     "category": 42,
     "order": 2,
-    "sku": "STR-B1",
+    "sku": "B1",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5709,14 +5840,14 @@
       {
         "id": "b1-c",
         "name": "Coarse",
-        "sku": "STR-B1-C",
+        "sku": "B1-C",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B1C.jpg"
       },
       {
         "id": "b1-m",
         "name": "Medium",
-        "sku": "STR-B1-M",
+        "sku": "B1-M",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B1M.jpg"
       }
@@ -5790,11 +5921,11 @@
   {
     "id": 1012,
     "slug": "b2",
-    "name": "Strauss B2 Pear Bur",
+    "name": "B2",
     "description": "Medium pear-shaped diamond bur for versatile preparation",
     "category": 42,
     "order": 3,
-    "sku": "STR-B2",
+    "sku": "B2",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5803,14 +5934,14 @@
       {
         "id": "b2-c",
         "name": "Coarse",
-        "sku": "STR-B2-C",
+        "sku": "B2-C",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B2C.jpg"
       },
       {
         "id": "b2-m",
         "name": "Medium",
-        "sku": "STR-B2-M",
+        "sku": "B2-M",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B2M.jpg"
       }
@@ -5884,11 +6015,11 @@
   {
     "id": 1013,
     "slug": "b3",
-    "name": "Strauss B3 Pear Bur",
+    "name": "B3",
     "description": "Large pear-shaped diamond bur for efficient preparation",
     "category": 42,
     "order": 4,
-    "sku": "STR-B3",
+    "sku": "B3",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5897,14 +6028,14 @@
       {
         "id": "b3-c",
         "name": "Coarse",
-        "sku": "STR-B3-C",
+        "sku": "B3-C",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B3C.jpg"
       },
       {
         "id": "b3-m",
         "name": "Medium",
-        "sku": "STR-B3-M",
+        "sku": "B3-M",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B3M.jpg"
       }
@@ -5978,11 +6109,11 @@
   {
     "id": 1014,
     "slug": "b4",
-    "name": "Strauss B4 Pear Bur",
+    "name": "B4",
     "description": "Extra large pear-shaped diamond bur",
     "category": 42,
     "order": 5,
-    "sku": "STR-B4",
+    "sku": "B4",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -5991,21 +6122,21 @@
       {
         "id": "b4-c",
         "name": "Coarse",
-        "sku": "STR-B4-C",
+        "sku": "B4-C",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B4C.jpg"
       },
       {
         "id": "b4-m",
         "name": "Medium",
-        "sku": "STR-B4-M",
+        "sku": "B4-M",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B4M.jpg"
       },
       {
         "id": "b4-f",
         "name": "Fine",
-        "sku": "STR-B4-F",
+        "sku": "B4-F",
         "price": 13.99,
         "image": "/images/products/strauss/b-series/B4F.jpg"
       }
@@ -6080,11 +6211,11 @@
   {
     "id": 1020,
     "slug": "c0",
-    "name": "Strauss C0 Flame Bur",
+    "name": "C0",
     "description": "Small flame-shaped diamond bur for interproximal reduction",
     "category": 43,
     "order": 1,
-    "sku": "STR-C0",
+    "sku": "C0",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6093,21 +6224,21 @@
       {
         "id": "c0-c",
         "name": "Coarse",
-        "sku": "STR-C0-C",
+        "sku": "C0-C",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C0C.jpg"
       },
       {
         "id": "c0-m",
         "name": "Medium",
-        "sku": "STR-C0-M",
+        "sku": "C0-M",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C0M.jpg"
       },
       {
         "id": "c0-f",
         "name": "Fine",
-        "sku": "STR-C0-F",
+        "sku": "C0-F",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C0F.jpg"
       }
@@ -6182,11 +6313,11 @@
   {
     "id": 1021,
     "slug": "c1",
-    "name": "Strauss C1 Flame Bur",
+    "name": "C1",
     "description": "Flame-shaped diamond bur for interproximal work",
     "category": 43,
     "order": 2,
-    "sku": "STR-C1",
+    "sku": "C1",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6195,21 +6326,21 @@
       {
         "id": "c1-c",
         "name": "Coarse",
-        "sku": "STR-C1-C",
+        "sku": "C1-C",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C1C.jpg"
       },
       {
         "id": "c1-m",
         "name": "Medium",
-        "sku": "STR-C1-M",
+        "sku": "C1-M",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C1M.jpg"
       },
       {
         "id": "c1-f",
         "name": "Fine",
-        "sku": "STR-C1-F",
+        "sku": "C1-F",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C1F.jpg"
       }
@@ -6284,11 +6415,11 @@
   {
     "id": 1022,
     "slug": "c2",
-    "name": "Strauss C2 Flame Bur",
+    "name": "C2",
     "description": "Medium flame-shaped diamond bur",
     "category": 43,
     "order": 3,
-    "sku": "STR-C2",
+    "sku": "C2",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6297,21 +6428,21 @@
       {
         "id": "c2-c",
         "name": "Coarse",
-        "sku": "STR-C2-C",
+        "sku": "C2-C",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C2C.jpg"
       },
       {
         "id": "c2-m",
         "name": "Medium",
-        "sku": "STR-C2-M",
+        "sku": "C2-M",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C2M.jpg"
       },
       {
         "id": "c2-f",
         "name": "Fine",
-        "sku": "STR-C2-F",
+        "sku": "C2-F",
         "price": 13.99,
         "image": "/images/products/strauss/c-series/C2F.jpg"
       }
@@ -6386,11 +6517,11 @@
   {
     "id": 1030,
     "slug": "d11",
-    "name": "Strauss D11 Cylinder Bur",
+    "name": "D11",
     "description": "Cylindrical diamond bur for crown preparation",
     "category": 44,
     "order": 1,
-    "sku": "STR-D11",
+    "sku": "D11",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6399,14 +6530,14 @@
       {
         "id": "d11-c",
         "name": "Coarse",
-        "sku": "STR-D11-C",
+        "sku": "D11-C",
         "price": 14.99,
         "image": "/images/products/strauss/d-series/D11C.jpg"
       },
       {
         "id": "d11-m",
         "name": "Medium",
-        "sku": "STR-D11-M",
+        "sku": "D11-M",
         "price": 14.99,
         "image": "/images/products/strauss/d-series/D11M.jpg"
       }
@@ -6479,11 +6610,11 @@
   {
     "id": 1031,
     "slug": "d12",
-    "name": "Strauss D12 Cylinder Bur",
+    "name": "D12",
     "description": "Medium cylindrical diamond bur for crown reduction",
     "category": 44,
     "order": 2,
-    "sku": "STR-D12",
+    "sku": "D12",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6492,14 +6623,14 @@
       {
         "id": "d12-c",
         "name": "Coarse",
-        "sku": "STR-D12-C",
+        "sku": "D12-C",
         "price": 14.99,
         "image": "/images/products/strauss/d-series/D12C.jpg"
       },
       {
         "id": "d12-m",
         "name": "Medium",
-        "sku": "STR-D12-M",
+        "sku": "D12-M",
         "price": 14.99,
         "image": "/images/products/strauss/d-series/D12M.jpg"
       }
@@ -6572,11 +6703,11 @@
   {
     "id": 1040,
     "slug": "e11",
-    "name": "Strauss E11 Taper Bur",
+    "name": "E11",
     "description": "Tapered diamond bur for crown and veneer preparation",
     "category": 45,
     "order": 1,
-    "sku": "STR-E11",
+    "sku": "E11",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6585,14 +6716,14 @@
       {
         "id": "e11-c",
         "name": "Coarse",
-        "sku": "STR-E11-C",
+        "sku": "E11-C",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E11C.jpg"
       },
       {
         "id": "e11-m",
         "name": "Medium",
-        "sku": "STR-E11-M",
+        "sku": "E11-M",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E11M.jpg"
       },
@@ -6673,11 +6804,11 @@
   {
     "id": 1041,
     "slug": "e3",
-    "name": "Strauss E3 Taper Bur",
+    "name": "E3",
     "description": "Large tapered diamond bur for crown preparation",
     "category": 45,
     "order": 2,
-    "sku": "STR-E3",
+    "sku": "E3",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6686,21 +6817,21 @@
       {
         "id": "e3-rc",
         "name": "Coarse Round End",
-        "sku": "STR-E3-RC",
+        "sku": "E3-RC",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E3RC.jpg"
       },
       {
         "id": "e3-rm",
         "name": "Medium Round End",
-        "sku": "STR-E3-RM",
+        "sku": "E3-RM",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E3RM.jpg"
       },
       {
         "id": "e3-rf",
         "name": "Fine Round End",
-        "sku": "STR-E3-RF",
+        "sku": "E3-RF",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E3RF.jpg"
       }
@@ -6774,11 +6905,11 @@
   {
     "id": 1042,
     "slug": "e32",
-    "name": "Strauss E32 Taper Bur",
+    "name": "E32",
     "description": "Wide tapered diamond bur for efficient reduction",
     "category": 45,
     "order": 3,
-    "sku": "STR-E32",
+    "sku": "E32",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6787,21 +6918,21 @@
       {
         "id": "e32-c",
         "name": "Coarse",
-        "sku": "STR-E32-C",
+        "sku": "E32-C",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E32C.jpg"
       },
       {
         "id": "e32-m",
         "name": "Medium",
-        "sku": "STR-E32-M",
+        "sku": "E32-M",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E32M.jpg"
       },
       {
         "id": "e32-f",
         "name": "Fine",
-        "sku": "STR-E32-F",
+        "sku": "E32-F",
         "price": 14.99,
         "image": "/images/products/strauss/e-series/E32F.jpg"
       }
@@ -6875,11 +7006,11 @@
   {
     "id": 1050,
     "slug": "f09r",
-    "name": "Strauss F09R Football Bur",
+    "name": "F09R",
     "description": "Football-shaped diamond bur for occlusal reduction",
     "category": 46,
     "order": 1,
-    "sku": "STR-F09R",
+    "sku": "F09R",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -6888,21 +7019,21 @@
       {
         "id": "f09r-c",
         "name": "Coarse",
-        "sku": "STR-F09R-C",
+        "sku": "F09R-C",
         "price": 14.99,
         "image": "/images/products/strauss/f-series/F09RC.jpg"
       },
       {
         "id": "f09r-m",
         "name": "Medium",
-        "sku": "STR-F09R-M",
+        "sku": "F09R-M",
         "price": 14.99,
         "image": "/images/products/strauss/f-series/F09RM.jpg"
       },
       {
         "id": "f09r-f",
         "name": "Fine",
-        "sku": "STR-F09R-F",
+        "sku": "F09R-F",
         "price": 14.99,
         "image": "/images/products/strauss/f-series/F09RF.jpg"
       }
@@ -6976,11 +7107,11 @@
   {
     "id": 1060,
     "slug": "fgb557",
-    "name": "Strauss FGB557 Carbide Bur",
+    "name": "FGB557 Carbide Bur",
     "description": "Straight fissure carbide bur for cavity preparation",
     "category": 47,
     "order": 1,
-    "sku": "STR-FGB557",
+    "sku": "FGB557",
     "basePrice": 8.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7054,11 +7185,11 @@
   {
     "id": 1061,
     "slug": "fgb558",
-    "name": "Strauss FGB558 Carbide Bur",
+    "name": "FGB558",
     "description": "Straight fissure crosscut carbide bur",
     "category": 47,
     "order": 2,
-    "sku": "STR-FGB558",
+    "sku": "FGB558",
     "basePrice": 8.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7132,11 +7263,11 @@
   {
     "id": 1062,
     "slug": "fgb701",
-    "name": "Strauss FGB701 Carbide Bur",
+    "name": "FGB701",
     "description": "Taper fissure carbide bur for crown removal",
     "category": 47,
     "order": 3,
-    "sku": "STR-FGB701",
+    "sku": "FGB701",
     "basePrice": 8.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7210,11 +7341,11 @@
   {
     "id": 1070,
     "slug": "g1",
-    "name": "Strauss G1 Needle Bur",
+    "name": "G1",
     "description": "Needle-point diamond bur for fine detail work",
     "category": 48,
     "order": 1,
-    "sku": "STR-G1",
+    "sku": "G1",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -7223,14 +7354,14 @@
       {
         "id": "g1-c",
         "name": "Coarse",
-        "sku": "STR-G1-C",
+        "sku": "G1-C",
         "price": 13.99,
         "image": "/images/products/strauss/g-series/G1C.jpg"
       },
       {
         "id": "g1-m",
         "name": "Medium",
-        "sku": "STR-G1-M",
+        "sku": "G1-M",
         "price": 13.99,
         "image": "/images/products/strauss/g-series/G1M.jpg"
       }
@@ -7303,11 +7434,11 @@
   {
     "id": 1071,
     "slug": "g2",
-    "name": "Strauss G2 Needle Bur",
+    "name": "G2 Needle Bur",
     "description": "Needle-point diamond bur for detail work",
     "category": 48,
     "order": 2,
-    "sku": "STR-G2",
+    "sku": "G2",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -7316,14 +7447,14 @@
       {
         "id": "g2-c",
         "name": "Coarse",
-        "sku": "STR-G2-C",
+        "sku": "G2-C",
         "price": 13.99,
         "image": "/images/products/strauss/g-series/G2C.jpg"
       },
       {
         "id": "g2-m",
         "name": "Medium",
-        "sku": "STR-G2-M",
+        "sku": "G2-M",
         "price": 13.99,
         "image": "/images/products/strauss/g-series/G2M.jpg"
       }
@@ -7396,11 +7527,11 @@
   {
     "id": 1080,
     "slug": "j10",
-    "name": "Strauss J10 Inverted Cone Bur",
+    "name": "J10",
     "description": "Inverted cone diamond bur for undercut preparation",
     "category": 49,
     "order": 1,
-    "sku": "STR-J10",
+    "sku": "J10",
     "basePrice": 13.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -7409,21 +7540,21 @@
       {
         "id": "j10-c",
         "name": "Coarse",
-        "sku": "STR-J10-C",
+        "sku": "J10-C",
         "price": 13.99,
         "image": "/images/products/strauss/j-series/J10C.jpg"
       },
       {
         "id": "j10-m",
         "name": "Medium",
-        "sku": "STR-J10-M",
+        "sku": "J10-M",
         "price": 13.99,
         "image": "/images/products/strauss/j-series/J10M.jpg"
       },
       {
         "id": "j10-f",
         "name": "Fine",
-        "sku": "STR-J10-F",
+        "sku": "J10-F",
         "price": 13.99,
         "image": "/images/products/strauss/j-series/J10F.jpg"
       }
@@ -7496,11 +7627,11 @@
   {
     "id": 1090,
     "slug": "k2r",
-    "name": "Strauss K2R End Cutting Bur",
+    "name": "K2R",
     "description": "End-cutting diamond bur for shoulder preparation",
     "category": 50,
     "order": 1,
-    "sku": "STR-K2R",
+    "sku": "K2R",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -7509,21 +7640,21 @@
       {
         "id": "k2r-c",
         "name": "Coarse",
-        "sku": "STR-K2R-C",
+        "sku": "K2R-C",
         "price": 14.99,
         "image": "/images/products/strauss/k-series/K2RC.jpg"
       },
       {
         "id": "k2r-m",
         "name": "Medium",
-        "sku": "STR-K2R-M",
+        "sku": "K2R-M",
         "price": 14.99,
         "image": "/images/products/strauss/k-series/K2RM.jpg"
       },
       {
         "id": "k2r-f",
         "name": "Fine",
-        "sku": "STR-K2R-F",
+        "sku": "K2R-F",
         "price": 14.99,
         "image": "/images/products/strauss/k-series/K2RF.jpg"
       }
@@ -7596,11 +7727,11 @@
   {
     "id": 1091,
     "slug": "k2s",
-    "name": "Strauss K2S End Cutting Bur",
+    "name": "K2S",
     "description": "End-cutting diamond bur with safety tip",
     "category": 50,
     "order": 2,
-    "sku": "STR-K2S",
+    "sku": "K2S",
     "basePrice": 14.99,
     "currency": "AUD",
     "hasVariants": true,
@@ -7609,14 +7740,14 @@
       {
         "id": "k2s-c",
         "name": "Coarse",
-        "sku": "STR-K2S-C",
+        "sku": "K2S-C",
         "price": 14.99,
         "image": "/images/products/strauss/k-series/K2SC.jpg"
       },
       {
         "id": "k2s-f",
         "name": "Fine",
-        "sku": "STR-K2S-F",
+        "sku": "K2S-F",
         "price": 14.99,
         "image": "/images/products/strauss/k-series/K2SF.jpg"
       }
@@ -7688,11 +7819,11 @@
   {
     "id": 1100,
     "slug": "pr12m",
-    "name": "Strauss PR12M Polishing Bur",
+    "name": "PR12M",
     "description": "Polishing diamond bur for finishing and surface refinement",
     "category": 51,
     "order": 1,
-    "sku": "STR-PR12M",
+    "sku": "PR12M",
     "basePrice": 15.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7766,11 +7897,11 @@
   {
     "id": 1101,
     "slug": "pr13m",
-    "name": "Strauss PR13M Polishing Bur",
+    "name": "PR13M",
     "description": "Medium polishing diamond bur",
     "category": 51,
     "order": 2,
-    "sku": "STR-PR13M",
+    "sku": "PR13M",
     "basePrice": 15.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7844,11 +7975,11 @@
   {
     "id": 1110,
     "slug": "magic-touch-kit",
-    "name": "Strauss Magic Touch Kit",
+    "name": "Magic Touch Kit",
     "description": "Complete bur kit for crown preparation procedures",
     "category": 52,
     "order": 1,
-    "sku": "STR-MAGIC-KIT",
+    "sku": "MAGIC-KIT",
     "basePrice": 189.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -7926,11 +8057,11 @@
   {
     "id": 1111,
     "slug": "mini-magic-kit",
-    "name": "Strauss Mini Magic Kit",
+    "name": "Mini Magic Kit",
     "description": "Compact bur kit for essential procedures",
     "category": 52,
     "order": 2,
-    "sku": "STR-MINI-MAGIC",
+    "sku": "MINI-MAGIC",
     "basePrice": 129.99,
     "currency": "AUD",
     "hasVariants": false,
@@ -8004,11 +8135,11 @@
   {
     "id": 1112,
     "slug": "ipr-kit",
-    "name": "Strauss IPR Kit",
+    "name": "IPR Kit",
     "description": "Interproximal reduction kit for orthodontic procedures",
     "category": 52,
     "order": 3,
-    "sku": "STR-IPR-KIT",
+    "sku": "IPR-KIT",
     "basePrice": 149.99,
     "currency": "AUD",
     "hasVariants": false,

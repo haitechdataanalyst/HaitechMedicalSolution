@@ -22,14 +22,14 @@ const contactMethods = [
     title: 'Call Us',
     value: siteConfig.company.phone,
     href: `tel:${siteConfig.company.phone.replace(/\s/g, '')}`,
-    description: 'Mon-Fri 9am-5pm AEST',
+    description: 'Mon-Fri 10am-6pm IST',
   },
   {
     id: 'info',
     icon: Clock,
     title: 'Business Hours',
-    value: 'Mon - Fri: 9:00 AM - 5:00 PM',
-    description: 'Australian Eastern Standard Time',
+    value: 'Mon - Fri: 10:00 AM - 6:00 PM',
+    description: 'Indian Standard Time',
   },
   {
     id: 'address',
@@ -150,10 +150,6 @@ export default function ContactPage() {
               <li className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                 <span className="text-muted">Phone: Immediate (business hours)</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
-                <span className="text-muted">Complex inquiries: 2-3 business days</span>
               </li>
             </ul>
           </div>

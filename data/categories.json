@@ -95,7 +95,7 @@
     "name": "Dental Chairs",
     "type": "category",
     "description": "Anya dental chairs - ergonomic design for patient comfort and practitioner efficiency",
-    "image": "/images/products/almadent/chairs/chairs-category.jpg",
+    "image": "/images/products/almadent/chairs/ay-3000-8.jpg",
     "parent": 10,
     "order": 1,
     "children": []
@@ -202,7 +202,7 @@
   {
     "id": 41,
     "slug": "a-series",
-    "name": "A Series - Round Burs",
+    "name": "Round Burs",
     "type": "category",
     "description": "Round diamond burs for cavity preparation and caries removal",
     "image": "/images/products/strauss/a-series/A0C.jpg",
@@ -213,7 +213,7 @@
   {
     "id": 42,
     "slug": "b-series",
-    "name": "B Series - Pear Burs",
+    "name": "Pear Burs",
     "type": "category",
     "description": "Pear-shaped diamond burs for cavity preparation and undercuts",
     "image": "/images/products/strauss/b-series/B0C.jpg",
@@ -224,7 +224,7 @@
   {
     "id": 43,
     "slug": "c-series",
-    "name": "C Series - Flame Burs",
+    "name": "Flame Burs",
     "type": "category",
     "description": "Flame-shaped diamond burs for interproximal reduction and finishing",
     "image": "/images/products/strauss/c-series/C0C.jpg",
@@ -235,7 +235,7 @@
   {
     "id": 44,
     "slug": "d-series",
-    "name": "D Series - Cylinder Burs",
+    "name": "Cylinder Burs",
     "type": "category",
     "description": "Cylindrical diamond burs for crown preparation and reduction",
     "image": "/images/products/strauss/d-series/D11C.jpg",
@@ -246,7 +246,7 @@
   {
     "id": 45,
     "slug": "e-series",
-    "name": "E Series - Taper Burs",
+    "name": "Taper Burs",
     "type": "category",
     "description": "Tapered diamond burs for crown and veneer preparation",
     "image": "/images/products/strauss/e-series/E11C.jpg",
@@ -257,7 +257,7 @@
   {
     "id": 46,
     "slug": "f-series",
-    "name": "F Series - Football Burs",
+    "name": "Football Burs",
     "type": "category",
     "description": "Football-shaped diamond burs for occlusal reduction",
     "image": "/images/products/strauss/f-series/F09RC.jpg",
@@ -268,7 +268,7 @@
   {
     "id": 47,
     "slug": "fg-series",
-    "name": "FG Series - Carbide Burs",
+    "name": "Carbide Burs",
     "type": "category",
     "description": "Friction grip carbide burs for high-speed handpieces",
     "image": "/images/products/strauss/fg-series/FGB557.jpg",
@@ -279,7 +279,7 @@
   {
     "id": 48,
     "slug": "g-series",
-    "name": "G Series - Needle Burs",
+    "name": "Needle Burs",
     "type": "category",
     "description": "Needle-point diamond burs for fine detail work",
     "image": "/images/products/strauss/g-series/G1C.jpg",
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "slug": "j-series",
-    "name": "J Series - Inverted Cone",
+    "name": "Inverted Cone Burs",
     "type": "category",
     "description": "Inverted cone diamond burs for undercut preparation",
     "image": "/images/products/strauss/j-series/J10C.jpg",
@@ -301,7 +301,7 @@
   {
     "id": 50,
     "slug": "k-series",
-    "name": "K Series - End Cutting",
+    "name": "End Cutting Burs",
     "type": "category",
     "description": "End-cutting diamond burs for shoulder preparation",
     "image": "/images/products/strauss/k-series/K2RC.jpg",
@@ -312,7 +312,7 @@
   {
     "id": 51,
     "slug": "p-series",
-    "name": "P Series - Polishing",
+    "name": "Polishing Burs",
     "type": "category",
     "description": "Polishing burs for finishing and surface refinement",
     "image": "/images/products/strauss/p-series/PR12M.jpg",

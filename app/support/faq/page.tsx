@@ -1,8 +1,9 @@
 import { FAQ } from "@/components/misc";
 import data from "@/data/faq.json";
 import Link from "next/link";
-import { PlaySquare, FileText, GitCompare, ArrowRight } from "lucide-react";
+import { PlaySquare, FileText, GitCompare, ArrowRight, FileTerminalIcon } from "lucide-react";
 import { ArticlesPageClient } from "../articles/ArticlesPageClient";
+import { id } from "zod/locales";
 
 export const metadata = {
   title: 'Help Center | Haitech Medical',
@@ -27,13 +28,12 @@ const helpResources = [
     color: 'bg-green-50 text-green-600',
   },
   {
-    id: 'compare',
-    icon: GitCompare,
-    title: 'Product Comparison',
-    description: 'Compare features across our product range',
-    href: '#compare',
-    color: 'bg-purple-50 text-purple-600',
-  },
+    id: 'terms',
+    icon: FileTerminalIcon,
+    title: 'Policies',
+    description: 'Our Policies & terms and Conditions',
+    href: '/support/policies',
+    color: 'bg-purple-50 text-purple-600',}
 ];
 
 export default function HelpCenterPage() {

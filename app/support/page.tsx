@@ -106,7 +106,7 @@ export default function SupportPage() {
             </div>
             <div>
               <p className="text-sm text-muted">Business Hours</p>
-              <p className="font-semibold">Mon-Fri 9am-5pm</p>
+              <p className="font-semibold">Mon-Fri 9am-6pm</p>
             </div>
           </div>
         </div>
