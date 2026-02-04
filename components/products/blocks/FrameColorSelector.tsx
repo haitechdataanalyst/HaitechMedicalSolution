@@ -7,6 +7,73 @@ import Image from "next/image";
 
 const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
+// Color mapping for deriving hex values from color IDs
+// This makes products.json independent - colors are derived from frameVariants.images keys
+const COLOR_HEX_MAP: Record<string, string | string[]> = {
+  // Basic colors
+  black: "#1a1a1a",
+  white: "#ffffff",
+  grey: "#6b7280",
+  gray: "#6b7280",
+  blue: "#3b82f6",
+  pink: "#ec4899",
+  red: "#dc2626",
+  green: "#166534",
+  orange: "#f97316",
+  brown: "#8b4513",
+  bronze: "#a16207",
+  champagne: "#fbbf24",
+  turquoise: "#14b8a6",
+  bordo: "#7c2d12",
+  // Compound colors (two-tone)
+  "bronze-blue": ["#a16207", "#3b82f6"],
+  "purple-grey": ["#9333ea", "#6b7280"],
+  "rose-gold": ["#f43f5e", "#fbbf24"],
+  "blue-black": ["#3b82f6", "#1a1a1a"],
+  "orange-black": ["#f97316", "#1a1a1a"],
+  "red-black": ["#dc2626", "#1a1a1a"],
+  "green-black": ["#166534", "#1a1a1a"],
+  "turquoise-rose-gold": ["#14b8a6", "#f43f5e"],
+  "red-gold": ["#dc2626", "#fbbf24"],
+  "brown-blue": ["#8b4513", "#3b82f6"],
+  "white-snow": "#f8fafc",
+  "midnight-blue": "#1e3a8a",
+  "orange-lava": "#f97316",
+  "white-blue": ["#ffffff", "#3b82f6"],
+};
+
+// Helper to format color ID into display name
+const formatColorName = (colorId: string): string => {
+  return colorId
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+// Helper to get hex color from color ID
+const getColorHex = (colorId: string): string | string[] => {
+  // Direct match
+  if (COLOR_HEX_MAP[colorId]) {
+    return COLOR_HEX_MAP[colorId];
+  }
+  // Fallback to a neutral color
+  return "#9ca3af";
+};
+
+interface ParsedColor {
+  id: string;
+  name: string;
+  hex: string | string[];
+  image: string;
+}
+
+interface ParsedFrame {
+  id: string;
+  name: string;
+  image: string;
+  colors: ParsedColor[];
+}
+
 interface FrameColorSelectorProps {
   frames: Frame[];
   frameVariants: FrameVariantConfig;
@@ -15,29 +82,63 @@ interface FrameColorSelectorProps {
 }
 
 export default function FrameColorSelector({ frames, frameVariants, onSelectionChange, className }: FrameColorSelectorProps) {
-  // Filter frames to only those available for this product
-  const availableFrames = useMemo(() => {
-    return frames.filter((frame) => frameVariants.availableFrames.includes(frame.id));
-  }, [frames, frameVariants.availableFrames]);
+  // Parse frameVariants.images to extract available frames and their colors
+  // This makes products.json the source of truth for available variants
+  const parsedFrames = useMemo(() => {
+    const frameColorMap: Record<string, ParsedColor[]> = {};
 
-  // Helper to get available colors for a frame
-  const getAvailableColors = (frameId: string) => {
-    const frame = availableFrames.find((f) => f.id === frameId);
-    if (!frame) return [];
-    return frame.colors.filter((color) => {
-      const imageKey = `${frameId}-${color.id}`;
-      return frameVariants.images[imageKey] !== undefined;
+    // Parse all image keys to extract frame-color combinations
+    Object.entries(frameVariants.images).forEach(([key, imagePath]) => {
+      // Key format: "frameId-colorId" (e.g., "blues-black", "jazz-blue-black")
+      const frameId = frameVariants.availableFrames.find((f) => key.startsWith(f + "-"));
+      if (!frameId) return;
+
+      const colorId = key.slice(frameId.length + 1); // Remove "frameId-" prefix
+      if (!colorId) return;
+
+      if (!frameColorMap[frameId]) {
+        frameColorMap[frameId] = [];
+      }
+
+      frameColorMap[frameId].push({
+        id: colorId,
+        name: formatColorName(colorId),
+        hex: getColorHex(colorId),
+        image: imagePath,
+      });
     });
-  };
+
+    // Build parsed frames array using frames.json only for display image and name
+    const result: ParsedFrame[] = frameVariants.availableFrames
+      .map((frameId) => {
+        const frameFromJson = frames.find((f) => f.id === frameId);
+        const colors = frameColorMap[frameId] || [];
+
+        if (colors.length === 0) return null;
+
+        return {
+          id: frameId,
+          name: frameFromJson?.name || formatColorName(frameId),
+          image: frameFromJson?.image || PLACEHOLDER_IMAGE,
+          colors,
+        };
+      })
+      .filter((f): f is ParsedFrame => f !== null);
+
+    return result;
+  }, [frames, frameVariants]);
 
   // Helper to get the first available color for a frame
-  const getFirstColorForFrame = (frameId: string): string | null => {
-    const colors = getAvailableColors(frameId);
-    return colors.length > 0 ? colors[0].id : null;
-  };
+  const getFirstColorForFrame = useCallback(
+    (frameId: string): string | null => {
+      const frame = parsedFrames.find((f) => f.id === frameId);
+      return frame && frame.colors.length > 0 ? frame.colors[0].id : null;
+    },
+    [parsedFrames]
+  );
 
   // Initialize with first available frame and its first color
-  const initialFrameId = availableFrames.length > 0 ? availableFrames[0].id : null;
+  const initialFrameId = parsedFrames.length > 0 ? parsedFrames[0].id : null;
   const initialColorId = initialFrameId ? getFirstColorForFrame(initialFrameId) : null;
 
   const [selectedFrameId, setSelectedFrameId] = useState<string | null>(initialFrameId);
@@ -56,14 +157,14 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
   // Get currently available colors based on selected frame
   const availableColors = useMemo(() => {
     if (!selectedFrameId) return [];
-    return getAvailableColors(selectedFrameId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedFrameId, availableFrames, frameVariants.images]);
+    const frame = parsedFrames.find((f) => f.id === selectedFrameId);
+    return frame?.colors || [];
+  }, [selectedFrameId, parsedFrames]);
 
   // Get selected frame object
   const selectedFrame = useMemo(() => {
-    return availableFrames.find((f) => f.id === selectedFrameId) || null;
-  }, [availableFrames, selectedFrameId]);
+    return parsedFrames.find((f) => f.id === selectedFrameId) || null;
+  }, [parsedFrames, selectedFrameId]);
 
   // Notify parent on initial mount and on subsequent changes
   useLayoutEffect(() => {
@@ -105,7 +206,7 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
     return <span className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses)} style={style} />;
   };
 
-  if (availableFrames.length === 0) {
+  if (parsedFrames.length === 0) {
     return null;
   }
 
@@ -115,7 +216,7 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
       <div>
         <label className="mb-3 block text-sm font-medium text-neutral-700">Select Frame</label>
         <div className="flex flex-wrap gap-3">
-          {availableFrames.map((frame) => (
+          {parsedFrames.map((frame) => (
             <button
               key={frame.id}
               type="button"

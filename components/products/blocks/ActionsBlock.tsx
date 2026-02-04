@@ -37,7 +37,6 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
   );
 
   const handleAddToCart = () => {
-
     // Build customization data including frame selection
     const customization: Record<string, string | number> = { ...customFields };
     if (selectedFrameColor) {
@@ -57,19 +56,26 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
     addItem(cartItem);
   };
-// Get variant description for quote modal
+  // Get variant description for quote modal
   const getVariantDescription = (): string | undefined => {
-    if (selectedFrameColor) {
-      const frame = frames.find(f => f.id === selectedFrameColor.frameId);
-      const color = frame?.colors.find(c => c.id === selectedFrameColor.colorId);
-      if (frame && color) {
-        return `${frame.name} - ${color.name}`;
-      }
+    if (selectedFrameColor && product.frameVariants) {
+      // Derive frame and color names from the selection
+      const frame = frames.find((f) => f.id === selectedFrameColor.frameId);
+      const frameName = frame?.name || formatColorName(selectedFrameColor.frameId);
+      const colorName = formatColorName(selectedFrameColor.colorId);
+      return `${frameName} - ${colorName}`;
     }
     return undefined;
   };
 
-  
+  // Helper to format color ID into display name
+  function formatColorName(colorId: string): string {
+    return colorId
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+
   if (!data.addToCart) {
     return null;
   }
@@ -186,12 +192,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         <Button onClick={handleAddToCart} className="flex-1" size="lg">
           Add to Cart
         </Button>
-        <Button
-          onClick={() => setIsQuoteModalOpen(true)}
-          variant="outline"
-          size="lg"
-          className="flex-1"
-        >
+        <Button onClick={() => setIsQuoteModalOpen(true)} variant="outline" size="lg" className="flex-1">
           Get a Quote
         </Button>
       </div>

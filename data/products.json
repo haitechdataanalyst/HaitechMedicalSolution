@@ -60,13 +60,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Ergo 3.0x loupe system",
-            "Selected frame",
-            "Protective case",
-            "Microfiber cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 3.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
         }
       },
       {
@@ -127,12 +121,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      102,
-      103,
-      104,
-      105
-    ],
+    "relatedProducts": [102, 103, 104, 105],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -223,13 +212,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Ergo 4.0x loupe system",
-            "Selected frame",
-            "Protective case",
-            "Microfiber cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 4.0x loupe system", "Selected frame", "Protective case", "Microfiber cleaning cloth", "User manual"]
         }
       },
       {
@@ -290,12 +273,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      101,
-      103,
-      104,
-      105
-    ],
+    "relatedProducts": [101, 103, 104, 105],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -386,13 +364,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Ergo 5.0x loupe system",
-            "Selected frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 5.0x loupe system", "Selected frame", "Hard protective case", "Microfiber cleaning cloth", "User manual"]
         }
       },
       {
@@ -453,12 +425,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      102,
-      104,
-      105,
-      106
-    ],
+    "relatedProducts": [102, 104, 105, 106],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -549,14 +516,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "Ergo 6.0x loupe system",
-            "Selected premium frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "Adjustment tools",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 6.0x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -617,12 +577,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      103,
-      105,
-      106,
-      107
-    ],
+    "relatedProducts": [103, 105, 106, 107],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -713,14 +668,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "Ergo 7.5x loupe system",
-            "Selected premium frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "Adjustment tools",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 7.5x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -781,12 +729,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      103,
-      104,
-      106,
-      107
-    ],
+    "relatedProducts": [103, 104, 106, 107],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -877,14 +820,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "Ergo 10x loupe system",
-            "Selected premium frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "Adjustment tools",
-            "User manual"
-          ]
+          "packageContents": ["Ergo 10x loupe system", "Selected premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -945,12 +881,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      103,
-      104,
-      105,
-      107
-    ],
+    "relatedProducts": [103, 104, 105, 107],
     "frameVariants": {
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
@@ -992,17 +923,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
-    "gallery": [
-      "/images/products/admetec/ergo-v/ergo-v.jpg"
-    ],
+    "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
-          "gallery": [
-            "/images/products/admetec/ergo-v/ergo-v.jpg"
-          ]
+          "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"]
         }
       },
       {
@@ -1045,14 +972,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "Ergo V loupe system",
-            "Premium titanium frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "Adjustment tools",
-            "User manual"
-          ]
+          "packageContents": ["Ergo V loupe system", "Premium titanium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -1117,12 +1037,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      104,
-      105,
-      106,
-      108
-    ]
+    "relatedProducts": [104, 105, 106, 108]
   },
   {
     "id": 108,
@@ -1136,17 +1051,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
-    "gallery": [
-      "/images/products/admetec/ergo-v/ergo-v-pro.jpg"
-    ],
+    "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
-          "gallery": [
-            "/images/products/admetec/ergo-v/ergo-v-pro.jpg"
-          ]
+          "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"]
         }
       },
       {
@@ -1267,12 +1178,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      108,
-      103,
-      104,
-      201
-    ]
+    "relatedProducts": [108, 103, 104, 201]
   },
   {
     "id": 201,
@@ -1335,13 +1241,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Galilean 2.5x loupes",
-            "Selected frame",
-            "Soft protective case",
-            "Cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Galilean 2.5x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
         }
       },
       {
@@ -1382,16 +1282,9 @@
         }
       }
     ],
-    "relatedProducts": [
-      202,
-      203,
-      101
-    ],
+    "relatedProducts": [202, 203, 101],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "jazz"
-      ],
+      "availableFrames": ["blues", "jazz"],
       "images": {
         "blues-pink": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
         "jazz-blue": "/images/products/admetec/galilean/galilean-2.5x-jazz-blue.jpg",
@@ -1451,7 +1344,7 @@
             {
               "label": "Optical System",
               "value": "Galilean"
-            } 
+            }
           ]
         }
       },
@@ -1460,13 +1353,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Galilean 2.7x loupes",
-            "Selected frame",
-            "Soft protective case",
-            "Cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Galilean 2.7x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
         }
       },
       {
@@ -1507,16 +1394,9 @@
         }
       }
     ],
-    "relatedProducts": [
-      201,
-      203,
-      101
-    ],
+    "relatedProducts": [201, 203, 101],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "indie"
-      ],
+      "availableFrames": ["blues", "indie"],
       "images": {
         "blues-bronze": "/images/products/admetec/galilean/galilean-2.7x-blues-bronze.jpg",
         "indie-blue": "/images/products/admetec/galilean/galilean-2.7x-indie-blue.jpg"
@@ -1584,13 +1464,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "Galilean 3.2x loupes",
-            "Selected frame",
-            "Soft protective case",
-            "Cleaning cloth",
-            "User manual"
-          ]
+          "packageContents": ["Galilean 3.2x loupes", "Selected frame", "Soft protective case", "Cleaning cloth", "User manual"]
         }
       },
       {
@@ -1631,17 +1505,9 @@
         }
       }
     ],
-    "relatedProducts": [
-      201,
-      202,
-      102
-    ],
+    "relatedProducts": [201, 202, 102],
     "frameVariants": {
-      "availableFrames": [
-        "blues",
-        "soul",
-        "swing"
-      ],
+      "availableFrames": ["blues", "soul", "swing"],
       "images": {
         "blues-black": "/images/products/admetec/galilean/galilean-3.2x-blues-black.jpg",
         "soul-brown": "/images/products/admetec/galilean/galilean-3.2x-soul-brown.jpg",
@@ -1722,14 +1588,7 @@
         "data": {
           "manufacturer": "Admetec",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "Prismatic loupe system",
-            "Premium frame",
-            "Hard protective case",
-            "Microfiber cleaning cloth",
-            "Adjustment tools",
-            "User manual"
-          ]
+          "packageContents": ["Prismatic loupe system", "Premium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -1790,11 +1649,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      104,
-      105,
-      107
-    ]
+    "relatedProducts": [104, 105, 107]
   },
   {
     "id": 401,
@@ -1879,14 +1734,7 @@
         "data": {
           "manufacturer": "Almadent (Anya Dental)",
           "warranty": "2 years comprehensive",
-          "packageContents": [
-            "AY-3000 dental chair unit",
-            "Standard delivery system",
-            "Operating light",
-            "Assistant's arm",
-            "Installation manual",
-            "User guide"
-          ]
+          "packageContents": ["AY-3000 dental chair unit", "Standard delivery system", "Operating light", "Assistant's arm", "Installation manual", "User guide"]
         }
       },
       {
@@ -1923,10 +1771,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      402,
-      403
-    ]
+    "relatedProducts": [402, 403]
   },
   {
     "id": 402,
@@ -2013,15 +1858,7 @@
         "data": {
           "manufacturer": "Almadent (Anya Dental)",
           "warranty": "3 years comprehensive",
-          "packageContents": [
-            "AY-6000 dental chair unit",
-            "Advanced delivery system",
-            "LED operating light",
-            "Assistant's instrumentation",
-            "Foot controller",
-            "Installation manual",
-            "User guide"
-          ]
+          "packageContents": ["AY-6000 dental chair unit", "Advanced delivery system", "LED operating light", "Assistant's instrumentation", "Foot controller", "Installation manual", "User guide"]
         }
       },
       {
@@ -2062,10 +1899,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      401,
-      403
-    ]
+    "relatedProducts": [401, 403]
   },
   {
     "id": 403,
@@ -2079,17 +1913,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
-    "gallery": [
-      "/images/products/almadent/chairs/ay-8000-1.jpg"
-    ],
+    "gallery": ["/images/products/almadent/chairs/ay-8000-1.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
-          "gallery": [
-            "/images/products/almadent/chairs/ay-8000-1.jpg"
-          ]
+          "gallery": ["/images/products/almadent/chairs/ay-8000-1.jpg"]
         }
       },
       {
@@ -2206,11 +2036,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      401,
-      402,
-      404
-    ]
+    "relatedProducts": [401, 402, 404]
   },
   {
     "id": 404,
@@ -2287,14 +2113,7 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": [
-            "Implant motor control unit",
-            "Surgical handpiece",
-            "Foot pedal controller",
-            "Irrigation tubing set",
-            "Carrying case",
-            "User manual"
-          ]
+          "packageContents": ["Implant motor control unit", "Surgical handpiece", "Foot pedal controller", "Irrigation tubing set", "Carrying case", "User manual"]
         }
       },
       {
@@ -2305,10 +2124,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      405,
-      406
-    ]
+    "relatedProducts": [405, 406]
   },
   {
     "id": 405,
@@ -2385,15 +2201,7 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": [
-            "PTX control unit",
-            "LED handpiece",
-            "Basic tip set (6 tips)",
-            "Foot pedal",
-            "Irrigation tubing",
-            "Carrying case",
-            "User manual"
-          ]
+          "packageContents": ["PTX control unit", "LED handpiece", "Basic tip set (6 tips)", "Foot pedal", "Irrigation tubing", "Carrying case", "User manual"]
         }
       },
       {
@@ -2404,10 +2212,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      404,
-      406
-    ]
+    "relatedProducts": [404, 406]
   },
   {
     "id": 406,
@@ -2421,17 +2226,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/auxiliary/lubricator-1.png",
-    "gallery": [
-      "/images/products/almadent/auxiliary/lubricator-1.png"
-    ],
+    "gallery": ["/images/products/almadent/auxiliary/lubricator-1.png"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/almadent/auxiliary/lubricator-1.png",
-          "gallery": [
-            "/images/products/almadent/auxiliary/lubricator-1.png"
-          ]
+          "gallery": ["/images/products/almadent/auxiliary/lubricator-1.png"]
         }
       },
       {
@@ -2474,12 +2275,7 @@
         "data": {
           "manufacturer": "Almadent",
           "warranty": "2 years",
-          "packageContents": [
-            "Lubricator unit",
-            "Handpiece adapters set",
-            "Lubricant oil (500ml)",
-            "User manual"
-          ]
+          "packageContents": ["Lubricator unit", "Handpiece adapters set", "Lubricant oil (500ml)", "User manual"]
         }
       },
       {
@@ -2490,10 +2286,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      404,
-      405
-    ]
+    "relatedProducts": [404, 405]
   },
   {
     "id": 501,
@@ -2531,21 +2324,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/elevator/700slash8.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/700slash8.jpg",
-      "/images/products/medesy/elevator/700slash9.jpg",
-      "/images/products/medesy/elevator/700slash10.jpg"
-    ],
+    "gallery": ["/images/products/medesy/elevator/700slash8.jpg", "/images/products/medesy/elevator/700slash9.jpg", "/images/products/medesy/elevator/700slash10.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/700slash8.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/700slash8.jpg",
-            "/images/products/medesy/elevator/700slash9.jpg",
-            "/images/products/medesy/elevator/700slash10.jpg"
-          ]
+          "gallery": ["/images/products/medesy/elevator/700slash8.jpg", "/images/products/medesy/elevator/700slash9.jpg", "/images/products/medesy/elevator/700slash10.jpg"]
         }
       },
       {
@@ -2584,9 +2369,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Heidbrink Elevator (selected model)"
-          ]
+          "packageContents": ["Heidbrink Elevator (selected model)"]
         }
       },
       {
@@ -2597,12 +2380,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      502,
-      503,
-      504,
-      505
-    ]
+    "relatedProducts": [502, 503, 504, 505]
   },
   {
     "id": 502,
@@ -2616,17 +2394,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/705slash6.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/705slash6.jpg"
-    ],
+    "gallery": ["/images/products/medesy/elevator/705slash6.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/705slash6.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/705slash6.jpg"
-          ]
+          "gallery": ["/images/products/medesy/elevator/705slash6.jpg"]
         }
       },
       {
@@ -2669,9 +2443,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Howard Apical Elevator 705/6"
-          ]
+          "packageContents": ["Howard Apical Elevator 705/6"]
         }
       },
       {
@@ -2682,12 +2454,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      501,
-      503,
-      504,
-      505
-    ]
+    "relatedProducts": [501, 503, 504, 505]
   },
   {
     "id": 503,
@@ -2813,9 +2580,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Lussatore Elevator (selected model)"
-          ]
+          "packageContents": ["Lussatore Elevator (selected model)"]
         }
       },
       {
@@ -2826,12 +2591,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      501,
-      502,
-      504,
-      505
-    ]
+    "relatedProducts": [501, 502, 504, 505]
   },
   {
     "id": 504,
@@ -2869,21 +2629,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/elevator/796slash1.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/796slash1.jpg",
-      "/images/products/medesy/elevator/796slash2.jpg",
-      "/images/products/medesy/elevator/796slash3.jpg"
-    ],
+    "gallery": ["/images/products/medesy/elevator/796slash1.jpg", "/images/products/medesy/elevator/796slash2.jpg", "/images/products/medesy/elevator/796slash3.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/796slash1.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/796slash1.jpg",
-            "/images/products/medesy/elevator/796slash2.jpg",
-            "/images/products/medesy/elevator/796slash3.jpg"
-          ]
+          "gallery": ["/images/products/medesy/elevator/796slash1.jpg", "/images/products/medesy/elevator/796slash2.jpg", "/images/products/medesy/elevator/796slash3.jpg"]
         }
       },
       {
@@ -2926,9 +2678,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Warwick-James Elevator (selected model)"
-          ]
+          "packageContents": ["Warwick-James Elevator (selected model)"]
         }
       },
       {
@@ -2939,12 +2689,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      501,
-      502,
-      503,
-      505
-    ]
+    "relatedProducts": [501, 502, 503, 505]
   },
   {
     "id": 505,
@@ -2982,21 +2727,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/elevator/798slash1.jpg",
-    "gallery": [
-      "/images/products/medesy/elevator/798slash1.jpg",
-      "/images/products/medesy/elevator/798slash2.jpg",
-      "/images/products/medesy/elevator/798slash3.jpg"
-    ],
+    "gallery": ["/images/products/medesy/elevator/798slash1.jpg", "/images/products/medesy/elevator/798slash2.jpg", "/images/products/medesy/elevator/798slash3.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/elevator/798slash1.jpg",
-          "gallery": [
-            "/images/products/medesy/elevator/798slash1.jpg",
-            "/images/products/medesy/elevator/798slash2.jpg",
-            "/images/products/medesy/elevator/798slash3.jpg"
-          ]
+          "gallery": ["/images/products/medesy/elevator/798slash1.jpg", "/images/products/medesy/elevator/798slash2.jpg", "/images/products/medesy/elevator/798slash3.jpg"]
         }
       },
       {
@@ -3039,9 +2776,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Coupland Elevator (selected model)"
-          ]
+          "packageContents": ["Coupland Elevator (selected model)"]
         }
       },
       {
@@ -3052,12 +2787,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      501,
-      502,
-      503,
-      504
-    ]
+    "relatedProducts": [501, 502, 503, 504]
   },
   {
     "id": 601,
@@ -3161,9 +2891,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2400 (selected model)"
-          ]
+          "packageContents": ["Forceps 2400 (selected model)"]
         }
       },
       {
@@ -3174,12 +2902,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      602,
-      501,
-      502,
-      503
-    ]
+    "relatedProducts": [602, 501, 502, 503]
   },
   {
     "id": 602,
@@ -3333,9 +3056,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Forceps 2500 (selected model)"
-          ]
+          "packageContents": ["Forceps 2500 (selected model)"]
         }
       },
       {
@@ -3346,12 +3067,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      601,
-      501,
-      502,
-      503
-    ]
+    "relatedProducts": [601, 501, 502, 503]
   },
   {
     "id": 801,
@@ -3382,19 +3098,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/scissors/3509.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3509.jpg",
-      "/images/products/medesy/scissors/3510.jpg"
-    ],
+    "gallery": ["/images/products/medesy/scissors/3509.jpg", "/images/products/medesy/scissors/3510.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3509.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3509.jpg",
-            "/images/products/medesy/scissors/3510.jpg"
-          ]
+          "gallery": ["/images/products/medesy/scissors/3509.jpg", "/images/products/medesy/scissors/3510.jpg"]
         }
       },
       {
@@ -3437,9 +3147,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Kelly Scissors (selected model)"
-          ]
+          "packageContents": ["Kelly Scissors (selected model)"]
         }
       },
       {
@@ -3450,10 +3158,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      802,
-      803
-    ]
+    "relatedProducts": [802, 803]
   },
   {
     "id": 802,
@@ -3484,19 +3189,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/scissors/3518.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3518.jpg",
-      "/images/products/medesy/scissors/3519.jpg"
-    ],
+    "gallery": ["/images/products/medesy/scissors/3518.jpg", "/images/products/medesy/scissors/3519.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3518.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3518.jpg",
-            "/images/products/medesy/scissors/3519.jpg"
-          ]
+          "gallery": ["/images/products/medesy/scissors/3518.jpg", "/images/products/medesy/scissors/3519.jpg"]
         }
       },
       {
@@ -3535,9 +3234,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Goldman-Fox Scissors (selected model)"
-          ]
+          "packageContents": ["Goldman-Fox Scissors (selected model)"]
         }
       },
       {
@@ -3548,10 +3245,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      801,
-      803
-    ]
+    "relatedProducts": [801, 803]
   },
   {
     "id": 803,
@@ -3582,19 +3276,13 @@
       }
     ],
     "defaultImage": "/images/products/medesy/scissors/3627.jpg",
-    "gallery": [
-      "/images/products/medesy/scissors/3627.jpg",
-      "/images/products/medesy/scissors/3628.jpg"
-    ],
+    "gallery": ["/images/products/medesy/scissors/3627.jpg", "/images/products/medesy/scissors/3628.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/scissors/3627.jpg",
-          "gallery": [
-            "/images/products/medesy/scissors/3627.jpg",
-            "/images/products/medesy/scissors/3628.jpg"
-          ]
+          "gallery": ["/images/products/medesy/scissors/3627.jpg", "/images/products/medesy/scissors/3628.jpg"]
         }
       },
       {
@@ -3637,9 +3325,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Castroviejo Scissors (selected model)"
-          ]
+          "packageContents": ["Castroviejo Scissors (selected model)"]
         }
       },
       {
@@ -3650,10 +3336,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      801,
-      802
-    ]
+    "relatedProducts": [801, 802]
   },
   {
     "id": 701,
@@ -3667,17 +3350,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/851slashHP3.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/851slashHP3.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"]
         }
       },
       {
@@ -3720,9 +3399,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 851/HP3"
-          ]
+          "packageContents": ["Periosteal Elevator 851/HP3"]
         }
       },
       {
@@ -3733,12 +3410,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      702,
-      703,
-      704,
-      705
-    ]
+    "relatedProducts": [702, 703, 704, 705]
   },
   {
     "id": 702,
@@ -3752,17 +3424,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/852slashHP3.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/852slashHP3.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"]
         }
       },
       {
@@ -3805,9 +3473,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 852/HP3"
-          ]
+          "packageContents": ["Periosteal Elevator 852/HP3"]
         }
       },
       {
@@ -3818,12 +3484,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      701,
-      703,
-      704,
-      705
-    ]
+    "relatedProducts": [701, 703, 704, 705]
   },
   {
     "id": 703,
@@ -3837,17 +3498,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/856.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/856.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/856.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/856.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"]
         }
       },
       {
@@ -3890,9 +3547,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 856"
-          ]
+          "packageContents": ["Periosteal Elevator 856"]
         }
       },
       {
@@ -3903,12 +3558,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      702,
-      704,
-      705,
-      706
-    ]
+    "relatedProducts": [702, 704, 705, 706]
   },
   {
     "id": 704,
@@ -3922,17 +3572,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/869.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/869.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/869.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/869.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"]
         }
       },
       {
@@ -3975,9 +3621,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 869"
-          ]
+          "packageContents": ["Periosteal Elevator 869"]
         }
       },
       {
@@ -3988,12 +3632,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      703,
-      705,
-      706,
-      707
-    ]
+    "relatedProducts": [703, 705, 706, 707]
   },
   {
     "id": 705,
@@ -4007,17 +3646,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/871slash2-4.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/871slash2-4.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"]
         }
       },
       {
@@ -4060,9 +3695,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 871/2-4"
-          ]
+          "packageContents": ["Periosteal Elevator 871/2-4"]
         }
       },
       {
@@ -4073,12 +3706,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      704,
-      706,
-      707,
-      708
-    ]
+    "relatedProducts": [704, 706, 707, 708]
   },
   {
     "id": 706,
@@ -4092,17 +3720,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/877slashHK4.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/877slashHK4.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"]
         }
       },
       {
@@ -4145,9 +3769,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 877/HK4"
-          ]
+          "packageContents": ["Periosteal Elevator 877/HK4"]
         }
       },
       {
@@ -4158,12 +3780,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      705,
-      707,
-      708,
-      709
-    ]
+    "relatedProducts": [705, 707, 708, 709]
   },
   {
     "id": 707,
@@ -4177,17 +3794,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/878.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/878.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/878.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/878.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"]
         }
       },
       {
@@ -4230,9 +3843,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 878"
-          ]
+          "packageContents": ["Periosteal Elevator 878"]
         }
       },
       {
@@ -4243,12 +3854,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      706,
-      708,
-      709,
-      710
-    ]
+    "relatedProducts": [706, 708, 709, 710]
   },
   {
     "id": 708,
@@ -4262,17 +3868,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/882.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/882.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/882.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/882.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"]
         }
       },
       {
@@ -4315,9 +3917,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 882"
-          ]
+          "packageContents": ["Periosteal Elevator 882"]
         }
       },
       {
@@ -4328,12 +3928,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      707,
-      709,
-      710,
-      711
-    ]
+    "relatedProducts": [707, 709, 710, 711]
   },
   {
     "id": 709,
@@ -4347,17 +3942,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/883.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/883.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/883.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/883.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"]
         }
       },
       {
@@ -4400,9 +3991,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 883"
-          ]
+          "packageContents": ["Periosteal Elevator 883"]
         }
       },
       {
@@ -4413,12 +4002,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      707,
-      708,
-      710,
-      711
-    ]
+    "relatedProducts": [707, 708, 710, 711]
   },
   {
     "id": 710,
@@ -4432,17 +4016,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/884.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/884.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/884.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/884.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"]
         }
       },
       {
@@ -4485,9 +4065,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 884"
-          ]
+          "packageContents": ["Periosteal Elevator 884"]
         }
       },
       {
@@ -4498,12 +4076,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      707,
-      708,
-      709,
-      711
-    ]
+    "relatedProducts": [707, 708, 709, 711]
   },
   {
     "id": 711,
@@ -4517,17 +4090,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/885.jpg",
-    "gallery": [
-      "/images/products/medesy/periosteal-elevators/885.jpg"
-    ],
+    "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/medesy/periosteal-elevators/885.jpg",
-          "gallery": [
-            "/images/products/medesy/periosteal-elevators/885.jpg"
-          ]
+          "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"]
         }
       },
       {
@@ -4570,9 +4139,7 @@
         "data": {
           "manufacturer": "Medesy",
           "warranty": "Lifetime against defects",
-          "packageContents": [
-            "Periosteal Elevator 885"
-          ]
+          "packageContents": ["Periosteal Elevator 885"]
         }
       },
       {
@@ -4583,13 +4150,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      
-      707,
-      708,
-      709,
-      710
-    ]
+    "relatedProducts": [707, 708, 709, 710]
   },
   {
     "id": 901,
@@ -4651,9 +4212,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/ultra-triple-fit.png",
-          "gallery": [
-            "/images/products/salli/ultra-triple-fit.png"
-          ]
+          "gallery": ["/images/products/salli/ultra-triple-fit.png"]
         }
       },
       {
@@ -4707,11 +4266,7 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": [
-            "Salli Ultra Triple Fit Chair",
-            "Movable Armrests",
-            "User Manual"
-          ]
+          "packageContents": ["Salli Ultra Triple Fit Chair", "Movable Armrests", "User Manual"]
         }
       },
       {
@@ -4722,12 +4277,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      902,
-      903,
-      904,
-      905
-    ]
+    "relatedProducts": [902, 903, 904, 905]
   },
   {
     "id": 902,
@@ -4789,9 +4339,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/triple-fit.png",
-          "gallery": [
-            "/images/products/salli/triple-fit.png"
-          ]
+          "gallery": ["/images/products/salli/triple-fit.png"]
         }
       },
       {
@@ -4837,10 +4385,7 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": [
-            "Salli Triple Fit Chair",
-            "User Manual"
-          ]
+          "packageContents": ["Salli Triple Fit Chair", "User Manual"]
         }
       },
       {
@@ -4851,12 +4396,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      901,
-      903,
-      904,
-      905
-    ]
+    "relatedProducts": [901, 903, 904, 905]
   },
   {
     "id": 903,
@@ -4918,9 +4458,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/triple-fit.png",
-          "gallery": [
-            "/images/products/salli/triple-fit.png"
-          ]
+          "gallery": ["/images/products/salli/triple-fit.png"]
         }
       },
       {
@@ -4966,10 +4504,7 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": [
-            "Salli Chin Tilt Chair",
-            "User Manual"
-          ]
+          "packageContents": ["Salli Chin Tilt Chair", "User Manual"]
         }
       },
       {
@@ -4980,12 +4515,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      901,
-      902,
-      904,
-      905
-    ]
+    "relatedProducts": [901, 902, 904, 905]
   },
   {
     "id": 904,
@@ -5047,9 +4577,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/sway-fit.png",
-          "gallery": [
-            "/images/products/salli/sway-fit.png"
-          ]
+          "gallery": ["/images/products/salli/sway-fit.png"]
         }
       },
       {
@@ -5095,10 +4623,7 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "5 years",
-          "packageContents": [
-            "Salli Sway Fit Chair",
-            "User Manual"
-          ]
+          "packageContents": ["Salli Sway Fit Chair", "User Manual"]
         }
       },
       {
@@ -5109,12 +4634,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      901,
-      902,
-      903,
-      905
-    ]
+    "relatedProducts": [901, 902, 903, 905]
   },
   {
     "id": 905,
@@ -5128,17 +4648,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/salli/sway-fit.png",
-    "gallery": [
-      "/images/products/salli/sway-fit.png"
-    ],
+    "gallery": ["/images/products/salli/sway-fit.png"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/salli/sway-fit.png",
-          "gallery": [
-            "/images/products/salli/sway-fit.png"
-          ]
+          "gallery": ["/images/products/salli/sway-fit.png"]
         }
       },
       {
@@ -5180,10 +4696,7 @@
         "data": {
           "manufacturer": "Salli",
           "warranty": "3 years",
-          "packageContents": [
-            "Salli Light Chair",
-            "User Manual"
-          ]
+          "packageContents": ["Salli Light Chair", "User Manual"]
         }
       },
       {
@@ -5194,11 +4707,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      902,
-      903,
-      904
-    ]
+    "relatedProducts": [902, 903, 904]
   },
   {
     "id": 1001,
@@ -5241,11 +4750,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A0C.jpg",
-          "gallery": [
-            "/images/products/strauss/a-series/A0C.jpg",
-            "/images/products/strauss/a-series/A0M.jpg",
-            "/images/products/strauss/a-series/A0F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/a-series/A0C.jpg", "/images/products/strauss/a-series/A0M.jpg", "/images/products/strauss/a-series/A0F.jpg"]
         }
       },
       {
@@ -5287,9 +4792,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5300,11 +4803,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1002,
-      1003,
-      1004
-    ]
+    "relatedProducts": [1002, 1003, 1004]
   },
   {
     "id": 1002,
@@ -5347,11 +4846,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A1C.jpg",
-          "gallery": [
-            "/images/products/strauss/a-series/A1C.jpg",
-            "/images/products/strauss/a-series/A1M.jpg",
-            "/images/products/strauss/a-series/A1F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/a-series/A1C.jpg", "/images/products/strauss/a-series/A1M.jpg", "/images/products/strauss/a-series/A1F.jpg"]
         }
       },
       {
@@ -5393,9 +4888,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5406,11 +4899,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1001,
-      1003,
-      1004
-    ]
+    "relatedProducts": [1001, 1003, 1004]
   },
   {
     "id": 1003,
@@ -5453,11 +4942,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A2C.jpg",
-          "gallery": [
-            "/images/products/strauss/a-series/A2C.jpg",
-            "/images/products/strauss/a-series/A2M.jpg",
-            "/images/products/strauss/a-series/A2F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/a-series/A2C.jpg", "/images/products/strauss/a-series/A2M.jpg", "/images/products/strauss/a-series/A2F.jpg"]
         }
       },
       {
@@ -5499,9 +4984,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5512,11 +4995,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1001,
-      1002,
-      1004
-    ]
+    "relatedProducts": [1001, 1002, 1004]
   },
   {
     "id": 1004,
@@ -5559,11 +5038,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A3C.jpg",
-          "gallery": [
-            "/images/products/strauss/a-series/A3C.jpg",
-            "/images/products/strauss/a-series/A3M.jpg",
-            "/images/products/strauss/a-series/A3F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/a-series/A3C.jpg", "/images/products/strauss/a-series/A3M.jpg", "/images/products/strauss/a-series/A3F.jpg"]
         }
       },
       {
@@ -5605,9 +5080,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5618,11 +5091,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1001,
-      1002,
-      1003
-    ]
+    "relatedProducts": [1001, 1002, 1003]
   },
   {
     "id": 1005,
@@ -5665,11 +5134,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/a-series/A4C.jpg",
-          "gallery": [
-            "/images/products/strauss/a-series/A4C.jpg",
-            "/images/products/strauss/a-series/A4M.jpg",
-            "/images/products/strauss/a-series/A4F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/a-series/A4C.jpg", "/images/products/strauss/a-series/A4M.jpg", "/images/products/strauss/a-series/A4F.jpg"]
         }
       },
       {
@@ -5711,9 +5176,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5724,11 +5187,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1001,
-      1002,
-      1003
-    ]
+    "relatedProducts": [1001, 1002, 1003]
   },
   {
     "id": 1010,
@@ -5764,10 +5223,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B0C.jpg",
-          "gallery": [
-            "/images/products/strauss/b-series/B0C.jpg",
-            "/images/products/strauss/b-series/B0M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/b-series/B0C.jpg", "/images/products/strauss/b-series/B0M.jpg"]
         }
       },
       {
@@ -5805,9 +5261,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5818,11 +5272,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1011,
-      1012,
-      1013
-    ]
+    "relatedProducts": [1011, 1012, 1013]
   },
   {
     "id": 1011,
@@ -5858,10 +5308,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B1C.jpg",
-          "gallery": [
-            "/images/products/strauss/b-series/B1C.jpg",
-            "/images/products/strauss/b-series/B1M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/b-series/B1C.jpg", "/images/products/strauss/b-series/B1M.jpg"]
         }
       },
       {
@@ -5899,9 +5346,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -5912,11 +5357,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1010,
-      1012,
-      1013
-    ]
+    "relatedProducts": [1010, 1012, 1013]
   },
   {
     "id": 1012,
@@ -5952,10 +5393,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B2C.jpg",
-          "gallery": [
-            "/images/products/strauss/b-series/B2C.jpg",
-            "/images/products/strauss/b-series/B2M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/b-series/B2C.jpg", "/images/products/strauss/b-series/B2M.jpg"]
         }
       },
       {
@@ -5993,9 +5431,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6006,11 +5442,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1010,
-      1011,
-      1013
-    ]
+    "relatedProducts": [1010, 1011, 1013]
   },
   {
     "id": 1013,
@@ -6046,10 +5478,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B3C.jpg",
-          "gallery": [
-            "/images/products/strauss/b-series/B3C.jpg",
-            "/images/products/strauss/b-series/B3M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/b-series/B3C.jpg", "/images/products/strauss/b-series/B3M.jpg"]
         }
       },
       {
@@ -6087,9 +5516,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6100,11 +5527,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1010,
-      1011,
-      1012
-    ]
+    "relatedProducts": [1010, 1011, 1012]
   },
   {
     "id": 1014,
@@ -6147,11 +5570,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/b-series/B4C.jpg",
-          "gallery": [
-            "/images/products/strauss/b-series/B4C.jpg",
-            "/images/products/strauss/b-series/B4M.jpg",
-            "/images/products/strauss/b-series/B4F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/b-series/B4C.jpg", "/images/products/strauss/b-series/B4M.jpg", "/images/products/strauss/b-series/B4F.jpg"]
         }
       },
       {
@@ -6189,9 +5608,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6202,11 +5619,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1010,
-      1011,
-      1012
-    ]
+    "relatedProducts": [1010, 1011, 1012]
   },
   {
     "id": 1020,
@@ -6249,11 +5662,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C0C.jpg",
-          "gallery": [
-            "/images/products/strauss/c-series/C0C.jpg",
-            "/images/products/strauss/c-series/C0M.jpg",
-            "/images/products/strauss/c-series/C0F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/c-series/C0C.jpg", "/images/products/strauss/c-series/C0M.jpg", "/images/products/strauss/c-series/C0F.jpg"]
         }
       },
       {
@@ -6291,9 +5700,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6304,11 +5711,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1021,
-      1022,
-      1023
-    ]
+    "relatedProducts": [1021, 1022, 1023]
   },
   {
     "id": 1021,
@@ -6351,11 +5754,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C1C.jpg",
-          "gallery": [
-            "/images/products/strauss/c-series/C1C.jpg",
-            "/images/products/strauss/c-series/C1M.jpg",
-            "/images/products/strauss/c-series/C1F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/c-series/C1C.jpg", "/images/products/strauss/c-series/C1M.jpg", "/images/products/strauss/c-series/C1F.jpg"]
         }
       },
       {
@@ -6393,9 +5792,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6406,11 +5803,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1020,
-      1022,
-      1023
-    ]
+    "relatedProducts": [1020, 1022, 1023]
   },
   {
     "id": 1022,
@@ -6453,11 +5846,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/c-series/C2C.jpg",
-          "gallery": [
-            "/images/products/strauss/c-series/C2C.jpg",
-            "/images/products/strauss/c-series/C2M.jpg",
-            "/images/products/strauss/c-series/C2F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/c-series/C2C.jpg", "/images/products/strauss/c-series/C2M.jpg", "/images/products/strauss/c-series/C2F.jpg"]
         }
       },
       {
@@ -6495,9 +5884,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6508,11 +5895,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1020,
-      1021,
-      1023
-    ]
+    "relatedProducts": [1020, 1021, 1023]
   },
   {
     "id": 1030,
@@ -6548,10 +5931,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/d-series/D11C.jpg",
-          "gallery": [
-            "/images/products/strauss/d-series/D11C.jpg",
-            "/images/products/strauss/d-series/D11M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/d-series/D11C.jpg", "/images/products/strauss/d-series/D11M.jpg"]
         }
       },
       {
@@ -6589,9 +5969,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6602,10 +5980,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1031,
-      1032
-    ]
+    "relatedProducts": [1031, 1032]
   },
   {
     "id": 1031,
@@ -6641,10 +6016,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/d-series/D12C.jpg",
-          "gallery": [
-            "/images/products/strauss/d-series/D12C.jpg",
-            "/images/products/strauss/d-series/D12M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/d-series/D12C.jpg", "/images/products/strauss/d-series/D12M.jpg"]
         }
       },
       {
@@ -6682,9 +6054,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6695,10 +6065,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1030,
-      1032
-    ]
+    "relatedProducts": [1030, 1032]
   },
   {
     "id": 1040,
@@ -6741,11 +6108,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E11C.jpg",
-          "gallery": [
-            "/images/products/strauss/e-series/E11C.jpg",
-            "/images/products/strauss/e-series/E11M.jpg",
-            "/images/products/strauss/e-series/E11F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/e-series/E11C.jpg", "/images/products/strauss/e-series/E11M.jpg", "/images/products/strauss/e-series/E11F.jpg"]
         }
       },
       {
@@ -6783,9 +6146,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6796,10 +6157,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1041,
-      1042
-    ]
+    "relatedProducts": [1041, 1042]
   },
   {
     "id": 1041,
@@ -6842,11 +6200,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E3RC.jpg",
-          "gallery": [
-            "/images/products/strauss/e-series/E3RC.jpg",
-            "/images/products/strauss/e-series/E3RM.jpg",
-            "/images/products/strauss/e-series/E3RF.jpg"
-          ]
+          "gallery": ["/images/products/strauss/e-series/E3RC.jpg", "/images/products/strauss/e-series/E3RM.jpg", "/images/products/strauss/e-series/E3RF.jpg"]
         }
       },
       {
@@ -6884,9 +6238,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6897,10 +6249,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1040,
-      1042
-    ]
+    "relatedProducts": [1040, 1042]
   },
   {
     "id": 1042,
@@ -6943,11 +6292,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/e-series/E32C.jpg",
-          "gallery": [
-            "/images/products/strauss/e-series/E32C.jpg",
-            "/images/products/strauss/e-series/E32M.jpg",
-            "/images/products/strauss/e-series/E32F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/e-series/E32C.jpg", "/images/products/strauss/e-series/E32M.jpg", "/images/products/strauss/e-series/E32F.jpg"]
         }
       },
       {
@@ -6985,9 +6330,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -6998,10 +6341,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1040,
-      1041
-    ]
+    "relatedProducts": [1040, 1041]
   },
   {
     "id": 1050,
@@ -7044,11 +6384,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/f-series/F09RC.jpg",
-          "gallery": [
-            "/images/products/strauss/f-series/F09RC.jpg",
-            "/images/products/strauss/f-series/F09RM.jpg",
-            "/images/products/strauss/f-series/F09RF.jpg"
-          ]
+          "gallery": ["/images/products/strauss/f-series/F09RC.jpg", "/images/products/strauss/f-series/F09RM.jpg", "/images/products/strauss/f-series/F09RF.jpg"]
         }
       },
       {
@@ -7086,9 +6422,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7099,10 +6433,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1040,
-      1041
-    ]
+    "relatedProducts": [1040, 1041]
   },
   {
     "id": 1060,
@@ -7116,17 +6447,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB557.jpg",
-    "gallery": [
-      "/images/products/strauss/fg-series/FGB557.jpg"
-    ],
+    "gallery": ["/images/products/strauss/fg-series/FGB557.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/fg-series/FGB557.jpg",
-          "gallery": [
-            "/images/products/strauss/fg-series/FGB557.jpg"
-          ]
+          "gallery": ["/images/products/strauss/fg-series/FGB557.jpg"]
         }
       },
       {
@@ -7164,9 +6491,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Carbide Bur"
-          ]
+          "packageContents": ["1x Carbide Bur"]
         }
       },
       {
@@ -7177,10 +6502,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1061,
-      1062
-    ]
+    "relatedProducts": [1061, 1062]
   },
   {
     "id": 1061,
@@ -7194,17 +6516,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB558.jpg",
-    "gallery": [
-      "/images/products/strauss/fg-series/FGB558.jpg"
-    ],
+    "gallery": ["/images/products/strauss/fg-series/FGB558.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/fg-series/FGB558.jpg",
-          "gallery": [
-            "/images/products/strauss/fg-series/FGB558.jpg"
-          ]
+          "gallery": ["/images/products/strauss/fg-series/FGB558.jpg"]
         }
       },
       {
@@ -7242,9 +6560,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Carbide Bur"
-          ]
+          "packageContents": ["1x Carbide Bur"]
         }
       },
       {
@@ -7255,10 +6571,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1060,
-      1062
-    ]
+    "relatedProducts": [1060, 1062]
   },
   {
     "id": 1062,
@@ -7272,17 +6585,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB701.jpg",
-    "gallery": [
-      "/images/products/strauss/fg-series/FGB701.jpg"
-    ],
+    "gallery": ["/images/products/strauss/fg-series/FGB701.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/fg-series/FGB701.jpg",
-          "gallery": [
-            "/images/products/strauss/fg-series/FGB701.jpg"
-          ]
+          "gallery": ["/images/products/strauss/fg-series/FGB701.jpg"]
         }
       },
       {
@@ -7320,9 +6629,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Carbide Bur"
-          ]
+          "packageContents": ["1x Carbide Bur"]
         }
       },
       {
@@ -7333,10 +6640,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1060,
-      1061
-    ]
+    "relatedProducts": [1060, 1061]
   },
   {
     "id": 1070,
@@ -7372,10 +6676,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/g-series/G1C.jpg",
-          "gallery": [
-            "/images/products/strauss/g-series/G1C.jpg",
-            "/images/products/strauss/g-series/G1M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/g-series/G1C.jpg", "/images/products/strauss/g-series/G1M.jpg"]
         }
       },
       {
@@ -7413,9 +6714,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7426,10 +6725,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1071,
-      1072
-    ]
+    "relatedProducts": [1071, 1072]
   },
   {
     "id": 1071,
@@ -7465,10 +6761,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/g-series/G2C.jpg",
-          "gallery": [
-            "/images/products/strauss/g-series/G2C.jpg",
-            "/images/products/strauss/g-series/G2M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/g-series/G2C.jpg", "/images/products/strauss/g-series/G2M.jpg"]
         }
       },
       {
@@ -7506,9 +6799,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7519,10 +6810,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1070,
-      1072
-    ]
+    "relatedProducts": [1070, 1072]
   },
   {
     "id": 1080,
@@ -7565,11 +6853,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/j-series/J10C.jpg",
-          "gallery": [
-            "/images/products/strauss/j-series/J10C.jpg",
-            "/images/products/strauss/j-series/J10M.jpg",
-            "/images/products/strauss/j-series/J10F.jpg"
-          ]
+          "gallery": ["/images/products/strauss/j-series/J10C.jpg", "/images/products/strauss/j-series/J10M.jpg", "/images/products/strauss/j-series/J10F.jpg"]
         }
       },
       {
@@ -7607,9 +6891,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7620,9 +6902,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1081
-    ]
+    "relatedProducts": [1081]
   },
   {
     "id": 1090,
@@ -7665,11 +6945,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/k-series/K2RC.jpg",
-          "gallery": [
-            "/images/products/strauss/k-series/K2RC.jpg",
-            "/images/products/strauss/k-series/K2RM.jpg",
-            "/images/products/strauss/k-series/K2RF.jpg"
-          ]
+          "gallery": ["/images/products/strauss/k-series/K2RC.jpg", "/images/products/strauss/k-series/K2RM.jpg", "/images/products/strauss/k-series/K2RF.jpg"]
         }
       },
       {
@@ -7707,9 +6983,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7720,9 +6994,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1091
-    ]
+    "relatedProducts": [1091]
   },
   {
     "id": 1091,
@@ -7758,10 +7030,7 @@
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/k-series/K2SC.jpg",
-          "gallery": [
-            "/images/products/strauss/k-series/K2SC.jpg",
-            "/images/products/strauss/k-series/K2SF.jpg"
-          ]
+          "gallery": ["/images/products/strauss/k-series/K2SC.jpg", "/images/products/strauss/k-series/K2SF.jpg"]
         }
       },
       {
@@ -7799,9 +7068,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Diamond Bur"
-          ]
+          "packageContents": ["1x Diamond Bur"]
         }
       },
       {
@@ -7812,9 +7079,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1090
-    ]
+    "relatedProducts": [1090]
   },
   {
     "id": 1100,
@@ -7828,17 +7093,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR12M.jpg",
-    "gallery": [
-      "/images/products/strauss/p-series/PR12M.jpg"
-    ],
+    "gallery": ["/images/products/strauss/p-series/PR12M.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/p-series/PR12M.jpg",
-          "gallery": [
-            "/images/products/strauss/p-series/PR12M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/p-series/PR12M.jpg"]
         }
       },
       {
@@ -7876,9 +7137,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Polishing Bur"
-          ]
+          "packageContents": ["1x Polishing Bur"]
         }
       },
       {
@@ -7889,10 +7148,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1101,
-      1102
-    ]
+    "relatedProducts": [1101, 1102]
   },
   {
     "id": 1101,
@@ -7906,17 +7162,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR13M.jpg",
-    "gallery": [
-      "/images/products/strauss/p-series/PR13M.jpg"
-    ],
+    "gallery": ["/images/products/strauss/p-series/PR13M.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/p-series/PR13M.jpg",
-          "gallery": [
-            "/images/products/strauss/p-series/PR13M.jpg"
-          ]
+          "gallery": ["/images/products/strauss/p-series/PR13M.jpg"]
         }
       },
       {
@@ -7954,9 +7206,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Polishing Bur"
-          ]
+          "packageContents": ["1x Polishing Bur"]
         }
       },
       {
@@ -7967,10 +7217,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1100,
-      1102
-    ]
+    "relatedProducts": [1100, 1102]
   },
   {
     "id": 1110,
@@ -7984,21 +7231,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MagicT1.jpg",
-    "gallery": [
-      "/images/products/strauss/kits/MagicT1.jpg",
-      "/images/products/strauss/kits/MagicT2.jpg",
-      "/images/products/strauss/kits/MagicT3.jpg"
-    ],
+    "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/kits/MagicT1.jpg",
-          "gallery": [
-            "/images/products/strauss/kits/MagicT1.jpg",
-            "/images/products/strauss/kits/MagicT2.jpg",
-            "/images/products/strauss/kits/MagicT3.jpg"
-          ]
+          "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"]
         }
       },
       {
@@ -8036,9 +7275,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Complete Bur Kit with Block"
-          ]
+          "packageContents": ["1x Complete Bur Kit with Block"]
         }
       },
       {
@@ -8049,10 +7286,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1111,
-      1112
-    ]
+    "relatedProducts": [1111, 1112]
   },
   {
     "id": 1111,
@@ -8066,17 +7300,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
-    "gallery": [
-      "/images/products/strauss/kits/MiniMagicT1.jpg"
-    ],
+    "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
-          "gallery": [
-            "/images/products/strauss/kits/MiniMagicT1.jpg"
-          ]
+          "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"]
         }
       },
       {
@@ -8114,9 +7344,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x Mini Bur Kit with Block"
-          ]
+          "packageContents": ["1x Mini Bur Kit with Block"]
         }
       },
       {
@@ -8127,10 +7355,7 @@
         }
       }
     ],
-    "relatedProducts": [
-      1110,
-      1112
-    ]
+    "relatedProducts": [1110, 1112]
   },
   {
     "id": 1112,
@@ -8144,17 +7369,13 @@
     "currency": "AUD",
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/IPRKIT1.jpg",
-    "gallery": [
-      "/images/products/strauss/kits/IPRKIT1.jpg"
-    ],
+    "gallery": ["/images/products/strauss/kits/IPRKIT1.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
           "primaryImage": "/images/products/strauss/kits/IPRKIT1.jpg",
-          "gallery": [
-            "/images/products/strauss/kits/IPRKIT1.jpg"
-          ]
+          "gallery": ["/images/products/strauss/kits/IPRKIT1.jpg"]
         }
       },
       {
@@ -8192,9 +7413,7 @@
         "data": {
           "manufacturer": "Strauss",
           "warranty": "Satisfaction guaranteed",
-          "packageContents": [
-            "1x IPR Kit"
-          ]
+          "packageContents": ["1x IPR Kit"]
         }
       },
       {
@@ -8205,9 +7424,6 @@
         }
       }
     ],
-    "relatedProducts": [
-      1110,
-      1111
-    ]
+    "relatedProducts": [1110, 1111]
   }
 ]

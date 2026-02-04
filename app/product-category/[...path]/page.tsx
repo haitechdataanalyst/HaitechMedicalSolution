@@ -54,7 +54,6 @@ export default async function CategoryPage({ params }: PageProps) {
     const product = result.entity as Product;
     const breadcrumbs = getProductBreadcrumbs(product);
     const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
-    console.log("RElated Products:", relatedProducts);
     const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
     const frames = getAllFrames();
 
