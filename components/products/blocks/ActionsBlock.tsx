@@ -1,11 +1,35 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame } from "@/types";
+import { useState, useCallback, useEffect } from "react";
+import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, ProductVariant } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
 import { Button } from "@/components/ui";
 import FrameColorSelector from "./FrameColorSelector";
 import ProductQuoteModal from "./ProductQuoteModal";
+import Image from "next/image";
+
+// Strauss category IDs (Strauss parent 40, subcategories 41–52)
+const STRAUSS_CATEGORY_IDS = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+const isStraussGritProduct = (p: Product) =>
+  Boolean(
+    p.hasVariants &&
+      p.variantType === "grit" &&
+      p.variants?.length &&
+      STRAUSS_CATEGORY_IDS.includes(p.category)
+  );
+
+function getGritDiamondStyle(variant: ProductVariant): { bg: string; letter: string } {
+  const id = (variant.id ?? "").toLowerCase();
+  const sku = (variant.sku ?? "").toUpperCase();
+  const name = (variant.name ?? "").toLowerCase();
+  if (id.endsWith("-c") || sku.endsWith("-C") || name === "coarse")
+    return { bg: "bg-emerald-600", letter: "C" };
+  if (id.endsWith("-f") || sku.endsWith("-F") || name === "fine")
+    return { bg: "bg-red-600", letter: "F" };
+  if (id.endsWith("-m") || sku.endsWith("-M") || name === "medium")
+    return { bg: "bg-neutral-200", letter: "M" };
+  return { bg: "bg-neutral-300", letter: (sku.split("-").pop() ?? "?").slice(0, 1) };
+}
 
 interface ActionsBlockProps {
   data: ActionsBlockType["data"];
@@ -24,6 +48,14 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     colorId: string;
     image: string;
   } | null>(null);
+  const [selectedLegacyVariant, setSelectedLegacyVariant] = useState<ProductVariant | null>(null);
+
+  // Strauss grit products: default to first variant so one is always selected
+  useEffect(() => {
+    if (isStraussGritProduct(product) && product.variants?.length && !selectedLegacyVariant) {
+      setSelectedLegacyVariant(product.variants[0]);
+    }
+  }, [product.id, product.variants, selectedLegacyVariant]);
 
   // Handle frame/color selection change
   const handleFrameColorChange = useCallback(
@@ -37,33 +69,42 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
   );
 
   const handleAddToCart = () => {
-    // Build customization data including frame selection
+    // Build customization data including frame selection or legacy color (e.g. Salli)
     const customization: Record<string, string | number> = { ...customFields };
     if (selectedFrameColor) {
       customization.frame = selectedFrameColor.frameId;
       customization.color = selectedFrameColor.colorId;
     }
+    if (selectedLegacyVariant) {
+      customization.color = selectedLegacyVariant.name ?? selectedLegacyVariant.id;
+      customization.variantSku = selectedLegacyVariant.sku;
+    }
 
     const cartItem: CartItem = {
       productId: String(product.id),
       productName: product.name,
-      sku: product.sku,
+      sku: selectedLegacyVariant?.sku ?? product.sku,
       quantity,
       basePrice: product.basePrice,
       customization: Object.keys(customization).length > 0 ? customization : undefined,
-      image: selectedFrameColor?.image || product.defaultImage,
+      image: selectedFrameColor?.image ?? selectedLegacyVariant?.image ?? product.defaultImage,
     };
 
     addItem(cartItem);
   };
-  // Get variant description for quote modal
+  // Get variant description for quote modal (frame+color or legacy color e.g. Salli)
   const getVariantDescription = (): string | undefined => {
     if (selectedFrameColor && product.frameVariants) {
-      // Derive frame and color names from the selection
       const frame = frames.find((f) => f.id === selectedFrameColor.frameId);
       const frameName = frame?.name || formatColorName(selectedFrameColor.frameId);
       const colorName = formatColorName(selectedFrameColor.colorId);
       return `${frameName} - ${colorName}`;
+    }
+    if (selectedLegacyVariant && product.variantType === "color") {
+      return selectedLegacyVariant.name ?? selectedLegacyVariant.color ?? formatColorName(selectedLegacyVariant.id);
+    }
+    if (selectedLegacyVariant && product.variantType === "grit") {
+      return selectedLegacyVariant.sku ?? selectedLegacyVariant.name ?? selectedLegacyVariant.id;
     }
     return undefined;
   };
@@ -83,8 +124,9 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
   // Check if product has the new frame variants structure
   const hasFrameVariants = product.variantType === "frame-color" && product.frameVariants && frames.length > 0;
 
-  // Legacy variant handling (for products not yet migrated)
+  // Legacy variant handling (e.g. Salli color) – track selection for quote and cart
   const handleLegacyVariantSelect = (variant: NonNullable<typeof product.variants>[number]) => {
+    setSelectedLegacyVariant(variant);
     if (variant && onVariantSelect) {
       onVariantSelect(variant.image);
     }
@@ -95,21 +137,127 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
       {/* Frame/Color Selection for loupes */}
       {hasFrameVariants && product.frameVariants && <FrameColorSelector frames={frames} frameVariants={product.frameVariants} onSelectionChange={handleFrameColorChange} />}
 
-      {/* Legacy Color/Variant Selection (for products still using old structure) */}
-      {!hasFrameVariants && product.hasVariants && product.variants && product.variants.length > 0 && (
+      {/* Strauss grit: diamond variant selector (green C, red F, white M) + short description table */}
+      {isStraussGritProduct(product) && product.variants && (
+        <div className="space-y-6">
+          <div>
+            <label className="mb-3 block text-sm font-semibold text-neutral-800">Select Variant</label>
+            <div className="flex flex-wrap gap-4">
+              {product.variants.map((variant) => {
+                const { bg, letter } = getGritDiamondStyle(variant);
+                const isSelected = selectedLegacyVariant?.id === variant.id;
+                const codeLabel = (variant.sku ?? variant.id).replace(/-/g, "");
+                return (
+                  <button
+                    key={variant.id}
+                    type="button"
+                    onClick={() => handleLegacyVariantSelect(variant)}
+                    className={`relative flex w-[120px] flex-col rounded-xl border-2 bg-white shadow-sm transition-all hover:shadow-md ${
+                      isSelected ? "border-primary-500" : "border-neutral-200 hover:border-neutral-300"
+                    }`}
+                    title={variant.name ?? variant.sku}
+                  >
+                    {/* Diamond shape in top-left (proper rhombus, does not overlap image area) */}
+                    <span
+                      className={`absolute left-2 top-2 flex h-7 w-7 items-center justify-center text-xs font-bold ${letter === "M" ? "text-neutral-700" : "text-white"} ${bg}`}
+                      style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
+                    >
+                      {letter}
+                    </span>
+                    {/* Product image: small, centered, fully visible below the diamond */}
+                    <div className="flex min-h-[72px] flex-1 items-center justify-center px-2 pt-9 pb-2">
+                      <div className="relative h-14 w-10 shrink-0">
+                        <Image
+                          src={variant.image}
+                          alt={variant.name ?? variant.sku}
+                          fill
+                          className="object-contain object-center"
+                          sizes="40px"
+                        />
+                      </div>
+                    </div>
+                    <div className="border-t border-neutral-100 px-2 py-2">
+                      <span className="text-sm font-bold text-neutral-800">{codeLabel}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {(() => {
+            const specsBlock = product.contentBlocks?.find((b) => b.type === "specifications");
+            const data = specsBlock?.type === "specifications" ? (specsBlock.data as { rows?: Array<{ label: string; value: string }>; specs?: Array<{ label: string; value: string }>; title?: string }) : null;
+            const rows: Array<{ label: string; value: string }> = (data?.rows ?? data?.specs) ?? [];
+            if (rows.length === 0) return null;
+            const title = data?.title;
+            return (
+              <div>
+                {title && (
+                  <h3 className="mb-3 text-sm font-semibold text-neutral-700">{title}</h3>
+                )}
+                <div className="overflow-hidden rounded-lg border border-neutral-200">
+                  <table className="w-full text-sm">
+                    <tbody>
+                      {rows.map((row: { label: string; value: string }, idx: number) => (
+                        <tr key={idx} className={idx % 2 === 0 ? "bg-neutral-50" : "bg-white"}>
+                          <td className="w-1/3 px-3 py-2.5 font-medium text-neutral-600">{row.label}</td>
+                          <td className="px-3 py-2.5 text-neutral-800">{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
+      {/* Legacy Color/Variant Selection (for products still using old structure, e.g. Salli color options) */}
+      {!hasFrameVariants && !isStraussGritProduct(product) && product.hasVariants && product.variants && product.variants.length > 0 && (
         <div>
           <label className="mb-3 block text-sm font-medium text-neutral-700">{product.variantType === "color" ? "Select Color" : "Select Variant"}</label>
-          <div className="flex flex-wrap gap-3">
-            {product.variants.map((variant) => (
-              <button key={variant.id} type="button" onClick={() => handleLegacyVariantSelect(variant)} className="group relative" title={variant.color || variant.frameStyle || variant.sku}>
-                {variant.color ? (
-                  <span className="hover:border-primary-500 block h-8 w-8 rounded-full border-2 border-neutral-300 shadow-sm transition-colors" style={{ backgroundColor: variant.color }} />
-                ) : (
-                  <span className="hover:border-primary-500 block rounded-lg border border-neutral-300 px-3 py-1.5 text-sm transition-colors">{variant.frameStyle || variant.grit || variant.sku}</span>
-                )}
-              </button>
-            ))}
+          <div className="flex flex-wrap gap-4">
+            {product.variants.map((variant) => {
+              const swatchColor = variant.color ?? variant.colorCode;
+              const isColorSwatch = Boolean(swatchColor);
+              const isSelected = selectedLegacyVariant?.id === variant.id;
+              return (
+                <button
+                  key={variant.id}
+                  type="button"
+                  onClick={() => handleLegacyVariantSelect(variant)}
+                  className="group relative flex flex-col items-center gap-2"
+                  title={variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku}
+                >
+                  {isColorSwatch ? (
+                    <span
+                      className={`block h-10 w-10 rounded-full border-2 shadow-sm transition-colors ${
+                        isSelected
+                          ? "border-primary-500 ring-2 ring-primary-500 ring-offset-2"
+                          : "border-neutral-300 hover:border-primary-400"
+                      }`}
+                      style={{ backgroundColor: swatchColor }}
+                    />
+                  ) : (
+                    <span
+                      className={`block rounded-lg border-2 px-3 py-1.5 text-sm transition-colors ${
+                        isSelected ? "border-primary-500 ring-2 ring-primary-500 ring-offset-2" : "border-neutral-300 hover:border-primary-400"
+                      }`}
+                    >
+                      {variant.frameStyle ?? variant.grit ?? variant.sku}
+                    </span>
+                  )}
+                  {product.variantType === "color" && variant.name && (
+                    <span className={`text-xs ${isSelected ? "font-medium text-primary-700" : "text-muted"}`}>{variant.name}</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
+          {product.variantType === "color" && selectedLegacyVariant && (
+            <p className="text-muted mt-2 text-sm">Selected: {selectedLegacyVariant.name ?? selectedLegacyVariant.id}</p>
+          )}
         </div>
       )}
 

@@ -76,15 +76,18 @@ export interface FrameVariantConfig {
   skuPattern?: string; // Pattern for generating SKUs e.g., "{baseSku}-{frame}-{color}"
 }
 
-// Product Variant type (legacy, for non-frame variants like grit, etc.)
+// Product Variant type (legacy, for non-frame variants like grit, color, etc.)
 export interface ProductVariant {
   id: string;
+  name?: string;
   frameStyle?: string;
   color?: string;
+  colorCode?: string; // e.g. Salli products use colorCode for swatch
   grit?: string;
   sku: string;
   image: string;
-  priceModifier: number;
+  priceModifier?: number;
+  price?: number;
 }
 
 // Product type for products.json

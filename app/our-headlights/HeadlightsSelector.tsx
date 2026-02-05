@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HeadlightCategory, HeadlightProduct } from "@/types";
+import { Button } from "@/components/ui";
+import ProductQuoteModal from "@/components/products/blocks/ProductQuoteModal";
 
 interface HeadlightCategoryCardProps {
   category: HeadlightCategory;
@@ -54,9 +56,10 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
 
 interface HeadlightProductCardProps {
   product: HeadlightProduct;
+  onGetQuote: (product: HeadlightProduct) => void;
 }
 
-function HeadlightProductCard({ product }: HeadlightProductCardProps) {
+function HeadlightProductCard({ product, onGetQuote }: HeadlightProductCardProps) {
   return (
     <div className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
       {/* Product Image */}
@@ -82,7 +85,7 @@ function HeadlightProductCard({ product }: HeadlightProductCardProps) {
 
       {/* Features */}
       {product.features && product.features.length > 0 && (
-        <ul className="space-y-1">
+        <ul className="mb-4 space-y-1">
           {product.features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
               <svg className="text-primary-500 mt-0.5 h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -93,6 +96,13 @@ function HeadlightProductCard({ product }: HeadlightProductCardProps) {
           ))}
         </ul>
       )}
+
+      {/* Get a Quote - same flow as product pages */}
+      <div className="mt-auto pt-2">
+        <Button variant="outline" className="w-full" onClick={() => onGetQuote(product)}>
+          Get a Quote
+        </Button>
+      </div>
     </div>
   );
 }
@@ -103,12 +113,17 @@ interface HeadlightsSelectorProps {
 
 export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+  const [productForQuote, setProductForQuote] = useState<HeadlightProduct | null>(null);
 
   const selectedCategory = categories.find((c) => c.id === selectedCategoryId);
 
   const handleCategorySelect = (categoryId: string) => {
     // Toggle selection - if clicking the same category, deselect it
     setSelectedCategoryId((prev) => (prev === categoryId ? null : categoryId));
+  };
+
+  const handleGetQuote = (product: HeadlightProduct) => {
+    setProductForQuote(product);
   };
 
   return (
@@ -150,13 +165,24 @@ export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
             {/* Products Grid */}
             <div className="flex flex-wrap justify-center gap-6">
               {selectedCategory.products.map((product) => (
-                <div key={product.id} className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-                  <HeadlightProductCard product={product} />
+                <div key={product.id} className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                  <HeadlightProductCard product={product} onGetQuote={handleGetQuote} />
                 </div>
               ))}
             </div>
           </div>
         </div>
+      )}
+
+      {/* Quote modal - same as product pages, pre-fills selected headlight */}
+      {productForQuote && (
+        <ProductQuoteModal
+          isOpen={!!productForQuote}
+          onClose={() => setProductForQuote(null)}
+          productName={productForQuote.name}
+          productSku={productForQuote.id}
+          productId={productForQuote.id}
+        />
       )}
     </div>
   );

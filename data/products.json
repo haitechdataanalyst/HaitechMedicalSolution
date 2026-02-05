@@ -2,7 +2,7 @@
   {
     "id": 101,
     "slug": "ergo-3.0x",
-    "name": "Ergo 3.0x Loupe System",
+    "name": "Ergo 3.0x",
     "description": "Entry-level ergonomic loupe with 3.0x magnification, ideal for general dentistry",
     "category": 2,
     "order": 1,
@@ -23,14 +23,14 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 3.0x combines classic design with modern optical technology. A versatile magnification level suitable for most dental and surgical procedures.",
-          "secondary": "Available in multiple frame styles including Blues, Soul, and Indie. Each frame comes in various colors to match your personal style. Features fixed declination angle optimized for standard working positions."
+          "primary": "With a large field of view and depth of field, these loupes are perfect for surgeons and other medical professionals who need to see the big picture when operating, while maintaining a perfect posture.",
+          "secondary": "Perfect for surgeons and other medical professionals who need to see the big picture when operating."
         }
       },
       {
         "type": "specifications",
         "data": {
-          "title": "Technical Specifications",
+          "title": "Technical Details",
           "rows": [
             {
               "label": "Magnification",
@@ -38,19 +38,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "90mm at 400mm"
+              "value": "110 mm - 155mm"
             },
             {
-              "label": "Weight",
-              "value": "45g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Achromatic Galilean"
+              "label": "Depth of Field",
+              "value": "90mm - 115mm"
             }
           ]
         }
@@ -154,7 +150,7 @@
   {
     "id": 102,
     "slug": "ergo-4.0x",
-    "name": "Ergo 4.0x Loupe System",
+    "name": "Ergo 4.0x",
     "description": "Mid-range ergonomic loupe with 4.0x magnification for detailed procedures",
     "category": 2,
     "order": 2,
@@ -175,8 +171,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 4.0x offers enhanced magnification for practitioners requiring greater detail visualization. Ideal for endodontics, restorative work, and surgical procedures.",
-          "secondary": "Available in multiple frame styles including Blues, Soul, and Indie. The increased magnification provides excellent detail while maintaining a comfortable field of view."
+          "primary": "With an ability to see minute details while still maintaining a relatively large field of view, these loupes are are great for dentists and surgeons performing common procedures and those starting their loupes journey and want to work their way up in magnification while going Ergo.",
+          "secondary": "Great for dentists and surgeons performing common procedures and those starting their loupes journey."
         }
       },
       {
@@ -190,19 +186,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "75mm at 400mm"
+              "value": "85 mm - 105mm"
             },
             {
-              "label": "Weight",
-              "value": "52g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Achromatic Galilean"
+              "label": "Depth of Field",
+              "value": "80mm - 100mm"
             }
           ]
         }
@@ -306,7 +298,7 @@
   {
     "id": 103,
     "slug": "ergo-5.0x",
-    "name": "Ergo 5.0x Loupe System",
+    "name": "Ergo 5.0x",
     "description": "High-magnification ergonomic loupe for precision dental and surgical work",
     "category": 2,
     "order": 3,
@@ -327,8 +319,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 5.0x delivers exceptional magnification for demanding procedures requiring superior detail. Perfect for microsurgery, complex endodontics, and precision restorations.",
-          "secondary": "Available in multiple frame styles including Blues, Jazz, and Soul. The 5.0x magnification provides outstanding visual clarity while the ergonomic design ensures comfort during extended procedures."
+          "primary": "Our most popular magnification, providing a great balance of high magnification with a large-enough field of view for most dental and other surgeons. Great for procedures requiring a higher level of details.",
+          "secondary": "Great for procedures requiring a higher level of details."
         }
       },
       {
@@ -342,19 +334,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "65mm at 400mm"
+              "value": "70 mm - 86mm"
             },
             {
-              "label": "Weight",
-              "value": "58g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Prismatic"
+              "label": "Depth of Field",
+              "value": "70mm - 90mm"
             }
           ]
         }
@@ -458,7 +446,7 @@
   {
     "id": 104,
     "slug": "ergo-6.0x",
-    "name": "Ergo 6.0x Loupe System",
+    "name": "Ergo 6.0x",
     "description": "Professional-grade 6.0x magnification for advanced clinical procedures",
     "category": 2,
     "order": 4,
@@ -479,8 +467,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 6.0x provides professional-grade magnification for specialists requiring exceptional detail visualization. Ideal for periodontal surgery, implantology, and complex restorative procedures.",
-          "secondary": "Available in multiple premium frame styles. The advanced optics deliver crystal-clear images while maintaining a usable field of view and depth of field."
+          "primary": "With fine details clearly visible, these loupes are suitable for experienced loupes users who perform intricate procedures.",
+          "secondary": "Suitable for experienced loupes users who perform intricate procedures."
         }
       },
       {
@@ -494,19 +482,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "55mm at 400mm"
+              "value": "50 mm - 62mm"
             },
             {
-              "label": "Weight",
-              "value": "62g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Prismatic"
+              "label": "Depth of Field",
+              "value": "55mm - 75mm"
             }
           ]
         }
@@ -610,7 +594,7 @@
   {
     "id": 105,
     "slug": "ergo-7.5x",
-    "name": "Ergo 7.5x Loupe System",
+    "name": "Ergo 7.5x",
     "description": "High-performance 7.5x magnification for microsurgical procedures",
     "category": 2,
     "order": 5,
@@ -631,8 +615,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 7.5x delivers high-performance magnification approaching microscope levels while maintaining the freedom of movement that loupes provide.",
-          "secondary": "Designed for specialists in endodontics, periodontal microsurgery, and other disciplines requiring exceptional visual detail. Available in premium frame styles."
+          "primary": "Another step higher in visible details, these loupes give superb clarity and intricacy with a field of view of 50mm for a 550mm working distance. Perfect for aesthetic work, root canal treatments, microsurgery and more.",
+          "secondary": "Perfect for aesthetic work, root canal treatments, microsurgery and more."
         }
       },
       {
@@ -646,19 +630,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "45mm at 400mm"
+              "value": "40 mm - 50mm"
             },
             {
-              "label": "Weight",
-              "value": "68g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Prismatic"
+              "label": "Depth of Field",
+              "value": "40mm - 60mm"
             }
           ]
         }
@@ -762,7 +742,7 @@
   {
     "id": 106,
     "slug": "ergo-10x",
-    "name": "Ergo 10x Loupe System",
+    "name": "Ergo 10x",
     "description": "Maximum magnification loupe system for the most demanding microsurgical applications",
     "category": 2,
     "order": 6,
@@ -783,8 +763,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo 10x represents the pinnacle of loupe magnification technology. Provides microscope-level detail while maintaining the ergonomic benefits and freedom of movement that loupes offer.",
-          "secondary": "Designed for the most demanding applications in endodontic microsurgery, periodontal surgery, and specialized dental procedures. Available in premium frame styles."
+          "primary": "The highest magnification in the market and our highest yet! For surgeons with previous experience with higher magnification, these loupes would give unmatched details with perfect clarity and posture.",
+          "secondary": "For surgeons with previous experience with higher magnification."
         }
       },
       {
@@ -794,23 +774,19 @@
           "rows": [
             {
               "label": "Magnification",
-              "value": "10x"
+              "value": "10.0x"
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "450mm - 550mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "35mm at 400mm"
+              "value": "30 mm - 40mm"
             },
             {
-              "label": "Weight",
-              "value": "75g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Prismatic"
+              "label": "Depth of Field",
+              "value": "30mm - 45mm"
             }
           ]
         }
@@ -914,29 +890,31 @@
   {
     "id": 107,
     "slug": "ergo-v",
-    "name": "Ergo V Loupe System",
+    "name": "Ergo-V",
     "description": "Next-generation ergonomic design with adjustable declination for optimal posture",
     "category": 3,
     "order": 1,
-    "sku": "ADM-EV",
+    "sku": "3.8X, 5.3X, 7.0X Magnification",
     "basePrice": 2699,
     "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
+    "colorCode": "#10B981",
+    "hasVariants": true,
+    "variantType": "frame-color",
+    "defaultImage": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Black-Ergo-V.jpg",
     "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
-          "primaryImage": "/images/products/admetec/ergo-v/ergo-v.jpg",
-          "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"]
+          "useVariantImages": true
         }
       },
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo V features Admetec's revolutionary adjustable declination system, allowing you to customize the viewing angle from 0° to 45° for optimal ergonomic posture.",
-          "secondary": "Available in multiple magnification levels. The Ergo V significantly reduces neck and back strain during extended procedures while maintaining exceptional optical clarity."
+          "primary": "3 Magnifications, 1 Device, Same posture.",
+          "secondary": "Experience precision like never before with adjustable loupes offering three magnifications in a single device. Great for clinicians who refuse to trade posture for precision—Ergo-V packs three magnifications into one feather-light loupe, letting you glide from overview to ultra-detail without breaking your workflow."
+          
         }
       },
       {
@@ -949,20 +927,12 @@
               "value": "3.8x, 5.3x, 7.0x"
             },
             {
-              "label": "Declination Range",
-              "value": "0° - 45° adjustable"
-            },
-            {
               "label": "Working Distance",
-              "value": "500mm"
-            },
-            {
-              "label": "Frame Material",
-              "value": "Premium Titanium"
+              "value": "400mm - 700mm"
             },
             {
               "label": "Weight",
-              "value": "55g (optics only)"
+              "value": "59gm)"
             }
           ]
         }
@@ -971,8 +941,7 @@
         "type": "info",
         "data": {
           "manufacturer": "Admetec",
-          "warranty": "3 years comprehensive",
-          "packageContents": ["Ergo V loupe system", "Premium titanium frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
+          "packageContents": ["Ergo V loupe system", "Selected frame", "Hard protective case", "Microfiber cleaning cloth", "Adjustment tools", "User manual"]
         }
       },
       {
@@ -1037,64 +1006,81 @@
         }
       }
     ],
-    "relatedProducts": [104, 105, 106, 108]
+    "relatedProducts": [104, 105, 106, 108],
+    "frameVariants": {
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
+      "images": {
+        "blues-black": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Black-Ergo-V.jpg",
+        "blues-blue-bronze": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Blue-Bronze-Ergo-V.jpg",
+        "blues-navy-blue": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Navy-Blue-Ergo-V.jpg",
+        "blues-pink": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Pink-Ergo-V.jpg",
+        "blues-purple-grey": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Purple-Grey-Ergo-V.jpg",
+        "blues-rose-gold": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Rose-Gold-Ergo-V.jpg",
+        "indie-black": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Black-Ergo-V.jpg",
+        "indie-champagne": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Champagne-Ergo-V.jpg",
+        "indie-green": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Green-Ergo-V.jpg",
+        "indie-midnight-blue": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Midnight-Blue-Ergo-V.jpg",
+        "indie-orange-lava": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Orange-Lava-Ergo-V.jpg",
+        "indie-turquoise": "/images/products/admetec/ergo-v/Ergo-V/Indies/Indie-Turquoise-Ergo-V.jpg",
+        "jazz-blue-black": "/images/products/admetec/ergo-v/Ergo-V/Jazz/Jazz-Blue-Black-Ergo-V.jpg",
+        "jazz-green-black": "/images/products/admetec/ergo-v/Ergo-V/Jazz/Jazz-Green-Black-Ergo-V.jpg",
+        "jazz-orange-black": "/images/products/admetec/ergo-v/Ergo-V/Jazz/Jazz-Orange-Black-Ergo-V.jpg",
+        "jazz-red-black": "/images/products/admetec/ergo-v/Ergo-V/Jazz/Jazz-Red-Black-Ergo-V.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/ergo-v/Ergo-V/Jazz/Jazz-Turquoise-Rose-Gold-V.jpg",
+        "soul-black": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-Black-Ergo-V.jpg",
+        "soul-blue-brown": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-Blue-Brown-Ergo-V.jpg",
+        "soul-pink": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-Pink-Ergo-V.jpg",
+        "soul-red-gold": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-Red-Gold-Ergo-V.jpg",
+        "soul-turquoise": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-Turquoise-Ergo-V.jpg",
+        "soul-white": "/images/products/admetec/ergo-v/Ergo-V/Soul/Soul-White-Ergo-V.jpg"
+      }
+    }
   },
   {
     "id": 108,
     "slug": "ergo-v-pro",
-    "name": "Ergo V Pro Loupe System",
+    "name": "Ergo-V PRO",
     "description": "Premium version with integrated LED lighting and enhanced ergonomics",
     "category": 3,
     "order": 2,
-    "sku": "ADM-EVP",
+    "sku": "5.6X, 7.4X, 10.0X Magnification",
     "basePrice": 3499,
     "currency": "AUD",
-    "hasVariants": false,
-    "defaultImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
+    "colorCode": "#10B981",
+    "hasVariants": true,
+    "variantType": "frame-color",
+    "defaultImage": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Black-Ergo-V-Pro.jpg",
     "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"],
     "contentBlocks": [
       {
         "type": "hero",
         "data": {
-          "primaryImage": "/images/products/admetec/ergo-v/ergo-v-pro.jpg",
-          "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"]
+          "useVariantImages": true
         }
       },
       {
         "type": "description",
         "data": {
-          "primary": "The Ergo V Pro combines the revolutionary ergonomic design of the Ergo V with an integrated high-performance LED lighting system for complete visual enhancement.",
-          "secondary": "Features adjustable declination, premium titanium frame, and wireless LED headlight delivering 55,000 lux. The complete solution for demanding clinical environments."
+          "primary": "3 Magnifications, 1 Device, Same posture.",
+          "secondary": "Experience precision like never before with adjustable loupes offering three magnifications in a single device. Great for clinicians who refuse to trade posture for precision—Ergo-V packs three magnifications into one feather-light loupe, letting you glide from overview to ultra-detail without breaking your workflow."
         }
       },
       {
         "type": "specifications",
         "data": {
-          "title": "Technical Specifications",
+          "title": "Technical Details",
           "rows": [
             {
               "label": "Magnification Options",
               "value": "5.6x, 7.4x, 10.0x"
             },
             {
-              "label": "Declination Range",
-              "value": "0° - 45° adjustable"
-            },
-            {
-              "label": "Light Output",
-              "value": "55,000 lux"
-            },
-            {
-              "label": "Battery Life",
-              "value": "8 hours continuous"
-            },
-            {
               "label": "Working Distance",
-              "value": "500mm"
+              "value": "400mm - 700mm"
             },
             {
-              "label": "Frame Material",
-              "value": "Premium Titanium"
+              "label": "Weight",
+              "value": "63g"
             }
           ]
         }
@@ -1103,7 +1089,6 @@
         "type": "info",
         "data": {
           "manufacturer": "Admetec",
-          "warranty": "3 years comprehensive",
           "packageContents": [
             "Ergo V Pro loupe system",
             "Integrated LED headlight",
@@ -1178,12 +1163,40 @@
         }
       }
     ],
-    "relatedProducts": [108, 103, 104, 201]
+    "relatedProducts": [108, 103, 104, 201],
+    "frameVariants": {
+      "availableFrames": ["blues", "indie", "jazz", "soul"],
+      "images": {
+        "blues-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Black-Ergo-V-Pro.jpg",
+        "blues-blue-bronze": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Blue-Bronze-Ergo-V-Pro.jpg",
+        "blues-navy-blue": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Navy-Blue-Ergo-V-Pro.jpg",
+        "blues-pink": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Pink-Ergo-V-Pro.jpg",
+        "blues-purple-grey": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Purple-Grey-Ergo-V-Pro.jpg",
+        "blues-rose-gold": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Rose-Gold-Ergo-V_Pro.jpg",
+        "indie-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Black-Ergo-V-pro.jpg",
+        "indie-champagne": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Champagne-Ergo-V-pro.jpg",
+        "indie-green": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Green-Ergo-V-pro.jpg",
+        "indie-midnight-blue": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Midnight-Blue-Ergo-V-pro.jpg",
+        "indie-orange-lava": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Orange-Lava-Ergo-V-pro.jpg",
+        "indie-turquoise": "/images/products/admetec/ergo-v/Ergo-V-Pro/Indies/Indie-Turquoise-Ergo-V-pro.jpg",
+        "jazz-blue-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Jazz/Jazz-Blue-Black-Ergo-V-Pro.jpg",
+        "jazz-green-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Jazz/Jazz-Green-Black-Ergo-V-Pro.jpg",
+        "jazz-orange-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Jazz/Jazz-Orange-Black-Ergo-V-Pro.jpg",
+        "jazz-red-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Jazz/Jazz-Red-Black-Ergo-V-Pro.jpg",
+        "jazz-turquoise-rose-gold": "/images/products/admetec/ergo-v/Ergo-V-Pro/Jazz/Jazz-Turquoise-Rose-Gold-V-Pro.jpg",
+        "soul-black": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-Black-Ergo-V-Pro.jpg",
+        "soul-blue-brown": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-Blue-Brown-Ergo-V-pro.jpg",
+        "soul-pink": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-Pink-Ergo-V-Pro.jpg",
+        "soul-red-gold": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-Red-Gold-Ergo-V-Pro.jpg",
+        "soul-turquoise": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-Turquoise-Ergo-V-Pro.jpg",
+        "soul-white": "/images/products/admetec/ergo-v/Ergo-V-Pro/Soul/Soul-White-Ergo-V-pro.jpg"
+      }
+    }
   },
   {
     "id": 201,
     "slug": "galilean-2.5x",
-    "name": "Galilean 2.5x Loupe",
+    "name": "Galilean 2.5x",
     "description": "Lightweight Galilean loupes perfect for general dentistry and examinations",
     "category": 4,
     "order": 1,
@@ -1204,8 +1217,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Galilean 2.5x offers an excellent entry point into magnification. The simple optical design provides a wide field of view and excellent depth of field.",
-          "secondary": "Perfect for general examinations, hygiene procedures, and practitioners new to magnification. Ultra-lightweight design reduces neck strain. Available in multiple frame styles."
+          "primary": "The all time popular TTL loupes that will give you an incredible field of view while enlarging your image to be able to see more details and perform better work.",
+          "secondary": "Incredible field of view while enlarging your image."
         }
       },
       {
@@ -1219,19 +1232,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "350-450mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "110mm at 400mm"
+              "value": "105mm - 135mm"
             },
             {
-              "label": "Weight",
-              "value": "28g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Galilean"
+              "label":"Depth of Field",
+              "value":"105mm - 160mm"
             }
           ]
         }
@@ -1295,7 +1304,7 @@
   {
     "id": 202,
     "slug": "galilean-2.7x",
-    "name": "Galilean 2.7x Loupe",
+    "name": "Galilean 2.7x",
     "description": "Popular mid-range Galilean loupe with excellent balance of magnification and comfort",
     "category": 4,
     "order": 2,
@@ -1316,8 +1325,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Galilean 2.7x offers a step up in magnification while maintaining the lightweight comfort of Galilean optics. Ideal for practitioners seeking slightly more detail.",
-          "secondary": "The most popular magnification choice among general practitioners. Provides excellent balance between magnification power and field of view."
+          "primary": "One step higher than 2.5X, these loupes will give you more details while using smaller oculars for a better peripheral view and a lighter weight.",
+          "secondary": "More details while using smaller oculars for a better peripheral view and a lighter weight."
         }
       },
       {
@@ -1331,19 +1340,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "350-450mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "100mm at 400mm"
+              "value": "90mm - 110mm"
             },
             {
-              "label": "Weight",
-              "value": "32g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Galilean"
+              "label":"Depth of Field",
+              "value":"90mm - 135mm"
             }
           ]
         }
@@ -1406,7 +1411,7 @@
   {
     "id": 203,
     "slug": "galilean-3.2x",
-    "name": "Galilean 3.2x Loupe",
+    "name": "Galilean 3.2x",
     "description": "Maximum magnification Galilean loupe for enhanced detail visualization",
     "category": 4,
     "order": 3,
@@ -1427,8 +1432,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Galilean 3.2x provides the maximum magnification achievable with Galilean optics while maintaining their characteristic lightweight design.",
-          "secondary": "Ideal for practitioners who need more magnification but prefer the wider field of view and lighter weight of Galilean technology over prismatic loupes."
+          "primary": "The highest Galilean TTL magnification available. Lightweight and easy to use with more details than ever!  ",
+          "secondary": "Lightweight and easy to use with more details than ever!"
         }
       },
       {
@@ -1442,19 +1447,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "340-500mm (adjustable)"
+              "value": "350-450mm (adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "90mm at 400mm"
+              "value": "75mm - 95mm"
             },
             {
-              "label": "Weight",
-              "value": "35g (optics only)"
-            },
-            {
-              "label": "Optical System",
-              "value": "Galilean"
+              "label":"Depth of Field",
+              "value":"60mm - 90mm"
             }
           ]
         }
@@ -1518,11 +1519,11 @@
   {
     "id": 301,
     "slug": "prismatic-loupe",
-    "name": "Prismatic Loupe System",
+    "name": "Prismatic Loupes",
     "description": "High-magnification prismatic loupes for precision work requiring exceptional detail",
     "category": 5,
     "order": 1,
-    "sku": "ADM-PRS",
+    "sku": "3.8X, 4.8X, 5.8x, 7.2X Magnification",
     "basePrice": 2299,
     "currency": "AUD",
     "hasVariants": false,
@@ -1552,7 +1553,7 @@
         "type": "description",
         "data": {
           "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
-          "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 4.0x to 6.0x."
+          "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
         }
       },
       {
@@ -1566,19 +1567,15 @@
             },
             {
               "label": "Working Distance",
-              "value": "450mm"
+              "value": "350 mm - 450mm (Adjustable)"
             },
             {
               "label": "Field of View",
-              "value": "50mm - 90mm (varies by magnification)"
+              "value": "35mm - 85mm (varies by magnification)"
             },
             {
               "label": "Depth of Field",
-              "value": "50mm - 85mm (varies by magnification)"
-            },
-            {
-              "label": "Frame Options",
-              "value": "Multiple premium frames"
+              "value": "40mm - 80mm (varies by magnification)"
             }
           ]
         }
@@ -1662,16 +1659,17 @@
     "basePrice": 8999,
     "currency": "AUD",
     "hasVariants": false,
-    "defaultImage": "/images/products/almadent/chairs/ay-3000-1.jpg",
+    "defaultImage": "/images/products/almadent/chairs/ay-3000-8.jpg",
     "gallery": [
+      "/images/products/almadent/chairs/ay-3000-8.jpg",
       "/images/products/almadent/chairs/ay-3000-1.jpg",
       "/images/products/almadent/chairs/ay-3000-2.jpg",
       "/images/products/almadent/chairs/ay-3000-3.jpg",
       "/images/products/almadent/chairs/ay-3000-4.jpg",
       "/images/products/almadent/chairs/ay-3000-5.jpg",
       "/images/products/almadent/chairs/ay-3000-6.jpg",
-      "/images/products/almadent/chairs/ay-3000-7.jpg",
-      "/images/products/almadent/chairs/ay-3000-8.jpg"
+      "/images/products/almadent/chairs/ay-3000-7.jpg"
+      
     ],
     "contentBlocks": [
       {
@@ -2041,7 +2039,7 @@
   {
     "id": 404,
     "slug": "implant-motor",
-    "name": "Surgical Implant Motor",
+    "name": "Implant Motor",
     "description": "Precision implant motor with advanced torque control for surgical procedures",
     "category": 12,
     "order": 1,
@@ -2129,7 +2127,7 @@
   {
     "id": 405,
     "slug": "ptx-unit",
-    "name": "PTX Piezo Surgery Unit",
+    "name": "PTX",
     "description": "Advanced piezoelectric surgery unit for precise bone cutting",
     "category": 12,
     "order": 2,
@@ -2160,8 +2158,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The PTX Piezo Surgery Unit delivers precise, controlled bone cutting using ultrasonic vibration technology. Minimizes soft tissue damage while providing excellent visibility.",
-          "secondary": "Ideal for implant site preparation, sinus lifts, bone grafting, and periodontal surgery. Features automatic frequency tuning and multiple power presets."
+          "primary": "PTX combines a high-frequency ultrasonic scaling handpiece with optical fibre to the high-performance air polisher with automatic switch over between the two systems according to the handpiece chosen.",
+          "secondary": "PTX allows a fast and easy removal of dental calculus, pigmentation, plaque, soft deposits, tartar and stains from the teeth surface, prosthetics, implants and orthodontic brackets. The cleaning programme allows easy maintenance of the device which can therefore be efficient and ready for use at all times."
         }
       },
       {
@@ -2217,7 +2215,7 @@
   {
     "id": 406,
     "slug": "lubricator",
-    "name": "Automatic Handpiece Lubricator",
+    "name": "Lubricator Machine",
     "description": "Automated lubrication system for dental handpieces",
     "category": 12,
     "order": 3,
@@ -4218,8 +4216,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Salli Ultra Triple Fit is the ultimate ergonomic saddle chair for healthcare professionals. Featuring movable armrests and stretching support, it's designed for dentists, ultrasound rooms, and long clinical procedures. Can also be used as a rehabilitation aid after shoulder injuries.",
-          "secondary": "Easy, precise seat adjustment with pedal control for ergonomic comfort. Width adjustment and tilt mechanism ensure perfect positioning. Premium 100% genuine leather upholstery in your choice of colors."
+          "primary": "The Salli Ultra Triple Fit is the ultimate ergonomic saddle chair for healthcare professionals. Comes with movable armrests and stretching support. Ideal for dentists, ultrasound rooms, and long clinical procedures",
+          "secondary": "It Can also be used as a rehabilitation aid after shoulder injuries. Easy, precise seat adjustment for ergonomic comfort with pedal control."
         }
       },
       {
@@ -4464,8 +4462,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Salli Chin Tilt features a tilt function that helps maintain a natural upright posture, preventing the common chin-forward position caused by leaning. The split saddle design with pressure-relieving central gap frees the tailbone and promotes an open pelvic angle for healthier sitting.",
-          "secondary": "Designed for professionals who spend long hours seated. Premium 100% genuine leather upholstery in five color options."
+          "primary": "The Salli Chin Tilt features a tilt function that helps maintain a natural upright posture, preventing the common chin-forward position caused by leaning.",
+          "secondary": "Designed with a pressure-relieving central gap, the split saddle frees the tailbone and promotes an open pelvic angle for healthier sitting."
         }
       },
       {
@@ -4756,8 +4754,7 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Strauss A0 is a small round diamond bur (0.8mm diameter) designed for precise cavity preparation and caries removal. Premium Israeli engineering ensures consistent cutting performance.",
-          "secondary": "Available in coarse, medium, and fine grit options. FG shank compatible with high-speed handpieces."
+          "primary": "Round Diamond Bur"
         }
       },
       {
@@ -4765,24 +4762,28 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "A0C / A0M / A0F"
+            },
+            {
+              "label": "Head Size",
+              "value": "9"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "001-009"
+            },
+            {
               "label": "Shape",
-              "value": "Round"
-            },
-            {
-              "label": "Diameter",
-              "value": "0.8mm"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-009"
             }
           ]
         }
@@ -4803,7 +4804,7 @@
         }
       }
     ],
-    "relatedProducts": [1002, 1003, 1004]
+    "relatedProducts": [1002, 1003, 1004, 1005]
   },
   {
     "id": 1002,
@@ -4861,24 +4862,28 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "A1C / A1M / A1F"
+            },
+            {
+              "label": "Head Size",
+              "value": "12"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "001-012"
+            },
+            {
               "label": "Shape",
-              "value": "Round"
-            },
-            {
-              "label": "Diameter",
-              "value": "1.0mm"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-012"
             }
           ]
         }
@@ -4899,7 +4904,7 @@
         }
       }
     ],
-    "relatedProducts": [1001, 1003, 1004]
+    "relatedProducts": [1001, 1003, 1004, 1005]
   },
   {
     "id": 1003,
@@ -4957,24 +4962,28 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "A2C / A2M / A2F"
+            },
+            {
+              "label": "Head Size",
+              "value": "14"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "001-014"
+            },
+            {
               "label": "Shape",
-              "value": "Round"
-            },
-            {
-              "label": "Diameter",
-              "value": "1.2mm"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-014"
             }
           ]
         }
@@ -4995,7 +5004,7 @@
         }
       }
     ],
-    "relatedProducts": [1001, 1002, 1004]
+    "relatedProducts": [1001, 1002, 1004, 1005]
   },
   {
     "id": 1004,
@@ -5053,24 +5062,28 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "A3C / A3M / A3F"
+            },
+            {
+              "label": "Head Size",
+              "value": "18"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "001-018"
+            },
+            {
               "label": "Shape",
-              "value": "Round"
-            },
-            {
-              "label": "Diameter",
-              "value": "1.4mm"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-018"
             }
           ]
         }
@@ -5091,7 +5104,7 @@
         }
       }
     ],
-    "relatedProducts": [1001, 1002, 1003]
+    "relatedProducts": [1001, 1002, 1003, 1005]
   },
   {
     "id": 1005,
@@ -5149,24 +5162,28 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "A4C / A4M / A4F"
+            },
+            {
+              "label": "Head Size",
+              "value": "22"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "001-022"
+            },
+            {
               "label": "Shape",
-              "value": "Round"
-            },
-            {
-              "label": "Diameter",
-              "value": "1.6mm"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-022"
             }
           ]
         }
@@ -5187,7 +5204,7 @@
         }
       }
     ],
-    "relatedProducts": [1001, 1002, 1003]
+    "relatedProducts": [1001, 1002, 1003, 1004]
   },
   {
     "id": 1010,
@@ -5238,20 +5255,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "B0C / B0M"
+            },
+            {
+              "label": "Head Size",
+              "value": "9"
+            },
+            {
+              "label": "Head Length",
+              "value": "0,9"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "010-009"
+            },
+            {
               "label": "Shape",
-              "value": "Pear"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "805-009"
             }
           ]
         }
@@ -5272,7 +5301,7 @@
         }
       }
     ],
-    "relatedProducts": [1011, 1012, 1013]
+    "relatedProducts": [1011, 1012, 1013, 1014]
   },
   {
     "id": 1011,
@@ -5323,20 +5352,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "B1C / B1M"
+            },
+            {
+              "label": "Head Size",
+              "value": "12"
+            },
+            {
+              "label": "Head Length",
+              "value": "1,3"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "010-012"
+            },
+            {
               "label": "Shape",
-              "value": "Pear"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "805-012"
             }
           ]
         }
@@ -5357,7 +5398,7 @@
         }
       }
     ],
-    "relatedProducts": [1010, 1012, 1013]
+    "relatedProducts": [1010, 1012, 1013, 1014]
   },
   {
     "id": 1012,
@@ -5408,20 +5449,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "B2C / B2M"
+            },
+            {
+              "label": "Head Size",
+              "value": "18"
+            },
+            {
+              "label": "Head Length",
+              "value": "1,6"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "010-018"
+            },
+            {
               "label": "Shape",
-              "value": "Pear"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "801-009"
             }
           ]
         }
@@ -5442,7 +5495,7 @@
         }
       }
     ],
-    "relatedProducts": [1010, 1011, 1013]
+    "relatedProducts": [1010, 1011, 1013, 1014]
   },
   {
     "id": 1013,
@@ -5493,20 +5546,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "B3C / B3M"
+            },
+            {
+              "label": "Head Size",
+              "value": "14"
+            },
+            {
+              "label": "Head Length",
+              "value": "3"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "225-014"
+            },
+            {
               "label": "Shape",
-              "value": "Pear"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "807-014"
             }
           ]
         }
@@ -5527,7 +5592,7 @@
         }
       }
     ],
-    "relatedProducts": [1010, 1011, 1012]
+    "relatedProducts": [1010, 1011, 1012, 1014]
   },
   {
     "id": 1014,
@@ -5585,20 +5650,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "B4C / B4M / B4F"
+            },
+            {
+              "label": "Head Size",
+              "value": "18"
+            },
+            {
+              "label": "Head Length",
+              "value": "5"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "225-018"
+            },
+            {
               "label": "Shape",
-              "value": "Pear"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "807-018"
             }
           ]
         }
@@ -5619,7 +5696,7 @@
         }
       }
     ],
-    "relatedProducts": [1010, 1011, 1012]
+    "relatedProducts": [1010, 1011, 1012, 1013]
   },
   {
     "id": 1020,
@@ -5676,21 +5753,33 @@
         "type": "specifications",
         "data": {
           "specs": [
+           {
+              "label": "Code",
+              "value": "C0C / C0M / C0F"
+            },
+            {
+              "label": "Head Size",
+              "value": "12"
+            },
+            {
+              "label": "Head Length",
+              "value": "6,3"
+            },
+            {
+              "label": "Total Length",
+              "value": "21"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "197-012"
+            },
             {
               "label": "Shape",
-              "value": "Flame"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "855-012"
             }
           ]
         }
@@ -5769,20 +5858,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "C1C / C1M / C1F"
+            },
+            {
+              "label": "Head Size",
+              "value": "14"
+            },
+            {
+              "label": "Head Length",
+              "value": "6,3"
+            },
+            {
+              "label": "Total Length",
+              "value": "21"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "197-014"
+            },
+            {
               "label": "Shape",
-              "value": "Flame"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "855-014"
             }
           ]
         }
@@ -5861,20 +5962,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "C2C / C2M / C2F"
+            },
+            {
+              "label": "Head Size",
+              "value": "18"
+            },
+            {
+              "label": "Head Length",
+              "value": "7"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "197-018"
+            },
+            {
               "label": "Shape",
-              "value": "Flame"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "855-018"
             }
           ]
         }
@@ -5946,20 +6059,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "D11C / D11M"
+            },
+            {
+              "label": "Head Size",
+              "value": "10"
+            },
+            {
+              "label": "Head Length",
+              "value": "6"
+            },
+            {
+              "label": "Total Length",
+              "value": "21"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "110-010"
+            },
+            {
               "label": "Shape",
-              "value": "Cylinder"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "836-010"
             }
           ]
         }
@@ -6031,20 +6156,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "D12C / D12M"
+            },
+            {
+              "label": "Head Size",
+              "value": "10"
+            },
+            {
+              "label": "Head Length",
+              "value": "8"
+            },
+            {
+              "label": "Total Length",
+              "value": "21,5"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "110-010"
+            },
+            {
               "label": "Shape",
-              "value": "Cylinder"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "837-010"
             }
           ]
         }
@@ -6123,20 +6260,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "E11C / E11M / E11F"
+            },
+            {
+              "label": "Head Size",
+              "value": "10"
+            },
+            {
+              "label": "Head Length",
+              "value": "10"
+            },
+            {
+              "label": "Total Length",
+              "value": "23,5"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "166-010"
+            },
+            {
               "label": "Shape",
-              "value": "Taper"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "859-010"
             }
           ]
         }
@@ -6215,20 +6364,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "E3RC / E3RM / E3RF"
+            },
+            {
+              "label": "Head Size",
+              "value": "8"
+            },
+            {
+              "label": "Head Length",
+              "value": "3"
+            },
+            {
+              "label": "Total Length",
+              "value": "24"
+            },
+            {
+              "label": "Max RPM",
+              "value": "450 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "169-008"
+            },
+            {
               "label": "Shape",
-              "value": "Taper Round End"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "889-008"
             }
           ]
         }
@@ -6306,21 +6467,33 @@
         "type": "specifications",
         "data": {
           "specs": [
+           {
+              "label": "Code",
+              "value": "E32C / E32M / E32F"
+            },
+            {
+              "label": "Head Size",
+              "value": "16"
+            },
+            {
+              "label": "Head Length",
+              "value": "10"
+            },
+            {
+              "label": "Total Length",
+              "value": "23"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "166-016"
+            },
             {
               "label": "Shape",
-              "value": "Wide Taper"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "859-016"
             }
           ]
         }
@@ -6399,20 +6572,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "f09R-C / F09R-M / F09R-F"
+            },
+            {
+              "label": "Head Size",
+              "value": "16"
+            },
+            {
+              "label": "Head Length",
+              "value": "8"
+            },
+            {
+              "label": "Total Length",
+              "value": "21,5"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "546-016"
+            },
+            {
               "label": "Shape",
-              "value": "Football"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "847KR-016"
             }
           ]
         }
@@ -6438,7 +6623,7 @@
   {
     "id": 1060,
     "slug": "fgb557",
-    "name": "FGB557 Carbide Bur",
+    "name": "FGB557",
     "description": "Straight fissure carbide bur for cavity preparation",
     "category": 47,
     "order": 1,
@@ -6468,20 +6653,32 @@
         "data": {
           "specs": [
             {
-              "label": "Shape",
-              "value": "Straight Fissure"
+              "label": "Code",
+              "value": "FGB557"
             },
             {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
+              "label": "Head Size",
+              "value": "10"
             },
             {
-              "label": "Material",
-              "value": "Tungsten Carbide"
+              "label": "Head Length",
+              "value": "4,1"
             },
             {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "200 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "107-010"
+            },
+            {
+              "label": "No. of blades(Metal Cutter)",
+              "value": "Metal Cutter"
             }
           ]
         }
@@ -6537,20 +6734,32 @@
         "data": {
           "specs": [
             {
-              "label": "Shape",
-              "value": "Straight Fissure Crosscut"
+              "label": "Code",
+              "value": "FGB558"
             },
             {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
+              "label": "Head Size",
+              "value": "12"
             },
             {
-              "label": "Material",
-              "value": "Tungsten Carbide"
+              "label": "Head Length",
+              "value": "4,1"
             },
             {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "200 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "107-012"
+            },
+            {
+              "label": "No. of blades(Metal Cutter)",
+              "value": "Metal Cutter"
             }
           ]
         }
@@ -6606,20 +6815,32 @@
         "data": {
           "specs": [
             {
-              "label": "Shape",
-              "value": "Taper Fissure"
+              "label": "Code",
+              "value": "FGB701"
             },
             {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
+              "label": "Head Size",
+              "value": "12"
             },
             {
-              "label": "Material",
-              "value": "Tungsten Carbide"
+              "label": "Head Length",
+              "value": "4,1"
             },
             {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "200 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "168-012"
+            },
+            {
+              "label": "No. of blades(Metal Cutter)",
+              "value": "Metal Cutter"
             }
           ]
         }
@@ -6691,20 +6912,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "G1C / G1M"
+            },
+            {
+              "label": "Head Size",
+              "value": "30"
+            },
+            {
+              "label": "Head Length",
+              "value": "0,8"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "120 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "042-030"
+            },
+            {
               "label": "Shape",
-              "value": "Needle"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "818-030"
             }
           ]
         }
@@ -6730,7 +6963,7 @@
   {
     "id": 1071,
     "slug": "g2",
-    "name": "G2 Needle Bur",
+    "name": "G2",
     "description": "Needle-point diamond bur for detail work",
     "category": 48,
     "order": 2,
@@ -6776,20 +7009,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "G2C / G2M"
+            },
+            {
+              "label": "Head Size",
+              "value": "40"
+            },
+            {
+              "label": "Head Length",
+              "value": "0,7"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "041-040"
+            },
+            {
               "label": "Shape",
-              "value": "Needle"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "818-040"
             }
           ]
         }
@@ -6868,20 +7113,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "J10C / J10M / J10F"
+            },
+            {
+              "label": "Head Size",
+              "value": "16"
+            },
+            {
+              "label": "Head Length",
+              "value": "5"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "465-016"
+            },
+            {
               "label": "Shape",
-              "value": "Inverted Cone"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "392-016"
             }
           ]
         }
@@ -6959,21 +7216,33 @@
         "type": "specifications",
         "data": {
           "specs": [
+           {
+              "label": "Code",
+              "value": "K2R-C / K2R-M / K2R-F"
+            },
+            {
+              "label": "Head Size",
+              "value": "23"
+            },
+            {
+              "label": "Head Length",
+              "value": "4,4"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "277-023"
+            },
             {
               "label": "Shape",
-              "value": "End Cutting"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "379-023"
             }
           ]
         }
@@ -7045,20 +7314,32 @@
         "data": {
           "specs": [
             {
+              "label": "Code",
+              "value": "K2S-C / K2S-F"
+            },
+            {
+              "label": "Head Size",
+              "value": "30"
+            },
+            {
+              "label": "Head Length",
+              "value": "0,8"
+            },
+            {
+              "label": "Total Length",
+              "value": "19"
+            },
+            {
+              "label": "Max RPM",
+              "value": "120 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "042-030"
+            },
+            {
               "label": "Shape",
-              "value": "End Cutting Safety"
-            },
-            {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
-            },
-            {
-              "label": "Material",
-              "value": "Diamond"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "value": "818-030"
             }
           ]
         }
@@ -7114,20 +7395,28 @@
         "data": {
           "specs": [
             {
-              "label": "Type",
-              "value": "Polishing"
+              "label": "Code",
+              "value": "PR12M"
             },
             {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
+              "label": "Head Size",
+              "value": "19"
             },
             {
-              "label": "Material",
-              "value": "Diamond"
+              "label": "Total Length",
+              "value": "20"
             },
             {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "522-019"
+            },
+            {
+              "label": "Shape",
+              "value": "834-019"
             }
           ]
         }
@@ -7183,20 +7472,28 @@
         "data": {
           "specs": [
             {
-              "label": "Type",
-              "value": "Polishing"
+              "label": "Code",
+              "value": "PR13M"
             },
             {
-              "label": "Shank",
-              "value": "FG (Friction Grip)"
+              "label": "Head Size",
+              "value": "16"
             },
             {
-              "label": "Material",
-              "value": "Diamond"
+              "label": "Total Length",
+              "value": "20"
             },
             {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Max RPM",
+              "value": "300 000,00"
+            },
+            {
+              "label": "Short ISO",
+              "value": "522-016"
+            },
+            {
+              "label": "Shape",
+              "value": "834-016"
             }
           ]
         }
@@ -7252,20 +7549,12 @@
         "data": {
           "specs": [
             {
-              "label": "Type",
-              "value": "Complete Kit"
+              "label": "Code",
+              "value": "MAGICT1"
             },
             {
-              "label": "Contents",
-              "value": "Multiple Diamond Burs"
-            },
-            {
-              "label": "Case",
-              "value": "Autoclavable Block"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Max RPM",
+              "value": "0,00"
             }
           ]
         }
@@ -7321,20 +7610,12 @@
         "data": {
           "specs": [
             {
-              "label": "Type",
-              "value": "Compact Kit"
+              "label": "Code",
+              "value": "MINIMAGIC"
             },
             {
-              "label": "Contents",
-              "value": "Essential Diamond Burs"
-            },
-            {
-              "label": "Case",
-              "value": "Autoclavable Block"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Max RPM",
+              "value": "0,00"
             }
           ]
         }
@@ -7390,20 +7671,12 @@
         "data": {
           "specs": [
             {
-              "label": "Type",
-              "value": "IPR Kit"
+              "label": "Code",
+              "value": "IPRKIT"
             },
             {
-              "label": "Contents",
-              "value": "Diamond Strips and Discs"
-            },
-            {
-              "label": "Application",
-              "value": "Orthodontic IPR"
-            },
-            {
-              "label": "Origin",
-              "value": "Israel"
+              "label": "Max RPM",
+              "value": "0,00"
             }
           ]
         }
