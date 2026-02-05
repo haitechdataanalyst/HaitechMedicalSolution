@@ -5,8 +5,10 @@ interface SpecificationsTableProps {
 }
 
 export default function SpecificationsTable({ data }: SpecificationsTableProps) {
-  // Guard against missing rows
-  if (!data.rows || data.rows.length === 0) {
+  // Handle both 'rows' and 'specs' field names for backwards compatibility
+  const rows = (data as any).rows ?? (data as any).specs ?? [];
+  
+  if (rows.length === 0) {
     return null;
   }
 
@@ -18,7 +20,7 @@ export default function SpecificationsTable({ data }: SpecificationsTableProps) 
       <div className="border border-neutral-200 rounded-lg overflow-hidden">
         <table className="w-full">
           <tbody>
-            {data.rows.map((row, index) => (
+            {rows.map((row: { label: string; value: string }, index: number) => (
               <tr
                 key={index}
                 className={index % 2 === 0 ? 'bg-surface-secondary' : 'bg-surface'}

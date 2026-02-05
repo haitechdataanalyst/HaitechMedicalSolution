@@ -69,6 +69,35 @@ export interface HeadlightsData {
   categories: HeadlightCategory[];
 }
 
+// Medesy Product type
+export interface MedesyProduct {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  features: string[];
+}
+
+// Medesy Category type (Elevators/Forceps/Periosteal Elevators/Scissors)
+export interface MedesyCategory {
+  id: string;
+  name: string;
+  description: string;
+  tagline: string;
+  image: string;
+  products: MedesyProduct[];
+}
+
+// Medesy data structure
+export interface MedesyData {
+  intro: {
+    title: string;
+    description: string;
+    features: string[];
+  };
+  categories: MedesyCategory[];
+}
+
 // Frame variant configuration for products with frame-color variants
 export interface FrameVariantConfig {
   availableFrames: string[]; // References to frame IDs from frames.json
@@ -149,7 +178,11 @@ export interface SpecificationsBlock {
   type: "specifications";
   data: {
     title?: string;
-    rows: Array<{
+    rows?: Array<{
+      label: string;
+      value: string;
+    }>;
+    specs?: Array<{
       label: string;
       value: string;
     }>;

@@ -1,0 +1,291 @@
+{
+  "intro": {
+    "title": "Medesy Surgical Instruments",
+    "description": "Premium Italian surgical instruments designed for dental professionals. Each instrument is crafted from surgical-grade stainless steel with precision engineering for optimal clinical performance.",
+    "features": [
+      "Premium surgical-grade stainless steel",
+      "Made in Italy",
+      "Autoclavable",
+      "Lifetime warranty against defects"
+    ]
+  },
+  "categories": [
+    {
+      "id": "elevators",
+      "name": "Elevators",
+      "description": "Professional Dental Elevators",
+      "tagline": "Precision dental elevators for luxation and extraction procedures. Available in Heidbrink, Howard, Lussatore, Warwick-James, and Coupland patterns.",
+      "image": "/images/products/medesy/elevator/700slash8.jpg",
+      "products": [
+        {
+          "id": "heidbrink-elevator",
+          "name": "Heidbrink Elevator",
+          "image": "/images/products/medesy/elevator/700slash8.jpg",
+          "description": "Professional Heidbrink pattern dental elevator for luxation and extraction procedures. Available in straight, left, and right configurations.",
+          "features": [
+            "Ergonomic handle design",
+            "Multiple configurations",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "howard-apical-elevator",
+          "name": "Howard Apical Elevator",
+          "image": "/images/products/medesy/elevator/705slash6.jpg",
+          "description": "Precision Howard pattern apical elevator for root tip removal and apical surgery. Fine tip for delicate procedures.",
+          "features": [
+            "Fine precision tip",
+            "Ideal for root tips",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "lussatore-elevator",
+          "name": "Lussatore Elevator",
+          "image": "/images/products/medesy/elevator/730slash3S.jpg",
+          "description": "Versatile Lussatore dental elevator with straight and curved options in 3.0mm, 4.0mm, and 5.0mm blade widths.",
+          "features": [
+            "Straight & curved options",
+            "Multiple blade widths",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "warwick-james-elevator",
+          "name": "Warwick-James Elevator",
+          "image": "/images/products/medesy/elevator/796slash1.jpg",
+          "description": "Classic Warwick-James pattern root elevator with 2.2mm blade. Available in straight, left, and right configurations.",
+          "features": [
+            "Classic pattern design",
+            "2.2mm blade width",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "coupland-elevator",
+          "name": "Coupland Elevator",
+          "image": "/images/products/medesy/elevator/798slash1.jpg",
+          "description": "Professional Coupland pattern root elevator with multiple blade widths (3.0mm, 3.6mm, 4.2mm) for versatile extraction.",
+          "features": [
+            "Multiple blade widths",
+            "Versatile applications",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forceps",
+      "name": "Forceps",
+      "description": "Professional Extraction Forceps",
+      "tagline": "Comprehensive extraction forceps series for upper and lower teeth, roots, and specialized procedures. Premium Italian craftsmanship.",
+      "image": "/images/products/medesy/forceps/2500slash17.jpg",
+      "products": [
+        {
+          "id": "forceps-2400",
+          "name": "Forceps 2400 Series",
+          "image": "/images/products/medesy/forceps/2400slash51-AL.jpg",
+          "description": "Professional extraction forceps 2400 series for roots, third molars, and specialized extractions.",
+          "features": [
+            "Upper roots & fragments",
+            "Third molar extraction",
+            "Premium grip design",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "forceps-2500",
+          "name": "Forceps 2500 Series",
+          "image": "/images/products/medesy/forceps/2500slash17.jpg",
+          "description": "Comprehensive extraction forceps 2500 series for molars, roots, and universal applications including cow horn design.",
+          "features": [
+            "Upper & lower molars",
+            "Universal root extraction",
+            "Cow horn pattern available",
+            "Autoclavable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "periosteal-elevators",
+      "name": "Periosteal Elevators",
+      "description": "Periosteal Elevators for Tissue Reflection",
+      "tagline": "Premium periosteal elevators for tissue reflection and bone manipulation. Available in various blade sizes for different clinical applications.",
+      "image": "/images/products/medesy/periosteal-elevators/856.jpg",
+      "products": [
+        {
+          "id": "851-hp3",
+          "name": "851/HP3",
+          "image": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
+          "description": "Periosteal elevator with 3.0mm x 3.0mm blade for precise tissue reflection.",
+          "features": [
+            "3.0mm x 3.0mm blade",
+            "Precision design",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "852-hp3",
+          "name": "852/HP3",
+          "image": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
+          "description": "Periosteal elevator with 5.2mm x 4.8mm blade for tissue manipulation.",
+          "features": [
+            "5.2mm x 4.8mm blade",
+            "Versatile design",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "856",
+          "name": "856",
+          "image": "/images/products/medesy/periosteal-elevators/856.jpg",
+          "description": "Periosteal elevator with 3.3mm x 2.8mm blade for delicate tissue reflection.",
+          "features": [
+            "3.3mm x 2.8mm blade",
+            "Delicate procedures",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "869",
+          "name": "869",
+          "image": "/images/products/medesy/periosteal-elevators/869.jpg",
+          "description": "Periosteal elevator with 3.5mm x 8.0mm blade for extended tissue reflection.",
+          "features": [
+            "3.5mm x 8.0mm blade",
+            "Extended reach",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "871-2-4",
+          "name": "871/2-4",
+          "image": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
+          "description": "Periosteal elevator with 6.0mm x 2.7mm blade for wide tissue reflection.",
+          "features": [
+            "6.0mm x 2.7mm blade",
+            "Wide reflection",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "877-hk4",
+          "name": "877/HK4",
+          "image": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
+          "description": "Periosteal elevator with 4.0mm x 4.0mm square blade for versatile manipulation.",
+          "features": [
+            "4.0mm x 4.0mm blade",
+            "Square blade design",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "878",
+          "name": "878",
+          "image": "/images/products/medesy/periosteal-elevators/878.jpg",
+          "description": "Periosteal elevator with large 10.0mm x 4.5mm blade for extensive reflection.",
+          "features": [
+            "10.0mm x 4.5mm blade",
+            "Large coverage",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "882",
+          "name": "882",
+          "image": "/images/products/medesy/periosteal-elevators/882.jpg",
+          "description": "Periosteal elevator with 4.0mm x 7.0mm blade for efficient tissue reflection.",
+          "features": [
+            "4.0mm x 7.0mm blade",
+            "Efficient design",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "883",
+          "name": "883",
+          "image": "/images/products/medesy/periosteal-elevators/883.jpg",
+          "description": "Periosteal elevator with 3.8mm x 4.0mm blade for precise tissue reflection.",
+          "features": [
+            "3.8mm x 4.0mm blade",
+            "Precision work",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "884",
+          "name": "884",
+          "image": "/images/products/medesy/periosteal-elevators/884.jpg",
+          "description": "Periosteal elevator with 4.0mm x 4.0mm square blade for versatile manipulation.",
+          "features": [
+            "4.0mm x 4.0mm blade",
+            "Versatile use",
+            "Surgical stainless steel"
+          ]
+        },
+        {
+          "id": "885",
+          "name": "885",
+          "image": "/images/products/medesy/periosteal-elevators/885.jpg",
+          "description": "Periosteal elevator with 4.5mm x 5.0mm blade for efficient tissue reflection.",
+          "features": [
+            "4.5mm x 5.0mm blade",
+            "Efficient reflection",
+            "Surgical stainless steel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scissors",
+      "name": "Scissors",
+      "description": "Professional Surgical Scissors",
+      "tagline": "Premium surgical scissors for dental and periodontal procedures. Available in Kelly, Goldman-Fox, and Castroviejo patterns.",
+      "image": "/images/products/medesy/scissors/3509.jpg",
+      "products": [
+        {
+          "id": "kelly-scissors",
+          "name": "Kelly Scissors",
+          "image": "/images/products/medesy/scissors/3509.jpg",
+          "description": "Professional Kelly pattern surgical scissors in straight and curved configurations. 160mm length for general surgical cutting.",
+          "features": [
+            "160mm length",
+            "Straight & curved options",
+            "Surgical stainless steel",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "goldman-fox-scissors",
+          "name": "Goldman-Fox Scissors",
+          "image": "/images/products/medesy/scissors/3518.jpg",
+          "description": "Specialized Goldman-Fox pattern scissors designed for periodontal procedures with precision blades.",
+          "features": [
+            "Periodontal design",
+            "Straight & curved options",
+            "Precision blades",
+            "Autoclavable"
+          ]
+        },
+        {
+          "id": "castroviejo-scissors",
+          "name": "Castroviejo Scissors",
+          "image": "/images/products/medesy/scissors/3627.jpg",
+          "description": "Precision Castroviejo pattern micro-scissors for delicate microsurgical and fine procedures.",
+          "features": [
+            "Micro-scissors design",
+            "Fine precision tips",
+            "Straight & curved options",
+            "Autoclavable"
+          ]
+        }
+      ]
+    }
+  ]
+}

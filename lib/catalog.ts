@@ -1,16 +1,18 @@
 import fs from "fs";
 import path from "path";
-import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, HeadlightCategory } from "@/types";
+import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, HeadlightCategory, MedesyData, MedesyCategory } from "@/types";
 
 const categoriesPath = path.join(process.cwd(), "data", "categories.json");
 const productsPath = path.join(process.cwd(), "data", "products.json");
 const framesPath = path.join(process.cwd(), "data", "frames.json");
 const headlightsPath = path.join(process.cwd(), "data", "headlights.json");
+const medesyPath = path.join(process.cwd(), "data", "medesy.json");
 
 let categoriesCache: Category[] | null = null;
 let productsCache: Product[] | null = null;
 let framesCache: Frame[] | null = null;
 let headlightsCache: HeadlightsData | null = null;
+let medesyCache: MedesyData | null = null;
 
 function loadCategories(): Category[] {
   if (!categoriesCache) {
@@ -45,6 +47,14 @@ function loadHeadlights(): HeadlightsData {
   return headlightsCache!;
 }
 
+function loadMedesy(): MedesyData {
+  if (!medesyCache) {
+    const fileContents = fs.readFileSync(medesyPath, "utf8");
+    medesyCache = JSON.parse(fileContents);
+  }
+  return medesyCache!;
+}
+
 // Get all frames
 export function getAllFrames(): Frame[] {
   return loadFrames();
@@ -69,6 +79,22 @@ export function getHeadlightCategories(): HeadlightCategory[] {
 // Get headlight category by ID
 export function getHeadlightCategoryById(id: string): HeadlightCategory | null {
   const categories = loadHeadlights().categories;
+  return categories.find((c) => c.id === id) || null;
+}
+
+// Get medesy data
+export function getMedesyData(): MedesyData {
+  return loadMedesy();
+}
+
+// Get medesy categories (Elevators/Forceps/Periosteal Elevators/Scissors)
+export function getMedesyCategories(): MedesyCategory[] {
+  return loadMedesy().categories;
+}
+
+// Get medesy category by ID
+export function getMedesyCategoryById(id: string): MedesyCategory | null {
+  const categories = loadMedesy().categories;
   return categories.find((c) => c.id === id) || null;
 }
 

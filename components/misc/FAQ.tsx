@@ -21,7 +21,7 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: bool
     <div className="border-b border-gray-200 last:border-b-0">
       <button onClick={onToggle} className="hover:text-primary flex w-full items-center justify-between py-5 text-left transition-colors" aria-expanded={isOpen}>
         <span className="pr-4 text-base font-medium text-gray-900">{item.question}</span>
-        <ChevronDown className={cn("h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-300 ease-in-out", isOpen && "text-primary rotate-180")} />
+        <ChevronDown className={cn("h-5 w-5 shrink-0 text-gray-500 transition-transform duration-300 ease-in-out", isOpen && "text-primary rotate-180")} />
       </button>
       <div className={cn("grid transition-all duration-300 ease-in-out", isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
         <div className="overflow-hidden">

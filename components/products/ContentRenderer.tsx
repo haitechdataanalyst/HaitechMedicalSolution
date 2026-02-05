@@ -1,5 +1,5 @@
 import { ContentBlock, Product, Frame } from "@/types";
-import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock } from "./blocks";
+import { HeroBlock, DescriptionBlock, SpecificationsTable, ActionsBlock, GalleryBlock } from "./blocks";
 
 interface ContentRendererProps {
   blocks: ContentBlock[];
@@ -40,7 +40,7 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
           case "gallery":
             return <GalleryBlock key={index} data={block.data} />;
           default:
-            console.warn(`Unknown block type`);
+            console.warn(`Unknown block type ${block.type}`);
             return null;
         }
       })}

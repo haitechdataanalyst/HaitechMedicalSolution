@@ -45,3 +45,4 @@ next-env.d.ts
 assets/
 
 public/images/products
+public/images/*

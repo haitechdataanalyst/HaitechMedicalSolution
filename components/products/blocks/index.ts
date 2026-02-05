@@ -5,3 +5,14 @@ export { default as InfoBlock } from "./InfoBlock";
 export { default as ActionsBlock } from "./ActionsBlock";
 export { default as GalleryBlock } from "./GalleryBlock";
 export { default as FrameColorSelector } from "./FrameColorSelector";
+
+// Variant Selectors
+export { default as VariantSelector } from "./VariantSelector";
+export { default as StraussGritSelector } from "./StraussGritSelector";
+export { default as StraussProductBlock } from "./StraussProductBlock";
+export { default as LegacyVariantSelector } from "./LegacyVariantSelector";
+export { default as InlineSpecificationsTable } from "./InlineSpecificationsTable";
+
+// Utilities
+export * from "./variant-utils";
+export type { VariantSelection } from "./VariantSelector";
