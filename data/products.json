@@ -2070,8 +2070,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "A precision surgical implant motor designed for dental implant placement and bone surgery. Features advanced torque control and programmable speed settings.",
-          "secondary": "LED display shows real-time torque, speed, and irrigation status. Compatible with all major implant systems. Includes foot pedal control and comprehensive accessory kit."
+          "primary": "Tealth EM-3 Implant Motor has large color touch screen, with selection of 7 implant modes, visual images display every procedure in implant surgery. Custom program, with 1:1, 1:5 and 20:1 speed ratio avaliable. Tealth EM-3 implant machine with multifunction foot pedal can realize aseptic operation and liberate two hands.",
+          "secondary": "Custom program, with 1:1, 1:5 and 20:1 speed ratio avaliable. Tealth EM-3 implant machine with multifunction foot pedal can realize aseptic operation and liberate two hands."
         }
       },
       {
@@ -2080,28 +2080,36 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Speed Range",
-              "value": "20-40,000 RPM"
+              "label": "Voltage",
+              "value": "220 VAC"
             },
             {
-              "label": "Torque Range",
-              "value": "5-80 Ncm"
+              "label": "Maximum power consumption",
+              "value": "170 VA"
             },
             {
-              "label": "Display",
-              "value": "LED with real-time feedback"
+              "label": "Maximum mechanical output power",
+              "value": "70 W"
             },
             {
-              "label": "Irrigation",
-              "value": "Internal and external"
+              "label": "Motor maximum torque",
+              "value": "5.5N·cm"
             },
             {
-              "label": "Memory",
-              "value": "9 programmable settings"
+              "label": "Motor maximum output torque",
+              "value": "80N·cm"
             },
             {
-              "label": "Power Supply",
-              "value": "100-240V AC"
+              "label": "Rated voltage range of motor speed range",
+              "value": "(100-40,000) r/min"
+            },
+            {
+              "label": "Cooling water flow rate at 100%",
+              "value": "90 ml/min"
+            },
+            {
+              "label": "Illumination of LED",
+              "value": "Not less than 2,000 Lux"
             }
           ]
         }
@@ -2236,8 +2244,8 @@
       {
         "type": "description",
         "data": {
-          "primary": "The Automatic Handpiece Lubricator ensures consistent, thorough lubrication of dental handpieces with the press of a button. Extends handpiece life and maintains performance.",
-          "secondary": "Compatible with high-speed and low-speed handpieces. Programmable lubrication cycles ensure optimal oil distribution every time."
+          "primary": "Suction can clean, oil maintenance and blow away excess liquid for two handpiece (Two high/low speed handpiece or one high speed and one low speed handpiece) at same time. Suitable for caring and maintaining high and low speed handpiece of all types of brands.",
+          "secondary": "The sealing door design can effectively reduce the oil mist at minimum to ensure the cleaning of working environment. Intelligent working mode, no needs to set the oiling time for every use."
         }
       },
       {
@@ -2246,24 +2254,44 @@
           "title": "Technical Specifications",
           "rows": [
             {
-              "label": "Capacity",
-              "value": "500ml oil reservoir"
+              "label": "Rated voltage",
+              "value": "AC220V, 50HZ"
             },
             {
-              "label": "Cycle Time",
-              "value": "15 seconds"
+              "label": "Power rating",
+              "value": "Rated power: 35W"
             },
             {
-              "label": "Compatibility",
-              "value": "High and low-speed handpieces"
+              "label": "Air source pressure",
+              "value": "3 kg/cm² – 6 kg/cm²"
             },
             {
-              "label": "Power",
-              "value": "110-240V AC"
+              "label": "Working pressure",
+              "value": "2.2 kg/cm² – 2.5 kg/cm²"
             },
             {
-              "label": "Dimensions",
-              "value": "180 x 150 x 280mm"
+              "label": "Capacity of lubricating oil and cleaning liquid bottles",
+              "value": "308 ml"
+            },
+            {
+              "label": "Parameter of motor",
+              "value": "A. Rated voltage: 12V DC, Rated power: 6W, C. Speed: 3,000 rpm  "
+            },
+            {
+              "label": "Operating ambient temperature",
+              "value": "5°C – 40°C"
+            },
+            {
+              "label": "Net weight",
+              "value": "7.0 KG"
+            },
+            {
+              "label": "Size",
+              "value": "260 × 200 × 318 (mm)"
+            },
+            {
+              "label": "Size of outer packaging",
+              "value": "415 × 325 × 270 (mm)"
             }
           ]
         }
@@ -2302,21 +2330,21 @@
       {
         "id": "700-8",
         "name": "700/8",
-        "sku": "MED-700-8",
+        "sku": "Headbrink",
         "price": 89,
         "image": "/images/products/medesy/elevator/700slash8.jpg"
       },
       {
         "id": "700-9-left",
-        "name": "700/9 Left",
-        "sku": "MED-700-9",
+        "name": "700/9",
+        "sku": "Headbrink Left",
         "price": 89,
         "image": "/images/products/medesy/elevator/700slash9.jpg"
       },
       {
         "id": "700-10-right",
-        "name": "700/10 Right",
-        "sku": "MED-700-10",
+        "name": "700/10",
+        "sku": "Headbrink Right",
         "price": 89,
         "image": "/images/products/medesy/elevator/700slash10.jpg"
       }
@@ -2383,11 +2411,11 @@
   {
     "id": 502,
     "slug": "howard-apical-elevator",
-    "name": "Howard Apical Elevator",
+    "name": "705/6",
     "description": "Precision Howard pattern apical elevator for root tip removal and apical surgery",
     "category": 21,
     "order": 2,
-    "sku": "MED-705-6",
+    "sku": "Howard Apical",
     "basePrice": 95,
     "currency": "AUD",
     "hasVariants": false,
@@ -2469,43 +2497,43 @@
     "variants": [
       {
         "id": "730-3s",
-        "name": "730/3S Straight 3.0mm",
-        "sku": "MED-730-3S",
+        "name": "730/3S",
+        "sku": "Lussatore 3.0 mm Straight",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash3S.jpg"
       },
       {
         "id": "730-3c",
-        "name": "730/3C Curved 3.0mm",
-        "sku": "MED-730-3C",
+        "name": "730/3C",
+        "sku": "Lussatore 3.0 mm Curved",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash3C.jpg"
       },
       {
         "id": "730-4s",
-        "name": "730/4S Straight 4.0mm",
-        "sku": "MED-730-4S",
+        "name": "730/4S",
+        "sku": "Lussatore 4.0 mm Straight",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash4S.jpg"
       },
       {
         "id": "730-4c",
-        "name": "730/4C Curved 4.0mm",
-        "sku": "MED-730-4C",
+        "name": "730/4C",
+        "sku": "Lussatore 4.0 mm Curved",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash4C.jpg"
       },
       {
         "id": "730-5s",
-        "name": "730/5S Straight 5.0mm",
-        "sku": "MED-730-5S",
+        "name": "730/5S",
+        "sku": "Lussatore 5.0 mm Straight",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash5S.jpg"
       },
       {
         "id": "730-5c",
-        "name": "730/5C Curved 5.0mm",
-        "sku": "MED-730-5C",
+        "name": "730/5C",
+        "sku": "Lussatore 5.0 mm Curved",
         "price": 99,
         "image": "/images/products/medesy/elevator/730slash5C.jpg"
       }
@@ -2606,22 +2634,22 @@
     "variants": [
       {
         "id": "796-1",
-        "name": "796/1 Straight",
-        "sku": "MED-796-1",
+        "name": "796/1",
+        "sku": "Root elevator Warwick-James 2.2 mm",
         "price": 85,
         "image": "/images/products/medesy/elevator/796slash1.jpg"
       },
       {
         "id": "796-2-left",
-        "name": "796/2 Left",
-        "sku": "MED-796-2",
+        "name": "796/2",
+        "sku": "Root elevator Warwick-James 2.2 mm Left ",
         "price": 85,
         "image": "/images/products/medesy/elevator/796slash2.jpg"
       },
       {
         "id": "796-3-right",
-        "name": "796/3 Right",
-        "sku": "MED-796-3",
+        "name": "796/3",
+        "sku": "Root elevator Warwick-James 2.2 mm Right",
         "price": 85,
         "image": "/images/products/medesy/elevator/796slash3.jpg"
       }
@@ -2704,22 +2732,22 @@
     "variants": [
       {
         "id": "798-1",
-        "name": "798/1 3.0mm",
-        "sku": "MED-798-1",
+        "name": "798/1",
+        "sku": "Root elevator Coupland 3.0 mm",
         "price": 85,
         "image": "/images/products/medesy/elevator/798slash1.jpg"
       },
       {
         "id": "798-2",
-        "name": "798/2 3.6mm",
-        "sku": "MED-798-2",
+        "name": "798/2",
+        "sku": "Root elevator Coupland 3.6 mm",
         "price": 85,
         "image": "/images/products/medesy/elevator/798slash2.jpg"
       },
       {
         "id": "798-3",
-        "name": "798/3 4.2mm",
-        "sku": "MED-798-3",
+        "name": "798/3",
+        "sku": "Root elevator Coupland 4.2 mm",
         "price": 85,
         "image": "/images/products/medesy/elevator/798slash3.jpg"
       }
@@ -2804,7 +2832,7 @@
         "id": "2400-51-al",
         "name": "2400/51-AL",
         "description": "upper roots and fragments",
-        "sku": "MED-2400-51-AL",
+        "sku": "Upper roots, fragments",
         "price": 149,
         "image": "/images/products/medesy/forceps/2400slash51-AL.jpg"
       },
@@ -2812,7 +2840,7 @@
         "id": "2400-67",
         "name": "2400/67",
         "description": "upper third molars",
-        "sku": "MED-2400-67",
+        "sku": "Upper third molar",
         "price": 159,
         "image": "/images/products/medesy/forceps/2400slash67.jpg"
       },
@@ -2820,7 +2848,7 @@
         "id": "2400-70",
         "name": "2400/70",
         "description": "Dr. Comella pattern extraction forceps",
-        "sku": "MED-2400-70",
+        "sku": "Dr. COMELLA",
         "price": 165,
         "image": "/images/products/medesy/forceps/2400slash70.jpg"
       },
@@ -2828,7 +2856,7 @@
         "id": "2400-187",
         "name": "2400/187",
         "description": "lower roots and fragments",
-        "sku": "MED-2400-187",
+        "sku": "Lower roots, fragments",
         "price": 149,
         "image": "/images/products/medesy/forceps/2400slash187.jpg"
       }
@@ -2919,7 +2947,7 @@
         "id": "2500-17",
         "name": "2500/17",
         "description": "upper right molars",
-        "sku": "MED-2500-17",
+        "sku": "Upper molars, right",
         "price": 169,
         "image": "/images/products/medesy/forceps/2500slash17.jpg"
       },
@@ -2927,7 +2955,7 @@
         "id": "2500-18",
         "name": "2500/18",
         "description": "upper left molars",
-        "sku": "MED-2500-18",
+        "sku": "Upper molars, left",
         "price": 169,
         "image": "/images/products/medesy/forceps/2500slash18.jpg"
       },
@@ -2935,7 +2963,7 @@
         "id": "2500-51",
         "name": "2500/51",
         "description": "upper roots with short narrow beaks",
-        "sku": "MED-2500-51",
+        "sku": "Upper roots, short and narrow beaks",
         "price": 159,
         "image": "/images/products/medesy/forceps/2500slash51.jpg"
       },
@@ -2943,7 +2971,7 @@
         "id": "2500-79",
         "name": "2500/79",
         "description": "lower third molars",
-        "sku": "MED-2500-79",
+        "sku": "Lower third molar",
         "price": 169,
         "image": "/images/products/medesy/forceps/2500slash79.jpg"
       },
@@ -2951,7 +2979,7 @@
         "id": "2500-86",
         "name": "2500/86",
         "description": "Cow horn forceps for lower molars with deep gripping",
-        "sku": "MED-2500-86",
+        "sku": "Lower molars, deep gripping lateral, cow horn",
         "price": 179,
         "image": "/images/products/medesy/forceps/2500slash86.jpg"
       },
@@ -2959,7 +2987,7 @@
         "id": "2500-187",
         "name": "2500/187",
         "description": "lower roots and fragments",
-        "sku": "MED-2500-187",
+        "sku": "Lower roots, fragments",
         "price": 149,
         "image": "/images/products/medesy/forceps/2500slash187.jpg"
       },
@@ -2967,7 +2995,7 @@
         "id": "2500-221",
         "name": "2500/221",
         "description": "Universal upper roots",
-        "sku": "MED-2500-221",
+        "sku": "Universal for upper roots",
         "price": 159,
         "image": "/images/products/medesy/forceps/2500slash221.jpg"
       },
@@ -2975,7 +3003,7 @@
         "id": "2500-350",
         "name": "2500/350",
         "description": "lower molars and third molar, left side",
-        "sku": "MED-2500-350",
+        "sku": "Lower molars and third molar, left",
         "price": 169,
         "image": "/images/products/medesy/forceps/2500slash350.jpg"
       },
@@ -2983,7 +3011,7 @@
         "id": "2500-351",
         "name": "2500/351",
         "description": "lower molars and third molar, right side",
-        "sku": "MED-2500-351",
+        "sku": "Lower molars and third molar, right",
         "price": 169,
         "image": "/images/products/medesy/forceps/2500slash351.jpg"
       }
@@ -3082,15 +3110,15 @@
     "variants": [
       {
         "id": "3509",
-        "name": "3509 Straight",
-        "sku": "MED-3509",
+        "name": "3509",
+        "sku": "Kelly, Straight 160mm",
         "price": 89,
         "image": "/images/products/medesy/scissors/3509.jpg"
       },
       {
         "id": "3510",
-        "name": "3510 Curved",
-        "sku": "MED-3510",
+        "name": "3510",
+        "sku": "Kelly, Curved 160 mm",
         "price": 89,
         "image": "/images/products/medesy/scissors/3510.jpg"
       }
@@ -3173,15 +3201,15 @@
     "variants": [
       {
         "id": "3518",
-        "name": "3518 Straight",
-        "sku": "MED-3518",
+        "name": "3518",
+        "sku": "Goldman – Fox Saw edge, Straight 130 mm",
         "price": 95,
         "image": "/images/products/medesy/scissors/3518.jpg"
       },
       {
         "id": "3519",
-        "name": "3519 Curved",
-        "sku": "MED-3519",
+        "name": "3519",
+        "sku": "Goldman – Fox Saw edge, Curved 130 mm",
         "price": 95,
         "image": "/images/products/medesy/scissors/3519.jpg"
       }
@@ -3260,15 +3288,15 @@
     "variants": [
       {
         "id": "3627",
-        "name": "3627 Straight",
-        "sku": "MED-3627",
+        "name": "3627",
+        "sku": "Castroviejo Straight 150 mm",
         "price": 110,
         "image": "/images/products/medesy/scissors/3627.jpg"
       },
       {
         "id": "3628",
-        "name": "3628 Curved",
-        "sku": "MED-3628",
+        "name": "3628",
+        "sku": "Castroviejo Curved 150 mm",
         "price": 110,
         "image": "/images/products/medesy/scissors/3628.jpg"
       }
@@ -3339,11 +3367,11 @@
   {
     "id": 701,
     "slug": "851-hp3",
-    "name": "Periosteal Elevator 851/HP3",
+    "name": "851/HP3",
     "description": "Periosteal elevator with 3.0mm x 3.0mm blade",
     "category": 23,
     "order": 1,
-    "sku": "MED-851-HP3",
+    "sku": "851-HP3 3.0mm x 3.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3413,11 +3441,11 @@
   {
     "id": 702,
     "slug": "852-hp3",
-    "name": "Periosteal Elevator 852/HP3",
+    "name": "852/HP3",
     "description": "Periosteal elevator with 5.2mm x 4.8mm blade",
     "category": 23,
     "order": 2,
-    "sku": "MED-852-HP3",
+    "sku": "852-HP3 5.2mm x 4.8mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3487,11 +3515,11 @@
   {
     "id": 703,
     "slug": "856",
-    "name": "Periosteal Elevator 856",
+    "name": "856",
     "description": "Periosteal elevator with 3.3mm x 2.8mm blade",
     "category": 23,
     "order": 3,
-    "sku": "MED-856",
+    "sku": "856 3.3mm x 2.8mm",
     "basePrice": 75,
     "currency": "AUD",
     "hasVariants": false,
@@ -3561,11 +3589,11 @@
   {
     "id": 704,
     "slug": "869",
-    "name": "Periosteal Elevator 869",
+    "name": "869",
     "description": "Periosteal elevator with 3.5mm x 8.0mm blade",
     "category": 23,
     "order": 4,
-    "sku": "MED-869",
+    "sku": "869 3.5mm x 8.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3635,11 +3663,11 @@
   {
     "id": 705,
     "slug": "871-2-4",
-    "name": "Periosteal Elevator 871/2-4",
+    "name": "871/2-4",
     "description": "Periosteal elevator with 6.0mm x 2.7mm blade",
     "category": 23,
     "order": 5,
-    "sku": "MED-871-2-4",
+    "sku": "871-2-4 6.0mm x 2.7mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3709,11 +3737,11 @@
   {
     "id": 706,
     "slug": "877-hk4",
-    "name": "Periosteal Elevator 877/HK4",
+    "name": "877/HK4",
     "description": "Periosteal elevator with 4.0mm x 4.0mm blade",
     "category": 23,
     "order": 6,
-    "sku": "MED-877-HK4",
+    "sku": "877-HK4 4.0mm x 4.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3783,11 +3811,11 @@
   {
     "id": 707,
     "slug": "878",
-    "name": "Periosteal Elevator 878",
+    "name": "878",
     "description": "Periosteal elevator with 10.0mm x 4.5mm blade",
     "category": 23,
     "order": 7,
-    "sku": "MED-878",
+    "sku": "878 10.0mm x 4.5mm",
     "basePrice": 85,
     "currency": "AUD",
     "hasVariants": false,
@@ -3861,7 +3889,7 @@
     "description": "Periosteal elevator with 4.0mm x 7.0mm blade",
     "category": 23,
     "order": 8,
-    "sku": "MED-882",
+    "sku": "882 4.0mm x 7.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -3931,11 +3959,11 @@
   {
     "id": 709,
     "slug": "883",
-    "name": "Periosteal Elevator 883",
+    "name": "883",
     "description": "Periosteal elevator with 3.8mm x 4.0mm blade",
     "category": 23,
     "order": 9,
-    "sku": "MED-883",
+    "sku": "883 3.8mm x 4.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -4005,11 +4033,11 @@
   {
     "id": 710,
     "slug": "884",
-    "name": "Periosteal Elevator 884",
+    "name": "884",
     "description": "Periosteal elevator with 4.0mm x 4.0mm blade",
     "category": 23,
     "order": 10,
-    "sku": "MED-884",
+    "sku": "884 4.0mm x 4.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
@@ -4079,11 +4107,11 @@
   {
     "id": 711,
     "slug": "885",
-    "name": "Periosteal Elevator 885",
+    "name": "885",
     "description": "Periosteal elevator with 4.5mm x 5.0mm blade",
     "category": 23,
     "order": 11,
-    "sku": "MED-885",
+    "sku": "885 4.5mm x 5.0mm",
     "basePrice": 79,
     "currency": "AUD",
     "hasVariants": false,
