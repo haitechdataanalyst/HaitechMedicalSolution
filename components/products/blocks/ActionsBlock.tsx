@@ -7,6 +7,7 @@ import { Button } from "@/components/ui";
 import VariantSelector, { VariantSelection } from "./VariantSelector";
 import ProductQuoteModal from "./ProductQuoteModal";
 import { formatColorName } from "./variant-utils";
+import { ShoppingCart, FileDown, MessageSquare } from "lucide-react";
 
 interface ActionsBlockProps {
   data: ActionsBlockType["data"];
@@ -15,18 +16,12 @@ interface ActionsBlockProps {
   frames?: Frame[];
 }
 
-export default function ActionsBlock({
-  data,
-  product,
-  onVariantSelect,
-  frames = [],
-}: ActionsBlockProps) {
+export default function ActionsBlock({ data, product, onVariantSelect, frames = [] }: ActionsBlockProps) {
   const { addItem } = useCart();
   const [quantity] = useState(1);
   const [customFields] = useState<Record<string, string | number>>({});
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [variantSelection, setVariantSelection] = useState<VariantSelection>({});
-
   // Handle variant selection changes from VariantSelector
   const handleVariantChange = useCallback(
     (selection: VariantSelection) => {
@@ -48,8 +43,7 @@ export default function ActionsBlock({
     }
 
     if (variantSelection.legacyVariant) {
-      customization.color =
-        variantSelection.legacyVariant.name ?? variantSelection.legacyVariant.id;
+      customization.color = variantSelection.legacyVariant.name ?? variantSelection.legacyVariant.id;
       customization.variantSku = variantSelection.legacyVariant.sku;
     }
 
@@ -95,6 +89,18 @@ export default function ActionsBlock({
     return undefined;
   };
 
+  // Handle catalogue download
+  const handleDownloadCatalogue = () => {
+    if (product.catalogueFile) {
+      const link = document.createElement("a");
+      link.href = product.catalogueFile;
+      link.download = `${product.slug}-catalogue.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   if (!data.addToCart) {
     return null;
   }
@@ -102,30 +108,29 @@ export default function ActionsBlock({
   return (
     <div className="bg-surface sticky top-24 space-y-6 rounded-xl border border-neutral-200 p-4 sm:p-6">
       {/* Variant Selection - VariantSelector handles all product types */}
-      <VariantSelector
-        product={product}
-        frames={frames}
-        onSelectionChange={handleVariantChange}
-      />
+      <VariantSelector product={product} frames={frames} onSelectionChange={handleVariantChange} />
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Button onClick={handleAddToCart} className="flex-1" size="lg">
+        <Button onClick={handleAddToCart} className="flex-1 gap-2" size="lg">
+          <ShoppingCart className="h-4 w-4" />
           Add to Cart
         </Button>
-        <Button
-          onClick={() => setIsQuoteModalOpen(true)}
-          variant="outline"
-          size="lg"
-          className="flex-1"
-        >
+        <Button onClick={() => setIsQuoteModalOpen(true)} variant="outline" size="lg" className="flex-1 gap-2">
+          <MessageSquare className="h-4 w-4" />
           Get a Quote
         </Button>
       </div>
 
-      <p className="text-muted text-center text-xs">
-        Add items to your cart and request a quote. We&apos;ll respond within 24 hours.
-      </p>
+      {/* Download Catalogue Button */}
+      {product.catalogueFile && (
+        <Button onClick={handleDownloadCatalogue} variant="secondary" size="lg" className="w-full gap-2">
+          <FileDown className="h-4 w-4" />
+          Get Catalogue
+        </Button>
+      )}
+
+      <p className="text-muted text-center text-xs">Add items to your cart and request a quote. We&apos;ll respond within 24 hours.</p>
 
       {/* Quote Modal */}
       <ProductQuoteModal

@@ -5,11 +5,7 @@ import { Product, ProductVariant, Frame } from "@/types";
 import FrameColorSelector from "./FrameColorSelector";
 import StraussProductBlock from "./StraussProductBlock";
 import LegacyVariantSelector from "./LegacyVariantSelector";
-import {
-  isStraussGritProduct,
-  isLegacyVariantProduct,
-  hasFrameVariants,
-} from "./variant-utils";
+import { isStraussGritProduct, isLegacyVariantProduct, hasFrameVariants } from "./variant-utils";
 
 export interface VariantSelection {
   frameId?: string;
@@ -32,15 +28,9 @@ function getInitialVariant(product: Product): ProductVariant | null {
   return null;
 }
 
-export default function VariantSelector({
-  product,
-  frames,
-  onSelectionChange,
-}: VariantSelectorProps) {
+export default function VariantSelector({ product, frames, onSelectionChange }: VariantSelectorProps) {
   // Initialize with default variant for Strauss products
-  const [selectedLegacyVariant, setSelectedLegacyVariant] = useState<ProductVariant | null>(
-    () => getInitialVariant(product)
-  );
+  const [selectedLegacyVariant, setSelectedLegacyVariant] = useState<ProductVariant | null>(() => getInitialVariant(product));
 
   // Notify parent when legacy variant changes
   useEffect(() => {
@@ -78,36 +68,17 @@ export default function VariantSelector({
 
   // Frame/Color selector for loupes
   if (productHasFrameVariants && product.frameVariants) {
-    return (
-      <FrameColorSelector
-        frames={frames}
-        frameVariants={product.frameVariants}
-        onSelectionChange={handleFrameColorChange}
-      />
-    );
+    return <FrameColorSelector frames={frames} frameVariants={product.frameVariants} onSelectionChange={handleFrameColorChange} />;
   }
 
   // Strauss grit selector with inline specifications
   if (productIsStraussGrit && product.variants) {
-    return (
-      <StraussProductBlock
-        product={product}
-        selectedVariant={selectedLegacyVariant}
-        onVariantSelect={handleLegacyVariantSelect}
-      />
-    );
+    return <StraussProductBlock product={product} selectedVariant={selectedLegacyVariant} onVariantSelect={handleLegacyVariantSelect} />;
   }
 
   // Legacy color/variant selector (Salli, etc.)
   if (productIsLegacyVariant && product.variants) {
-    return (
-      <LegacyVariantSelector
-        variants={product.variants}
-        variantType={product.variantType ?? "variant"}
-        selectedVariant={selectedLegacyVariant}
-        onVariantSelect={handleLegacyVariantSelect}
-      />
-    );
+    return <LegacyVariantSelector variants={product.variants} variantType={product.variantType ?? "variant"} selectedVariant={selectedLegacyVariant} onVariantSelect={handleLegacyVariantSelect} />;
   }
 
   // No variants to select

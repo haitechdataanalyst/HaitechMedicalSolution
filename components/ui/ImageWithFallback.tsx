@@ -21,14 +21,14 @@ export default function ImageWithFallback({ src, alt, className, containerClassN
   };
 
   return (
-    <div className={cn("relative aspect-square overflow-hidden bg-neutral-100", containerClassName)}>
+    <div className={cn("relative aspect-square overflow-hidden", containerClassName)}>
       {hasError ? (
         <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-neutral-400">
           <ImageIcon size={48} className="opacity-50" />
           <span className="text-sm font-medium">{fallbackText}</span>
         </div>
       ) : (
-        <Image src={src} alt={alt} fill sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" className={cn("h-full w-full object-cover", className)} onError={handleError} />
+        <Image src={src} alt={alt} fill sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" className={cn("p-6 object-contain  ", className)} onError={handleError} />
       )}
     </div>
   );

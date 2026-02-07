@@ -13,6 +13,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-3.0x/Blues-Frame/Blues-Black-Ergo-3.jpg",
+    "catalogueFile": "/catalogues/ergo-3.0x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -161,6 +162,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-4.0x/Blues-Frame/Blues-Black-Ergo-4.jpg",
+    "catalogueFile": "/catalogues/ergo-4.0x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -309,6 +311,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-5.0x/Blues-Frame/Blues-Black-Ergo-5.jpg",
+    "catalogueFile": "/catalogues/ergo-5.0x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -457,6 +460,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-6.0x/Blues-Frame/Blues-Black-Ergo-6.jpg",
+    "catalogueFile": "/catalogues/ergo-6.0x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -605,6 +609,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-7.5x/Blues-Frame/Blues-Black-Ergo-7.5.jpg",
+    "catalogueFile": "/catalogues/ergo-7.5x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -753,6 +758,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/Loupes-Ergo-10.0x/Blues-Frame/Blues-Black-Ergo-10.jpg",
+    "catalogueFile": "/catalogues/ergo-10x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -902,6 +908,7 @@
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Black-Ergo-V.jpg",
     "gallery": ["/images/products/admetec/ergo-v/ergo-v.jpg"],
+    "catalogueFile": "/catalogues/ergo-v.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -914,7 +921,6 @@
         "data": {
           "primary": "3 Magnifications, 1 Device, Same posture.",
           "secondary": "Experience precision like never before with adjustable loupes offering three magnifications in a single device. Great for clinicians who refuse to trade posture for precision—Ergo-V packs three magnifications into one feather-light loupe, letting you glide from overview to ultra-detail without breaking your workflow."
-          
         }
       },
       {
@@ -1011,7 +1017,7 @@
       "availableFrames": ["blues", "indie", "jazz", "soul"],
       "images": {
         "blues-black": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Black-Ergo-V.jpg",
-        "blues-blue-bronze": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Blue-Bronze-Ergo-V.jpg",
+        "blues-bronze-blue": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Blue-Bronze-Ergo-V.jpg",
         "blues-navy-blue": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Navy-Blue-Ergo-V.jpg",
         "blues-pink": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Pink-Ergo-V.jpg",
         "blues-purple-grey": "/images/products/admetec/ergo-v/Ergo-V/Blues/Blues-Purple-Grey-Ergo-V.jpg",
@@ -1051,6 +1057,7 @@
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/ergo-v/Ergo-V-Pro/Blues/Blues-Black-Ergo-V-Pro.jpg",
     "gallery": ["/images/products/admetec/ergo-v/ergo-v-pro.jpg"],
+    "catalogueFile": "/catalogues/ergo-v-pro.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1207,6 +1214,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
+    "catalogueFile": "/catalogues/galilean-2.5x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1239,8 +1247,8 @@
               "value": "105mm - 135mm"
             },
             {
-              "label":"Depth of Field",
-              "value":"105mm - 160mm"
+              "label": "Depth of Field",
+              "value": "105mm - 160mm"
             }
           ]
         }
@@ -1315,6 +1323,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/galilean/galilean-2.7x-blues-bronze.jpg",
+    "catalogueFile": "/catalogues/galilean-2.7x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1347,8 +1356,8 @@
               "value": "90mm - 110mm"
             },
             {
-              "label":"Depth of Field",
-              "value":"90mm - 135mm"
+              "label": "Depth of Field",
+              "value": "90mm - 135mm"
             }
           ]
         }
@@ -1422,6 +1431,7 @@
     "hasVariants": true,
     "variantType": "frame-color",
     "defaultImage": "/images/products/admetec/galilean/galilean-3.2x-blues-black.jpg",
+    "catalogueFile": "/catalogues/galilean-3.2x.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1454,8 +1464,8 @@
               "value": "75mm - 95mm"
             },
             {
-              "label":"Depth of Field",
-              "value":"60mm - 90mm"
+              "label": "Depth of Field",
+              "value": "60mm - 90mm"
             }
           ]
         }
@@ -1535,6 +1545,7 @@
       "/images/products/admetec/prismatic/prismatic-4.jpg",
       "/images/products/admetec/prismatic/prismatic-5.jpg"
     ],
+    "catalogueFile": "/catalogues/prismatic-loupe.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1669,8 +1680,8 @@
       "/images/products/almadent/chairs/ay-3000-5.jpg",
       "/images/products/almadent/chairs/ay-3000-6.jpg",
       "/images/products/almadent/chairs/ay-3000-7.jpg"
-      
     ],
+    "catalogueFile": "/catalogues/ay-3000.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1792,6 +1803,7 @@
       "/images/products/almadent/chairs/ay-6000-6.jpg",
       "/images/products/almadent/chairs/ay-6000-7.jpg"
     ],
+    "catalogueFile": "/catalogues/ay-6000.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -1912,6 +1924,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
     "gallery": ["/images/products/almadent/chairs/ay-8000-1.jpg"],
+    "catalogueFile": "/catalogues/ay-8000.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2054,6 +2067,7 @@
       "/images/products/almadent/auxiliary/implant-motor-3.png",
       "/images/products/almadent/auxiliary/implant-motor-4.png"
     ],
+    "catalogueFile": "/catalogues/implant-motor.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2150,6 +2164,7 @@
       "/images/products/almadent/auxiliary/ptx-3.jpg",
       "/images/products/almadent/auxiliary/ptx-main.png"
     ],
+    "catalogueFile": "/catalogues/ptx-unit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2233,6 +2248,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/almadent/auxiliary/lubricator-1.png",
     "gallery": ["/images/products/almadent/auxiliary/lubricator-1.png"],
+    "catalogueFile": "/catalogues/lubricator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2351,6 +2367,7 @@
     ],
     "defaultImage": "/images/products/medesy/elevator/700slash8.jpg",
     "gallery": ["/images/products/medesy/elevator/700slash8.jpg", "/images/products/medesy/elevator/700slash9.jpg", "/images/products/medesy/elevator/700slash10.jpg"],
+    "catalogueFile": "/catalogues/heidbrink-elevator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2421,6 +2438,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/elevator/705slash6.jpg",
     "gallery": ["/images/products/medesy/elevator/705slash6.jpg"],
+    "catalogueFile": "/catalogues/howard-apical-elevator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2547,6 +2565,7 @@
       "/images/products/medesy/elevator/730slash5S.jpg",
       "/images/products/medesy/elevator/730slash5C.jpg"
     ],
+    "catalogueFile": "/catalogues/lussatore-elevator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2656,6 +2675,7 @@
     ],
     "defaultImage": "/images/products/medesy/elevator/796slash1.jpg",
     "gallery": ["/images/products/medesy/elevator/796slash1.jpg", "/images/products/medesy/elevator/796slash2.jpg", "/images/products/medesy/elevator/796slash3.jpg"],
+    "catalogueFile": "/catalogues/warwick-james-elevator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2754,6 +2774,7 @@
     ],
     "defaultImage": "/images/products/medesy/elevator/798slash1.jpg",
     "gallery": ["/images/products/medesy/elevator/798slash1.jpg", "/images/products/medesy/elevator/798slash2.jpg", "/images/products/medesy/elevator/798slash3.jpg"],
+    "catalogueFile": "/catalogues/coupland-elevator.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -2868,6 +2889,7 @@
       "/images/products/medesy/forceps/2400slash70.jpg",
       "/images/products/medesy/forceps/2400slash187.jpg"
     ],
+    "catalogueFile": "/catalogues/forceps-2400.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3028,6 +3050,7 @@
       "/images/products/medesy/forceps/2500slash350.jpg",
       "/images/products/medesy/forceps/2500slash351.jpg"
     ],
+    "catalogueFile": "/catalogues/forceps-2500.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3125,6 +3148,7 @@
     ],
     "defaultImage": "/images/products/medesy/scissors/3509.jpg",
     "gallery": ["/images/products/medesy/scissors/3509.jpg", "/images/products/medesy/scissors/3510.jpg"],
+    "catalogueFile": "/catalogues/kelly-scissors.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3216,6 +3240,7 @@
     ],
     "defaultImage": "/images/products/medesy/scissors/3518.jpg",
     "gallery": ["/images/products/medesy/scissors/3518.jpg", "/images/products/medesy/scissors/3519.jpg"],
+    "catalogueFile": "/catalogues/goldman-fox-scissors.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3303,6 +3328,7 @@
     ],
     "defaultImage": "/images/products/medesy/scissors/3627.jpg",
     "gallery": ["/images/products/medesy/scissors/3627.jpg", "/images/products/medesy/scissors/3628.jpg"],
+    "catalogueFile": "/catalogues/castroviejo-scissors.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3377,6 +3403,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"],
+    "catalogueFile": "/catalogues/851-hp3.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3451,6 +3478,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"],
+    "catalogueFile": "/catalogues/852-hp3.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3525,6 +3553,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/856.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"],
+    "catalogueFile": "/catalogues/856.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3599,6 +3628,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/869.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"],
+    "catalogueFile": "/catalogues/869.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3673,6 +3703,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"],
+    "catalogueFile": "/catalogues/871-2-4.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3747,6 +3778,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"],
+    "catalogueFile": "/catalogues/877-hk4.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3821,6 +3853,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/878.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"],
+    "catalogueFile": "/catalogues/878.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3895,6 +3928,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/882.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"],
+    "catalogueFile": "/catalogues/882.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -3969,6 +4003,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/883.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"],
+    "catalogueFile": "/catalogues/883.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4043,6 +4078,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/884.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"],
+    "catalogueFile": "/catalogues/884.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4117,6 +4153,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/medesy/periosteal-elevators/885.jpg",
     "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"],
+    "catalogueFile": "/catalogues/885.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4233,6 +4270,7 @@
       }
     ],
     "defaultImage": "/images/products/salli/ultra-triple-fit.png",
+    "catalogueFile": "/catalogues/ultra-triple-fit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4360,6 +4398,7 @@
       }
     ],
     "defaultImage": "/images/products/salli/triple-fit.png",
+    "catalogueFile": "/catalogues/triple-fit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4479,6 +4518,7 @@
       }
     ],
     "defaultImage": "/images/products/salli/triple-fit.png",
+    "catalogueFile": "/catalogues/chin-tilt.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4598,6 +4638,7 @@
       }
     ],
     "defaultImage": "/images/products/salli/sway-fit.png",
+    "catalogueFile": "/catalogues/sway-fit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4675,6 +4716,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/salli/sway-fit.png",
     "gallery": ["/images/products/salli/sway-fit.png"],
+    "catalogueFile": "/catalogues/salli-light.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4771,6 +4813,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/a-series/A0C.jpg",
+    "catalogueFile": "/catalogues/a0.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4870,6 +4913,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/a-series/A1C.jpg",
+    "catalogueFile": "/catalogues/a1.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -4970,6 +5014,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/a-series/A2C.jpg",
+    "catalogueFile": "/catalogues/a2.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5070,6 +5115,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/a-series/A3C.jpg",
+    "catalogueFile": "/catalogues/a3.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5170,6 +5216,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/a-series/A4C.jpg",
+    "catalogueFile": "/catalogues/a4.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5263,6 +5310,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/b-series/B0C.jpg",
+    "catalogueFile": "/catalogues/b0.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5360,6 +5408,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/b-series/B1C.jpg",
+    "catalogueFile": "/catalogues/b1.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5457,6 +5506,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/b-series/B2C.jpg",
+    "catalogueFile": "/catalogues/b2.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5554,6 +5604,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/b-series/B3C.jpg",
+    "catalogueFile": "/catalogues/b3.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5658,6 +5709,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/b-series/B4C.jpg",
+    "catalogueFile": "/catalogues/b4.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5762,6 +5814,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/c-series/C0C.jpg",
+    "catalogueFile": "/catalogues/c0.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5781,7 +5834,7 @@
         "type": "specifications",
         "data": {
           "specs": [
-           {
+            {
               "label": "Code",
               "value": "C0C / C0M / C0F"
             },
@@ -5866,6 +5919,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/c-series/C1C.jpg",
+    "catalogueFile": "/catalogues/c1.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -5970,6 +6024,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/c-series/C2C.jpg",
+    "catalogueFile": "/catalogues/c2.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6067,6 +6122,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/d-series/D11C.jpg",
+    "catalogueFile": "/catalogues/d11.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6164,6 +6220,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/d-series/D12C.jpg",
+    "catalogueFile": "/catalogues/d12.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6268,6 +6325,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/e-series/E11C.jpg",
+    "catalogueFile": "/catalogues/e11.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6372,6 +6430,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/e-series/E3RC.jpg",
+    "catalogueFile": "/catalogues/e3.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6476,6 +6535,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/e-series/E32C.jpg",
+    "catalogueFile": "/catalogues/e32.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6495,7 +6555,7 @@
         "type": "specifications",
         "data": {
           "specs": [
-           {
+            {
               "label": "Code",
               "value": "E32C / E32M / E32F"
             },
@@ -6580,6 +6640,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/f-series/F09RC.jpg",
+    "catalogueFile": "/catalogues/f09r.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6661,6 +6722,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB557.jpg",
     "gallery": ["/images/products/strauss/fg-series/FGB557.jpg"],
+    "catalogueFile": "/catalogues/fgb557.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6742,6 +6804,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB558.jpg",
     "gallery": ["/images/products/strauss/fg-series/FGB558.jpg"],
+    "catalogueFile": "/catalogues/fgb558.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6823,6 +6886,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/fg-series/FGB701.jpg",
     "gallery": ["/images/products/strauss/fg-series/FGB701.jpg"],
+    "catalogueFile": "/catalogues/fgb701.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -6920,6 +6984,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/g-series/G1C.jpg",
+    "catalogueFile": "/catalogues/g1.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7017,6 +7082,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/g-series/G2C.jpg",
+    "catalogueFile": "/catalogues/g2.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7121,6 +7187,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/j-series/J10C.jpg",
+    "catalogueFile": "/catalogues/j10.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7225,6 +7292,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/k-series/K2RC.jpg",
+    "catalogueFile": "/catalogues/k2r.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7244,7 +7312,7 @@
         "type": "specifications",
         "data": {
           "specs": [
-           {
+            {
               "label": "Code",
               "value": "K2R-C / K2R-M / K2R-F"
             },
@@ -7322,6 +7390,7 @@
       }
     ],
     "defaultImage": "/images/products/strauss/k-series/K2SC.jpg",
+    "catalogueFile": "/catalogues/k2s.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7403,6 +7472,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR12M.jpg",
     "gallery": ["/images/products/strauss/p-series/PR12M.jpg"],
+    "catalogueFile": "/catalogues/pr12m.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7480,6 +7550,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/p-series/PR13M.jpg",
     "gallery": ["/images/products/strauss/p-series/PR13M.jpg"],
+    "catalogueFile": "/catalogues/pr13m.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7557,6 +7628,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MagicT1.jpg",
     "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"],
+    "catalogueFile": "/catalogues/magic-touch-kit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7618,6 +7690,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
     "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"],
+    "catalogueFile": "/catalogues/mini-magic-kit.pdf",
     "contentBlocks": [
       {
         "type": "hero",
@@ -7679,6 +7752,7 @@
     "hasVariants": false,
     "defaultImage": "/images/products/strauss/kits/IPRKIT1.jpg",
     "gallery": ["/images/products/strauss/kits/IPRKIT1.jpg"],
+    "catalogueFile": "/catalogues/ipr-kit.pdf",
     "contentBlocks": [
       {
         "type": "hero",

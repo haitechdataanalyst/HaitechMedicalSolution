@@ -25,8 +25,10 @@ const COLOR_HEX_MAP: Record<string, string | string[]> = {
   champagne: "#fbbf24",
   turquoise: "#14b8a6",
   bordo: "#7c2d12",
+  "navy-blue": "#001f3f",
   // Compound colors (two-tone)
   "bronze-blue": ["#a16207", "#3b82f6"],
+  "blue-bronze": ["#3b82f6", "#a16207"],
   "purple-grey": ["#9333ea", "#6b7280"],
   "rose-gold": ["#f43f5e", "#fbbf24"],
   "blue-black": ["#3b82f6", "#1a1a1a"],
@@ -36,6 +38,7 @@ const COLOR_HEX_MAP: Record<string, string | string[]> = {
   "turquoise-rose-gold": ["#14b8a6", "#f43f5e"],
   "red-gold": ["#dc2626", "#fbbf24"],
   "brown-blue": ["#8b4513", "#3b82f6"],
+  "blue-brown": ["#3b82f6", "#8b4513"],
   "white-snow": "#f8fafc",
   "midnight-blue": "#1e3a8a",
   "orange-lava": "#f97316",
@@ -201,9 +204,24 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
     const selectedClasses = "border-white rounded-full ring-primary-500 ring-2";
     const unselectedClasses = "border-white cursor-pointer hover:scale-110";
 
-    const style = Array.isArray(hex) ? { background: `linear-gradient(135deg, ${hex.join(", ")})` } : { backgroundColor: hex };
+    // For compound colors (two-tone), render as split circle with dividing line
+    if (Array.isArray(hex) && hex.length === 2) {
+      return (
+        <div className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses, "rotate-0")}>
+          <svg viewBox="0 0 100 100" className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+            {/* Left semicircle */}
+            <circle cx="50" cy="50" r="45" fill={hex[0]} />
+            {/* Right semicircle */}
+            <path d="M 50 5 A 45 45 0 0 1 50 95 Z" fill={hex[1]} />
+            {/* Dividing line */}
+            {/* <line x1="50" y1="5" x2="50" y2="95" stroke="white" strokeWidth="1.5" opacity="0.6" /> */}
+          </svg>
+        </div>
+      );
+    }
 
-    return <span className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses)} style={style} />;
+    // For single colors, simple solid background
+    return <span className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses)} style={{ backgroundColor: hex as string }} />;
   };
 
   if (parsedFrames.length === 0) {

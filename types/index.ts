@@ -137,6 +137,7 @@ export interface Product {
   frameVariants?: FrameVariantConfig; // New structured frame variants
   defaultImage?: string;
   gallery?: string[];
+  catalogueFile?: string; // Path to product catalogue PDF for download
   contentBlocks: ContentBlock[];
   relatedProducts?: number[];
   accessories?: number[];

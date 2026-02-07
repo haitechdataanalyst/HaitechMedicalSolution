@@ -1,8 +1,8 @@
-import { notFound } from 'next/navigation';
-import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories, getAllFrames } from '@/lib/catalog';
-import { Product } from '@/types';
-import { ProductDetail } from '@/components/products';
-import { Breadcrumbs } from '@/components/ui';
+import { notFound } from "next/navigation";
+import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories, getAllFrames } from "@/lib/catalog";
+import { Product } from "@/types";
+import { ProductDetail } from "@/components/products";
+import { Breadcrumbs } from "@/components/ui";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
   return products
     .filter((p) => {
       const path = getProductPath(p);
-      return path.startsWith('/product/');
+      return path.startsWith("/product/");
     })
     .map((product) => ({
       slug: product.slug,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!product) {
     return {
-      title: 'Product Not Found | Haitech Medical',
+      title: "Product Not Found | Haitech Medical",
     };
   }
 
@@ -49,19 +49,14 @@ export default async function ProductPage({ params }: PageProps) {
   }
 
   const breadcrumbs = getProductBreadcrumbs(product);
-  const relatedProducts = getRelatedProducts(product).map(p => ({ ...p, path: getProductPath(p) }));
-  const accessories = getProductAccessories(product).map(p => ({ ...p, path: getProductPath(p) }));
+  const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
+  const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
   const frames = getAllFrames();
 
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
-      <ProductDetail 
-        product={product} 
-        relatedProducts={relatedProducts}
-        accessories={accessories}
-        frames={frames}
-      />
+      <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} />
     </>
   );
 }

@@ -29,8 +29,8 @@ export default function Header() {
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-1 md:gap-9">
-            <Link href="/support/contact">
-              <Button className="px-12 gap-3" variant="solid">
+            <Link href="/support/contact" className="hidden xl:flex">
+              <Button className="gap-3 px-12" variant="solid">
                 <RocketIcon size={20} />
                 Book a Demo
               </Button>
@@ -41,7 +41,7 @@ export default function Header() {
               <CartButton />
 
               {/* Mobile Menu Button */}
-              <button onClick={() => setMobileMenuOpen(true)} className="icon-btn md:hidden" aria-label="Open menu">
+              <button onClick={() => setMobileMenuOpen(true)} className="icon-btn hidden md:hidden!" aria-label="Open menu">
                 <MenuIcon size={24} />
               </button>
             </div>
