@@ -70,21 +70,29 @@ function buildMegaMenuFromCategories(): MegaMenuColumn[] {
   return rootCategories.map((rootCat) => {
     const childCategories = getChildCategories(rootCat.id);
 
-    const items: MegaMenuItem[] = childCategories.map((child) => ({
-      label: child.name,
-      href: child.specialPage || `/product-category/${rootCat.slug}/${child.slug}`,
-      description: child.description,
-      image: child.image,
-      categoryId: child.id,
-    }));
+    const items: MegaMenuItem[] = childCategories.map((child) => {
+      // If child has a special page, append the category slug as a query parameter
+      let href = child.specialPage || `/product-category/${rootCat.slug}/${child.slug}`;
+      if (child.specialPage) {
+        href = `${child.specialPage}?category=${child.slug}`;
+      }
+      
+      return {
+        label: child.name,
+        href,
+        description: child.description,
+        image: child.image,
+        categoryId: child.id,
+      };
+    });
 
     return {
       title: rootCat.name,
-      href: `/product-category/${rootCat.slug}`,
+      href: rootCat.specialPage || `/product-category/${rootCat.slug}`,
       items,
       aboutLink: {
         label: `About ${rootCat.name}`,
-        href: `/product-category/${rootCat.slug}`,
+        href: rootCat.specialPage || `/product-category/${rootCat.slug}`,
       },
     };
   });

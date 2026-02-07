@@ -10,8 +10,14 @@ export const metadata = {
     "Discover our premium Italian surgical instruments from Medesy. Professional-grade elevators, forceps, periosteal elevators, and scissors. Made in Italy with surgical-grade stainless steel.",
 };
 
-export default async function OurInstrumentsPage() {
+export default async function OurInstrumentsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const resolvedParams = await searchParams;
   const medesyData = await getMedesyData();
+  const initialCategory = resolvedParams.category || null;
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
@@ -80,7 +86,11 @@ export default async function OurInstrumentsPage() {
           </p>
         </div>
 
-        <MedesySelector categories={medesyData.categories} />
+        <MedesySelector 
+          key={initialCategory || 'default'} 
+          categories={medesyData.categories} 
+          initialCategorySlug={initialCategory} 
+        />
       </section>
 
       {/* CTA Section */}

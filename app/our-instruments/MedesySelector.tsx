@@ -33,8 +33,8 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
       {/* Category Name Button */}
       <div className="flex justify-center">
         <span
-          className={`inline-block rounded-md px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-colors ${
-            isSelected ? "bg-primary-600 text-white" : "bg-primary-600 text-white group-hover:bg-primary-700"
+          className={`inline-block rounded-md px-6 py-2 text-sm font-semibold tracking-wide uppercase transition-colors ${
+            isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"
           }`}
         >
           {category.name}
@@ -42,9 +42,7 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
       </div>
 
       {/* Product count badge */}
-      <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-gray-100 px-2 text-xs font-semibold text-gray-600">
-        {category.products.length}
-      </div>
+      <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-gray-100 px-2 text-xs font-semibold text-gray-600">{category.products.length}</div>
 
       {/* Selection indicator */}
       {isSelected && (
@@ -64,10 +62,7 @@ interface MedesyProductCardProps {
 
 function MedesyProductCard({ product }: MedesyProductCardProps) {
   return (
-    <Link
-      href={`/our-instruments/${product.id}`}
-      className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg"
-    >
+    <Link href={`/our-instruments/${product.id}`} className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
       {/* Product Image */}
       <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
         <Image
@@ -81,9 +76,7 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
 
       {/* Product Name */}
       <div className="mb-3 flex justify-center">
-        <span className="bg-primary-600 group-hover:bg-primary-700 inline-block rounded-md px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white transition-colors">
-          {product.name}
-        </span>
+        <span className="bg-primary-600 group-hover:bg-primary-700 inline-block rounded-md px-4 py-2 text-sm font-semibold tracking-wide text-white uppercase transition-colors">{product.name}</span>
       </div>
 
       {/* Product Description */}
@@ -105,9 +98,7 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
 
       {/* View Details */}
       <div className="mt-auto pt-2">
-        <span className="text-primary-600 group-hover:text-primary-700 block text-center text-sm font-medium">
-          View Models →
-        </span>
+        <span className="text-primary-600 group-hover:text-primary-700 block text-center text-sm font-medium">View Models →</span>
       </div>
     </Link>
   );
@@ -115,10 +106,26 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
 
 interface MedesySelectorProps {
   categories: MedesyCategory[];
+  initialCategorySlug?: string | null;
 }
 
-export function MedesySelector({ categories }: MedesySelectorProps) {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+export function MedesySelector({ categories, initialCategorySlug }: MedesySelectorProps) {
+  // Map slug to category ID for initial selection
+  const getInitialCategoryId = () => {
+    if (!initialCategorySlug) return null;
+
+    const slugToCategoryId: Record<string, string> = {
+      elevators: "elevators",
+      forceps: "forceps",
+      "periosteal-elevators": "periosteal-elevators",
+      scissors: "scissors",
+    };
+
+    const categoryId = slugToCategoryId[initialCategorySlug];
+    return categoryId && categories.some((c) => c.id === categoryId) ? categoryId : null;
+  };
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(getInitialCategoryId());
 
   const selectedCategory = categories.find((c) => c.id === selectedCategoryId);
 
@@ -132,12 +139,7 @@ export function MedesySelector({ categories }: MedesySelectorProps) {
       {/* Category Selection Cards - 4 cards in a grid */}
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((category) => (
-          <MedesyCategoryCard
-            key={category.id}
-            category={category}
-            isSelected={selectedCategoryId === category.id}
-            onSelect={() => handleCategorySelect(category.id)}
-          />
+          <MedesyCategoryCard key={category.id} category={category} isSelected={selectedCategoryId === category.id} onSelect={() => handleCategorySelect(category.id)} />
         ))}
       </div>
 
@@ -149,13 +151,7 @@ export function MedesySelector({ categories }: MedesySelectorProps) {
             <div className="mx-auto mb-8 flex max-w-4xl flex-col items-center gap-8 md:flex-row">
               {/* Hero Image for selected category */}
               <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-50 md:w-1/2">
-                <Image
-                  src={selectedCategory.image}
-                  alt={selectedCategory.name}
-                  fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h3 className="heading-3 text-primary-800 mb-3">{selectedCategory.description}</h3>
