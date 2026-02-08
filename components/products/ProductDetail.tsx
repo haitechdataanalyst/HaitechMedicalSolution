@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Product, Frame } from "@/types";
+import { Product, Frame, HeadlightCategory } from "@/types";
 import ContentRenderer from "./ContentRenderer";
 import ProductGrid from "./ProductGrid";
 
@@ -15,9 +15,10 @@ interface ProductDetailProps {
   relatedProducts?: ProductWithPath[];
   accessories?: ProductWithPath[];
   frames?: Frame[];
+  headlightCategories?: HeadlightCategory[];
 }
 
-export default function ProductDetail({ product, relatedProducts = [], accessories = [], frames = [] }: ProductDetailProps) {
+export default function ProductDetail({ product, relatedProducts = [], accessories = [], frames = [], headlightCategories = [] }: ProductDetailProps) {
   const [selectedVariantImage, setSelectedVariantImage] = useState<string | undefined>(undefined);
 
   // Separate blocks for layout purposes
@@ -49,7 +50,7 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
           {descriptionBlock && <ContentRenderer blocks={[descriptionBlock]} product={product} />}
 
           {/* Actions (Add to Cart) */}
-          {actionsBlock && <ContentRenderer blocks={[actionsBlock]} product={product} onVariantSelect={handleVariantSelect} frames={frames} />}
+          {actionsBlock && <ContentRenderer blocks={[actionsBlock]} product={product} onVariantSelect={handleVariantSelect} frames={frames} headlightCategories={headlightCategories} />}
 
           {/* Technical Specs & Other Info - Now in right column */}
           {otherBlocks.length > 0 && (

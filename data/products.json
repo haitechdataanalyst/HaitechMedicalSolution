@@ -93,28 +93,33 @@
                 }
               ],
               "required": true
-            },
-            {
-              "name": "prescription",
-              "label": "Prescription Lenses",
-              "type": "select",
-              "options": [
-                {
-                  "value": "none",
-                  "label": "No prescription"
-                },
-                {
-                  "value": "single",
-                  "label": "Single vision (+$150)"
-                },
-                {
-                  "value": "progressive",
-                  "label": "Progressive (+$350)"
-                }
-              ],
-              "required": false
             }
-          ]
+          ],
+          "frameSizes": [
+            { "value": "S", "label": "S" },
+            { "value": "M", "label": "M" },
+            { "value": "L", "label": "L" }
+          ],
+          "prescription": {
+            "enabled": true,
+            "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+          },
+          "matchHeadlights": {
+            "enabled": true,
+            "categories": ["wireless", "wired"]
+          },
+          "templeTipEngraving": {
+            "enabled": true,
+            "previewImage": "/images/products/temple-tip-engraving-preview.png",
+            "maxLength": 25,
+            "placeholder": "Your Name"
+          },
+          "boxEngraving": {
+            "enabled": true,
+            "previewImage": "/images/products/box-engraving-preview.jpg",
+            "maxLength": 30,
+            "placeholder": "Your Name"
+          }
         }
       }
     ],

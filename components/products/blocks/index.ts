@@ -5,6 +5,11 @@ export { default as InfoBlock } from "./InfoBlock";
 export { default as ActionsBlock } from "./ActionsBlock";
 export { default as GalleryBlock } from "./GalleryBlock";
 export { default as FrameColorSelector } from "./FrameColorSelector";
+export { default as FrameSizeSelector } from "./FrameSizeSelector";
+export { default as PrescriptionSection } from "./PrescriptionSection";
+export { default as MatchHeadlightsSection } from "./MatchHeadlightsSection";
+export { default as TempleTipEngraving } from "./TempleTipEngraving";
+export { default as BoxEngraving } from "./BoxEngraving";
 
 // Variant Selectors
 export { default as VariantSelector } from "./VariantSelector";

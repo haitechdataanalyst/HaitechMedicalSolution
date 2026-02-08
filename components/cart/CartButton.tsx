@@ -1,15 +1,15 @@
 "use client";
 
+import { ShoppingCart } from "lucide-react";
 import { useCart } from "./CartProvider";
 import { cn } from "@/lib/utils";
-import { CartIcon } from "@/components/icons";
 
 export default function CartButton() {
   const { itemCount, toggleCart } = useCart();
 
   return (
     <button onClick={toggleCart} className={cn("icon-btn relative cursor-pointer", itemCount > 0 && "text-primary-600")} aria-label={`Shopping cart with ${itemCount} items`}>
-      <CartIcon size={24} />
+      <ShoppingCart size={24} />
 
       {/* Item Count Badge */}
       {itemCount > 0 && (

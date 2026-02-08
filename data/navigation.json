@@ -1,4 +1,9 @@
 {
+  "top-header": [
+    { "label": "About Us", "href": "/about" },
+    { "label": "Contact", "href": "/support/contact" },
+    { "label": "FAQ", "href": "/support/faq" }
+  ],
   "header": [
     {
       "label": "PRODUCTS",

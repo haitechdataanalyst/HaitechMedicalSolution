@@ -210,12 +210,43 @@ export interface CustomField {
   max?: number;
 }
 
+// Frame size option for size selector
+export interface FrameSizeOption {
+  value: string;
+  label: string;
+}
+
+// Prescription section config
+export interface PrescriptionConfig {
+  enabled: boolean;
+  disclaimer?: string;
+}
+
+// Match headlights section config
+export interface MatchHeadlightsConfig {
+  enabled: boolean;
+  categories?: string[]; // headlight category IDs to show (e.g., ["wireless", "wired"])
+}
+
+// Engraving section config (for temple tip and box)
+export interface EngravingConfig {
+  enabled: boolean;
+  previewImage: string;
+  maxLength?: number;
+  placeholder?: string;
+}
+
 export interface ActionsBlock {
   type: "actions";
   data: {
     addToCart: boolean;
     customization?: boolean;
     customFields?: CustomField[];
+    frameSizes?: FrameSizeOption[];
+    prescription?: PrescriptionConfig;
+    matchHeadlights?: MatchHeadlightsConfig;
+    templeTipEngraving?: EngravingConfig;
+    boxEngraving?: EngravingConfig;
   };
 }
 

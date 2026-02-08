@@ -4,13 +4,12 @@
     "email": "sales@haitech-group.com",
     "phone": "+91 8291939355",
     "address": {
-  "street": "Office No. 912, 9th Floor, Kohinoor Compound, Swastik Disa Corporate Park, Lal Bahadur Shastri Marg, Opp. Shreyas Cinema Road, Nityanand Nagar",
-  "city": "Mumbai",
-  "state": "Maharashtra",
-  "postcode": "400086",
-  "country": "India"
-}
-
+      "street": "Office No. 912, 9th Floor, Kohinoor Compound, Swastik Disa Corporate Park, Lal Bahadur Shastri Marg, Opp. Shreyas Cinema Road, Nityanand Nagar",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "postcode": "400086",
+      "country": "India"
+    }
   },
   "emails": {
     "quotes": "quotes@haitechmedical.com.au",

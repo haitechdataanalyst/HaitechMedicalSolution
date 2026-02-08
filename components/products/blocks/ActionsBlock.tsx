@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame } from "@/types";
+import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
 import { Button } from "@/components/ui";
 import VariantSelector, { VariantSelection } from "./VariantSelector";
 import ProductQuoteModal from "./ProductQuoteModal";
+import FrameSizeSelector from "./FrameSizeSelector";
+import PrescriptionSection from "./PrescriptionSection";
+import MatchHeadlightsSection from "./MatchHeadlightsSection";
+import TempleTipEngraving from "./TempleTipEngraving";
+import BoxEngraving from "./BoxEngraving";
 import { formatColorName } from "./variant-utils";
 import { ShoppingCart, FileDown, MessageSquare } from "lucide-react";
 
@@ -14,14 +19,19 @@ interface ActionsBlockProps {
   product: Product;
   onVariantSelect?: (imageUrl: string) => void;
   frames?: Frame[];
+  headlightCategories?: HeadlightCategory[];
 }
 
-export default function ActionsBlock({ data, product, onVariantSelect, frames = [] }: ActionsBlockProps) {
+export default function ActionsBlock({ data, product, onVariantSelect, frames = [], headlightCategories = [] }: ActionsBlockProps) {
   const { addItem } = useCart();
   const [quantity] = useState(1);
   const [customFields] = useState<Record<string, string | number>>({});
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [variantSelection, setVariantSelection] = useState<VariantSelection>({});
+  const [selectedFrameSize, setSelectedFrameSize] = useState<string | null>(data.frameSizes?.[1]?.value ?? null);
+  const [prescriptionFile, setPrescriptionFile] = useState<File | null>(null);
+  const [templeTipText, setTempleTipText] = useState("");
+  const [boxEngravingText, setBoxEngravingText] = useState("");
   // Handle variant selection changes from VariantSelector
   const handleVariantChange = useCallback(
     (selection: VariantSelection) => {
@@ -45,6 +55,22 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     if (variantSelection.legacyVariant) {
       customization.color = variantSelection.legacyVariant.name ?? variantSelection.legacyVariant.id;
       customization.variantSku = variantSelection.legacyVariant.sku;
+    }
+
+    if (selectedFrameSize) {
+      customization.frameSize = selectedFrameSize;
+    }
+
+    if (prescriptionFile) {
+      customization.prescription = prescriptionFile.name;
+    }
+
+    if (templeTipText) {
+      customization.templeTipEngraving = templeTipText;
+    }
+
+    if (boxEngravingText) {
+      customization.boxEngraving = boxEngravingText;
     }
 
     return customization;
@@ -109,6 +135,21 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     <div className="bg-surface sticky top-24 space-y-6 rounded-xl border border-neutral-200 p-4 sm:p-6">
       {/* Variant Selection - VariantSelector handles all product types */}
       <VariantSelector product={product} frames={frames} onSelectionChange={handleVariantChange} />
+
+      {/* Frame Size Selector */}
+      {data.frameSizes && data.frameSizes.length > 0 && <FrameSizeSelector sizes={data.frameSizes} selectedSize={selectedFrameSize} onSizeChange={setSelectedFrameSize} />}
+
+      {/* Prescription Section */}
+      {data.prescription?.enabled && <PrescriptionSection config={data.prescription} onFileChange={setPrescriptionFile} />}
+
+      {/* Match Headlights Section */}
+      {data.matchHeadlights?.enabled && headlightCategories.length > 0 && <MatchHeadlightsSection config={data.matchHeadlights} headlightCategories={headlightCategories} />}
+
+      {/* Temple Tip Engraving Section */}
+      {data.templeTipEngraving?.enabled && <TempleTipEngraving config={data.templeTipEngraving} onTextChange={setTempleTipText} />}
+
+      {/* Box Engraving Section */}
+      {data.boxEngraving?.enabled && <BoxEngraving config={data.boxEngraving} onTextChange={setBoxEngravingText} />}
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-3 sm:flex-row">
