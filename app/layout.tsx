@@ -5,6 +5,7 @@ import Providers from "./providers";
 import { TopHeader, Header, Footer, NavigationProvider } from "@/components/layout";
 import navigation from "@/data/navigation.json";
 import siteConfig from "@/data/site-config.json";
+import { WhatsAppButton } from "@/components/ui";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,6 +35,9 @@ export default function RootLayout({
               <Header />
               <main className="flex-1">{children}</main>
               <Footer sections={navigation.footer.sections} config={siteConfig} />
+              <div className="fixed bottom-6 right-6">
+                <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="lg" className="w-16 h-16 rounded-full cursor-pointer" />
+              </div>
             </div>
           </NavigationProvider>
         </Providers>
@@ -41,3 +45,4 @@ export default function RootLayout({
     </html>
   );
 }
+

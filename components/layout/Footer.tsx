@@ -126,6 +126,7 @@ export default function Footer({ sections, config }: FooterProps) {
             <p className="text-sm text-neutral-500">
               © {currentYear} {config.company.name}. All rights reserved.
             </p>
+            <p>Designed and Developed By <a href="https://sm.stacktech.in/">Shubham Maurya</a></p>
             <div className="flex items-center gap-4 sm:gap-6">
               <Link
                 href="/privacy"
