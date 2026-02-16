@@ -72,6 +72,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                   <div className="flex items-center">
                     <Link
                       href={item.href}
+                      onClick={onClose}
                       className={cn(
                         "flex-1 rounded-lg px-4 py-3 text-base font-medium transition-colors",
                         isActive ? "text-primary-600 bg-primary-50" : "hover:text-primary-600 hover:bg-surface-secondary text-neutral-700"
@@ -98,6 +99,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                             <div className="flex items-center">
                               <Link
                                 href={column.href}
+                                onClick={onClose}
                                 className={cn(
                                   "flex-1 rounded-lg px-4 py-2 text-sm font-semibold transition-colors",
                                   pathname === column.href || pathname.startsWith(column.href + "/")
@@ -121,6 +123,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                                   <li key={subItem.href}>
                                     <Link
                                       href={subItem.href}
+                                      onClick={onClose}
                                       className={cn(
                                         "block rounded-lg px-4 py-2 text-sm transition-colors",
                                         pathname === subItem.href ? "text-primary-600 bg-primary-50" : "text-muted hover:text-primary-600 hover:bg-surface-secondary"
