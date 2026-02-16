@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
-  Children,
-  ReactNode,
-} from "react";
+import { useState, useRef, useEffect, useCallback, Children, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
@@ -65,20 +58,18 @@ export default function Carousel({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1024
-  );
+  const [windowWidth, setWindowWidth] = useState(1024); // Always start with default for SSR
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Handle window resize for responsive behavior
+  // Handle initial window width and resize events
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    // Update to actual window width on client after hydration
+    const updateWidth = () => setWindowWidth(window.innerWidth);
+    updateWidth();
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   // Calculate responsive values
@@ -129,10 +120,8 @@ export default function Carousel({
 
   // Arrow variants
   const arrowVariants = {
-    default:
-      "bg-white text-neutral-700 shadow-lg hover:bg-neutral-50 border border-neutral-200",
-    outline:
-      "bg-transparent border-2 border-neutral-300 text-neutral-700 hover:bg-neutral-100",
+    default: "bg-white text-neutral-700 shadow-lg hover:bg-neutral-50 border border-neutral-200",
+    outline: "bg-transparent border-2 border-neutral-300 text-neutral-700 hover:bg-neutral-100",
     ghost: "bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm",
   };
 
@@ -152,7 +141,7 @@ export default function Carousel({
 
       setCurrentIndex(newIndex);
     },
-    [loop, maxIndex],
+    [loop, maxIndex]
   );
 
   const goToPrevious = useCallback(() => {
@@ -172,14 +161,7 @@ export default function Carousel({
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [
-    autoPlay,
-    autoPlayInterval,
-    isHovered,
-    goToNext,
-    totalSlides,
-    slidesToShow,
-  ]);
+  }, [autoPlay, autoPlayInterval, isHovered, goToNext, totalSlides, slidesToShow]);
 
   // Get slide width in pixels for drag calculations
   const getSlideWidthPx = useCallback(() => {
@@ -195,11 +177,14 @@ export default function Carousel({
     setDragOffset(0);
   }, []);
 
-  const handleDragMove = useCallback((clientX: number) => {
-    if (!isDragging) return;
-    const offset = clientX - dragStartX;
-    setDragOffset(offset);
-  }, [isDragging, dragStartX]);
+  const handleDragMove = useCallback(
+    (clientX: number) => {
+      if (!isDragging) return;
+      const offset = clientX - dragStartX;
+      setDragOffset(offset);
+    },
+    [isDragging, dragStartX]
+  );
 
   const handleDragEnd = useCallback(() => {
     if (!isDragging) return;
@@ -279,7 +264,7 @@ export default function Carousel({
 
   return (
     <div
-      className={cn("relative group", className)}
+      className={cn("group relative", className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -287,16 +272,10 @@ export default function Carousel({
       }}
     >
       {/* Track Container - padding/margin trick allows shadows to show while clipping overflow */}
-      <div ref={containerRef} className={cn(
-        "overflow-x-hidden",
-        !noPadding && "-mx-4 px-4 py-4"
-      )}>
+      <div ref={containerRef} className={cn("overflow-x-hidden", !noPadding && "-mx-4 px-4 py-4")}>
         <div
           ref={trackRef}
-          className={cn(
-            "flex",
-            !isDragging && "transition-transform duration-500 ease-out"
-          )}
+          className={cn("flex", !isDragging && "transition-transform duration-500 ease-out")}
           style={{
             transform: `translateX(${translateX})`,
             gap: `${gap}px`,
@@ -314,14 +293,7 @@ export default function Carousel({
           aria-label="Carousel"
         >
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={cn("flex-shrink-0", slideClassName)}
-              style={{ width: slideWidth }}
-              aria-hidden={
-                index < effectiveIndex || index >= effectiveIndex + slidesToShow
-              }
-            >
+            <div key={index} className={cn("flex-shrink-0", slideClassName)} style={{ width: slideWidth }} aria-hidden={index < effectiveIndex || index >= effectiveIndex + slidesToShow}>
               {slide}
             </div>
           ))}
@@ -335,11 +307,11 @@ export default function Carousel({
             onClick={goToPrevious}
             disabled={!loop && effectiveIndex === 0}
             className={cn(
-              "absolute top-1/2 left-2 -translate-y-1/2 z-10 rounded-full flex items-center justify-center transition-all duration-200",
+              "absolute top-1/2 left-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-all duration-200",
               "opacity-0 group-hover:opacity-100 focus:opacity-100",
-              "disabled:opacity-30 disabled:cursor-not-allowed",
+              "disabled:cursor-not-allowed disabled:opacity-30",
               arrowSizes[arrowSize],
-              arrowVariants[arrowVariant],
+              arrowVariants[arrowVariant]
             )}
             aria-label="Previous slide"
           >
@@ -349,11 +321,11 @@ export default function Carousel({
             onClick={goToNext}
             disabled={!loop && effectiveIndex >= maxIndex}
             className={cn(
-              "absolute top-1/2 right-2 -translate-y-1/2 z-10 rounded-full flex items-center justify-center transition-all duration-200",
+              "absolute top-1/2 right-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-all duration-200",
               "opacity-0 group-hover:opacity-100 focus:opacity-100",
-              "disabled:opacity-30 disabled:cursor-not-allowed",
+              "disabled:cursor-not-allowed disabled:opacity-30",
               arrowSizes[arrowSize],
-              arrowVariants[arrowVariant],
+              arrowVariants[arrowVariant]
             )}
             aria-label="Next slide"
           >
@@ -364,30 +336,27 @@ export default function Carousel({
 
       {/* Overlay Content (for hero sections with floating text/CTAs) */}
       {overlayContent && (
-        <div className="absolute inset-0 z-20 pointer-events-none">
-          <div className="pointer-events-auto h-full">
-            {overlayContent}
-          </div>
+        <div className="pointer-events-none absolute inset-0 z-20">
+          <div className="pointer-events-auto h-full">{overlayContent}</div>
         </div>
       )}
 
       {/* Dot Indicators */}
       {showDots && dotsPosition !== "none" && totalSlides > slidesToShow && (
-        <div className={cn(
-          "flex justify-center gap-2",
-          dotsPosition === "outside" && "mt-4",
-          dotsPosition === "inside" && "absolute bottom-6 left-1/2 -translate-x-1/2 z-30",
-          dotsClassName
-        )}>
+        <div className={cn("flex justify-center gap-2", dotsPosition === "outside" && "mt-4", dotsPosition === "inside" && "absolute bottom-6 left-1/2 z-30 -translate-x-1/2", dotsClassName)}>
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={cn(
-                "w-2.5 h-2.5 rounded-full transition-all duration-200",
+                "h-2.5 w-2.5 rounded-full transition-all duration-200",
                 index === effectiveIndex
-                  ? dotsPosition === "inside" ? "bg-white w-6" : "bg-primary-600 w-6"
-                  : dotsPosition === "inside" ? "bg-white/50 hover:bg-white/70" : "bg-neutral-300 hover:bg-neutral-400",
+                  ? dotsPosition === "inside"
+                    ? "w-6 bg-white"
+                    : "bg-primary-600 w-6"
+                  : dotsPosition === "inside"
+                    ? "bg-white/50 hover:bg-white/70"
+                    : "bg-neutral-300 hover:bg-neutral-400"
               )}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === effectiveIndex ? "true" : "false"}

@@ -50,10 +50,8 @@
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl:
-    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Spacing */
   --container-padding: 1rem;
@@ -101,8 +99,7 @@
   --color-muted: var(--text-muted);
   --color-subtle: var(--text-subtle);
   --color-border: var(--border-color);
-  --font-sans:
-    var(--font-poppins, "Poppins"), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-poppins, "Poppins"), system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -287,11 +284,7 @@ body {
   }
 
   .bg-primary-gradient {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary-600) 0%,
-      var(--color-primary-800) 100%
-    );
+    background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-800) 100%);
   }
 
   /* Form Elements */
@@ -496,6 +489,14 @@ body {
   .icon-container-xl {
     width: 4rem;
     height: 4rem;
+  }
+  .icon-container-2xl {
+    width: 6rem;
+    height: 6rem;
+  }
+  .icon-container-3xl {
+    width: 8rem;
+    height: 8rem;
   }
 
   .icon-container-primary {

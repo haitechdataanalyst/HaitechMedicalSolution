@@ -14,14 +14,13 @@ const ICON_URLS = {
   chevronLeft: "https://cdn.lordicon.com/whtfgdfm.json",
 
   // Cart & Shopping
-  cart: "https://cdn.lordicon.com/medamo75.json",
+  cart: "https://cdn.lordicon.com/uisoczqi.json",
   emptyCart: "https://cdn.lordicon.com/hyhnpiza.json",
   trash: "https://cdn.lordicon.com/skkahier.json",
 
   // Communication
   phone: "https://cdn.lordicon.com/srsgifqc.json",
   email: "https://cdn.lordicon.com/xtzvywzp.json",
-  location: "https://cdn.lordicon.com/surcxhka.json",
 
   // Status & Feedback
   success: "https://cdn.lordicon.com/oqdmuxru.json",
@@ -35,10 +34,13 @@ const ICON_URLS = {
   arrowBack: "https://cdn.lordicon.com/zmkotitn.json",
 
   // Stats & Business
-  package: "https://cdn.lordicon.com/fihkmkwt.json",
+  location: "https://cdn.lordicon.com/onmwuuox.json",
   users: "https://cdn.lordicon.com/bhfjfgqz.json",
   globe: "https://cdn.lordicon.com/osuxyevn.json",
   award: "https://cdn.lordicon.com/yqiuuheo.json",
+  star: "https://cdn.lordicon.com/cvwrvyjv.json",
+
+  conference: "https://cdn.lordicon.com/cfoaotmk.json",
 } as const;
 
 export type IconName = keyof typeof ICON_URLS;

@@ -9,38 +9,38 @@ const stats: { value: string; label: string; icon: IconName }[] = [
   {
     value: "5+",
     label: "Products & Counting",
-    icon: "package",
+    icon: "cart",
   },
   {
     value: "1000+",
     label: "Supported Workshops & Conferences",
-    icon: "users",
+    icon: "conference",
   },
   {
     value: "30+",
     label: "Partnerships and Expanding",
-    icon: "globe",
+    icon: "location",
   },
   {
     value: "13+",
     label: "Years of Experience",
-    icon: "award",
+    icon: "star",
   },
 ];
 
 export default function WhySection() {
   return (
     <section className="section bg-primary-100 text-white">
-      <div className="container">
+      <div className="mx-auto w-full md:w-[90vw] lg:w-[85vw] xl:w-[80vw]">
         <div className="mb-10 text-center md:mb-12">
           <h2 className="heading-2 text-primary-900 mb-2">Why Choose Haitech Medical?</h2>
           <p className="text-body-lg text-primary-900 mx-auto max-w-2xl">Trusted by dental professionals across Australia for over a decade</p>
         </div>
 
-        <div className="mb-10 grid grid-cols-2 gap-6 md:mb-12 md:grid-cols-4 md:gap-8">
+        <div className="mb-10 grid grid-cols-2 gap-6 md:mb-12 md:gap-8 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <div key={index} className="group rounded-xl p-6 text-center backdrop-blur-sm transition-all">
-              <Lordicon icon={stat.icon} size={100} trigger="hover" parentHover colors={{ primary: "#ffffff", secondary: "#ffffff" }} />
+            <div key={index} className="group rounded-xl p-2 text-center backdrop-blur-sm transition-all lg:p-6">
+              <Lordicon icon={stat.icon} size={100} trigger="hover" parentHover colors={{ primary: "#1fb6cd", secondary: "#ffffff" }} />
               <div className="text-primary-900 mb-1 text-3xl font-bold md:text-4xl">{stat.value}</div>
               <div className="text-primary-900 text-sm md:text-base">{stat.label}</div>
             </div>
@@ -49,8 +49,8 @@ export default function WhySection() {
 
         <div className="text-center">
           <Link href="/support/contact?demo=true">
-            <Button size="lg" className="text-primary-600 bg-white hover:bg-neutral-100 px-20 gap-3">
-               <RocketIcon size={20} />
+            <Button size="lg" className="text-primary-600 gap-3 bg-white px-20 hover:bg-neutral-100">
+              <RocketIcon size={20} />
               Book a Demo
             </Button>
           </Link>

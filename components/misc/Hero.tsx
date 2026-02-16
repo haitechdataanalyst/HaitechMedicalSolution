@@ -63,7 +63,7 @@ export default function Hero() {
         className="hero-carousel"
       >
         {heroSlides.map((slide, index) => (
-          <div key={index} className="relative h-[calc(100vh-8rem)] min-h-150">
+          <div key={index} className="relative h-60 md:h-80 lg:h-[calc(100vh-8rem)] lg:min-h-150">
             {/* Background Image */}
             <div className="bg-primary-gradient absolute inset-0">
               <Image src={slide.image} alt="Hero background" fill className="object-cover opacity-100" priority={index === 0} />
