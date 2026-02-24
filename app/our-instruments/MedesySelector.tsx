@@ -33,7 +33,7 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
             {/* Category Name Button */}
             <div className="flex justify-center">
                 <span
-                    className={`inline-block rounded-md px-6 py-2 text-sm font-semibold tracking-wide uppercase transition-colors ${
+                    className={`btn btn-primary w-full py-2 ${
                         isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"
                     }`}
                 >
@@ -62,7 +62,7 @@ interface MedesyProductCardProps {
 
 function MedesyProductCard({ product }: MedesyProductCardProps) {
     return (
-        <Link href={`/our-instruments/${product.id}`} className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
+        <div className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
             {/* Product Image */}
             <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
                 <Image
@@ -76,9 +76,9 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
 
             {/* Product Name */}
             <div className="mb-3 flex justify-center">
-                <span className="bg-primary-600 group-hover:bg-primary-700 inline-block rounded-md px-4 py-2 text-sm font-semibold tracking-wide text-white uppercase transition-colors">
+                <Link href={`/our-instruments/${product.id}`} className="btn btn-primary w-full py-2">
                     {product.name}
-                </span>
+                </Link>
             </div>
 
             {/* Product Description */}
@@ -99,10 +99,16 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
             )}
 
             {/* View Details */}
-            <div className="mt-auto pt-2">
-                <span className="text-primary-600 group-hover:text-primary-700 block text-center text-sm font-medium">View Models →</span>
-            </div>
-        </Link>
+            {product.catalogueFile ? (
+                <a href={product.catalogueFile ? product.catalogueFile : "#"} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
+                    Get Catalogue
+                </a>
+            ) : (
+                <div className="mt-auto pt-2">
+                    <span className="btn btn-ghost group-hover:bg-surface-tertiary w-full py-2 text-sm">View Models →</span>
+                </div>
+            )}
+        </div>
     );
 }
 

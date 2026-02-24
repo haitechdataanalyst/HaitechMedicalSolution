@@ -20,7 +20,7 @@ export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
                             <li key={item.path} className="flex items-center">
                                 {index > 0 && <ChevronRightIcon size={16} className="mx-1 text-neutral-400 sm:mx-2" />}
                                 {isLast ? (
-                                    <span className="text-muted max-w-[200px] truncate font-medium sm:max-w-none">{item.name}</span>
+                                    <span className="text-muted max-w-50 truncate font-medium sm:max-w-none">{item.name}</span>
                                 ) : (
                                     <Link href={item.path} className="text-primary-600 hover:text-primary-700 hover:underline">
                                         {item.name}

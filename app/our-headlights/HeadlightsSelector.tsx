@@ -5,6 +5,7 @@ import Image from "next/image";
 import { HeadlightCategory, HeadlightProduct } from "@/types";
 import { Button } from "@/components/ui";
 import ProductQuoteModal from "@/components/products/blocks/ProductQuoteModal";
+import { Check } from "lucide-react";
 
 interface HeadlightCategoryCardProps {
     category: HeadlightCategory;
@@ -16,7 +17,7 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
     return (
         <button
             onClick={onSelect}
-            className={`group relative w-full overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
+            className={`group relative w-full cursor-pointer overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
                 isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-gray-100 hover:border-gray-200"
             }`}
         >
@@ -27,13 +28,7 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
 
             {/* Category Name Button */}
             <div className="flex justify-center">
-                <span
-                    className={`inline-block rounded-md px-6 py-2 text-sm font-semibold tracking-wide uppercase transition-colors ${
-                        isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"
-                    }`}
-                >
-                    {category.name}
-                </span>
+                <span className={`btn btn-primary w-full py-2 ${isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"}`}>{category.name}</span>
             </div>
 
             {/* Selection indicator */}
@@ -69,20 +64,18 @@ function HeadlightProductCard({ product, onGetQuote }: HeadlightProductCardProps
 
             {/* Product Name */}
             <div className="mb-3 flex justify-center">
-                <span className="bg-primary-600 inline-block rounded-md px-4 py-2 text-sm font-semibold tracking-wide text-white uppercase">{product.name}</span>
+                <span className="btn btn-primary hover:bg-primary-500 w-full cursor-default py-2">{product.name}</span>
             </div>
 
             {/* Product Description */}
-            <p className="mb-4 text-center text-sm text-gray-600">{product.description}</p>
+            <p className="mb-4 text-sm text-gray-600">{product.description}</p>
 
             {/* Features */}
             {product.features && product.features.length > 0 && (
                 <ul className="mb-4 space-y-1">
                     {product.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                            <svg className="text-primary-500 mt-0.5 h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
+                            <Check className="size-4" />
                             {feature}
                         </li>
                     ))}

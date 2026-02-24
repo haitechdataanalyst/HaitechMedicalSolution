@@ -27,7 +27,7 @@ function VariantCard({ variant, onGetQuote }: VariantCardProps) {
 
             {/* Variant Name */}
             <div className="mb-3 flex justify-center">
-                <span className="bg-primary-600 inline-block rounded-md px-4 py-2 text-sm font-semibold tracking-wide text-white uppercase">{variant.name || variant.id}</span>
+                <span className="btn bg-primary-700 cursor-default px-4 py-2 text-sm text-white">{variant.name || variant.id}</span>
             </div>
 
             {/* SKU */}
@@ -60,7 +60,7 @@ function SingleProductCard({ product, onGetQuote }: SingleProductCardProps) {
 
             {/* Product Name */}
             <div className="mb-4 flex justify-center">
-                <span className="bg-primary-600 inline-block rounded-md px-6 py-3 text-base font-semibold tracking-wide text-white uppercase">{product.name}</span>
+                <span className="btn bg-primary-700 cursor-default px-4 py-2 text-sm text-white">{product.name}</span>
             </div>
 
             {/* SKU */}

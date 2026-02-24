@@ -11,3 +11,4 @@ export type { Country, CountrySelectProps } from "./CountrySelect";
 export { default as WhatsAppButton } from "./WhatsAppButton";
 export type { WhatsAppButtonProps } from "./WhatsAppButton";
 export { default as Modal } from "./Modal";
+export { default as Banner } from "./Banner";

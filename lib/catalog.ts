@@ -39,7 +39,7 @@ function loadFrames(): Frame[] {
     return framesCache!;
 }
 
-function loadHeadlights(): HeadlightsData {
+async function loadHeadlights(): Promise<HeadlightsData> {
     if (!headlightsCache) {
         const fileContents = fs.readFileSync(headlightsPath, "utf8");
         headlightsCache = JSON.parse(fileContents);
@@ -67,18 +67,18 @@ export function getFrameById(id: string): Frame | null {
 }
 
 // Get headlights data
-export function getHeadlightsData(): HeadlightsData {
+export async function getHeadlightsData(): Promise<HeadlightsData> {
     return loadHeadlights();
 }
 
 // Get headlight categories (Wireless/Wired)
-export function getHeadlightCategories(): HeadlightCategory[] {
-    return loadHeadlights().categories;
+export async function getHeadlightCategories(): Promise<HeadlightCategory[]> {
+    return (await loadHeadlights()).categories;
 }
 
 // Get headlight category by ID
-export function getHeadlightCategoryById(id: string): HeadlightCategory | null {
-    const categories = loadHeadlights().categories;
+export async function getHeadlightCategoryById(id: string): Promise<HeadlightCategory | null> {
+    const categories = (await loadHeadlights()).categories;
     return categories.find((c) => c.id === id) || null;
 }
 

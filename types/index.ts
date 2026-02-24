@@ -76,6 +76,7 @@ export interface MedesyProduct {
     image: string;
     description: string;
     features: string[];
+    catalogueFile?: string; // Path to product catalogue PDF for download
 }
 
 // Medesy Category type (Elevators/Forceps/Periosteal Elevators/Scissors)

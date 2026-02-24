@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@/components/ui";
+import { Banner, Breadcrumbs } from "@/components/ui";
 import { AboutSection, TeamGrid } from "@/components/about";
 import { Building2, Target, Eye, Users } from "lucide-react";
 import teamData from "@/data/team.json";
@@ -17,25 +17,7 @@ export default function AboutPage() {
             <Breadcrumbs items={breadcrumbs} />
 
             {/* Hero Section */}
-            <section className="bg-primary-gradient relative overflow-hidden text-white">
-                <div className="section-lg container">
-                    <div className="relative z-10 mx-auto max-w-3xl text-center">
-                        <h1 className="heading-1 mb-6">Haitech Medical Solutions</h1>
-                        <p className="text-body-lg text-primary-100">Your trusted partner for premium dental and medical equipment, empowering healthcare professionals across India since 2013.</p>
-                    </div>
-                </div>
-                {/* Decorative elements */}
-                <div className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-10 md:w-1/3">
-                    <svg viewBox="0 0 400 400" className="h-full w-full">
-                        <circle cx="300" cy="300" r="200" fill="white" />
-                    </svg>
-                </div>
-                <div className="pointer-events-none absolute top-0 left-0 h-full w-1/3 opacity-10">
-                    <svg viewBox="0 0 400 400" className="h-full w-full">
-                        <circle cx="100" cy="100" r="150" fill="white" />
-                    </svg>
-                </div>
-            </section>
+            <Banner title="Haitech Medical Solutions" description="Your trusted partner for premium dental and medical equipment, empowering healthcare professionals across India since 2013." />
 
             {/* Who We Are Section */}
             <AboutSection title="Who We Are" variant="light" icon={<Building2 className="h-8 w-8" />}>
