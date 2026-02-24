@@ -1,9 +1,8 @@
 import { FAQ } from "@/components/misc";
 import data from "@/data/faq.json";
 import Link from "next/link";
-import { PlaySquare, FileText, GitCompare, ArrowRight, FileTerminalIcon } from "lucide-react";
+import { PlaySquare, FileText, ArrowRight, FileTerminalIcon } from "lucide-react";
 import { ArticlesPageClient } from "../articles/ArticlesPageClient";
-import { id } from "zod/locales";
 import { getMetadata } from "@/lib/metadata";
 
 export const metadata = getMetadata("supportFaq");
@@ -46,11 +45,11 @@ export default function HelpCenterPage() {
                         <Link
                             key={resource.id}
                             href={resource.href}
-                            id={resource.id}
+                            // id={resource.id}
                             className="group hover:border-primary-300 flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-4 transition-all duration-200 hover:shadow-md"
                         >
                             <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${resource.color}`}>
-                                <Icon className="h-5 w-5" />
+                                <Icon className="h-5 w-5" aria-hidden="true" />
                             </div>
                             <div className="min-w-0">
                                 <h3 className="group-hover:text-primary-600 text-sm font-semibold transition-colors">{resource.title}</h3>

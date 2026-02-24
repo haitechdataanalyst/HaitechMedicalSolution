@@ -3,26 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Headset, LifeBuoy, FileCheck, Mail, Phone, MessageCircle, Info, PlaySquare, HelpCircle, FileText, GitCompare, Shield, BadgeCheck, RotateCcw, LucideIcon } from "lucide-react";
+import { HelpCircle } from "lucide-react";
+import { iconMap } from "@/lib/icons";
 import supportNav from "@/data/support-navigation.json";
-
-// Icon mapping
-const iconMap: Record<string, LucideIcon> = {
-    Headset,
-    LifeBuoy,
-    FileCheck,
-    Mail,
-    Phone,
-    MessageCircle,
-    Info,
-    PlaySquare,
-    HelpCircle,
-    FileText,
-    GitCompare,
-    Shield,
-    BadgeCheck,
-    RotateCcw,
-};
 
 interface NavChild {
     id: string;
@@ -55,7 +38,7 @@ function NavIcon({ iconName, isActive, size = "lg" }: { iconName: string; isActi
                 isActive ? "bg-primary-500 text-white shadow-md" : "bg-primary-50 text-primary-600 group-hover:bg-primary-100"
             )}
         >
-            <Icon className={cn(iconSizeClasses, "transition-transform duration-300", "group-hover:scale-110")} />
+            <Icon className={cn(iconSizeClasses, "transition-transform duration-300", "group-hover:scale-110")} aria-hidden="true" />
         </div>
     );
 }
@@ -86,7 +69,7 @@ function ChildNavItem({ child, isActive }: { child: NavChild; isActive: boolean 
                     isActive && "border-primary-400 shadow-sm"
                 )}
             >
-                <Icon className={cn("h-5 w-5 transition-all duration-200", "group-hover:text-primary-600 text-neutral-500", isActive && "text-primary-600")} />
+                <Icon className={cn("h-5 w-5 transition-all duration-200", "group-hover:text-primary-600 text-neutral-500", isActive && "text-primary-600")} aria-hidden="true" />
             </div>
             <span className={cn("text-sm font-medium transition-colors duration-200", "text-muted group-hover:text-foreground", isActive && "text-foreground")}>{child.title}</span>
         </Link>
@@ -96,6 +79,9 @@ function ChildNavItem({ child, isActive }: { child: NavChild; isActive: boolean 
 export function SupportNav() {
     const pathname = usePathname();
 
+    // Hide nav on the support root page — it has its own SupportSectionsGrid
+    if (pathname === "/support") return null;
+
     // Determine active section
     const activeSection = supportNav.sections.find((section) => {
         if (pathname === section.path) return true;
@@ -104,7 +90,7 @@ export function SupportNav() {
     });
 
     return (
-        <div className="w-full">
+        <nav aria-label="Support navigation" className="w-full">
             {/* Main Navigation */}
             <div className="flex items-center justify-center gap-4 py-6 md:gap-8 lg:gap-16">
                 {supportNav.sections.map((section) => (
@@ -116,11 +102,11 @@ export function SupportNav() {
             <div className="w-full border-b border-neutral-200" />
 
             {/* Child Navigation - Only show if section has children */}
-            {activeSection && activeSection.children && activeSection.children.length > 0 && (
+            {activeSection?.children && activeSection.children.length > 0 && (
                 <div className="py-8">
                     {/* Section Title */}
                     <div className="mb-6 text-center">
-                        <h1 className="heading-1 mb-2">{activeSection.title}</h1>
+                        <h2 className="heading-1 mb-2">{activeSection.title}</h2>
                         <p className="text-muted">{activeSection.description}</p>
                     </div>
 
@@ -132,7 +118,7 @@ export function SupportNav() {
                     </div>
                 </div>
             )}
-        </div>
+        </nav>
     );
 }
 
@@ -146,7 +132,7 @@ export function SupportNavCompact() {
     });
 
     return (
-        <div className="flex items-center justify-center gap-2 border-b border-neutral-200 py-4 md:gap-4">
+        <nav aria-label="Support sections" className="flex items-center justify-center gap-2 border-b border-neutral-200 py-4 md:gap-4">
             {supportNav.sections.map((section) => {
                 const Icon = iconMap[section.icon] || HelpCircle;
                 const isActive = activeSection?.id === section.id;
@@ -155,17 +141,18 @@ export function SupportNavCompact() {
                     <Link
                         key={section.id}
                         href={section.path}
+                        aria-current={isActive ? "page" : undefined}
                         className={cn(
                             "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200",
                             isActive ? "bg-primary-50 text-primary-700" : "text-muted hover:text-foreground hover:bg-neutral-100"
                         )}
                     >
-                        <Icon className="h-4 w-4" />
+                        <Icon className="h-4 w-4" aria-hidden="true" />
                         <span>{section.title}</span>
                     </Link>
                 );
             })}
-        </div>
+        </nav>
     );
 }
 

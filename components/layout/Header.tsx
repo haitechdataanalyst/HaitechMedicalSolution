@@ -41,7 +41,7 @@ export default function Header() {
                             <CartButton />
 
                             {/* Mobile Menu Button */}
-                            <button onClick={() => setMobileMenuOpen(true)} className="icon-btn hidden md:hidden!" aria-label="Open menu">
+                            <button onClick={() => setMobileMenuOpen(true)} className="icon-btn md:hidden!" aria-label="Open menu">
                                 <MenuIcon size={24} />
                             </button>
                         </div>

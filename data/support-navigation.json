@@ -6,6 +6,7 @@
             "description": "Our customer service is always here for you!",
             "icon": "Headset",
             "path": "/support/contact",
+            "color": "bg-blue-50 text-blue-600",
             "children": [
                 {
                     "id": "email",
@@ -40,9 +41,10 @@
         {
             "id": "help-center",
             "title": "Help Center",
-            "description": "Our customer service is always here for you!",
+            "description": "Browse FAQs, guides, and articles to find answers",
             "icon": "LifeBuoy",
             "path": "/support/faq",
+            "color": "bg-primary-50 text-primary-600",
             "children": [
                 {
                     "id": "guides",
@@ -70,9 +72,10 @@
         {
             "id": "policies",
             "title": "Policies",
-            "description": "Our terms and policies",
+            "description": "Review our privacy policy and other important information",
             "icon": "FileCheck",
             "path": "/support/policies",
+            "color": "bg-amber-50 text-amber-600",
             "children": [
                 {
                     "id": "privacy",

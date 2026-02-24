@@ -3,11 +3,9 @@ import { Breadcrumbs } from "@/components/ui";
 import { getBreadcrumbs } from "@/lib/breadcrumbs";
 
 export default function SupportLayout({ children }: { children: React.ReactNode }) {
-    const breadcrumbs = getBreadcrumbs("supportRoot");
-
     return (
         <>
-            <Breadcrumbs items={breadcrumbs} />
+            <Breadcrumbs items={getBreadcrumbs("supportRoot")} />
 
             <div className="container">
                 {/* Support Header with Title */}
@@ -15,7 +13,7 @@ export default function SupportLayout({ children }: { children: React.ReactNode 
                     <h1 className="text-foreground text-4xl font-light tracking-tight md:text-5xl">Support</h1>
                 </div>
 
-                {/* Support Navigation */}
+                {/* Support Navigation - hidden on /support root */}
                 <SupportNav />
 
                 {/* Page Content */}

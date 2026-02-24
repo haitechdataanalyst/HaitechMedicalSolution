@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useMemo } from "react";
 import { Calendar, User, Tag, ArrowRight, Clock, Eye } from "lucide-react";
 import { articles, ArticleData } from "@/components/articles";
 
@@ -10,15 +11,20 @@ const categories = ["All", "Loupes", "Lights", "Ergonomics", "Support"];
 export function ArticlesPageClient() {
     const [selectedCategory, setSelectedCategory] = useState("All");
 
-    const filteredArticles = selectedCategory === "All" ? articles : articles.filter((article: ArticleData) => article.category === selectedCategory);
+    const filteredArticles = useMemo(
+        () => (selectedCategory === "All" ? articles : articles.filter((article: ArticleData) => article.category === selectedCategory)),
+        [selectedCategory]
+    );
 
     return (
         <div className="space-y-8">
             {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-2">
+            <div role="tablist" aria-label="Filter articles by category" className="flex flex-wrap justify-center gap-2">
                 {categories.map((category) => (
                     <button
                         key={category}
+                        role="tab"
+                        aria-selected={selectedCategory === category}
                         onClick={() => setSelectedCategory(category)}
                         className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
                     >
@@ -28,16 +34,25 @@ export function ArticlesPageClient() {
             </div>
 
             {/* Articles List */}
-            <div className="space-y-4">
+            <div role="tabpanel" aria-label={`${selectedCategory} articles`} className="space-y-4">
                 {filteredArticles.map((article: ArticleData) => (
                     <article
                         key={article.id}
                         className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md md:flex-row md:items-center"
                     >
                         {/* Thumbnail Image / Placeholder */}
-                        <div className="relative h-40 w-full shrink-0 overflow-hidden bg-gray-50 md:h-40 md:w-52 lg:w-64">
-                            {article.imageSrc ? <img src={article.imageSrc} alt={article.imageAlt || article.title} className="h-full w-full object-cover" /> : null}
-                        </div>
+                        {article.imageSrc && (
+                            <div className="relative h-40 w-full shrink-0 overflow-hidden bg-gray-50 md:h-40 md:w-52 lg:w-64">
+                                <Image
+                                    src={article.imageSrc}
+                                    alt={article.imageAlt || article.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 256px"
+                                    className="object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                        )}
 
                         <div className="flex-1 p-6">
                             {/* Category Badge */}

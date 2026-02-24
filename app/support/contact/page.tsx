@@ -48,7 +48,7 @@ export default function ContactPage() {
                     return (
                         <div key={method.id} id={method.id} className="hover:border-primary-300 rounded-xl border border-neutral-200 bg-white p-5 transition-all duration-200 hover:shadow-md">
                             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-50">
-                                <Icon className="text-primary-600 h-5 w-5" />
+                                <Icon className="text-primary-600 h-5 w-5" aria-hidden="true" />
                             </div>
                             <h3 className="mb-1 text-sm font-semibold">{method.title}</h3>
                             {method.href ? (
@@ -86,8 +86,8 @@ export default function ContactPage() {
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Haitech Medical Location"
-                        ></iframe>
+                            title="Haitech Medical office location on Google Maps"
+                        />
                     </div>
                 </div>
             </section>
