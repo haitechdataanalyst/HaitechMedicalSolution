@@ -1,67 +1,65 @@
 {
-  "testimonials": [
-      {
-      "id": "1",
-      "name": "Dr. Kirti Pingale",
-      "role": "Dental Practitioner",
-      "company": "—",
-      "location": "India",
-      "rating": 5,
-      "text": "We ordered Admetec loupes from Haitech. The product is amazing and really comfortable to use. We received trial, prompt and thorough service always. Tiwari sir made sure all the necessary adjustments were made to get the perfect dimensions and always kept us posted about the upgrades to make the use more efficient. Highly recommended.",
-      "image": "/images/testimonials/kirti-pingale.jpg"
-    },
-    {
-    "id": "2",
-    "name": "Dr. Vignesh R",
-    "role": "Restorative Dentist & Endodontist",
-    "company": "—",
-    "location": "Mumbai, India",
-    "rating": 5,
-    "text": "I’m a practicing restorative dentist and endodontist from Mumbai. I have three dental loupes including a Zeiss 2.5x, Keeler 3.5x, and an Admetec ergo 7.5x. I’m really impressed by the Admetec 7.5x ergo loupes with orchid light. The precision in manufacturing and the service from Haitech Medical are excellent. I have huge respect for Mr. Anand Rajput who is always ready to help. Special thanks to Ms. Priyanka and Mr. Mehul for their super fast problem-solving skills.",
-    "image": "/images/testimonials/vignesh-r.jpg"
-     },
-
-      {
-        "id": "3",
-        "name": "Dr. D N Bagadiya",
-        "role": "Dental Surgeon",
-        "company": "—",
-        "location": "India",
-        "rating": 5,
-        "text": "My experience with Haitech Solutions for my Admetec loupes has been very good. I have been using the loupes for more than four years. Two months ago, I faced a minor issue and the loupes needed repair in Israel. The team kept me updated throughout the process until I received them repaired. Thank you for the great service.",
-        "image": "/images/testimonials/dn-bagadiya.jpg"
-      },
+    "testimonials": [
         {
-      "id": "4",
-      "name": "Dr. Divya Sharma",
-      "role": "Dental & Medical Practitioner",
-      "company": "—",
-      "location": "India",
-      "rating": 5,
-      "text": "Admetec loupes by Haitech Medical Solutions are among the best surgical loupes in the Indian medical equipment market. We have been using Admetec loupes and various dental and medical products from Haitech since 2019 and have been extremely satisfied with their quality and post-sale service. The team is highly professional and capable. We regularly use their TTL loupes, ergonomic ergo loupes, LED lights, carbide burs, Medsey surgical instruments, and many other tools. They consistently deliver high-quality products with prompt service. Highly recommended.",
-      "image": "/images/testimonials/divya-sharma.jpg"
-    },
+            "id": "1",
+            "name": "Dr. Kirti Pingale",
+            "role": "Dental Practitioner",
+            "company": "—",
+            "location": "India",
+            "rating": 5,
+            "text": "We ordered Admetec loupes from Haitech. The product is amazing and really comfortable to use. We received trial, prompt and thorough service always. Tiwari sir made sure all the necessary adjustments were made to get the perfect dimensions and always kept us posted about the upgrades to make the use more efficient. Highly recommended.",
+            "image": "/images/testimonials/kirti-pingale.jpg"
+        },
         {
-      "id": "5",
-      "name": "Dr. Shabeer Wani",
-      "role": "Plastic Surgeon",
-      "company": "—",
-      "location": "Noida, India",
-      "rating": 5,
-      "text": "I am a plastic surgeon who regularly performs cleft lip and cleft palate surgeries. Earlier, using normal loupes caused neck pain after just a few cases. After switching to ergonomic loupes from Haitech, my experience completely changed. The response from their team was quick and highly professional. Mr. Shalinder Kumar personally visited, took measurements, and kept me updated throughout the delivery process. The loupes were delivered exactly as promised, even accommodating my travel schedule. The loupes are extremely lightweight and comfortable to wear for hours with no neck pain. I strongly recommend them to all plastic surgeons.",
-      "image": "/images/testimonials/shabeer-wani.jpg"
-    },
-      {
-    "id": "6",
-    "name": "Dr. Vineeth Kumar",
-    "role": "Dental Practitioner",
-    "company": "—",
-    "location": "India",
-    "rating": 5,
-    "text": "I have been receiving services from Haitech Medical Solutions for over three years, and their post-sales support has been remarkable. The team consistently helps beyond the warranty period and ensures our requirements are met at affordable pricing. Their sales and biomedical service support have greatly benefited my dental practice. My daily work has become much easier after using the Admetec loupes and lights provided by them.",
-    "image": "/images/testimonials/vineeth-kumar.jpg"
-  }
+            "id": "2",
+            "name": "Dr. Vignesh R",
+            "role": "Restorative Dentist & Endodontist",
+            "company": "—",
+            "location": "Mumbai, India",
+            "rating": 5,
+            "text": "I’m a practicing restorative dentist and endodontist from Mumbai. I have three dental loupes including a Zeiss 2.5x, Keeler 3.5x, and an Admetec ergo 7.5x. I’m really impressed by the Admetec 7.5x ergo loupes with orchid light. The precision in manufacturing and the service from Haitech Medical are excellent. I have huge respect for Mr. Anand Rajput who is always ready to help. Special thanks to Ms. Priyanka and Mr. Mehul for their super fast problem-solving skills.",
+            "image": "/images/testimonials/vignesh-r.jpg"
+        },
 
-
-  ]
+        {
+            "id": "3",
+            "name": "Dr. D N Bagadiya",
+            "role": "Dental Surgeon",
+            "company": "—",
+            "location": "India",
+            "rating": 5,
+            "text": "My experience with Haitech Solutions for my Admetec loupes has been very good. I have been using the loupes for more than four years. Two months ago, I faced a minor issue and the loupes needed repair in Israel. The team kept me updated throughout the process until I received them repaired. Thank you for the great service.",
+            "image": "/images/testimonials/dn-bagadiya.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Dr. Divya Sharma",
+            "role": "Dental & Medical Practitioner",
+            "company": "—",
+            "location": "India",
+            "rating": 5,
+            "text": "Admetec loupes by Haitech Medical Solutions are among the best surgical loupes in the Indian medical equipment market. We have been using Admetec loupes and various dental and medical products from Haitech since 2019 and have been extremely satisfied with their quality and post-sale service. The team is highly professional and capable. We regularly use their TTL loupes, ergonomic ergo loupes, LED lights, carbide burs, Medsey surgical instruments, and many other tools. They consistently deliver high-quality products with prompt service. Highly recommended.",
+            "image": "/images/testimonials/divya-sharma.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Dr. Shabeer Wani",
+            "role": "Plastic Surgeon",
+            "company": "—",
+            "location": "Noida, India",
+            "rating": 5,
+            "text": "I am a plastic surgeon who regularly performs cleft lip and cleft palate surgeries. Earlier, using normal loupes caused neck pain after just a few cases. After switching to ergonomic loupes from Haitech, my experience completely changed. The response from their team was quick and highly professional. Mr. Shalinder Kumar personally visited, took measurements, and kept me updated throughout the delivery process. The loupes were delivered exactly as promised, even accommodating my travel schedule. The loupes are extremely lightweight and comfortable to wear for hours with no neck pain. I strongly recommend them to all plastic surgeons.",
+            "image": "/images/testimonials/shabeer-wani.jpg"
+        },
+        {
+            "id": "6",
+            "name": "Dr. Vineeth Kumar",
+            "role": "Dental Practitioner",
+            "company": "—",
+            "location": "India",
+            "rating": 5,
+            "text": "I have been receiving services from Haitech Medical Solutions for over three years, and their post-sales support has been remarkable. The team consistently helps beyond the warranty period and ensures our requirements are met at affordable pricing. Their sales and biomedical service support have greatly benefited my dental practice. My daily work has become much easier after using the Admetec loupes and lights provided by them.",
+            "image": "/images/testimonials/vineeth-kumar.jpg"
+        }
+    ]
 }

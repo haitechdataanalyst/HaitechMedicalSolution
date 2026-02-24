@@ -1,63 +1,63 @@
 {
-  "frames": [
-    {
-      "id": "blues",
-      "name": "Blues",
-      "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Black.webp",
-      "priceModifier": 0,
-      "colors": [
-        { "id": "black", "name": " Black", "hex": "#000000", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Black.webp" },
-        { "id": "blue", "name": "Blue", "hex": "#363966", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Blue.webp" },
-        { "id": "bronze", "name": "Bronze", "hex": "#a16207", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Bronze.webp" },
-        { "id": "pink", "name": "Pink", "hex": "#ec4899", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Pink.webp" }
-      ]
-    },
-    {
-      "id": "indie",
-      "name": "Indie",
-      "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Champagne.webp",
-      "priceModifier": 50,
-      "colors": [
-        { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Black.jpg" },
-        { "id": "champagne", "name": "Champagne", "hex": "#C1B0AD", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Champagne.webp" },
-        { "id": "Midnight-Blue", "name": "Midnight Blue", "hex": "#2C2F50", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Midnight-Blue.webp" },
-        { "id": "orange-lava", "name": "Orange Lava", "hex": "#AF3936", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Orange-Lava.webp" }
-      ]
-    },
-    {
-      "id": "jazz",
-      "name": "Jazz",
-      "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-BlueBlack-Color.webp",
-      "priceModifier": 100,
-      "colors": [
-        { "id": "blue-black", "name": "Blue & Black", "hex": "#476DA5", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-BlueBlack-Color.webp" },
-        { "id": "orange-black", "name": "Orange & Black", "hex": "#E57F3D", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-OrangeBlack-Color.webp" },
-        { "id": "red-black", "name": "Red & Black", "hex": "#B44A4D", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-RedBlack-Color.webp" }
-      ]
-    },
-    {
-      "id": "soul",
-      "name": "Soul",
-      "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Black.webp",
-      "priceModifier": 100,
-      "colors": [
-        { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Black.webp" },
-        { "id": "bordo", "name": "Bordo", "hex": "#77374B", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Bordo.webp" },
-        { "id": "brown", "name": "Brown", "hex": "#4A3E40", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Brown.webp" },
-        { "id": "pink", "name": "Pink", "hex": "#AA5976", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Pink.webp" }
-      ]
-    },
-    {
-      "id": "progear",
-      "name": "Progear",
-      "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp",
-      "priceModifier": 75,
-      "colors": [
-        { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp" },
-        { "id": "green", "name": "Green", "hex": "#6A7D79", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Green-Color.webp" },
-        { "id": "red-black", "name": "Red & Black", "hex": "#524A42", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-RedBlack-Color.webp" },
-        { "id": "white-blue", "name": "White & Blue", "hex": "#E2DFE2", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-WhiteBlue-Color.webp" }
-      ]
-    }
-  ]
+    "frames": [
+        {
+            "id": "blues",
+            "name": "Blues",
+            "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Black.webp",
+            "priceModifier": 0,
+            "colors": [
+                { "id": "black", "name": " Black", "hex": "#000000", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Black.webp" },
+                { "id": "blue", "name": "Blue", "hex": "#363966", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Blue.webp" },
+                { "id": "bronze", "name": "Bronze", "hex": "#a16207", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Bronze.webp" },
+                { "id": "pink", "name": "Pink", "hex": "#ec4899", "image": "/images/products/admetec/Our-Frames/Blues-Frames/Blues-Pink.webp" }
+            ]
+        },
+        {
+            "id": "indie",
+            "name": "Indie",
+            "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Champagne.webp",
+            "priceModifier": 50,
+            "colors": [
+                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Black.jpg" },
+                { "id": "champagne", "name": "Champagne", "hex": "#C1B0AD", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Champagne.webp" },
+                { "id": "Midnight-Blue", "name": "Midnight Blue", "hex": "#2C2F50", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Midnight-Blue.webp" },
+                { "id": "orange-lava", "name": "Orange Lava", "hex": "#AF3936", "image": "/images/products/admetec/Our-Frames/Indie-Frames/Indie-Orange-Lava.webp" }
+            ]
+        },
+        {
+            "id": "jazz",
+            "name": "Jazz",
+            "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-BlueBlack-Color.webp",
+            "priceModifier": 100,
+            "colors": [
+                { "id": "blue-black", "name": "Blue & Black", "hex": "#476DA5", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-BlueBlack-Color.webp" },
+                { "id": "orange-black", "name": "Orange & Black", "hex": "#E57F3D", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-OrangeBlack-Color.webp" },
+                { "id": "red-black", "name": "Red & Black", "hex": "#B44A4D", "image": "/images/products/admetec/Our-Frames/Jazz-Frames/Jazz-Frame-RedBlack-Color.webp" }
+            ]
+        },
+        {
+            "id": "soul",
+            "name": "Soul",
+            "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Black.webp",
+            "priceModifier": 100,
+            "colors": [
+                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Black.webp" },
+                { "id": "bordo", "name": "Bordo", "hex": "#77374B", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Bordo.webp" },
+                { "id": "brown", "name": "Brown", "hex": "#4A3E40", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Brown.webp" },
+                { "id": "pink", "name": "Pink", "hex": "#AA5976", "image": "/images/products/admetec/Our-Frames/Soul-Frames/Soul-Pink.webp" }
+            ]
+        },
+        {
+            "id": "progear",
+            "name": "Progear",
+            "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp",
+            "priceModifier": 75,
+            "colors": [
+                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp" },
+                { "id": "green", "name": "Green", "hex": "#6A7D79", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Green-Color.webp" },
+                { "id": "red-black", "name": "Red & Black", "hex": "#524A42", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-RedBlack-Color.webp" },
+                { "id": "white-blue", "name": "White & Blue", "hex": "#E2DFE2", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-WhiteBlue-Color.webp" }
+            ]
+        }
+    ]
 }

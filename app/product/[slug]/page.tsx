@@ -1,62 +1,57 @@
 import { notFound } from "next/navigation";
 import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories, getAllFrames } from "@/lib/catalog";
-import { Product } from "@/types";
 import { ProductDetail } from "@/components/products";
 import { Breadcrumbs } from "@/components/ui";
+import { getDynamicMetadata, getMetadata } from "@/lib/metadata";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  const products = getAllProducts();
+    const products = getAllProducts();
 
-  // Only include products that would use the /product/[slug] route
-  // (i.e., products without a parent category - which in our structure
-  // all products have parents, so this might not return anything)
-  return products
-    .filter((p) => {
-      const path = getProductPath(p);
-      return path.startsWith("/product/");
-    })
-    .map((product) => ({
-      slug: product.slug,
-    }));
+    // Only include products that would use the /product/[slug] route
+    // (i.e., products without a parent category - which in our structure
+    // all products have parents, so this might not return anything)
+    return products
+        .filter((p) => {
+            const path = getProductPath(p);
+            return path.startsWith("/product/");
+        })
+        .map((product) => ({
+            slug: product.slug,
+        }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const product = getProductBySlug(slug);
+    const { slug } = await params;
+    const product = getProductBySlug(slug);
 
-  if (!product) {
-    return {
-      title: "Product Not Found | Haitech Medical",
-    };
-  }
+    if (!product) {
+        return getMetadata("productNotFound");
+    }
 
-  return {
-    title: `${product.name} | Haitech Medical`,
-    description: product.description || `View ${product.name} at Haitech Medical`,
-  };
+    return getDynamicMetadata(product.name, product.description || `View ${product.name} at Haitech Medical`);
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const { slug } = await params;
-  const product = getProductBySlug(slug);
+    const { slug } = await params;
+    const product = getProductBySlug(slug);
 
-  if (!product) {
-    notFound();
-  }
+    if (!product) {
+        notFound();
+    }
 
-  const breadcrumbs = getProductBreadcrumbs(product);
-  const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
-  const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
-  const frames = getAllFrames();
+    const breadcrumbs = getProductBreadcrumbs(product);
+    const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
+    const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
+    const frames = getAllFrames();
 
-  return (
-    <>
-      <Breadcrumbs items={breadcrumbs} />
-      <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} />
-    </>
-  );
+    return (
+        <>
+            <Breadcrumbs items={breadcrumbs} />
+            <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} />
+        </>
+    );
 }

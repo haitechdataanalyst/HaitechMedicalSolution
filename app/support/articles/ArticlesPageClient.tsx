@@ -8,116 +8,93 @@ import { articles, ArticleData } from "@/components/articles";
 const categories = ["All", "Loupes", "Lights", "Ergonomics", "Support"];
 
 export function ArticlesPageClient() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredArticles =
-    selectedCategory === "All"
-      ? articles
-      : articles.filter((article: ArticleData) => article.category === selectedCategory);
+    const filteredArticles = selectedCategory === "All" ? articles : articles.filter((article: ArticleData) => article.category === selectedCategory);
 
-  return (
-    <div className="space-y-8">
-      {/* Category Filter */}
-      <div className="flex flex-wrap gap-2 justify-center">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              selectedCategory === category
-                ? "bg-primary-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      {/* Articles List */}
-      <div className="space-y-4">
-        {filteredArticles.map((article: ArticleData) => (
-          <article
-            key={article.id}
-            className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200 overflow-hidden flex flex-col md:flex-row md:items-center"
-          >
-            {/* Thumbnail Image / Placeholder */}
-            <div className="relative h-40 w-full md:h-40 md:w-52 lg:w-64 overflow-hidden shrink-0 bg-gray-50">
-              {article.imageSrc ? (
-                <img
-                  src={article.imageSrc}
-                  alt={article.imageAlt || article.title}
-                  className="h-full w-full object-cover"
-                />
-              ) : null}
+    return (
+        <div className="space-y-8">
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2">
+                {categories.map((category) => (
+                    <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+                    >
+                        {category}
+                    </button>
+                ))}
             </div>
 
-            <div className="p-6 flex-1">
-              {/* Category Badge */}
-              <div className="flex items-center gap-2 mb-3">
-                <Tag className="w-4 h-4 text-primary-600" />
-                <span className="text-xs font-medium text-primary-600 uppercase tracking-wide">
-                  {article.category}
-                </span>
-              </div>
+            {/* Articles List */}
+            <div className="space-y-4">
+                {filteredArticles.map((article: ArticleData) => (
+                    <article
+                        key={article.id}
+                        className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md md:flex-row md:items-center"
+                    >
+                        {/* Thumbnail Image / Placeholder */}
+                        <div className="relative h-40 w-full shrink-0 overflow-hidden bg-gray-50 md:h-40 md:w-52 lg:w-64">
+                            {article.imageSrc ? <img src={article.imageSrc} alt={article.imageAlt || article.title} className="h-full w-full object-cover" /> : null}
+                        </div>
 
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                <Link
-                  href={`/support/articles/${article.slug}`}
-                  className="hover:text-primary-600 transition-colors"
-                >
-                  {article.title}
-                </Link>
-              </h3>
+                        <div className="flex-1 p-6">
+                            {/* Category Badge */}
+                            <div className="mb-3 flex items-center gap-2">
+                                <Tag className="text-primary-600 h-4 w-4" />
+                                <span className="text-primary-600 text-xs font-medium tracking-wide uppercase">{article.category}</span>
+                            </div>
 
-              {/* Excerpt */}
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                {article.excerpt}
-              </p>
+                            {/* Title */}
+                            <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-gray-900">
+                                <Link href={`/support/articles/${article.slug}`} className="hover:text-primary-600 transition-colors">
+                                    {article.title}
+                                </Link>
+                            </h3>
 
-              {/* Meta Info */}
-              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 mb-4">
-                <div className="flex items-center gap-1">
-                  <User className="w-3 h-3" />
-                  <span>{article.author}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Calendar className="w-3 h-3" />
-                  <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
-                </div>
-                {article.publishedTime && (
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    <span>{article.publishedTime}</span>
-                  </div>
-                )}
-                {typeof article.views === "number" && (
-                  <div className="flex items-center gap-1">
-                    <Eye className="w-3 h-3" />
-                    <span>{article.views} views</span>
-                  </div>
-                )}
-              </div>
+                            {/* Excerpt */}
+                            <p className="mb-4 line-clamp-3 text-sm text-gray-600">{article.excerpt}</p>
 
-              {/* Read More Link */}
-              <Link
-                href={`/support/articles/${article.slug}`}
-                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
-              >
-                Read More
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                            {/* Meta Info */}
+                            <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                                <div className="flex items-center gap-1">
+                                    <User className="h-3 w-3" />
+                                    <span>{article.author}</span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <Calendar className="h-3 w-3" />
+                                    <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
+                                </div>
+                                {article.publishedTime && (
+                                    <div className="flex items-center gap-1">
+                                        <Clock className="h-3 w-3" />
+                                        <span>{article.publishedTime}</span>
+                                    </div>
+                                )}
+                                {typeof article.views === "number" && (
+                                    <div className="flex items-center gap-1">
+                                        <Eye className="h-3 w-3" />
+                                        <span>{article.views} views</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Read More Link */}
+                            <Link href={`/support/articles/${article.slug}`} className="text-primary-600 hover:text-primary-700 inline-flex items-center gap-2 text-sm font-medium transition-colors">
+                                Read More
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
+                        </div>
+                    </article>
+                ))}
             </div>
-          </article>
-        ))}
-      </div>
 
-      {filteredArticles.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No articles found in this category.</p>
+            {filteredArticles.length === 0 && (
+                <div className="py-12 text-center">
+                    <p className="text-gray-500">No articles found in this category.</p>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 }

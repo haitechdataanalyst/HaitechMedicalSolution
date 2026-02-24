@@ -1,95 +1,94 @@
 {
-  "team": [
-    {
-      "id": "1",
-      "name": "Mr. Mehul Nagar ",
-      "designation": "Director  ",
-      "image": "/images/team/john-doe.jpg"
-    },
-    {
-      "id": "2",
-      "name": "Mr. Anand Singh Rajput",
-      "designation": "General Manager",
-      "image": "/images/team/jane-smith.jpg"
-    },
-    {
-      "id": "3",
-      "name": "Mrs. Kavita Jukunte",
-      "designation": "Operations Manager",
-      "image": "/images/team/raj-patel.jpg"
-    },
-    {
-      "id": "4",
-      "name": "Mr. Parth Parmar",
-      "designation": "Dealers Manager",
-      "image": "/images/team/priya-sharma.jpg"
-    },
-    {
-      "id": "5",
-      "name": "Ms. Supriya Joshi",
-      "designation": "Admin",
-      "image": "/images/team/amit-kumar.jpg"
-    },
-    {
-      "id": "6",
-      "name": "Mrs. Shrudi",
-      "designation": "Logistics",
-      "image": "/images/team/vikram-singh.jpg"
-    },
-    {
-      "id": "7",
-      "name": "Ms. Akshada Pawar",
-      "designation": "Admin",
-      "image": "/images/team/anita-desai.jpg"
-    },
-    {
-      "id": "8",
-      "name": "Mr. Manish Satam",
-      "designation": "Salli Head",
-      "image": "/images/team/rakesh-kumar.jpg"
-    },
-    {
-      "id": "9",
-      "name": "Mr. Atharva Chavan",
-      "designation": "Medesy Head",
-      "image": "/images/team/priya-sharma.jpg"
-    },
-    {
-      "id": "10",
-      "name": "Ms. Sejal",
-      "designation": "Medesy executive",
-      "image": "/images/team/amit-kumar.jpg"
-    },
-    {
-      "id": "11",
-      "name": "Ms.Vanshika Pakhre",
-      "designation": "Inside Sales Executive",
-      "image": "/images/team/sunita-verma.jpg"
-    },
-    {
-      "id": "12",
-      "name": "Ms. Riya Kamble",
-      "designation": "Inside Sales Executive",
-      "image": "/images/team/vikram-singh.jpg"
-    },
-    {
-      "id": "13",
-      "name": "Ms. Kaushiki",
-      "designation": "Inside Sales Executive",
-      "image": "/images/team/anita-desai.jpg"
-    },
-    {
-      "id": "14",
-      "name": "Mr.Shailendra Jadhav",
-      "designation": "Accounts",
-      "image": "/images/team/rakesh-kumar.jpg"
-    },
-    {
-      "id": "15",
-      "name": "Mr.Dhiraj Bane",
-      "designation": "Accounts",
-      "image": "/images/team/priya-sharma.jpg"
-    }
-
-  ]
+    "team": [
+        {
+            "id": "1",
+            "name": "Mr. Mehul Nagar ",
+            "designation": "Director  ",
+            "image": "/images/team/john-doe.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Mr. Anand Singh Rajput",
+            "designation": "General Manager",
+            "image": "/images/team/jane-smith.jpg"
+        },
+        {
+            "id": "3",
+            "name": "Mrs. Kavita Jukunte",
+            "designation": "Operations Manager",
+            "image": "/images/team/raj-patel.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Mr. Parth Parmar",
+            "designation": "Dealers Manager",
+            "image": "/images/team/priya-sharma.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Ms. Supriya Joshi",
+            "designation": "Admin",
+            "image": "/images/team/amit-kumar.jpg"
+        },
+        {
+            "id": "6",
+            "name": "Mrs. Shrudi",
+            "designation": "Logistics",
+            "image": "/images/team/vikram-singh.jpg"
+        },
+        {
+            "id": "7",
+            "name": "Ms. Akshada Pawar",
+            "designation": "Admin",
+            "image": "/images/team/anita-desai.jpg"
+        },
+        {
+            "id": "8",
+            "name": "Mr. Manish Satam",
+            "designation": "Salli Head",
+            "image": "/images/team/rakesh-kumar.jpg"
+        },
+        {
+            "id": "9",
+            "name": "Mr. Atharva Chavan",
+            "designation": "Medesy Head",
+            "image": "/images/team/priya-sharma.jpg"
+        },
+        {
+            "id": "10",
+            "name": "Ms. Sejal",
+            "designation": "Medesy executive",
+            "image": "/images/team/amit-kumar.jpg"
+        },
+        {
+            "id": "11",
+            "name": "Ms.Vanshika Pakhre",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/sunita-verma.jpg"
+        },
+        {
+            "id": "12",
+            "name": "Ms. Riya Kamble",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/vikram-singh.jpg"
+        },
+        {
+            "id": "13",
+            "name": "Ms. Kaushiki",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/anita-desai.jpg"
+        },
+        {
+            "id": "14",
+            "name": "Mr.Shailendra Jadhav",
+            "designation": "Accounts",
+            "image": "/images/team/rakesh-kumar.jpg"
+        },
+        {
+            "id": "15",
+            "name": "Mr.Dhiraj Bane",
+            "designation": "Accounts",
+            "image": "/images/team/priya-sharma.jpg"
+        }
+    ]
 }

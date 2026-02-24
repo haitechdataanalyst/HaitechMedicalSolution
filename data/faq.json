@@ -1,60 +1,59 @@
 {
-  "faqs": [
-    {
-      "id": 1,
-      "question": "What are the benefits of using Loupes and especially the Ergo Loupes?",
-      "answer": "Loupes improve precision and accuracy by magnifying the surgical area, reducing eye strain, and enhancing posture during long procedures. They are essential for maintaining high standards of care in dental and surgical practices."
-    },
-    {
-      "id": 2,
-      "question": "How do I choose the right magnification for my loupes?",
-      "answer": "This is the million dollars question. If you ask 3 different dental practitioners, you might get 4 different answers. From our experience, a good magnification to start with would be 3.0X-5.0X in Ergo loupes (2.5X-4.5X in conventional loupes). Other criteria to consider when choosing your loupes would be: How many teeth do you want to see (the higher the magnification is, the smaller would your field of view be hence you’ll see less teeth)? How much of your practice consists of endo, surgical or aesthetics? We found that most aesthetic dentistry practitioners prefer to see a wider part of the arch, while endo and surgical prefer to see more minute details while compromising on the field of view. Please remember that there’s no one-size-fits-all solution here. Give us a call and we would be happy to give you further guidance."
-    },
-    {
-      "id": 3,
-      "question": "How do I know if my loupes fit correctly?",
-      "answer": "Proper fitting is crucial for comfort and effectiveness. We insist on fitting consultations to ensure your loupes are tailored to your facial structure, posture, and working distance, providing optimal performance and comfort."
-    },
-    {
-      "id": 4,
-      "question": "What are the advantages of the Ergo over conventional TTL Loupes?",
-      "answer": "Although all loupes enable you to sit with a straight back, only the Ergo helps you maintain a straight neck! These days, dental practitioners spend a significant amount of time outside their practice still bending their necks due to the increased use of mobile phones. From our observations (yet to be confirmed by research) there are more occasions of neck problems in young dental practitioners than there were 10 or even 5 years ago."
-    },
-    {
-      "id": 5,
-      "question": "What can I expect when I receive my loupes?",
-      "answer": "There is always an adjustment period of 1-14 days, where your eyes and brain need to practice how to see with the unique visuals of Ergo loupes. Galilean loupes have little to no adjustment period. Once you have trained your eyes to see with the loupes – you will never be able to work without them."
-    },
-    {
-      "id": 6,
-      "question": "What types of lights do you offer, and how do they enhance visibility?",
-      "answer": "We offer a variety of LED and fiber-optic lights designed to provide bright, focused illumination in your working area. These lights reduce shadows and improve visibility, allowing for more precise work."
-    },
-    {
-      "id": 7,
-      "question": "How do I attach a light to my loupes?",
-      "answer": "Attaching a light to your loupes is simple and secure. Our lights are designed to integrate seamlessly with our loupes, and we provide step-by-step instructions along with support from our team if needed."
-    },
-    {
-      "id": 8,
-      "question": "How long does it take to receive my loupes or lights after ordering?",
-      "answer": "Typically, orders are processed within 2 business days, and shipping times may vary depending on your location, but it can take between 6-8 weeks to make and ship your loupes. We’ll provide you with tracking information so you can follow your order’s progress."
-    },
-    {
-      "id": 9,
-      "question": "What payment methods do you accept?",
-      "answer": "We accept various payment methods, including credit cards, PayPal, and direct bank transfers, ensuring a secure and convenient purchasing process."
-    },
-    {
-      "id": 10,
-      "question": "Can I try the loupes before purchasing?",
-      "answer": "Please contact us to arrange a demo and experience the benefits of Admetec loupes firsthand. A member of our team will gladly reach out to you."
-    },
-    {
-      "id": 11,
-      "question": "What is your return policy for loupes and lights?",
-      "answer": "We want you to be completely satisfied with your purchase. If you’re not, we offer a return policy on loupes and lights, subject to a restocking fee,  provided they are in their original condition and you have not been able to adjust to them. You can check out our Sales Policy  for full information or contact our customer service team for assistance."
-    }
-    
-  ]
+    "faqs": [
+        {
+            "id": 1,
+            "question": "What are the benefits of using Loupes and especially the Ergo Loupes?",
+            "answer": "Loupes improve precision and accuracy by magnifying the surgical area, reducing eye strain, and enhancing posture during long procedures. They are essential for maintaining high standards of care in dental and surgical practices."
+        },
+        {
+            "id": 2,
+            "question": "How do I choose the right magnification for my loupes?",
+            "answer": "This is the million dollars question. If you ask 3 different dental practitioners, you might get 4 different answers. From our experience, a good magnification to start with would be 3.0X-5.0X in Ergo loupes (2.5X-4.5X in conventional loupes). Other criteria to consider when choosing your loupes would be: How many teeth do you want to see (the higher the magnification is, the smaller would your field of view be hence you’ll see less teeth)? How much of your practice consists of endo, surgical or aesthetics? We found that most aesthetic dentistry practitioners prefer to see a wider part of the arch, while endo and surgical prefer to see more minute details while compromising on the field of view. Please remember that there’s no one-size-fits-all solution here. Give us a call and we would be happy to give you further guidance."
+        },
+        {
+            "id": 3,
+            "question": "How do I know if my loupes fit correctly?",
+            "answer": "Proper fitting is crucial for comfort and effectiveness. We insist on fitting consultations to ensure your loupes are tailored to your facial structure, posture, and working distance, providing optimal performance and comfort."
+        },
+        {
+            "id": 4,
+            "question": "What are the advantages of the Ergo over conventional TTL Loupes?",
+            "answer": "Although all loupes enable you to sit with a straight back, only the Ergo helps you maintain a straight neck! These days, dental practitioners spend a significant amount of time outside their practice still bending their necks due to the increased use of mobile phones. From our observations (yet to be confirmed by research) there are more occasions of neck problems in young dental practitioners than there were 10 or even 5 years ago."
+        },
+        {
+            "id": 5,
+            "question": "What can I expect when I receive my loupes?",
+            "answer": "There is always an adjustment period of 1-14 days, where your eyes and brain need to practice how to see with the unique visuals of Ergo loupes. Galilean loupes have little to no adjustment period. Once you have trained your eyes to see with the loupes – you will never be able to work without them."
+        },
+        {
+            "id": 6,
+            "question": "What types of lights do you offer, and how do they enhance visibility?",
+            "answer": "We offer a variety of LED and fiber-optic lights designed to provide bright, focused illumination in your working area. These lights reduce shadows and improve visibility, allowing for more precise work."
+        },
+        {
+            "id": 7,
+            "question": "How do I attach a light to my loupes?",
+            "answer": "Attaching a light to your loupes is simple and secure. Our lights are designed to integrate seamlessly with our loupes, and we provide step-by-step instructions along with support from our team if needed."
+        },
+        {
+            "id": 8,
+            "question": "How long does it take to receive my loupes or lights after ordering?",
+            "answer": "Typically, orders are processed within 2 business days, and shipping times may vary depending on your location, but it can take between 6-8 weeks to make and ship your loupes. We’ll provide you with tracking information so you can follow your order’s progress."
+        },
+        {
+            "id": 9,
+            "question": "What payment methods do you accept?",
+            "answer": "We accept various payment methods, including credit cards, PayPal, and direct bank transfers, ensuring a secure and convenient purchasing process."
+        },
+        {
+            "id": 10,
+            "question": "Can I try the loupes before purchasing?",
+            "answer": "Please contact us to arrange a demo and experience the benefits of Admetec loupes firsthand. A member of our team will gladly reach out to you."
+        },
+        {
+            "id": 11,
+            "question": "What is your return policy for loupes and lights?",
+            "answer": "We want you to be completely satisfied with your purchase. If you’re not, we offer a return policy on loupes and lights, subject to a restocking fee,  provided they are in their original condition and you have not been able to adjust to them. You can check out our Sales Policy  for full information or contact our customer service team for assistance."
+        }
+    ]
 }

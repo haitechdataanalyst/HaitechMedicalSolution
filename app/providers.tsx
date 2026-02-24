@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { ReactNode } from 'react';
-import { CartProvider, CartDrawer } from '@/components/cart';
+import { ReactNode } from "react";
+import { CartProvider, CartDrawer } from "@/components/cart";
 
 interface ProvidersProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 export default function Providers({ children }: ProvidersProps) {
-  return (
-    <CartProvider>
-      {children}
-      <CartDrawer />
-    </CartProvider>
-  );
+    return (
+        <CartProvider>
+            {children}
+            <CartDrawer />
+        </CartProvider>
+    );
 }

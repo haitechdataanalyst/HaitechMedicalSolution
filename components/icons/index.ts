@@ -1,2 +1,2 @@
-export * from './Icons';
-export { Lordicon, type IconName } from './LordiconProvider';
+export * from "./Icons";
+export { Lordicon, type IconName } from "./LordiconProvider";

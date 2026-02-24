@@ -8,41 +8,47 @@ import siteConfig from "@/data/site-config.json";
 import { WhatsAppButton } from "@/components/ui";
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-poppins",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Haitech Medical | Premium Medical & Dental Equipment",
-  description: "Australia's leading supplier of premium dental loupes, LED headlights, and medical equipment. Quality products with exceptional service.",
-  keywords: ["dental loupes", "medical equipment", "LED headlights", "surgical loupes", "dental equipment", "Australia"],
+    title: {
+        template: "%s | Haitech Medical",
+        default: "Haitech Medical | Premium Medical & Dental Equipment",
+    },
+    description: "Your trusted partner for premium dental and medical equipment in India. Authorized distributor of Admetec, Medesy, Strauss, Salli, and more.",
+    keywords: ["dental loupes", "medical equipment", "LED headlights", "surgical loupes", "dental equipment", "India", "Admetec", "Medesy"],
+    openGraph: {
+        type: "website",
+        siteName: "Haitech Medical Solutions",
+    },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${poppins.variable} bg-surface font-sans antialiased`}>
-        <Providers>
-          <NavigationProvider>
-            <div className="flex min-h-screen flex-col">
-              <TopHeader />
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer sections={navigation.footer.sections} config={siteConfig} />
-              <div className="fixed bottom-6 right-6">
-                <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="lg" className="w-16 h-16 rounded-full cursor-pointer" />
-              </div>
-            </div>
-          </NavigationProvider>
-        </Providers>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${poppins.variable} bg-surface font-sans antialiased`}>
+                <Providers>
+                    <NavigationProvider>
+                        <div className="flex min-h-screen flex-col">
+                            <TopHeader />
+                            <Header />
+                            <main className="flex-1">{children}</main>
+                            <Footer sections={navigation.footer.sections} config={siteConfig} />
+                            <div className="fixed right-6 bottom-6">
+                                <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="lg" className="h-16 w-16 cursor-pointer rounded-full" />
+                            </div>
+                        </div>
+                    </NavigationProvider>
+                </Providers>
+            </body>
+        </html>
+    );
 }
-

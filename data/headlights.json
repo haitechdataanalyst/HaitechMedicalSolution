@@ -1,106 +1,69 @@
 {
-  "intro": {
-    "title": "Admetec Lights",
-    "description": "Loupes and lights are two elements that make up a single solution and should be considered in conjunction, not as separate products. Matching the best light for your loupes is a key step in the customization process.",
-    "features": [
-      "High-quality, durable LED",
-      "Daylight \"living color\"",
-      "Ergonomic and easy interface",
-      "Anti-curing yellow filter"
-    ]
-  },
-  "categories": [
-    {
-      "id": "wireless",
-      "name": "Wireless",
-      "description": "Powerful lighting. Ultra-lightweight. Wireless.",
-      "tagline": "Meet the Butterfly EVO, Admetec's cordless headlight series, featuring two models designed for optimal efficiency.",
-      "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S.webp",
-      "products": [
-        {
-          "id": "butterfly-s-evo",
-          "name": "Butterfly-S EVO",
-          "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S-Evo.webp",
-          "description": "Butterflu-S™ EVO provides stronger light intensity to enable work with higher magnifications.",
-          "features": [
-            "Cordless operation",
-            "Ultra-lightweight design",
-            "User-friendly controls",
-            "Swift battery replacement",
-            "Compatible"
-          ]
-        },
-        {
-          "id": "butterfly-evo",
-          "name": "Butterfly EVO",
-          "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-Evo.webp",
-          "description": "Butterfly™ EVO combines effective lighting in an ultra-lightweight, easy-to-use, wireless configuration",
-          "features": [
-            "Cordless operation",
-            "Ultra-lightweight design",
-            "User-friendly controls",
-            "Swift battery replacement",
-            "Compatible"
-          ]
-        }
-      ]
+    "intro": {
+        "title": "Admetec Lights",
+        "description": "Loupes and lights are two elements that make up a single solution and should be considered in conjunction, not as separate products. Matching the best light for your loupes is a key step in the customization process.",
+        "features": ["High-quality, durable LED", "Daylight \"living color\"", "Ergonomic and easy interface", "Anti-curing yellow filter"]
     },
-    {
-      "id": "wired",
-      "name": "Wired",
-      "description": "Ergonomic, Powerful, Designed for efficiency",
-      "tagline": "Introducing Orchid™, Admetec’s wired headlight series, featuring three powerful models. Each Orchid™ model delivers optimal illumination according to your specific needs.",
-      "image": "/images/products/admetec/Lights/HeadLights/Wired/Wired.webp",
-      "products": [
+    "categories": [
         {
-          "id": "orchid-s-headlight",
-          "name": "Orchid-S Headlight",
-          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-S-HeadLight.webp",
-          "description": "Orchid-S™ Provides a higher-intensity light, ideal for surgical procedures and large magnifications.",
-          "features": [
-            "LightWeight",
-            "Ergonomic Configuration",
-            "Plug and Play",
-            "Compatible"
-          ]
+            "id": "wireless",
+            "name": "Wireless",
+            "description": "Powerful lighting. Ultra-lightweight. Wireless.",
+            "tagline": "Meet the Butterfly EVO, Admetec's cordless headlight series, featuring two models designed for optimal efficiency.",
+            "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S.webp",
+            "products": [
+                {
+                    "id": "butterfly-s-evo",
+                    "name": "Butterfly-S EVO",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S-Evo.webp",
+                    "description": "Butterflu-S™ EVO provides stronger light intensity to enable work with higher magnifications.",
+                    "features": ["Cordless operation", "Ultra-lightweight design", "User-friendly controls", "Swift battery replacement", "Compatible"]
+                },
+                {
+                    "id": "butterfly-evo",
+                    "name": "Butterfly EVO",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-Evo.webp",
+                    "description": "Butterfly™ EVO combines effective lighting in an ultra-lightweight, easy-to-use, wireless configuration",
+                    "features": ["Cordless operation", "Ultra-lightweight design", "User-friendly controls", "Swift battery replacement", "Compatible"]
+                }
+            ]
         },
         {
-          "id": "orchid-f-headlight",
-          "name": "Orchid-F Headlight",
-          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
-          "description": "Orchid-F™ features an integrated yellow filter that prevents composite hardening. The function can be turned on and off as needed",
-          "features": [
-            "LightWeight",
-            "Ergonomic Configuration",
-            "Plug and Play",
-            "Compatible"
-          ]
-        },
-        {
-          "id": "orchid-headlight",
-          "name": "Orchid Headlight",
-          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-HeadLight.webp",
-          "description": "The original Orchid™ generates a focused, uniform, and shadow-free round beam for bright white illumination.",
-          "features": [
-            "LightWeight",
-            "Ergonomic Configuration",
-            "Plug and Play",
-            "Compatible"
-          ]
-        },
-        {
-          "id": "orchid-e-headlight",
-          "name": "Orchid-E Headlight",
-          "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
-          "description": "Orchid-E™ Designed for a high-intensity, narrow light beam. Particularly well suited for large magnifications.",
-          "features": [
-            "LightWeight",
-            "Ergonomic Configuration",
-            "Plug and Play",
-            "Compatible"
-          ]
+            "id": "wired",
+            "name": "Wired",
+            "description": "Ergonomic, Powerful, Designed for efficiency",
+            "tagline": "Introducing Orchid™, Admetec’s wired headlight series, featuring three powerful models. Each Orchid™ model delivers optimal illumination according to your specific needs.",
+            "image": "/images/products/admetec/Lights/HeadLights/Wired/Wired.webp",
+            "products": [
+                {
+                    "id": "orchid-s-headlight",
+                    "name": "Orchid-S Headlight",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-S-HeadLight.webp",
+                    "description": "Orchid-S™ Provides a higher-intensity light, ideal for surgical procedures and large magnifications.",
+                    "features": ["LightWeight", "Ergonomic Configuration", "Plug and Play", "Compatible"]
+                },
+                {
+                    "id": "orchid-f-headlight",
+                    "name": "Orchid-F Headlight",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
+                    "description": "Orchid-F™ features an integrated yellow filter that prevents composite hardening. The function can be turned on and off as needed",
+                    "features": ["LightWeight", "Ergonomic Configuration", "Plug and Play", "Compatible"]
+                },
+                {
+                    "id": "orchid-headlight",
+                    "name": "Orchid Headlight",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-HeadLight.webp",
+                    "description": "The original Orchid™ generates a focused, uniform, and shadow-free round beam for bright white illumination.",
+                    "features": ["LightWeight", "Ergonomic Configuration", "Plug and Play", "Compatible"]
+                },
+                {
+                    "id": "orchid-e-headlight",
+                    "name": "Orchid-E Headlight",
+                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
+                    "description": "Orchid-E™ Designed for a high-intensity, narrow light beam. Particularly well suited for large magnifications.",
+                    "features": ["LightWeight", "Ergonomic Configuration", "Plug and Play", "Compatible"]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

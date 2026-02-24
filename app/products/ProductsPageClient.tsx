@@ -5,9 +5,9 @@ import { Category } from "@/types";
 import { fetchCategoryContentsAction } from "@/app/actions/catalog";
 
 interface ProductsPageClientProps {
-  initialCategories: Category[];
+    initialCategories: Category[];
 }
 
 export function ProductsPageClient({ initialCategories }: ProductsPageClientProps) {
-  return <CategoryBrowser initialCategories={initialCategories} fetchCategoryContents={fetchCategoryContentsAction} />;
+    return <CategoryBrowser initialCategories={initialCategories} fetchCategoryContents={fetchCategoryContentsAction} />;
 }

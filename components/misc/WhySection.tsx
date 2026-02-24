@@ -6,56 +6,56 @@ import { Lordicon, type IconName } from "@/components/icons";
 import { RocketIcon } from "lucide-react";
 
 const stats: { value: string; label: string; icon: IconName }[] = [
-  {
-    value: "5+",
-    label: "Products & Counting",
-    icon: "cart",
-  },
-  {
-    value: "1000+",
-    label: "Supported Workshops & Conferences",
-    icon: "conference",
-  },
-  {
-    value: "30+",
-    label: "Partnerships and Expanding",
-    icon: "location",
-  },
-  {
-    value: "13+",
-    label: "Years of Experience",
-    icon: "star",
-  },
+    {
+        value: "5+",
+        label: "Products & Counting",
+        icon: "cart",
+    },
+    {
+        value: "1000+",
+        label: "Supported Workshops & Conferences",
+        icon: "conference",
+    },
+    {
+        value: "30+",
+        label: "Partnerships and Expanding",
+        icon: "location",
+    },
+    {
+        value: "13+",
+        label: "Years of Experience",
+        icon: "star",
+    },
 ];
 
 export default function WhySection() {
-  return (
-    <section className="section bg-primary-100 text-white">
-      <div className="mx-auto w-full md:w-[90vw] lg:w-[85vw] xl:w-[80vw]">
-        <div className="mb-10 text-center md:mb-12">
-          <h2 className="heading-2 text-primary-900 mb-2">Why Choose Haitech Medical?</h2>
-          <p className="text-body-lg text-primary-900 mx-auto max-w-2xl">Trusted by dental professionals across Australia for over a decade</p>
-        </div>
+    return (
+        <section className="section bg-primary-100 text-white">
+            <div className="mx-auto w-full md:w-[90vw] lg:w-[85vw] xl:w-[80vw]">
+                <div className="mb-10 text-center md:mb-12">
+                    <h2 className="heading-2 text-primary-900 mb-2">Why Choose Haitech Medical?</h2>
+                    <p className="text-body-lg text-primary-900 mx-auto max-w-2xl">Trusted by dental professionals across Australia for over a decade</p>
+                </div>
 
-        <div className="mb-10 grid grid-cols-2 gap-6 md:mb-12 md:gap-8 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div key={index} className="group rounded-xl p-2 text-center backdrop-blur-sm transition-all lg:p-6">
-              <Lordicon icon={stat.icon} size={100} trigger="hover" parentHover colors={{ primary: "#1fb6cd", secondary: "#ffffff" }} />
-              <div className="text-primary-900 mb-1 text-3xl font-bold md:text-4xl">{stat.value}</div>
-              <div className="text-primary-900 text-sm md:text-base">{stat.label}</div>
+                <div className="mb-10 grid grid-cols-2 gap-6 md:mb-12 md:gap-8 lg:grid-cols-4">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="group rounded-xl p-2 text-center backdrop-blur-sm transition-all lg:p-6">
+                            <Lordicon icon={stat.icon} size={100} trigger="hover" parentHover colors={{ primary: "#1fb6cd", secondary: "#ffffff" }} />
+                            <div className="text-primary-900 mb-1 text-3xl font-bold md:text-4xl">{stat.value}</div>
+                            <div className="text-primary-900 text-sm md:text-base">{stat.label}</div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center">
+                    <Link href="/support/contact?demo=true">
+                        <Button size="lg" className="text-primary-600 gap-3 bg-white px-20 hover:bg-neutral-100">
+                            <RocketIcon size={20} />
+                            Book a Demo
+                        </Button>
+                    </Link>
+                </div>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Link href="/support/contact?demo=true">
-            <Button size="lg" className="text-primary-600 gap-3 bg-white px-20 hover:bg-neutral-100">
-              <RocketIcon size={20} />
-              Book a Demo
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
