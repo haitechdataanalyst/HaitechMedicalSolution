@@ -66,11 +66,11 @@ export default function Footer({ sections, config }: FooterProps) {
                         <div className="space-y-2.5 text-sm">
                             <p className="flex items-center gap-2">
                                 <PhoneIcon size={16} />
-                                {config.company.phone}
+                                <a href={`tel:${config.company.phone}`} className="break-all">{config.company.phone}</a>
                             </p>
                             <p className="flex items-center gap-2">
                                 <EmailIcon size={16} className="shrink-0" />
-                                <span className="break-all">{config.company.email}</span>
+                                <a href={`mailto:${config.company.email}`} className="break-all">{config.company.email}</a>
                             </p>
                             <p className="flex items-start gap-2">
                                 <LocationIcon size={16} className="mt-0.5 shrink-0" />

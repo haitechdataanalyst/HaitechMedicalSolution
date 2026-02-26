@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { getAllProducts, getProductPath } from "@/lib/catalog";
+import { getRandomProductsForEachCategory, getProductPath } from "@/lib/catalog";
 import { Button } from "@/components/ui";
 import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection } from "@/components/misc";
-import testimonialsData from "@/data/testimonials.json";
+import { testimonials } from "@/data/testimonials.json";
 import Image from "next/image";
 import { ClockIcon, Headset } from "lucide-react";
 
 export default function Home() {
-    const products = getAllProducts().slice(0, 8);
+    const products = getRandomProductsForEachCategory(8);
+    console.log(products);
     // Add paths to products for client-side linking
     const featuredProducts = products.map((p) => ({ ...p, path: getProductPath(p) }));
-    const testimonials = testimonialsData.testimonials;
 
     return (
         <>

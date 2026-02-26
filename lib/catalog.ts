@@ -108,6 +108,16 @@ export function getAllProducts(): Product[] {
     return loadProducts().sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
+export function getRandomProductsForEachCategory(count: number): Product[] {
+    const categories = getAllCategories();
+    const products = getAllProducts();
+    return categories
+        .map((category) => {
+            return products.filter((p) => p.category === category.id)[0];
+        })
+        .slice(1, count);
+}
+
 // Get category by ID
 export function getCategoryById(id: number): Category | null {
     const categories = loadCategories();
