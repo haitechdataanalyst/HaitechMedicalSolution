@@ -84,16 +84,16 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
 
                     {/* Name & Email Row */}
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                        <Input label="Full Name" name="name" type="text" required placeholder="John Smith" error={state.fieldErrors?.name} maxLength={100} />
+                        <Input label="Full Name" name="name" type="text" required placeholder="Ranvijay Singh" error={state.fieldErrors?.name} maxLength={100} />
 
-                        <Input label="Email Address" name="email" type="email" required placeholder="john@example.com" error={state.fieldErrors?.email} maxLength={255} />
+                        <Input label="Email Address" name="email" type="email" required placeholder="ranvijay@example.com" error={state.fieldErrors?.email} maxLength={255} />
                     </div>
 
                     {/* Phone & Postcode Row */}
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                        <Input label="Phone Number" name="phone" type="tel" required placeholder="+61 400 000 000" error={state.fieldErrors?.phone} maxLength={20} />
+                        <Input label="Phone Number" name="phone" type="tel" required placeholder="+91 9876543210" error={state.fieldErrors?.phone} maxLength={20} />
 
-                        <Input label="Postcode" name="postcode" type="text" required placeholder="2000" error={state.fieldErrors?.postcode} maxLength={15} />
+                        <Input label="Postcode" name="postcode" type="text" required placeholder="400086" error={state.fieldErrors?.postcode} maxLength={15} />
                     </div>
 
                     {/* Country Select */}

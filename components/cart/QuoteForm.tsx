@@ -61,11 +61,11 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
                 {/* Hidden cart items */}
                 <input type="hidden" name="cartItems" value={JSON.stringify(items)} />
 
-                <Input label="Full Name" name="name" type="text" required placeholder="John Smith" error={state.fieldErrors?.name} />
+                <Input label="Full Name" name="name" type="text" required placeholder="Ranvijay Singh" error={state.fieldErrors?.name} />
 
-                <Input label="Email Address" name="email" type="email" required placeholder="john@example.com" error={state.fieldErrors?.email} />
+                <Input label="Email Address" name="email" type="email" required placeholder="ranvijay@example.com" error={state.fieldErrors?.email} />
 
-                <Input label="Phone Number" name="phone" type="tel" required placeholder="+61 400 000 000" error={state.fieldErrors?.phone} />
+                <Input label="Phone Number" name="phone" type="tel" required placeholder="+91 9876543210" error={state.fieldErrors?.phone} />
 
                 <Input label="Company (Optional)" name="company" type="text" placeholder="Your Dental Practice" error={state.fieldErrors?.company} />
 
