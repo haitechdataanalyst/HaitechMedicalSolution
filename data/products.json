@@ -7906,45 +7906,40 @@
     },
     {
         "id": 1110,
-        "slug": "magic-touch-kit",
-        "name": "Magic Touch Kit",
-        "description": "Complete bur kit for crown preparation procedures",
+        "slug": "magic-touch-t1",
+        "name": "Magic Touch T1",
+        "description": "Complete Magic Touch diamond bur kit for crown preparation, ceramics processing, laminate veneers, and inlay/onlay procedures",
         "category": 52,
         "order": 1,
-        "sku": "MAGIC-KIT",
+        "sku": "MAGICT1",
         "basePrice": 189.99,
         "currency": "AUD",
         "hasVariants": false,
         "defaultImage": "/images/products/strauss/kits/MagicT1.jpg",
-        "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"],
-        "catalogueFile": "/catalogues/magic-touch-kit.pdf",
+        "gallery": ["/images/products/strauss/kits/MagicT1.jpg"],
+        "catalogueFile": "/catalogues/magic-touch-t1.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
                     "primaryImage": "/images/products/strauss/kits/MagicT1.jpg",
-                    "gallery": ["/images/products/strauss/kits/MagicT1.jpg", "/images/products/strauss/kits/MagicT2.jpg", "/images/products/strauss/kits/MagicT3.jpg"]
+                    "gallery": ["/images/products/strauss/kits/MagicT1.jpg"]
                 }
             },
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Magic Touch Kit is a complete bur set for crown preparation procedures. Includes all essential burs for efficient crown prep workflow.",
-                    "secondary": "Organized in a convenient autoclavable block for easy access during procedures."
+                    "primary": "The Strauss Magic Touch T1 is a comprehensive diamond bur kit designed for ceramics processing, laminate veneers, and inlay/onlay procedures. Includes all essential burs for efficient crown preparation workflow.",
+                    "secondary": "Organized in a convenient autoclavable block for easy access during procedures. Precision-engineered diamond burs ensure consistent cutting performance and long service life."
                 }
             },
             {
                 "type": "specifications",
                 "data": {
                     "specs": [
-                        {
-                            "label": "Code",
-                            "value": "MAGICT1"
-                        },
-                        {
-                            "label": "Max RPM",
-                            "value": "0,00"
-                        }
+                        { "label": "Code", "value": "MAGICT1" },
+                        { "label": "Application", "value": "Ceramics processing, Laminate Veneers, Inlay/Onlay" },
+                        { "label": "Max RPM", "value": "0,00" }
                     ]
                 }
             },
@@ -7953,7 +7948,7 @@
                 "data": {
                     "manufacturer": "Strauss",
                     "warranty": "Satisfaction guaranteed",
-                    "packageContents": ["1x Complete Bur Kit with Block"]
+                    "packageContents": ["1x Magic Touch T1 Bur Kit with Block"]
                 }
             },
             {
@@ -7964,22 +7959,136 @@
                 }
             }
         ],
-        "relatedProducts": [1111, 1112]
+        "relatedProducts": [1111, 1112, 1113]
     },
     {
         "id": 1111,
-        "slug": "mini-magic-kit",
-        "name": "Mini Magic Kit",
-        "description": "Compact bur kit for essential procedures",
+        "slug": "magic-touch-t2",
+        "name": "Magic Touch T2",
+        "description": "Advanced Magic Touch diamond bur kit for ceramics processing, laminate veneers, and inlay/onlay procedures",
         "category": 52,
         "order": 2,
-        "sku": "MINI-MAGIC",
+        "sku": "MAGICT2",
+        "basePrice": 189.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/MagicT2.jpg",
+        "gallery": ["/images/products/strauss/kits/MagicT2.jpg"],
+        "catalogueFile": "/catalogues/magic-touch-t2.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/MagicT2.jpg",
+                    "gallery": ["/images/products/strauss/kits/MagicT2.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss Magic Touch T2 is an advanced diamond bur kit tailored for ceramics processing, laminate veneers, and inlay/onlay procedures. A step-up configuration from the T1 with additional bur profiles.",
+                    "secondary": "Features a well-organized autoclavable block for quick bur selection. Premium diamond coating provides superior cutting efficiency and durability."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "MAGICT2" },
+                        { "label": "Application", "value": "Ceramics processing, Laminate Veneers, Inlay/Onlay" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x Magic Touch T2 Bur Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1110, 1112, 1113]
+    },
+    {
+        "id": 1112,
+        "slug": "magic-touch-t3",
+        "name": "Magic Touch T3",
+        "description": "Comprehensive Magic Touch diamond bur kit for ceramics processing, laminate veneers, and inlay/onlay procedures",
+        "category": 52,
+        "order": 3,
+        "sku": "MAGICT3",
+        "basePrice": 199.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/MagicT3.jpg",
+        "gallery": ["/images/products/strauss/kits/MagicT3.jpg"],
+        "catalogueFile": "/catalogues/magic-touch-t3.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/MagicT3.jpg",
+                    "gallery": ["/images/products/strauss/kits/MagicT3.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss Magic Touch T3 is the most comprehensive kit in the Magic Touch series, covering ceramics processing, laminate veneers, and inlay/onlay procedures with an extended range of bur shapes and grits.",
+                    "secondary": "Complete solution for demanding restorative workflows. Autoclavable bur block keeps instruments organized and accessible throughout procedures."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "MAGICT3" },
+                        { "label": "Application", "value": "Ceramics processing, Laminate Veneers, Inlay/Onlay" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x Magic Touch T3 Bur Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1110, 1111, 1113]
+    },
+    {
+        "id": 1113,
+        "slug": "mini-magic-t1",
+        "name": "Mini Magic T1",
+        "description": "Compact Mini Magic diamond bur kit with essential burs for everyday crown preparation and restorative procedures",
+        "category": 52,
+        "order": 4,
+        "sku": "MINIMAGICT1",
         "basePrice": 129.99,
         "currency": "AUD",
         "hasVariants": false,
         "defaultImage": "/images/products/strauss/kits/MiniMagicT1.jpg",
         "gallery": ["/images/products/strauss/kits/MiniMagicT1.jpg"],
-        "catalogueFile": "/catalogues/mini-magic-kit.pdf",
+        "catalogueFile": "/catalogues/mini-magic-t1.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -7991,22 +8100,17 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Mini Magic Kit is a compact bur set with essential burs for everyday procedures.",
-                    "secondary": "Perfect for new practitioners or as a backup kit."
+                    "primary": "The Strauss Mini Magic T1 is a compact diamond bur kit with a curated selection of essential burs for everyday crown preparation and restorative procedures.",
+                    "secondary": "Perfect for new practitioners or as a portable backup kit. Includes autoclavable block for convenient organization and sterilization."
                 }
             },
             {
                 "type": "specifications",
                 "data": {
                     "specs": [
-                        {
-                            "label": "Code",
-                            "value": "MINIMAGIC"
-                        },
-                        {
-                            "label": "Max RPM",
-                            "value": "0,00"
-                        }
+                        { "label": "Code", "value": "MINIMAGICT1" },
+                        { "label": "Application", "value": "Crown preparation, Restorative" },
+                        { "label": "Max RPM", "value": "0,00" }
                     ]
                 }
             },
@@ -8015,7 +8119,7 @@
                 "data": {
                     "manufacturer": "Strauss",
                     "warranty": "Satisfaction guaranteed",
-                    "packageContents": ["1x Mini Bur Kit with Block"]
+                    "packageContents": ["1x Mini Magic T1 Bur Kit with Block"]
                 }
             },
             {
@@ -8026,16 +8130,16 @@
                 }
             }
         ],
-        "relatedProducts": [1110, 1112]
+        "relatedProducts": [1110, 1111, 1112]
     },
     {
-        "id": 1112,
+        "id": 1114,
         "slug": "ipr-kit",
         "name": "IPR Kit",
-        "description": "Interproximal reduction kit for orthodontic procedures",
+        "description": "Interproximal reduction diamond bur kit for precise enamel reduction in orthodontic procedures",
         "category": 52,
-        "order": 3,
-        "sku": "IPR-KIT",
+        "order": 5,
+        "sku": "IPRKIT1",
         "basePrice": 149.99,
         "currency": "AUD",
         "hasVariants": false,
@@ -8053,22 +8157,17 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss IPR Kit is designed for precise interproximal reduction in orthodontic treatment.",
-                    "secondary": "Includes a range of diamond strips and discs for controlled enamel reduction."
+                    "primary": "The Strauss IPR Kit is designed for precise interproximal reduction in orthodontic treatment. Includes a range of diamond strips and discs for controlled enamel reduction.",
+                    "secondary": "Ideal for creating space in crowded dentition. Organized in a dedicated autoclavable block for convenient chairside access."
                 }
             },
             {
                 "type": "specifications",
                 "data": {
                     "specs": [
-                        {
-                            "label": "Code",
-                            "value": "IPRKIT"
-                        },
-                        {
-                            "label": "Max RPM",
-                            "value": "0,00"
-                        }
+                        { "label": "Code", "value": "IPRKIT1" },
+                        { "label": "Application", "value": "Orthodontics" },
+                        { "label": "Max RPM", "value": "0,00" }
                     ]
                 }
             },
@@ -8077,7 +8176,7 @@
                 "data": {
                     "manufacturer": "Strauss",
                     "warranty": "Satisfaction guaranteed",
-                    "packageContents": ["1x IPR Kit"]
+                    "packageContents": ["1x IPR Kit with Block"]
                 }
             },
             {
@@ -8088,7 +8187,292 @@
                 }
             }
         ],
-        "relatedProducts": [1110, 1111]
+        "relatedProducts": [1115, 1116, 1113]
+    },
+    {
+        "id": 1115,
+        "slug": "axl-kit",
+        "name": "AXL Kit",
+        "description": "Surgical diamond bur kit for surgical endodontics procedures",
+        "category": 52,
+        "order": 6,
+        "sku": "AXLKIT-M",
+        "basePrice": 179.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/AXL-KIT-M.jpg",
+        "gallery": ["/images/products/strauss/kits/AXL-KIT-M.jpg"],
+        "catalogueFile": "/catalogues/axl-kit.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/AXL-KIT-M.jpg",
+                    "gallery": ["/images/products/strauss/kits/AXL-KIT-M.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss AXL Kit is a specialized surgical diamond bur kit designed for surgical endodontics. Contains purpose-selected burs for root-end resection and retrograde cavity preparation.",
+                    "secondary": "Precision-engineered for optimal performance in endodontic surgery. Organized in an autoclavable block for reliable chairside access during surgical procedures."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "AXLKIT-M" },
+                        { "label": "Application", "value": "Surgical Endodontics" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x AXL Surgical Bur Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1114, 1116, 1119]
+    },
+    {
+        "id": 1116,
+        "slug": "compset-1",
+        "name": "Compset 1",
+        "description": "Composite finishing diamond bur kit for restorative composite polishing procedures",
+        "category": 52,
+        "order": 7,
+        "sku": "COMSET1",
+        "basePrice": 159.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/C0MSET1.jpg",
+        "gallery": ["/images/products/strauss/kits/C0MSET1.jpg"],
+        "catalogueFile": "/catalogues/compset-1.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/C0MSET1.jpg",
+                    "gallery": ["/images/products/strauss/kits/C0MSET1.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss Compset 1 is a composite finishing diamond bur kit designed for restorative composite polishing. Includes a curated selection of finishing and polishing burs for achieving smooth, natural-looking composite restorations.",
+                    "secondary": "Ideal for contouring and finishing anterior and posterior composite restorations. Organized in an autoclavable block for efficient clinical workflow."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "COMSET1" },
+                        { "label": "Application", "value": "Restorative, Composite Polishing" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x Compset 1 Composite Finishing Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1117, 1114, 1110]
+    },
+    {
+        "id": 1117,
+        "slug": "compset-3",
+        "name": "Compset 3",
+        "description": "Advanced composite finishing diamond bur kit for restorative composite polishing",
+        "category": 52,
+        "order": 8,
+        "sku": "COMSET3",
+        "basePrice": 169.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/COMSET3.jpg",
+        "gallery": ["/images/products/strauss/kits/COMSET3.jpg"],
+        "catalogueFile": "/catalogues/compset-3.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/COMSET3.jpg",
+                    "gallery": ["/images/products/strauss/kits/COMSET3.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss Compset 3 is an advanced composite finishing diamond bur kit for restorative composite polishing. Expanded bur selection compared to Compset 1 for more versatile finishing options.",
+                    "secondary": "Provides a complete finishing workflow from gross contouring to final polish. Autoclavable block ensures convenient organization and reliable sterilization."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "COMSET3" },
+                        { "label": "Application", "value": "Restorative, Composite Polishing" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x Compset 3 Composite Finishing Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1116, 1114, 1110]
+    },
+    {
+        "id": 1118,
+        "slug": "rsi-intro",
+        "name": "RSI Intro",
+        "description": "Introductory RSI diamond bur kit for general restorative and preparation procedures",
+        "category": 52,
+        "order": 9,
+        "sku": "RSI-INTRO",
+        "basePrice": 159.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/RSI-INTRO.jpg",
+        "gallery": ["/images/products/strauss/kits/RSI-INTRO.jpg"],
+        "catalogueFile": "/catalogues/rsi-intro.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/RSI-INTRO.jpg",
+                    "gallery": ["/images/products/strauss/kits/RSI-INTRO.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss RSI Intro is an introductory diamond bur kit providing a well-rounded selection of burs for general restorative and cavity preparation procedures.",
+                    "secondary": "An ideal starter kit for practitioners looking to experience the Strauss diamond bur range. Organized in an autoclavable block for safe, convenient chairside use."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "RSI-INTRO" },
+                        { "label": "Application", "value": "Restorative, General Preparation" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x RSI Intro Bur Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1119, 1110, 1116]
+    },
+    {
+        "id": 1119,
+        "slug": "ms-ds-kit",
+        "name": "MS DS Kit",
+        "description": "Multi-use diamond and silicon bur kit for preparation and finishing workflows",
+        "category": 52,
+        "order": 10,
+        "sku": "MS-DS-KIT-AZ",
+        "basePrice": 169.99,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/images/products/strauss/kits/MS-DS-KIT.-AZ.jpg",
+        "gallery": ["/images/products/strauss/kits/MS-DS-KIT.-AZ.jpg"],
+        "catalogueFile": "/catalogues/ms-ds-kit.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/strauss/kits/MS-DS-KIT.-AZ.jpg",
+                    "gallery": ["/images/products/strauss/kits/MS-DS-KIT.-AZ.jpg"]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Strauss MS DS Kit is a versatile multi-use bur kit combining diamond and silicon instruments for complete preparation and finishing workflows in a single organized set.",
+                    "secondary": "Covers a wide range of clinical applications from cavity preparation to final polishing. Autoclavable block keeps all instruments accessible and properly sterilized."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        { "label": "Code", "value": "MS-DS-KIT-AZ" },
+                        { "label": "Application", "value": "Multi-use, Preparation & Finishing" },
+                        { "label": "Max RPM", "value": "0,00" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Strauss",
+                    "warranty": "Satisfaction guaranteed",
+                    "packageContents": ["1x MS DS Bur Kit with Block"]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [1118, 1115, 1110]
     }
     
 ]

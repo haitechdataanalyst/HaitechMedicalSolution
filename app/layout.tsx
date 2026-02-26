@@ -5,7 +5,7 @@ import Providers from "./providers";
 import { TopHeader, Header, Footer, NavigationProvider } from "@/components/layout";
 import navigation from "@/data/navigation.json";
 import siteConfig from "@/data/site-config.json";
-import { WhatsAppButton } from "@/components/ui";
+import { DownloadCatalogButton, ScrollToTopButton, WhatsAppButton } from "@/components/ui";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -42,8 +42,17 @@ export default function RootLayout({
                             <Header />
                             <main className="flex-1">{children}</main>
                             <Footer sections={navigation.footer.sections} config={siteConfig} />
-                            <div className="fixed right-6 bottom-6">
-                                <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="lg" className="h-16 w-16 cursor-pointer rounded-full" />
+                            <div className="fixed right-6 bottom-6 flex flex-col gap-3">
+                                <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="md" className="h-12 w-12 cursor-pointer rounded-full" />
+                                <DownloadCatalogButton
+                                    iconOnly
+                                    size="md"
+                                    className="h-12 w-12 cursor-pointer rounded-full"
+                                    fileUrl="/catalouges/Haitech Medical Solutions Catalog.pdf"
+                                    fileName="Haitech Medical Solutions Catalog.pdf"
+                                    aria-label="Download company catalog"
+                                />
+                                <ScrollToTopButton iconOnly size="md" className="h-12 w-12 cursor-pointer rounded-full" aria-label="Back to top" />
                             </div>
                         </div>
                     </NavigationProvider>
