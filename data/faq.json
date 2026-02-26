@@ -41,19 +41,9 @@
             "answer": "Typically, orders are processed within 2 business days, and shipping times may vary depending on your location, but it can take between 6-8 weeks to make and ship your loupes. We’ll provide you with tracking information so you can follow your order’s progress."
         },
         {
-            "id": 9,
-            "question": "What payment methods do you accept?",
-            "answer": "We accept various payment methods, including credit cards, PayPal, and direct bank transfers, ensuring a secure and convenient purchasing process."
-        },
-        {
             "id": 10,
             "question": "Can I try the loupes before purchasing?",
             "answer": "Please contact us to arrange a demo and experience the benefits of Admetec loupes firsthand. A member of our team will gladly reach out to you."
-        },
-        {
-            "id": 11,
-            "question": "What is your return policy for loupes and lights?",
-            "answer": "We want you to be completely satisfied with your purchase. If you’re not, we offer a return policy on loupes and lights, subject to a restocking fee,  provided they are in their original condition and you have not been able to adjust to them. You can check out our Sales Policy  for full information or contact our customer service team for assistance."
         }
     ]
 }

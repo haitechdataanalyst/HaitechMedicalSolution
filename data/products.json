@@ -1953,13 +1953,14 @@
         "defaultImage": "/images/products/almadent/chairs/ay-3000-8.jpg",
         "gallery": [
             "/images/products/almadent/chairs/ay-3000-8.jpg",
-            "/images/products/almadent/chairs/ay-3000-1.jpg",
+            "/images/products/almadent/chairs/ay-3000-5.jpg",
+            "/images/products/almadent/chairs/ay-3000-6.jpg",
             "/images/products/almadent/chairs/ay-3000-2.jpg",
             "/images/products/almadent/chairs/ay-3000-3.jpg",
             "/images/products/almadent/chairs/ay-3000-4.jpg",
-            "/images/products/almadent/chairs/ay-3000-5.jpg",
-            "/images/products/almadent/chairs/ay-3000-6.jpg",
+            "/images/products/almadent/chairs/ay-3000-1.jpg",
             "/images/products/almadent/chairs/ay-3000-7.jpg"
+             
         ],
         "catalogueFile": "/catalogues/ay-3000.pdf",
         "contentBlocks": [
@@ -1968,14 +1969,14 @@
                 "data": {
                     "primaryImage": "/images/products/almadent/chairs/ay-3000-1.jpg",
                     "gallery": [
-                        "/images/products/almadent/chairs/ay-3000-1.jpg",
+                        "/images/products/almadent/chairs/ay-3000-8.jpg",
+                        "/images/products/almadent/chairs/ay-3000-5.jpg",
+                        "/images/products/almadent/chairs/ay-3000-6.jpg",
                         "/images/products/almadent/chairs/ay-3000-2.jpg",
                         "/images/products/almadent/chairs/ay-3000-3.jpg",
                         "/images/products/almadent/chairs/ay-3000-4.jpg",
-                        "/images/products/almadent/chairs/ay-3000-5.jpg",
-                        "/images/products/almadent/chairs/ay-3000-6.jpg",
-                        "/images/products/almadent/chairs/ay-3000-7.jpg",
-                        "/images/products/almadent/chairs/ay-3000-8.jpg"
+                        "/images/products/almadent/chairs/ay-3000-1.jpg",
+                        "/images/products/almadent/chairs/ay-3000-7.jpg"
                     ]
                 }
             },
@@ -2373,7 +2374,7 @@
                 "type": "description",
                 "data": {
                     "primary": "Tealth EM-3 Implant Motor has large color touch screen, with selection of 7 implant modes, visual images display every procedure in implant surgery. Custom program, with 1:1, 1:5 and 20:1 speed ratio avaliable. Tealth EM-3 implant machine with multifunction foot pedal can realize aseptic operation and liberate two hands.",
-                    "secondary": "Custom program, with 1:1, 1:5 and 20:1 speed ratio avaliable. Tealth EM-3 implant machine with multifunction foot pedal can realize aseptic operation and liberate two hands."
+                    "secondary": "1. 5.5N.cm motor torque can generate 70Ncm output torque, making difficulty surgery easier. Both motor and cable are autoclavable. 2. Large color touch screen with glass surface enables clear display, easy to control and clean.  Wiping disinfection ensures safety in treatment area. 3. Selection of 7 implant modes, visual images display every procedure in implant surgery. 4. Custom program, with 1:1, 1:5 and 20:1 speed ratio avaliable. 5. Fiber optic Contra-angle ensures visibility, helping to achieve treatment of high accuracy and efficiency. High precision contra-angle with tiny oscillations enables stable torque output under high-speed and low speed. 6. Multifunction foot pedal can realize aseptic operation and liberate two hands. 7. Mute peristaltic pump water supply system is easy to connect, compatible with disposable oral water pipe to ensure safety of treatment."
                 }
             },
             {
@@ -8089,4 +8090,5 @@
         ],
         "relatedProducts": [1110, 1111]
     }
+    
 ]

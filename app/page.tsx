@@ -33,7 +33,7 @@ export default function Home() {
                                 <ClockIcon className="h-16 w-16" />
                             </div>
                             <h3 className="heading-4 text-foreground mb-2">Fast Response</h3>
-                            <p className="text-muted">Quote requests answered within 24 hours. Quick Australia-wide shipping.</p>
+                            <p className="text-muted">Quote requests answered within 24 hours.</p>
                         </div>
                         <div className="p-6 text-center sm:col-span-1 md:col-span-2 lg:col-span-1">
                             <div className="icon-container icon-container-3xl icon-container-primary icon-container-circle mx-auto mb-4">

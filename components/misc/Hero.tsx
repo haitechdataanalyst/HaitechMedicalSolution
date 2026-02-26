@@ -6,7 +6,7 @@ import { Button, Carousel } from "@/components/ui";
 
 const heroSlides = [
     {
-        image: "/images/hero/Website.webp",
+        image: "/images/hero/Website.jpeg",
     },
     {
         image: "/images/hero/Website (1).webp",
