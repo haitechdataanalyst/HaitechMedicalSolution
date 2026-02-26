@@ -8,7 +8,6 @@ import { ClockIcon, Headset } from "lucide-react";
 
 export default function Home() {
     const products = getRandomProductsForEachCategory(8);
-    console.log(products);
     // Add paths to products for client-side linking
     const featuredProducts = products.map((p) => ({ ...p, path: getProductPath(p) }));
 

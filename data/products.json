@@ -2656,7 +2656,7 @@
         ],
         "defaultImage": "/images/products/medesy/elevator/700slash8.jpg",
         "gallery": ["/images/products/medesy/elevator/700slash8.jpg", "/images/products/medesy/elevator/700slash9.jpg", "/images/products/medesy/elevator/700slash10.jpg"],
-        "catalogueFile": "/catalogues/heidbrink-elevator.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -2727,7 +2727,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/elevator/705slash6.jpg",
         "gallery": ["/images/products/medesy/elevator/705slash6.jpg"],
-        "catalogueFile": "/catalogues/howard-apical-elevator.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -2854,7 +2854,7 @@
             "/images/products/medesy/elevator/730slash5S.jpg",
             "/images/products/medesy/elevator/730slash5C.jpg"
         ],
-        "catalogueFile": "/catalogues/lussatore-elevator.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -2964,7 +2964,7 @@
         ],
         "defaultImage": "/images/products/medesy/elevator/796slash1.jpg",
         "gallery": ["/images/products/medesy/elevator/796slash1.jpg", "/images/products/medesy/elevator/796slash2.jpg", "/images/products/medesy/elevator/796slash3.jpg"],
-        "catalogueFile": "/catalogues/warwick-james-elevator.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3063,7 +3063,7 @@
         ],
         "defaultImage": "/images/products/medesy/elevator/798slash1.jpg",
         "gallery": ["/images/products/medesy/elevator/798slash1.jpg", "/images/products/medesy/elevator/798slash2.jpg", "/images/products/medesy/elevator/798slash3.jpg"],
-        "catalogueFile": "/catalogues/coupland-elevator.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3178,7 +3178,7 @@
             "/images/products/medesy/forceps/2400slash70.jpg",
             "/images/products/medesy/forceps/2400slash187.jpg"
         ],
-        "catalogueFile": "/catalogues/forceps-2400.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3339,7 +3339,7 @@
             "/images/products/medesy/forceps/2500slash350.jpg",
             "/images/products/medesy/forceps/2500slash351.jpg"
         ],
-        "catalogueFile": "/catalogues/forceps-2500.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3437,7 +3437,7 @@
         ],
         "defaultImage": "/images/products/medesy/scissors/3509.jpg",
         "gallery": ["/images/products/medesy/scissors/3509.jpg", "/images/products/medesy/scissors/3510.jpg"],
-        "catalogueFile": "/catalogues/kelly-scissors.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3529,7 +3529,7 @@
         ],
         "defaultImage": "/images/products/medesy/scissors/3518.jpg",
         "gallery": ["/images/products/medesy/scissors/3518.jpg", "/images/products/medesy/scissors/3519.jpg"],
-        "catalogueFile": "/catalogues/goldman-fox-scissors.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3692,7 +3692,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/851slashHP3.jpg"],
-        "catalogueFile": "/catalogues/851-hp3.pdf",
+        "catalogueFile": "/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3767,7 +3767,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/852slashHP3.jpg"],
-        "catalogueFile": "/catalogues/852-hp3.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3842,7 +3842,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/856.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/856.jpg"],
-        "catalogueFile": "/catalogues/856.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3917,7 +3917,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/869.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/869.jpg"],
-        "catalogueFile": "/catalogues/869.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -3992,7 +3992,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/871slash2-4.jpg"],
-        "catalogueFile": "/catalogues/871-2-4.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4067,7 +4067,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/877slashHK4.jpg"],
-        "catalogueFile": "/catalogues/877-hk4.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4142,7 +4142,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/878.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/878.jpg"],
-        "catalogueFile": "/catalogues/878.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4217,7 +4217,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/882.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/882.jpg"],
-        "catalogueFile": "/catalogues/882.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4292,7 +4292,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/883.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/883.jpg"],
-        "catalogueFile": "/catalogues/883.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4367,7 +4367,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/884.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/884.jpg"],
-        "catalogueFile": "/catalogues/884.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -4442,7 +4442,7 @@
         "hasVariants": false,
         "defaultImage": "/images/products/medesy/periosteal-elevators/885.jpg",
         "gallery": ["/images/products/medesy/periosteal-elevators/885.jpg"],
-        "catalogueFile": "/catalogues/885.pdf",
+        "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
@@ -7929,8 +7929,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Magic Touch T1 is a comprehensive diamond bur kit designed for ceramics processing, laminate veneers, and inlay/onlay procedures. Includes all essential burs for efficient crown preparation workflow.",
-                    "secondary": "Organized in a convenient autoclavable block for easy access during procedures. Precision-engineered diamond burs ensure consistent cutting performance and long service life."
+                    "primary": "Magic Touch Kit"
                 }
             },
             {
@@ -7938,7 +7937,6 @@
                 "data": {
                     "specs": [
                         { "label": "Code", "value": "MAGICT1" },
-                        { "label": "Application", "value": "Ceramics processing, Laminate Veneers, Inlay/Onlay" },
                         { "label": "Max RPM", "value": "0,00" }
                     ]
                 }
@@ -7986,8 +7984,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Magic Touch T2 is an advanced diamond bur kit tailored for ceramics processing, laminate veneers, and inlay/onlay procedures. A step-up configuration from the T1 with additional bur profiles.",
-                    "secondary": "Features a well-organized autoclavable block for quick bur selection. Premium diamond coating provides superior cutting efficiency and durability."
+                    "primary": "Magic Touch Kit"
                 }
             },
             {
@@ -8043,8 +8040,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Magic Touch T3 is the most comprehensive kit in the Magic Touch series, covering ceramics processing, laminate veneers, and inlay/onlay procedures with an extended range of bur shapes and grits.",
-                    "secondary": "Complete solution for demanding restorative workflows. Autoclavable bur block keeps instruments organized and accessible throughout procedures."
+                    "primary": "Magic Touch Kit"
                 }
             },
             {
@@ -8100,8 +8096,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Mini Magic T1 is a compact diamond bur kit with a curated selection of essential burs for everyday crown preparation and restorative procedures.",
-                    "secondary": "Perfect for new practitioners or as a portable backup kit. Includes autoclavable block for convenient organization and sterilization."
+                    "primary": "Mini Magic Touch Kit"
                 }
             },
             {
@@ -8157,8 +8152,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss IPR Kit is designed for precise interproximal reduction in orthodontic treatment. Includes a range of diamond strips and discs for controlled enamel reduction.",
-                    "secondary": "Ideal for creating space in crowded dentition. Organized in a dedicated autoclavable block for convenient chairside access."
+                    "primary": "Orthodontic Kit"
                 }
             },
             {
@@ -8214,8 +8208,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss AXL Kit is a specialized surgical diamond bur kit designed for surgical endodontics. Contains purpose-selected burs for root-end resection and retrograde cavity preparation.",
-                    "secondary": "Precision-engineered for optimal performance in endodontic surgery. Organized in an autoclavable block for reliable chairside access during surgical procedures."
+                    "primary": "Surgical Kit"
                 }
             },
             {
@@ -8271,8 +8264,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Compset 1 is a composite finishing diamond bur kit designed for restorative composite polishing. Includes a curated selection of finishing and polishing burs for achieving smooth, natural-looking composite restorations.",
-                    "secondary": "Ideal for contouring and finishing anterior and posterior composite restorations. Organized in an autoclavable block for efficient clinical workflow."
+                    "primary": "Composite Finishing Kit"
                 }
             },
             {
@@ -8328,8 +8320,7 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The Strauss Compset 3 is an advanced composite finishing diamond bur kit for restorative composite polishing. Expanded bur selection compared to Compset 1 for more versatile finishing options.",
-                    "secondary": "Provides a complete finishing workflow from gross contouring to final polish. Autoclavable block ensures convenient organization and reliable sterilization."
+                    "primary": "Composite Finishing Kit"
                 }
             },
             {

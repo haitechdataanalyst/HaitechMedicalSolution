@@ -85,7 +85,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/851slashHP3.jpg",
                     "description": "Periosteal elevator with 3.0mm x 3.0mm blade for precise tissue reflection.",
                     "features": ["3.0mm x 3.0mm blade", "Precision design", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "852-hp3",
@@ -93,7 +93,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/852slashHP3.jpg",
                     "description": "Periosteal elevator with 5.2mm x 4.8mm blade for tissue manipulation.",
                     "features": ["5.2mm x 4.8mm blade", "Versatile design", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "856",
@@ -101,7 +101,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/856.jpg",
                     "description": "Periosteal elevator with 3.3mm x 2.8mm blade for delicate tissue reflection.",
                     "features": ["3.3mm x 2.8mm blade", "Delicate procedures", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "869",
@@ -109,7 +109,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/869.jpg",
                     "description": "Periosteal elevator with 3.5mm x 8.0mm blade for extended tissue reflection.",
                     "features": ["3.5mm x 8.0mm blade", "Extended reach", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "871-2-4",
@@ -117,7 +117,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/871slash2-4.jpg",
                     "description": "Periosteal elevator with 6.0mm x 2.7mm blade for wide tissue reflection.",
                     "features": ["6.0mm x 2.7mm blade", "Wide reflection", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "877-hk4",
@@ -125,7 +125,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/877slashHK4.jpg",
                     "description": "Periosteal elevator with 4.0mm x 4.0mm square blade for versatile manipulation.",
                     "features": ["4.0mm x 4.0mm blade", "Square blade design", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "878",
@@ -133,7 +133,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/878.jpg",
                     "description": "Periosteal elevator with large 10.0mm x 4.5mm blade for extensive reflection.",
                     "features": ["10.0mm x 4.5mm blade", "Large coverage", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "882",
@@ -141,7 +141,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/882.jpg",
                     "description": "Periosteal elevator with 4.0mm x 7.0mm blade for efficient tissue reflection.",
                     "features": ["4.0mm x 7.0mm blade", "Efficient design", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "883",
@@ -149,7 +149,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/883.jpg",
                     "description": "Periosteal elevator with 3.8mm x 4.0mm blade for precise tissue reflection.",
                     "features": ["3.8mm x 4.0mm blade", "Precision work", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "884",
@@ -157,7 +157,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/884.jpg",
                     "description": "Periosteal elevator with 4.0mm x 4.0mm square blade for versatile manipulation.",
                     "features": ["4.0mm x 4.0mm blade", "Versatile use", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 },
                 {
                     "id": "885",
@@ -165,7 +165,7 @@
                     "image": "/images/products/medesy/periosteal-elevators/885.jpg",
                     "description": "Periosteal elevator with 4.5mm x 5.0mm blade for efficient tissue reflection.",
                     "features": ["4.5mm x 5.0mm blade", "Efficient reflection", "Surgical stainless steel"],
-                    "catalogueFile": "/path/to/catalogue.pdf"
+                    "catalogueFile": "/public/catalouges/MEDESY_CatalogueG-M2025.pdf"
                 }
             ]
         },
