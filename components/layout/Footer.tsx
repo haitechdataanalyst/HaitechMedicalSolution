@@ -107,10 +107,10 @@ export default function Footer({ sections, config }: FooterProps) {
                             © {currentYear} {config.company.name}. All rights reserved.
                         </p>
                         <div className="flex items-center gap-4 sm:gap-6">
-                            <Link href="/privacy" className="text-sm text-neutral-500 transition-colors hover:text-white">
+                            <Link href="/support/policies/privacy" className="text-sm text-neutral-500 transition-colors hover:text-white">
                                 Privacy Policy
                             </Link>
-                            <Link href="/terms" className="text-sm text-neutral-500 transition-colors hover:text-white">
+                            <Link href="/support/policies/terms" className="text-sm text-neutral-500 transition-colors hover:text-white">
                                 Terms of Service
                             </Link>
                         </div>

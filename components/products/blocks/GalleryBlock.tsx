@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { GalleryBlock as GalleryBlockType } from "@/types";
 import { cn } from "@/lib/utils";
 import { CloseIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
@@ -32,12 +33,14 @@ export default function GalleryBlock({ data }: GalleryBlockProps) {
                     <button
                         key={index}
                         onClick={() => setSelectedIndex(index)}
-                        className={cn("bg-surface-secondary aspect-square overflow-hidden rounded-lg transition-opacity hover:opacity-90", layout === "carousel" && "w-48 flex-shrink-0")}
+                        className={cn("bg-surface-secondary relative aspect-square overflow-hidden rounded-lg transition-opacity hover:opacity-90", layout === "carousel" && "w-48 flex-shrink-0")}
                     >
-                        <img
+                        <Image
                             src={failedImages.has(index) ? PLACEHOLDER_IMAGE : image}
                             alt={`Gallery image ${index + 1}`}
-                            className="h-full w-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 50vw, 33vw"
                             onError={() => handleImageError(index)}
                         />
                     </button>

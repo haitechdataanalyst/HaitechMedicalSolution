@@ -39,7 +39,7 @@ function loadFrames(): Frame[] {
     return framesCache!;
 }
 
-async function loadHeadlights(): Promise<HeadlightsData> {
+function loadHeadlights(): HeadlightsData {
     if (!headlightsCache) {
         const fileContents = fs.readFileSync(headlightsPath, "utf8");
         headlightsCache = JSON.parse(fileContents);
@@ -73,12 +73,12 @@ export async function getHeadlightsData(): Promise<HeadlightsData> {
 
 // Get headlight categories (Wireless/Wired)
 export async function getHeadlightCategories(): Promise<HeadlightCategory[]> {
-    return (await loadHeadlights()).categories;
+    return loadHeadlights().categories;
 }
 
 // Get headlight category by ID
 export async function getHeadlightCategoryById(id: string): Promise<HeadlightCategory | null> {
-    const categories = (await loadHeadlights()).categories;
+    const categories = loadHeadlights().categories;
     return categories.find((c) => c.id === id) || null;
 }
 
@@ -113,9 +113,14 @@ export function getRandomProductsForEachCategory(count: number): Product[] {
     const products = getAllProducts();
     return categories
         .map((category) => {
-            return products.filter((p) => p.category === category.id)[0];
+            const categoryProducts = products.filter((p) => p.category === category.id);
+            if (categoryProducts.length === 0) return null;
+            // Actually randomize — pick a random product from each category
+            const randomIndex = Math.floor(Math.random() * categoryProducts.length);
+            return categoryProducts[randomIndex];
         })
-        .slice(1, count);
+        .filter((p): p is Product => p !== null)
+        .slice(0, count);
 }
 
 // Get category by ID

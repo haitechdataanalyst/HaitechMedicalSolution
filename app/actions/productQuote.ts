@@ -2,20 +2,62 @@
 
 import { z } from "zod";
 import { sendEmail } from "@/lib/email";
+import { headers } from "next/headers";
+
+// Sanitize string input — strip HTML tags and dangerous characters
+function sanitizeString(input: string): string {
+    return input
+        .trim()
+        .replace(/<[^>]*>/g, "")
+        .replace(/[<>'"&;]/g, "")
+        .replace(/\s+/g, " ")
+        .substring(0, 5000);
+}
+
+function sanitizePhone(input: string): string {
+    return input
+        .trim()
+        .replace(/[^\d\s\-+()]/g, "")
+        .substring(0, 20);
+}
+
+function sanitizePostcode(input: string): string {
+    return input
+        .trim()
+        .replace(/[^\w\s\-]/g, "")
+        .substring(0, 15);
+}
+
+// Rate limiting (in production, use Redis or similar persistent store)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX_REQUESTS = 5;
+
+function checkRateLimit(ip: string): boolean {
+    const now = Date.now();
+    const record = rateLimitMap.get(ip);
+    if (!record || now > record.resetTime) {
+        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+        return true;
+    }
+    if (record.count >= RATE_LIMIT_MAX_REQUESTS) return false;
+    record.count++;
+    return true;
+}
 
 const productQuoteSchema = z.object({
-    name: z.string().min(2, "Name must be at least 2 characters").max(100),
-    email: z.string().email("Please enter a valid email address").max(255),
-    phone: z.string().min(10, "Phone number must be at least 10 digits").max(20),
-    postcode: z.string().min(2, "Postcode is required").max(15),
-    country: z.string().min(2, "Country is required"),
-    subject: z.string().min(3, "Subject must be at least 3 characters").max(200),
-    message: z.string().min(10, "Message must be at least 10 characters").max(5000),
+    name: z.string().min(2, "Name must be at least 2 characters").max(100).transform(sanitizeString),
+    email: z.string().email("Please enter a valid email address").max(255).transform((val) => val.trim().toLowerCase()),
+    phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
+    postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
+    country: z.string().min(2, "Country is required").transform(sanitizeString),
+    subject: z.string().min(3, "Subject must be at least 3 characters").max(200).transform(sanitizeString),
+    message: z.string().min(10, "Message must be at least 10 characters").max(5000).transform(sanitizeString),
     // Hidden fields
-    productName: z.string(),
-    productSku: z.string(),
-    productId: z.string(),
-    selectedVariant: z.string().optional(),
+    productName: z.string().max(200).transform(sanitizeString),
+    productSku: z.string().max(100).transform(sanitizeString),
+    productId: z.string().max(50).transform(sanitizeString),
+    selectedVariant: z.string().max(200).optional().transform((val) => (val ? sanitizeString(val) : undefined)),
     // Anti-spam
     website: z.string().max(0).optional(),
     formTimestamp: z.string(),
@@ -29,21 +71,35 @@ export type ProductQuoteFormState = {
 
 export async function submitProductQuote(prevState: ProductQuoteFormState, formData: FormData): Promise<ProductQuoteFormState> {
     try {
+        // Rate limiting by IP
+        const headersList = await headers();
+        const forwardedFor = headersList.get("x-forwarded-for");
+        const clientIp = forwardedFor?.split(",")[0].trim() || "unknown";
+
+        if (!checkRateLimit(clientIp)) {
+            return {
+                success: false,
+                error: "Too many requests. Please wait a minute before trying again.",
+            };
+        }
+
         // Basic bot detection - check if honeypot field is filled
         const honeypot = formData.get("website");
         if (honeypot && honeypot.toString().length > 0) {
             console.warn("Bot detected: honeypot field filled");
-            return { success: false, error: "Invalid submission" };
+            return { success: false, error: "An error occurred. Please try again." };
         }
 
         // Check form timestamp (basic time-based bot detection)
         const timestamp = formData.get("formTimestamp");
         if (timestamp) {
             const formAge = Date.now() - parseInt(timestamp.toString());
-            // If form was submitted in less than 2 seconds, likely a bot
             if (formAge < 2000) {
                 console.warn("Bot detected: form submitted too quickly");
-                return { success: false, error: "Please take your time filling out the form" };
+                return { success: false, error: "An error occurred. Please try again." };
+            }
+            if (formAge > 3600000) {
+                return { success: false, error: "Form session expired. Please refresh the page." };
             }
         }
 

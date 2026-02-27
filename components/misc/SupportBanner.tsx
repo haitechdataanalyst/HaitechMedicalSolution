@@ -12,7 +12,7 @@ export default function SupportBanner() {
                         Our dedicated support team is here to help you with product selection, technical assistance, and after-sales service. Get in touch with us today for personalized guidance and
                         expert advice.
                     </p>
-                    <Link href="/contact">
+                    <Link href="/support/contact">
                         <Button size="lg" variant="solid" className="gap-2 px-20">
                             <Lordicon icon="phone" size={28} parentHover colors={{ primary: "currentColor" }} className="flex-shrink-0" />
                             Contact Us

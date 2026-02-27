@@ -61,6 +61,13 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
                 {/* Hidden cart items */}
                 <input type="hidden" name="cartItems" value={JSON.stringify(items)} />
 
+                {/* Anti-spam: honeypot field (hidden from users, bots fill it in) */}
+                <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
+                {/* Anti-spam: timestamp for timing-based bot detection */}
+                <input type="hidden" name="formTimestamp" value={Date.now().toString()} />
+
                 <Input label="Full Name" name="name" type="text" required placeholder="Ranvijay Singh" error={state.fieldErrors?.name} />
 
                 <Input label="Email Address" name="email" type="email" required placeholder="ranvijay@example.com" error={state.fieldErrors?.email} />

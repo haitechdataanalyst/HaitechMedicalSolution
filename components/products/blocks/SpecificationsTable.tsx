@@ -6,7 +6,7 @@ interface SpecificationsTableProps {
 
 export default function SpecificationsTable({ data }: SpecificationsTableProps) {
     // Handle both 'rows' and 'specs' field names for backwards compatibility
-    const rows = (data as any).rows ?? (data as any).specs ?? [];
+    const rows = data.rows ?? data.specs ?? [];
 
     if (rows.length === 0) {
         return null;
