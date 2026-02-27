@@ -53,7 +53,7 @@ export default async function CategoryPage({ params }: PageProps) {
         const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
         const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
         const frames = getAllFrames();
-        const headlightCategories = getHeadlightCategories();
+        const headlightCategories = await getHeadlightCategories();
 
         return (
             <>
