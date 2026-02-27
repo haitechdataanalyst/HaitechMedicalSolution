@@ -7,12 +7,15 @@ import { Button, Carousel } from "@/components/ui";
 const heroSlides = [
     {
         image: "/images/hero/Website.jpeg",
+        href: "/product/admetec",
     },
     {
         image: "/images/hero/Website (1).webp",
+        href: "/product/medesy",
     },
     {
         image: "/images/hero/Untitled-design-54.webp",
+        href: "/product/strauss",
     },
 ];
 
@@ -63,15 +66,17 @@ export default function Hero() {
                 className="hero-carousel"
             >
                 {heroSlides.map((slide, index) => (
-                    <div key={index} className="relative h-60 md:h-80 lg:min-h-160">
-                        {/* Background Image */}
-                        <div className="bg-primary-gradient absolute inset-0">
-                            <Image src={slide.image} alt="Hero background" fill className="object-cover opacity-100" priority={index === 0} />
-                        </div>
+                    <Link key={index} href={slide.href} className="block">
+                        <div className="relative h-60 md:h-80 lg:min-h-160">
+                            {/* Background Image */}
+                            <div className="bg-primary-gradient absolute inset-0">
+                                <Image src={slide.image} alt="Hero background" fill className="object-cover opacity-100" priority={index === 0} />
+                            </div>
 
-                        {/* Overlay gradient for better text readability */}
-                        {/* <div className="from-primary-900/80 via-primary-800/60 absolute inset-0 bg-linear-to-r to-transparent" /> */}
-                    </div>
+                            {/* Overlay gradient for better text readability */}
+                            {/* <div className="from-primary-900/80 via-primary-800/60 absolute inset-0 bg-linear-to-r to-transparent" /> */}
+                        </div>
+                    </Link>
                 ))}
             </Carousel>
         </section>

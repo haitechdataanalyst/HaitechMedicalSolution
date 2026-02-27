@@ -88,7 +88,7 @@ function buildMegaMenuFromCategories(): MegaMenuColumn[] {
             items,
             aboutLink: {
                 label: `About ${rootCat.name}`,
-                href: rootCat.specialPage || `/product-category/${rootCat.slug}`,
+                href: `/product/${rootCat.slug}`,
             },
         };
     });

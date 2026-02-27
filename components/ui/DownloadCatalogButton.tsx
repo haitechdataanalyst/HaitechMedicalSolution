@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonHTMLAttributes, forwardRef } from "react";
-import { Download } from "lucide-react";
+import { CloudDownload } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface DownloadCatalogButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -46,15 +46,10 @@ const DownloadCatalogButton = forwardRef<HTMLButtonElement, DownloadCatalogButto
                 ref={ref}
                 type="button"
                 onClick={handleClick}
-                className={cn(
-                    "btn btn-solid inline-flex items-center justify-center gap-2 rounded-lg transition-colors",
-                    sizes[size],
-                    iconOnly && "px-2!",
-                    className
-                )}
+                className={cn("btn btn-solid inline-flex items-center justify-center gap-2 rounded-lg transition-colors", sizes[size], iconOnly && "px-2!", className)}
                 {...props}
             >
-                <Download size={iconSizes[size]} aria-hidden="true" />
+                <CloudDownload size={iconSizes[size]} aria-hidden="true" />
                 {!iconOnly && <span>{label}</span>}
             </button>
         );

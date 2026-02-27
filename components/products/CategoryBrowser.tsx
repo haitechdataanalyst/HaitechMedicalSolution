@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Category, Product } from "@/types";
@@ -17,6 +17,7 @@ export interface ProductWithPath extends Product {
 interface CategoryItemProps {
     category: CategoryWithPath;
     isExpanded: boolean;
+    isLoading: boolean;
     level: number;
     onCategoryExpand: (categoryId: number, level: number) => void;
 }
@@ -48,7 +49,15 @@ function ProductItem({ product }: ProductItemProps) {
     );
 }
 
-function CategoryItem({ category, isExpanded, level, onCategoryExpand }: CategoryItemProps) {
+function LoadingOverlay() {
+    return (
+        <div className="absolute inset-0 z-10 flex items-center justify-center rounded-full bg-white/70 backdrop-blur-[1px]">
+            <div className="border-primary-600 h-8 w-8 animate-spin rounded-full border-[3px] border-t-transparent" />
+        </div>
+    );
+}
+
+function CategoryItem({ category, isExpanded, isLoading, level, onCategoryExpand }: CategoryItemProps) {
     const categoryImage = category.image || "/images/placeholder.jpg";
 
     // If category has a special page, render as a Link instead of a button
@@ -67,6 +76,7 @@ function CategoryItem({ category, isExpanded, level, onCategoryExpand }: Categor
         <button onClick={() => onCategoryExpand(category.id, level)} className={`group flex flex-col items-center p-4 text-center transition-all ${isExpanded ? "scale-105" : "hover:scale-105"}`}>
             <div className={`relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all sm:h-28 sm:w-28 md:h-40 md:w-40 ${isExpanded ? "ring-primary-500 shadow-md ring-2" : ""}`}>
                 <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
+                {isLoading && <LoadingOverlay />}
             </div>
             <span className={`line-clamp-2 max-w-30 text-sm font-medium transition-colors ${isExpanded ? "text-primary-600" : "group-hover:text-primary-600 text-gray-700"}`}>{category.name}</span>
         </button>
@@ -78,15 +88,17 @@ interface LevelSectionProps {
     items: CategoryWithPath[] | ProductWithPath[];
     type: "categories" | "products";
     level: number;
+    loadingCategoryId: number | null;
     onCategoryExpand: (categoryId: number, level: number) => void;
     levelExpanded: Map<number, number>;
+    sectionRef?: (el: HTMLDivElement | null) => void;
 }
 
-function LevelSection({ title, items, type, level, onCategoryExpand, levelExpanded }: LevelSectionProps) {
+function LevelSection({ title, items, type, level, loadingCategoryId, onCategoryExpand, levelExpanded, sectionRef }: LevelSectionProps) {
     const expandedCategoryId = levelExpanded.get(level);
 
     return (
-        <div className="w-full">
+        <div className="w-full" ref={sectionRef}>
             {/* Section Header with divider lines */}
             <div className="my-6 flex items-center gap-4 sm:my-8">
                 <div className="h-px flex-1 bg-gray-200" />
@@ -98,7 +110,7 @@ function LevelSection({ title, items, type, level, onCategoryExpand, levelExpand
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
                 {type === "categories"
                     ? (items as CategoryWithPath[]).map((category) => (
-                          <CategoryItem key={category.id} category={category} isExpanded={expandedCategoryId === category.id} level={level} onCategoryExpand={onCategoryExpand} />
+                          <CategoryItem key={category.id} category={category} isExpanded={expandedCategoryId === category.id} isLoading={loadingCategoryId === category.id} level={level} onCategoryExpand={onCategoryExpand} />
                       ))
                     : (items as ProductWithPath[]).map((product) => <ProductItem key={product.id} product={product} />)}
             </div>
@@ -113,6 +125,25 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     const [expandedMap, setExpandedMap] = useState<Map<number, { type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[] }>>(new Map());
     // Track loading state
     const [loading, setLoading] = useState<number | null>(null);
+    // Track which level just got new content so we can scroll to it
+    const [scrollToLevel, setScrollToLevel] = useState<number | null>(null);
+    // Refs for each level section to enable scrolling
+    const sectionRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
+
+    // Scroll to the newly expanded section when it appears
+    useEffect(() => {
+        if (scrollToLevel === null) return;
+        const el = sectionRefs.current.get(scrollToLevel);
+        if (el) {
+            // Small delay to let the DOM paint
+            const levelToScroll = scrollToLevel;
+            const timer = setTimeout(() => {
+                const target = sectionRefs.current.get(levelToScroll);
+                target?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [scrollToLevel, expandedMap]);
 
     const handleCategoryExpand = async (categoryId: number, level: number) => {
         const currentExpanded = levelExpanded.get(level);
@@ -147,10 +178,15 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
             try {
                 const contents = await fetchCategoryContents(categoryId);
                 setExpandedMap(new Map(expandedMap).set(categoryId, contents));
+                // Trigger scroll to the newly expanded level
+                setScrollToLevel(level + 1);
             } catch (error) {
                 console.error("Failed to fetch category contents:", error);
             }
             setLoading(null);
+        } else {
+            // Already cached, still scroll to it
+            setScrollToLevel(level + 1);
         }
     };
 
@@ -204,17 +240,12 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                     items={levelData.items}
                     type={levelData.type}
                     level={levelData.level}
+                    loadingCategoryId={loading}
                     onCategoryExpand={handleCategoryExpand}
                     levelExpanded={levelExpanded}
+                    sectionRef={(el) => { sectionRefs.current.set(levelData.level, el); }}
                 />
             ))}
-
-            {/* Loading indicator */}
-            {loading !== null && (
-                <div className="flex justify-center py-8">
-                    <div className="border-primary-600 h-8 w-8 animate-spin rounded-full border-b-2"></div>
-                </div>
-            )}
         </div>
     );
 }

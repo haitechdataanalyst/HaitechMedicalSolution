@@ -42,12 +42,12 @@ export default function RootLayout({
                             <Header />
                             <main className="flex-1">{children}</main>
                             <Footer sections={navigation.footer.sections} config={siteConfig} />
-                            <div className="fixed right-6 bottom-6 flex flex-col gap-3">
+                            <div className="fixed right-6 bottom-6 flex flex-col gap-2">
                                 <WhatsAppButton phoneNumber={siteConfig.company.phone} iconOnly size="md" className="h-12 w-12 cursor-pointer rounded-full" />
                                 <DownloadCatalogButton
                                     iconOnly
                                     size="md"
-                                    className="h-12 w-12 cursor-pointer rounded-full"
+                                    className="h-12 w-12 cursor-pointer rounded-full bg-primary-500 text-white"
                                     fileUrl="/catalouges/Haitech Medical Solutions Catalog.pdf"
                                     fileName="Haitech Medical Solutions Catalog.pdf"
                                     aria-label="Download company catalog"

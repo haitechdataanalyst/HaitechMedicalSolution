@@ -65,11 +65,11 @@ export default function Home() {
                                 Browse Products
                             </Button>
                         </Link>
-                        <Link href="/contact" className="w-full sm:w-auto">
+                        {/* <Link href="/contact" className="w-full sm:w-auto">
                             <Button size="lg" variant="primary" className="flex w-full items-center justify-center gap-4 sm:w-auto">
                                 Request a Quote
                             </Button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </section>
