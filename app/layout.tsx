@@ -47,7 +47,7 @@ export default function RootLayout({
                                 <DownloadCatalogButton
                                     iconOnly
                                     size="md"
-                                    className="h-12 w-12 cursor-pointer rounded-full bg-primary-500 text-white"
+                                    className="h-12 w-12 border-[0.5px]! cursor-pointer rounded-full bg-primary-500 text-white"
                                     fileUrl="/catalouges/Haitech Medical Solutions Catalog.pdf"
                                     fileName="Haitech Medical Solutions Catalog.pdf"
                                     aria-label="Download company catalog"
