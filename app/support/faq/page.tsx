@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PlaySquare, FileText, ArrowRight, FileTerminalIcon } from "lucide-react";
 import { ArticlesPageClient } from "../articles/ArticlesPageClient";
 import { getMetadata } from "@/lib/metadata";
+import { phone } from "@/data/site-config.json";
 
 export const metadata = getMetadata("supportFaq");
 
@@ -37,6 +38,15 @@ const helpResources = [
 export default function HelpCenterPage() {
     return (
         <div className="mx-auto max-w-5xl">
+            <section className="bg-primary-50 mb-4 rounded-xl border border-neutral-200 p-4 text-center">
+                <p className="text-sm font-medium text-neutral-800">
+                    To connect with our online customer service please call us at :
+                    <a href={`tel:${phone.service}`} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+                        {phone.service}
+                    </a>
+                </p>
+            </section>
+
             {/* Quick Resources */}
             <section className="mb-12 grid gap-4 md:grid-cols-3">
                 {helpResources.map((resource) => {

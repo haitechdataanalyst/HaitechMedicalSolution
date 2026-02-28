@@ -120,7 +120,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                                                         {hasItems && (
                                                             <ul
                                                                 className={cn(
-                                                                    "mt-1 ml-4 space-y-1 overflow-hidden transition-all duration-200",
+                                                                    "mt-1 ml-4 space-y-1 overflow-auto transition-all duration-200",
                                                                     isCategoryExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                                                                 )}
                                                             >

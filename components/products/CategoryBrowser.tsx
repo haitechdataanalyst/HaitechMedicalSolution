@@ -126,24 +126,30 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     // Track loading state
     const [loading, setLoading] = useState<number | null>(null);
     // Track which level just got new content so we can scroll to it
-    const [scrollToLevel, setScrollToLevel] = useState<number | null>(null);
+    // Using an object with a counter ensures React always sees a new value, even for the same level
+    const [scrollTarget, setScrollTarget] = useState<{ level: number; trigger: number } | null>(null);
+    const scrollTriggerRef = useRef(0);
     // Refs for each level section to enable scrolling
     const sectionRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
     // Scroll to the newly expanded section when it appears
     useEffect(() => {
-        if (scrollToLevel === null) return;
-        const el = sectionRefs.current.get(scrollToLevel);
+        if (scrollTarget === null) return;
+        const levelToScroll = scrollTarget.level;
+        const el = sectionRefs.current.get(levelToScroll);
         if (el) {
             // Small delay to let the DOM paint
-            const levelToScroll = scrollToLevel;
             const timer = setTimeout(() => {
                 const target = sectionRefs.current.get(levelToScroll);
-                target?.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (target) {
+                    const offset = 24; // px gap above the section
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: "smooth" });
+                }
             }, 100);
             return () => clearTimeout(timer);
         }
-    }, [scrollToLevel, expandedMap]);
+    }, [scrollTarget]);
 
     const handleCategoryExpand = async (categoryId: number, level: number) => {
         const currentExpanded = levelExpanded.get(level);
@@ -179,14 +185,16 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                 const contents = await fetchCategoryContents(categoryId);
                 setExpandedMap(new Map(expandedMap).set(categoryId, contents));
                 // Trigger scroll to the newly expanded level
-                setScrollToLevel(level + 1);
+                scrollTriggerRef.current += 1;
+                setScrollTarget({ level: level + 1, trigger: scrollTriggerRef.current });
             } catch (error) {
                 console.error("Failed to fetch category contents:", error);
             }
             setLoading(null);
         } else {
             // Already cached, still scroll to it
-            setScrollToLevel(level + 1);
+            scrollTriggerRef.current += 1;
+            setScrollTarget({ level: level + 1, trigger: scrollTriggerRef.current });
         }
     };
 

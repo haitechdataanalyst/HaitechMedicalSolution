@@ -11,6 +11,9 @@
             "country": "India"
         }
     },
+    "phone": {
+        "service": "+91 9769403892"
+    },
     "emails": {
         "quotes": "quotes@haitechmedical.com.au",
         "contact": "info@haitechmedical.com.au",

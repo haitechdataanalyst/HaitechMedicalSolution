@@ -32,13 +32,7 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
 
             {/* Category Name Button */}
             <div className="flex justify-center">
-                <span
-                    className={`btn btn-primary w-full py-2 ${
-                        isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"
-                    }`}
-                >
-                    {category.name}
-                </span>
+                <span className={`btn btn-primary w-full py-2 ${isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"}`}>{category.name}</span>
             </div>
 
             {/* Product count badge */}
@@ -76,9 +70,13 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
 
             {/* Product Name */}
             <div className="mb-3 flex justify-center">
-                <Link href={`/our-instruments/${product.id}`} className="btn btn-primary w-full py-2">
-                    {product.name}
-                </Link>
+                {!product.catalogueFile ? (
+                    <Link href={`/our-instruments/${product.id}`} className="btn btn-primary w-full py-2">
+                        {product.name}
+                    </Link>
+                ) : (
+                    <span className="btn btn-primary w-full py-2">{product.name}</span>
+                )}
             </div>
 
             {/* Product Description */}
@@ -101,11 +99,13 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
             {/* View Details */}
             {product.catalogueFile ? (
                 <a href={product.catalogueFile ? product.catalogueFile : "#"} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
-                    Get Catalogue
+                    Get a Quote
                 </a>
             ) : (
                 <div className="mt-auto pt-2">
-                    <span className="btn btn-ghost group-hover:bg-surface-tertiary w-full py-2 text-sm">View Models →</span>
+                    <Link href={`/our-instruments/${product.id}`} className="btn btn-ghost group-hover:bg-surface-tertiary w-full py-2 text-sm">
+                        View Models →
+                    </Link>
                 </div>
             )}
         </div>
