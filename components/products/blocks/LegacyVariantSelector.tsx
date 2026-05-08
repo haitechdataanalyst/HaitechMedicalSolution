@@ -14,7 +14,9 @@ export default function LegacyVariantSelector({ variants, variantType, selectedV
 
     return (
         <div>
-            <label className="mb-3 block text-sm font-medium text-neutral-700">{isColorType ? "Select Color" : "Select Variant"}</label>
+            <label className="mb-3 block text-sm font-medium text-neutral-700">
+                {isColorType ? "Select Color" : variantType === "model" ? "Select Model" : "Select Variant"}
+            </label>
             <div className="flex flex-wrap gap-4">
                 {variants.map((variant) => {
                     const swatchColor = variant.color ?? variant.colorCode;
@@ -42,7 +44,7 @@ export default function LegacyVariantSelector({ variants, variantType, selectedV
                                         isSelected ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "hover:border-primary-400 border-neutral-300"
                                     }`}
                                 >
-                                    {variant.frameStyle ?? variant.grit ?? variant.sku}
+                                    {variant.name ?? variant.frameStyle ?? variant.grit ?? variant.sku ?? variant.id}
                                 </span>
                             )}
                             {isColorType && variant.name && <span className={`text-xs ${isSelected ? "text-primary-700 font-medium" : "text-muted"}`}>{variant.name}</span>}

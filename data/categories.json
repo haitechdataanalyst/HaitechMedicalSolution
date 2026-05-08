@@ -8,7 +8,7 @@
         "image": "/images/products/admetec/admetec-banner.jpg",
         "parent": null,
         "order": 1,
-        "children": [2, 3, 4, 5, 6, 7]
+        "children": [2, 3, 4, 5, 6, 7, 8]
     },
     {
         "id": 2,
@@ -77,6 +77,17 @@
         "order": 6,
         "children": [],
         "specialPage": "/our-headlights"
+    },
+    {
+        "id": 8,
+        "slug": "admetec-camera",
+        "name": "Camera",
+        "type": "category",
+        "description": "Precision dental camera systems designed to mount seamlessly with Admetec loupes for clear intraoral imaging",
+        "image": "/Camera/Flamingo-with-Loupes.jpg",
+        "parent": 1,
+        "order": 7,
+        "children": []
     },
     {
         "id": 10,

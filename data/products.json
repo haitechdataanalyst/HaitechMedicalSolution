@@ -8464,6 +8464,134 @@
             }
         ],
         "relatedProducts": [1118, 1115, 1110]
+    },
+    {
+        "id": 1200,
+        "slug": "admetec-flamingo-camera",
+        "name": "Admetec Dental Camera",
+        "description": "High-definition loupe-mounted dental camera for seamless intraoral imaging and documentation",
+        "category": 8,
+        "order": 1,
+        "sku": "ADM-CAM-FLM",
+        "basePrice": 1290,
+        "currency": "AUD",
+        "hasVariants": true,
+        "variantType": "model",
+        "defaultImage": "/Camera/Flamingo-with-Loupes.jpg",
+        "catalogueFile": "/catalogues/admetec-camera.pdf",
+        "gallery": [
+            "/Camera/Flamingo-with-Loupes.jpg",
+            "/Camera/ADM04287.jpg",
+            "/Camera/GRII3736.jpg",
+            "/Camera/GRII3448.jpg",
+            "/Camera/GRII3221.jpg",
+            "/Camera/GRII3276.jpg",
+            "/Camera/GRII3264.jpg"
+        ],
+        "variants": [
+            {
+                "id": "standard-hd",
+                "name": "Standard HD",
+                "sku": "ADM-CAM-FLM-STD"
+            },
+            {
+                "id": "pro-4k",
+                "name": "Pro 4K",
+                "sku": "ADM-CAM-FLM-PRO"
+            },
+            {
+                "id": "ultra-4k-plus",
+                "name": "Ultra 4K+",
+                "sku": "ADM-CAM-FLM-ULTRA"
+            }
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/Camera/Flamingo-with-Loupes.jpg",
+                    "gallery": [
+                        "/Camera/Flamingo-with-Loupes.jpg",
+                        "/Camera/ADM04287.jpg",
+                        "/Camera/GRII3736.jpg",
+                        "/Camera/GRII3448.jpg",
+                        "/Camera/GRII3221.jpg",
+                        "/Camera/GRII3276.jpg",
+                        "/Camera/GRII3264.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Admetec Dental Camera is engineered to integrate seamlessly with Admetec loupe systems, delivering crystal-clear intraoral video and still images directly from your field of view. Lightweight, ergonomic, and clinically precise.",
+                    "secondary": "Designed for dental professionals who demand sharp documentation, patient communication, and real-time imaging without disrupting clinical workflow."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        { "label": "Resolution", "value": "Full HD 1080p / 4K (model dependent)" },
+                        { "label": "Sensor", "value": "1/3\" Sony CMOS" },
+                        { "label": "Frame Rate", "value": "60 fps (HD), 30 fps (4K)" },
+                        { "label": "Connectivity", "value": "USB-C, Wireless (Pro & Ultra)" },
+                        { "label": "Mount Type", "value": "Universal Loupe Mount — fits Blues, Indie, Jazz, Soul frames" },
+                        { "label": "Weight", "value": "18g" },
+                        { "label": "Battery", "value": "Powered via USB / integrated 4hr battery (Pro & Ultra)" },
+                        { "label": "Compatibility", "value": "Windows, macOS, iOS — plug and play" }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Admetec",
+                    "warranty": "2 years comprehensive",
+                    "packageContents": [
+                        "Admetec Dental Camera unit",
+                        "Universal loupe mount adapter",
+                        "USB-C cable (1.5m)",
+                        "Protective carry case",
+                        "Microfiber lens cloth",
+                        "Quick-start guide"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": true,
+                    "customFields": [
+                        {
+                            "name": "mountType",
+                            "label": "Mount Type",
+                            "type": "select",
+                            "options": [
+                                { "value": "blues", "label": "Blues Frame Mount" },
+                                { "value": "indie", "label": "Indie Frame Mount" },
+                                { "value": "jazz", "label": "Jazz Frame Mount" },
+                                { "value": "soul", "label": "Soul Frame Mount" },
+                                { "value": "universal", "label": "Universal Clip Mount" }
+                            ],
+                            "required": true
+                        },
+                        {
+                            "name": "connectivity",
+                            "label": "Connectivity",
+                            "type": "select",
+                            "options": [
+                                { "value": "usb", "label": "USB-C Wired" },
+                                { "value": "wireless", "label": "Wireless (Pro & Ultra only)" }
+                            ],
+                            "required": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "relatedProducts": [101, 102, 103]
     }
-    
 ]

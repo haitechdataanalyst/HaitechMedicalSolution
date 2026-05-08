@@ -25,7 +25,7 @@ interface ActionsBlockProps {
 export default function ActionsBlock({ data, product, onVariantSelect, frames = [], headlightCategories = [] }: ActionsBlockProps) {
     const { addItem } = useCart();
     const [quantity] = useState(1);
-    const [customFields] = useState<Record<string, string | number>>({});
+    const [customFields, setCustomFields] = useState<Record<string, string | number>>({});
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const [variantSelection, setVariantSelection] = useState<VariantSelection>({});
     const [selectedFrameSize, setSelectedFrameSize] = useState<string | null>(data.frameSizes?.[1]?.value ?? null);
@@ -42,6 +42,13 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         },
         [onVariantSelect]
     );
+
+    const handleCustomFieldChange = (name: string, value: string | number) => {
+        setCustomFields((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
     // Build customization data for cart
     const buildCustomization = (): Record<string, string | number> => {
@@ -138,6 +145,36 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
             {/* Frame Size Selector */}
             {data.frameSizes && data.frameSizes.length > 0 && <FrameSizeSelector sizes={data.frameSizes} selectedSize={selectedFrameSize} onSizeChange={setSelectedFrameSize} />}
+
+            {/* Generic Custom Fields */}
+            {data.customFields &&
+                data.customFields.map((field) => (
+                    <div key={field.name || field.label} className="space-y-2">
+                        <label className="block text-sm font-medium text-neutral-700">
+                            {field.label}
+                            {field.required && <span className="ml-1 text-red-500">*</span>}
+                        </label>
+                        {field.type === "select" && (
+                            <select
+                                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm focus:border-primary-500 focus:outline-none"
+                                value={customFields[field.name || ""] || ""}
+                                onChange={(e) => handleCustomFieldChange(field.name || "", e.target.value)}
+                                required={field.required}
+                            >
+                                <option value="">Select {field.label}</option>
+                                {field.options?.map((option) => {
+                                    const opt = typeof option === "string" ? { value: option, label: option } : option;
+                                    return (
+                                        <option key={opt.value} value={opt.value}>
+                                            {opt.label}
+                                        </option>
+                                    );
+                                })}
+                            </select>
+                        )}
+                        {/* Add support for other field types if needed in the future */}
+                    </div>
+                ))}
 
             {/* Prescription Section */}
             {data.prescription?.enabled && <PrescriptionSection config={data.prescription} onFileChange={setPrescriptionFile} />}

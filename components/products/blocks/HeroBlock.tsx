@@ -72,15 +72,22 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
 
     // Determine the primary image to show
     const getPrimaryImage = (): string => {
-        if (externalSelectedImage && externalSelectedImage.trim() !== "") {
-            return externalSelectedImage;
-        }
+        // Priority 1: User explicitly clicked a thumbnail in this session
         if (userSelectedImage && userSelectedImage.trim() !== "") {
             return userSelectedImage;
         }
+
+        // Priority 2: External variant selection (only if enabled for this product)
+        // This allows loupes to switch images on variant select, but keeps others stable
+        if (data.useVariantImages && externalSelectedImage && externalSelectedImage.trim() !== "") {
+            return externalSelectedImage;
+        }
+
+        // Priority 3: Default first image from computed gallery
         if (allImages.length > 0) {
             return allImages[0];
         }
+
         return PLACEHOLDER_IMAGE;
     };
 
@@ -96,11 +103,13 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
             {/* Main Image */}
             <div className="relative aspect-square overflow-hidden rounded-xl">
                 <Image
+                    key={selectedImage}
                     src={failedImages.has(selectedImage) ? PLACEHOLDER_IMAGE : selectedImage}
                     alt="Product"
                     fill
+                    priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-contain"
+                    className="animate-in fade-in object-contain duration-500"
                     onError={() => handleImageError(selectedImage)}
                 />
             </div>
@@ -113,8 +122,8 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
                             key={index}
                             onClick={() => setUserSelectedImage(image)}
                             className={cn(
-                                "h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-colors",
-                                selectedImage === image ? "border-primary-600" : "cursor-pointer border-transparent hover:border-neutral-300"
+                                "h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 hover:scale-105",
+                                selectedImage === image ? "border-primary-600 ring-primary-500 ring-2 ring-offset-2" : "cursor-pointer border-transparent hover:border-neutral-300"
                             )}
                         >
                             <Image
