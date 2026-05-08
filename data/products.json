@@ -2433,7 +2433,7 @@
                 }
             }
         ],
-        "relatedProducts": [405, 406]
+        "relatedProducts": [405, 406, 407, 408]
     },
     {
         "id": 405,
@@ -2522,7 +2522,7 @@
                 }
             }
         ],
-        "relatedProducts": [404, 406]
+        "relatedProducts": [404, 406, 407, 408]
     },
     {
         "id": 406,
@@ -2617,7 +2617,206 @@
                 }
             }
         ],
-        "relatedProducts": [404, 405]
+        "relatedProducts": [404, 405, 407, 408]
+    },
+    {
+        "id": 407,
+        "slug": "electric-motor",
+        "name": "Brushless Electric Motor",
+        "description": "High-precision brushless electric motor for dental clinical precision workflow",
+        "category": 12,
+        "order": 4,
+        "sku": "ALM-EM-01",
+        "basePrice": null,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/electric_motor/EM_1.webp",
+        "gallery": [
+            "/electric_motor/EM_1.webp",
+            "/electric_motor/EM_2.webp",
+            "/electric_motor/EM_3.webp"
+        ],
+        "catalogueFile": "/electric_motor/Electric micromotor.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/electric_motor/EM_1.webp",
+                    "gallery": [
+                        "/electric_motor/EM_1.webp",
+                        "/electric_motor/EM_2.webp",
+                        "/electric_motor/EM_3.webp"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Brushless Electric Motor is a high-performance solution for modern dental clinics, offering precision, power, and quiet operation. Designed for seamless integration into your workflow.",
+                    "secondary": "<b>Features</b>: 1. Powerful torque head. 2. Extremely quiet operation, with noise levels less than 60dB. 3. Compact motor size: Φ22*L71mm. 4. Operating voltage: DC24V. This brushless motor ensures stable performance and long-lasting reliability for various clinical applications."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Motor Type",
+                            "value": "Brushless DC Motor"
+                        },
+                        {
+                            "label": "Rotation Speed",
+                            "value": "2,000 – 40,000 rpm"
+                        },
+                        {
+                            "label": "Maximum Torque",
+                            "value": "3.2 N·cm"
+                        },
+                        {
+                            "label": "Noise Level",
+                            "value": "< 60 dB"
+                        },
+                        {
+                            "label": "Voltage",
+                            "value": "DC 24V - 36V"
+                        },
+                        {
+                            "label": "Connector",
+                            "value": "ISO E-type"
+                        },
+                        {
+                            "label": "Irrigation",
+                            "value": "Internal irrigation system"
+                        },
+                        {
+                            "label": "LED Compatibility",
+                            "value": "Yes (White LED)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "warranty": "2 years",
+                    "packageContents": [
+                        "Brushless Electric Motor",
+                        "Control PC board",
+                        "Power adapter jack",
+                        "User manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [404, 405, 408]
+    },
+    {
+        "id": 408,
+        "slug": "three-in-one-dental-piezo",
+        "name": "3-in-1 Dental Piezo Surgery System",
+        "description": "Innovative multifunctional platform combining piezo surgery, implant motor, and bone cutting capabilities",
+        "category": 12,
+        "order": 5,
+        "sku": "ALM-PZO-01",
+        "basePrice": null,
+        "currency": "AUD",
+        "hasVariants": false,
+        "defaultImage": "/three_in_one_Dental_Piezo/file_1.webp",
+        "gallery": [
+            "/three_in_one_Dental_Piezo/file_1.webp",
+            "/three_in_one_Dental_Piezo/file_2.webp",
+            "/three_in_one_Dental_Piezo/file_3.webp",
+            "/three_in_one_Dental_Piezo/file_4.webp"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/three_in_one_Dental_Piezo/file_1.webp",
+                    "gallery": [
+                        "/three_in_one_Dental_Piezo/file_1.webp",
+                        "/three_in_one_Dental_Piezo/file_2.webp",
+                        "/three_in_one_Dental_Piezo/file_3.webp",
+                        "/three_in_one_Dental_Piezo/file_4.webp"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Wisedent Surgery XT is a state-of-the-art 3-in-1 dental system that integrates piezoelectric surgery, implant motor functionality, and bone cutting into a single, efficient unit. Designed to meet the highest standards of modern oral healthcare.",
+                    "secondary": "<b>Clinical Performance</b>: This innovative device streamlines surgical workflows by combining precision and versatility. The piezoelectric function allows for delicate bone cutting while protecting soft tissues, while the implant motor ensures accurate placement of implants. Featuring a modern touchscreen interface and advanced irrigation system, it provides superior control and visibility for both novice and experienced professionals."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Functions",
+                            "value": "Piezo Surgery, Implant Motor, Bone Cutting"
+                        },
+                        {
+                            "label": "Implant Speed Range",
+                            "value": "100 – 40,000 rpm (Ratio 1:1)"
+                        },
+                        {
+                            "label": "Surgery Speed Range",
+                            "value": "2,000 – 40,000 rpm (Ratio 1:1)"
+                        },
+                        {
+                            "label": "Control System",
+                            "value": "Touchscreen Interface"
+                        },
+                        {
+                            "label": "Irrigation System",
+                            "value": "Integrated, adjustable flow"
+                        },
+                        {
+                            "label": "Foot Control",
+                            "value": "Multifunction pedal"
+                        },
+                        {
+                            "label": "Handpiece",
+                            "value": "Autoclavable with LED"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Wisedent",
+                    "warranty": "2 years",
+                    "packageContents": [
+                        "Main Control Unit",
+                        "Piezo Handpiece",
+                        "Implant Motor Handpiece",
+                        "Multifunction Foot Pedal",
+                        "Irrigation Tubing Set",
+                        "Basic Tip Set",
+                        "User Manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ],
+        "relatedProducts": [404, 405, 407]
     },
     {
         "id": 501,
