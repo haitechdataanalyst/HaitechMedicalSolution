@@ -67,18 +67,19 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                     height: 0,
                     borderLeft: "20px solid transparent",
                     borderRight: "20px solid transparent",
-                    borderBottom: "20px solid #1a2e3b",
+                    borderBottom: "20px solid white",
+                    filter: "drop-shadow(0 -2px 2px rgb(0 0 0 / 0.06))",
                 }}
             />
 
             {/* Mega Menu Container */}
-            <div className="mx-auto max-w-full overflow-hidden bg-[#1a2e3b] shadow-2xl">
+            <div className="mx-auto max-w-full overflow-hidden border-t border-neutral-100 bg-white shadow-2xl">
                 <div className="grid w-full grid-cols-5 gap-0 px-4">
                     {columns.map((column, idx) => (
-                        <div key={column.href} className={cn("px-5 py-6", idx !== columns.length - 1 && "border-r border-white/10")}>
+                        <div key={column.href} className={cn("px-5 py-6", idx !== columns.length - 1 && "border-r border-neutral-100")}>
                             {/* Column Header */}
                             <Link href={column.href} className="group mb-4 block" onClick={onClose}>
-                                <h3 className="hover:text-primary-400 text-sm font-bold text-white transition-colors">{column.title}</h3>
+                                <h3 className="text-primary-600 hover:text-primary-800 text-sm font-bold transition-colors">{column.title}</h3>
                             </Link>
 
                             {/* Column Items */}
@@ -89,7 +90,7 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                                             href={item.href}
                                             className={cn(
                                                 "group flex items-center gap-1 text-sm transition-colors",
-                                                pathname === item.href ? "text-primary-400" : "hover:text-primary-400 whitespace-nowrap text-neutral-300"
+                                                pathname === item.href ? "text-primary-600 font-medium" : "hover:text-primary-600 whitespace-nowrap text-neutral-600"
                                             )}
                                             onClick={onClose}
                                         >
@@ -104,7 +105,7 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                             {column.aboutLink && (
                                 <Link
                                     href={column.aboutLink.href}
-                                    className="hover:text-primary-400 mt-4 flex items-center gap-1 text-sm whitespace-nowrap text-neutral-400 transition-colors"
+                                    className="text-primary-500 hover:text-primary-700 mt-4 flex items-center gap-1 text-sm whitespace-nowrap transition-colors"
                                     onClick={onClose}
                                 >
                                     <span>{column.aboutLink.label}</span>

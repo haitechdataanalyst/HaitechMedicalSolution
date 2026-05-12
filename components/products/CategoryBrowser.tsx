@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Category, Product } from "@/types";
@@ -19,7 +20,7 @@ interface CategoryItemProps {
     isExpanded: boolean;
     isLoading: boolean;
     level: number;
-    onCategoryExpand: (categoryId: number, level: number) => void;
+    onCategoryExpand: (categoryId: number, level: number, categoryPath?: string) => void;
 }
 
 interface ProductItemProps {
@@ -49,10 +50,11 @@ function ProductItem({ product }: ProductItemProps) {
     );
 }
 
-function LoadingOverlay() {
+function SkeletonCircle() {
     return (
-        <div className="absolute inset-0 z-10 flex items-center justify-center rounded-full bg-white/70 backdrop-blur-[1px]">
-            <div className="border-primary-600 h-8 w-8 animate-spin rounded-full border-[3px] border-t-transparent" />
+        <div className="flex flex-col items-center p-4">
+            <div className="mb-3 h-24 w-24 animate-pulse rounded-full bg-neutral-200 sm:h-28 sm:w-28 md:h-40 md:w-40" />
+            <div className="h-3 w-20 animate-pulse rounded bg-neutral-200" />
         </div>
     );
 }
@@ -73,10 +75,14 @@ function CategoryItem({ category, isExpanded, isLoading, level, onCategoryExpand
     }
 
     return (
-        <button onClick={() => onCategoryExpand(category.id, level)} className={`group flex flex-col items-center p-4 text-center transition-all ${isExpanded ? "scale-105" : "hover:scale-105"}`}>
+        <button onClick={() => onCategoryExpand(category.id, level, category.path)} className={`group flex flex-col items-center p-4 text-center transition-all ${isExpanded ? "scale-105" : "hover:scale-105"}`}>
             <div className={`relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all sm:h-28 sm:w-28 md:h-40 md:w-40 ${isExpanded ? "ring-primary-500 shadow-md ring-2" : ""}`}>
                 <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
-                {isLoading && <LoadingOverlay />}
+                {isLoading && (
+                    <div className="absolute inset-0 z-10 flex items-center justify-center rounded-full bg-white/60">
+                        <div className="border-primary-600 h-6 w-6 animate-spin rounded-full border-[3px] border-t-transparent" />
+                    </div>
+                )}
             </div>
             <span className={`line-clamp-2 max-w-30 text-sm font-medium transition-colors ${isExpanded ? "text-primary-600" : "group-hover:text-primary-600 text-gray-700"}`}>{category.name}</span>
         </button>
@@ -89,22 +95,27 @@ interface LevelSectionProps {
     type: "categories" | "products";
     level: number;
     loadingCategoryId: number | null;
-    onCategoryExpand: (categoryId: number, level: number) => void;
+    onCategoryExpand: (categoryId: number, level: number, categoryPath?: string) => void;
     levelExpanded: Map<number, number>;
     sectionRef?: (el: HTMLDivElement | null) => void;
 }
 
 function LevelSection({ title, items, type, level, loadingCategoryId, onCategoryExpand, levelExpanded, sectionRef }: LevelSectionProps) {
     const expandedCategoryId = levelExpanded.get(level);
+    const isNextLevelLoading = loadingCategoryId !== null && type === "categories" && (items as CategoryWithPath[]).some((c) => c.id === loadingCategoryId);
 
     return (
         <div className="w-full" ref={sectionRef}>
-            {/* Section Header with divider lines */}
-            <div className="my-6 flex items-center gap-4 sm:my-8">
-                <div className="h-px flex-1 bg-gray-200" />
-                <h2 className="px-4 text-xl font-light whitespace-nowrap text-gray-600 sm:text-2xl">{title}</h2>
-                <div className="h-px flex-1 bg-gray-200" />
-            </div>
+            {/* Section heading — left accent bar style */}
+            {title && (
+                <div className="my-6 sm:my-8">
+                    <div className="flex items-center gap-3">
+                        <div className="bg-primary-500 h-6 w-1 rounded-full" />
+                        <h2 className="text-foreground text-xl font-semibold sm:text-2xl">{title}</h2>
+                    </div>
+                    <div className="mt-3 h-px bg-neutral-100" />
+                </div>
+            )}
 
             {/* Items Grid */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
@@ -114,11 +125,19 @@ function LevelSection({ title, items, type, level, loadingCategoryId, onCategory
                       ))
                     : (items as ProductWithPath[]).map((product) => <ProductItem key={product.id} product={product} />)}
             </div>
+
+            {/* Skeleton row while next level content loads */}
+            {isNextLevelLoading && (
+                <div className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
+                    {Array.from({ length: 5 }).map((_, i) => <SkeletonCircle key={i} />)}
+                </div>
+            )}
         </div>
     );
 }
 
 export default function CategoryBrowser({ initialCategories, fetchCategoryContents }: CategoryBrowserProps) {
+    const router = useRouter();
     // Track expanded category at each level: Map<level, categoryId>
     const [levelExpanded, setLevelExpanded] = useState<Map<number, number>>(new Map());
     // Track fetched contents: Map<categoryId, contents>
@@ -132,18 +151,17 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     // Refs for each level section to enable scrolling
     const sectionRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
-    // Scroll to the newly expanded section when it appears
+    // Scroll to the newly expanded section — offset accounts for sticky header (~80px) + breathing room
     useEffect(() => {
         if (scrollTarget === null) return;
         const levelToScroll = scrollTarget.level;
         const el = sectionRefs.current.get(levelToScroll);
         if (el) {
-            // Small delay to let the DOM paint
             const timer = setTimeout(() => {
                 const target = sectionRefs.current.get(levelToScroll);
                 if (target) {
-                    const offset = 24; // px gap above the section
-                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    const stickyHeaderHeight = 96;
+                    const top = target.getBoundingClientRect().top + window.scrollY - stickyHeaderHeight;
                     window.scrollTo({ top, behavior: "smooth" });
                 }
             }, 100);
@@ -151,7 +169,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
         }
     }, [scrollTarget]);
 
-    const handleCategoryExpand = async (categoryId: number, level: number) => {
+    const handleCategoryExpand = async (categoryId: number, level: number, categoryPath?: string) => {
         const currentExpanded = levelExpanded.get(level);
 
         // If clicking the same category, collapse it and all children
@@ -183,6 +201,12 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
             setLoading(categoryId);
             try {
                 const contents = await fetchCategoryContents(categoryId);
+                // If exactly one product, navigate directly to the category URL
+                if (contents.type === "products" && contents.items.length === 1) {
+                    router.push(categoryPath || (contents.items[0] as ProductWithPath).path || `/product/${(contents.items[0] as ProductWithPath).slug}`);
+                    setLoading(null);
+                    return;
+                }
                 setExpandedMap(new Map(expandedMap).set(categoryId, contents));
                 // Trigger scroll to the newly expanded level
                 scrollTriggerRef.current += 1;
@@ -192,6 +216,12 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
             }
             setLoading(null);
         } else {
+            const cached = expandedMap.get(categoryId)!;
+            // If exactly one product, navigate directly to the category URL
+            if (cached.type === "products" && cached.items.length === 1) {
+                router.push(categoryPath || (cached.items[0] as ProductWithPath).path || `/product/${(cached.items[0] as ProductWithPath).slug}`);
+                return;
+            }
             // Already cached, still scroll to it
             scrollTriggerRef.current += 1;
             setScrollTarget({ level: level + 1, trigger: scrollTriggerRef.current });

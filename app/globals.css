@@ -71,7 +71,7 @@
     --border-color: var(--color-neutral-200);
     --border-color-light: var(--color-neutral-100);
     --text-muted: var(--color-neutral-600);
-    --text-subtle: var(--color-neutral-500);
+    --text-subtle: var(--color-neutral-600);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -115,7 +115,7 @@
         -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Scrollbar */
+    /* Scrollbar — WebKit (Chrome/Safari/Edge) */
     ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -132,6 +132,12 @@
 
     ::-webkit-scrollbar-thumb:hover {
         background: var(--color-neutral-400);
+    }
+
+    /* Scrollbar — Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-neutral-300) var(--background-secondary);
     }
 
     /* Focus — visible for keyboard, hidden for mouse */
@@ -156,13 +162,16 @@
     }
 
     .card-hover {
-        transition: all var(--transition-normal);
+        transition:
+            box-shadow var(--transition-normal),
+            border-color var(--transition-normal),
+            transform var(--transition-normal);
     }
 
     .card-hover:hover {
         box-shadow: var(--shadow-lg);
-        border-color: var(--border-color);
-        transform: translateY(-2px);
+        border-color: var(--color-primary-200);
+        transform: translateY(-3px);
     }
 
     /* ---------- Form Elements ---------- */

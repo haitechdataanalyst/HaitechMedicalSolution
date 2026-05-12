@@ -68,6 +68,23 @@ export default async function CategoryPage({ params }: PageProps) {
     const breadcrumbs = getCategoryBreadcrumbs(category);
     const contents = getCategoryContents(category.id);
 
+    // If the category has exactly one product, show product detail directly
+    if (contents.type === "products" && contents.items.length === 1) {
+        const product = contents.items[0] as Product;
+        const productBreadcrumbs = getProductBreadcrumbs(product);
+        const relatedProducts = getRelatedProducts(product).map((p) => ({ ...p, path: getProductPath(p) }));
+        const accessories = getProductAccessories(product).map((p) => ({ ...p, path: getProductPath(p) }));
+        const frames = getAllFrames();
+        const headlightCategories = await getHeadlightCategories();
+
+        return (
+            <>
+                <Breadcrumbs items={productBreadcrumbs} />
+                <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} headlightCategories={headlightCategories} />
+            </>
+        );
+    }
+
     // Add paths to the initial items
     const initialItemsWithPaths =
         contents.type === "categories"

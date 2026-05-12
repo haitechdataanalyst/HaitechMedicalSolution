@@ -19,7 +19,15 @@ interface CardImageProps {
 }
 
 export function CardImage({ src, alt, className }: CardImageProps) {
-    return <ImageWithFallback src={src} alt={alt} containerClassName={cn("aspect-square", className)} />;
+    return (
+        <div className="overflow-hidden">
+            <ImageWithFallback
+                src={src}
+                alt={alt}
+                containerClassName={cn("aspect-square transition-transform duration-300 group-hover:scale-105", className)}
+            />
+        </div>
+    );
 }
 
 interface CardContentProps {

@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { CloseIcon, ChevronDownIcon } from "@/components/icons";
 import { EnhancedNavItem } from "@/lib/navigation";
+import { RocketIcon } from "lucide-react";
 
 interface MobileMenuProps {
     items: EnhancedNavItem[];
@@ -17,23 +18,43 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
     const pathname = usePathname();
     const [expandedItems, setExpandedItems] = useState<string[]>([]);
     const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
-
-    // // Close menu on route change
-    // useEffect(() => {
-    //   onClose();
-    // }, [pathname, onClose]);
+    const panelRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
     // Prevent body scroll when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
+            // Move focus into panel
+            setTimeout(() => closeButtonRef.current?.focus(), 50);
         } else {
             document.body.style.overflow = "";
         }
-        return () => {
-            document.body.style.overflow = "";
-        };
+        return () => { document.body.style.overflow = ""; };
     }, [isOpen]);
+
+    // Focus trap — keep Tab/Shift+Tab inside the panel
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") { onClose(); return; }
+            if (e.key !== "Tab") return;
+            const panel = panelRef.current;
+            if (!panel) return;
+            const focusable = panel.querySelectorAll<HTMLElement>(
+                'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            );
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+            } else {
+                if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [isOpen, onClose]);
 
     const toggleExpanded = (href: string) => {
         setExpandedItems((prev) => (prev.includes(href) ? prev.filter((item) => item !== href) : [...prev, href]));
@@ -49,17 +70,17 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
             <div className={cn("fixed inset-0 z-60 bg-black/50 transition-opacity duration-300 md:hidden", isOpen ? "visible opacity-100" : "invisible opacity-0")} onClick={onClose} />
 
             {/* Menu Panel */}
-            <div className={cn("bg-surface fixed top-0 right-0 z-70 h-full w-[85vw] max-w-sm shadow-xl transition-transform duration-300 md:hidden", isOpen ? "translate-x-0" : "translate-x-full")}>
+            <div ref={panelRef} className={cn("bg-surface fixed top-0 right-0 z-70 flex h-full w-[85vw] max-w-sm flex-col shadow-xl transition-transform duration-300 md:hidden", isOpen ? "translate-x-0" : "translate-x-full")} role="dialog" aria-modal="true" aria-label="Navigation menu">
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-neutral-200 p-4">
                     <span className="text-foreground text-lg font-semibold">Menu</span>
-                    <button onClick={onClose} className="icon-btn" aria-label="Close menu">
+                    <button ref={closeButtonRef} onClick={onClose} className="icon-btn" aria-label="Close menu">
                         <CloseIcon size={24} />
                     </button>
                 </div>
 
                 {/* Navigation Items */}
-                <nav className="h-[calc(100%-65px)] overflow-y-auto p-4">
+                <nav className="flex-1 overflow-y-auto p-4" aria-label="Main navigation">
                     <ul className="space-y-1">
                         {items.map((item) => {
                             const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
@@ -171,6 +192,18 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                         })}
                     </ul>
                 </nav>
+
+                {/* Book a Demo — pinned to bottom */}
+                <div className="border-t border-neutral-200 p-4">
+                    <Link
+                        href="/support/contact"
+                        onClick={onClose}
+                        className="bg-primary-600 hover:bg-primary-700 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-colors"
+                    >
+                        <RocketIcon size={18} />
+                        Book a Demo
+                    </Link>
+                </div>
             </div>
         </>
     );

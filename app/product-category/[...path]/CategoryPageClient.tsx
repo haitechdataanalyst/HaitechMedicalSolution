@@ -19,13 +19,37 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
     // If we have products directly, render them in a simple grid
     const products = initialItems as ProductWithPath[];
 
+    if (products.length === 0) {
+        return (
+            <div className="flex flex-col items-center justify-center py-20 text-center">
+                <div className="bg-primary-50 mb-6 flex h-20 w-20 items-center justify-center rounded-full">
+                    <svg className="text-primary-400 h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
+                    </svg>
+                </div>
+                <h3 className="text-foreground mb-2 text-lg font-semibold">Products Coming Soon</h3>
+                <p className="text-muted mb-6 max-w-sm text-sm">
+                    We&apos;re updating our catalogue for this category. Contact us for availability and pricing.
+                </p>
+                <a
+                    href="/support/contact"
+                    className="bg-primary-600 hover:bg-primary-700 rounded-lg px-6 py-2.5 text-sm font-medium text-white transition-colors"
+                >
+                    Contact Us
+                </a>
+            </div>
+        );
+    }
+
     return (
         <div className="w-full">
-            {/* Section Header with divider lines */}
-            <div className="my-6 flex items-center gap-4 sm:my-8">
-                <div className="h-px flex-1 bg-gray-200" />
-                <h2 className="px-4 text-xl font-light whitespace-nowrap text-gray-600 sm:text-2xl">Products</h2>
-                <div className="h-px flex-1 bg-gray-200" />
+            {/* Section heading */}
+            <div className="my-6 sm:my-8">
+                <div className="flex items-center gap-3">
+                    <div className="bg-primary-500 h-6 w-1 rounded-full" />
+                    <h2 className="text-foreground text-xl font-semibold sm:text-2xl">Products</h2>
+                </div>
+                <div className="mt-3 h-px bg-neutral-100" />
             </div>
 
             {/* Products Grid */}

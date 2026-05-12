@@ -55,6 +55,7 @@ export default function Carousel({
 }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStartX, setDragStartX] = useState(0);
     const [dragOffset, setDragOffset] = useState(0);
@@ -152,9 +153,9 @@ export default function Carousel({
         goToSlide(effectiveIndex + 1);
     }, [effectiveIndex, goToSlide]);
 
-    // Auto-play
+    // Auto-play — pauses on hover or focus (WCAG 2.2.2)
     useEffect(() => {
-        if (!autoPlay || isHovered || totalSlides <= slidesToShow) return;
+        if (!autoPlay || isHovered || isFocused || totalSlides <= slidesToShow) return;
 
         const interval = setInterval(() => {
             goToNext();
@@ -270,6 +271,8 @@ export default function Carousel({
                 setIsHovered(false);
                 handleMouseLeave();
             }}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
         >
             {/* Track Container - padding/margin trick allows shadows to show while clipping overflow */}
             <div ref={containerRef} className={cn("overflow-x-hidden", !noPadding && "-mx-4 px-4 py-4")}>

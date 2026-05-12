@@ -95,10 +95,10 @@
         "name": "Almadent",
         "type": "category",
         "description": "Comprehensive dental equipment including chairs, handpieces, and auxiliary equipment",
-        "image": "/images/products/almadent/auxiliary-category.png",
+        "image": "/images/products/almadent/almadent-primary.jpg",
         "parent": null,
         "order": 4,
-        "children": [11, 12, 13]
+        "children": [11, 13, 14, 15, 16, 17]
     },
     {
         "id": 11,
@@ -106,20 +106,9 @@
         "name": "Dental Chairs",
         "type": "category",
         "description": "Anya dental chairs - ergonomic design for patient comfort and practitioner efficiency",
-        "image": "/images/products/almadent/chairs/ay-3000-8.jpg",
+        "image": "/images/products/almadent/chairs/chairs-category.jpg",
         "parent": 10,
         "order": 1,
-        "children": []
-    },
-    {
-        "id": 12,
-        "slug": "auxiliary-equipment",
-        "name": "Auxiliary Equipment",
-        "type": "category",
-        "description": "PTX units, suction systems, implant motors, and lubricators",
-        "image": "/images/products/almadent/auxiliary-category.png",
-        "parent": 10,
-        "order": 2,
         "children": []
     },
     {
@@ -130,7 +119,51 @@
         "description": "Tealth dental handpieces with precision engineering",
         "image": "/images/products/almadent/handpiece/tealth-handpiece.png",
         "parent": 10,
+        "order": 2,
+        "children": []
+    },
+    {
+        "id": 14,
+        "slug": "implant-motor",
+        "name": "Implant Motor",
+        "type": "category",
+        "description": "Precision implant motors for dental implant placement procedures",
+        "image": "/images/products/almadent/auxiliary/implant-motor-1.jpg",
+        "parent": 10,
         "order": 3,
+        "children": []
+    },
+    {
+        "id": 15,
+        "slug": "lubricator-machine",
+        "name": "Lubricator Machine",
+        "type": "category",
+        "description": "Automatic handpiece lubrication and maintenance systems",
+        "image": "/images/products/almadent/auxiliary/lubricator-1.png",
+        "parent": 10,
+        "order": 4,
+        "children": []
+    },
+    {
+        "id": 16,
+        "slug": "brushless-electric-motor",
+        "name": "Brushless Electric Motor",
+        "type": "category",
+        "description": "High-torque brushless electric motors for dental handpieces",
+        "image": "/images/products/almadent/auxiliary/implant-motor-4.png",
+        "parent": 10,
+        "order": 5,
+        "children": []
+    },
+    {
+        "id": 17,
+        "slug": "piezo-surgery",
+        "name": "3-in-1 Dental Piezo Surgery",
+        "type": "category",
+        "description": "Ultrasonic piezo surgery system for precise bone cutting and dental procedures",
+        "image": "/images/products/almadent/auxiliary/ptx-main.png",
+        "parent": 10,
+        "order": 6,
         "children": []
     },
     {

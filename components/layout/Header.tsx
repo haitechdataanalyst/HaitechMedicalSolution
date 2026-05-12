@@ -29,10 +29,11 @@ export default function Header() {
 
                     {/* Right Side Actions */}
                     <div className="flex items-center gap-1 md:gap-9">
-                        <Link href="/support/contact" className="hidden xl:flex">
-                            <Button className="gap-3 px-12" variant="solid">
+                        <Link href="/support/contact" className="hidden md:flex">
+                            <Button className="gap-3 px-6 lg:px-12" variant="solid">
                                 <RocketIcon size={20} />
-                                Book a Demo
+                                <span className="hidden lg:inline">Book a Demo</span>
+                                <span className="lg:hidden">Demo</span>
                             </Button>
                         </Link>
 
