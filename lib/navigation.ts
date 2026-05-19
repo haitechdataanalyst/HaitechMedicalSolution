@@ -13,6 +13,7 @@ export interface MegaMenuItem extends NavItem {
 export interface MegaMenuColumn {
     title: string;
     href: string;
+    description?: string;
     items: MegaMenuItem[];
     aboutLink?: {
         label: string;
@@ -85,6 +86,7 @@ function buildMegaMenuFromCategories(): MegaMenuColumn[] {
         return {
             title: rootCat.name,
             href: rootCat.specialPage || `/product-category/${rootCat.slug}`,
+            description: rootCat.description,
             items,
             aboutLink: {
                 label: `About ${rootCat.name}`,

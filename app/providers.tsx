@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import { CartProvider, CartDrawer } from "@/components/cart";
+import { WishlistProvider } from "@/components/cart/WishlistProvider";
 
 interface ProvidersProps {
     children: ReactNode;
@@ -9,9 +10,11 @@ interface ProvidersProps {
 
 export default function Providers({ children }: ProvidersProps) {
     return (
-        <CartProvider>
-            {children}
-            <CartDrawer />
-        </CartProvider>
+        <WishlistProvider>
+            <CartProvider>
+                {children}
+                <CartDrawer />
+            </CartProvider>
+        </WishlistProvider>
     );
 }

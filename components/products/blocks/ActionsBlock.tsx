@@ -5,14 +5,16 @@ import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCa
 import { useCart } from "@/components/cart/CartProvider";
 import { Button } from "@/components/ui";
 import VariantSelector, { VariantSelection } from "./VariantSelector";
-import ProductQuoteModal from "./ProductQuoteModal";
 import FrameSizeSelector from "./FrameSizeSelector";
 import PrescriptionSection from "./PrescriptionSection";
 import MatchHeadlightsSection from "./MatchHeadlightsSection";
 import TempleTipEngraving from "./TempleTipEngraving";
 import BoxEngraving from "./BoxEngraving";
-import { formatColorName } from "./variant-utils";
-import { ShoppingCart, FileDown, MessageSquare } from "lucide-react";
+import { ShoppingCart, FileDown, HelpCircle, Tag, Zap, FileText } from "lucide-react";
+import { toast } from "sonner";
+import { formatPrice } from "@/lib/utils";
+import { detectBrand } from "@/lib/brand";
+import ProductQuoteModal from "./ProductQuoteModal";
 
 interface ActionsBlockProps {
     data: ActionsBlockType["data"];
@@ -23,15 +25,17 @@ interface ActionsBlockProps {
 }
 
 export default function ActionsBlock({ data, product, onVariantSelect, frames = [], headlightCategories = [] }: ActionsBlockProps) {
-    const { addItem } = useCart();
+    const { addItem, openCart } = useCart();
     const [quantity] = useState(1);
     const [customFields, setCustomFields] = useState<Record<string, string | number>>({});
-    const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const [variantSelection, setVariantSelection] = useState<VariantSelection>({});
     const [selectedFrameSize, setSelectedFrameSize] = useState<string | null>(data.frameSizes?.[1]?.value ?? null);
     const [prescriptionFile, setPrescriptionFile] = useState<File | null>(null);
     const [templeTipText, setTempleTipText] = useState("");
     const [boxEngravingText, setBoxEngravingText] = useState("");
+    const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+
+    const isAdmetec = detectBrand(product.sku).name === "Admetec";
     // Handle variant selection changes from VariantSelector
     const handleVariantChange = useCallback(
         (selection: VariantSelection) => {
@@ -97,29 +101,11 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         };
 
         addItem(cartItem);
-    };
-
-    // Get variant description for quote modal
-    const getVariantDescription = (): string | undefined => {
-        if (variantSelection.frameId && variantSelection.colorId && product.frameVariants) {
-            const frame = frames.find((f) => f.id === variantSelection.frameId);
-            const frameName = frame?.name || formatColorName(variantSelection.frameId);
-            const colorName = formatColorName(variantSelection.colorId);
-            return `${frameName} - ${colorName}`;
-        }
-
-        if (variantSelection.legacyVariant) {
-            const variant = variantSelection.legacyVariant;
-            if (product.variantType === "color") {
-                return variant.name ?? variant.color ?? formatColorName(variant.id);
-            }
-            if (product.variantType === "grit") {
-                return variant.sku ?? variant.name ?? variant.id;
-            }
-            return variant.name ?? variant.id;
-        }
-
-        return undefined;
+        toast.success("Added to cart", {
+            description: product.name,
+            duration: 3500,
+            action: { label: "View Cart", onClick: openCart },
+        });
     };
 
     // Handle catalogue download
@@ -139,7 +125,28 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     }
 
     return (
+        <>
         <div className="bg-surface sticky top-24 space-y-6 rounded-xl border border-neutral-200 p-4 sm:p-6">
+            {/* Price display */}
+            <div className="border-b border-neutral-100 pb-4">
+                {product.basePrice ? (
+                    <div className="flex flex-wrap items-end gap-2">
+                        <span className="text-3xl font-bold tracking-tight text-neutral-900">
+                            {formatPrice(product.basePrice, product.currency ?? "INR")}
+                        </span>
+                        <span className="mb-0.5 text-sm text-neutral-400">incl. GST &amp; all taxes</span>
+                    </div>
+                ) : (
+                    <div className="flex items-center gap-2 text-neutral-500">
+                        <Tag className="h-4 w-4" />
+                        <span className="text-sm font-medium">Price available on request</span>
+                    </div>
+                )}
+                {product.currency === "INR" && (
+                    <p className="mt-1 text-xs text-emerald-600">All frames included free · Prices valid 2026-2027</p>
+                )}
+            </div>
+
             {/* Variant Selection - VariantSelector handles all product types */}
             <VariantSelector product={product} frames={frames} onSelectionChange={handleVariantChange} />
 
@@ -148,33 +155,41 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
             {/* Generic Custom Fields */}
             {data.customFields &&
-                data.customFields.map((field) => (
-                    <div key={field.name || field.label} className="space-y-2">
-                        <label className="block text-sm font-medium text-neutral-700">
-                            {field.label}
-                            {field.required && <span className="ml-1 text-red-500">*</span>}
-                        </label>
-                        {field.type === "select" && (
-                            <select
-                                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm focus:border-primary-500 focus:outline-none"
-                                value={customFields[field.name || ""] || ""}
-                                onChange={(e) => handleCustomFieldChange(field.name || "", e.target.value)}
-                                required={field.required}
-                            >
-                                <option value="">Select {field.label}</option>
-                                {field.options?.map((option) => {
-                                    const opt = typeof option === "string" ? { value: option, label: option } : option;
-                                    return (
-                                        <option key={opt.value} value={opt.value}>
-                                            {opt.label}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        )}
-                        {/* Add support for other field types if needed in the future */}
-                    </div>
-                ))}
+                data.customFields.map((field) => {
+                    const isWorkingDistance = (field.name || field.label || "").toLowerCase().includes("working");
+                    return (
+                        <div key={field.name || field.label} className="space-y-1.5">
+                            <label className="block text-sm font-medium text-neutral-700">
+                                {field.label}
+                                {field.required && <span className="ml-1 text-red-500">*</span>}
+                            </label>
+                            {isWorkingDistance && (
+                                <p className="flex items-start gap-1.5 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs text-blue-700">
+                                    <HelpCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-500" />
+                                    <span>Working distance is the distance between your eyes and the patient&apos;s mouth while working. Measure when seated in your natural working posture. <strong>Typical range: 340–500 mm.</strong></span>
+                                </p>
+                            )}
+                            {field.type === "select" && (
+                                <select
+                                    className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm focus:border-primary-500 focus:outline-none"
+                                    value={customFields[field.name || ""] || ""}
+                                    onChange={(e) => handleCustomFieldChange(field.name || "", e.target.value)}
+                                    required={field.required}
+                                >
+                                    <option value="">Select {field.label}</option>
+                                    {field.options?.map((option) => {
+                                        const opt = typeof option === "string" ? { value: option, label: option } : option;
+                                        return (
+                                            <option key={opt.value} value={opt.value}>
+                                                {opt.label}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            )}
+                        </div>
+                    );
+                })}
 
             {/* Prescription Section */}
             {data.prescription?.enabled && <PrescriptionSection config={data.prescription} onFileChange={setPrescriptionFile} />}
@@ -189,36 +204,66 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
             {data.boxEngraving?.enabled && <BoxEngraving config={data.boxEngraving} onTextChange={setBoxEngravingText} />}
 
             {/* Action Buttons */}
-            <div className="flex flex-col gap-3 sm:flex-row">
-                <Button onClick={handleAddToCart} className="flex-1 gap-2" size="lg">
-                    <ShoppingCart className="h-4 w-4" />
-                    Add to Cart
-                </Button>
-                <Button onClick={() => setIsQuoteModalOpen(true)} variant="outline" size="lg" className="flex-1 gap-2">
-                    <MessageSquare className="h-4 w-4" />
-                    Get a Quote
-                </Button>
-            </div>
-
-            {/* Download Catalogue Button */}
-            {product.catalogueFile && (
-                <Button onClick={handleDownloadCatalogue} variant="secondary" size="lg" className="w-full gap-2">
-                    <FileDown className="h-4 w-4" />
-                    Get Catalogue
-                </Button>
+            {isAdmetec ? (
+                <div className="flex flex-col gap-3">
+                    <div className="flex gap-3">
+                        <Button onClick={handleAddToCart} className="flex-1 gap-2" size="lg">
+                            <ShoppingCart className="h-4 w-4" />
+                            Add to Cart
+                        </Button>
+                        <Button onClick={() => setQuoteModalOpen(true)} variant="outline" size="lg" className="flex-1 gap-2">
+                            <FileText className="h-4 w-4" />
+                            Get a Quote
+                        </Button>
+                    </div>
+                    {product.catalogueFile && (
+                        <Button onClick={handleDownloadCatalogue} variant="secondary" size="lg" className="w-full gap-2">
+                            <FileDown className="h-4 w-4" />
+                            Get Catalogue
+                        </Button>
+                    )}
+                </div>
+            ) : (
+                <div className="flex flex-col gap-3">
+                    <Button onClick={handleAddToCart} className="w-full gap-2" size="lg">
+                        <ShoppingCart className="h-4 w-4" />
+                        Add to Cart
+                    </Button>
+                    <Button
+                        onClick={() => { handleAddToCart(); window.location.href = "/cart"; }}
+                        variant="outline"
+                        size="lg"
+                        className="w-full gap-2"
+                    >
+                        <Zap className="h-4 w-4" />
+                        Buy Now
+                    </Button>
+                    {product.catalogueFile && (
+                        <Button onClick={handleDownloadCatalogue} variant="secondary" size="lg" className="w-full gap-2">
+                            <FileDown className="h-4 w-4" />
+                            Download Catalogue
+                        </Button>
+                    )}
+                    <p className="text-muted text-center text-xs">All prices incl. GST · Order confirmed within 24 hrs</p>
+                </div>
             )}
-
-            <p className="text-muted text-center text-xs">Add items to your cart and request a quote. We&apos;ll respond within 24 hours.</p>
-
-            {/* Quote Modal */}
-            <ProductQuoteModal
-                isOpen={isQuoteModalOpen}
-                onClose={() => setIsQuoteModalOpen(false)}
-                productName={product.name}
-                productSku={product.sku}
-                productId={String(product.id)}
-                selectedVariant={getVariantDescription()}
-            />
         </div>
+
+        {/* Quote modal — Admetec only */}
+        {isAdmetec && (
+            <ProductQuoteModal
+                isOpen={quoteModalOpen}
+                onClose={() => setQuoteModalOpen(false)}
+                productName={product.name}
+                productSku={variantSelection.legacyVariant?.sku ?? product.sku}
+                productId={String(product.id)}
+                selectedVariant={
+                    variantSelection.frameId && variantSelection.colorId
+                        ? `${variantSelection.frameId} / ${variantSelection.colorId}`
+                        : variantSelection.legacyVariant?.name ?? undefined
+                }
+            />
+        )}
+        </>
     );
 }

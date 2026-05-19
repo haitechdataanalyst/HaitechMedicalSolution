@@ -1,8 +1,9 @@
 import { getTopCategories } from "@/lib/catalog";
 import { ProductsPageClient } from "./ProductsPageClient";
-import { Breadcrumbs } from "@/components/ui";
 import { getMetadata } from "@/lib/metadata";
 import { getBreadcrumbs } from "@/lib/breadcrumbs";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export const metadata = getMetadata("products");
 
@@ -12,17 +13,37 @@ export default function ProductsPage() {
 
     return (
         <>
-            <Breadcrumbs items={breadcrumbs} />
-            <div className="container mx-auto px-4 py-6 sm:py-8">
-                {/* Page Header - Centered */}
-                <div className="mb-6 text-center sm:mb-8">
-                    <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">Products</h1>
-                    <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg">Explore our comprehensive range of premium medical and dental equipment</p>
-                </div>
+            {/* ── Compact page header ── */}
+            <div className="border-b border-neutral-100 bg-white">
+                <div className="container py-4">
+                    <nav className="mb-3 flex items-center gap-1.5 text-sm text-neutral-400">
+                        {breadcrumbs.map((crumb, i) => (
+                            <span key={crumb.path} className="flex items-center gap-1.5">
+                                {i > 0 && <ChevronRight className="h-3.5 w-3.5" />}
+                                {i < breadcrumbs.length - 1 ? (
+                                    <Link href={crumb.path} className="transition-colors hover:text-primary-600">
+                                        {crumb.name}
+                                    </Link>
+                                ) : (
+                                    <span className="font-semibold text-neutral-800">{crumb.name}</span>
+                                )}
+                            </span>
+                        ))}
+                    </nav>
 
-                {/* Category Browser */}
-                <ProductsPageClient initialCategories={categories} />
+                    <h1 className="text-2xl font-bold text-neutral-900">All Products</h1>
+                    <p className="mt-0.5 text-sm text-neutral-400">
+                        Premium dental &amp; medical equipment · 5 global brands · 80+ products
+                    </p>
+                </div>
             </div>
+
+            {/* ── Category browser ── */}
+            <section className="bg-white py-6 md:py-8">
+                <div className="container">
+                    <ProductsPageClient initialCategories={categories} />
+                </div>
+            </section>
         </>
     );
 }

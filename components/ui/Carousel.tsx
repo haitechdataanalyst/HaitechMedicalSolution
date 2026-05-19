@@ -57,6 +57,7 @@ export default function Carousel({
     const [isHovered, setIsHovered] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
+    const [isPausedByUser, setIsPausedByUser] = useState(false);
     const [dragStartX, setDragStartX] = useState(0);
     const [dragOffset, setDragOffset] = useState(0);
     const [windowWidth, setWindowWidth] = useState(1024); // Always start with default for SSR
@@ -153,16 +154,16 @@ export default function Carousel({
         goToSlide(effectiveIndex + 1);
     }, [effectiveIndex, goToSlide]);
 
-    // Auto-play — pauses on hover or focus (WCAG 2.2.2)
+    // Auto-play — pauses on hover, focus, or user toggle (WCAG 2.2.2)
     useEffect(() => {
-        if (!autoPlay || isHovered || isFocused || totalSlides <= slidesToShow) return;
+        if (!autoPlay || isHovered || isFocused || isPausedByUser || totalSlides <= slidesToShow) return;
 
         const interval = setInterval(() => {
             goToNext();
         }, autoPlayInterval);
 
         return () => clearInterval(interval);
-    }, [autoPlay, autoPlayInterval, isHovered, goToNext, totalSlides, slidesToShow]);
+    }, [autoPlay, autoPlayInterval, isHovered, isFocused, isPausedByUser, goToNext, totalSlides, slidesToShow]);
 
     // Get slide width in pixels for drag calculations
     const getSlideWidthPx = useCallback(() => {
@@ -335,6 +336,31 @@ export default function Carousel({
                         <ChevronRightIcon size={iconSizes[arrowSize]} />
                     </button>
                 </>
+            )}
+
+            {/* Autoplay pause/play button (WCAG 2.2.2) */}
+            {autoPlay && totalSlides > slidesToShow && (
+                <button
+                    onClick={() => setIsPausedByUser((p) => !p)}
+                    className={cn(
+                        "absolute bottom-6 right-6 z-30 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200",
+                        dotsPosition === "inside"
+                            ? "bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm"
+                            : "bg-white/80 text-neutral-600 hover:bg-white border border-neutral-200 shadow-sm"
+                    )}
+                    aria-label={isPausedByUser ? "Play slideshow" : "Pause slideshow"}
+                    title={isPausedByUser ? "Play" : "Pause"}
+                >
+                    {isPausedByUser ? (
+                        <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z"/>
+                        </svg>
+                    ) : (
+                        <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.5 3.5A1.5 1.5 0 017 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5zm5 0A1.5 1.5 0 0112 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5z"/>
+                        </svg>
+                    )}
+                </button>
             )}
 
             {/* Overlay Content (for hero sections with floating text/CTAs) */}

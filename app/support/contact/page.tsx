@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/forms";
 import siteConfig from "@/data/site-config.json";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { getMetadata } from "@/lib/metadata";
 
 export const metadata = getMetadata("supportContact");
@@ -13,6 +13,7 @@ const contactMethods = [
         value: siteConfig.company.email,
         href: `mailto:${siteConfig.company.email}`,
         description: "We respond within 24 hours",
+        accent: "bg-blue-50 text-blue-600",
     },
     {
         id: "call",
@@ -20,14 +21,16 @@ const contactMethods = [
         title: "Call Us",
         value: siteConfig.company.phone,
         href: `tel:${siteConfig.company.phone.replace(/\s/g, "")}`,
-        description: "Mon-Fri 10am-6pm IST",
+        description: "Mon–Fri 10am–6pm IST",
+        accent: "bg-primary-50 text-primary-600",
     },
     {
-        id: "info",
+        id: "hours",
         icon: Clock,
         title: "Business Hours",
-        value: "Mon - Fri: 10:00 AM - 6:00 PM",
+        value: "Mon – Fri: 10:00 AM – 6:00 PM",
         description: "Indian Standard Time",
+        accent: "bg-emerald-50 text-emerald-600",
     },
     {
         id: "address",
@@ -35,112 +38,128 @@ const contactMethods = [
         title: "Visit Us",
         value: `${siteConfig.company.address.city}, ${siteConfig.company.address.country}`,
         description: siteConfig.company.address.street,
+        accent: "bg-amber-50 text-amber-600",
     },
 ];
 
 export default function ContactPage() {
     return (
-        <div className="mx-auto max-w-6xl">
-            {/* Contact Methods Grid */}
-            <section id="email" className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="mx-auto max-w-6xl space-y-10 scroll-mt-32">
+
+            {/* Contact Method Cards */}
+            <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {contactMethods.map((method) => {
                     const Icon = method.icon;
-                    return (
-                        <div key={method.id} id={method.id} className="hover:border-primary-300 rounded-xl border border-neutral-200 bg-white p-5 transition-all duration-200 hover:shadow-md">
-                            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-50">
-                                <Icon className="text-primary-600 h-5 w-5" aria-hidden="true" />
+                    const card = (
+                        <div className="group flex flex-col gap-3 rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-neutral-200 hover:shadow-md">
+                            <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${method.accent}`}>
+                                <Icon className="h-5 w-5" />
                             </div>
-                            <h3 className="mb-1 text-sm font-semibold">{method.title}</h3>
-                            {method.href ? (
-                                <a href={method.href} className="text-primary-600 block truncate text-sm font-medium hover:underline">
-                                    {method.value}
-                                </a>
-                            ) : (
-                                <p className="truncate text-sm font-medium">{method.value}</p>
-                            )}
-                            <p className="text-muted mt-1 text-xs">{method.description}</p>
+                            <div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">{method.title}</p>
+                                <p className="mt-0.5 truncate text-sm font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">{method.value}</p>
+                                <p className="mt-0.5 text-xs text-neutral-400">{method.description}</p>
+                            </div>
                         </div>
+                    );
+                    return method.href ? (
+                        <a key={method.id} href={method.href}>{card}</a>
+                    ) : (
+                        <div key={method.id}>{card}</div>
                     );
                 })}
             </section>
 
-            {/* Map and Location Section */}
-            <section id="location" className="mb-12">
-                <div className="flex overflow-hidden rounded-xl border border-neutral-200 bg-white">
-                    <div className="flex-1 p-6">
-                        <h3 className="mb-3 font-semibold">Our Location</h3>
-                        <address className="text-muted space-y-1 not-italic">
-                            <p>{siteConfig.company.address.street}</p>
-                            <p>
-                                {siteConfig.company.address.city}, {siteConfig.company.address.state} {siteConfig.company.address.postcode}
-                            </p>
-                            <p>{siteConfig.company.address.country}</p>
-                        </address>
-                    </div>
-                    <div className="aspect-4/3 flex-1">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c8c8c8c8c8%3A0x8c8c8c8c8c8c8c8c!2sKohinoor%20Compound%2C%20Swastik%20Disa%20Corporate%20Park%2C%20Lal%20Bahadur%20Shastri%20Marg%2C%20Nityanand%20Nagar%2C%20Ghatkopar%20West%2C%20Mumbai%2C%20Maharashtra%20400086%2C%20India!5e0!3m2!1sen!2s!4v1703123456789!5m2!1sen!2s"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Haitech Medical office location on Google Maps"
-                        />
+            {/* Map & Location */}
+            <section>
+                <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white">
+                    <div className="grid md:grid-cols-2">
+                        <div className="p-7 flex flex-col justify-center">
+                            <h3 className="heading-4 mb-4 text-neutral-900">Our Location</h3>
+                            <address className="space-y-1.5 not-italic text-sm text-neutral-500">
+                                <p>{siteConfig.company.address.street}</p>
+                                <p>
+                                    {siteConfig.company.address.city}, {siteConfig.company.address.state}{" "}
+                                    {siteConfig.company.address.postcode}
+                                </p>
+                                <p>{siteConfig.company.address.country}</p>
+                            </address>
+                            <a
+                                href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.company.address.street + ", " + siteConfig.company.address.city)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700"
+                            >
+                                Open in Maps <ArrowRight size={14} />
+                            </a>
+                        </div>
+                        <div className="aspect-video md:aspect-auto">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8c8c8c8c8c8%3A0x8c8c8c8c8c8c8c8c!2sKohinoor%20Compound%2C%20Swastik%20Disa%20Corporate%20Park%2C%20Lal%20Bahadur%20Shastri%20Marg%2C%20Nityanand%20Nagar%2C%20Ghatkopar%20West%2C%20Mumbai%2C%20Maharashtra%20400086%2C%20India!5e0!3m2!1sen!2s!4v1703123456789!5m2!1sen!2s"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0, minHeight: "240px" }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Haitech Medical office location"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Form Section */}
+            {/* Contact Form + Sidebar */}
             <section className="grid grid-cols-1 gap-8 lg:grid-cols-5">
                 {/* Form */}
                 <div className="lg:col-span-3">
-                    <div className="card p-6 md:p-8">
-                        <h2 className="heading-3 mb-2">Send us a message</h2>
-                        <p className="text-muted mb-6">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+                    <div className="rounded-2xl border border-neutral-100 bg-white p-7 md:p-8">
+                        <h2 className="heading-3 mb-1.5 text-neutral-900">Send us a message</h2>
+                        <p className="mb-7 text-sm text-neutral-500">
+                            Fill out the form below and we&apos;ll get back to you as soon as possible.
+                        </p>
                         <ContactForm />
                     </div>
                 </div>
 
-                {/* Additional Info */}
-                <div className="space-y-6 lg:col-span-2">
-                    {/* Quick Support */}
-                    <div className="bg-primary-50 rounded-xl p-6">
-                        <h3 className="mb-3 font-semibold">Need Quick Support?</h3>
-                        <p className="text-muted mb-4 text-sm">For urgent inquiries, call us directly during business hours for immediate assistance.</p>
+                {/* Sidebar */}
+                <div className="space-y-5 lg:col-span-2">
+                    {/* Quick call CTA */}
+                    <div className="rounded-2xl bg-primary-50 border border-primary-100 p-6">
+                        <h3 className="mb-2 font-semibold text-neutral-900">Need Immediate Help?</h3>
+                        <p className="mb-4 text-sm text-neutral-500">
+                            For urgent queries, call us directly during business hours.
+                        </p>
                         <a
                             href={`tel:${siteConfig.company.phone.replace(/\s/g, "")}`}
-                            className="bg-primary-600 hover:bg-primary-700 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors"
+                            className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-primary-600"
                         >
                             <Phone className="h-4 w-4" />
                             Call Now
                         </a>
                     </div>
 
-                    {/* Address Card */}
-                    <div className="bg-surface-secondary rounded-xl p-6">
-                        <h3 className="mb-3 font-semibold">Our Location</h3>
-                        <address className="text-muted space-y-1 text-sm not-italic">
+                    {/* Address */}
+                    <div className="rounded-2xl border border-neutral-100 bg-white p-6">
+                        <h3 className="mb-3 font-semibold text-neutral-900">Our Address</h3>
+                        <address className="space-y-1 text-sm text-neutral-500 not-italic">
                             <p>{siteConfig.company.address.street}</p>
-                            <p>
-                                {siteConfig.company.address.city}, {siteConfig.company.address.state} {siteConfig.company.address.postcode}
-                            </p>
+                            <p>{siteConfig.company.address.city}, {siteConfig.company.address.state} {siteConfig.company.address.postcode}</p>
                             <p>{siteConfig.company.address.country}</p>
                         </address>
                     </div>
 
-                    {/* Response Time */}
-                    <div className="rounded-xl border border-neutral-200 p-6">
-                        <h3 className="mb-3 font-semibold">Response Times</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-green-500"></span>
-                                <span className="text-muted">Email: Within 24 hours</span>
+                    {/* Response times */}
+                    <div className="rounded-2xl border border-neutral-100 bg-white p-6">
+                        <h3 className="mb-4 font-semibold text-neutral-900">Response Times</h3>
+                        <ul className="space-y-3">
+                            <li className="flex items-center gap-3 text-sm">
+                                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                                <span className="text-neutral-600">Email — within 24 hours</span>
                             </li>
-                            <li className="flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                                <span className="text-muted">Phone: Immediate (business hours)</span>
+                            <li className="flex items-center gap-3 text-sm">
+                                <span className="h-2 w-2 rounded-full bg-primary-500" />
+                                <span className="text-neutral-600">Phone — immediate (business hours)</span>
                             </li>
                         </ul>
                     </div>

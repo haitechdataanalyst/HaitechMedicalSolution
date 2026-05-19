@@ -50,13 +50,13 @@ export default function GalleryBlock({ data }: GalleryBlockProps) {
             {/* Lightbox */}
             {selectedIndex !== null && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={() => setSelectedIndex(null)}>
-                    <button className="absolute top-4 right-4 p-2 text-white hover:text-gray-300" onClick={() => setSelectedIndex(null)}>
+                    <button className="absolute top-4 right-4 p-2 text-white hover:text-neutral-300" onClick={() => setSelectedIndex(null)}>
                         <CloseIcon size={32} />
                     </button>
 
                     {selectedIndex > 0 && (
                         <button
-                            className="absolute left-4 p-2 text-white hover:text-gray-300"
+                            className="absolute left-4 p-2 text-white hover:text-neutral-300"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedIndex(selectedIndex - 1);
@@ -68,7 +68,7 @@ export default function GalleryBlock({ data }: GalleryBlockProps) {
 
                     {selectedIndex < data.images.length - 1 && (
                         <button
-                            className="absolute right-4 p-2 text-white hover:text-gray-300"
+                            className="absolute right-4 p-2 text-white hover:text-neutral-300"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedIndex(selectedIndex + 1);

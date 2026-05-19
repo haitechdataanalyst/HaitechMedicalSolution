@@ -95,16 +95,19 @@ export default async function CategoryPage({ params }: PageProps) {
         <>
             <Breadcrumbs items={breadcrumbs} />
 
-            <div className="container mx-auto px-4 py-6 sm:py-8">
-                {/* Category Header - Centered */}
-                <div className="mb-6 text-center sm:mb-8">
-                    <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">{category.name}</h1>
-                    {category.description && <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg">{category.description}</p>}
-                </div>
+            <section className="bg-neutral-50/50 min-h-screen">
+                <div className="container py-6 md:py-8">
+                    {/* Compact category header */}
+                    <div className="mb-6">
+                        <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{category.name}</h1>
+                        {category.description && (
+                            <p className="mt-1 line-clamp-2 text-sm text-neutral-500">{category.description}</p>
+                        )}
+                    </div>
 
-                {/* Category Browser Client Component */}
-                <CategoryPageClient initialItems={initialItemsWithPaths} initialType={contents.type} />
-            </div>
+                    <CategoryPageClient initialItems={initialItemsWithPaths} initialType={contents.type} />
+                </div>
+            </section>
         </>
     );
 }

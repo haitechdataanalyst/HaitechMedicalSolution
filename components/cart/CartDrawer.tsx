@@ -1,175 +1,202 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useCart } from "./CartProvider";
-import { QuoteForm } from "./index";
-import { formatCurrency, calculateCartTotal, getCartItemKey } from "@/lib/cart";
+import { calculateCartTotal, getCartItemKey } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 import { CloseIcon, CartIcon, TrashIcon, ImageIcon } from "@/components/icons";
-import { WhatsAppButton } from "@/components/ui";
+import { ShoppingBag, ArrowRight, Truck } from "lucide-react";
+import { SafeImage } from "@/components/ui";
+import { toast } from "sonner";
+
+function formatINR(amount: number) {
+    return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(amount);
+}
 
 export default function CartDrawer() {
     const { items, isOpen, closeCart, removeItem, updateQuantity } = useCart();
-    const [showQuoteForm, setShowQuoteForm] = useState(false);
+    const router = useRouter();
+    const total = calculateCartTotal(items);
+    const itemCount = items.reduce((sum, i) => sum + i.quantity, 0);
 
-    // Prevent body scroll when drawer is open
     useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => {
-            document.body.style.overflow = "";
-        };
+        document.body.style.overflow = isOpen ? "hidden" : "";
+        return () => { document.body.style.overflow = ""; };
     }, [isOpen]);
 
-    // Handle escape key
     useEffect(() => {
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
-                closeCart();
-            }
-        };
-
-        if (isOpen) {
-            document.addEventListener("keydown", handleEscape);
-        }
-
-        return () => {
-            document.removeEventListener("keydown", handleEscape);
-        };
+        const handler = (e: KeyboardEvent) => { if (e.key === "Escape") closeCart(); };
+        if (isOpen) document.addEventListener("keydown", handler);
+        return () => document.removeEventListener("keydown", handler);
     }, [isOpen, closeCart]);
 
-    // Reset quote form state when opening/closing drawer
-    const handleCloseCart = () => {
-        setShowQuoteForm(false);
+    const goToCheckout = () => {
         closeCart();
+        router.push("/checkout");
     };
 
-    const total = calculateCartTotal(items);
+    const goToCart = () => {
+        closeCart();
+        router.push("/cart");
+    };
 
     return (
         <>
             {/* Overlay */}
-            <div className={cn("fixed inset-0 z-40 bg-black/50 transition-opacity duration-300", isOpen ? "visible opacity-100" : "invisible opacity-0")} onClick={handleCloseCart} />
+            <div
+                className={cn("fixed inset-0 z-40 bg-black/50 transition-opacity duration-300", isOpen ? "visible opacity-100" : "invisible opacity-0")}
+                onClick={closeCart}
+            />
 
             {/* Drawer */}
-            <div
-                className={cn("bg-surface fixed top-0 right-0 z-50 flex h-full w-full flex-col shadow-xl transition-transform duration-300 sm:max-w-md", isOpen ? "translate-x-0" : "translate-x-full")}
-            >
+            <div className={cn("fixed top-0 right-0 z-50 flex h-full w-full flex-col bg-white shadow-2xl transition-transform duration-300 sm:max-w-md", isOpen ? "translate-x-0" : "translate-x-full")}>
+
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-[var(--border-color)] p-4">
-                    <h2 className="text-lg font-semibold text-[var(--foreground)]">{showQuoteForm ? "Request Quote" : "Your Cart"}</h2>
-                    <button onClick={handleCloseCart} className="icon-btn cursor-pointer" aria-label="Close cart">
+                <div className="flex items-center justify-between border-b border-neutral-100 px-5 py-4">
+                    <div className="flex items-center gap-2">
+                        <ShoppingBag className="h-5 w-5 text-primary-600" />
+                        <h2 className="text-base font-bold text-neutral-900">
+                            My Cart{itemCount > 0 && <span className="ml-1.5 rounded-full bg-primary-50 px-2 py-0.5 text-xs font-semibold text-primary-700">{itemCount}</span>}
+                        </h2>
+                    </div>
+                    <button onClick={closeCart} className="rounded-xl p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-700" aria-label="Close cart">
                         <CloseIcon size={20} />
                     </button>
                 </div>
 
-                {/* Content */}
+                {/* Items */}
                 <div className="flex-1 overflow-y-auto">
-                    {showQuoteForm ? (
-                        <QuoteForm
-                            onBack={() => setShowQuoteForm(false)}
-                            onSuccess={() => {
-                                setShowQuoteForm(false);
-                                closeCart();
-                            }}
-                        />
-                    ) : items.length === 0 ? (
-                        <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                            <CartIcon size={64} className="mb-4 text-neutral-300" />
-                            <h3 className="text-foreground mb-1 text-lg font-medium">Your cart is empty</h3>
-                            <p className="text-muted text-sm">Add products to get started</p>
+                    {items.length === 0 ? (
+                        <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center">
+                            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-neutral-100">
+                                <CartIcon size={36} className="text-neutral-300" />
+                            </div>
+                            <h3 className="text-base font-semibold text-neutral-800">Your cart is empty</h3>
+                            <p className="text-sm text-neutral-400">Add products to get started</p>
+                            <button
+                                onClick={() => { closeCart(); router.push("/products"); }}
+                                className="mt-2 rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+                            >
+                                Shop Now
+                            </button>
                         </div>
                     ) : (
-                        <div className="space-y-4 p-4">
+                        <div className="space-y-2 p-4">
                             {items.map((item) => {
-                                const itemKey = getCartItemKey(item);
+                                const key = getCartItemKey(item);
+                                const lineTotal = item.basePrice ? item.basePrice * item.quantity : null;
 
                                 return (
-                                    <div key={itemKey} className="bg-surface-secondary flex gap-3 rounded-lg p-3 sm:gap-4">
+                                    <div key={key} className="flex gap-3 rounded-xl border border-neutral-100 bg-white p-3 shadow-sm">
                                         {/* Image */}
-                                        <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-200 sm:h-20 sm:w-20">
+                                        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-50">
                                             {item.image ? (
-                                                <img src={item.image} alt={item.productName} className="h-full w-full object-cover" />
+                                                <SafeImage
+                                                    src={item.image}
+                                                    alt={item.productName}
+                                                    fill
+                                                    sizes="64px"
+                                                    className="object-contain p-1.5"
+                                                    fallbackVariant="product"
+                                                    containerClassName="h-full w-full"
+                                                    fallbackClassName="rounded-lg"
+                                                />
                                             ) : (
-                                                <div className="flex h-full w-full items-center justify-center text-neutral-400">
-                                                    <ImageIcon size={32} />
+                                                <div className="flex h-full w-full items-center justify-center text-neutral-300">
+                                                    <ImageIcon size={24} />
                                                 </div>
                                             )}
                                         </div>
 
-                                        {/* Details */}
+                                        {/* Info */}
                                         <div className="min-w-0 flex-1">
-                                            <h4 className="text-foreground truncate text-sm font-medium sm:text-base">{item.productName}</h4>
-                                            <p className="text-muted text-xs sm:text-sm">{item.sku}</p>
+                                            <h4 className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-900">{item.productName}</h4>
+                                            <p className="mt-0.5 text-xs text-neutral-400">{item.sku}</p>
+                                            {item.customization && Object.entries(item.customization).map(([k, v]) => (
+                                                <span key={k} className="mt-0.5 block text-xs text-neutral-500 capitalize">{k}: {v}</span>
+                                            ))}
 
-                                            {/* Customization */}
-                                            {item.customization && Object.keys(item.customization).length > 0 && (
-                                                <div className="mt-1 space-y-0.5">
-                                                    {Object.entries(item.customization).map(([key, value]) => (
-                                                        <p key={key} className="text-subtle text-xs">
-                                                            {key}: {value}
-                                                        </p>
-                                                    ))}
+                                            <div className="mt-2 flex items-center gap-3">
+                                                {/* Qty stepper */}
+                                                <div className="flex items-center overflow-hidden rounded-lg border border-neutral-200">
+                                                    <button
+                                                        onClick={() => updateQuantity(key, item.quantity - 1)}
+                                                        className="flex h-7 w-7 items-center justify-center text-sm font-bold text-neutral-500 transition-colors hover:bg-neutral-50"
+                                                    >−</button>
+                                                    <span className="flex h-7 w-8 items-center justify-center border-x border-neutral-200 text-sm font-semibold text-neutral-900">{item.quantity}</span>
+                                                    <button
+                                                        onClick={() => updateQuantity(key, item.quantity + 1)}
+                                                        className="flex h-7 w-7 items-center justify-center text-sm font-bold text-neutral-500 transition-colors hover:bg-neutral-50"
+                                                    >+</button>
                                                 </div>
-                                            )}
 
-                                            {/* Price & Quantity */}
-                                            {/* <div className="mt-2 flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-1 sm:gap-2">
-                          <button
-                            onClick={() => updateQuantity(itemKey, item.quantity - 1)}
-                            className="text-muted hover:text-foreground hover:bg-surface-tertiary flex h-7 w-7 items-center justify-center rounded"
-                          >
-                            -
-                          </button>
-                          <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
-                          <button
-                            onClick={() => updateQuantity(itemKey, item.quantity + 1)}
-                            className="text-muted hover:text-foreground hover:bg-surface-tertiary flex h-7 w-7 items-center justify-center rounded"
-                          >
-                            +
-                          </button>
-                        </div>
-                        <span className="text-foreground text-sm font-medium">{item.basePrice ? formatCurrency(item.basePrice * item.quantity) : "POA"}</span>
-                      </div> */}
+                                                <button
+                                                    onClick={() => {
+                                                        removeItem(key);
+                                                        toast("Removed from cart", {
+                                                            description: item.productName,
+                                                            duration: 2500,
+                                                        });
+                                                    }}
+                                                    className="flex items-center gap-1 text-xs font-medium text-neutral-400 transition-colors hover:text-red-500"
+                                                    aria-label="Remove item"
+                                                >
+                                                    <TrashIcon size={13} />
+                                                    Remove
+                                                </button>
+                                            </div>
                                         </div>
 
-                                        {/* Remove Button */}
-                                        <button onClick={() => removeItem(itemKey)} className="hover:text-error shrink-0 cursor-pointer p-1 text-neutral-400" aria-label="Remove item">
-                                            <TrashIcon size={20} />
-                                        </button>
+                                        {/* Price */}
+                                        <div className="shrink-0 text-right">
+                                            {lineTotal ? (
+                                                <p className="text-sm font-bold text-neutral-900">{formatINR(lineTotal)}</p>
+                                            ) : (
+                                                <p className="text-xs text-neutral-400">On request</p>
+                                            )}
+                                        </div>
                                     </div>
                                 );
                             })}
+
+                            {/* Free delivery badge */}
+                            <div className="flex items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-2.5">
+                                <Truck className="h-4 w-4 text-emerald-600" />
+                                <p className="text-xs font-medium text-emerald-700">Free delivery on this order</p>
+                            </div>
                         </div>
                     )}
                 </div>
 
                 {/* Footer */}
-                {items.length > 0 && !showQuoteForm && (
-                    <div className="space-y-4 border-t border-[var(--border-color)] p-4">
+                {items.length > 0 && (
+                    <div className="border-t border-neutral-100 p-4 space-y-3">
                         {/* Total */}
-                        {/* <div className="flex items-center justify-between">
-              <span className="text-muted">Subtotal</span>
-              <span className="text-foreground text-lg font-semibold">{formatCurrency(total)}</span>
-            </div> */}
+                        {total > 0 && (
+                            <div className="flex items-center justify-between rounded-xl bg-neutral-50 px-4 py-3">
+                                <span className="text-sm font-medium text-neutral-600">Order Total</span>
+                                <span className="text-lg font-bold text-neutral-900">{formatINR(total)}</span>
+                            </div>
+                        )}
 
-                        <p className="text-subtle text-center text-xs">Final pricing confirmed upon quote request</p>
+                        <p className="text-center text-xs text-neutral-400">Prices incl. GST · Delivery charges as applicable</p>
 
-                        {/* Request Quote & WhatsApp Buttons */}
-                        <div className="flex flex-col gap-3 sm:flex-row">
-                            <button onClick={() => setShowQuoteForm(true)} className="btn btn-primary btn-lg flex-1">
-                                Request Quote
+                        {/* Actions */}
+                        <div className="flex gap-2">
+                            <button
+                                onClick={goToCart}
+                                className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                            >
+                                View Cart
                             </button>
-                            <WhatsAppButton
-                                phoneNumber="+918291939355"
-                                message="Hi, I have some items in my cart and would like to inquire about pricing and availability."
-                                size="lg"
-                                className="flex-1"
-                            />
+                            <button
+                                onClick={goToCheckout}
+                                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-primary-500 py-3 text-sm font-bold text-white shadow-[0_2px_10px_-2px_rgb(31_182_205/0.45)] transition-all hover:bg-primary-600"
+                            >
+                                Checkout
+                                <ArrowRight className="h-4 w-4" />
+                            </button>
                         </div>
                     </div>
                 )}

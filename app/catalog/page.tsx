@@ -4,6 +4,7 @@ import InventoryItemCard from "./InventoryItemCard";
 import InventoryFilters from "./InventoryFilters";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui";
 
 export const metadata = { title: "Product Catalog | Haitech Medical" };
 
@@ -19,10 +20,10 @@ function parseArray(val: string | string[] | undefined): string[] {
 export default async function CatalogPage({ searchParams }: PageProps) {
     const sp = await searchParams;
 
-    const search     = typeof sp.search   === "string" ? sp.search   : undefined;
-    const brands     = parseArray(sp.brand);
-    const categories = parseArray(sp.category);
-    const itemTypes  = parseArray(sp.type);
+    const search      = typeof sp.search === "string" ? sp.search : undefined;
+    const brands      = parseArray(sp.brand);
+    const categories  = parseArray(sp.category);
+    const itemTypes   = parseArray(sp.type);
     const inStockOnly = sp.inStock === "true";
     const sort        = (sp.sort as "name" | "price-asc" | "price-desc" | "stock") ?? "name";
     const page        = Math.max(1, parseInt(typeof sp.page === "string" ? sp.page : "1") || 1);
@@ -34,37 +35,39 @@ export default async function CatalogPage({ searchParams }: PageProps) {
         search, brands, categories, itemTypes, inStockOnly, sort, page,
     });
 
-    // Build filtered facets (based on ALL items, not paged)
     const filteredCount = filterInventory(allItems, { search, brands, categories, itemTypes, inStockOnly, sort }).total;
 
     function buildPageUrl(p: number) {
         const params = new URLSearchParams();
-        if (search)       params.set("search",  search);
-        if (inStockOnly)  params.set("inStock", "true");
+        if (search)          params.set("search", search);
+        if (inStockOnly)     params.set("inStock", "true");
         if (sort !== "name") params.set("sort", sort);
-        brands.forEach((b)     => params.append("brand",    b));
+        brands.forEach((b)     => params.append("brand", b));
         categories.forEach((c) => params.append("category", c));
-        itemTypes.forEach((t)  => params.append("type",     t));
+        itemTypes.forEach((t)  => params.append("type", t));
         params.set("page", String(p));
         return `/catalog?${params.toString()}`;
     }
 
     return (
-        <main className="min-h-screen bg-gray-50">
+        <main className="min-h-screen bg-neutral-50/50">
             {/* Page header */}
-            <div className="bg-white border-b border-gray-100">
-                <div className="container py-8">
-                    <h1 className="heading-2 text-gray-900">Product Catalog</h1>
-                    <p className="text-muted mt-1">
-                        {allItems.length.toLocaleString()} products across {facets.brands.length} brands
-                    </p>
+            <div className="border-b border-neutral-100 bg-white">
+                <div className="container py-10 md:py-14">
+                    <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Catalog", path: "/catalog" }]} />
+                    <div className="mt-4 max-w-xl">
+                        <span className="label-tag label-tag-primary mb-4 inline-flex">Full Inventory</span>
+                        <h1 className="heading-2 text-neutral-900">Product Catalog</h1>
+                        <p className="mt-2 text-sm text-neutral-500">
+                            {allItems.length.toLocaleString()} products across {facets.brands.length} brands
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div className="container py-8">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
-
-                    {/* ── Filters sidebar ── */}
+                    {/* Filters sidebar */}
                     <Suspense>
                         <InventoryFilters
                             brands={facets.brands}
@@ -75,44 +78,37 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                         />
                     </Suspense>
 
-                    {/* ── Main content ── */}
-                    <div className="flex-1 min-w-0">
-
+                    {/* Main content */}
+                    <div className="min-w-0 flex-1">
                         {/* Active filter chips */}
                         {(brands.length || categories.length || itemTypes.length || search || inStockOnly) ? (
-                            <div className="mb-4 flex flex-wrap gap-2">
-                                {search && (
-                                    <Chip label={`"${search}"`} href={buildClearUrl(sp, "search")} />
-                                )}
-                                {brands.map((b) => (
-                                    <Chip key={b} label={b} href={buildClearArrayUrl(sp, "brand", b)} />
-                                ))}
-                                {categories.map((c) => (
-                                    <Chip key={c} label={c} href={buildClearArrayUrl(sp, "category", c)} />
-                                ))}
-                                {itemTypes.map((t) => (
-                                    <Chip key={t} label={t} href={buildClearArrayUrl(sp, "type", t)} />
-                                ))}
-                                {inStockOnly && (
-                                    <Chip label="In stock" href={buildClearUrl(sp, "inStock")} />
-                                )}
+                            <div className="mb-5 flex flex-wrap gap-2">
+                                {search && <Chip label={`"${search}"`} href={buildClearUrl(sp, "search")} />}
+                                {brands.map((b) => <Chip key={b} label={b} href={buildClearArrayUrl(sp, "brand", b)} />)}
+                                {categories.map((c) => <Chip key={c} label={c} href={buildClearArrayUrl(sp, "category", c)} />)}
+                                {itemTypes.map((t) => <Chip key={t} label={t} href={buildClearArrayUrl(sp, "type", t)} />)}
+                                {inStockOnly && <Chip label="In stock" href={buildClearUrl(sp, "inStock")} />}
                             </div>
                         ) : null}
 
                         {/* Result count */}
-                        <p className="mb-4 text-sm text-gray-500">
+                        <p className="mb-5 text-sm text-neutral-500">
                             Showing{" "}
-                            <span className="font-semibold text-gray-800">
+                            <span className="font-semibold text-neutral-800">
                                 {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, filteredCount)}
                             </span>{" "}
-                            of <span className="font-semibold text-gray-800">{filteredCount}</span> results
+                            of <span className="font-semibold text-neutral-800">{filteredCount}</span> results
                         </p>
 
                         {/* Grid */}
                         {items.length === 0 ? (
-                            <div className="flex flex-col items-center justify-center py-24 text-center text-gray-400">
-                                <p className="text-lg font-medium">No products match your filters</p>
-                                <Link href="/catalog" className="mt-3 text-sm text-indigo-600 hover:underline">
+                            <div className="flex flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white py-24 text-center">
+                                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-100">
+                                    <span className="text-2xl">🔍</span>
+                                </div>
+                                <p className="text-base font-semibold text-neutral-700">No products match your filters</p>
+                                <p className="mt-1 text-sm text-neutral-400">Try adjusting your search or removing some filters</p>
+                                <Link href="/catalog" className="text-primary-600 hover:text-primary-700 mt-4 text-sm font-medium">
                                     Clear all filters
                                 </Link>
                             </div>
@@ -128,22 +124,25 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                         {totalPages > 1 && (
                             <div className="mt-10 flex items-center justify-center gap-2">
                                 {currentPage > 1 && (
-                                    <Link href={buildPageUrl(currentPage - 1)}
-                                        className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm hover:bg-gray-50">
+                                    <Link
+                                        href={buildPageUrl(currentPage - 1)}
+                                        className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
+                                    >
                                         <ChevronLeft size={14} /> Prev
                                     </Link>
                                 )}
 
                                 {getPaginationPages(currentPage, totalPages).map((p, i) =>
                                     p === "…" ? (
-                                        <span key={`ellipsis-${i}`} className="px-2 text-gray-400">…</span>
+                                        <span key={`ellipsis-${i}`} className="px-1 text-neutral-400">…</span>
                                     ) : (
-                                        <Link key={p}
+                                        <Link
+                                            key={p}
                                             href={buildPageUrl(p as number)}
-                                            className={`min-w-[36px] rounded-lg border px-3 py-2 text-center text-sm transition-colors ${
+                                            className={`min-w-[38px] rounded-full border px-3 py-2 text-center text-sm font-medium transition-colors ${
                                                 p === currentPage
-                                                    ? "border-indigo-600 bg-indigo-600 text-white"
-                                                    : "border-gray-200 bg-white hover:bg-gray-50"
+                                                    ? "border-primary-500 bg-primary-500 text-white"
+                                                    : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50"
                                             }`}
                                         >
                                             {p}
@@ -152,8 +151,10 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                                 )}
 
                                 {currentPage < totalPages && (
-                                    <Link href={buildPageUrl(currentPage + 1)}
-                                        className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm hover:bg-gray-50">
+                                    <Link
+                                        href={buildPageUrl(currentPage + 1)}
+                                        className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
+                                    >
                                         Next <ChevronRight size={14} />
                                     </Link>
                                 )}
@@ -170,8 +171,11 @@ export default async function CatalogPage({ searchParams }: PageProps) {
 
 function Chip({ label, href }: { label: string; href: string }) {
     return (
-        <Link href={href} className="flex items-center gap-1 rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100">
-            {label} <span className="ml-0.5 text-indigo-400">×</span>
+        <Link
+            href={href}
+            className="flex items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 transition-colors hover:bg-primary-100"
+        >
+            {label} <span className="ml-0.5 text-primary-400">×</span>
         </Link>
     );
 }

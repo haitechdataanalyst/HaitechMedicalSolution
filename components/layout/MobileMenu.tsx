@@ -70,12 +70,12 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
             <div className={cn("fixed inset-0 z-60 bg-black/50 transition-opacity duration-300 md:hidden", isOpen ? "visible opacity-100" : "invisible opacity-0")} onClick={onClose} />
 
             {/* Menu Panel */}
-            <div ref={panelRef} className={cn("bg-surface fixed top-0 right-0 z-70 flex h-full w-[85vw] max-w-sm flex-col shadow-xl transition-transform duration-300 md:hidden", isOpen ? "translate-x-0" : "translate-x-full")} role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <div ref={panelRef} className={cn("fixed top-0 right-0 z-70 flex h-full w-[85vw] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 md:hidden", isOpen ? "translate-x-0" : "translate-x-full")} role="dialog" aria-modal="true" aria-label="Navigation menu">
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-neutral-200 p-4">
-                    <span className="text-foreground text-lg font-semibold">Menu</span>
+                <div className="flex items-center justify-between border-b border-neutral-100 px-5 py-4">
+                    <span className="text-sm font-semibold tracking-tight text-neutral-900">Navigation</span>
                     <button ref={closeButtonRef} onClick={onClose} className="icon-btn" aria-label="Close menu">
-                        <CloseIcon size={24} />
+                        <CloseIcon size={20} />
                     </button>
                 </div>
 
@@ -193,14 +193,31 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                     </ul>
                 </nav>
 
-                {/* Book a Demo — pinned to bottom */}
-                <div className="border-t border-neutral-200 p-4">
+                {/* Auth + CTA — pinned to bottom */}
+                <div className="border-t border-neutral-100 p-4 space-y-2">
+                    <div className="grid grid-cols-2 gap-2">
+                        <Link
+                            href="/login"
+                            onClick={onClose}
+                            className="flex items-center justify-center rounded-xl border border-neutral-200 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                        >
+                            Sign In
+                        </Link>
+                        <Link
+                            href="/signup"
+                            onClick={onClose}
+                            className="flex items-center justify-center rounded-xl border border-primary-200 bg-primary-50 py-2.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100"
+                        >
+                            Register
+                        </Link>
+                    </div>
                     <Link
                         href="/support/contact"
                         onClick={onClose}
-                        className="bg-primary-600 hover:bg-primary-700 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-colors"
+                        className="flex w-full items-center justify-center gap-2.5 rounded-full bg-primary-500 px-4 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-primary-600"
+                        style={{ boxShadow: "0 4px 16px -2px rgb(31 182 205 / 0.4)" }}
                     >
-                        <RocketIcon size={18} />
+                        <RocketIcon size={16} />
                         Book a Demo
                     </Link>
                 </div>

@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { HeadlightCategory, HeadlightProduct } from "@/types";
+import { HeadlightCategory, HeadlightProduct, CartItem } from "@/types";
 import { Button } from "@/components/ui";
-import ProductQuoteModal from "@/components/products/blocks/ProductQuoteModal";
-import { Check } from "lucide-react";
+import { useCart } from "@/components/cart/CartProvider";
+import { Check, ShoppingCart } from "lucide-react";
 
 interface HeadlightCategoryCardProps {
     category: HeadlightCategory;
@@ -18,11 +18,11 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
         <button
             onClick={onSelect}
             className={`group relative w-full cursor-pointer overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
-                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-gray-100 hover:border-gray-200"
+                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-neutral-100 hover:border-neutral-200"
             }`}
         >
             {/* Category Image */}
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image src={category.image} alt={category.name} fill className="object-contain p-4 transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 50vw" />
             </div>
 
@@ -45,14 +45,30 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
 
 interface HeadlightProductCardProps {
     product: HeadlightProduct;
-    onGetQuote: (product: HeadlightProduct) => void;
 }
 
-function HeadlightProductCard({ product, onGetQuote }: HeadlightProductCardProps) {
+function HeadlightProductCard({ product }: HeadlightProductCardProps) {
+    const { addItem, openCart } = useCart();
+    const [added, setAdded] = useState(false);
+
+    const handleAddToCart = () => {
+        const cartItem: CartItem = {
+            productId: product.id,
+            productName: product.name,
+            sku: product.id,
+            quantity: 1,
+            image: product.image,
+        };
+        addItem(cartItem);
+        setAdded(true);
+        openCart();
+        setTimeout(() => setAdded(false), 2000);
+    };
+
     return (
-        <div className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
+        <div className="group rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm transition-all hover:border-primary-100 hover:shadow-lg">
             {/* Product Image */}
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={product.image}
                     alt={product.name}
@@ -68,13 +84,13 @@ function HeadlightProductCard({ product, onGetQuote }: HeadlightProductCardProps
             </div>
 
             {/* Product Description */}
-            <p className="mb-4 text-sm text-gray-600">{product.description}</p>
+            <p className="mb-4 text-sm text-neutral-600">{product.description}</p>
 
             {/* Features */}
             {product.features && product.features.length > 0 && (
                 <ul className="mb-4 space-y-1">
                     {product.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={index} className="flex items-start gap-2 text-sm text-neutral-600">
                             <Check className="size-4" />
                             {feature}
                         </li>
@@ -82,10 +98,10 @@ function HeadlightProductCard({ product, onGetQuote }: HeadlightProductCardProps
                 </ul>
             )}
 
-            {/* Get a Quote - same flow as product pages */}
+            {/* Add to Cart */}
             <div className="mt-auto pt-2">
-                <Button variant="outline" className="w-full" onClick={() => onGetQuote(product)}>
-                    Get a Quote
+                <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
+                    {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
                 </Button>
             </div>
         </div>
@@ -98,17 +114,10 @@ interface HeadlightsSelectorProps {
 
 export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
     const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
-    const [productForQuote, setProductForQuote] = useState<HeadlightProduct | null>(null);
-
     const selectedCategory = categories.find((c) => c.id === selectedCategoryId);
 
     const handleCategorySelect = (categoryId: string) => {
-        // Toggle selection - if clicking the same category, deselect it
         setSelectedCategoryId((prev) => (prev === categoryId ? null : categoryId));
-    };
-
-    const handleGetQuote = (product: HeadlightProduct) => {
-        setProductForQuote(product);
     };
 
     return (
@@ -123,16 +132,14 @@ export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
             {/* Selected Category Products */}
             {selectedCategory && (
                 <div className="animate-in fade-in slide-in-from-top-4 duration-300">
-                    {/* Category Info */}
-                    <div className="mb-8 border-t-4 border-gray-100 pt-8">
+                    <div className="mb-8 border-t-4 border-neutral-100 pt-8">
                         <div className="mx-auto mb-8 flex max-w-4xl flex-col items-center gap-8 md:flex-row">
-                            {/* Hero Image for selected category */}
-                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-50 md:w-1/2">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-neutral-50 md:w-1/2">
                                 <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 50vw" />
                             </div>
                             <div className="flex-1 text-center md:text-left">
                                 <h3 className="heading-3 text-primary-800 mb-3">{selectedCategory.description}</h3>
-                                <p className="text-body text-gray-600">{selectedCategory.tagline}</p>
+                                <p className="text-body text-neutral-600">{selectedCategory.tagline}</p>
                             </div>
                         </div>
 
@@ -140,23 +147,12 @@ export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
                         <div className="flex flex-wrap justify-center gap-6">
                             {selectedCategory.products.map((product) => (
                                 <div key={product.id} className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-                                    <HeadlightProductCard product={product} onGetQuote={handleGetQuote} />
+                                    <HeadlightProductCard product={product} />
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
-            )}
-
-            {/* Quote modal - same as product pages, pre-fills selected headlight */}
-            {productForQuote && (
-                <ProductQuoteModal
-                    isOpen={!!productForQuote}
-                    onClose={() => setProductForQuote(null)}
-                    productName={productForQuote.name}
-                    productSku={productForQuote.id}
-                    productId={productForQuote.id}
-                />
             )}
         </div>
     );

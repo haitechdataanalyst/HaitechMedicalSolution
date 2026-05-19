@@ -26,8 +26,11 @@ export default function MatchHeadlightsSection({ config, headlightCategories }: 
     return (
         <div className="space-y-3">
             {/* Header with toggle */}
-            <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold text-neutral-800">Match Headlights</h4>
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <h4 className="text-sm font-semibold text-neutral-800">Match Headlights</h4>
+                    <p className="mt-0.5 text-xs text-neutral-500">Add a compatible LED headlight to your loupes order. Billed separately.</p>
+                </div>
                 <button
                     type="button"
                     role="switch"

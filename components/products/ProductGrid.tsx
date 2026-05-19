@@ -17,7 +17,7 @@ export default function ProductGrid({ items, emptyMessage = "No products found" 
     if (items.length === 0) {
         return (
             <div className="py-12 text-center">
-                <InboxIcon size={64} className="mx-auto mb-4 text-gray-300" />
+                <InboxIcon size={64} className="mx-auto mb-4 text-neutral-300" />
                 <p className="text-muted">{emptyMessage}</p>
             </div>
         );

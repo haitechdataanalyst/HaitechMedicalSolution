@@ -16,11 +16,11 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
         <button
             onClick={onSelect}
             className={`group relative w-full overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
-                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-gray-100 hover:border-gray-200"
+                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-neutral-100 hover:border-neutral-200"
             }`}
         >
             {/* Category Image */}
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={category.image}
                     alt={category.name}
@@ -36,7 +36,7 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
             </div>
 
             {/* Product count badge */}
-            <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-gray-100 px-2 text-xs font-semibold text-gray-600">{category.products.length}</div>
+            <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-neutral-100 px-2 text-xs font-semibold text-neutral-600">{category.products.length}</div>
 
             {/* Selection indicator */}
             {isSelected && (
@@ -56,9 +56,9 @@ interface MedesyProductCardProps {
 
 function MedesyProductCard({ product }: MedesyProductCardProps) {
     return (
-        <div className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
+        <div className="group flex h-full flex-col rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm transition-all hover:border-primary-100 hover:shadow-lg">
             {/* Product Image */}
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={product.image}
                     alt={product.name}
@@ -80,13 +80,13 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
             </div>
 
             {/* Product Description */}
-            <p className="mb-4 grow text-center text-sm text-gray-600">{product.description}</p>
+            <p className="mb-4 grow text-center text-sm text-neutral-600">{product.description}</p>
 
             {/* Features */}
             {product.features && product.features.length > 0 && (
                 <ul className="mb-4 space-y-1">
                     {product.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={index} className="flex items-start gap-2 text-sm text-neutral-600">
                             <svg className="text-primary-500 mt-0.5 h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
@@ -96,10 +96,10 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
                 </ul>
             )}
 
-            {/* View Details */}
+            {/* CTA */}
             {product.catalogueFile ? (
-                <a href={product.catalogueFile ? product.catalogueFile : "#"} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
-                    Get a Quote
+                <a href={product.catalogueFile} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
+                    Download Catalogue
                 </a>
             ) : (
                 <div className="mt-auto pt-2">
@@ -155,15 +155,15 @@ export function MedesySelector({ categories, initialCategorySlug }: MedesySelect
             {selectedCategory && (
                 <div className="animate-in fade-in slide-in-from-top-4 duration-300">
                     {/* Category Info */}
-                    <div className="mb-8 border-t-4 border-gray-100 pt-8">
+                    <div className="mb-8 border-t-4 border-neutral-100 pt-8">
                         <div className="mx-auto mb-8 flex max-w-4xl flex-col items-center gap-8 md:flex-row">
                             {/* Hero Image for selected category */}
-                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-50 md:w-1/2">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-neutral-50 md:w-1/2">
                                 <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 50vw" />
                             </div>
                             <div className="flex-1 text-center md:text-left">
                                 <h3 className="heading-3 text-primary-800 mb-3">{selectedCategory.description}</h3>
-                                <p className="text-body text-gray-600">{selectedCategory.tagline}</p>
+                                <p className="text-body text-neutral-600">{selectedCategory.tagline}</p>
                             </div>
                         </div>
 

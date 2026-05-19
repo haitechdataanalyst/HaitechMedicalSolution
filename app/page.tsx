@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { getRandomProductsForEachCategory, getProductPath } from "@/lib/catalog";
 import { Button } from "@/components/ui";
-import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection } from "@/components/misc";
+import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
 import { testimonials } from "@/data/testimonials.json";
 import Image from "next/image";
-import { ClockIcon, Headset } from "lucide-react";
+import { ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Home() {
     const products = getRandomProductsForEachCategory(8);
-    // Add paths to products for client-side linking
     const featuredProducts = products.map((p) => ({ ...p, path: getProductPath(p) }));
 
     return (
@@ -16,60 +15,95 @@ export default function Home() {
             {/* Hero Section */}
             <Hero />
 
-            {/* Features Section */}
-            <section className="section bg-surface-secondary">
-                <div className="container p-0!">
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-                        <div className="p-6 text-center">
-                            <div className="icon-container icon-container-3xl icon-container-primary icon-container-circle mx-auto mb-4">
-                                <Image src="/svg/premium-badge.svg" alt="Premium Quality" width={"60"} height={"60"} />
+            {/* Features Strip — compact Flipkart-style service badges */}
+            <section className="border-b border-neutral-100 bg-white">
+                <div className="container">
+                    <div className="flex flex-wrap items-stretch divide-x divide-neutral-100">
+                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
+                                <Image src="/svg/premium-badge.svg" alt="Premium Quality" width={20} height={20} className="transition-[filter] duration-200 group-hover:brightness-0 group-hover:invert" />
                             </div>
-                            <h3 className="heading-4 text-foreground mb-2">Premium Quality</h3>
-                            <p className="text-muted">Only the finest optical components and materials in all our products.</p>
+                            <div>
+                                <p className="text-xs font-bold text-neutral-900">Premium Quality</p>
+                                <p className="text-[11px] text-neutral-400">ISO certified products</p>
+                            </div>
                         </div>
-                        <div className="p-6 text-center">
-                            <div className="icon-container icon-container-3xl icon-container-primary icon-container-circle mx-auto mb-4">
-                                <ClockIcon className="h-16 w-16" />
+                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
+                                <ClockIcon className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
                             </div>
-                            <h3 className="heading-4 text-foreground mb-2">Fast Response</h3>
-                            <p className="text-muted">Quote requests answered within 24 hours.</p>
+                            <div>
+                                <p className="text-xs font-bold text-neutral-900">24-Hour Response</p>
+                                <p className="text-[11px] text-neutral-400">Order confirmed same day</p>
+                            </div>
                         </div>
-                        <div className="p-6 text-center sm:col-span-1 md:col-span-2 lg:col-span-1">
-                            <div className="icon-container icon-container-3xl icon-container-primary icon-container-circle mx-auto mb-4">
-                                <Headset className="h-16 w-16" />
+                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
+                                <Headset className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
                             </div>
-                            <h3 className="heading-4 text-foreground mb-2">Expert Support</h3>
-                            <p className="text-muted">Dedicated support team to help you find the perfect equipment.</p>
+                            <div>
+                                <p className="text-xs font-bold text-neutral-900">Expert Support</p>
+                                <p className="text-[11px] text-neutral-400">Specialist team on hand</p>
+                            </div>
+                        </div>
+                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
+                                <ShieldCheck className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
+                            </div>
+                            <div>
+                                <p className="text-xs font-bold text-neutral-900">Certified Products</p>
+                                <p className="text-[11px] text-neutral-400">International standards</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Brands Section */}
+            <BrandsSection />
 
             {/* Why Section */}
             <WhySection />
 
             {/* Testimonials Section */}
             <Testimonials testimonials={testimonials} />
-            <br />
+
             {/* Featured Products Section */}
             <TrendingProducts products={featuredProducts} />
 
             {/* CTA Section */}
-            <section className="section-lg bg-primary-600 text-white">
-                <div className="container text-center">
-                    <h2 className="heading-2 mb-4">Ready to Upgrade Your Practice?</h2>
-                    <p className="text-body-lg text-primary-100 mx-auto mb-8 max-w-2xl">Get in touch with our team for personalized recommendations and competitive quotes on all our products.</p>
-                    <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-                        <Link href="/products" className="w-full sm:w-auto">
-                            <Button size="lg" className="text-primary-600 w-full bg-white hover:bg-neutral-100 sm:w-auto">
+            <section className="relative overflow-hidden bg-brand-gradient">
+                {/* Decorative elements */}
+                <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
+                <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-primary-400/10 blur-2xl" />
+
+                <div className="section-lg container relative text-center">
+                    <span className="label-tag label-tag-white mb-6 inline-flex">
+                        Get Started Today
+                    </span>
+                    <h2 className="heading-1 mb-5 text-white">Ready to Upgrade Your Practice?</h2>
+                    <p className="text-body-lg mx-auto mb-10 max-w-xl text-primary-100/90">
+                        Get personalised recommendations and competitive quotes from our specialist team — tailored to your clinic.
+                    </p>
+                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                        <Link href="/products">
+                            <Button
+                                size="lg"
+                                className="group gap-3 rounded-full bg-white px-8 font-semibold text-primary-700 shadow-lg hover:bg-primary-50 hover:shadow-xl w-full sm:w-auto"
+                            >
                                 Browse Products
+                                <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-1" />
                             </Button>
                         </Link>
-                        {/* <Link href="/contact" className="w-full sm:w-auto">
-                            <Button size="lg" variant="primary" className="flex w-full items-center justify-center gap-4 sm:w-auto">
+                        <Link href="/support/contact">
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="gap-3 rounded-full border-white/30 px-8 font-semibold text-white hover:border-white hover:bg-white/10 w-full sm:w-auto"
+                            >
                                 Request a Quote
                             </Button>
-                        </Link> */}
+                        </Link>
                     </div>
                 </div>
             </section>

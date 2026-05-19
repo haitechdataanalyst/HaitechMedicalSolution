@@ -27,3 +27,18 @@ export function formatDate(date: Date | string): string {
         year: "numeric",
     });
 }
+
+export function formatPrice(amount: number, currency: string = "INR"): string {
+    if (currency === "INR") {
+        return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            maximumFractionDigits: 0,
+        }).format(amount);
+    }
+    return new Intl.NumberFormat("en-AU", {
+        style: "currency",
+        currency,
+        maximumFractionDigits: 0,
+    }).format(amount);
+}

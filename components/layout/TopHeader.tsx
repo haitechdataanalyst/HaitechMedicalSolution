@@ -1,41 +1,36 @@
 "use client";
 
-import Link from "next/link";
 import siteConfig from "@/data/site-config.json";
-import navigation from "@/data/navigation.json";
-import { PhoneOutgoing, Send } from "lucide-react";
+import { PhoneOutgoing, Mail, Truck } from "lucide-react";
 
 export default function TopHeader() {
     return (
-        <div className="bg-primary-900 border-primary-100 border-b">
+        <div className="border-b border-white/5 bg-navy-900">
             <div className="container">
-                <div className="flex items-center justify-between py-2.5 text-sm">
-                    {/* Quick Links - Left */}
-                    <nav className="flex items-center gap-4 md:gap-6">
-                        {navigation["top-header"] &&
-                            navigation["top-header"].map((link) => (
-                                <Link key={link.href} href={link.href} className="text-primary-100 font-medium transition-colors duration-200 hover:text-white">
-                                    {link.label}
-                                </Link>
-                            ))}
-                    </nav>
-
-                    {/* Contact Info - Right */}
-                    <div className="flex items-center gap-4 md:gap-6">
-                        {/* Phone */}
+                <div className="flex h-8 items-center justify-between gap-4 overflow-hidden">
+                    <div className="flex min-w-0 items-center gap-1.5 text-[11px] text-navy-300">
+                        <Truck size={11} className="shrink-0 text-primary-400" />
+                        <span className="truncate whitespace-nowrap">
+                            Free delivery on all orders ·{" "}
+                            <span className="font-semibold text-white">
+                                Authorized distributor of Admetec, Medesy, Salli &amp; more
+                            </span>
+                        </span>
+                    </div>
+                    <div className="hidden items-center gap-5 sm:flex">
                         <a
                             href={`tel:${siteConfig.company.phone.replace(/\s/g, "")}`}
-                            className="text-primary-100 flex items-center gap-2 transition-colors duration-200 hover:text-white"
-                            title="Call us"
+                            className="flex items-center gap-1.5 text-[11px] text-navy-300 transition-colors hover:text-white"
                         >
-                            <PhoneOutgoing size={16} />
-                            <span className="hidden font-medium sm:inline">{siteConfig.company.phone}</span>
+                            <PhoneOutgoing size={11} />
+                            <span>{siteConfig.company.phone}</span>
                         </a>
-
-                        {/* Email */}
-                        <a href={`mailto:${siteConfig.company.email}`} className="text-primary-100 flex items-center gap-2 transition-colors duration-200 hover:text-white" title="Email us">
-                            <Send strokeWidth={3} size={16} />
-                            <span className="hidden font-medium sm:inline">{siteConfig.company.email}</span>
+                        <a
+                            href={`mailto:${siteConfig.company.email}`}
+                            className="hidden items-center gap-1.5 text-[11px] text-navy-300 transition-colors hover:text-white md:flex"
+                        >
+                            <Mail size={11} />
+                            <span>{siteConfig.company.email}</span>
                         </a>
                     </div>
                 </div>

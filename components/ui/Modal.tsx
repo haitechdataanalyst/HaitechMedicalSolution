@@ -56,10 +56,10 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" }:
             >
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
-                    <h2 id="modal-title" className="text-xl font-semibold text-gray-900">
+                    <h2 id="modal-title" className="text-xl font-semibold text-neutral-900">
                         {title}
                     </h2>
-                    <button type="button" onClick={onClose} className="text-gray-400 transition-colors hover:text-gray-600" aria-label="Close modal">
+                    <button type="button" onClick={onClose} className="text-neutral-400 transition-colors hover:text-neutral-600" aria-label="Close modal">
                         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>

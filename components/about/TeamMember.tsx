@@ -24,18 +24,18 @@ export function TeamMember({ member }: TeamMemberProps) {
         .toUpperCase();
 
     return (
-        <div className="group flex flex-col items-center text-center">
+        <div className="group flex flex-col items-center rounded-2xl border border-neutral-100 bg-white p-6 text-center transition-all duration-300 hover:border-primary-100 hover:shadow-lg">
             {/* Circular Image Container */}
-            <div className="bg-primary-100 ring-primary-50 group-hover:ring-primary-200 relative mb-4 h-32 w-32 overflow-hidden rounded-full ring-4 transition-all duration-300 md:h-40 md:w-40">
+            <div className="relative mb-5 h-28 w-28 overflow-hidden rounded-full ring-4 ring-primary-50 transition-all duration-300 group-hover:ring-primary-100 md:h-32 md:w-32">
                 {member.image && !imageError ? (
-                    <Image src={member.image} alt={member.name} fill className="object-cover" onError={() => setImageError(true)} />
+                    <Image src={member.image} alt={member.name} fill sizes="(max-width: 768px) 112px, 128px" className="object-cover" onError={() => setImageError(true)} />
                 ) : (
-                    <div className="bg-primary-100 text-primary-600 flex h-full w-full items-center justify-center text-3xl font-semibold md:text-4xl">{initials}</div>
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-400 to-primary-600 text-3xl font-semibold text-white md:text-4xl">{initials}</div>
                 )}
             </div>
 
             {/* Name */}
-            <h3 className="mb-1 text-lg font-semibold text-neutral-900">{member.name}</h3>
+            <h3 className="mb-1 text-lg font-semibold text-neutral-900 transition-colors group-hover:text-primary-600">{member.name}</h3>
 
             {/* Designation */}
             <p className="text-sm text-neutral-500">{member.designation}</p>

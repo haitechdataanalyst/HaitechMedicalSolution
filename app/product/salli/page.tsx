@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Breadcrumbs, Button } from "@/components/ui";
-import { HeartPulse, ArrowDownUp, Brain, Armchair, Activity, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui";
+import { HeartPulse, ArrowDownUp, Brain, Armchair, Activity, CheckCircle, ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About Salli | Ergonomic Saddle Chairs for Dental Professionals",
-    description:
-        "Salli Systems — pioneers in ergonomic saddle chair design. Solving sitting-related problems through research-driven innovation for dental and medical professionals.",
+    title: "Salli | Ergonomic Saddle Chairs for Dental Professionals",
+    description: "Salli Systems — pioneers in ergonomic saddle chair design. Solving sitting-related problems through research-driven innovation for dental and medical professionals.",
 };
-
-const breadcrumbs = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Salli", path: "/about/salli" },
-];
 
 const sittingProblems = [
     "Lower back and shoulder pain",
@@ -28,168 +21,185 @@ const sittingProblems = [
 ];
 
 const pillars = [
-    {
-        icon: <Brain className="h-7 w-7" />,
-        title: "Research in Sitting Physiology",
-        description: "Decades of scientific research into how sitting affects the body, informing every design decision.",
-    },
-    {
-        icon: <ArrowDownUp className="h-7 w-7" />,
-        title: "Continuous Innovation",
-        description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals.",
-    },
-    {
-        icon: <Armchair className="h-7 w-7" />,
-        title: "High-Quality Manufacturing",
-        description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance.",
-    },
-    {
-        icon: <HeartPulse className="h-7 w-7" />,
-        title: "Customer-Oriented Approach",
-        description: "Solving real sitting problems through an integrated, user-focused design philosophy.",
-    },
+    { icon: <Brain className="h-7 w-7" />, title: "Research in Sitting Physiology", description: "Decades of scientific research into how sitting affects the body, informing every design decision." },
+    { icon: <ArrowDownUp className="h-7 w-7" />, title: "Continuous Innovation", description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals." },
+    { icon: <Armchair className="h-7 w-7" />, title: "High-Quality Manufacturing", description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance." },
+    { icon: <HeartPulse className="h-7 w-7" />, title: "Customer-Oriented Approach", description: "Solving real sitting problems through an integrated, user-focused design philosophy." },
 ];
 
 const products = [
-    {
-        name: "Salli SwayFit",
-        image: "/images/products/salli/salli-swayfit-main.jpg",
-        description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment.",
-    },
-    {
-        name: "Salli TripleLift",
-        image: "/images/products/salli/salli-triplelift-main.jpg",
-        description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution.",
-    },
-    {
-        name: "Salli Ultra",
-        image: "/images/products/salli/salli-ultra-main.jpg",
-        description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience.",
-    },
+    { name: "Salli SwayFit", image: "/images/products/salli/salli-swayfit-main.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment." },
+    { name: "Salli TripleLift", image: "/images/products/salli/salli-triplelift-main.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution." },
+    { name: "Salli Ultra", image: "/images/products/salli/salli-ultra-main.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience." },
 ];
 
 export default function AboutSalliPage() {
     return (
         <>
-            <Breadcrumbs items={breadcrumbs} />
-
-            {/* Hero Section */}
-            <section className="relative min-h-[480px] overflow-hidden bg-neutral-900">
+            {/* ── Hero ── */}
+            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950">
                 <Image
                     src="/images/products/salli/salli-banner.jpg"
                     alt="Salli ergonomic saddle chairs"
                     fill
-                    className="object-cover opacity-35"
+                    className="object-cover opacity-25"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-neutral-900/20" />
-                <div className="relative z-10 flex min-h-[480px] items-center">
-                    <div className="container">
-                        <div className="mx-auto max-w-3xl text-center">
-                            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
-                                Ergonomic Excellence
-                            </span>
-                            <h1 className="heading-1 mb-6 text-white">Salli</h1>
-                            <p className="text-body-lg mb-8 leading-relaxed text-neutral-200">
-                                Advancing research in sitting physiology, continuous product innovation, high-quality manufacturing, and solving sitting-related problems through a customer-oriented, integrated approach.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Link href="/products">
-                                    <Button size="lg" className="px-8">
-                                        Explore Salli Chairs
-                                    </Button>
-                                </Link>
-                                <Link href="/support/contact">
-                                    <Button size="lg" variant="outline" className="border-white/30 px-8 text-white hover:bg-white/10">
-                                        Get in Touch
-                                    </Button>
-                                </Link>
+                <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/20 via-neutral-950/50 to-neutral-950" />
+
+                <nav className="absolute left-0 top-0 z-20 px-6 py-5 text-xs text-white/40">
+                    <Link href="/" className="transition-colors hover:text-white/70">Home</Link>
+                    <span className="mx-2 opacity-40">/</span>
+                    <Link href="/products" className="transition-colors hover:text-white/70">Products</Link>
+                    <span className="mx-2 opacity-40">/</span>
+                    <span className="text-white/60">Salli</span>
+                </nav>
+
+                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
+                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
+                        Finnish-Engineered · Clinically Proven
+                    </span>
+                    <h1 className="text-6xl font-black tracking-tight text-white sm:text-8xl md:text-9xl">
+                        Salli
+                    </h1>
+                    <p className="max-w-2xl text-lg leading-relaxed text-white/55">
+                        Advancing research in sitting physiology, continuous product innovation, and solving sitting-related problems through a customer-oriented, integrated approach.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3 pt-2">
+                        <Link href="/products">
+                            <Button size="lg" className="rounded-full px-8">Explore Salli Chairs</Button>
+                        </Link>
+                        <Link href="/support/contact">
+                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-8 text-white hover:bg-white/10">
+                                Get in Touch
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                    <ChevronDown className="h-6 w-6 text-white/30" />
+                </div>
+            </section>
+
+            {/* ── Brand Statement ── */}
+            <section className="bg-amber-950 py-20 md:py-28">
+                <div className="container">
+                    <p className="mx-auto max-w-4xl text-center text-2xl font-light italic leading-relaxed text-white/70 md:text-3xl">
+                        &ldquo;The way we sit is broken. Salli built the fix.&rdquo;
+                    </p>
+                    <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+                        {[
+                            { v: "40+",     l: "Years of R&D"       },
+                            { v: "8",       l: "Health Issues Fixed" },
+                            { v: "3",       l: "Chair Models"        },
+                            { v: "Finland", l: "Engineered"          },
+                        ].map((s) => (
+                            <div key={s.l} className="text-center">
+                                <p className="text-3xl font-black text-amber-400 md:text-4xl">{s.v}</p>
+                                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* The Problem Section */}
-            <section className="section bg-white">
+            {/* ── 01 The Problem ── */}
+            <section className="bg-white py-24 md:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-16 lg:flex-row">
                         <div className="w-full lg:w-1/2">
-                            <span className="text-primary-600 mb-2 inline-block text-sm font-semibold uppercase tracking-wider">The Challenge</span>
-                            <h2 className="heading-2 mb-6">Traditional Sitting Is Hurting You</h2>
-                            <p className="text-body-lg text-muted mb-8 leading-relaxed">
-                                Salli has demonstrated that traditional sitting is closely linked to numerous health issues. Their research-driven approach identifies and addresses these concerns at the core.
+                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / The Problem</span>
+                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                                Traditional Sitting<br />Is Hurting You.
+                            </h2>
+                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                                Salli has demonstrated through research that traditional sitting is closely linked to numerous health issues. Hours in a conventional chair create compounding problems for dental professionals.
                             </p>
                             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                                 {sittingProblems.map((problem) => (
                                     <div key={problem} className="flex items-start gap-3">
-                                        <Activity className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
-                                        <span className="text-sm text-neutral-700">{problem}</span>
+                                        <Activity className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
+                                        <span className="text-sm text-neutral-600">{problem}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="relative aspect-square overflow-hidden rounded-2xl bg-neutral-100 shadow-lg">
-                                <Image src="/images/products/salli/salli-swayfit-1.jpg" alt="Salli SwayFit saddle chair" fill className="object-contain p-8" />
+                            <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
+                                <Image
+                                    src="/images/products/salli/salli-swayfit-1.jpg"
+                                    alt="Salli SwayFit saddle chair"
+                                    width={700}
+                                    height={700}
+                                    className="h-auto w-full object-contain p-10"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* The Solution Section */}
-            <section className="section bg-primary-50">
+            {/* ── 02 The Solution ── */}
+            <section className="bg-neutral-950 py-24 md:py-32">
                 <div className="container">
-                    <div className="mx-auto mb-6 max-w-3xl text-center">
-                        <span className="text-primary-600 mb-2 inline-block text-sm font-semibold uppercase tracking-wider">The Solution</span>
-                        <h2 className="heading-2 mb-4">Designed to Transform How You Sit</h2>
-                        <p className="text-body-lg text-muted leading-relaxed">
-                            The Salli saddle chair is designed to help users significantly reduce these concerns while enhancing overall sitting comfort and productivity. Here are the four pillars behind every Salli product.
+                    <div className="flex flex-col-reverse items-center gap-16 lg:flex-row">
+                        <div className="w-full lg:w-1/2">
+                            <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
+                                <Image
+                                    src="/images/products/salli/salli-triplelift-main.jpg"
+                                    alt="Salli TripleLift saddle chair"
+                                    width={700}
+                                    height={525}
+                                    className="h-auto w-full object-contain p-10"
+                                />
+                            </div>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / The Solution</span>
+                            <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">
+                                Designed to<br />Transform How You Sit.
+                            </h2>
+                            <p className="mb-6 text-lg leading-relaxed text-white/55">
+                                The Salli saddle chair tilts the pelvis forward naturally, restoring the spine&apos;s healthy S-curve. The result is active, healthy sitting that reduces pain and boosts circulation — even during long procedures.
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((b) => (
+                                    <div key={b} className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+                                        <span className="text-sm font-medium text-white/80">{b}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── 03 Product Range ── */}
+            <section className="bg-white py-24 md:py-32">
+                <div className="container">
+                    <div className="mb-14 text-center">
+                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Product Range</span>
+                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">The Salli Range</h2>
+                        <p className="mx-auto mt-4 max-w-xl text-base text-neutral-500">
+                            Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals.
                         </p>
                     </div>
-                </div>
-            </section>
-
-            {/* Four Pillars */}
-            <section className="section bg-neutral-50">
-                <div className="container">
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                        {pillars.map((pillar, index) => (
-                            <div key={pillar.title} className="card card-hover relative overflow-hidden rounded-xl p-8">
-                                <div className="absolute top-0 left-0 h-1 w-full bg-primary-gradient" />
-                                <div className="text-primary-300 mb-3 text-5xl font-bold">0{index + 1}</div>
-                                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-primary-600">{pillar.icon}</div>
-                                <h3 className="heading-4 mb-2">{pillar.title}</h3>
-                                <p className="text-sm text-muted">{pillar.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Product Showcase */}
-            <section className="section bg-white">
-                <div className="container">
-                    <div className="mx-auto mb-12 max-w-3xl text-center">
-                        <h2 className="heading-2 mb-4">The Salli Range</h2>
-                        <p className="text-body-lg text-muted">Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals.</p>
-                    </div>
-
-                    <div className="grid gap-8 md:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-3">
                         {products.map((product) => (
-                            <div key={product.name} className="card card-hover group overflow-hidden rounded-xl">
-                                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
+                            <div key={product.name} className="group overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-lg">
+                                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-50">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
-                                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                                        className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="heading-4 mb-2">{product.name}</h3>
-                                    <p className="text-sm text-muted">{product.description}</p>
+                                <div className="border-t border-neutral-50 p-6">
+                                    <h3 className="mb-2 text-base font-bold text-neutral-900">{product.name}</h3>
+                                    <p className="text-sm leading-relaxed text-neutral-500">{product.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -197,36 +207,55 @@ export default function AboutSalliPage() {
                 </div>
             </section>
 
-            {/* Benefits Banner */}
-            <section className="bg-primary-gradient section text-white">
+            {/* ── Four Pillars ── */}
+            <section className="bg-neutral-50 py-24">
                 <div className="container">
-                    <div className="mx-auto max-w-4xl">
-                        <div className="text-center">
-                            <h2 className="heading-2 mb-4">Invest in Your Health & Productivity</h2>
-                            <p className="text-body-lg mb-8 text-primary-100">
-                                Join thousands of dental and medical professionals who have transformed their practice with Salli ergonomic seating. Better posture, less pain, more focus.
-                            </p>
-                            <div className="mb-10 flex flex-wrap justify-center gap-6">
-                                {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((benefit) => (
-                                    <div key={benefit} className="flex items-center gap-2">
-                                        <CheckCircle className="h-5 w-5 text-primary-200" />
-                                        <span className="font-medium">{benefit}</span>
-                                    </div>
-                                ))}
+                    <div className="mb-14 text-center">
+                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Salli</span>
+                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Four Pillars of Design</h2>
+                    </div>
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                        {pillars.map((pillar, index) => (
+                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-7 transition-all duration-200 hover:border-amber-200 hover:shadow-lg">
+                                <div className="mb-3 text-5xl font-black text-neutral-100 transition-colors group-hover:text-amber-50">
+                                    0{index + 1}
+                                </div>
+                                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+                                    {pillar.icon}
+                                </div>
+                                <h3 className="mb-2 text-sm font-bold text-neutral-900">{pillar.title}</h3>
+                                <p className="text-sm leading-relaxed text-neutral-500">{pillar.description}</p>
                             </div>
-                            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                                <Link href="/products">
-                                    <Button size="lg" className="bg-white px-10 text-primary-700 hover:bg-neutral-100">
-                                        Shop Salli Chairs
-                                    </Button>
-                                </Link>
-                                <Link href="/support/contact">
-                                    <Button size="lg" variant="outline" className="border-white/30 px-10 text-white hover:bg-white/10">
-                                        Contact Us
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── CTA ── */}
+            <section className="relative overflow-hidden bg-amber-950 py-28 text-white">
+                <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-amber-500 opacity-10 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-amber-400 opacity-5 blur-2xl" />
+                <div className="container relative text-center">
+                    <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
+                        Salli Chairs
+                    </span>
+                    <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                        Invest in Your Health & Productivity
+                    </h2>
+                    <p className="mx-auto mb-10 max-w-xl text-lg text-white/55">
+                        Join thousands of dental and medical professionals who have transformed their practice with Salli ergonomic seating.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Link href="/products">
+                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-amber-700 shadow-lg hover:bg-amber-50">
+                                Shop Salli Chairs
+                            </Button>
+                        </Link>
+                        <Link href="/support/contact">
+                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-10 text-white hover:border-white hover:bg-white/10">
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>

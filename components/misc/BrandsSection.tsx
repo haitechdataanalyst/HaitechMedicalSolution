@@ -1,0 +1,180 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
+type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs";
+
+const brands = [
+    {
+        name: "Admetec",
+        tagline: "Surgical loupes & LED headlights engineered for dental professionals.",
+        image: "/BrandLogo/AdmetecLogo.png",
+        href: "/product/admetec",
+        accentColor: "bg-teal-500",
+        badge: "Optical",
+        filter: "Optical" as FilterCategory,
+        productCount: 12,
+        credibility: "Israeli-made · ISO certified",
+        priceFrom: "₹1,12,000",
+    },
+    {
+        name: "Almadent",
+        tagline: "Premium dental chairs & units for the modern clinic.",
+        image: "/BrandLogo/AlmadentLogo.jpg",
+        href: "/product/almadent",
+        accentColor: "bg-blue-500",
+        badge: "Dental Chairs",
+        filter: "Dental Chairs" as FilterCategory,
+        productCount: 7,
+        credibility: "CE marked · Clinical-grade",
+        priceFrom: null,
+    },
+    {
+        name: "Medesy",
+        tagline: "Precision stainless steel instruments trusted by surgeons worldwide.",
+        image: "/BrandLogo/MedesyLogo.jpg",
+        href: "/product/medesy",
+        accentColor: "bg-emerald-500",
+        badge: "Surgical",
+        filter: "Surgical" as FilterCategory,
+        productCount: 21,
+        credibility: "Italian-made · Hospital approved",
+        priceFrom: null,
+    },
+    {
+        name: "Salli",
+        tagline: "Ergonomic saddle chairs designed for the modern clinic.",
+        image: "/BrandLogo/SalliLogo.png",
+        href: "/product/salli",
+        accentColor: "bg-amber-500",
+        badge: "Ergonomic",
+        filter: "Ergonomic" as FilterCategory,
+        productCount: 5,
+        credibility: "Finnish-engineered · Clinically proven",
+        priceFrom: "₹23,999",
+    },
+    {
+        name: "Strauss",
+        tagline: "Diamond burs & precision cutting instruments for every procedure.",
+        image: "/BrandLogo/StraussLogo.jpg",
+        href: "/product/strauss",
+        accentColor: "bg-violet-500",
+        badge: "Burs",
+        filter: "Burs" as FilterCategory,
+        productCount: 39,
+        credibility: "ISO 9001 · Industry standard",
+        priceFrom: null,
+    },
+];
+
+const FILTER_TABS: FilterCategory[] = ["All", "Optical", "Dental Chairs", "Surgical", "Ergonomic", "Burs"];
+
+export default function BrandsSection() {
+    const [activeFilter, setActiveFilter] = useState<FilterCategory>("All");
+
+    const filteredBrands = activeFilter === "All" ? brands : brands.filter((b) => b.filter === activeFilter);
+
+    return (
+        <section className="bg-white py-10 md:py-14">
+            <div className="container">
+
+                {/* ── Section header ── */}
+                <div className="mb-6 flex items-center justify-between">
+                    <div>
+                        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Trusted Manufacturers</p>
+                        <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Shop by Brand</h2>
+                    </div>
+                    <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
+                        View all
+                        <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
+                    </Link>
+                </div>
+
+                {/* ── Filter pills ── */}
+                <div className="mb-6 flex flex-wrap items-center gap-2">
+                    {FILTER_TABS.map((tab) => (
+                        <button
+                            key={tab}
+                            onClick={() => setActiveFilter(tab)}
+                            className={cn(
+                                "rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-150",
+                                activeFilter === tab
+                                    ? "bg-primary-500 text-white shadow-sm"
+                                    : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 hover:text-primary-600"
+                            )}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
+
+                {/* ── Brand cards ── */}
+                <div className={cn(
+                    "grid gap-3 md:gap-4",
+                    filteredBrands.length >= 4
+                        ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+                        : filteredBrands.length === 3
+                        ? "grid-cols-1 sm:grid-cols-3"
+                        : filteredBrands.length === 2
+                        ? "grid-cols-2 max-w-lg mx-auto"
+                        : "grid-cols-1 max-w-xs mx-auto"
+                )}>
+                    {filteredBrands.map((brand) => (
+                        <Link
+                            key={brand.name}
+                            href={brand.href}
+                            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_24px_rgba(0,0,0,0.09)]"
+                        >
+                            {/* Top accent bar */}
+                            <div className={cn("h-0.5 w-full opacity-0 transition-opacity duration-200 group-hover:opacity-100", brand.accentColor)} />
+
+                            {/* Image */}
+                            <div className="relative h-36 w-full overflow-hidden bg-neutral-50 sm:h-40">
+                                <Image
+                                    src={brand.image}
+                                    alt={brand.name}
+                                    fill
+                                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
+                                />
+                            </div>
+
+                            {/* Info */}
+                            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
+                                {/* Badge */}
+                                <span className="mb-2 w-fit rounded-full border border-primary-100 bg-primary-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700">
+                                    {brand.badge}
+                                </span>
+
+                                <h3 className="mb-1 text-sm font-bold text-neutral-900 transition-colors group-hover:text-primary-700">
+                                    {brand.name}
+                                </h3>
+                                <p className="mb-2.5 flex-1 text-[11px] leading-relaxed text-neutral-500 line-clamp-2">
+                                    {brand.tagline}
+                                </p>
+
+                                {/* Bottom row */}
+                                <div className="flex items-center justify-between pt-1">
+                                    <span className="text-[11px] font-medium text-neutral-400">{brand.productCount} products</span>
+                                    {brand.priceFrom && (
+                                        <span className="text-[11px] font-semibold text-neutral-700">from {brand.priceFrom}</span>
+                                    )}
+                                </div>
+
+                                {/* Explore row */}
+                                <div className="mt-2.5 flex items-center gap-1 text-xs font-semibold text-primary-600 transition-all duration-150 group-hover:gap-1.5">
+                                    Explore
+                                    <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

@@ -5,6 +5,7 @@ import { useCart } from "./CartProvider";
 import { submitQuoteRequest, QuoteFormState } from "@/app/actions/quote";
 import { Input, Textarea, Button } from "@/components/ui";
 import { CheckIcon, ArrowBackIcon } from "@/components/icons";
+import { toast } from "sonner";
 
 interface QuoteFormProps {
     onBack: () => void;
@@ -24,7 +25,10 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
         if (state.success) {
             setShowSuccess(true);
             clearCart();
-            // Delay before closing to show success message
+            toast.success("Order Placed!", {
+                description: "We'll confirm your order via email shortly.",
+                duration: 5000,
+            });
             const timer = setTimeout(() => {
                 onSuccess();
             }, 2000);
@@ -32,14 +36,23 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
         }
     }, [state.success, clearCart, onSuccess]);
 
+    useEffect(() => {
+        if (state.error && !state.fieldErrors) {
+            toast.error("Could not place order", {
+                description: state.error,
+                duration: 4000,
+            });
+        }
+    }, [state.error, state.fieldErrors]);
+
     if (showSuccess) {
         return (
             <div className="p-6 text-center">
                 <div className="bg-primary-100 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
                     <CheckIcon size={32} className="text-success" />
                 </div>
-                <h3 className="text-foreground mb-2 text-lg font-semibold">Quote Request Sent!</h3>
-                <p className="text-muted">We&apos;ll be in touch shortly with your quote.</p>
+                <h3 className="text-foreground mb-2 text-lg font-semibold">Order Placed!</h3>
+                <p className="text-muted">We&apos;ve received your order and will confirm via email shortly.</p>
             </div>
         );
     }
@@ -52,7 +65,7 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
                 Back to cart
             </button>
 
-            <p className="text-muted mb-6 text-sm">Fill in your details below and we&apos;ll send you a detailed quote for your selected items.</p>
+            <p className="text-muted mb-6 text-sm">Enter your details to place the order. We&apos;ll confirm availability and arrange delivery.</p>
 
             {/* Error Message */}
             {state.error && !state.fieldErrors && <div className="bg-error/10 border-error text-error mb-4 rounded-lg border p-3 text-sm">{state.error}</div>}
@@ -74,12 +87,12 @@ export default function QuoteForm({ onBack, onSuccess }: QuoteFormProps) {
 
                 <Input label="Phone Number" name="phone" type="tel" required placeholder="+91 9876543210" error={state.fieldErrors?.phone} />
 
-                <Input label="Company (Optional)" name="company" type="text" placeholder="Your Dental Practice" error={state.fieldErrors?.company} />
+                <Input label="Clinic / Practice Name" name="company" type="text" placeholder="Your Dental Practice" error={state.fieldErrors?.company} />
 
-                <Textarea label="Additional Notes (Optional)" name="message" placeholder="Any special requirements or questions..." error={state.fieldErrors?.message} />
+                <Textarea label="Delivery Address" name="message" placeholder="Street, City, State, PIN" error={state.fieldErrors?.message} />
 
                 <Button type="submit" className="w-full" isLoading={isPending} disabled={isPending}>
-                    {isPending ? "Sending..." : "Submit Quote Request"}
+                    {isPending ? "Placing Order..." : "Place Order"}
                 </Button>
             </form>
         </div>

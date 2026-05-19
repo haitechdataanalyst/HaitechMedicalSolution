@@ -14,13 +14,13 @@ export default function PrivacyPolicyPage() {
             </Link>
 
             {/* Header */}
-            <div className="mb-8 flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50">
-                    <Shield className="h-7 w-7 text-blue-600" />
+            <div className="mb-10 flex items-center gap-5 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm">
+                    <Shield className="h-8 w-8 text-blue-600" />
                 </div>
                 <div>
                     <h1 className="heading-2">Privacy Policy</h1>
-                    <p className="text-muted text-sm">Last updated: January 2026</p>
+                    <p className="mt-1 text-sm text-neutral-500">Last updated: January 2026</p>
                 </div>
             </div>
 
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
                 <section>
                     <h2 className="heading-4 mb-4">Contact Us</h2>
                     <p className="text-muted mb-4">If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-                    <div className="bg-surface-secondary rounded-lg p-4">
+                    <div className="rounded-2xl border border-neutral-100 bg-neutral-50 p-5">
                         <p className="font-medium">Haitech Medical</p>
                         <p className="text-muted text-sm">Email: info@haitechmedical.com.au</p>
                         <p className="text-muted text-sm">Phone: +91 8291939355</p>

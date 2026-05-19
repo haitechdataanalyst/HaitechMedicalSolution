@@ -1,22 +1,26 @@
-export default function Banner({ title, description }: { title: string; description: string }) {
+interface BannerProps {
+    title: string;
+    description?: string;
+    label?: string;
+}
+
+export default function Banner({ title, description, label }: BannerProps) {
     return (
-        <section className="bg-primary-gradient relative overflow-hidden text-white">
-            <div className="section-lg container">
+        <section className="bg-brand-gradient relative overflow-hidden text-white">
+            {/* Decorative orbs */}
+            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-16 left-1/4 h-48 w-48 rounded-full bg-primary-400/10 blur-2xl" />
+
+            <div className="section-lg container relative">
                 <div className="relative z-10 mx-auto max-w-3xl text-center">
-                    <h1 className="heading-1 mb-6">{title}</h1>
-                    <p className="text-body-lg text-primary-100">{description}</p>
+                    {label && (
+                        <span className="label-tag label-tag-white mb-5 inline-flex">{label}</span>
+                    )}
+                    <h1 className="heading-1 mb-5">{title}</h1>
+                    {description && (
+                        <p className="text-body-lg text-white/80">{description}</p>
+                    )}
                 </div>
-            </div>
-            {/* Decorative elements */}
-            <div className="pointer-events-none absolute right-0 bottom-0 h-full w-1/2 opacity-10 md:w-1/3">
-                <svg viewBox="0 0 400 400" className="h-full w-full">
-                    <circle cx="300" cy="300" r="200" fill="white" />
-                </svg>
-            </div>
-            <div className="pointer-events-none absolute top-0 left-0 h-full w-1/3 opacity-10">
-                <svg viewBox="0 0 400 400" className="h-full w-full">
-                    <circle cx="100" cy="100" r="150" fill="white" />
-                </svg>
             </div>
         </section>
     );

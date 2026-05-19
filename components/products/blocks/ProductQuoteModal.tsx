@@ -51,8 +51,8 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
                         <CheckIcon size={32} className="text-green-600" />
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold text-gray-900">Quote Request Sent!</h3>
-                    <p className="text-gray-600">
+                    <h3 className="mb-2 text-xl font-semibold text-neutral-900">Quote Request Sent!</h3>
+                    <p className="text-neutral-600">
                         Thank you for your interest in <strong>{productName}</strong>. We&apos;ll get back to you with a quote as soon as possible.
                     </p>
                 </div>
@@ -75,11 +75,11 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
 
                     {/* Product Info Display */}
                     <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
-                        <h4 className="mb-1 font-medium text-gray-900">Requesting Quote For:</h4>
-                        <p className="text-gray-700">
-                            {productName} <span className="text-gray-500">(SKU: {productSku})</span>
+                        <h4 className="mb-1 font-medium text-neutral-900">Requesting Quote For:</h4>
+                        <p className="text-neutral-700">
+                            {productName} <span className="text-neutral-500">(SKU: {productSku})</span>
                         </p>
-                        {selectedVariant && <p className="mt-1 text-sm text-gray-600">Variant: {selectedVariant}</p>}
+                        {selectedVariant && <p className="mt-1 text-sm text-neutral-600">Variant: {selectedVariant}</p>}
                     </div>
 
                     {/* Name & Email Row */}

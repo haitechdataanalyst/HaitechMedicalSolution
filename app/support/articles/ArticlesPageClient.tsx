@@ -26,7 +26,7 @@ export function ArticlesPageClient() {
                         role="tab"
                         aria-selected={selectedCategory === category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${selectedCategory === category ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+                        className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${selectedCategory === category ? "bg-primary-500 text-white shadow-sm" : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"}`}
                     >
                         {category}
                     </button>
@@ -38,17 +38,17 @@ export function ArticlesPageClient() {
                 {filteredArticles.map((article: ArticleData) => (
                     <article
                         key={article.id}
-                        className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md md:flex-row md:items-center"
+                        className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-300 hover:border-primary-100 hover:shadow-lg md:flex-row md:items-center"
                     >
                         {/* Thumbnail Image / Placeholder */}
                         {article.imageSrc && (
-                            <div className="relative h-40 w-full shrink-0 overflow-hidden bg-gray-50 md:h-40 md:w-52 lg:w-64">
+                            <div className="relative h-40 w-full shrink-0 overflow-hidden bg-neutral-50 md:h-40 md:w-52 lg:w-64">
                                 <Image
                                     src={article.imageSrc}
                                     alt={article.imageAlt || article.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 256px"
-                                    className="object-cover"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     loading="lazy"
                                 />
                             </div>
@@ -56,39 +56,41 @@ export function ArticlesPageClient() {
 
                         <div className="flex-1 p-6">
                             {/* Category Badge */}
-                            <div className="mb-3 flex items-center gap-2">
-                                <Tag className="text-primary-600 h-4 w-4" />
-                                <span className="text-primary-600 text-xs font-medium tracking-wide uppercase">{article.category}</span>
+                            <div className="mb-3">
+                                <span className="label-tag label-tag-primary inline-flex items-center gap-1.5">
+                                    <Tag className="h-3 w-3" />
+                                    {article.category}
+                                </span>
                             </div>
 
                             {/* Title */}
-                            <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-gray-900">
+                            <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-neutral-900">
                                 <Link href={`/support/articles/${article.slug}`} className="hover:text-primary-600 transition-colors">
                                     {article.title}
                                 </Link>
                             </h3>
 
                             {/* Excerpt */}
-                            <p className="mb-4 line-clamp-3 text-sm text-gray-600">{article.excerpt}</p>
+                            <p className="mb-4 line-clamp-3 text-sm text-neutral-500">{article.excerpt}</p>
 
                             {/* Meta Info */}
-                            <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-gray-500">
-                                <div className="flex items-center gap-1">
+                            <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-neutral-400">
+                                <div className="flex items-center gap-1.5">
                                     <User className="h-3 w-3" />
                                     <span>{article.author}</span>
                                 </div>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1.5">
                                     <Calendar className="h-3 w-3" />
                                     <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                                 </div>
                                 {article.publishedTime && (
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center gap-1.5">
                                         <Clock className="h-3 w-3" />
                                         <span>{article.publishedTime}</span>
                                     </div>
                                 )}
                                 {typeof article.views === "number" && (
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center gap-1.5">
                                         <Eye className="h-3 w-3" />
                                         <span>{article.views} views</span>
                                     </div>
@@ -96,9 +98,9 @@ export function ArticlesPageClient() {
                             </div>
 
                             {/* Read More Link */}
-                            <Link href={`/support/articles/${article.slug}`} className="text-primary-600 hover:text-primary-700 inline-flex items-center gap-2 text-sm font-medium transition-colors">
+                            <Link href={`/support/articles/${article.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
                                 Read More
-                                <ArrowRight className="h-4 w-4" />
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                             </Link>
                         </div>
                     </article>
@@ -106,8 +108,8 @@ export function ArticlesPageClient() {
             </div>
 
             {filteredArticles.length === 0 && (
-                <div className="py-12 text-center">
-                    <p className="text-gray-500">No articles found in this category.</p>
+                <div className="rounded-2xl border border-neutral-100 bg-neutral-50 py-16 text-center">
+                    <p className="text-neutral-500">No articles found in this category.</p>
                 </div>
             )}
         </div>

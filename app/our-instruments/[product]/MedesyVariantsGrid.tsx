@@ -2,20 +2,39 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Product, ProductVariant } from "@/types";
+import { Product, ProductVariant, CartItem } from "@/types";
 import { Button } from "@/components/ui";
-import ProductQuoteModal from "@/components/products/blocks/ProductQuoteModal";
+import { useCart } from "@/components/cart/CartProvider";
+import { ShoppingCart, Check } from "lucide-react";
 
 interface VariantCardProps {
     variant: ProductVariant;
-    onGetQuote: (variant: ProductVariant) => void;
+    product: Product;
 }
 
-function VariantCard({ variant, onGetQuote }: VariantCardProps) {
+function VariantCard({ variant, product }: VariantCardProps) {
+    const { addItem, openCart } = useCart();
+    const [added, setAdded] = useState(false);
+
+    const handleAddToCart = () => {
+        const cartItem: CartItem = {
+            productId: String(product.id),
+            productName: `${product.name} — ${variant.name || variant.id}`,
+            sku: variant.sku,
+            quantity: 1,
+            basePrice: variant.price ?? product.basePrice,
+            image: variant.image,
+        };
+        addItem(cartItem);
+        setAdded(true);
+        openCart();
+        setTimeout(() => setAdded(false), 2000);
+    };
+
     return (
-        <div className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
+        <div className="group flex h-full flex-col rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
             {/* Variant Image */}
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={variant.image}
                     alt={variant.name || variant.id}
@@ -31,12 +50,12 @@ function VariantCard({ variant, onGetQuote }: VariantCardProps) {
             </div>
 
             {/* SKU */}
-            <p className="mb-4 grow text-center text-sm text-gray-500">SKU: {variant.sku}</p>
+            <p className="mb-4 grow text-center text-sm text-neutral-500">SKU: {variant.sku}</p>
 
-            {/* Get a Quote */}
+            {/* Add to Cart */}
             <div className="mt-auto pt-2">
-                <Button variant="outline" className="w-full" onClick={() => onGetQuote(variant)}>
-                    Get a Quote
+                <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
+                    {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
                 </Button>
             </div>
         </div>
@@ -45,16 +64,32 @@ function VariantCard({ variant, onGetQuote }: VariantCardProps) {
 
 interface SingleProductCardProps {
     product: Product;
-    onGetQuote: () => void;
 }
 
-function SingleProductCard({ product, onGetQuote }: SingleProductCardProps) {
+function SingleProductCard({ product }: SingleProductCardProps) {
+    const { addItem, openCart } = useCart();
+    const [added, setAdded] = useState(false);
     const image = product.defaultImage || product.gallery?.[0] || "/images/placeholder.jpg";
 
+    const handleAddToCart = () => {
+        const cartItem: CartItem = {
+            productId: String(product.id),
+            productName: product.name,
+            sku: product.sku,
+            quantity: 1,
+            basePrice: product.basePrice,
+            image: product.defaultImage,
+        };
+        addItem(cartItem);
+        setAdded(true);
+        openCart();
+        setTimeout(() => setAdded(false), 2000);
+    };
+
     return (
-        <div className="group mx-auto flex max-w-md flex-col rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
+        <div className="group mx-auto flex max-w-md flex-col rounded-2xl border border-neutral-100 bg-white p-8 shadow-sm transition-all hover:shadow-lg">
             {/* Product Image */}
-            <div className="relative mb-6 aspect-square w-full overflow-hidden rounded-xl bg-gray-50">
+            <div className="relative mb-6 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image src={image} alt={product.name} fill className="object-contain p-4 transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 400px" />
             </div>
 
@@ -64,12 +99,12 @@ function SingleProductCard({ product, onGetQuote }: SingleProductCardProps) {
             </div>
 
             {/* SKU */}
-            <p className="mb-6 text-center text-sm text-gray-500">SKU: {product.sku}</p>
+            <p className="mb-6 text-center text-sm text-neutral-500">SKU: {product.sku}</p>
 
-            {/* Get a Quote */}
+            {/* Add to Cart */}
             <div className="mt-auto">
-                <Button variant="primary" className="w-full" size="lg" onClick={onGetQuote}>
-                    Get a Quote
+                <Button variant={added ? "primary" : "primary"} className="w-full gap-2" size="lg" onClick={handleAddToCart}>
+                    {added ? <><Check className="h-4 w-4" /> Added to Cart</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
                 </Button>
             </div>
         </div>
@@ -81,13 +116,6 @@ interface MedesyVariantsGridProps {
 }
 
 export function MedesyVariantsGrid({ product }: MedesyVariantsGridProps) {
-    const [variantForQuote, setVariantForQuote] = useState<ProductVariant | null>(null);
-    const [showProductQuote, setShowProductQuote] = useState(false);
-
-    const handleGetQuote = (variant: ProductVariant) => {
-        setVariantForQuote(variant);
-    };
-
     const hasVariants = product.hasVariants && product.variants && product.variants.length > 0;
 
     return (
@@ -95,27 +123,11 @@ export function MedesyVariantsGrid({ product }: MedesyVariantsGridProps) {
             {hasVariants ? (
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {product.variants!.map((variant) => (
-                        <VariantCard key={variant.id} variant={variant} onGetQuote={handleGetQuote} />
+                        <VariantCard key={variant.id} variant={variant} product={product} />
                     ))}
                 </div>
             ) : (
-                <SingleProductCard product={product} onGetQuote={() => setShowProductQuote(true)} />
-            )}
-
-            {/* Quote modal for variant */}
-            {variantForQuote && (
-                <ProductQuoteModal
-                    isOpen={!!variantForQuote}
-                    onClose={() => setVariantForQuote(null)}
-                    productName={`${product.name} - ${variantForQuote.name || variantForQuote.id}`}
-                    productSku={variantForQuote.sku}
-                    productId={variantForQuote.id}
-                />
-            )}
-
-            {/* Quote modal for single product (no variants) */}
-            {showProductQuote && (
-                <ProductQuoteModal isOpen={showProductQuote} onClose={() => setShowProductQuote(false)} productName={product.name} productSku={product.sku} productId={String(product.id)} />
+                <SingleProductCard product={product} />
             )}
         </>
     );

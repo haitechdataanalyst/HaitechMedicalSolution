@@ -37,8 +37,11 @@ export default function PrescriptionSection({ config, onFileChange }: Prescripti
     return (
         <div className="space-y-3">
             {/* Header with toggle */}
-            <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold text-neutral-800">Add Prescription</h4>
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <h4 className="text-sm font-semibold text-neutral-800">Add Prescription</h4>
+                    <p className="mt-0.5 text-xs text-neutral-500">Required if you need corrective lenses integrated into your loupes.</p>
+                </div>
                 <button
                     type="button"
                     role="switch"

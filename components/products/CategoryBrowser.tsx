@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, ChevronLeft, ArrowUpDown, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
+import { formatPrice, cn } from "@/lib/utils";
 
-// Extended types with path included
 export interface CategoryWithPath extends Category {
     path?: string;
 }
@@ -15,275 +16,510 @@ export interface ProductWithPath extends Product {
     path?: string;
 }
 
-interface CategoryItemProps {
-    category: CategoryWithPath;
-    isExpanded: boolean;
-    isLoading: boolean;
-    level: number;
-    onCategoryExpand: (categoryId: number, level: number, categoryPath?: string) => void;
-}
-
-interface ProductItemProps {
-    product: ProductWithPath;
-}
-
-interface CategoryBrowserProps {
+export interface CategoryBrowserProps {
     initialCategories: CategoryWithPath[];
     fetchCategoryContents: (categoryId: number) => Promise<{ type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[] }>;
 }
 
-function ProductItem({ product }: ProductItemProps) {
-    const productImage =
+type ContentState =
+    | { status: "idle" }
+    | { status: "loading" }
+    | { status: "categories"; items: CategoryWithPath[] }
+    | { status: "products"; items: ProductWithPath[] };
+
+type NavEntry = { id: number; name: string; path?: string };
+type SortOption = "default" | "price-asc" | "price-desc" | "name-asc";
+
+const PAGE_SIZE = 12;
+const PLACEHOLDER = "/images/placeholder.jpg";
+
+const BRAND_CATEGORY: Record<string, string> = {
+    Admetec: "Loupes · Optics",
+    Almadent: "Dental Chairs",
+    Medesy: "Instruments",
+    Salli: "Ergonomic Seating",
+    Strauss: "Burs · Rotary",
+};
+
+function SkeletonCard() {
+    return (
+        <div className="animate-pulse overflow-hidden rounded-xl border border-neutral-100 bg-white">
+            <div className="aspect-square bg-neutral-100" />
+            <div className="space-y-2 p-3.5">
+                <div className="h-4 w-3/4 rounded bg-neutral-100" />
+                <div className="h-3 w-1/2 rounded bg-neutral-100" />
+                <div className="mt-3 h-7 w-24 rounded-full bg-neutral-100" />
+            </div>
+        </div>
+    );
+}
+
+function SafeImage({ src, alt, ...props }: React.ComponentProps<typeof Image>) {
+    const [imgSrc, setImgSrc] = useState((src as string) || PLACEHOLDER);
+    useEffect(() => { setImgSrc((src as string) || PLACEHOLDER); }, [src]);
+    return (
+        <Image
+            {...props}
+            src={imgSrc}
+            alt={alt}
+            onError={() => setImgSrc(PLACEHOLDER)}
+        />
+    );
+}
+
+function CategoryCard({ category, onClick }: { category: CategoryWithPath; onClick: () => void }) {
+    const image = category.image || PLACEHOLDER;
+    const cardClass = "group flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0";
+
+    return (
+        <>
+            {/* Desktop / tablet grid card */}
+            <button onClick={onClick} className={cn(cardClass, "hidden w-full text-left sm:flex sm:flex-col")}>
+                <div className="relative aspect-square overflow-hidden bg-white">
+                    <SafeImage
+                        src={image}
+                        alt={category.name}
+                        fill
+                        className="mix-blend-multiply object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
+                        sizes="(max-width: 1024px) 33vw, 220px"
+                    />
+                </div>
+                <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
+                    <h3 className="mb-3 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
+                        {category.name}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
+                        View Range
+                        <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
+                    </span>
+                </div>
+            </button>
+
+            {/* Mobile list row */}
+            <button
+                onClick={onClick}
+                className="group flex w-full items-center gap-3 border-b border-neutral-100 bg-white px-1 py-3 text-left transition-colors last:border-b-0 active:bg-neutral-50 sm:hidden"
+            >
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white">
+                    <SafeImage
+                        src={image}
+                        alt={category.name}
+                        fill
+                        className="mix-blend-multiply object-contain p-2"
+                        sizes="64px"
+                    />
+                </div>
+                <div className="min-w-0 flex-1">
+                    <p className="line-clamp-2 text-sm font-semibold text-neutral-800">{category.name}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary-500" />
+            </button>
+        </>
+    );
+}
+
+function ProductCard({ product }: { product: ProductWithPath }) {
+    const image =
         product.defaultImage ||
-        (product.variants && product.variants.length > 0 ? product.variants[0].image : "") ||
+        product.variants?.[0]?.image ||
         (product.gallery && product.gallery.length > 0 ? product.gallery[0] : "") ||
-        "/images/placeholder.jpg";
-    const productPath = product.path || `/product/${product.slug}`;
+        PLACEHOLDER;
+    const path = product.path || `/product/${product.slug}`;
 
     return (
-        <Link href={productPath} className="group flex flex-col items-center p-4 text-center transition-transform hover:scale-105">
-            <div className="relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-shadow sm:h-28 sm:w-28 md:h-40 md:w-40">
-                <Image src={productImage} alt={product.name} fill className="object-contain p-2" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
-            </div>
-            <span className="group-hover:text-primary-600 line-clamp-2 max-w-30 text-sm font-medium text-gray-700 transition-colors">{product.name}</span>
-        </Link>
-    );
-}
-
-function SkeletonCircle() {
-    return (
-        <div className="flex flex-col items-center p-4">
-            <div className="mb-3 h-24 w-24 animate-pulse rounded-full bg-neutral-200 sm:h-28 sm:w-28 md:h-40 md:w-40" />
-            <div className="h-3 w-20 animate-pulse rounded bg-neutral-200" />
-        </div>
-    );
-}
-
-function CategoryItem({ category, isExpanded, isLoading, level, onCategoryExpand }: CategoryItemProps) {
-    const categoryImage = category.image || "/images/placeholder.jpg";
-
-    // If category has a special page, render as a Link instead of a button
-    if (category.specialPage) {
-        return (
-            <Link href={category.specialPage} className="group flex flex-col items-center p-4 text-center transition-all hover:scale-105">
-                <div className="relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all sm:h-28 sm:w-28 md:h-40 md:w-40">
-                    <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
+        <>
+            {/* Desktop / tablet grid card */}
+            <Link
+                href={path}
+                className="group hidden flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0 sm:flex"
+            >
+                <div className="relative aspect-square overflow-hidden bg-neutral-50">
+                    <SafeImage
+                        src={image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
+                        sizes="(max-width: 1024px) 33vw, 220px"
+                    />
                 </div>
-                <span className="group-hover:text-primary-600 line-clamp-2 max-w-30 text-sm font-medium text-gray-700 transition-colors">{category.name}</span>
+                <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
+                    <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
+                        {product.name}
+                    </h3>
+                    {product.basePrice ? (
+                        <span className="mb-2 text-base font-bold text-neutral-900">
+                            {formatPrice(product.basePrice, product.currency ?? "INR")}
+                        </span>
+                    ) : (
+                        <span className="mb-2 text-xs text-neutral-400">Price on request</span>
+                    )}
+                    <div className="flex items-center justify-between pt-1">
+                        <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
+                        <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
+                            View
+                            <ArrowRight className="h-2.5 w-2.5" />
+                        </span>
+                    </div>
+                </div>
             </Link>
-        );
-    }
 
-    return (
-        <button onClick={() => onCategoryExpand(category.id, level, category.path)} className={`group flex flex-col items-center p-4 text-center transition-all ${isExpanded ? "scale-105" : "hover:scale-105"}`}>
-            <div className={`relative mb-3 h-24 w-24 overflow-hidden rounded-full transition-all sm:h-28 sm:w-28 md:h-40 md:w-40 ${isExpanded ? "ring-primary-500 shadow-md ring-2" : ""}`}>
-                <Image src={categoryImage} alt={category.name} fill className="cursor-pointer object-contain" sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px" />
-                {isLoading && (
-                    <div className="absolute inset-0 z-10 flex items-center justify-center rounded-full bg-white/60">
-                        <div className="border-primary-600 h-6 w-6 animate-spin rounded-full border-[3px] border-t-transparent" />
-                    </div>
-                )}
-            </div>
-            <span className={`line-clamp-2 max-w-30 text-sm font-medium transition-colors ${isExpanded ? "text-primary-600" : "group-hover:text-primary-600 text-gray-700"}`}>{category.name}</span>
-        </button>
-    );
-}
-
-interface LevelSectionProps {
-    title: string;
-    items: CategoryWithPath[] | ProductWithPath[];
-    type: "categories" | "products";
-    level: number;
-    loadingCategoryId: number | null;
-    onCategoryExpand: (categoryId: number, level: number, categoryPath?: string) => void;
-    levelExpanded: Map<number, number>;
-    sectionRef?: (el: HTMLDivElement | null) => void;
-}
-
-function LevelSection({ title, items, type, level, loadingCategoryId, onCategoryExpand, levelExpanded, sectionRef }: LevelSectionProps) {
-    const expandedCategoryId = levelExpanded.get(level);
-    const isNextLevelLoading = loadingCategoryId !== null && type === "categories" && (items as CategoryWithPath[]).some((c) => c.id === loadingCategoryId);
-
-    return (
-        <div className="w-full" ref={sectionRef}>
-            {/* Section heading — left accent bar style */}
-            {title && (
-                <div className="my-6 sm:my-8">
-                    <div className="flex items-center gap-3">
-                        <div className="bg-primary-500 h-6 w-1 rounded-full" />
-                        <h2 className="text-foreground text-xl font-semibold sm:text-2xl">{title}</h2>
-                    </div>
-                    <div className="mt-3 h-px bg-neutral-100" />
+            {/* Mobile list row */}
+            <Link
+                href={path}
+                className="group flex items-center gap-3 border-b border-neutral-100 bg-white px-1 py-3 transition-colors last:border-b-0 active:bg-neutral-50 sm:hidden"
+            >
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50">
+                    <SafeImage
+                        src={image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-2"
+                        sizes="64px"
+                    />
                 </div>
-            )}
-
-            {/* Items Grid */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
-                {type === "categories"
-                    ? (items as CategoryWithPath[]).map((category) => (
-                          <CategoryItem key={category.id} category={category} isExpanded={expandedCategoryId === category.id} isLoading={loadingCategoryId === category.id} level={level} onCategoryExpand={onCategoryExpand} />
-                      ))
-                    : (items as ProductWithPath[]).map((product) => <ProductItem key={product.id} product={product} />)}
-            </div>
-
-            {/* Skeleton row while next level content loads */}
-            {isNextLevelLoading && (
-                <div className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6">
-                    {Array.from({ length: 5 }).map((_, i) => <SkeletonCircle key={i} />)}
+                <div className="min-w-0 flex-1">
+                    <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">{product.name}</p>
+                    {product.basePrice ? (
+                        <p className="mt-0.5 text-sm font-bold text-neutral-900">
+                            {formatPrice(product.basePrice, product.currency ?? "INR")}
+                        </p>
+                    ) : (
+                        <p className="mt-0.5 text-xs text-neutral-400">Price on request</p>
+                    )}
+                    <p className="mt-0.5 text-[11px] font-medium text-emerald-600">Free Delivery</p>
                 </div>
-            )}
-        </div>
+                <ArrowRight className="h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary-500" />
+            </Link>
+        </>
     );
 }
 
 export default function CategoryBrowser({ initialCategories, fetchCategoryContents }: CategoryBrowserProps) {
     const router = useRouter();
-    // Track expanded category at each level: Map<level, categoryId>
-    const [levelExpanded, setLevelExpanded] = useState<Map<number, number>>(new Map());
-    // Track fetched contents: Map<categoryId, contents>
-    const [expandedMap, setExpandedMap] = useState<Map<number, { type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[] }>>(new Map());
-    // Track loading state
-    const [loading, setLoading] = useState<number | null>(null);
-    // Track which level just got new content so we can scroll to it
-    // Using an object with a counter ensures React always sees a new value, even for the same level
-    const [scrollTarget, setScrollTarget] = useState<{ level: number; trigger: number } | null>(null);
-    const scrollTriggerRef = useRef(0);
-    // Refs for each level section to enable scrolling
-    const sectionRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
+    const cache = useRef<Map<number, { type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[] }>>(new Map());
+    const fadeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const isInitialized = useRef(false);
 
-    // Scroll to the newly expanded section — offset accounts for sticky header (~80px) + breathing room
+    const [navStack, setNavStack] = useState<NavEntry[]>([]);
+    const [content, setContent] = useState<ContentState>({ status: "idle" });
+    const [isFading, setIsFading] = useState(false);
+    const [sortBy, setSortBy] = useState<SortOption>("default");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
     useEffect(() => {
-        if (scrollTarget === null) return;
-        const levelToScroll = scrollTarget.level;
-        const el = sectionRefs.current.get(levelToScroll);
-        if (el) {
-            const timer = setTimeout(() => {
-                const target = sectionRefs.current.get(levelToScroll);
-                if (target) {
-                    const stickyHeaderHeight = 96;
-                    const top = target.getBoundingClientRect().top + window.scrollY - stickyHeaderHeight;
-                    window.scrollTo({ top, behavior: "smooth" });
-                }
-            }, 100);
-            return () => clearTimeout(timer);
-        }
-    }, [scrollTarget]);
+        return () => { if (fadeTimer.current) clearTimeout(fadeTimer.current); };
+    }, []);
 
-    const handleCategoryExpand = async (categoryId: number, level: number, categoryPath?: string) => {
-        const currentExpanded = levelExpanded.get(level);
+    const transitionTo = useCallback((newContent: ContentState) => {
+        if (fadeTimer.current) clearTimeout(fadeTimer.current);
+        setIsFading(true);
+        fadeTimer.current = setTimeout(() => {
+            setContent(newContent);
+            setVisibleCount(PAGE_SIZE);
+            setIsFading(false);
+        }, 150);
+    }, []);
 
-        // If clicking the same category, collapse it and all children
-        if (currentExpanded === categoryId) {
-            const newLevelExpanded = new Map(levelExpanded);
-            // Remove this level and all deeper levels
-            for (const [l] of newLevelExpanded) {
-                if (l >= level) {
-                    newLevelExpanded.delete(l);
-                }
-            }
-            setLevelExpanded(newLevelExpanded);
-            return;
-        }
-
-        // Expand new category, collapse deeper levels
-        const newLevelExpanded = new Map(levelExpanded);
-        // Remove all deeper levels
-        for (const [l] of newLevelExpanded) {
-            if (l >= level) {
-                newLevelExpanded.delete(l);
-            }
-        }
-        newLevelExpanded.set(level, categoryId);
-        setLevelExpanded(newLevelExpanded);
-
-        // Fetch contents if not already cached
-        if (!expandedMap.has(categoryId)) {
-            setLoading(categoryId);
-            try {
-                const contents = await fetchCategoryContents(categoryId);
-                // If exactly one product, navigate directly to the category URL
-                if (contents.type === "products" && contents.items.length === 1) {
-                    router.push(categoryPath || (contents.items[0] as ProductWithPath).path || `/product/${(contents.items[0] as ProductWithPath).slug}`);
-                    setLoading(null);
+    const loadNode = useCallback(
+        async (nodeId: number, nodePath?: string) => {
+            const cached = cache.current.get(nodeId);
+            if (cached) {
+                if (cached.type === "products" && cached.items.length === 1) {
+                    const item = cached.items[0] as ProductWithPath;
+                    router.push(nodePath || item.path || `/product/${item.slug}`);
                     return;
                 }
-                setExpandedMap(new Map(expandedMap).set(categoryId, contents));
-                // Trigger scroll to the newly expanded level
-                scrollTriggerRef.current += 1;
-                setScrollTarget({ level: level + 1, trigger: scrollTriggerRef.current });
-            } catch (error) {
-                console.error("Failed to fetch category contents:", error);
-            }
-            setLoading(null);
-        } else {
-            const cached = expandedMap.get(categoryId)!;
-            // If exactly one product, navigate directly to the category URL
-            if (cached.type === "products" && cached.items.length === 1) {
-                router.push(categoryPath || (cached.items[0] as ProductWithPath).path || `/product/${(cached.items[0] as ProductWithPath).slug}`);
+                transitionTo(
+                    cached.type === "categories"
+                        ? { status: "categories", items: cached.items as CategoryWithPath[] }
+                        : { status: "products", items: cached.items as ProductWithPath[] }
+                );
                 return;
             }
-            // Already cached, still scroll to it
-            scrollTriggerRef.current += 1;
-            setScrollTarget({ level: level + 1, trigger: scrollTriggerRef.current });
+
+            transitionTo({ status: "loading" });
+
+            try {
+                const result = await fetchCategoryContents(nodeId);
+                cache.current.set(nodeId, result);
+
+                if (result.type === "products" && result.items.length === 1) {
+                    const item = result.items[0] as ProductWithPath;
+                    router.push(nodePath || item.path || `/product/${item.slug}`);
+                    return;
+                }
+
+                transitionTo(
+                    result.type === "categories"
+                        ? { status: "categories", items: result.items as CategoryWithPath[] }
+                        : { status: "products", items: result.items as ProductWithPath[] }
+                );
+            } catch {
+                transitionTo({ status: "idle" });
+            }
+        },
+        [fetchCategoryContents, router, transitionTo]
+    );
+
+    useEffect(() => {
+        if (!isInitialized.current && initialCategories.length > 0) {
+            isInitialized.current = true;
+            const first = initialCategories[0];
+            setNavStack([{ id: first.id, name: first.name, path: first.path }]);
+            loadNode(first.id, first.path);
         }
+    }, [initialCategories, loadNode]);
+
+    const handleBrandTabClick = (cat: CategoryWithPath) => {
+        if (navStack.length === 1 && navStack[0]?.id === cat.id) return;
+        setSortBy("default");
+        setSearchQuery("");
+        setNavStack([{ id: cat.id, name: cat.name, path: cat.path }]);
+        loadNode(cat.id, cat.path);
     };
 
-    // Build the hierarchy to display
-    const displayLevels: Array<{ title: string; type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[]; level: number }> = [];
+    const handleSubCategoryClick = (cat: CategoryWithPath) => {
+        setSortBy("default");
+        setSearchQuery("");
+        setNavStack((prev) => {
+            const base = prev.length > 0 ? [prev[0]] : [];
+            return [...base, { id: cat.id, name: cat.name, path: cat.path }];
+        });
+        loadNode(cat.id, cat.path);
+    };
 
-    // Level 0: Top categories (Products)
-    displayLevels.push({
-        title: "",
-        type: "categories",
-        items: initialCategories,
-        level: 0,
-    });
+    const handleBack = () => {
+        if (navStack.length <= 1) return;
+        setSortBy("default");
+        setSearchQuery("");
+        const newStack = navStack.slice(0, -1);
+        setNavStack(newStack);
+        const parent = newStack[newStack.length - 1];
+        loadNode(parent.id, parent.path);
+    };
 
-    // Add expanded levels
-    let currentLevel = 0;
-    while (levelExpanded.has(currentLevel)) {
-        const expandedCategoryId = levelExpanded.get(currentLevel)!;
-        const contents = expandedMap.get(expandedCategoryId);
+    const displayItems = useMemo(() => {
+        const q = searchQuery.toLowerCase().trim();
 
-        if (contents && contents.items.length > 0) {
-            // Find the expanded category name for the section title
-            let categoryName = "Items";
-            // Search in previous levels' categories only
-            for (const levelData of displayLevels) {
-                if (levelData.type === "categories") {
-                    const found = (levelData.items as CategoryWithPath[]).find((cat) => cat.id === expandedCategoryId);
-                    if (found) {
-                        categoryName = found.name;
-                        break;
-                    }
-                }
-            }
-
-            displayLevels.push({
-                title: categoryName,
-                type: contents.type,
-                items: contents.items,
-                level: currentLevel + 1,
-            });
+        if (content.status === "categories") {
+            let items = [...content.items];
+            if (sortBy === "name-asc") items.sort((a, b) => a.name.localeCompare(b.name));
+            if (q) items = items.filter((i) => i.name.toLowerCase().includes(q));
+            return items;
         }
-        currentLevel++;
-    }
+        if (content.status === "products") {
+            let items = [...content.items] as ProductWithPath[];
+            if (sortBy === "name-asc") items.sort((a, b) => a.name.localeCompare(b.name));
+            if (sortBy === "price-asc") items.sort((a, b) => (a.basePrice ?? Infinity) - (b.basePrice ?? Infinity));
+            if (sortBy === "price-desc") items.sort((a, b) => (b.basePrice ?? 0) - (a.basePrice ?? 0));
+            if (q) items = items.filter((i) => i.name.toLowerCase().includes(q));
+            return items;
+        }
+        return [];
+    }, [content, sortBy, searchQuery]);
+
+    const visibleItems = displayItems.slice(0, visibleCount);
+    const hasMore = visibleCount < displayItems.length;
+    const remaining = displayItems.length - visibleCount;
+
+    const activeBrandId = navStack[0]?.id ?? null;
+    const isDrilledDown = navStack.length > 1;
+    const parentName = isDrilledDown ? navStack[navStack.length - 2]?.name : null;
+    const contentLabel = content.status === "categories" ? "categories" : content.status === "products" ? "products" : "";
+    const showControls = content.status === "categories" || content.status === "products" || content.status === "loading";
 
     return (
-        <div className="w-full">
-            {displayLevels.map((levelData) => (
-                <LevelSection
-                    key={`${levelData.level}-${levelData.title}`}
-                    title={levelData.title}
-                    items={levelData.items}
-                    type={levelData.type}
-                    level={levelData.level}
-                    loadingCategoryId={loading}
-                    onCategoryExpand={handleCategoryExpand}
-                    levelExpanded={levelExpanded}
-                    sectionRef={(el) => { sectionRefs.current.set(levelData.level, el); }}
-                />
-            ))}
+        <div className="flex flex-col">
+
+            {/* ── Brand Identity Tabs — desktop ── */}
+            <div className="mb-6 hidden gap-3 overflow-x-auto pb-2 scrollbar-none sm:flex">
+                {initialCategories.map((cat) => {
+                    const isActive = activeBrandId === cat.id;
+                    const categoryLabel = BRAND_CATEGORY[cat.name];
+                    return (
+                        <button
+                            key={cat.id}
+                            onClick={() => handleBrandTabClick(cat)}
+                            className={cn(
+                                "relative flex min-w-[110px] flex-1 shrink-0 flex-col items-center gap-2.5 overflow-hidden rounded-2xl border px-4 py-4 text-center transition-all duration-200",
+                                isActive
+                                    ? "border-primary-300 bg-primary-50 shadow-sm"
+                                    : "border-neutral-100 bg-white hover:border-primary-200 hover:bg-neutral-50"
+                            )}
+                        >
+                            {isActive && (
+                                <span className="absolute bottom-0 left-0 right-0 h-[3px] rounded-t bg-primary-500" />
+                            )}
+                            {cat.image && (
+                                <div className="relative h-10 w-16 shrink-0">
+                                    <Image src={cat.image} alt={cat.name} fill className="object-contain" sizes="64px" />
+                                </div>
+                            )}
+                            <div className="space-y-0.5">
+                                <p className={cn("text-sm font-bold leading-tight", isActive ? "text-primary-700" : "text-neutral-800")}>
+                                    {cat.name}
+                                </p>
+                                {categoryLabel && (
+                                    <p className={cn("text-[11px] leading-tight", isActive ? "text-primary-500" : "text-neutral-400")}>
+                                        {categoryLabel}
+                                    </p>
+                                )}
+                            </div>
+                        </button>
+                    );
+                })}
+            </div>
+
+            {/* ── Brand Pill Tabs — mobile ── */}
+            <div className="mb-4 grid gap-1.5 sm:hidden" style={{ gridTemplateColumns: `repeat(${initialCategories.length}, 1fr)` }}>
+                {initialCategories.map((cat) => {
+                    const isActive = activeBrandId === cat.id;
+                    return (
+                        <button
+                            key={cat.id}
+                            onClick={() => handleBrandTabClick(cat)}
+                            className={cn(
+                                "w-full truncate rounded-full border px-1 py-1.5 text-center text-xs font-semibold transition-all duration-150",
+                                isActive
+                                    ? "border-primary-500 bg-primary-500 text-white shadow-sm"
+                                    : "border-neutral-200 bg-white text-neutral-600 active:bg-neutral-50"
+                            )}
+                        >
+                            {cat.name}
+                        </button>
+                    );
+                })}
+            </div>
+
+            {/* ── Control Bar ── */}
+            {showControls && (
+                <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                    {/* Back button */}
+                    {isDrilledDown && (
+                        <button
+                            onClick={handleBack}
+                            className="flex shrink-0 items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-600"
+                        >
+                            <ChevronLeft className="h-4 w-4" />
+                            {parentName}
+                        </button>
+                    )}
+
+                    {/* Search input */}
+                    <div className="relative flex-1">
+                        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder={`Search ${contentLabel || "products"}...`}
+                            className="w-full rounded-xl border border-neutral-200 bg-white py-2 pl-9 pr-9 text-sm transition-colors placeholder:text-neutral-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                        />
+                        {searchQuery && (
+                            <button
+                                onClick={() => setSearchQuery("")}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Count + Sort */}
+                    <div className="flex shrink-0 items-center gap-3">
+                        {content.status !== "loading" && (
+                            <span className="text-sm text-neutral-500">
+                                <span className="font-bold text-neutral-800">{displayItems.length}</span>{" "}
+                                {contentLabel}
+                            </span>
+                        )}
+                        <div className="flex items-center gap-1.5">
+                            <ArrowUpDown className="h-3.5 w-3.5 shrink-0 text-neutral-400" />
+                            <select
+                                value={sortBy}
+                                onChange={(e) => { setSortBy(e.target.value as SortOption); setVisibleCount(PAGE_SIZE); }}
+                                className="rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                            >
+                                <option value="default">Featured</option>
+                                <option value="name-asc">Name: A–Z</option>
+                                {content.status === "products" && (
+                                    <>
+                                        <option value="price-asc">Price: Low → High</option>
+                                        <option value="price-desc">Price: High → Low</option>
+                                    </>
+                                )}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* ── Grid ── */}
+            <div className={`transition-opacity duration-150 ${isFading ? "opacity-0" : "opacity-100"}`}>
+                {content.status === "idle" && (
+                    <div className="flex h-48 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
+                        Select a brand to browse products
+                    </div>
+                )}
+
+                {content.status === "loading" && (
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                        {Array.from({ length: 8 }).map((_, i) => (
+                            <div key={i} className="hidden sm:block"><SkeletonCard /></div>
+                        ))}
+                        {Array.from({ length: 5 }).map((_, i) => (
+                            <div key={`m${i}`} className="flex animate-pulse items-center gap-3 border-b border-neutral-100 py-3 sm:hidden">
+                                <div className="h-16 w-16 shrink-0 rounded-xl bg-neutral-100" />
+                                <div className="flex-1 space-y-2">
+                                    <div className="h-3.5 w-3/4 rounded bg-neutral-100" />
+                                    <div className="h-3 w-1/2 rounded bg-neutral-100" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {content.status === "categories" && displayItems.length === 0 && (
+                    <div className="flex h-32 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
+                        No categories found{searchQuery ? ` for "${searchQuery}"` : ""}
+                    </div>
+                )}
+
+                {content.status === "categories" && displayItems.length > 0 && (
+                    <div className="rounded-xl border border-neutral-100 bg-white sm:rounded-none sm:border-0 sm:bg-transparent sm:grid sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                        {(visibleItems as CategoryWithPath[]).map((cat) => (
+                            <CategoryCard key={cat.id} category={cat} onClick={() => handleSubCategoryClick(cat)} />
+                        ))}
+                    </div>
+                )}
+
+                {content.status === "products" && displayItems.length === 0 && (
+                    <div className="flex h-32 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
+                        No products found{searchQuery ? ` for "${searchQuery}"` : ""}
+                    </div>
+                )}
+
+                {content.status === "products" && displayItems.length > 0 && (
+                    <div className="rounded-xl border border-neutral-100 bg-white sm:rounded-none sm:border-0 sm:bg-transparent sm:grid sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                        {(visibleItems as ProductWithPath[]).map((prod) => (
+                            <ProductCard key={prod.id} product={prod} />
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* ── Load More ── */}
+            {hasMore && !isFading && (
+                <div className="mt-8 flex justify-center">
+                    <button
+                        onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                        className="rounded-full border border-neutral-200 bg-white px-8 py-2.5 text-sm font-semibold text-neutral-700 transition-all duration-150 hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700"
+                    >
+                        Load More · {remaining} remaining
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

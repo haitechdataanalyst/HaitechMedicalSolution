@@ -115,8 +115,11 @@ export default function TempleTipEngraving({ config, onTextChange }: TempleTipEn
     return (
         <div className="space-y-3">
             {/* Header with toggle */}
-            <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold text-neutral-800">Add a Temple Tip Engraving</h4>
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <h4 className="text-sm font-semibold text-neutral-800">Add a Temple Tip Engraving</h4>
+                    <p className="mt-0.5 text-xs text-neutral-500">Personalise with your name or initials on the temple arm. No extra charge.</p>
+                </div>
                 <button
                     type="button"
                     role="switch"

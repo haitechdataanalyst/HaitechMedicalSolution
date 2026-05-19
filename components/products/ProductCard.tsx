@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { Heart, Truck, ShieldCheck, ArrowRight, FileText } from "lucide-react";
 import { Product, Category } from "@/types";
-import Card, { CardImage, CardContent, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Button } from "../ui";
+import { cn, formatPrice } from "@/lib/utils";
+import { detectBrand } from "@/lib/brand";
+import { useWishlist } from "@/components/cart/WishlistProvider";
 
 interface ProductCardProps {
     entity: Product | Category;
@@ -15,32 +20,106 @@ function isProduct(entity: Product | Category): entity is Product {
 
 export default function ProductCard({ entity, href, image }: ProductCardProps) {
     const entityIsProduct = isProduct(entity);
-
+    const product = entityIsProduct ? (entity as Product) : null;
     const displayImage = image || "/images/placeholder.jpg";
+    const brand = product ? detectBrand(product.sku) : null;
+    const isAdmetec = brand?.name === "Admetec";
+    const { toggle, isWished } = useWishlist();
+    const wished = product ? isWished(String(product.id)) : false;
 
     return (
-        <Card hover className="h-full">
-            <Link href={href}>
-                <CardImage src={displayImage} alt={entity.name} />
-            </Link>
-            <CardContent>
-                <CardTitle>{entity.name}</CardTitle>
-                {entity.description && <CardDescription className="line-clamp-2">{entity.description}</CardDescription>}
+        <Link
+            href={href}
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0"
+        >
+            {/* Image zone */}
+            <div className="relative aspect-square overflow-hidden bg-neutral-50">
+                <Image
+                    src={displayImage}
+                    alt={entity.name}
+                    fill
+                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
+                />
+
+                {/* Brand chip — top-left */}
+                {brand && (
+                    <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[9px] font-bold tracking-wide", brand.cls)}>
+                        {brand.name}
+                    </span>
+                )}
+
+                {/* Wishlist heart — top-right */}
+                {product && (
+                    <button
+                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(String(product.id)); }}
+                        aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}
+                        className={cn(
+                            "absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full border shadow-sm transition-all duration-150",
+                            wished
+                                ? "border-rose-200 bg-rose-50 text-rose-500"
+                                : "border-neutral-200 bg-white/90 text-neutral-300 opacity-0 group-hover:opacity-100 hover:border-rose-200 hover:text-rose-400"
+                        )}
+                    >
+                        <Heart className={cn("h-3.5 w-3.5 transition-all", wished && "fill-current text-rose-500")} />
+                    </button>
+                )}
+            </div>
+
+            {/* Info zone — reading order: Price → Name → Trust → Action */}
+            <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
+
+                {/* 1 — PRICE (dominant) */}
                 {entityIsProduct && (
-                    <div className="flex h-full w-full items-center justify-center pt-2">
-                        <Link className="w-full" href={href}>
-                            <Button variant="outline" className="w-full">
-                                Get a Quote
-                            </Button>
-                        </Link>
+                    <div className="mb-1 leading-none">
+                        {product?.basePrice ? (
+                            <>
+                                <span className="text-[17px] font-bold tracking-tight text-neutral-900">
+                                    {formatPrice(product.basePrice, product.currency ?? "INR")}
+                                </span>
+                                <span className="ml-1.5 text-[10px] font-normal text-neutral-400">incl. GST</span>
+                            </>
+                        ) : (
+                            <span className="text-xs font-medium italic text-neutral-400">Price on request</span>
+                        )}
                     </div>
                 )}
-                {!entityIsProduct && (
-                    <div className="mt-3">
-                        <span className="text-primary-600 text-sm font-medium">View Products →</span>
+
+                {/* 2 — NAME */}
+                <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
+                    {entity.name}
+                </h3>
+
+                {entityIsProduct ? (
+                    <div className="mt-auto space-y-2.5">
+                        {/* 3 — TRUST SIGNALS */}
+                        <div className="flex items-center gap-3 text-[10px] text-neutral-400">
+                            <span className="flex items-center gap-1">
+                                <Truck className="h-2.5 w-2.5 text-emerald-500" />
+                                Free Delivery
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <ShieldCheck className="h-2.5 w-2.5 text-primary-500" />
+                                Authorized
+                            </span>
+                        </div>
+
+                        {/* 4 — CTA */}
+                        <div className="flex items-center justify-between border-t border-neutral-100 pt-2">
+                            <span className={`text-[11px] font-semibold transition-colors duration-150 ${isAdmetec ? "text-indigo-500 group-hover:text-indigo-700" : "text-neutral-400 group-hover:text-primary-600"}`}>
+                                {isAdmetec ? "Get Quote" : "View Details"}
+                            </span>
+                            <div className={`flex h-6 w-6 items-center justify-center rounded-lg transition-all duration-150 ${isAdmetec ? "bg-indigo-50 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-neutral-100 text-neutral-400 group-hover:bg-primary-500 group-hover:text-white"}`}>
+                                {isAdmetec ? <FileText className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="mt-auto border-t border-neutral-100 pt-2">
+                        <span className="text-[11px] font-semibold text-primary-600">Browse range →</span>
                     </div>
                 )}
-            </CardContent>
-        </Card>
+            </div>
+        </Link>
     );
 }

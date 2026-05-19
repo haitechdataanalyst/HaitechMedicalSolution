@@ -1,9 +1,13 @@
-import Link from "next/link";
-import { Product } from "@/types";
-import { Button, Carousel } from "../ui";
-import { ProductCard } from "../products";
+"use client";
 
-// Product with computed path for linking
+import Link from "next/link";
+import Image from "next/image";
+import { Heart, Truck, ShieldCheck, ArrowRight, ChevronRight } from "lucide-react";
+import { Product } from "@/types";
+import { cn, formatPrice } from "@/lib/utils";
+import { detectBrand } from "@/lib/brand";
+import { useWishlist } from "@/components/cart/WishlistProvider";
+
 interface ProductWithPath extends Product {
     path: string;
 }
@@ -12,36 +16,122 @@ interface TrendingProductsProps {
     products: ProductWithPath[];
 }
 
+function TrendingCard({ product }: { product: ProductWithPath }) {
+    const image =
+        product.defaultImage ||
+        product.variants?.[0]?.image ||
+        product.gallery?.[0] ||
+        "/images/placeholder.jpg";
+
+    const brand = detectBrand(product.sku);
+    const { toggle, isWished } = useWishlist();
+    const wished = isWished(String(product.id));
+
+    return (
+        <Link
+            href={product.path}
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0"
+        >
+            {/* Image zone */}
+            <div className="relative aspect-square overflow-hidden bg-neutral-50">
+                <Image
+                    src={image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
+                />
+
+                {/* Brand chip */}
+                <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[9px] font-bold tracking-wide", brand.cls)}>
+                    {brand.name}
+                </span>
+
+                {/* Wishlist heart */}
+                <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(String(product.id)); }}
+                    aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}
+                    className={cn(
+                        "absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full border shadow-sm transition-all duration-150",
+                        wished
+                            ? "border-rose-200 bg-rose-50 text-rose-500"
+                            : "border-neutral-200 bg-white/90 text-neutral-300 opacity-0 group-hover:opacity-100 hover:border-rose-200 hover:text-rose-400"
+                    )}
+                >
+                    <Heart className={cn("h-3.5 w-3.5 transition-all", wished && "fill-current text-rose-500")} />
+                </button>
+            </div>
+
+            {/* Info zone */}
+            <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
+
+                {/* Price — dominant */}
+                <div className="mb-1 leading-none">
+                    {product.basePrice ? (
+                        <>
+                            <span className="text-[17px] font-bold tracking-tight text-neutral-900">
+                                {formatPrice(product.basePrice, product.currency ?? "INR")}
+                            </span>
+                            <span className="ml-1.5 text-[10px] font-normal text-neutral-400">incl. GST</span>
+                        </>
+                    ) : (
+                        <span className="text-xs font-medium italic text-neutral-400">Price on request</span>
+                    )}
+                </div>
+
+                {/* Name */}
+                <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
+                    {product.name}
+                </h3>
+
+                <div className="mt-auto space-y-2.5">
+                    {/* Trust signals */}
+                    <div className="flex items-center gap-3 text-[10px] text-neutral-400">
+                        <span className="flex items-center gap-1">
+                            <Truck className="h-2.5 w-2.5 text-emerald-500" />
+                            Free Delivery
+                        </span>
+                        <span className="flex items-center gap-1">
+                            <ShieldCheck className="h-2.5 w-2.5 text-primary-500" />
+                            Authorized
+                        </span>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex items-center justify-between border-t border-neutral-100 pt-2">
+                        <span className="text-[11px] font-semibold text-neutral-400 transition-colors duration-150 group-hover:text-primary-600">
+                            View Details
+                        </span>
+                        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
+                            <ArrowRight className="h-3 w-3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Link>
+    );
+}
+
 export default function TrendingProducts({ products }: TrendingProductsProps) {
     return (
-        <section className="section bg-surface-secondary">
+        <section className="bg-neutral-50/60 py-10 md:py-14">
             <div className="container">
-                <div className="mb-10 flex flex-col gap-4 md:mb-12 md:flex-row md:items-center md:justify-between">
-                    <div className="text-center-mobile">
-                        <h2 className="heading-2 text-foreground mb-2">Trending Products</h2>
-                        <p className="text-body-lg text-muted">Our most popular equipment choices</p>
+                <div className="mb-6 flex items-center justify-between">
+                    <div>
+                        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Featured Selection</p>
+                        <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Trending Products</h2>
                     </div>
-                    <Link href="/products" className="w-full-mobile">
-                        <Button variant="outline" className="w-full md:w-auto">
-                            View All Products
-                        </Button>
+                    <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
+                        See all
+                        <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
                     </Link>
                 </div>
-                <Carousel
-                    slidesToShow={1}
-                    gap={24}
-                    showDots={true}
-                    arrowVariant="default"
-                    responsive={{
-                        640: { slidesToShow: 2 },
-                        768: { slidesToShow: 3 },
-                        1024: { slidesToShow: 4 },
-                    }}
-                >
-                    {products.map((product) => (
-                        <ProductCard key={product.slug} entity={product} href={product.path} image={product.defaultImage} />
+
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
+                    {products.slice(0, 10).map((product) => (
+                        <TrendingCard key={product.slug} product={product} />
                     ))}
-                </Carousel>
+                </div>
             </div>
         </section>
     );

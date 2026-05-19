@@ -41,7 +41,7 @@ export default async function MedesyProductPage({ params }: PageProps) {
             <section className="section container">
                 <div className="mb-10 text-center">
                     <h2 className="heading-2 mb-4">Available Models</h2>
-                    <p className="text-body mx-auto max-w-2xl text-gray-600">
+                    <p className="text-body mx-auto max-w-2xl text-neutral-600">
                         {product.hasVariants && product.variants && product.variants.length > 0
                             ? `Choose from ${product.variants.length} available models. Click "Get a Quote" to request pricing.`
                             : 'Click "Get a Quote" to request pricing for this instrument.'}
@@ -63,20 +63,22 @@ export default async function MedesyProductPage({ params }: PageProps) {
             </section>
 
             {/* CTA Section */}
-            <section className="section bg-gray-50">
-                <div className="container">
+            <section className="relative overflow-hidden bg-brand-gradient section text-white">
+                <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
+                <div className="container relative">
                     <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="heading-3 mb-4">Need More Information?</h2>
-                        <p className="text-body mb-8 text-gray-600">Our team is here to help you find the right instruments for your practice.</p>
+                        <span className="label-tag label-tag-white mb-5 inline-flex">Medesy Instruments</span>
+                        <h2 className="heading-2 mb-5">Need More Information?</h2>
+                        <p className="text-body-lg mb-10 text-white/80">Our team is here to help you find the right instruments for your practice.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/support/contact">
-                                <Button variant="primary" size="lg">
+                                <Button size="lg" className="group gap-2.5 rounded-full bg-white px-10 font-semibold text-primary-700 shadow-lg hover:bg-primary-50">
                                     Contact Us
                                 </Button>
                             </Link>
                             <Link href="/our-instruments">
-                                <Button variant="outline" size="lg">
-                                    Browse Other Categories
+                                <Button size="lg" variant="outline" className="rounded-full border-white/30 px-10 text-white hover:border-white hover:bg-white/10">
+                                    Browse Categories
                                 </Button>
                             </Link>
                         </div>

@@ -2,8 +2,10 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { useHeaderNavigation } from "./NavigationProvider";
 import { EnhancedNavItem, MegaMenuColumn } from "@/lib/navigation";
 
@@ -14,35 +16,37 @@ interface MegaMenuProps {
     itemHref: string;
 }
 
+const BRAND_LOGOS: Record<string, string> = {
+    Admetec: "/BrandLogo/AdmetecLogo.png",
+    Almadent: "/BrandLogo/AlmadentLogo.jpg",
+    Medesy: "/BrandLogo/MedesyLogo.jpg",
+    Salli: "/BrandLogo/SalliLogo.png",
+    Strauss: "/BrandLogo/StraussLogo.jpg",
+};
+
+const LINKS_MAX = 5;
+
 function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
-    const pathname = usePathname();
     const triangleRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Calculate positions directly without state to avoid cascading renders
     useEffect(() => {
         if (!isOpen) return;
-
         const updatePosition = () => {
             const triggerElement = document.querySelector(`[data-nav-href="${itemHref}"]`);
-
-            // Update triangle position
             if (triggerElement && triangleRef.current) {
                 const rect = triggerElement.getBoundingClientRect();
                 triangleRef.current.style.left = `${rect.left + rect.width / 2}px`;
             }
-
-            // Update top position based on scroll
             if (containerRef.current) {
-                const scrolled = window.scrollY > 44;
-                containerRef.current.style.top = scrolled ? "66px" : "110px";
+                const header = document.querySelector("header");
+                const bottom = header?.getBoundingClientRect().bottom ?? 110;
+                containerRef.current.style.top = `${bottom}px`;
             }
         };
-
         updatePosition();
         window.addEventListener("scroll", updatePosition);
         window.addEventListener("resize", updatePosition);
-
         return () => {
             window.removeEventListener("scroll", updatePosition);
             window.removeEventListener("resize", updatePosition);
@@ -54,65 +58,134 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
     return (
         <div
             ref={containerRef}
-            className={cn("fixed right-0 left-0 z-50 pt-4 transition-all duration-200", isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0")}
+            className="fixed left-0 right-0 z-50"
             style={{ top: "110px" }}
         >
-            {/* Triangle pointer */}
             <div
                 ref={triangleRef}
-                className="absolute -translate-x-1/2 -translate-y-full"
-                style={{
-                    left: "50%",
-                    width: 0,
-                    height: 0,
-                    borderLeft: "20px solid transparent",
-                    borderRight: "20px solid transparent",
-                    borderBottom: "20px solid white",
-                    filter: "drop-shadow(0 -2px 2px rgb(0 0 0 / 0.06))",
-                }}
+                className="absolute -translate-x-1/2"
+                style={{ left: "50%", top: -8, width: 0, height: 0, borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderBottom: "10px solid white", filter: "drop-shadow(0 -1px 2px rgb(0 0 0/0.06))" }}
             />
+            <div className="border-t border-neutral-100 bg-white shadow-2xl">
+                <div className="grid w-full grid-cols-5">
+                    {columns.map((column, idx) => {
+                        const logo = BRAND_LOGOS[column.title];
+                        const featuredItem = column.items[0];
+                        const linkItems = column.items.slice(1, 1 + LINKS_MAX);
+                        const extraCount = Math.max(0, column.items.length - 1 - LINKS_MAX);
+                        const hasItems = column.items.length > 0;
 
-            {/* Mega Menu Container */}
-            <div className="mx-auto max-w-full overflow-hidden border-t border-neutral-100 bg-white shadow-2xl">
-                <div className="grid w-full grid-cols-5 gap-0 px-4">
-                    {columns.map((column, idx) => (
-                        <div key={column.href} className={cn("px-5 py-6", idx !== columns.length - 1 && "border-r border-neutral-100")}>
-                            {/* Column Header */}
-                            <Link href={column.href} className="group mb-4 block" onClick={onClose}>
-                                <h3 className="text-primary-600 hover:text-primary-800 text-sm font-bold transition-colors">{column.title}</h3>
-                            </Link>
-
-                            {/* Column Items */}
-                            <ul className="space-y-2">
-                                {column.items.map((item) => (
-                                    <li key={item.href}>
-                                        <Link
-                                            href={item.href}
-                                            className={cn(
-                                                "group flex items-center gap-1 text-sm transition-colors",
-                                                pathname === item.href ? "text-primary-600 font-medium" : "hover:text-primary-600 whitespace-nowrap text-neutral-600"
-                                            )}
-                                            onClick={onClose}
-                                        >
-                                            <span>{item.label}</span>
-                                            {item.isNew && <span className="bg-primary-500 ml-1 rounded px-1.5 py-0.5 text-[10px] font-semibold text-white">New!</span>}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* About Link */}
-                            {column.aboutLink && (
-                                <Link
-                                    href={column.aboutLink.href}
-                                    className="text-primary-500 hover:text-primary-700 mt-4 flex items-center gap-1 text-sm whitespace-nowrap transition-colors"
-                                    onClick={onClose}
-                                >
-                                    <span>{column.aboutLink.label}</span>
+                        return (
+                            <div
+                                key={column.href}
+                                className={cn(
+                                    "flex flex-col px-5 py-5",
+                                    idx < columns.length - 1 && "border-r border-neutral-100"
+                                )}
+                            >
+                                {/* ── Brand header ── */}
+                                <Link href={column.href} onClick={onClose} className="group mb-4 flex items-center gap-2.5">
+                                    {logo && (
+                                        <div className="relative h-6 w-12 shrink-0">
+                                            <Image src={logo} alt={column.title} fill className="object-contain" sizes="48px" />
+                                        </div>
+                                    )}
+                                    <span className="text-sm font-bold text-neutral-800 transition-colors group-hover:text-primary-600">
+                                        {column.title}
+                                    </span>
                                 </Link>
-                            )}
-                        </div>
-                    ))}
+
+                                {hasItems ? (
+                                    <div className="flex flex-1 flex-col">
+                                        {/* ── Featured item ── */}
+                                        {featuredItem && (
+                                            <Link
+                                                href={featuredItem.href}
+                                                onClick={onClose}
+                                                className="group mb-3 flex items-center gap-2.5 rounded-xl bg-neutral-50 p-2.5 transition-all duration-150 hover:bg-primary-50 hover:shadow-sm"
+                                            >
+                                                {featuredItem.image && (
+                                                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-white">
+                                                        <Image
+                                                            src={featuredItem.image}
+                                                            alt={featuredItem.label}
+                                                            fill
+                                                            className="mix-blend-multiply object-contain p-1"
+                                                            sizes="40px"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <div className="min-w-0 flex-1">
+                                                    <p className="truncate text-xs font-bold text-neutral-800 transition-colors group-hover:text-primary-700">
+                                                        {featuredItem.label}
+                                                    </p>
+                                                    <span className="mt-0.5 text-[10px] font-semibold text-amber-600">⭐ Popular</span>
+                                                </div>
+                                            </Link>
+                                        )}
+
+                                        {/* ── Category links ── */}
+                                        <ul className="flex-1 space-y-1.5">
+                                            {linkItems.map((item) => (
+                                                <li key={item.href}>
+                                                    <Link
+                                                        href={item.href}
+                                                        onClick={onClose}
+                                                        className="group flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600"
+                                                    >
+                                                        <span className="h-1 w-1 shrink-0 rounded-full bg-neutral-300 transition-colors group-hover:bg-primary-400" />
+                                                        <span className="truncate">{item.label}</span>
+                                                        {item.isNew && (
+                                                            <span className="shrink-0 rounded bg-primary-500 px-1.5 py-0.5 text-[9px] font-bold text-white">
+                                                                New
+                                                            </span>
+                                                        )}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                            {extraCount > 0 && (
+                                                <li>
+                                                    <Link
+                                                        href={column.href}
+                                                        onClick={onClose}
+                                                        className="text-xs font-medium text-neutral-400 transition-colors hover:text-primary-600"
+                                                    >
+                                                        +{extraCount} more
+                                                    </Link>
+                                                </li>
+                                            )}
+                                        </ul>
+                                    </div>
+                                ) : (
+                                    /* ── Empty brand (e.g. Salli) ── show description blurb ── */
+                                    <p className="flex-1 text-xs leading-relaxed text-neutral-500 line-clamp-4">
+                                        {column.description ?? "Browse our full range of products."}
+                                    </p>
+                                )}
+
+                                {/* ── Footer ── */}
+                                <div className="mt-4 flex items-center justify-between border-t border-neutral-100 pt-3">
+                                    {column.aboutLink && (
+                                        <Link
+                                            href={column.aboutLink.href}
+                                            onClick={onClose}
+                                            className="text-xs text-neutral-400 transition-colors hover:text-primary-600"
+                                        >
+                                            {column.aboutLink.label}
+                                        </Link>
+                                    )}
+                                    <Link
+                                        href={column.href}
+                                        onClick={onClose}
+                                        className="ml-auto flex items-center gap-1 text-xs font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                                    >
+                                        View All
+                                        <ArrowRight className="h-3 w-3" />
+                                    </Link>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
@@ -127,28 +200,19 @@ interface SimpleDropdownProps {
 
 function SimpleDropdown({ items, isOpen, onClose }: SimpleDropdownProps) {
     const pathname = usePathname();
-
     return (
-        <div className={cn("absolute top-full left-1/2 z-50 -translate-x-1/2 pt-4 transition-all duration-200", isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0")}>
-            {/* Triangle pointer */}
-            <div
-                className="absolute -top-0 left-1/2 -translate-x-1/2"
-                style={{
-                    width: 0,
-                    height: 0,
-                    borderLeft: "8px solid transparent",
-                    borderRight: "8px solid transparent",
-                    borderBottom: "8px solid white",
-                }}
-            />
-            <div className="bg-surface min-w-[200px] rounded-lg border border-neutral-200 py-2 shadow-lg">
+        <div className={cn("absolute top-full left-1/2 z-50 -translate-x-1/2 pt-2 transition-all duration-200", isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0")}>
+            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: -7, width: 0, height: 0, borderLeft: "7px solid transparent", borderRight: "7px solid transparent", borderBottom: "7px solid white" }} />
+            <div className="bg-surface min-w-[200px] rounded-xl border border-neutral-100 py-1.5 shadow-xl">
                 {items.map((child) => (
                     <Link
                         key={child.href}
                         href={child.href}
                         className={cn(
                             "block px-4 py-2 text-sm transition-colors",
-                            pathname === child.href ? "text-primary-600 bg-primary-50" : "hover:text-primary-600 hover:bg-surface-secondary text-neutral-700"
+                            pathname === child.href
+                                ? "text-primary-600 bg-primary-50 font-medium"
+                                : "hover:text-primary-600 hover:bg-neutral-50 text-neutral-700"
                         )}
                         onClick={onClose}
                     >
@@ -160,78 +224,69 @@ function SimpleDropdown({ items, isOpen, onClose }: SimpleDropdownProps) {
     );
 }
 
-export default function Navigation() {
+export default function Navigation({ standalone = false }: { standalone?: boolean }) {
     const items = useHeaderNavigation();
     const pathname = usePathname();
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleMouseEnter = useCallback((href: string) => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-            timeoutRef.current = null;
-        }
+        if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null; }
         setOpenDropdown(href);
     }, []);
 
     const handleMouseLeave = useCallback(() => {
-        timeoutRef.current = setTimeout(() => {
-            setOpenDropdown(null);
-        }, 150); // Small delay to allow moving to dropdown
+        timeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
     }, []);
 
-    const handleClose = useCallback(() => {
-        setOpenDropdown(null);
-    }, []);
+    const handleClose = useCallback(() => setOpenDropdown(null), []);
 
-    // Cleanup timeout on unmount
-    useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, []);
+    useEffect(() => { return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }; }, []);
 
     return (
-        <nav className="relative hidden items-center gap-5 md:flex">
+        <nav className={cn("relative items-stretch gap-0", standalone ? "flex" : "hidden md:flex")}>
             {items.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
                 const hasMegaMenu = item.megaMenu && item.megaMenu.length > 0;
                 const hasChildren = item.children && item.children.length > 0;
+                const isOpen = openDropdown === item.href;
+
+                const linkClass = cn(
+                    "flex items-center px-3.5 text-sm font-semibold border-b-2 transition-all duration-150",
+                    isActive
+                        ? "border-primary-500 text-primary-700"
+                        : "border-transparent text-neutral-600 hover:border-primary-400 hover:text-primary-700"
+                );
 
                 if (hasMegaMenu || hasChildren) {
                     return (
-                        <div key={item.href} className="relative" onMouseEnter={() => handleMouseEnter(item.href)} onMouseLeave={handleMouseLeave} data-nav-href={item.href}>
-                            <Link
-                                href={item.href}
-                                className={cn(
-                                    "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-bold transition-colors lg:px-4",
-                                    isActive ? "text-primary-600 bg-primary-50" : "hover:text-primary-600 hover:bg-surface-secondary text-neutral-500"
-                                )}
-                            >
+                        <div
+                            key={item.href}
+                            className="relative flex items-stretch"
+                            onMouseEnter={() => handleMouseEnter(item.href)}
+                            onMouseLeave={handleMouseLeave}
+                            data-nav-href={item.href}
+                        >
+                            <Link href={item.href} className={cn(linkClass, "gap-1.5")}>
                                 {item.label}
+                                <ChevronDown
+                                    className={cn(
+                                        "h-3.5 w-3.5 transition-transform duration-200",
+                                        isOpen && "rotate-180"
+                                    )}
+                                />
                             </Link>
-
-                            {/* Mega Menu or Simple Dropdown */}
                             {hasMegaMenu ? (
-                                <MegaMenu columns={item.megaMenu!} isOpen={openDropdown === item.href} onClose={handleClose} itemHref={item.href} />
+                                <MegaMenu columns={item.megaMenu!} isOpen={isOpen} onClose={handleClose} itemHref={item.href} />
                             ) : (
-                                hasChildren && <SimpleDropdown items={item.children!} isOpen={openDropdown === item.href} onClose={handleClose} />
+                                hasChildren && <SimpleDropdown items={item.children!} isOpen={isOpen} onClose={handleClose} />
                             )}
                         </div>
                     );
                 }
 
                 return (
-                    <Link
-                        key={item.href}
-                        href={item.href}
-                        className={cn(
-                            "rounded-lg px-3 py-2 text-sm font-bold transition-colors lg:px-4",
-                            isActive ? "text-primary-600 bg-primary-50" : "hover:text-primary-600 hover:bg-surface-secondary text-neutral-500"
-                        )}
-                    >
+                    <Link key={item.href} href={item.href} className={linkClass}>
                         {item.label}
                     </Link>
                 );

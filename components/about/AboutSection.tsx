@@ -12,20 +12,26 @@ interface AboutSectionProps {
 export function AboutSection({ title, children, variant = "default", icon, className }: AboutSectionProps) {
     const variants = {
         default: "bg-white",
-        primary: "bg-primary-gradient text-white",
+        primary: "bg-brand-gradient text-white",
         light: "bg-neutral-50",
     };
 
     const titleColors = {
-        default: "text-foreground",
+        default: "text-neutral-900",
         primary: "text-white",
-        light: "text-foreground",
+        light: "text-neutral-900",
     };
 
     const textColors = {
-        default: "text-muted",
-        primary: "text-primary-100",
-        light: "text-muted",
+        default: "text-neutral-500",
+        primary: "text-white/85",
+        light: "text-neutral-500",
+    };
+
+    const iconBg = {
+        default: "bg-primary-50 text-primary-600",
+        primary: "bg-white/15 text-white",
+        light: "bg-primary-50 text-primary-600",
     };
 
     return (
@@ -34,7 +40,9 @@ export function AboutSection({ title, children, variant = "default", icon, class
                 <div className="mx-auto max-w-4xl text-center">
                     {icon && (
                         <div className="mb-6 flex justify-center">
-                            <div className={cn("flex h-16 w-16 items-center justify-center rounded-full", variant === "primary" ? "bg-white/20" : "bg-primary-100 text-primary-600")}>{icon}</div>
+                            <div className={cn("flex h-16 w-16 items-center justify-center rounded-2xl", iconBg[variant])}>
+                                {icon}
+                            </div>
                         </div>
                     )}
                     <h2 className={cn("heading-2 mb-6", titleColors[variant])}>{title}</h2>

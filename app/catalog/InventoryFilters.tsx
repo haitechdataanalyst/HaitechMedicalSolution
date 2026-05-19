@@ -54,10 +54,10 @@ function FilterSection({ title, facets, paramKey }: { title: string; facets: Fac
     const visible = showAll ? facets : facets.slice(0, 8);
 
     return (
-        <div className="border-b border-gray-100 pb-4">
+        <div className="border-b border-neutral-100 pb-4">
             <button
                 onClick={() => setOpen((o) => !o)}
-                className="flex w-full items-center justify-between py-2 text-sm font-semibold text-gray-800"
+                className="flex w-full items-center justify-between py-2 text-sm font-semibold text-neutral-800"
             >
                 {title}
                 {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -66,21 +66,21 @@ function FilterSection({ title, facets, paramKey }: { title: string; facets: Fac
             {open && (
                 <div className="mt-2 space-y-1">
                     {visible.map(({ label, count }) => (
-                        <label key={label} className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 text-sm hover:bg-gray-50">
+                        <label key={label} className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 text-sm hover:bg-neutral-50">
                             <input
                                 type="checkbox"
                                 checked={selected.includes(label)}
                                 onChange={() => toggle(label)}
-                                className="accent-indigo-600 h-3.5 w-3.5 rounded"
+                                className="h-3.5 w-3.5 rounded accent-primary-500"
                             />
-                            <span className="flex-1 truncate text-gray-700">{label}</span>
-                            <span className="text-xs text-gray-400">{count}</span>
+                            <span className="flex-1 truncate text-neutral-700">{label}</span>
+                            <span className="text-xs text-neutral-400">{count}</span>
                         </label>
                     ))}
                     {facets.length > 8 && (
                         <button
                             onClick={() => setShowAll((s) => !s)}
-                            className="mt-1 text-xs text-indigo-600 hover:underline"
+                            className="mt-1 text-xs text-primary-600 hover:underline"
                         >
                             {showAll ? "Show less" : `+${facets.length - 8} more`}
                         </button>
@@ -122,8 +122,8 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
         <div className="flex flex-col gap-4">
             {/* Result count + clear */}
             <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">
-                    <span className="font-semibold text-gray-800">{filtered}</span> of {total}
+                <span className="text-sm text-neutral-500">
+                    <span className="font-semibold text-neutral-800">{filtered}</span> of {total}
                 </span>
                 {hasFilters && (
                     <button onClick={clearAll} className="flex items-center gap-1 text-xs text-red-500 hover:text-red-700">
@@ -134,12 +134,12 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
 
             {/* Search */}
             <div>
-                <label className="mb-1 block text-xs font-semibold text-gray-500 uppercase tracking-wide">Search</label>
+                <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-500">Search</label>
                 <input
                     type="text"
                     defaultValue={search}
                     placeholder="Name, SKU, category…"
-                    className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-100"
+                    className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-100"
                     onKeyDown={(e) => {
                         if (e.key === "Enter") setParam("search", (e.target as HTMLInputElement).value || null);
                     }}
@@ -155,9 +155,9 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
                     type="checkbox"
                     checked={inStock}
                     onChange={(e) => setParam("inStock", e.target.checked ? "true" : null)}
-                    className="accent-indigo-600 h-4 w-4 rounded"
+                    className="h-4 w-4 rounded accent-primary-500"
                 />
-                <span className="font-medium text-gray-700">In stock only</span>
+                <span className="font-medium text-neutral-700">In stock only</span>
             </label>
 
             {/* Brand */}
@@ -171,11 +171,11 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
 
             {/* Sort */}
             <div>
-                <label className="mb-1 block text-xs font-semibold text-gray-500 uppercase tracking-wide">Sort by</label>
+                <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-500">Sort by</label>
                 <select
                     value={sort}
                     onChange={(e) => setParam("sort", e.target.value)}
-                    className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-indigo-400"
+                    className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-primary-400"
                 >
                     <option value="name">Name (A–Z)</option>
                     <option value="price-asc">Price: Low to High</option>
@@ -192,22 +192,22 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
             <div className="lg:hidden">
                 <button
                     onClick={() => setMobileOpen((o) => !o)}
-                    className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm"
+                    className="flex items-center gap-2 rounded-xl border border-neutral-100 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm"
                 >
                     <SlidersHorizontal size={15} />
-                    Filters {hasFilters && <span className="ml-1 rounded-full bg-indigo-600 px-1.5 py-0.5 text-xs text-white">ON</span>}
+                    Filters {hasFilters && <span className="ml-1 rounded-full bg-primary-500 px-1.5 py-0.5 text-xs text-white">ON</span>}
                 </button>
 
                 {mobileOpen && (
-                    <div className="mt-3 rounded-xl border border-gray-100 bg-white p-4 shadow-md">
+                    <div className="mt-3 rounded-2xl border border-neutral-100 bg-white p-4 shadow-md">
                         {sidebar}
                     </div>
                 )}
             </div>
 
             {/* Desktop sidebar */}
-            <aside className="hidden lg:block w-60 shrink-0">
-                <div className="sticky top-24 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+            <aside className="hidden w-60 shrink-0 lg:block">
+                <div className="sticky top-24 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm">
                     {sidebar}
                 </div>
             </aside>
