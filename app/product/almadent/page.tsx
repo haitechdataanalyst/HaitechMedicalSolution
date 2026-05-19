@@ -38,17 +38,17 @@ export default function AlmadentAboutPage() {
                     <span className="text-white/60">Almadent</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
+                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
                     <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
                         By Haitech Medical · CE Marked
                     </span>
-                    <h1 className="text-6xl font-black tracking-tight text-white sm:text-8xl md:text-9xl">
+                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
                         Almadent
                     </h1>
-                    <p className="max-w-2xl text-lg leading-relaxed text-white/55">
+                    <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
                         Complete dental equipment for the modern practice — from chairs to handpieces, every product engineered for performance, ergonomics, and day-to-day clinical convenience.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-2">
+                    <div className="flex flex-wrap justify-center gap-3 pt-1">
                         <Link href="/products">
                             <Button size="lg" className="rounded-full px-8">Browse Products</Button>
                         </Link>
@@ -66,12 +66,12 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-slate-900 py-20 md:py-28">
+            <section className="bg-slate-900 py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-2xl font-light italic leading-relaxed text-white/70 md:text-3xl">
+                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Complete dental equipment, engineered for the clinic that never stops.&rdquo;
                     </p>
-                    <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
                             { v: "4+",   l: "Product Categories" },
                             { v: "3",    l: "Chair Series"       },
@@ -79,7 +79,7 @@ export default function AlmadentAboutPage() {
                             { v: "24/7", l: "Support Available"  },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-3xl font-black text-primary-400 md:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-black text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -88,15 +88,15 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── 01 Dental Chairs ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / Dental Chairs</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Comfort for<br />Every Patient.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 The AY-series combines ergonomic design with advanced functionality. Three configurations — AY-3000, AY-6000, and AY-8000 — each built to deliver outstanding patient comfort while giving dentists ergonomic positioning and intuitive controls.
                             </p>
                             <ul className="space-y-3">
@@ -134,9 +134,9 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── 02 Handpieces ── */}
-            <section className="bg-slate-950 py-24 md:py-32">
+            <section className="bg-slate-950 py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col-reverse items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-slate-800 shadow-2xl">
                                 <Image
@@ -144,16 +144,16 @@ export default function AlmadentAboutPage() {
                                     alt="Almadent Tealth Handpiece"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-12"
+                                    className="h-auto w-full object-contain p-6 md:p-12"
                                 />
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Handpieces</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
                                 Smooth Torque.<br />Every Time.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-white/55">
+                            <p className="mb-6 text-base leading-relaxed text-white/55 md:text-lg">
                                 Precision-engineered handpieces delivering consistent performance for restorative, endodontic, and surgical procedures. High-speed, low-speed, and electric options for every clinical need.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -167,15 +167,15 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── 03 Implant & Auxiliary ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Implant & Auxiliary</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Complete the<br />Clinic Setup.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 Advanced implant motor systems with precise torque control for safe, predictable placement — paired with suction systems, lubricators, and specialized auxiliary tools that keep your practice running efficiently every day.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -199,16 +199,16 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── Four Pillars ── */}
-            <section className="bg-neutral-50 py-24">
+            <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Almadent</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Four Core Principles</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Four Core Principles</h2>
                     </div>
-                    <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+                    <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
                         {pillars.map((pillar, index) => (
-                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-8 transition-all duration-300 hover:border-primary-200 hover:shadow-lg">
-                                <div className="absolute right-6 top-6 text-7xl font-black text-neutral-100 transition-colors group-hover:text-primary-50">
+                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-6 transition-all duration-300 hover:border-primary-200 hover:shadow-lg md:p-8">
+                                <div className="absolute right-6 top-6 text-6xl font-black text-neutral-100 transition-colors group-hover:text-primary-50 md:text-7xl">
                                     0{index + 1}
                                 </div>
                                 <div className="relative">
@@ -225,17 +225,17 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden bg-slate-900 py-28 text-white">
+            <section className="relative overflow-hidden bg-slate-900 py-14 text-white md:py-28">
                 <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-primary-500 opacity-10 blur-3xl" />
                 <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-primary-400 opacity-5 blur-2xl" />
                 <div className="container relative text-center">
                     <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Almadent Equipment
                     </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
                         Ready to Upgrade Your Practice?
                     </h2>
-                    <p className="mx-auto mb-10 max-w-xl text-lg text-white/55">
+                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
                         Explore the complete Almadent range and discover equipment that works as hard as you do.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">

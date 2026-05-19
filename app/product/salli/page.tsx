@@ -55,17 +55,17 @@ export default function AboutSalliPage() {
                     <span className="text-white/60">Salli</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
+                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
                     <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
                         Finnish-Engineered · Clinically Proven
                     </span>
-                    <h1 className="text-6xl font-black tracking-tight text-white sm:text-8xl md:text-9xl">
+                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
                         Salli
                     </h1>
-                    <p className="max-w-2xl text-lg leading-relaxed text-white/55">
+                    <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
                         Advancing research in sitting physiology, continuous product innovation, and solving sitting-related problems through a customer-oriented, integrated approach.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-2">
+                    <div className="flex flex-wrap justify-center gap-3 pt-1">
                         <Link href="/products">
                             <Button size="lg" className="rounded-full px-8">Explore Salli Chairs</Button>
                         </Link>
@@ -83,12 +83,12 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-amber-950 py-20 md:py-28">
+            <section className="bg-amber-950 py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-2xl font-light italic leading-relaxed text-white/70 md:text-3xl">
+                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;The way we sit is broken. Salli built the fix.&rdquo;
                     </p>
-                    <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
                             { v: "40+",     l: "Years of R&D"       },
                             { v: "8",       l: "Health Issues Fixed" },
@@ -96,7 +96,7 @@ export default function AboutSalliPage() {
                             { v: "Finland", l: "Engineered"          },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-3xl font-black text-amber-400 md:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-black text-amber-400 md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -105,18 +105,18 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 01 The Problem ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / The Problem</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Traditional Sitting<br />Is Hurting You.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-5 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 Salli has demonstrated through research that traditional sitting is closely linked to numerous health issues. Hours in a conventional chair create compounding problems for dental professionals.
                             </p>
-                            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                                 {sittingProblems.map((problem) => (
                                     <div key={problem} className="flex items-start gap-3">
                                         <Activity className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
@@ -132,7 +132,7 @@ export default function AboutSalliPage() {
                                     alt="Salli SwayFit saddle chair"
                                     width={700}
                                     height={700}
-                                    className="h-auto w-full object-contain p-10"
+                                    className="h-auto w-full object-contain p-6 md:p-10"
                                 />
                             </div>
                         </div>
@@ -141,9 +141,9 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 02 The Solution ── */}
-            <section className="bg-neutral-950 py-24 md:py-32">
+            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col-reverse items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
                                 <Image
@@ -151,16 +151,16 @@ export default function AboutSalliPage() {
                                     alt="Salli TripleLift saddle chair"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-10"
+                                    className="h-auto w-full object-contain p-6 md:p-10"
                                 />
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / The Solution</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
                                 Designed to<br />Transform How You Sit.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-white/55">
+                            <p className="mb-5 text-base leading-relaxed text-white/55 md:text-lg">
                                 The Salli saddle chair tilts the pelvis forward naturally, restoring the spine&apos;s healthy S-curve. The result is active, healthy sitting that reduces pain and boosts circulation — even during long procedures.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -177,16 +177,16 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 03 Product Range ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Product Range</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">The Salli Range</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-base text-neutral-500">
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">The Salli Range</h2>
+                        <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500 md:text-base">
                             Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals.
                         </p>
                     </div>
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-5 md:grid-cols-3">
                         {products.map((product) => (
                             <div key={product.name} className="group overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-lg">
                                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-50">
@@ -197,7 +197,7 @@ export default function AboutSalliPage() {
                                         className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="border-t border-neutral-50 p-6">
+                                <div className="border-t border-neutral-50 p-5 md:p-6">
                                     <h3 className="mb-2 text-base font-bold text-neutral-900">{product.name}</h3>
                                     <p className="text-sm leading-relaxed text-neutral-500">{product.description}</p>
                                 </div>
@@ -208,15 +208,15 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── Four Pillars ── */}
-            <section className="bg-neutral-50 py-24">
+            <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Salli</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Four Pillars of Design</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Four Pillars of Design</h2>
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {pillars.map((pillar, index) => (
-                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-7 transition-all duration-200 hover:border-amber-200 hover:shadow-lg">
+                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-amber-200 hover:shadow-lg md:p-7">
                                 <div className="mb-3 text-5xl font-black text-neutral-100 transition-colors group-hover:text-amber-50">
                                     0{index + 1}
                                 </div>
@@ -232,17 +232,17 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden bg-amber-950 py-28 text-white">
+            <section className="relative overflow-hidden bg-amber-950 py-14 text-white md:py-28">
                 <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-amber-500 opacity-10 blur-3xl" />
                 <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-amber-400 opacity-5 blur-2xl" />
                 <div className="container relative text-center">
                     <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Salli Chairs
                     </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
                         Invest in Your Health & Productivity
                     </h2>
-                    <p className="mx-auto mb-10 max-w-xl text-lg text-white/55">
+                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
                         Join thousands of dental and medical professionals who have transformed their practice with Salli ergonomic seating.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">

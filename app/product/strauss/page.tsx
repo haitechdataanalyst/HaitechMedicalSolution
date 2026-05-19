@@ -46,17 +46,17 @@ export default function AboutStraussPage() {
                     <span className="text-white/60">Strauss</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
+                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
                     <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
                         Precision Diamond Technology · ISO 9001
                     </span>
-                    <h1 className="text-6xl font-black tracking-tight text-white sm:text-8xl md:text-9xl">
+                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
                         Strauss
                     </h1>
-                    <p className="max-w-2xl text-lg leading-relaxed text-white/55">
+                    <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
                         Precision-engineered rotary instruments designed to deliver efficient cutting, smooth performance, and consistent clinical results for the modern dental practice.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-2">
+                    <div className="flex flex-wrap justify-center gap-3 pt-1">
                         <Link href="/products">
                             <Button size="lg" className="rounded-full px-8">Explore Diamond Burs</Button>
                         </Link>
@@ -74,12 +74,12 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-violet-950 py-20 md:py-28">
+            <section className="bg-violet-950 py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-2xl font-light italic leading-relaxed text-white/70 md:text-3xl">
+                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Diamond-sharp precision. Built to outlast, built to perform.&rdquo;
                     </p>
-                    <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
                             { v: "ISO 9001", l: "Certified Quality"  },
                             { v: "3",        l: "Bur Series"         },
@@ -87,7 +87,7 @@ export default function AboutStraussPage() {
                             { v: "Long",     l: "Service Life"       },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-3xl font-black text-violet-400 md:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-black text-violet-400 md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -96,18 +96,18 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── 01 Engineering ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / Engineering</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Excellence in<br />Every Bur.
                             </h2>
-                            <p className="mb-5 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-4 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 Manufactured using high-quality materials and advanced bonding technology, Strauss burs provide excellent durability and uniform diamond distribution for reliable cutting efficiency.
                             </p>
-                            <p className="text-base leading-relaxed text-neutral-400">
+                            <p className="text-sm leading-relaxed text-neutral-400 md:text-base">
                                 Specifically developed for precise cutting and controlled material removal in restorative dentistry — multiple shapes, grits, and configurations to support preparation, adjustment, and finishing across all common clinical indications.
                             </p>
                         </div>
@@ -132,18 +132,18 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── 02 Bur Series ── */}
-            <section className="bg-neutral-950 py-24 md:py-32">
+            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Bur Series</span>
-                        <h2 className="text-4xl font-black text-white md:text-5xl">
+                        <h2 className="text-3xl font-black text-white md:text-4xl lg:text-5xl">
                             Three Series.<br />Every Indication.
                         </h2>
-                        <p className="mx-auto mt-4 max-w-xl text-lg text-white/50">
+                        <p className="mx-auto mt-4 max-w-xl text-base text-white/50">
                             Covering preparation, adjustment, and finishing across all common clinical indications.
                         </p>
                     </div>
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-5 md:grid-cols-3">
                         {burSeries.map((series) => (
                             <div key={series.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-200 hover:border-violet-500/30 hover:bg-white/10">
                                 <div className="relative aspect-square overflow-hidden bg-white/5">
@@ -154,7 +154,7 @@ export default function AboutStraussPage() {
                                         className="object-contain p-10 transition-transform duration-300 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="border-t border-white/10 p-6">
+                                <div className="border-t border-white/10 p-5 md:p-6">
                                     <h3 className="mb-2 text-base font-bold text-white">{series.name}</h3>
                                     <p className="text-sm leading-relaxed text-white/50">{series.description}</p>
                                 </div>
@@ -165,19 +165,19 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── 03 Clinical Applications ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Clinical Applications</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Built for the Chair</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Built for the Chair</h2>
                     </div>
-                    <div className="mx-auto grid max-w-3xl grid-cols-2 gap-5 md:grid-cols-4">
+                    <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
                         {["Crown Preparation", "Cavity Preparation", "Material Adjustment", "Surface Finishing"].map((app) => (
-                            <div key={app} className="group flex flex-col items-center gap-4 rounded-2xl border border-neutral-100 bg-neutral-50 p-6 text-center transition-all duration-200 hover:border-violet-200 hover:shadow-lg">
-                                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-violet-50 transition-colors group-hover:bg-violet-500">
+                            <div key={app} className="group flex flex-col items-center gap-3 rounded-2xl border border-neutral-100 bg-neutral-50 p-5 text-center transition-all duration-200 hover:border-violet-200 hover:shadow-lg md:gap-4 md:p-6">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 transition-colors group-hover:bg-violet-500">
                                     <Diamond className="h-6 w-6 text-violet-500 transition-colors group-hover:text-white" />
                                 </div>
-                                <h3 className="text-sm font-bold text-neutral-800">{app}</h3>
+                                <h3 className="text-xs font-bold text-neutral-800 md:text-sm">{app}</h3>
                             </div>
                         ))}
                     </div>
@@ -185,15 +185,15 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── Why Strauss ── */}
-            <section className="bg-neutral-50 py-24">
+            <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Strauss</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Six Clinical Advantages</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Six Clinical Advantages</h2>
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {advantages.map((a) => (
-                            <div key={a.title} className="group flex gap-5 rounded-2xl border border-neutral-100 bg-white p-7 transition-all duration-200 hover:border-violet-200 hover:shadow-lg">
+                            <div key={a.title} className="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-violet-200 hover:shadow-lg md:gap-5 md:p-7">
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600 transition-colors group-hover:bg-violet-500 group-hover:text-white">
                                     {a.icon}
                                 </div>
@@ -208,17 +208,17 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden bg-violet-950 py-28 text-white">
+            <section className="relative overflow-hidden bg-violet-950 py-14 text-white md:py-28">
                 <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-violet-500 opacity-10 blur-3xl" />
                 <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-violet-400 opacity-5 blur-2xl" />
                 <div className="container relative text-center">
                     <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Strauss Diamond Burs
                     </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
                         Cut with Confidence
                     </h2>
-                    <p className="mx-auto mb-10 max-w-xl text-lg text-white/55">
+                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
                         Experience the precision and reliability of Strauss Diamond Burs — a dependable choice for practices that prioritize accuracy, safety, and performance.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">

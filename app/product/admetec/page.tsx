@@ -40,17 +40,17 @@ export default function AboutAdmetecPage() {
                     <span className="text-white/60">Admetec</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-6 px-6 text-center">
+                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
                     <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
                         Israeli Precision · Made for Dentistry
                     </span>
-                    <h1 className="text-6xl font-black tracking-tight text-white sm:text-8xl md:text-9xl">
+                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
                         Admetec
                     </h1>
-                    <p className="max-w-2xl text-lg leading-relaxed text-white/55">
+                    <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
                         World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-2">
+                    <div className="flex flex-wrap justify-center gap-3 pt-1">
                         <Link href="/products">
                             <Button size="lg" className="rounded-full px-8">Explore Loupes</Button>
                         </Link>
@@ -68,12 +68,12 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#001926] py-20 md:py-28">
+            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-2xl font-light italic leading-relaxed text-white/70 md:text-3xl">
+                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Precision magnification engineered for the clinicians who demand the best — because every detail matters in dentistry.&rdquo;
                     </p>
-                    <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
                             { v: "3.5x–10x", l: "Magnification Range" },
                             { v: "ISO",      l: "Certified Quality"  },
@@ -81,7 +81,7 @@ export default function AboutAdmetecPage() {
                             { v: "2",        l: "Optical Systems"    },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-3xl font-black text-[#1fb6cd] md:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-black text-[#1fb6cd] md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -90,15 +90,15 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── 01 Galilean ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / Galilean Loupes</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Lightweight.<br />Wide. Clear.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 Galilean loupes offer a wide field of view with excellent depth of field. Perfect for general dentistry and routine procedures — compact and remarkably comfortable for all-day wear.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -114,7 +114,7 @@ export default function AboutAdmetecPage() {
                                     alt="Admetec Galilean Loupes"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-10"
+                                    className="h-auto w-full object-contain p-6 md:p-10"
                                 />
                             </div>
                         </div>
@@ -123,9 +123,9 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── 02 Ergo / Prismatic ── */}
-            <section className="bg-neutral-950 py-24 md:py-32">
+            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col-reverse items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
                                 <Image
@@ -133,16 +133,16 @@ export default function AboutAdmetecPage() {
                                     alt="Admetec Ergo Prismatic Loupes"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-10"
+                                    className="h-auto w-full object-contain p-6 md:p-10"
                                 />
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Prismatic Ergo</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-white md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
                                 Higher Power.<br />Better Posture.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-white/55">
+                            <p className="mb-6 text-base leading-relaxed text-white/55 md:text-lg">
                                 The Ergo series delivers higher magnification with superior optical clarity. An ergonomic declination angle promotes natural posture — ideal for detailed procedures that demand precision.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -156,15 +156,15 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── 03 Headlights ── */}
-            <section className="bg-white py-24 md:py-32">
+            <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
-                    <div className="flex flex-col items-center gap-16 lg:flex-row">
+                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Headlights</span>
-                            <h2 className="mb-5 text-4xl font-black leading-tight text-neutral-900 md:text-5xl">
+                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Shadow-Free<br />Illumination.
                             </h2>
-                            <p className="mb-6 text-lg leading-relaxed text-neutral-500">
+                            <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 From wired Orchid models to the wireless Butterfly series — every Admetec headlight delivers consistent, daylight-quality visibility for even the most demanding procedures.
                             </p>
                             <ul className="space-y-3">
@@ -188,7 +188,7 @@ export default function AboutAdmetecPage() {
                                     alt="Admetec Flamingo headlight with loupes"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-10"
+                                    className="h-auto w-full object-contain p-6 md:p-10"
                                 />
                             </div>
                         </div>
@@ -197,15 +197,15 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── Why Admetec ── */}
-            <section className="bg-neutral-50 py-24">
+            <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">
-                    <div className="mb-14 text-center">
+                    <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Professionals Choose Admetec</span>
-                        <h2 className="text-4xl font-black text-neutral-900 md:text-5xl">Built on Six Pillars</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Built on Six Pillars</h2>
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {features.map((f) => (
-                            <div key={f.title} className="group rounded-2xl border border-neutral-100 bg-white p-8 transition-all duration-200 hover:border-primary-200 hover:shadow-lg">
+                            <div key={f.title} className="group rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-primary-200 hover:shadow-lg md:p-8">
                                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
                                     {f.icon}
                                 </div>
@@ -218,17 +218,17 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden py-28 text-white" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
+            <section className="relative overflow-hidden py-14 text-white md:py-28" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
                 <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#1fb6cd] opacity-10 blur-3xl" />
                 <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#1fb6cd] opacity-5 blur-2xl" />
                 <div className="container relative text-center">
                     <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Get Started Today
                     </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black leading-tight md:text-5xl">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
                         Experience the Admetec Difference
                     </h2>
-                    <p className="mx-auto mb-10 max-w-xl text-lg text-white/55">
+                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
                         Ready to elevate your clinical precision? Discover the full range of Admetec loupes and headlights, trusted by professionals worldwide.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">

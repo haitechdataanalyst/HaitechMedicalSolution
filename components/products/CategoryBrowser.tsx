@@ -372,7 +372,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
             </div>
 
             {/* ── Brand Pill Tabs — mobile ── */}
-            <div className="mb-4 grid gap-1.5 sm:hidden" style={{ gridTemplateColumns: `repeat(${initialCategories.length}, 1fr)` }}>
+            <div className="mb-4 flex gap-2 overflow-x-auto pb-1 scrollbar-none sm:hidden">
                 {initialCategories.map((cat) => {
                     const isActive = activeBrandId === cat.id;
                     return (
@@ -380,7 +380,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                             key={cat.id}
                             onClick={() => handleBrandTabClick(cat)}
                             className={cn(
-                                "w-full truncate rounded-full border px-1 py-1.5 text-center text-xs font-semibold transition-all duration-150",
+                                "shrink-0 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-150",
                                 isActive
                                     ? "border-primary-500 bg-primary-500 text-white shadow-sm"
                                     : "border-neutral-200 bg-white text-neutral-600 active:bg-neutral-50"

@@ -18,8 +18,8 @@ export default function Home() {
             {/* Features Strip — compact Flipkart-style service badges */}
             <section className="border-b border-neutral-100 bg-white">
                 <div className="container">
-                    <div className="flex flex-wrap items-stretch divide-x divide-neutral-100">
-                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                    <div className="grid grid-cols-2 gap-px bg-neutral-100 md:grid-cols-4">
+                        <div className="group flex items-center gap-3 bg-white px-4 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
                                 <Image src="/svg/premium-badge.svg" alt="Premium Quality" width={20} height={20} className="transition-[filter] duration-200 group-hover:brightness-0 group-hover:invert" />
                             </div>
@@ -28,7 +28,7 @@ export default function Home() {
                                 <p className="text-[11px] text-neutral-400">ISO certified products</p>
                             </div>
                         </div>
-                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                        <div className="group flex items-center gap-3 bg-white px-4 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
                                 <ClockIcon className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
                             </div>
@@ -37,7 +37,7 @@ export default function Home() {
                                 <p className="text-[11px] text-neutral-400">Order confirmed same day</p>
                             </div>
                         </div>
-                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                        <div className="group flex items-center gap-3 bg-white px-4 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
                                 <Headset className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
                             </div>
@@ -46,7 +46,7 @@ export default function Home() {
                                 <p className="text-[11px] text-neutral-400">Specialist team on hand</p>
                             </div>
                         </div>
-                        <div className="group flex flex-1 min-w-[140px] items-center gap-3 px-5 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
+                        <div className="group flex items-center gap-3 bg-white px-4 py-4 transition-colors hover:bg-neutral-50 md:px-6 md:py-5">
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 transition-colors duration-200 group-hover:bg-primary-500">
                                 <ShieldCheck className="h-5 w-5 text-primary-600 transition-colors duration-200 group-hover:text-white" />
                             </div>
