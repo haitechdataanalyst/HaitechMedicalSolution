@@ -47,7 +47,7 @@ function MainNavItem({ section, isActive }: { section: NavSection; isActive: boo
     return (
         <Link
             href={section.path}
-            className={cn("group flex flex-col items-center rounded-xl px-6 py-4 text-center transition-all duration-300", "hover:bg-surface-secondary", isActive && "bg-transparent")}
+            className={cn("group flex flex-col items-center rounded-xl px-3 py-3 text-center transition-all duration-300 sm:px-6 sm:py-4", "hover:bg-surface-secondary", isActive && "bg-transparent")}
         >
             <NavIcon iconName={section.icon} isActive={isActive} />
             <span className={cn("mt-3 text-base font-semibold transition-colors duration-200", isActive ? "text-foreground" : "text-muted group-hover:text-foreground")}>{section.title}</span>
@@ -92,7 +92,7 @@ export function SupportNav() {
     return (
         <nav aria-label="Support navigation" className="w-full">
             {/* Main Navigation */}
-            <div className="flex items-center justify-center gap-4 py-6 md:gap-8 lg:gap-16">
+            <div className="flex flex-wrap items-center justify-center gap-2 py-4 sm:gap-4 md:gap-8 md:py-6 lg:gap-16">
                 {supportNav.sections.map((section) => (
                     <MainNavItem key={section.id} section={section} isActive={activeSection?.id === section.id} />
                 ))}
@@ -132,7 +132,7 @@ export function SupportNavCompact() {
     });
 
     return (
-        <nav aria-label="Support sections" className="flex items-center justify-center gap-2 border-b border-neutral-200 py-4 md:gap-4">
+        <nav aria-label="Support sections" className="flex flex-wrap items-center justify-center gap-2 border-b border-neutral-200 py-3 md:gap-4 md:py-4">
             {supportNav.sections.map((section) => {
                 const Icon = iconMap[section.icon] || HelpCircle;
                 const isActive = activeSection?.id === section.id;
