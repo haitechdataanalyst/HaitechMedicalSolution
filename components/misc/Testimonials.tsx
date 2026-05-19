@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Carousel } from "@/components/ui";
 import { StarIcon } from "@/components/icons";
 import { Quote } from "lucide-react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export interface Testimonial {
     id: string;
@@ -87,15 +88,17 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
         <section className="section bg-neutral-50/60">
             <div className="container">
                 {/* Section Header */}
-                <div className="mb-12 text-center md:mb-14">
-                    <span className="label-tag label-tag-primary mb-5 inline-flex">
-                        Client Stories
-                    </span>
-                    <h2 className="heading-2 text-neutral-900 mb-3">Trusted by Dental Professionals</h2>
-                    <p className="text-body-lg mx-auto max-w-xl text-neutral-500">
-                        Real experiences from clinicians who rely on our products every day.
-                    </p>
-                </div>
+                <ScrollReveal variant="up">
+                    <div className="mb-12 text-center md:mb-14">
+                        <span className="label-tag label-tag-primary mb-5 inline-flex">
+                            Client Stories
+                        </span>
+                        <h2 className="heading-2 text-neutral-900 mb-3">Trusted by Dental Professionals</h2>
+                        <p className="text-body-lg mx-auto max-w-xl text-neutral-500">
+                            Real experiences from clinicians who rely on our products every day.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
                 <Carousel
                     slidesToShow={1}

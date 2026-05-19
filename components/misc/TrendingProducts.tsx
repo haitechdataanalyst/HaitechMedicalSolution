@@ -7,6 +7,7 @@ import { Product } from "@/types";
 import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface ProductWithPath extends Product {
     path: string;
@@ -116,20 +117,24 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
     return (
         <section className="bg-neutral-50/60 py-10 md:py-14">
             <div className="container">
-                <div className="mb-6 flex items-center justify-between">
-                    <div>
-                        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Featured Selection</p>
-                        <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Trending Products</h2>
+                <ScrollReveal variant="up">
+                    <div className="mb-6 flex items-center justify-between">
+                        <div>
+                            <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Featured Selection</p>
+                            <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Trending Products</h2>
+                        </div>
+                        <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
+                            See all
+                            <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
+                        </Link>
                     </div>
-                    <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                        See all
-                        <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
-                    </Link>
-                </div>
+                </ScrollReveal>
 
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-                    {products.slice(0, 10).map((product) => (
-                        <TrendingCard key={product.slug} product={product} />
+                    {products.slice(0, 10).map((product, i) => (
+                        <ScrollReveal key={product.slug} variant="up" delay={Math.min(i, 4) * 65} threshold={0.05}>
+                            <TrendingCard product={product} />
+                        </ScrollReveal>
                     ))}
                 </div>
             </div>

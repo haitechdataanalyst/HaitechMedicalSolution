@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs";
 
@@ -83,34 +84,38 @@ export default function BrandsSection() {
             <div className="container">
 
                 {/* ── Section header ── */}
-                <div className="mb-6 flex items-center justify-between">
-                    <div>
-                        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Trusted Manufacturers</p>
-                        <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Shop by Brand</h2>
+                <ScrollReveal variant="up">
+                    <div className="mb-6 flex items-center justify-between">
+                        <div>
+                            <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Trusted Manufacturers</p>
+                            <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Shop by Brand</h2>
+                        </div>
+                        <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
+                            View all
+                            <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
+                        </Link>
                     </div>
-                    <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                        View all
-                        <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
-                    </Link>
-                </div>
+                </ScrollReveal>
 
                 {/* ── Filter pills ── */}
-                <div className="mb-6 flex flex-wrap items-center gap-2">
-                    {FILTER_TABS.map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setActiveFilter(tab)}
-                            className={cn(
-                                "rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-150",
-                                activeFilter === tab
-                                    ? "bg-primary-500 text-white shadow-sm"
-                                    : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 hover:text-primary-600"
-                            )}
-                        >
-                            {tab}
-                        </button>
-                    ))}
-                </div>
+                <ScrollReveal variant="fade" delay={100}>
+                    <div className="mb-6 flex flex-wrap items-center gap-2">
+                        {FILTER_TABS.map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveFilter(tab)}
+                                className={cn(
+                                    "rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-150",
+                                    activeFilter === tab
+                                        ? "bg-primary-500 text-white shadow-sm"
+                                        : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 hover:text-primary-600"
+                                )}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </div>
+                </ScrollReveal>
 
                 {/* ── Brand cards ── */}
                 <div className={cn(
@@ -123,9 +128,9 @@ export default function BrandsSection() {
                         ? "grid-cols-2 max-w-lg mx-auto"
                         : "grid-cols-1 max-w-xs mx-auto"
                 )}>
-                    {filteredBrands.map((brand) => (
+                    {filteredBrands.map((brand, i) => (
+                        <ScrollReveal key={brand.name} variant="up" delay={i * 75} threshold={0.05}>
                         <Link
-                            key={brand.name}
                             href={brand.href}
                             className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_24px_rgba(0,0,0,0.09)]"
                         >
@@ -172,6 +177,7 @@ export default function BrandsSection() {
                                 </div>
                             </div>
                         </Link>
+                        </ScrollReveal>
                     ))}
                 </div>
             </div>

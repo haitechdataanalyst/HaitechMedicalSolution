@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import { NavigationProvider } from "@/components/layout";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
+import { SplashScreen } from "@/components/misc";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -31,8 +32,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${poppins.variable} bg-surface font-sans antialiased`}>
+                <SplashScreen />
                 <Providers>
                     <NavigationProvider>
                         <ConditionalLayout>
