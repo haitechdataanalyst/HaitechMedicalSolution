@@ -47,9 +47,9 @@ export default function PrescriptionSection({ config, onFileChange }: Prescripti
                     role="switch"
                     aria-checked={isEnabled}
                     onClick={handleToggle}
-                    className={cn("relative inline-flex h-7 w-12 items-center rounded-full transition-colors", isEnabled ? "bg-primary-500" : "bg-neutral-300")}
+                    className={cn("relative inline-flex h-8 w-14 shrink-0 items-center rounded-full transition-colors duration-200", isEnabled ? "bg-primary-500" : "bg-neutral-300")}
                 >
-                    <span className={cn("inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform", isEnabled ? "translate-x-6" : "translate-x-1")} />
+                    <span className={cn("inline-block h-6 w-6 transform rounded-full bg-white shadow-sm transition-transform duration-200", isEnabled ? "translate-x-[30px]" : "translate-x-1")} />
                 </button>
             </div>
 

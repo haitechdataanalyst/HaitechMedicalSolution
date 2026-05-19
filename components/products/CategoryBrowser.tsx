@@ -372,7 +372,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
             </div>
 
             {/* ── Brand Pill Tabs — mobile ── */}
-            <div className="mb-4 flex gap-2 overflow-x-auto pb-1 scrollbar-none sm:hidden">
+            <div className="mb-4 flex flex-wrap justify-center gap-2 sm:hidden">
                 {initialCategories.map((cat) => {
                     const isActive = activeBrandId === cat.id;
                     return (
