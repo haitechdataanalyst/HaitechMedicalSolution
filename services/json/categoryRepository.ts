@@ -19,35 +19,35 @@ import type { ICategoryRepository } from "../interfaces";
 import type { Category, Product, Breadcrumb } from "@/types";
 
 export class JsonCategoryRepository implements ICategoryRepository {
-    getAll(): Category[] {
+    getAll(): Promise<Category[]> {
         return getAllCategories();
     }
 
-    getById(id: number): Category | null {
+    getById(id: number): Promise<Category | null> {
         return getCategoryById(id);
     }
 
-    getBySlug(slug: string): Category | null {
+    getBySlug(slug: string): Promise<Category | null> {
         return getCategoryBySlug(slug);
     }
 
-    getTopLevel(): Category[] {
+    getTopLevel(): Promise<Category[]> {
         return getTopCategories();
     }
 
-    getChildren(parentId: number): Category[] {
+    getChildren(parentId: number): Promise<Category[]> {
         return getChildCategories(parentId);
     }
 
-    getContents(categoryId: number): { type: "categories" | "products"; items: Category[] | Product[] } {
+    getContents(categoryId: number): Promise<{ type: "categories" | "products"; items: Category[] | Product[] }> {
         return getCategoryContents(categoryId);
     }
 
-    getPath(category: Category): string {
+    getPath(category: Category): Promise<string> {
         return getCategoryPath(category);
     }
 
-    getBreadcrumbs(category: Category): Breadcrumb[] {
+    getBreadcrumbs(category: Category): Promise<Breadcrumb[]> {
         return getCategoryBreadcrumbs(category);
     }
 }

@@ -17,15 +17,15 @@ export async function GET(request: NextRequest) {
         let categories;
 
         if (all === "true") {
-            categories = categoryRepo.getAll();
+            categories = await categoryRepo.getAll();
         } else if (parentId) {
             const id = parseInt(parentId, 10);
             if (isNaN(id)) {
                 return NextResponse.json({ error: "Invalid parent ID" }, { status: 400 });
             }
-            categories = categoryRepo.getChildren(id);
+            categories = await categoryRepo.getChildren(id);
         } else {
-            categories = categoryRepo.getTopLevel();
+            categories = await categoryRepo.getTopLevel();
         }
 
         return NextResponse.json({ data: categories });

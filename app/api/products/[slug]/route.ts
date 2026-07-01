@@ -10,22 +10,26 @@ import { productRepo } from "@/services";
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
     try {
         const { slug } = await params;
-        const product = productRepo.getBySlug(slug);
+        const product = await productRepo.getBySlug(slug);
 
         if (!product) {
             return NextResponse.json({ error: "Product not found" }, { status: 404 });
         }
 
-        const related = productRepo.getRelated(product);
-        const accessories = productRepo.getAccessories(product);
+        const [related, accessories, path, breadcrumbs] = await Promise.all([
+            productRepo.getRelated(product),
+            productRepo.getAccessories(product),
+            productRepo.getPath(product),
+            productRepo.getBreadcrumbs(product),
+        ]);
 
         return NextResponse.json({
             data: {
                 ...product,
                 relatedProductDetails: related,
                 accessoryDetails: accessories,
-                path: productRepo.getPath(product),
-                breadcrumbs: productRepo.getBreadcrumbs(product),
+                path,
+                breadcrumbs,
             },
         });
     } catch (error) {

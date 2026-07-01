@@ -17,23 +17,25 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
             return NextResponse.json({ error: "Invalid category ID" }, { status: 400 });
         }
 
-        const category = categoryRepo.getById(categoryId);
+        const category = await categoryRepo.getById(categoryId);
         if (!category) {
             return NextResponse.json({ error: "Category not found" }, { status: 404 });
         }
 
-        const contents = categoryRepo.getContents(categoryId);
+        const contents = await categoryRepo.getContents(categoryId);
 
         // Enrich items with paths
-        const items = contents.items.map((item) => {
-            if (contents.type === "categories") {
-                const cat = item as import("@/types").Category;
-                return { ...cat, path: categoryRepo.getPath(cat) };
-            } else {
-                const prod = item as import("@/types").Product;
-                return { ...prod, path: productRepo.getPath(prod) };
-            }
-        });
+        const items = await Promise.all(
+            contents.items.map(async (item) => {
+                if (contents.type === "categories") {
+                    const cat = item as import("@/types").Category;
+                    return { ...cat, path: await categoryRepo.getPath(cat) };
+                } else {
+                    const prod = item as import("@/types").Product;
+                    return { ...prod, path: await productRepo.getPath(prod) };
+                }
+            })
+        );
 
         return NextResponse.json({
             data: {

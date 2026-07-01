@@ -25,16 +25,16 @@ import {
 // ------------------------------------------------------------------
 
 export interface IProductRepository {
-    getAll(): Product[];
-    getById(id: number): Product | null;
-    getBySlug(slug: string): Product | null;
-    getByCategory(categoryId: number): Product[];
-    getRelated(product: Product): Product[];
-    getAccessories(product: Product): Product[];
+    getAll(): Promise<Product[]>;
+    getById(id: number): Promise<Product | null>;
+    getBySlug(slug: string): Promise<Product | null>;
+    getByCategory(categoryId: number): Promise<Product[]>;
+    getRelated(product: Product): Promise<Product[]>;
+    getAccessories(product: Product): Promise<Product[]>;
     getImage(product: Product): string;
-    getPath(product: Product): string;
-    getBreadcrumbs(product: Product): Breadcrumb[];
-    getRandomForEachCategory(count: number): Product[];
+    getPath(product: Product): Promise<string>;
+    getBreadcrumbs(product: Product): Promise<Breadcrumb[]>;
+    getRandomForEachCategory(count: number): Promise<Product[]>;
 }
 
 // ------------------------------------------------------------------
@@ -42,14 +42,14 @@ export interface IProductRepository {
 // ------------------------------------------------------------------
 
 export interface ICategoryRepository {
-    getAll(): Category[];
-    getById(id: number): Category | null;
-    getBySlug(slug: string): Category | null;
-    getTopLevel(): Category[];
-    getChildren(parentId: number): Category[];
-    getContents(categoryId: number): { type: "categories" | "products"; items: Category[] | Product[] };
-    getPath(category: Category): string;
-    getBreadcrumbs(category: Category): Breadcrumb[];
+    getAll(): Promise<Category[]>;
+    getById(id: number): Promise<Category | null>;
+    getBySlug(slug: string): Promise<Category | null>;
+    getTopLevel(): Promise<Category[]>;
+    getChildren(parentId: number): Promise<Category[]>;
+    getContents(categoryId: number): Promise<{ type: "categories" | "products"; items: Category[] | Product[] }>;
+    getPath(category: Category): Promise<string>;
+    getBreadcrumbs(category: Category): Promise<Breadcrumb[]>;
 }
 
 // ------------------------------------------------------------------

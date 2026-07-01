@@ -25,13 +25,13 @@ export async function GET(request: NextRequest) {
             if (isNaN(id)) {
                 return NextResponse.json({ error: "Invalid category ID" }, { status: 400 });
             }
-            const category = categoryRepo.getById(id);
+            const category = await categoryRepo.getById(id);
             if (!category) {
                 return NextResponse.json({ error: "Category not found" }, { status: 404 });
             }
-            products = productRepo.getByCategory(id);
+            products = await productRepo.getByCategory(id);
         } else {
-            products = productRepo.getAll();
+            products = await productRepo.getAll();
         }
 
         // Pagination

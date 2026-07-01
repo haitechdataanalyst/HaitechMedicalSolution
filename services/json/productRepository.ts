@@ -21,27 +21,27 @@ import type { IProductRepository } from "../interfaces";
 import type { Product, Breadcrumb } from "@/types";
 
 export class JsonProductRepository implements IProductRepository {
-    getAll(): Product[] {
+    getAll(): Promise<Product[]> {
         return getAllProducts();
     }
 
-    getById(id: number): Product | null {
+    getById(id: number): Promise<Product | null> {
         return getProductById(id);
     }
 
-    getBySlug(slug: string): Product | null {
+    getBySlug(slug: string): Promise<Product | null> {
         return getProductBySlug(slug);
     }
 
-    getByCategory(categoryId: number): Product[] {
+    getByCategory(categoryId: number): Promise<Product[]> {
         return getProductsByCategory(categoryId);
     }
 
-    getRelated(product: Product): Product[] {
+    getRelated(product: Product): Promise<Product[]> {
         return getRelatedProducts(product);
     }
 
-    getAccessories(product: Product): Product[] {
+    getAccessories(product: Product): Promise<Product[]> {
         return getProductAccessories(product);
     }
 
@@ -49,15 +49,15 @@ export class JsonProductRepository implements IProductRepository {
         return getProductImage(product);
     }
 
-    getPath(product: Product): string {
+    getPath(product: Product): Promise<string> {
         return getProductPath(product);
     }
 
-    getBreadcrumbs(product: Product): Breadcrumb[] {
+    getBreadcrumbs(product: Product): Promise<Breadcrumb[]> {
         return getProductBreadcrumbs(product);
     }
 
-    getRandomForEachCategory(count: number): Product[] {
+    getRandomForEachCategory(count: number): Promise<Product[]> {
         return getRandomProductsForEachCategory(count);
     }
 }
