@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { Suspense, useEffect, useState, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { inventoryApi, ZohoInventoryItem, InventoryPagination } from "@/lib/api";
@@ -157,7 +157,7 @@ function Pagination({ pagination, onPage }: { pagination: InventoryPagination; o
 }
 
 // ── Main page ─────────────────────────────────────────────────────────────────
-export default function InventoryPage() {
+function InventoryContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -413,5 +413,13 @@ export default function InventoryPage() {
                 )}
             </div>
         </div>
+    );
+}
+
+export default function InventoryPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-neutral-50" />}>
+            <InventoryContent />
+        </Suspense>
     );
 }

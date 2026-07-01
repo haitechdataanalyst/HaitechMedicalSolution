@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import { authApi } from "@/lib/api";
 
 type Status = "loading" | "success" | "error" | "missing";
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
     const searchParams = useSearchParams();
     const token = searchParams.get("token");
     const [status, setStatus] = useState<Status>(token ? "loading" : "missing");
@@ -118,5 +118,13 @@ export default function VerifyEmailPage() {
                 )}
             </div>
         </main>
+    );
+}
+
+export default function VerifyEmailPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-neutral-50" />}>
+            <VerifyEmailContent />
+        </Suspense>
     );
 }
