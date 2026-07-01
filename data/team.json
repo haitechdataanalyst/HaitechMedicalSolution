@@ -2,93 +2,141 @@
     "team": [
         {
             "id": "1",
-            "name": "Mr. Mehul Nagar ",
-            "designation": "Director  ",
-            "image": "/images/team/john-doe.jpg"
+            "name": "Mr. Mehul Rajesh Nagar",
+            "designation": "CEO & Director",
+            "image": "/images/team/mehul-rajesh-nagar.jpg"
         },
         {
             "id": "2",
             "name": "Mr. Anand Singh Rajput",
-            "designation": "General Manager",
-            "image": "/images/team/jane-smith.jpg"
+            "designation": "General Manager – Sales & Customer Service",
+            "image": "/images/team/anand-singh-rajput.jpg"
         },
         {
             "id": "3",
             "name": "Mrs. Kavita Jukunte",
-            "designation": "Operations Manager",
-            "image": "/images/team/raj-patel.jpg"
+            "designation": "Operations Manager & HR",
+            "image": "/images/team/kavita-jukunte.jpg"
         },
         {
             "id": "4",
-            "name": "Mr. Parth Parmar",
-            "designation": "Dealers Manager",
-            "image": "/images/team/priya-sharma.jpg"
+            "name": "Mr. Shailendra Jadhav",
+            "designation": "Senior Accounts Manager",
+            "image": "/images/team/shailendra-jadhav.jpg"
         },
         {
             "id": "5",
-            "name": "Ms. Supriya Joshi",
-            "designation": "Admin",
-            "image": "/images/team/amit-kumar.jpg"
+            "name": "Mr. Parth Parmar",
+            "designation": "Dealers Manager",
+            "image": "/images/team/parth-parmar.jpg"
         },
         {
             "id": "6",
-            "name": "Mrs. Shrudi",
-            "designation": "Logistics",
-            "image": "/images/team/vikram-singh.jpg"
+            "name": "Mr. Atharva Chavan",
+            "designation": "Senior Inside Sales Executive",
+            "image": "/images/team/atharva-chavan.jpg"
         },
         {
             "id": "7",
-            "name": "Ms. Akshada Pawar",
-            "designation": "Admin",
-            "image": "/images/team/anita-desai.jpg"
+            "name": "Ms. Vanshika Pakhare",
+            "designation": "Senior Inside Sales Executive",
+            "image": "/images/team/vanshika-pakhare.jpg"
         },
         {
             "id": "8",
             "name": "Mr. Manish Satam",
-            "designation": "Salli Head",
-            "image": "/images/team/rakesh-kumar.jpg"
+            "designation": "Senior Inside Sales Executive",
+            "image": "/images/team/manish-satam.jpg"
         },
         {
             "id": "9",
-            "name": "Mr. Atharva Chavan",
-            "designation": "Medesy Head",
-            "image": "/images/team/priya-sharma.jpg"
+            "name": "Mr. Nitin Chavan",
+            "designation": "Technical Service Specialist",
+            "image": "/images/team/nitin-chavan.jpg"
         },
         {
             "id": "10",
-            "name": "Ms. Sejal",
-            "designation": "Medesy executive",
-            "image": "/images/team/amit-kumar.jpg"
+            "name": "Mrs. Ranvijay Singh",
+            "designation": "Data Analyst",
+            "image": "/images/team/ranvijay-singh.jpg"
         },
         {
             "id": "11",
-            "name": "Ms.Vanshika Pakhre",
-            "designation": "Inside Sales Executive",
-            "image": "/images/team/sunita-verma.jpg"
+            "name": "Mr. Omkar Santosh Nikam",
+            "designation": "Marketing Executive",
+            "image": "/images/team/omkar-santosh-nikam.jpg"
         },
         {
             "id": "12",
-            "name": "Ms. Riya Kamble",
-            "designation": "Inside Sales Executive",
-            "image": "/images/team/vikram-singh.jpg"
+            "name": "Ms. Akshada Pawar",
+            "designation": "Procurement Executive",
+            "image": "/images/team/akshada-pawar.jpg"
         },
         {
             "id": "13",
-            "name": "Ms. Kaushiki",
-            "designation": "Inside Sales Executive",
-            "image": "/images/team/anita-desai.jpg"
+            "name": "Ms. Supriya Joshi",
+            "designation": "Commercial Executive",
+            "image": "/images/team/supriya-joshi.jpg"
         },
         {
             "id": "14",
-            "name": "Mr.Shailendra Jadhav",
-            "designation": "Accounts",
-            "image": "/images/team/rakesh-kumar.jpg"
+            "name": "Mr. Sanjay Kumar Ram",
+            "designation": "Field Sales Executive",
+            "image": "/images/team/sanjay-kumar-ram.jpg"
         },
         {
             "id": "15",
-            "name": "Mr.Dhiraj Bane",
-            "designation": "Accounts",
-            "image": "/images/team/priya-sharma.jpg"
+            "name": "Ms. Priyanka Palav",
+            "designation": "Customer Service Executive",
+            "image": "/images/team/priyanka-palav.jpg"
+        },
+        {
+            "id": "16",
+            "name": "Ms. Jyotsna Patil",
+            "designation": "Customer Service Executive",
+            "image": "/images/team/jyotsna-patil.jpg"
+        },
+        {
+            "id": "17",
+            "name": "Mr. Dhiraj Bane",
+            "designation": "Accounts Executive",
+            "image": "/images/team/dhiraj-bane.jpg"
+        },
+        {
+            "id": "18",
+            "name": "Ms. Shrudi Pullani",
+            "designation": "Logistics Executive",
+            "image": "/images/team/shrudi-pullani.jpg"
+        },
+        {
+            "id": "19",
+            "name": "Ms. Riya Kamble",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/riya-kamble.jpg"
+        },
+        {
+            "id": "20",
+            "name": "Ms. Sejal Dalvi",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/sejal-dalvi.jpg"
+        },
+        {
+            "id": "21",
+            "name": "Ms. Kaushiki Singh",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/kaushiki-singh.jpg"
+        },
+        {
+            "id": "22",
+            "name": "Mr. Nitin Ghanekar",
+            "designation": "Office & Packing Executive",
+            "image": "/images/team/nitin-ghanekar.jpg"
+        },
+        {
+            "id": "24",
+            "name": "Mr. Sandeep Jadhav",
+            "designation": "Office Assistant",
+            "image": "/images/team/sandeep-jadhav.jpg"
         }
     ]
 }

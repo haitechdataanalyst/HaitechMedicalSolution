@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
+import path from "path";
+
+const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig: NextConfig = {
+    transpilePackages: ["lucide-react"],
+
+    turbopack: {
+        root: path.resolve(__dirname),
+    },
+
     // Image optimization — allow local images and future CDN/backend sources
     images: {
         remotePatterns: [
@@ -11,6 +20,11 @@ const nextConfig: NextConfig = {
             {
                 protocol: "https",
                 hostname: "**.haitech-group.com",
+            },
+            {
+                // Google profile pictures
+                protocol: "https",
+                hostname: "lh3.googleusercontent.com",
             },
         ],
     },
@@ -25,29 +39,43 @@ const nextConfig: NextConfig = {
                     { key: "X-Frame-Options", value: "DENY" },
                     // Prevent MIME-type sniffing
                     { key: "X-Content-Type-Options", value: "nosniff" },
-                    // Referrer policy — send origin on cross-origin, full on same-origin
+                    // Referrer policy
                     { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-                    // Permissions policy — disable unused browser features
+                    // Permissions policy — payment= and accelerometer= must stay open
+                    // because Razorpay uses the Payment Request API and device fingerprinting
                     {
                         key: "Permissions-Policy",
-                        value: "camera=(), microphone=(), geolocation=(), payment=()",
+                        value: "camera=(), microphone=(), geolocation=(), accelerometer=*, payment=*",
                     },
-                    // Strict Transport Security — force HTTPS for 1 year
-                    {
-                        key: "Strict-Transport-Security",
-                        value: "max-age=31536000; includeSubDomains; preload",
-                    },
-                    // Content Security Policy — restrictive but functional
+                    // Strict Transport Security (HTTPS only — production)
+                    ...(!isDev ? [{ key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains; preload" }] : []),
+                    // Cross-Origin-Opener-Policy — use unsafe-none so Google's postMessage
+                    // (OAuth popup) can communicate back to the opener window
+                    { key: "Cross-Origin-Opener-Policy", value: "unsafe-none" },
+                    // Content Security Policy
                     {
                         key: "Content-Security-Policy",
                         value: [
                             "default-src 'self'",
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.lordicon.com",
-                            "style-src 'self' 'unsafe-inline'",
+                            // Google Identity Services + Razorpay (checkout + CDN assets)
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.lordicon.com https://accounts.google.com https://checkout.razorpay.com https://cdn.razorpay.com",
+                            "style-src 'self' 'unsafe-inline' https://accounts.google.com",
                             "img-src 'self' data: blob: https:",
                             "font-src 'self' data:",
-                            "connect-src 'self' https://cdn.lordicon.com",
-                            "frame-src 'self' https://www.google.com https://maps.google.com",
+                            // Allow backend API, Google OAuth, and Razorpay API calls
+                            [
+                                "connect-src 'self'",
+                                isDev ? "http://localhost:5000" : "",
+                                "https://cdn.lordicon.com",
+                                "https://accounts.google.com",
+                                "https://oauth2.googleapis.com",
+                                "https://www.googleapis.com",
+                                "https://api.razorpay.com",
+                                "https://cdn.razorpay.com",
+                                "https://lumberjack.razorpay.com",
+                            ].filter(Boolean).join(" "),
+                            // Google + Razorpay iframes
+                            "frame-src 'self' https://www.google.com https://maps.google.com https://accounts.google.com https://api.razorpay.com https://checkout.razorpay.com https://workdrive.zohoexternal.com",
                             "object-src 'none'",
                             "base-uri 'self'",
                             "form-action 'self'",

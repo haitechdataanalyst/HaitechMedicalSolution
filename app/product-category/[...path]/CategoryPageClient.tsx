@@ -7,6 +7,7 @@ import type { CategoryWithPath, ProductWithPath } from "@/components/products";
 import { formatPrice, cn } from "@/lib/utils";
 import { ArrowRight, Search, X, Heart } from "lucide-react";
 import { useWishlist } from "@/components/cart/WishlistProvider";
+import { COMMERCE_ENABLED } from "@/lib/config";
 
 interface CategoryPageClientProps {
     initialItems: CategoryWithPath[] | ProductWithPath[];
@@ -93,13 +94,13 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
                     {product.name}
                 </h3>
-                {product.basePrice ? (
+                {COMMERCE_ENABLED && (product.basePrice ? (
                     <p className="mb-2 text-base font-bold text-neutral-900">
                         {formatPrice(product.basePrice, product.currency ?? "INR")}
                     </p>
                 ) : (
                     <p className="mb-2 text-xs text-neutral-400">Price on request</p>
-                )}
+                ))}
                 <div className="flex items-center justify-between pt-1">
                     <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
@@ -180,7 +181,7 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
     const sortOptions: { value: SortOption; label: string }[] = [
         { value: "default", label: "Featured" },
         { value: "name-asc", label: "Name: A–Z" },
-        ...(initialType === "products"
+        ...(COMMERCE_ENABLED && initialType === "products"
             ? [
                   { value: "price-asc" as SortOption, label: "Price: Low → High" },
                   { value: "price-desc" as SortOption, label: "Price: High → Low" },
@@ -233,7 +234,7 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
                     </div>
 
                     {/* Price filter */}
-                    {hasPriceRange && (
+                    {COMMERCE_ENABLED && hasPriceRange && (
                         <div className="p-5">
                             <p className="mb-3.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">
                                 Price

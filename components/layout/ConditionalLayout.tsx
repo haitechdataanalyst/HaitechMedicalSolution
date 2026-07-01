@@ -5,10 +5,102 @@ import { TopHeader, Header, Footer } from "@/components/layout";
 import { PageTransition } from "@/components/layout/PageTransition";
 import navigation from "@/data/navigation.json";
 import siteConfig from "@/data/site-config.json";
-import { DownloadCatalogButton, ScrollToTopButton, WhatsAppButton } from "@/components/ui";
 import { Toaster } from "sonner";
+import { CompareBar, CompareModal, useCompare } from "@/components/compare";
+import Link from "next/link";
+import { MessageSquare, CloudDownload, ArrowUp } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons";
 
 const AUTH_ROUTES = ["/login", "/signup", "/forgot-password"];
+
+// Shared classes for the pill expand pattern
+const PILL = "group flex items-center overflow-hidden rounded-full transition-all duration-300";
+const ICON_WRAP = "flex h-12 w-12 shrink-0 items-center justify-center";
+const LABEL = "max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold transition-all duration-300 group-hover:max-w-[120px] group-hover:pr-4";
+
+function FloatingButtons() {
+    const { items } = useCompare();
+    const hasCompareBar = items.length > 0;
+
+    const handleWhatsApp = () => {
+        const clean = siteConfig.company.phone.replace(/\D/g, "");
+        window.open(`https://wa.me/${clean}`, "_blank", "noopener,noreferrer");
+    };
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/catalouges/Haitech Medical Solutions Catalog.pdf";
+        link.download = "Haitech Medical Solutions Catalog.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const handleScrollTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    return (
+        <div
+            className="fixed right-6 z-40 flex flex-col gap-2 transition-all duration-300"
+            style={{ bottom: hasCompareBar ? "calc(68px + 1.5rem)" : "1.5rem" }}
+        >
+            {/* Get a Quote */}
+            <Link
+                href="/support/contact"
+                className={`${PILL} bg-primary-500 shadow-[0_4px_16px_-2px_rgb(31_182_205/0.5)] hover:shadow-[0_6px_24px_-2px_rgb(31_182_205/0.6)]`}
+                aria-label="Get a Quote"
+            >
+                <span className={`${ICON_WRAP} text-white`}>
+                    <MessageSquare size={20} />
+                </span>
+                <span className={`${LABEL} text-white`}>Get a Quote</span>
+            </Link>
+
+            {/* WhatsApp — pulse ring only on icon circle */}
+            <div className="relative">
+                <span className="pointer-events-none absolute left-0 top-0 h-12 w-12 rounded-full bg-whatsapp animate-whatsapp-ping" />
+                <button
+                    type="button"
+                    onClick={handleWhatsApp}
+                    className={`${PILL} relative bg-whatsapp hover:bg-[#20BD5A] active:bg-[#1DA851]`}
+                    aria-label="Chat with us on WhatsApp"
+                >
+                    <span className={`${ICON_WRAP} text-white`}>
+                        <WhatsAppIcon size={20} />
+                    </span>
+                    <span className={`${LABEL} text-white`}>WhatsApp</span>
+                </button>
+            </div>
+
+            {/* Download Catalogue */}
+            <button
+                type="button"
+                onClick={handleDownload}
+                className={`${PILL} bg-primary-500 shadow-[0_4px_16px_-2px_rgb(31_182_205/0.3)] hover:shadow-[0_6px_24px_-2px_rgb(31_182_205/0.4)] hover:bg-primary-600`}
+                aria-label="Download product catalogue"
+            >
+                <span className={`${ICON_WRAP} text-white`}>
+                    <CloudDownload size={20} />
+                </span>
+                <span className={`${LABEL} text-white`}>Catalogue</span>
+            </button>
+
+            {/* Back to Top */}
+            <button
+                type="button"
+                onClick={handleScrollTop}
+                className={`${PILL} border border-neutral-200 bg-white shadow-[0_2px_8px_-2px_rgba(0,0,0,0.12)] hover:bg-neutral-50 hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]`}
+                aria-label="Scroll back to top"
+            >
+                <span className={`${ICON_WRAP} text-neutral-700`}>
+                    <ArrowUp size={20} />
+                </span>
+                <span className={`${LABEL} text-neutral-700`}>Back to Top</span>
+            </button>
+        </div>
+    );
+}
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
@@ -38,32 +130,9 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
             <Header />
             <PageTransition>{children}</PageTransition>
             <Footer sections={navigation.footer.sections} config={siteConfig} />
-            <div className="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
-                <WhatsAppButton
-                    phoneNumber={siteConfig.company.phone}
-                    iconOnly
-                    size="md"
-                    className="h-12 w-12 cursor-pointer rounded-full"
-                    title="Chat on WhatsApp"
-                    aria-label="Chat with us on WhatsApp"
-                />
-                <DownloadCatalogButton
-                    iconOnly
-                    size="md"
-                    className="h-12 w-12 border-[0.5px]! cursor-pointer rounded-full bg-primary-500 text-white"
-                    fileUrl="/catalouges/Haitech Medical Solutions Catalog.pdf"
-                    fileName="Haitech Medical Solutions Catalog.pdf"
-                    title="Download product catalog"
-                    aria-label="Download product catalog PDF"
-                />
-                <ScrollToTopButton
-                    iconOnly
-                    size="md"
-                    className="h-12 w-12 cursor-pointer rounded-full"
-                    title="Back to top"
-                    aria-label="Scroll back to top"
-                />
-            </div>
+            <FloatingButtons />
+            <CompareBar />
+            <CompareModal />
         </div>
     );
 }

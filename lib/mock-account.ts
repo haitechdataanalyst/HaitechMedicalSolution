@@ -10,7 +10,7 @@ export const MOCK_USER = {
     joinedDate: "March 2023",
 };
 
-export type OrderStatus = "delivered" | "processing" | "shipped" | "pending" | "cancelled";
+export type OrderStatus = "delivered" | "confirmed" | "processing" | "shipped" | "pending" | "cancelled";
 
 export interface MockOrderItem {
     name: string;
@@ -158,6 +158,7 @@ export const MOCK_ADDRESSES: MockAddress[] = [
 
 export const STATUS_CONFIG: Record<OrderStatus, { label: string; bg: string; text: string; border: string; dot: string }> = {
     delivered:  { label: "Delivered",  bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200", dot: "bg-emerald-500" },
+    confirmed:  { label: "Confirmed",  bg: "bg-blue-50",    text: "text-blue-700",    border: "border-blue-200",    dot: "bg-blue-500"    },
     processing: { label: "Processing", bg: "bg-blue-50",    text: "text-blue-700",    border: "border-blue-200",    dot: "bg-blue-500"    },
     shipped:    { label: "Shipped",    bg: "bg-amber-50",   text: "text-amber-700",   border: "border-amber-200",   dot: "bg-amber-500"   },
     pending:    { label: "Pending",    bg: "bg-neutral-100",text: "text-neutral-600", border: "border-neutral-200", dot: "bg-neutral-400" },

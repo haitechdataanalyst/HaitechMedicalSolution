@@ -1,5 +1,6 @@
 import { getTopCategories } from "@/lib/catalog";
-import { ProductsPageClient } from "./ProductsPageClient";
+import { CategoryBrowser } from "@/components/products";
+import { fetchCategoryContentsAction } from "@/app/actions/catalog";
 import { getMetadata } from "@/lib/metadata";
 import { getBreadcrumbs } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -7,8 +8,8 @@ import { ChevronRight } from "lucide-react";
 
 export const metadata = getMetadata("products");
 
-export default function ProductsPage() {
-    const categories = getTopCategories();
+export default async function ProductsPage() {
+    const categories = await getTopCategories();
     const breadcrumbs = getBreadcrumbs("products");
 
     return (
@@ -41,7 +42,7 @@ export default function ProductsPage() {
             {/* ── Category browser ── */}
             <section className="bg-white py-6 md:py-8">
                 <div className="container">
-                    <ProductsPageClient initialCategories={categories} />
+                    <CategoryBrowser initialCategories={categories} fetchCategoryContents={fetchCategoryContentsAction} />
                 </div>
             </section>
         </>

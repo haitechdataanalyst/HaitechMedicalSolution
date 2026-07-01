@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, Truck, ShieldCheck, ArrowRight, FileText } from "lucide-react";
-import { Product, Category } from "@/types";
+import { Heart, Truck, ShieldCheck, ArrowRight, FileText, GitCompareArrows } from "lucide-react";
+import { Product, Category, SpecificationsBlock } from "@/types";
 import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
+import { COMMERCE_ENABLED } from "@/lib/config";
+import { useCompare } from "@/components/compare";
 
 interface ProductCardProps {
     entity: Product | Category;
@@ -24,8 +26,12 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
     const displayImage = image || "/images/placeholder.jpg";
     const brand = product ? detectBrand(product.sku) : null;
     const isAdmetec = brand?.name === "Admetec";
+    const compareAllowed = brand?.name === "Admetec" || brand?.name === "Salli";
     const { toggle, isWished } = useWishlist();
     const wished = product ? isWished(String(product.id)) : false;
+    const { add: compareAdd, remove: compareRemove, isAdded: compareIsAdded, items: compareItems } = useCompare();
+    const compareAdded = product ? compareIsAdded(String(product.id)) : false;
+    const compareFull = compareItems.length >= 3 && !compareAdded;
 
     return (
         <Link
@@ -70,7 +76,7 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
             <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
 
                 {/* 1 — PRICE (dominant) */}
-                {entityIsProduct && (
+                {COMMERCE_ENABLED && entityIsProduct && (
                     <div className="mb-1 leading-none">
                         {product?.basePrice ? (
                             <>
@@ -106,11 +112,52 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
 
                         {/* 4 — CTA */}
                         <div className="flex items-center justify-between border-t border-neutral-100 pt-2">
-                            <span className={`text-[11px] font-semibold transition-colors duration-150 ${isAdmetec ? "text-indigo-500 group-hover:text-indigo-700" : "text-neutral-400 group-hover:text-primary-600"}`}>
-                                {isAdmetec ? "Get Quote" : "View Details"}
-                            </span>
-                            <div className={`flex h-6 w-6 items-center justify-center rounded-lg transition-all duration-150 ${isAdmetec ? "bg-indigo-50 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-neutral-100 text-neutral-400 group-hover:bg-primary-500 group-hover:text-white"}`}>
-                                {isAdmetec ? <FileText className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
+                            {/* Compare toggle — Admetec and Salli only */}
+                            {compareAllowed && <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    if (!product) return;
+                                    if (compareAdded) {
+                                        compareRemove(String(product.id));
+                                    } else if (!compareFull) {
+                                        const specs = product.contentBlocks
+                                            ?.filter((b): b is SpecificationsBlock => b.type === "specifications")
+                                            .flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+                                        compareAdd({
+                                            id: String(product.id),
+                                            name: product.name,
+                                            image: displayImage,
+                                            href,
+                                            price: product.basePrice,
+                                            currency: product.currency,
+                                            brand: brand?.name,
+                                            specs,
+                                        });
+                                    }
+                                }}
+                                disabled={compareFull}
+                                aria-label={compareAdded ? "Remove from compare" : "Add to compare"}
+                                className={cn(
+                                    "flex items-center gap-1 rounded-lg px-1.5 py-1 text-[10px] font-semibold transition-all duration-150",
+                                    compareAdded
+                                        ? "bg-primary-100 text-primary-700"
+                                        : compareFull
+                                        ? "cursor-not-allowed text-neutral-200"
+                                        : "text-neutral-300 hover:bg-neutral-100 hover:text-neutral-600"
+                                )}
+                            >
+                                <GitCompareArrows className="h-3 w-3" />
+                                {compareAdded ? "Added" : "Compare"}
+                            </button>}
+
+                            <div className="flex items-center gap-1.5">
+                                <span className={`text-[11px] font-semibold transition-colors duration-150 ${isAdmetec ? "text-indigo-500 group-hover:text-indigo-700" : "text-neutral-400 group-hover:text-primary-600"}`}>
+                                    {isAdmetec ? "Get Quote" : "View Details"}
+                                </span>
+                                <div className={`flex h-6 w-6 items-center justify-center rounded-lg transition-all duration-150 ${isAdmetec ? "bg-indigo-50 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-neutral-100 text-neutral-400 group-hover:bg-primary-500 group-hover:text-white"}`}>
+                                    {isAdmetec ? <FileText className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
+                                </div>
                             </div>
                         </div>
                     </div>

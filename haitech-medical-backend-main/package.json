@@ -1,0 +1,90 @@
+{
+	"name": "haitech-medical-backend",
+	"version": "1.0.0",
+	"description": "A NodeJS Express Backend for Haitech Medical Group",
+	"keywords": [
+		"Haitech Medical"
+	],
+	"homepage": "https://github.com/SHUBHAM-M01/haitech-medical-backend.git#readme",
+	"bugs": {
+		"url": "https://github.com/SHUBHAM-M01/haitech-medical-backend.git/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SHUBHAM-M01/haitech-medical-backend.git"
+	},
+	"license": "ISC",
+	"author": "Ranvijay Singh, Shubham Munnilal Maurya, Vijay Gondhale",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node --watch --env-file=.env index.js",
+		"start": "node --env-file=.env index.js",
+		"test": "node --test tests/**/*.test.js",
+		"test:watch": "node --test --watch tests/**/*.test.js",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:push": "drizzle-kit push",
+		"db:studio": "drizzle-kit studio",
+		"db:seed": "node --env-file=.env scripts/seed.js",
+		"lint:prettier": "prettier --check .",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"**/*.{json,md}": "prettier --write"
+	},
+	"dependencies": {
+		"bcryptjs": "^3.0.2",
+		"compression": "^1.8.1",
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
+		"dayjs": "^1.11.20",
+		"drizzle-orm": "^0.45.2",
+		"express": "^5.2.1",
+		"express-rate-limit": "^8.3.1",
+		"express-xss-sanitizer": "^2.0.2",
+		"file-type": "^21.3.4",
+		"google-auth-library": "^10.6.2",
+		"helmet": "^8.0.0",
+		"joi": "^17.13.3",
+		"jsonwebtoken": "^9.0.2",
+		"morgan": "^1.10.0",
+		"multer": "^2.1.1",
+		"postgres": "^3.4.7",
+		"rate-limit-redis": "^4.3.1",
+		"razorpay": "^2.9.6",
+		"redis": "^5.8.2",
+		"swagger-ui-express": "^5.0.1",
+		"uuid": "^12.0.0",
+		"winston": "^3.17.0",
+		"winston-daily-rotate-file": "^5.0.0",
+		"yaml": "^2.8.3"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
+		"@eslint/js": "^10.0.1",
+		"@types/compression": "^1.8.1",
+		"@types/cors": "^2.8.19",
+		"@types/express": "^5.0.6",
+		"@types/helmet": "^0.0.48",
+		"@types/jsonwebtoken": "^9.0.10",
+		"@types/multer": "^2.0.0",
+		"@types/node": "^25.0.6",
+		"@types/uuid": "^10.0.0",
+		"drizzle-kit": "^0.31.10",
+		"eslint": "^10.0.3",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-security": "^4.0.0",
+		"globals": "^17.4.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
+		"prettier": "^3.3.3"
+	}
+}

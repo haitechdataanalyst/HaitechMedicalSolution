@@ -1,6 +1,8 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from "react";
+import { wishlistApi, getAccessToken } from "@/lib/api";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 interface WishlistContextValue {
     items: string[];
@@ -16,22 +18,75 @@ const WishlistContext = createContext<WishlistContextValue>({
     count: 0,
 });
 
-const STORAGE_KEY = "haitech-wishlist";
+const readLocal = (key: string): string[] => {
+    try {
+        const s = localStorage.getItem(key);
+        return s ? JSON.parse(s) : [];
+    } catch { return []; }
+};
+
+const writeLocal = (key: string, ids: string[]) => {
+    try { localStorage.setItem(key, JSON.stringify(ids)); } catch {}
+};
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
     const [items, setItems] = useState<string[]>([]);
+    const { user, isLoading: authLoading } = useAuth();
+    const prevUserIdRef = useRef<string | null | undefined>(undefined);
 
+    // React to user login / logout / switch
     useEffect(() => {
-        try {
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored) setItems(JSON.parse(stored));
-        } catch {}
-    }, []);
+        if (authLoading) return;
+
+        const currentUserId = user?.id ?? null;
+        if (prevUserIdRef.current === currentUserId) return;
+        prevUserIdRef.current = currentUserId;
+
+        // Guest: empty wishlist
+        if (!currentUserId) {
+            setItems([]);
+            return;
+        }
+
+        const storageKey = `haitech-wishlist-${currentUserId}`;
+        const local = readLocal(storageKey);
+        setItems(local);
+
+        if (!getAccessToken()) return;
+
+        wishlistApi.getWishlist().then((res) => {
+            if (res.success && res.data) {
+                const serverIds = res.data.items.map((i) => i.productId);
+                const merged = Array.from(new Set([...serverIds, ...local]));
+
+                // Push any local-only items to backend
+                const toSync = local.filter((id) => !serverIds.includes(id));
+                toSync.forEach((id) => wishlistApi.addItem(id).catch(() => {}));
+
+                setItems(merged);
+                writeLocal(storageKey, merged);
+            }
+        }).catch(() => {});
+    }, [authLoading, user?.id]);
+
+    // Persist to localStorage only when a user is logged in
+    useEffect(() => {
+        if (!user?.id) return;
+        writeLocal(`haitech-wishlist-${user.id}`, items);
+    }, [items, user?.id]);
 
     const toggle = useCallback((id: string) => {
         setItems((prev) => {
-            const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
-            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch {}
+            const isInList = prev.includes(id);
+            const next = isInList ? prev.filter((x) => x !== id) : [...prev, id];
+
+            if (getAccessToken()) {
+                if (isInList) {
+                    wishlistApi.removeItem(id).catch(() => {});
+                } else {
+                    wishlistApi.addItem(id).catch(() => {});
+                }
+            }
             return next;
         });
     }, []);

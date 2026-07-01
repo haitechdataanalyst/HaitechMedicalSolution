@@ -1,0 +1,6 @@
+# robots.txt — https://www.robotstxt.org/
+# This is a backend API. There are no publicly crawlable pages.
+# Disallow all crawlers from all paths.
+
+User-agent: *
+Disallow: /

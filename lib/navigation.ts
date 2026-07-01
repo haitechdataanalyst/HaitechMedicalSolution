@@ -102,14 +102,11 @@ function buildMegaMenuFromCategories(): MegaMenuColumn[] {
  */
 function enhanceNavigation(navItems: NavItem[]): EnhancedNavItem[] {
     return navItems.map((item) => {
-        // If this is the PRODUCTS link, build a mega menu from categories
+        // PRODUCTS uses a simple dropdown — just pass through the children from navigation.json
         if (item.href === "/products") {
             return {
                 ...item,
-                megaMenu: buildMegaMenuFromCategories(),
-                children: item.children?.map((child) => ({
-                    ...child,
-                })),
+                children: item.children?.map((child) => ({ ...child })),
             };
         }
 

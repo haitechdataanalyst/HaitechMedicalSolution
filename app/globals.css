@@ -39,6 +39,13 @@
 
     /* Page transition animation */
     --animate-page-enter: page-enter 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    /* WhatsApp floating button pulse */
+    --animate-whatsapp-ping: whatsapp-ping 2.2s ease-out infinite;
+
+    /* Brand-specific colours */
+    --color-whatsapp: var(--color-whatsapp);
+    --color-accent-teal: var(--color-accent-teal);
 }
 
 :root {
@@ -77,6 +84,10 @@
     --color-neutral-700: #374151;
     --color-neutral-800: #1f2937;
     --color-neutral-900: #111827;
+
+    /* Brand-specific */
+    --color-whatsapp: #25D366;
+    --color-accent-teal: #4cd8ef;
 
     /* Semantic Colors */
     --color-success: #22c55e;
@@ -146,7 +157,6 @@
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
     }
 
     /* Scrollbar — WebKit */
@@ -185,9 +195,9 @@
     }
 }
 
-@keyframes splash-ping {
-    0%       { transform: scale(0.96); opacity: 0.7; }
-    70%, 100% { transform: scale(1.28); opacity: 0;   }
+@keyframes whatsapp-ping {
+    0%       { transform: scale(1);    opacity: 0.6; }
+    70%, 100% { transform: scale(1.5); opacity: 0;   }
 }
 
 @layer components {

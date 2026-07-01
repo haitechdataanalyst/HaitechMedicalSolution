@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/ui";
 import { getAllFrames } from "@/lib/catalog";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { FrameCard } from "./FrameCard";
+import { FrameCard } from "@/components/frames/FrameCard";
 import { getMetadata } from "@/lib/metadata";
 import { getBreadcrumbs } from "@/lib/breadcrumbs";
 import { ArrowRight } from "lucide-react";

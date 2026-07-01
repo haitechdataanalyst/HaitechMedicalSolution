@@ -6,6 +6,7 @@ import { Product, ProductVariant, CartItem } from "@/types";
 import { Button } from "@/components/ui";
 import { useCart } from "@/components/cart/CartProvider";
 import { ShoppingCart, Check } from "lucide-react";
+import { COMMERCE_ENABLED } from "@/lib/config";
 
 interface VariantCardProps {
     variant: ProductVariant;
@@ -53,11 +54,13 @@ function VariantCard({ variant, product }: VariantCardProps) {
             <p className="mb-4 grow text-center text-sm text-neutral-500">SKU: {variant.sku}</p>
 
             {/* Add to Cart */}
-            <div className="mt-auto pt-2">
-                <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
-                    {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
-                </Button>
-            </div>
+            {COMMERCE_ENABLED && (
+                <div className="mt-auto pt-2">
+                    <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
+                        {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }
@@ -102,11 +105,13 @@ function SingleProductCard({ product }: SingleProductCardProps) {
             <p className="mb-6 text-center text-sm text-neutral-500">SKU: {product.sku}</p>
 
             {/* Add to Cart */}
-            <div className="mt-auto">
-                <Button variant={added ? "primary" : "primary"} className="w-full gap-2" size="lg" onClick={handleAddToCart}>
-                    {added ? <><Check className="h-4 w-4" /> Added to Cart</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
-                </Button>
-            </div>
+            {COMMERCE_ENABLED && (
+                <div className="mt-auto">
+                    <Button variant={added ? "primary" : "primary"} className="w-full gap-2" size="lg" onClick={handleAddToCart}>
+                        {added ? <><Check className="h-4 w-4" /> Added to Cart</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }

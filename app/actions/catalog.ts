@@ -15,7 +15,7 @@ export async function fetchCategoryContentsAction(categoryId: number): Promise<{
     type: "categories" | "products";
     items: CategoryWithPath[] | ProductWithPath[];
 }> {
-    // Frames category (id 6) — data lives in frames.json, not products.json
+    // Frames category (id 6) — data lives in frames.json, not the products table
     if (categoryId === 6) {
         const frames = getAllFrames();
         const items: ProductWithPath[] = frames.map((frame, i) => ({
@@ -32,7 +32,7 @@ export async function fetchCategoryContentsAction(categoryId: number): Promise<{
         return { type: "products", items };
     }
 
-    // Lights category (id 7) — single destination, auto-navigate via loadNode
+    // Lights category (id 7) — single destination page
     if (categoryId === 7) {
         const item: ProductWithPath = {
             id: 7000,
@@ -47,19 +47,23 @@ export async function fetchCategoryContentsAction(categoryId: number): Promise<{
         return { type: "products", items: [item] };
     }
 
-    const contents = getCategoryContents(categoryId);
+    const contents = await getCategoryContents(categoryId);
 
     if (contents.type === "categories") {
-        const categoriesWithPaths = (contents.items as Category[]).map((cat) => ({
-            ...cat,
-            path: getCategoryPath(cat),
-        }));
+        const categoriesWithPaths = await Promise.all(
+            (contents.items as Category[]).map(async (cat) => ({
+                ...cat,
+                path: await getCategoryPath(cat),
+            }))
+        );
         return { type: "categories", items: categoriesWithPaths };
     } else {
-        const productsWithPaths = (contents.items as Product[]).map((prod) => ({
-            ...prod,
-            path: getProductPath(prod),
-        }));
+        const productsWithPaths = await Promise.all(
+            (contents.items as Product[]).map(async (prod) => ({
+                ...prod,
+                path: await getProductPath(prod),
+            }))
+        );
         return { type: "products", items: productsWithPaths };
     }
 }

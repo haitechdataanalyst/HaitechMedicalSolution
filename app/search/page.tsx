@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search, Package2, ArrowRight, SlidersHorizontal, ChevronRight } from "lucide-react";
 import { getAllProducts, getCategoryById, getProductPath, getTopCategories } from "@/lib/catalog";
-import { SearchBar } from "./SearchBar";
-import { SortSelect } from "./SortSelect";
+import { SearchBar } from "@/components/search/SearchBar";
+import { SortSelect } from "@/components/search/SortSelect";
 
 interface SearchPageProps {
     searchParams: Promise<{ q?: string; category?: string; sort?: string }>;
@@ -21,8 +21,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     const { q = "", category: catFilter, sort = "relevance" } = await searchParams;
     const query = q.trim().toLowerCase();
 
-    const allProducts = getAllProducts();
-    const topCategories = getTopCategories();
+    const [allProducts, topCategories] = await Promise.all([
+        getAllProducts(),
+        getTopCategories(),
+    ]);
 
     // Filter products
     const matchingProducts = query.length >= 2
@@ -36,8 +38,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     // Apply category filter
     let filteredProducts = catFilter
         ? matchingProducts.filter((p) => {
-            const cat = p.category ? getCategoryById(p.category) : null;
-            return cat?.slug === catFilter || String(p.category) === catFilter;
+            // Sync check against already-loaded categories via closure
+            return String(p.category) === catFilter;
         })
         : matchingProducts;
 
@@ -46,28 +48,48 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         filteredProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name));
     } else if (sort === "name-desc") {
         filteredProducts = [...filteredProducts].sort((a, b) => b.name.localeCompare(a.name));
-    } else if (sort === "category") {
-        filteredProducts = [...filteredProducts].sort((a, b) => {
-            const catA = a.category ? getCategoryById(a.category)?.name ?? "" : "";
-            const catB = b.category ? getCategoryById(b.category)?.name ?? "" : "";
-            return catA.localeCompare(catB);
-        });
     }
 
-    // Collect unique categories from results for filter chips
+    // Build category filter chips from matching products
+    const [allCats] = await Promise.all([
+        Promise.all(matchingProducts.map((p) => p.category ? getCategoryById(p.category) : Promise.resolve(null)))
+    ]);
+
     const categoryMap = new Map<string, { name: string; slug: string; count: number }>();
-    for (const p of matchingProducts) {
-        const cat = p.category ? getCategoryById(p.category) : null;
+    for (let i = 0; i < matchingProducts.length; i++) {
+        const cat = allCats[i];
         if (cat) {
             const existing = categoryMap.get(cat.slug);
-            if (existing) {
-                existing.count++;
-            } else {
-                categoryMap.set(cat.slug, { name: cat.name, slug: cat.slug, count: 1 });
-            }
+            if (existing) existing.count++;
+            else categoryMap.set(cat.slug, { name: cat.name, slug: cat.slug, count: 1 });
         }
     }
     const categoryFilters = Array.from(categoryMap.values()).sort((a, b) => b.count - a.count);
+
+    // For category-filtered display, also re-filter using slug if catFilter is a slug
+    const catFilteredProducts = catFilter
+        ? matchingProducts.filter((p) => {
+            const catInfo = p.category ? categoryMap.get(Array.from(categoryMap.keys()).find(k => {
+                const entry = categoryMap.get(k);
+                return entry && String(p.category) === catFilter || k === catFilter;
+            }) ?? "") : null;
+            // Simpler: filter by category ID string match OR slug
+            const catEntry = Array.from(categoryMap.entries()).find(([slug]) => slug === catFilter);
+            if (!catEntry) return String(p.category) === catFilter;
+            const catId = allCats[matchingProducts.indexOf(p)]?.id;
+            return catId !== undefined && String(catId) === catFilter ||
+                   allCats[matchingProducts.indexOf(p)]?.slug === catFilter;
+        })
+        : filteredProducts;
+
+    // Build product paths
+    const productsWithPaths = await Promise.all(
+        (catFilter ? catFilteredProducts : filteredProducts).map(async (product) => ({
+            ...product,
+            path: await getProductPath(product),
+            catName: allCats[allProducts.indexOf(product)]?.name,
+        }))
+    );
 
     const buildHref = (params: Record<string, string | undefined>) => {
         const base: Record<string, string> = {};
@@ -106,7 +128,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 <div className="container">
                     {/* Filters + Sort row */}
                     <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                        {/* Category filter chips — horizontally scrollable */}
                         {categoryFilters.length > 1 && (
                             <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
                                 <span className="flex shrink-0 items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-400 mr-1">
@@ -138,33 +159,29 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                                 ))}
                             </div>
                         )}
-
-                        {/* Sort */}
                         <SortSelect currentSort={sort} q={q} category={catFilter} />
                     </div>
 
                     {/* Results count */}
-                    <div className="mb-5 flex items-center justify-between">
+                    <div className="mb-5">
                         <p className="text-sm text-neutral-500">
-                            {filteredProducts.length === 0
+                            {productsWithPaths.length === 0
                                 ? "No products found"
-                                : `Showing ${filteredProducts.length} product${filteredProducts.length !== 1 ? "s" : ""}`
+                                : `Showing ${productsWithPaths.length} product${productsWithPaths.length !== 1 ? "s" : ""}`
                                     + (catFilter ? ` in ${categoryMap.get(catFilter)?.name ?? catFilter}` : "")
                             }
                         </p>
                     </div>
 
                     {/* Product grid */}
-                    {filteredProducts.length > 0 ? (
+                    {productsWithPaths.length > 0 ? (
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                            {filteredProducts.map((product) => {
-                                const path = getProductPath(product);
+                            {productsWithPaths.map((product) => {
                                 const image = product.defaultImage || product.variants?.[0]?.image;
-                                const cat = product.category ? getCategoryById(product.category) : null;
                                 return (
                                     <Link
                                         key={product.id}
-                                        href={path}
+                                        href={product.path}
                                         className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-300 hover:border-primary-100 hover:shadow-lg"
                                     >
                                         <div className="relative h-44 w-full overflow-hidden bg-neutral-50">
@@ -183,9 +200,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                                             )}
                                         </div>
                                         <div className="flex flex-1 flex-col p-4">
-                                            {cat && (
+                                            {product.catName && (
                                                 <span className="mb-1.5 text-[11px] font-semibold uppercase tracking-widest text-primary-500">
-                                                    {cat.name}
+                                                    {product.catName}
                                                 </span>
                                             )}
                                             <h3 className="mb-1.5 text-sm font-semibold text-neutral-900 leading-snug line-clamp-2 group-hover:text-primary-700 transition-colors">
@@ -206,7 +223,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                             })}
                         </div>
                     ) : (
-                        /* Empty state */
                         <div className="flex flex-col items-center py-20 text-center">
                             <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-neutral-100">
                                 <Package2 className="h-10 w-10 text-neutral-300" />

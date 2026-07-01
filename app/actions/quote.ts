@@ -71,10 +71,21 @@ export type QuoteFormState = {
 
 export async function submitQuoteRequest(prevState: QuoteFormState, formData: FormData): Promise<QuoteFormState> {
     try {
-        // Rate limiting by IP
+        // Debug: log incoming form keys and cartItems length to help trace aborted requests
+        try {
+            const keys: string[] = [];
+            formData.forEach((v, k) => keys.push(k));
+            const cartStr = formData.get("cartItems")?.toString() || "";
+            console.log("[DEBUG] submitQuoteRequest received keys:", keys, "cartItems length:", cartStr.length);
+        } catch (e) {
+            console.log("[DEBUG] submitQuoteRequest: failed to inspect formData", e);
+        }
+        // Rate limiting by IP — use the rightmost value in X-Forwarded-For (set by the
+        // trusted proxy/CDN) not the leftmost, which is client-supplied and spoofable.
         const headersList = await headers();
         const forwardedFor = headersList.get("x-forwarded-for");
-        const clientIp = forwardedFor?.split(",")[0].trim() || "unknown";
+        const parts = forwardedFor?.split(",").map((s) => s.trim()).filter(Boolean) ?? [];
+        const clientIp = parts[parts.length - 1] || "unknown";
 
         if (!checkRateLimit(clientIp)) {
             return {

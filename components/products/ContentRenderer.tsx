@@ -41,7 +41,6 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
                     case "gallery":
                         return <GalleryBlock key={index} data={block.data} />;
                     default:
-                        console.warn(`Unknown block type ${block.type}`);
                         return null;
                 }
             })}

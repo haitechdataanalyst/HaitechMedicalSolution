@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { CloseIcon, ChevronDownIcon } from "@/components/icons";
 import { EnhancedNavItem } from "@/lib/navigation";
 import { RocketIcon } from "lucide-react";
+import { COMMERCE_ENABLED } from "@/lib/config";
 
 interface MobileMenuProps {
     items: EnhancedNavItem[];
@@ -195,22 +196,24 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
 
                 {/* Auth + CTA — pinned to bottom */}
                 <div className="border-t border-neutral-100 p-4 space-y-2">
-                    <div className="grid grid-cols-2 gap-2">
-                        <Link
-                            href="/login"
-                            onClick={onClose}
-                            className="flex items-center justify-center rounded-xl border border-neutral-200 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
-                        >
-                            Sign In
-                        </Link>
-                        <Link
-                            href="/signup"
-                            onClick={onClose}
-                            className="flex items-center justify-center rounded-xl border border-primary-200 bg-primary-50 py-2.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100"
-                        >
-                            Register
-                        </Link>
-                    </div>
+                    {COMMERCE_ENABLED && (
+                        <div className="grid grid-cols-2 gap-2">
+                            <Link
+                                href="/login"
+                                onClick={onClose}
+                                className="flex items-center justify-center rounded-xl border border-neutral-200 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                            >
+                                Sign In
+                            </Link>
+                            <Link
+                                href="/signup"
+                                onClick={onClose}
+                                className="flex items-center justify-center rounded-xl border border-primary-200 bg-primary-50 py-2.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100"
+                            >
+                                Register
+                            </Link>
+                        </div>
+                    )}
                     <Link
                         href="/support/contact"
                         onClick={onClose}

@@ -4,15 +4,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "./CartProvider";
 import { calculateCartTotal, getCartItemKey } from "@/lib/cart";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { CloseIcon, CartIcon, TrashIcon, ImageIcon } from "@/components/icons";
 import { ShoppingBag, ArrowRight, Truck } from "lucide-react";
 import { SafeImage } from "@/components/ui";
 import { toast } from "sonner";
-
-function formatINR(amount: number) {
-    return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(amount);
-}
 
 export default function CartDrawer() {
     const { items, isOpen, closeCart, removeItem, updateQuantity } = useCart();
@@ -151,7 +147,7 @@ export default function CartDrawer() {
                                         {/* Price */}
                                         <div className="shrink-0 text-right">
                                             {lineTotal ? (
-                                                <p className="text-sm font-bold text-neutral-900">{formatINR(lineTotal)}</p>
+                                                <p className="text-sm font-bold text-neutral-900">{formatPrice(lineTotal)}</p>
                                             ) : (
                                                 <p className="text-xs text-neutral-400">On request</p>
                                             )}
@@ -176,7 +172,7 @@ export default function CartDrawer() {
                         {total > 0 && (
                             <div className="flex items-center justify-between rounded-xl bg-neutral-50 px-4 py-3">
                                 <span className="text-sm font-medium text-neutral-600">Order Total</span>
-                                <span className="text-lg font-bold text-neutral-900">{formatINR(total)}</span>
+                                <span className="text-lg font-bold text-neutral-900">{formatPrice(total)}</span>
                             </div>
                         )}
 

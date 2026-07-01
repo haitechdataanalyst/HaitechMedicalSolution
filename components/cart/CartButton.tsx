@@ -3,9 +3,14 @@
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "./CartProvider";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 export default function CartButton() {
     const { itemCount, toggleCart } = useCart();
+    const { user, isLoading } = useAuth();
+
+    // Hide for unauthenticated users
+    if (isLoading || !user) return null;
 
     return (
         <button

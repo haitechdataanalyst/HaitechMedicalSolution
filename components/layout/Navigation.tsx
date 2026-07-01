@@ -21,7 +21,7 @@ const BRAND_LOGOS: Record<string, string> = {
     Almadent: "/BrandLogo/AlmadentLogo.jpg",
     Medesy: "/BrandLogo/MedesyLogo.jpg",
     Salli: "/BrandLogo/SalliLogo.png",
-    Strauss: "/BrandLogo/StraussLogo.jpg",
+    Strauss: "/BrandLogo/StraussLogo.png",
 };
 
 const LINKS_MAX = 5;

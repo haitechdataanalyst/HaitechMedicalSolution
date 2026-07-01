@@ -1,0 +1,10 @@
+export * as userRepository from './user.repository.js';
+export * as addressRepository from './address.repository.js';
+export * as orderRepository from './order.repository.js';
+export * as cartRepository from './cart.repository.js';
+export * as wishlistRepository from './wishlist.repository.js';
+export * as shipmentRepository from './shipment.repository.js';
+export * as reviewRepository from './review.repository.js';
+export * as notificationRepository from './notification.repository.js';
+export * as couponRepository from './coupon.repository.js';
+export * as productRepository from './product.repository.js';

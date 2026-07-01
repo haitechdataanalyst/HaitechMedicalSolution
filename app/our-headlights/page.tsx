@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/ui";
 import { getHeadlightsData } from "@/lib/catalog";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { HeadlightsSelector } from "./HeadlightsSelector";
+import { HeadlightsSelector } from "@/components/headlights/HeadlightsSelector";
 import { getMetadata } from "@/lib/metadata";
 import { getBreadcrumbs } from "@/lib/breadcrumbs";
 import { ArrowRight } from "lucide-react";

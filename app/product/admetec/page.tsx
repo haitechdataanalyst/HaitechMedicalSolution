@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { Eye, Crosshair, Lightbulb, Sparkles, Award, Shield, ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
+import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 
 export const metadata: Metadata = {
     title: "Admetec | Premium Dental Loupes & Headlights",
@@ -154,6 +155,9 @@ export default function AboutAdmetecPage() {
                     </div>
                 </div>
             </section>
+
+            {/* ── 02.5 Ergo V / Ergo V Pro Magnification Selector ── */}
+            <ErgoMagnificationSelector />
 
             {/* ── 03 Headlights ── */}
             <section className="bg-white py-12 md:py-24 lg:py-32">

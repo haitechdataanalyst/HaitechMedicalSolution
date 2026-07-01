@@ -1,0 +1,18 @@
+# security.txt — RFC 9116 (https://securitytxt.org/)
+# Researchers who discover a vulnerability should contact us via the details below.
+# This file is served at /.well-known/security.txt
+
+# Replace with your actual security contact address
+Contact: mailto:security@example.com
+
+# PGP key for encrypted vulnerability reports (add your public key URL here)
+# Encryption: https://example.com/pgp-key.txt
+
+# This file expires after one year — update the date when you redeploy
+Expires: 2027-03-25T00:00:00.000Z
+
+# Where to read about our responsible-disclosure policy
+# Policy: https://example.com/security-policy
+
+# Languages we can handle reports in
+Preferred-Languages: en

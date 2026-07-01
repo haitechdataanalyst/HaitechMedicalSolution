@@ -3,16 +3,60 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Eye, EyeOff, ArrowLeft, ShieldCheck, Star } from "lucide-react";
+import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 export default function LoginPage() {
+    const { login, googleLogin } = useAuth();
+    const router = useRouter();
+
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError("");
+        setIsLoading(true);
+
+        const result = await login(email, password);
+
+        setIsLoading(false);
+
+        if (result.success) {
+            router.push("/");
+        } else {
+            setError(result.message);
+        }
+    };
+
+    const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
+        if (!credentialResponse.credential) {
+            setError("Google sign-in did not return a credential. Please try again.");
+            return;
+        }
+        setError("");
+        setIsGoogleLoading(true);
+
+        const result = await googleLogin(credentialResponse.credential);
+
+        setIsGoogleLoading(false);
+
+        if (result.success) {
+            router.push("/");
+        } else {
+            setError(result.message);
+        }
+    };
+
+    const handleGoogleError = () => {
+        setError("Google sign-in was cancelled or failed. Please try again.");
     };
 
     return (
@@ -30,7 +74,7 @@ export default function LoginPage() {
                         <Image src="/haitech-medical.png" alt="Haitech" width={40} height={40} className="shrink-0" />
                         <div>
                             <p className="text-base font-bold leading-none text-white">Haitech</p>
-                            <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-[#4cd8ef]">Medical Solutions Pvt. Ltd.</p>
+                            <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-accent-teal">Medical Solutions Pvt. Ltd.</p>
                         </div>
                     </Link>
                 </div>
@@ -91,7 +135,7 @@ export default function LoginPage() {
                 </div>
             </div>
 
-            {/* ── Right panel — matches register layout exactly ── */}
+            {/* ── Right panel ── */}
             <div className="relative flex flex-1 flex-col justify-center overflow-y-auto px-6 py-16 sm:px-10 lg:px-14 xl:px-20">
 
                 {/* Back to home */}
@@ -103,7 +147,7 @@ export default function LoginPage() {
                     Home
                 </Link>
 
-                {/* Mobile logo — hidden on lg+ when left panel shows */}
+                {/* Mobile logo */}
                 <div className="mb-6 lg:hidden">
                     <Image src="/haitech_medical_logo.png" alt="Haitech Medical" width={150} height={31} className="h-auto" />
                 </div>
@@ -114,6 +158,44 @@ export default function LoginPage() {
                     <div className="mb-7">
                         <h1 className="mb-1.5 text-2xl font-bold text-neutral-900">Welcome back</h1>
                         <p className="text-sm text-neutral-500">Sign in to your Haitech account to manage orders</p>
+                    </div>
+
+                    {/* Error banner */}
+                    {error && (
+                        <div className="mb-5 flex items-start gap-3 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
+                            <span className="mt-px shrink-0">⚠</span>
+                            {error}
+                        </div>
+                    )}
+
+                    {/* ── Google Sign-In ── */}
+                    <div className="mb-6">
+                        {isGoogleLoading ? (
+                            <div className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white text-sm font-medium text-neutral-600">
+                                <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-300 border-t-neutral-600" />
+                                Signing in with Google…
+                            </div>
+                        ) : (
+                            <div className="flex justify-center">
+                                <GoogleLogin
+                                    onSuccess={handleGoogleSuccess}
+                                    onError={handleGoogleError}
+                                    theme="outline"
+                                    size="large"
+                                    shape="pill"
+                                    width="400"
+                                    text="signin_with"
+                                    logo_alignment="left"
+                                />
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Divider */}
+                    <div className="relative mb-6 flex items-center">
+                        <div className="flex-1 border-t border-neutral-200" />
+                        <span className="mx-4 shrink-0 text-xs font-medium text-neutral-400">or sign in with email</span>
+                        <div className="flex-1 border-t border-neutral-200" />
                     </div>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -141,7 +223,7 @@ export default function LoginPage() {
                                 <label htmlFor="password" className="text-sm font-medium text-neutral-700">
                                     Password <span className="text-red-400">*</span>
                                 </label>
-                                <Link href="/support/contact" className="text-xs font-semibold text-primary-500 hover:underline">
+                                <Link href="/forgot-password" className="text-xs font-semibold text-primary-500 hover:underline">
                                     Forgot password?
                                 </Link>
                             </div>
@@ -181,10 +263,18 @@ export default function LoginPage() {
                         {/* CTA */}
                         <button
                             type="submit"
-                            className="btn btn-primary btn-lg w-full rounded-full"
+                            disabled={isLoading}
+                            className="btn btn-primary btn-lg w-full rounded-full disabled:opacity-60"
                             style={{ boxShadow: "0 6px 24px -4px rgb(31 182 205 / 0.45)", paddingBlock: "0.9375rem" }}
                         >
-                            Sign In
+                            {isLoading ? (
+                                <span className="flex items-center justify-center gap-2">
+                                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                                    Signing in…
+                                </span>
+                            ) : (
+                                "Sign In"
+                            )}
                         </button>
                     </form>
 

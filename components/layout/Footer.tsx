@@ -64,7 +64,7 @@ export default function Footer({ sections, config }: FooterProps) {
                             />
                             <div>
                                 <p className="text-base font-bold leading-none text-white">Haitech</p>
-                                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-[#4cd8ef]">Medical Solutions Pvt. Ltd.</p>
+                                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-accent-teal">Medical Solutions Pvt. Ltd.</p>
                             </div>
                         </Link>
                         <p className="mb-6 max-w-xs text-sm leading-relaxed text-navy-300">

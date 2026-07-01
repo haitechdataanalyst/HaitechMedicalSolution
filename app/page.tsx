@@ -6,9 +6,11 @@ import { testimonials } from "@/data/testimonials.json";
 import Image from "next/image";
 import { ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 
-export default function Home() {
-    const products = getRandomProductsForEachCategory(8);
-    const featuredProducts = products.map((p) => ({ ...p, path: getProductPath(p) }));
+export default async function Home() {
+    const products = await getRandomProductsForEachCategory(8);
+    const featuredProducts = await Promise.all(
+        products.map(async (p) => ({ ...p, path: await getProductPath(p) }))
+    );
 
     return (
         <>

@@ -1,8 +1,10 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from "react";
+import { createContext, useContext, useEffect, useState, useRef, ReactNode, useCallback } from "react";
 import { CartItem } from "@/types";
 import { getCartItemKey } from "@/lib/cart";
+import { cartApi, getAccessToken } from "@/lib/api";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 interface CartContextType {
     items: CartItem[];
@@ -34,53 +36,140 @@ export function useCart() {
     return useContext(CartContext);
 }
 
-const CART_STORAGE_KEY = "haitech-cart";
+const readLocal = (key: string): CartItem[] => {
+    try {
+        const s = localStorage.getItem(key);
+        return s ? JSON.parse(s) : [];
+    } catch {
+        return [];
+    }
+};
+
+const writeLocal = (key: string, items: CartItem[]) => {
+    try {
+        localStorage.setItem(key, JSON.stringify(items));
+    } catch {}
+};
 
 export function CartProvider({ children }: { children: ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([]);
-    const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const { user, isLoading: authLoading } = useAuth();
+    const serverItemIdMap = useRef(new Map<string, string>());
+    // undefined = not yet initialized, null = guest, string = userId
+    const prevUserIdRef = useRef<string | null | undefined>(undefined);
 
-    // Load from localStorage on mount
+    // React to user login / logout / switch
     useEffect(() => {
-        const saved = localStorage.getItem(CART_STORAGE_KEY);
-        if (saved) {
+        if (authLoading) return;
+
+        const currentUserId = user?.id ?? null;
+        if (prevUserIdRef.current === currentUserId) return;
+        prevUserIdRef.current = currentUserId;
+
+        serverItemIdMap.current.clear();
+
+        // Guest: always empty, nothing persisted
+        if (!currentUserId) {
+            setItems([]);
+            return;
+        }
+
+        // Logged-in user: load from their scoped localStorage first
+        const storageKey = `haitech-cart-${currentUserId}`;
+        const local = readLocal(storageKey);
+        setItems(local);
+
+        const syncPayload = local.map((item) => ({
+            productId: item.productId,
+            productName: item.productName,
+            productSku: item.sku,
+            quantity: item.quantity,
+            unitPrice: item.basePrice ?? 0,
+            customization: item.customization ? JSON.stringify(item.customization) : undefined,
+        }));
+
+        const doSync = async () => {
             try {
-                setItems(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to load cart:", e);
-            }
-        }
-        setMounted(true);
-    }, []);
+                const res = syncPayload.length > 0
+                    ? await cartApi.syncCart(syncPayload)
+                    : await cartApi.getCart();
 
-    // Save to localStorage whenever items change
+                if (res.success && res.data) {
+                    const serverItemsList = res.data.cart.items;
+                    serverItemIdMap.current.clear();
+
+                    const mapped: CartItem[] = serverItemsList.map((si) => {
+                        let customization: Record<string, string | number> | undefined;
+                        try {
+                            if (si.customization) customization = JSON.parse(si.customization);
+                        } catch {}
+
+                        const item: CartItem = {
+                            productId: si.productId,
+                            productName: si.productName,
+                            sku: si.productSku ?? "",
+                            quantity: si.quantity,
+                            basePrice: si.unitPrice,
+                            customization,
+                        };
+                        serverItemIdMap.current.set(getCartItemKey(item), si.id);
+                        return item;
+                    });
+
+                    setItems(mapped);
+                    writeLocal(storageKey, mapped);
+                }
+            } catch {}
+        };
+
+        doSync();
+    }, [authLoading, user?.id]);
+
+    // Persist to localStorage only when a user is logged in
     useEffect(() => {
-        if (mounted) {
-            localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
-        }
-    }, [items, mounted]);
+        if (!user?.id) return;
+        writeLocal(`haitech-cart-${user.id}`, items);
+    }, [items, user?.id]);
 
     const addItem = useCallback((newItem: CartItem) => {
         setItems((current) => {
-            const newItemKey = getCartItemKey(newItem);
-            const existingIndex = current.findIndex((item) => getCartItemKey(item) === newItemKey);
-
+            const key = getCartItemKey(newItem);
+            const existingIndex = current.findIndex((item) => getCartItemKey(item) === key);
             if (existingIndex >= 0) {
-                // Update quantity of existing item
-                return current.map((item, index) => (index === existingIndex ? { ...item, quantity: item.quantity + newItem.quantity } : item));
+                return current.map((item, i) =>
+                    i === existingIndex ? { ...item, quantity: item.quantity + newItem.quantity } : item
+                );
             }
-
-            // Add new item
             return [...current, newItem];
         });
 
-        // Open cart when adding item
         setIsOpen(true);
+
+        if (getAccessToken()) {
+            cartApi.addItem({
+                productId: newItem.productId,
+                productName: newItem.productName,
+                productSku: newItem.sku,
+                quantity: newItem.quantity,
+                unitPrice: newItem.basePrice ?? 0,
+                customization: newItem.customization ? JSON.stringify(newItem.customization) : undefined,
+            }).then((res) => {
+                if (res.success && res.data) {
+                    serverItemIdMap.current.set(getCartItemKey(newItem), res.data.item.id);
+                }
+            }).catch(() => {});
+        }
     }, []);
 
     const removeItem = useCallback((itemKey: string) => {
         setItems((current) => current.filter((item) => getCartItemKey(item) !== itemKey));
+
+        const serverId = serverItemIdMap.current.get(itemKey);
+        if (getAccessToken() && serverId) {
+            serverItemIdMap.current.delete(itemKey);
+            cartApi.removeItem(serverId).catch(() => {});
+        }
     }, []);
 
     const updateQuantity = useCallback(
@@ -90,13 +179,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 return;
             }
 
-            setItems((current) => current.map((item) => (getCartItemKey(item) === itemKey ? { ...item, quantity } : item)));
+            setItems((current) =>
+                current.map((item) => (getCartItemKey(item) === itemKey ? { ...item, quantity } : item))
+            );
+
+            const serverId = serverItemIdMap.current.get(itemKey);
+            if (getAccessToken() && serverId) {
+                cartApi.updateItem(serverId, quantity).catch(() => {});
+            }
         },
         [removeItem]
     );
 
     const clearCart = useCallback(() => {
         setItems([]);
+        serverItemIdMap.current.clear();
+        if (getAccessToken()) {
+            cartApi.clearCart().catch(() => {});
+        }
     }, []);
 
     const openCart = useCallback(() => setIsOpen(true), []);

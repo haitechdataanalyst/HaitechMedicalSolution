@@ -61,7 +61,7 @@ const brands = [
     {
         name: "Strauss",
         tagline: "Diamond burs & precision cutting instruments for every procedure.",
-        image: "/BrandLogo/StraussLogo.jpg",
+        image: "/BrandLogo/StraussLogo.png",
         href: "/product/strauss",
         accentColor: "bg-violet-500",
         badge: "Burs",

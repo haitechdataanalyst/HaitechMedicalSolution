@@ -3,8 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Eye, EyeOff, ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2, Check } from "lucide-react";
+import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 import { cn } from "@/lib/utils";
+import { authApi, setAccessToken } from "@/lib/api";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 const PROFESSIONS = [
     "General Dentist", "Orthodontist", "Oral Surgeon", "Periodontist",
@@ -17,7 +21,7 @@ const BRANDS = [
     { name: "Almadent", src: "/BrandLogo/AlmadentLogo.jpg" },
     { name: "Medesy", src: "/BrandLogo/MedesyLogo.jpg" },
     { name: "Salli", src: "/BrandLogo/SalliLogo.png" },
-    { name: "Strauss", src: "/BrandLogo/StraussLogo.jpg" },
+    { name: "Strauss", src: "/BrandLogo/StraussLogo.png" },
 ];
 
 const STATS = [
@@ -51,10 +55,13 @@ function getPasswordStrength(pwd: string): { score: number; label: string; color
 function isValidEmail(e: string) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 
 export default function SignupPage() {
+    const { googleLogin } = useAuth();
+    const router = useRouter();
     const [step, setStep] = useState(1);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isGoogleLoading, setIsGoogleLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
     const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -95,15 +102,59 @@ export default function SignupPage() {
 
     const handleBack = () => { setError(""); setStep((s) => s - 1); };
 
+    const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
+        if (!credentialResponse.credential) {
+            setError("Google sign-in did not return a credential. Please try again.");
+            return;
+        }
+        setError("");
+        setIsGoogleLoading(true);
+
+        const result = await googleLogin(credentialResponse.credential);
+
+        setIsGoogleLoading(false);
+
+        if (result.success) {
+            router.push("/");
+        } else {
+            setError(result.message);
+        }
+    };
+
+    const handleGoogleError = () => {
+        setError("Google sign-in was cancelled or failed. Please try again.");
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const err = validateStep(3);
         if (err) { setError(err); return; }
         setError("");
         setIsLoading(true);
-        await new Promise((r) => setTimeout(r, 1400));
+
+        const nameParts = form.fullName.trim().split(/\s+/);
+        const firstName = nameParts[0] || "User";
+        const lastName = nameParts.slice(1).join(" ") || nameParts[0] || "User";
+        const rawUsername = form.email.split("@")[0].replace(/[^a-z0-9]/gi, "").toLowerCase();
+        const username = rawUsername.length >= 3 ? rawUsername : `user${Date.now()}`;
+
+        const res = await authApi.register({
+            firstName,
+            lastName,
+            username,
+            email: form.email,
+            phone: form.phone.replace(/\D/g, ""),
+            password: form.password,
+        });
+
         setIsLoading(false);
-        setSuccess(true);
+
+        if (res.success && res.data) {
+            setAccessToken(res.data.accessToken);
+            setSuccess(true);
+        } else {
+            setError(res.message || "Registration failed. Please try again.");
+        }
     };
 
     if (success) {
@@ -148,7 +199,7 @@ export default function SignupPage() {
                         <Image src="/haitech-medical.png" alt="Haitech" width={40} height={40} className="shrink-0" />
                         <div>
                             <p className="text-base font-bold leading-none text-white">Haitech</p>
-                            <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-[#4cd8ef]">Medical Solutions Pvt. Ltd.</p>
+                            <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-accent-teal">Medical Solutions Pvt. Ltd.</p>
                         </div>
                     </Link>
                 </div>
@@ -216,6 +267,36 @@ export default function SignupPage() {
                     <div className="mb-7">
                         <h1 className="mb-1.5 text-2xl font-bold text-neutral-900">Create your account</h1>
                         <p className="text-sm text-neutral-500">Get access to exclusive products and pricing</p>
+                    </div>
+
+                    {/* ── Google Sign-Up ── */}
+                    <div className="mb-6">
+                        {isGoogleLoading ? (
+                            <div className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white text-sm font-medium text-neutral-600">
+                                <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-300 border-t-neutral-600" />
+                                Signing up with Google…
+                            </div>
+                        ) : (
+                            <div className="flex justify-center">
+                                <GoogleLogin
+                                    onSuccess={handleGoogleSuccess}
+                                    onError={handleGoogleError}
+                                    theme="outline"
+                                    size="large"
+                                    shape="pill"
+                                    width="400"
+                                    text="signup_with"
+                                    logo_alignment="left"
+                                />
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Divider */}
+                    <div className="relative mb-6 flex items-center">
+                        <div className="flex-1 border-t border-neutral-200" />
+                        <span className="mx-4 shrink-0 text-xs font-medium text-neutral-400">or create account with email</span>
+                        <div className="flex-1 border-t border-neutral-200" />
                     </div>
 
                     {/* Step indicator */}

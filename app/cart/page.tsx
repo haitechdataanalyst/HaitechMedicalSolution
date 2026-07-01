@@ -6,14 +6,7 @@ import { useRouter } from "next/navigation";
 import { useCart } from "@/components/cart/CartProvider";
 import { getCartItemKey } from "@/lib/cart";
 import { ShoppingCart, Trash2, ArrowRight, Truck, Shield, Tag, ChevronRight } from "lucide-react";
-
-function formatINR(amount: number) {
-    return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        maximumFractionDigits: 0,
-    }).format(amount);
-}
+import { formatPrice } from "@/lib/utils";
 
 export default function CartPage() {
     const { items, removeItem, updateQuantity, itemCount } = useCart();
@@ -154,9 +147,9 @@ export default function CartPage() {
                                             <div className="shrink-0 text-right">
                                                 {lineTotal ? (
                                                     <>
-                                                        <p className="text-base font-bold text-neutral-900">{formatINR(lineTotal)}</p>
+                                                        <p className="text-base font-bold text-neutral-900">{formatPrice(lineTotal)}</p>
                                                         {item.quantity > 1 && (
-                                                            <p className="mt-0.5 text-xs text-neutral-400">{formatINR(item.basePrice!)} each</p>
+                                                            <p className="mt-0.5 text-xs text-neutral-400">{formatPrice(item.basePrice!)} each</p>
                                                         )}
                                                     </>
                                                 ) : (
@@ -206,7 +199,7 @@ export default function CartPage() {
                                             Price ({itemCount} {itemCount === 1 ? "item" : "items"})
                                         </span>
                                         <span className="font-medium text-neutral-900">
-                                            {subtotal > 0 ? formatINR(subtotal) : "—"}
+                                            {subtotal > 0 ? formatPrice(subtotal) : "—"}
                                         </span>
                                     </div>
                                     <div className="flex items-center justify-between text-sm">
@@ -222,7 +215,7 @@ export default function CartPage() {
                                         <div className="flex items-center justify-between">
                                             <span className="font-bold text-neutral-900">Total Amount</span>
                                             <span className="text-xl font-bold text-neutral-900">
-                                                {subtotal > 0 ? formatINR(subtotal) : "—"}
+                                                {subtotal > 0 ? formatPrice(subtotal) : "—"}
                                             </span>
                                         </div>
                                         {subtotal > 0 && (

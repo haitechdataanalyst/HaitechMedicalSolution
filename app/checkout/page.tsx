@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/components/cart/CartProvider";
 import { getCartItemKey } from "@/lib/cart";
-import { submitQuoteRequest, QuoteFormState } from "@/app/actions/quote";
+import { orderApi, paymentApi } from "@/lib/api";
+import QuoteForm from "@/components/cart/QuoteForm";
 import {
     CheckCircle2,
     ChevronRight,
@@ -20,15 +21,12 @@ import {
     ShoppingCart,
     ArrowLeft,
 } from "lucide-react";
+import { formatPrice } from "@/lib/utils";
 
-const initialState: QuoteFormState = { success: false };
-
-function formatINR(amount: number) {
-    return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        maximumFractionDigits: 0,
-    }).format(amount);
+declare global {
+    interface Window {
+        Razorpay: new (options: Record<string, unknown>) => { open: () => void };
+    }
 }
 
 function InputField({
@@ -60,24 +58,131 @@ function InputField({
     );
 }
 
+const loadRazorpayScript = (): Promise<void> =>
+    new Promise((resolve, reject) => {
+        if (typeof window !== "undefined" && window.Razorpay) { resolve(); return; }
+        const script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error("Failed to load Razorpay"));
+        document.body.appendChild(script);
+    });
+
 export default function CheckoutPage() {
     const { items, clearCart, itemCount } = useCart();
-    const [state, formAction, isPending] = useActionState(submitQuoteRequest, initialState);
-    const [showSuccess, setShowSuccess] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const formTimestamp = useRef(Date.now().toString());
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [formError, setFormError] = useState<string | null>(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => setMounted(true), []);
 
-    useEffect(() => {
-        if (state.success) {
-            clearCart();
-            setShowSuccess(true);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    }, [state.success, clearCart]);
-
     const subtotal = items.reduce((sum, item) => sum + (item.basePrice ?? 0) * item.quantity, 0);
+    const hasPricedItems = subtotal > 0;
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setFormError(null);
+        setIsSubmitting(true);
+
+        const formData = new FormData(e.currentTarget);
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const phone = formData.get("phone") as string;
+        const company = formData.get("company") as string;
+        const message = formData.get("message") as string;
+
+        try {
+            if (!hasPricedItems) {
+                // Fall back to quote flow via server action for price-on-request items
+                const { submitQuoteRequest } = await import("@/app/actions/quote");
+                const result = await submitQuoteRequest({ success: false }, formData);
+                    console.log("[DEBUG] submitQuoteRequest result:", result);
+                if (result.success) {
+                    clearCart();
+                    setShowSuccess(true);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                    setFormError(result.error ?? "Failed to submit quote. Please try again.");
+                }
+                setIsSubmitting(false);
+                return;
+            }
+
+            // ── Razorpay payment flow ──────────────────────────────────────────
+            const orderRes = await orderApi.createOrder({
+                items: items.map((item) => ({
+                    productId: item.productId,
+                    productName: item.productName,
+                    productSku: item.sku,
+                    quantity: item.quantity,
+                    unitPrice: item.basePrice ?? 0,
+                    totalPrice: (item.basePrice ?? 0) * item.quantity,
+                })),
+                notes: [company, message].filter(Boolean).join(" | ") || undefined,
+            });
+
+            if (!orderRes.success || !orderRes.data) {
+                const msg = orderRes.message ?? "Failed to create order";
+                if (orderRes.statusCode === 401) {
+                    setFormError("Please sign in to complete your purchase.");
+                } else {
+                    setFormError(msg);
+                }
+                setIsSubmitting(false);
+                return;
+            }
+
+            const payRes = await paymentApi.createPaymentOrder(orderRes.data.order.id);
+            if (!payRes.success || !payRes.data) {
+                setFormError(payRes.message ?? "Failed to initiate payment. Please try again.");
+                setIsSubmitting(false);
+                return;
+            }
+
+            await loadRazorpayScript();
+
+            const rzp = new window.Razorpay({
+                key: payRes.data.keyId,
+                amount: payRes.data.amount,
+                currency: payRes.data.currency,
+                order_id: payRes.data.razorpayOrderId,
+                name: "Haitech Medical",
+                description: "Medical Equipment Purchase",
+                prefill: { name, email, contact: phone },
+                theme: { color: "#1fb6cd" },
+                handler: async (response: Record<string, string>) => {
+                    try {
+                        const verifyRes = await paymentApi.verifyPayment({
+                            orderId: orderRes.data!.order.id,
+                            razorpayOrderId: response.razorpay_order_id,
+                            razorpayPaymentId: response.razorpay_payment_id,
+                            razorpaySignature: response.razorpay_signature,
+                        });
+                        if (verifyRes.success) {
+                            clearCart();
+                            setShowSuccess(true);
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        } else {
+                            setFormError("Payment verified but confirmation failed. Please contact support.");
+                        }
+                    } catch {
+                        setFormError("Payment verification failed. Please contact support.");
+                    }
+                    setIsSubmitting(false);
+                },
+                modal: {
+                    ondismiss: () => setIsSubmitting(false),
+                },
+            });
+
+            rzp.open();
+        } catch (err) {
+            setFormError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+            setIsSubmitting(false);
+        }
+    };
 
     /* ── Order Confirmed ── */
     if (showSuccess) {
@@ -92,10 +197,12 @@ export default function CheckoutPage() {
                     </div>
                     <h1 className="mb-3 mt-4 text-2xl font-bold text-neutral-900">Order Placed Successfully!</h1>
                     <p className="mb-2 text-neutral-600">
-                        Thank you! We've received your order and will confirm shortly.
+                        {hasPricedItems
+                            ? "Payment received. We'll process and ship your order shortly."
+                            : "Thank you! We've received your order and will confirm shortly."}
                     </p>
                     <p className="mb-8 max-w-md text-sm text-neutral-400">
-                        Our team will call / email you within 24 hours to confirm availability and arrange payment.
+                        Our team will contact you within 24 hours to confirm availability and arrange delivery.
                     </p>
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
@@ -105,10 +212,10 @@ export default function CheckoutPage() {
                             Continue Shopping
                         </Link>
                         <Link
-                            href="/"
+                            href="/account/orders"
                             className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-8 py-3.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
                         >
-                            Back to Home
+                            View Orders
                         </Link>
                     </div>
                 </div>
@@ -171,7 +278,6 @@ export default function CheckoutPage() {
                     {/* ── Left: Delivery form ── */}
                     <div className="min-w-0 flex-1 space-y-4">
 
-                        {/* Delivery address card */}
                         <div className="overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm">
                             <div className="flex items-center gap-3 border-b border-neutral-100 px-6 py-4">
                                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary-500 text-xs font-bold text-white">1</div>
@@ -181,17 +287,17 @@ export default function CheckoutPage() {
                                 </div>
                             </div>
 
-                            <form action={formAction} className="p-6">
-                                {/* Hidden bot protection fields */}
+                            {hasPricedItems ? (
+                                <form ref={formRef} onSubmit={handleSubmit} className="p-6">
+                                {/* Hidden fields required by the quote flow (cart items, honeypot, timestamp) */}
                                 <input type="hidden" name="cartItems" value={JSON.stringify(items)} />
-                                <input type="hidden" name="formTimestamp" value={formTimestamp.current} />
-                                <div className="absolute -left-[9999px]" aria-hidden="true">
+                                <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
                                     <input type="text" name="website" tabIndex={-1} autoComplete="off" />
                                 </div>
-
-                                {state.error && !state.fieldErrors && (
+                                <input type="hidden" name="formTimestamp" value={Date.now().toString()} />
+                                {formError && (
                                     <div className="mb-5 rounded-xl border border-red-200 bg-red-50 p-3.5 text-sm text-red-600">
-                                        {state.error}
+                                        {formError}
                                     </div>
                                 )}
 
@@ -203,7 +309,6 @@ export default function CheckoutPage() {
                                         type="text"
                                         required
                                         placeholder="Dr. Ranvijay Singh"
-                                        error={state.fieldErrors?.name}
                                     />
                                     <InputField
                                         label="Phone Number"
@@ -212,7 +317,6 @@ export default function CheckoutPage() {
                                         type="tel"
                                         required
                                         placeholder="+91 9876543210"
-                                        error={state.fieldErrors?.phone}
                                     />
                                     <div className="sm:col-span-2">
                                         <InputField
@@ -222,7 +326,6 @@ export default function CheckoutPage() {
                                             type="email"
                                             required
                                             placeholder="doctor@clinic.com"
-                                            error={state.fieldErrors?.email}
                                         />
                                     </div>
                                     <div className="sm:col-span-2">
@@ -232,7 +335,6 @@ export default function CheckoutPage() {
                                             name="company"
                                             type="text"
                                             placeholder="Your Dental Practice"
-                                            error={state.fieldErrors?.company}
                                         />
                                     </div>
                                     <div className="sm:col-span-2">
@@ -248,9 +350,6 @@ export default function CheckoutPage() {
                                             placeholder="Street address, City, State, PIN code"
                                             className="w-full resize-none rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 transition-all focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
                                         />
-                                        {state.fieldErrors?.message && (
-                                            <p className="mt-1 text-xs text-red-500">{state.fieldErrors.message}</p>
-                                        )}
                                     </div>
                                 </div>
 
@@ -259,17 +358,22 @@ export default function CheckoutPage() {
                                     <div className="flex items-start gap-3">
                                         <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary-500 text-xs font-bold text-white shrink-0 mt-0.5">2</div>
                                         <div>
-                                            <h3 className="font-semibold text-neutral-800">Payment on Confirmation</h3>
+                                            <h3 className="font-semibold text-neutral-800">
+                                                {hasPricedItems ? "Secure Online Payment" : "Payment on Confirmation"}
+                                            </h3>
                                             <p className="mt-1 text-xs leading-relaxed text-neutral-500">
-                                                Our team will contact you within 24 hours to confirm your order and arrange
-                                                payment via bank transfer, UPI, or cheque. An invoice will be provided.
+                                                {hasPricedItems
+                                                    ? "You'll be redirected to Razorpay's secure payment page. We accept UPI, cards, net banking, and wallets."
+                                                    : "Our team will contact you within 24 hours to confirm your order and arrange payment via bank transfer, UPI, or cheque."}
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Payment method chips */}
                                     <div className="mt-4 flex flex-wrap gap-2">
-                                        {["Bank Transfer", "UPI / GPay", "Cheque", "Cash on Delivery"].map((method) => (
+                                        {(hasPricedItems
+                                            ? ["UPI / GPay", "Credit Card", "Debit Card", "Net Banking"]
+                                            : ["Bank Transfer", "UPI / GPay", "Cheque", "Cash on Delivery"]
+                                        ).map((method) => (
                                             <span
                                                 key={method}
                                                 className="flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
@@ -284,18 +388,18 @@ export default function CheckoutPage() {
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    disabled={isPending}
+                                    disabled={isSubmitting}
                                     className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 py-4 text-sm font-bold text-white shadow-[0_2px_12px_-2px_rgb(31_182_205/0.45)] transition-all hover:bg-primary-600 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
                                 >
-                                    {isPending ? (
+                                    {isSubmitting ? (
                                         <>
                                             <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                                            Placing Order…
+                                            {hasPricedItems ? "Opening Payment…" : "Placing Order…"}
                                         </>
                                     ) : (
                                         <>
-                                            <FileText className="h-4 w-4" />
-                                            Place Order
+                                            {hasPricedItems ? <CreditCard className="h-4 w-4" /> : <FileText className="h-4 w-4" />}
+                                            {hasPricedItems ? "Pay Now" : "Place Order"}
                                         </>
                                     )}
                                 </button>
@@ -304,7 +408,10 @@ export default function CheckoutPage() {
                                     <Shield className="h-3.5 w-3.5" />
                                     Safe and Secure · Your details are protected
                                 </div>
-                            </form>
+                                </form>
+                            ) : (
+                                <QuoteForm onBack={() => {}} onSuccess={() => { setShowSuccess(true); }} />
+                            )}
                         </div>
                     </div>
 
@@ -338,7 +445,7 @@ export default function CheckoutPage() {
                                                 <p className="text-xs text-neutral-400">Qty: {item.quantity}</p>
                                             </div>
                                             <p className="shrink-0 text-sm font-semibold text-neutral-900">
-                                                {item.basePrice ? formatINR(item.basePrice * item.quantity) : "—"}
+                                                {item.basePrice ? formatPrice(item.basePrice * item.quantity) : "—"}
                                             </p>
                                         </div>
                                     ))}
@@ -356,7 +463,7 @@ export default function CheckoutPage() {
                                             Price ({itemCount} {itemCount === 1 ? "item" : "items"})
                                         </span>
                                         <span className="font-medium text-neutral-900">
-                                            {subtotal > 0 ? formatINR(subtotal) : "—"}
+                                            {subtotal > 0 ? formatPrice(subtotal) : "—"}
                                         </span>
                                     </div>
                                     <div className="flex items-center justify-between text-sm">
@@ -367,7 +474,7 @@ export default function CheckoutPage() {
                                         <div className="flex items-center justify-between">
                                             <span className="font-bold text-neutral-900">Total Amount</span>
                                             <span className="text-xl font-bold text-neutral-900">
-                                                {subtotal > 0 ? formatINR(subtotal) : "—"}
+                                                {subtotal > 0 ? formatPrice(subtotal) : "—"}
                                             </span>
                                         </div>
                                         {subtotal > 0 && (

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getAllInventoryItems, filterInventory, getInventoryFacets, PAGE_SIZE } from "@/lib/inventory";
-import InventoryItemCard from "./InventoryItemCard";
-import InventoryFilters from "./InventoryFilters";
+import InventoryItemCard from "@/components/catalog/InventoryItemCard";
+import InventoryFilters from "@/components/catalog/InventoryFilters";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui";
@@ -114,8 +114,9 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-                                {items.map((item) => (
-                                    <InventoryItemCard key={item.ItemID} item={item} />
+                                {items.map((item, idx) => (
+                                    // Use idx suffix to guard against duplicate ItemIDs from Zoho data
+                                    <InventoryItemCard key={`${item.ItemID}-${idx}`} item={item} />
                                 ))}
                             </div>
                         )}

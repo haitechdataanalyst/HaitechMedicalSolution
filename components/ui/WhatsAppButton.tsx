@@ -52,8 +52,8 @@ const WhatsAppButton = forwardRef<HTMLButtonElement, WhatsAppButtonProps>(({ pho
             onClick={handleClick}
             className={cn(
                 "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors",
-                "bg-[#25D366] text-white hover:bg-[#20BD5A] active:bg-[#1DA851]",
-                "focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:outline-none",
+                "bg-whatsapp text-white hover:bg-[#20BD5A] active:bg-[#1DA851]",
+                "focus:ring-2 focus:ring-whatsapp focus:ring-offset-2 focus:outline-none",
                 "disabled:cursor-not-allowed disabled:opacity-50",
                 sizes[size],
                 iconOnly && "!px-2",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
@@ -41,6 +41,90 @@ function useScrollProgress() {
     return p;
 }
 
+function useHorizontalDrag(ref: React.RefObject<HTMLDivElement | null>) {
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollStart = useRef(0);
+
+    const onMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        isDragging.current = true;
+        startX.current = e.pageX;
+        scrollStart.current = ref.current.scrollLeft;
+        ref.current.style.cursor = "grabbing";
+    }, [ref]);
+
+    const onMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isDragging.current || !ref.current) return;
+        e.preventDefault();
+        ref.current.scrollLeft = scrollStart.current - (e.pageX - startX.current);
+    }, [ref]);
+
+    const stopDrag = useCallback(() => {
+        isDragging.current = false;
+        if (ref.current) ref.current.style.cursor = "grab";
+    }, [ref]);
+
+    // Attach wheel handler non-passively so preventDefault works
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const onWheel = (e: WheelEvent) => {
+            const atStart = el.scrollLeft <= 0;
+            const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+            if ((atStart && e.deltaY < 0) || (atEnd && e.deltaY > 0)) return;
+            e.preventDefault();
+            el.scrollLeft += e.deltaY;
+        };
+        el.addEventListener("wheel", onWheel, { passive: false });
+        return () => el.removeEventListener("wheel", onWheel);
+    }, [ref]);
+
+    return { onMouseDown, onMouseMove, onMouseUp: stopDrag, onMouseLeave: stopDrag };
+}
+
+function useAutoScroll(ref: React.RefObject<HTMLDivElement | null>, speed = 1) {
+    const paused = useRef(false);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+
+        let raf: number;
+        const tick = () => {
+            if (!paused.current) {
+                el.scrollLeft += speed;
+                if (el.scrollLeft >= el.scrollWidth / 2) {
+                    el.scrollLeft -= el.scrollWidth / 2;
+                }
+            }
+            raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+
+        const pause = () => { paused.current = true; };
+        const resume = () => { paused.current = false; };
+
+        el.addEventListener("mouseenter", pause);
+        el.addEventListener("mouseleave", resume);
+        el.addEventListener("touchstart", pause, { passive: true });
+        el.addEventListener("touchend", resume, { passive: true });
+
+        return () => {
+            cancelAnimationFrame(raf);
+            el.removeEventListener("mouseenter", pause);
+            el.removeEventListener("mouseleave", resume);
+            el.removeEventListener("touchstart", pause);
+            el.removeEventListener("touchend", resume);
+        };
+    }, [ref, speed]);
+
+    return {
+        pause: () => { paused.current = true; },
+        resume: () => { paused.current = false; },
+    };
+}
+
 // ── Static data ────────────────────────────────────────────────────────────
 
 const TIMELINE = [
@@ -52,7 +136,7 @@ const TIMELINE = [
 
 const BRANDS = [
     { name: "Admetec",  logo: "/BrandLogo/AdmetecLogo.png",  cat: "Loupes · Optics",      desc: "Surgical loupes & LED headlights built for precision." },
-    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.jpg",  cat: "Burs · Rotary",        desc: "High-performance diamond burs & rotary instruments." },
+    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.png",  cat: "Burs · Rotary",        desc: "High-performance diamond burs & rotary instruments." },
     { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality." },
     { name: "Salli",    logo: "/BrandLogo/SalliLogo.png",    cat: "Ergonomic Seating",    desc: "Saddle chairs that protect posture over long procedures." },
     { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpg", cat: "Dental Chairs",        desc: "Feature-rich chairs designed for the modern clinic." },
@@ -82,6 +166,9 @@ function ChapterLabel({ n, title, light }: { n: string; title: string; light?: b
 export default function AboutPageClient({ teamMembers }: { teamMembers: TeamMemberData[] }) {
     useReveal();
     const progress = useScrollProgress();
+    const teamScrollRef = useRef<HTMLDivElement>(null);
+    const teamDrag = useHorizontalDrag(teamScrollRef);
+    useAutoScroll(teamScrollRef);
 
     return (
         <>
@@ -273,9 +360,15 @@ export default function AboutPageClient({ teamMembers }: { teamMembers: TeamMemb
                     <p data-reveal="up" className="reveal-d1 mb-14 max-w-lg text-lg text-neutral-500">
                         The dedicated professionals behind Haitech Medical who work tirelessly to support your success.
                     </p>
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                        {teamMembers.map((member, i) => (
-                            <div key={member.id} data-reveal="scale" className={`reveal-d${Math.min((i % 5) + 1, 5)}`}>
+                    {/* Auto-scroll carousel — drag, wheel, touch-swipe */}
+                    <div
+                        ref={teamScrollRef}
+                        {...teamDrag}
+                        className="flex gap-4 sm:gap-6 lg:gap-8 overflow-x-auto cursor-grab active:cursor-grabbing select-none [&::-webkit-scrollbar]:hidden"
+                        style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}
+                    >
+                        {[...teamMembers, ...teamMembers].map((member, i) => (
+                            <div key={`${member.id}-${i}`} className="flex-none w-[148px] h-[230px] sm:w-[172px] sm:h-[255px] md:w-[190px] md:h-[270px] lg:w-[210px] lg:h-[290px]">
                                 <TeamMember member={member} />
                             </div>
                         ))}

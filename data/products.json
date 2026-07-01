@@ -3,7 +3,7 @@
         "id": 101,
         "slug": "ergo-3.0x",
         "name": "Ergo 3.0x",
-        "description": "Entry-level ergonomic loupe with 3.0x magnification, ideal for general dentistry",
+        "description": "Individually handcrafted ergonomic loupes with 3.0x magnification and a wide 130mm field of view — perfect posture, perfect clarity.",
         "category": 2,
         "order": 1,
         "sku": "ADM-E-30",
@@ -24,8 +24,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "With a large field of view and depth of field, these loupes are perfect for surgeons and other medical professionals who need to see the big picture when operating, while maintaining a perfect posture.",
-                    "secondary": "Perfect for surgeons and other medical professionals who need to see the big picture when operating."
+                    "primary": "Customized ergonomic loupes designed to maintain neutral, strain-free posture. Admetec's proprietary ergo prism technology delivers a wide 130mm field of view — ideal for clinicians who need to see the full picture while keeping perfect ergonomic alignment.",
+                    "secondary": "Individually handcrafted to your interpupillary distance and working distance. Ultra-lightweight construction minimizes nose pressure during extended procedures."
                 }
             },
             {
@@ -39,15 +39,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "110 mm - 155mm"
+                            "value": "130mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "90mm - 115mm"
+                            "value": "105mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -56,12 +64,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 3.0x loupe system",
                         "Selected frame",
-                        "Protective case",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -185,7 +196,7 @@
         "id": 102,
         "slug": "ergo-4.0x",
         "name": "Ergo 4.0x",
-        "description": "Mid-range ergonomic loupe with 4.0x magnification for detailed procedures",
+        "description": "Individually handcrafted ergonomic loupes with 4.0x magnification — ideal for clinicians beginning their journey to higher power without sacrificing field of view or posture.",
         "category": 2,
         "order": 2,
         "sku": "ADM-E-40",
@@ -206,8 +217,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "With an ability to see minute details while still maintaining a relatively large field of view, these loupes are are great for dentists and surgeons performing common procedures and those starting their loupes journey and want to work their way up in magnification while going Ergo.",
-                    "secondary": "Great for dentists and surgeons performing common procedures and those starting their loupes journey."
+                    "primary": "With the ability to see minute details while still maintaining a relatively large field of view, these loupes are great for dentists and surgeons performing common procedures. Ideal for those starting their loupes journey and wanting to work their way up in magnification while going Ergo.",
+                    "secondary": "Individually handcrafted to your exact working distance and interpupillary distance. Lightweight ergo prism design keeps you upright and comfortable all day."
                 }
             },
             {
@@ -221,15 +232,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "85 mm - 105mm"
+                            "value": "95mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "80mm - 100mm"
+                            "value": "90mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -238,12 +257,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 4.0x loupe system",
                         "Selected frame",
-                        "Protective case",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -387,7 +409,7 @@
         "id": 103,
         "slug": "ergo-5.0x",
         "name": "Ergo 5.0x",
-        "description": "High-magnification ergonomic loupe for precision dental and surgical work",
+        "description": "Admetec's most popular magnification — a perfect balance of high detail and field of view, individually crafted for your working style.",
         "category": 2,
         "order": 3,
         "sku": "ADM-E-50",
@@ -408,8 +430,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Our most popular magnification, providing a great balance of high magnification with a large-enough field of view for most dental and other surgeons. Great for procedures requiring a higher level of details.",
-                    "secondary": "Great for procedures requiring a higher level of details."
+                    "primary": "Our most popular magnification — providing a great balance of high magnification with a large enough field of view for most dental and surgical procedures. The 78mm field of view makes it the go-to choice for practitioners who want more detail without giving up clarity.",
+                    "secondary": "Individually handcrafted to your exact working distance. Ergo prism technology keeps your head up and your back healthy throughout long procedures."
                 }
             },
             {
@@ -423,15 +445,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "70 mm - 86mm"
+                            "value": "78mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "70mm - 90mm"
+                            "value": "80mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -440,12 +470,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 5.0x loupe system",
                         "Selected frame",
-                        "Hard protective case",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -589,7 +622,7 @@
         "id": 104,
         "slug": "ergo-6.0x",
         "name": "Ergo 6.0x",
-        "description": "Professional-grade 6.0x magnification for advanced clinical procedures",
+        "description": "High-magnification ergonomic loupes with 6.0x for detailed restorative and periodontal work — precision without compromising posture.",
         "category": 2,
         "order": 4,
         "sku": "ADM-E-60",
@@ -610,8 +643,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "With fine details clearly visible, these loupes are suitable for experienced loupes users who perform intricate procedures.",
-                    "secondary": "Suitable for experienced loupes users who perform intricate procedures."
+                    "primary": "With fine details clearly visible, these loupes are ideal for experienced clinicians who perform intricate restorative, periodontal, and surgical procedures. The 56mm field of view gives sharp, edge-to-edge clarity at a comfortably high magnification.",
+                    "secondary": "Individually handcrafted to your specifications. Ergo prism technology maintains neutral head posture even at 6.0x magnification."
                 }
             },
             {
@@ -625,15 +658,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "50 mm - 62mm"
+                            "value": "56mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "55mm - 75mm"
+                            "value": "65mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -642,13 +683,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "3 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 6.0x loupe system",
-                        "Selected premium frame",
-                        "Hard protective case",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -792,7 +835,7 @@
         "id": 105,
         "slug": "ergo-7.5x",
         "name": "Ergo 7.5x",
-        "description": "High-performance 7.5x magnification for microsurgical procedures",
+        "description": "Very high 7.5x magnification for microsurgical-level dental work — superb clarity with a 45mm field of view, designed for aesthetic dentistry, endodontics, and microsurgery.",
         "category": 2,
         "order": 5,
         "sku": "ADM-E-75",
@@ -813,8 +856,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Another step higher in visible details, these loupes give superb clarity and intricacy with a field of view of 50mm for a 550mm working distance. Perfect for aesthetic work, root canal treatments, microsurgery and more.",
-                    "secondary": "Perfect for aesthetic work, root canal treatments, microsurgery and more."
+                    "primary": "Another step higher in visible detail, these loupes give superb clarity with a 45mm field of view. Perfect for aesthetic dentistry, root canal treatments, periodontal microsurgery, and any procedure demanding extreme precision — all while maintaining the same neutral, ergonomic posture.",
+                    "secondary": "Recommended for experienced loupe users moving up in magnification. Individually handcrafted to your exact working distance."
                 }
             },
             {
@@ -828,15 +871,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "40 mm - 50mm"
+                            "value": "45mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "40mm - 60mm"
+                            "value": "50mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -845,13 +896,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "3 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 7.5x loupe system",
-                        "Selected premium frame",
-                        "Hard protective case",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -995,7 +1048,7 @@
         "id": 106,
         "slug": "ergo-10x",
         "name": "Ergo 10x",
-        "description": "Maximum magnification loupe system for the most demanding microsurgical applications",
+        "description": "The highest fixed magnification in the Admetec range — 10x with a 35mm field of view for unmatched detail in microsurgical applications.",
         "category": 2,
         "order": 6,
         "sku": "ADM-E-100",
@@ -1016,8 +1069,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The highest magnification in the market and our highest yet! For surgeons with previous experience with higher magnification, these loupes would give unmatched details with perfect clarity and posture.",
-                    "secondary": "For surgeons with previous experience with higher magnification."
+                    "primary": "The highest fixed magnification in the Admetec range. For surgeons with experience at higher magnifications, these loupes deliver unmatched detail — a 35mm field of view with crystal-clear, color-true optics and the same neutral ergonomic posture you expect from Admetec.",
+                    "secondary": "Designed for specialists who require microsurgical-level precision. Individually handcrafted and calibrated to your exact specifications."
                 }
             },
             {
@@ -1031,15 +1084,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "450mm - 550mm (adjustable)"
+                            "value": "500mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "30 mm - 40mm"
+                            "value": "35mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "30mm - 45mm"
+                            "value": "37mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "46–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -1048,13 +1109,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "3 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo 10x loupe system",
-                        "Selected premium frame",
-                        "Hard protective case",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -1198,7 +1261,7 @@
         "id": 107,
         "slug": "ergo-v",
         "name": "Ergo-V",
-        "description": "Next-generation ergonomic design with adjustable declination for optimal posture",
+        "description": "The world's first ergonomic loupes with adjustable magnification — three magnifications (3.8x / 5.3x / 7.0x) in a single device, same perfect posture.",
         "category": 3,
         "order": 1,
         "sku": "ADM-EV",
@@ -1222,8 +1285,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "3 Magnifications, 1 Device, Same posture.",
-                    "secondary": "Experience precision like never before with adjustable loupes offering three magnifications in a single device. Great for clinicians who refuse to trade posture for precision—Ergo-V packs three magnifications into one feather-light loupe, letting you glide from overview to ultra-detail without breaking your workflow."
+                    "primary": "3 Magnifications. 1 Device. Same posture.",
+                    "secondary": "The world's first ergonomic loupes with patent-pending adjustable magnification. Switch seamlessly between 3.8x (overview), 5.3x (detail), and 7.0x (precision) during a procedure — without swapping devices or breaking your workflow. Admetec's ergo prism technology keeps you in perfect neutral posture at every magnification level."
                 }
             },
             {
@@ -1233,15 +1296,43 @@
                     "rows": [
                         {
                             "label": "Magnification Options",
-                            "value": "3.8x, 5.3x, 7.0x"
+                            "value": "3.8x / 5.3x / 7.0x (switchable)"
                         },
                         {
                             "label": "Working Distance",
-                            "value": "400mm - 700mm"
+                            "value": "400mm–700mm (fully customizable)"
+                        },
+                        {
+                            "label": "Field of View @ 3.8x",
+                            "value": "100mm"
+                        },
+                        {
+                            "label": "Field of View @ 5.3x",
+                            "value": "75mm"
+                        },
+                        {
+                            "label": "Field of View @ 7.0x",
+                            "value": "48mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 3.8x",
+                            "value": "110mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 5.3x",
+                            "value": "85mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 7.0x",
+                            "value": "62mm"
                         },
                         {
                             "label": "Weight",
-                            "value": "59gm)"
+                            "value": "55g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, Polycarbonate"
                         }
                     ]
                 }
@@ -1250,12 +1341,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Ergo V loupe system",
                         "Selected frame",
-                        "Hard protective case",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -1267,53 +1361,37 @@
                     "customization": true,
                     "customFields": [
                         {
-                            "name": "magnification",
-                            "label": "Magnification",
-                            "type": "select",
-                            "options": [
-                                {
-                                    "value": "3.0x",
-                                    "label": "3.0x"
-                                },
-                                {
-                                    "value": "4.0x",
-                                    "label": "4.0x (+$200)"
-                                },
-                                {
-                                    "value": "5.0x",
-                                    "label": "5.0x (+$400)"
-                                },
-                                {
-                                    "value": "6.0x",
-                                    "label": "6.0x (+$600)"
-                                }
-                            ],
-                            "required": true
-                        },
-                        {
                             "name": "workingDistance",
                             "label": "Working Distance",
                             "type": "select",
                             "options": [
                                 {
-                                    "value": "340mm",
-                                    "label": "340mm"
+                                    "value": "400mm",
+                                    "label": "400mm"
                                 },
                                 {
-                                    "value": "380mm",
-                                    "label": "380mm"
-                                },
-                                {
-                                    "value": "420mm",
-                                    "label": "420mm"
-                                },
-                                {
-                                    "value": "460mm",
-                                    "label": "460mm"
+                                    "value": "450mm",
+                                    "label": "450mm"
                                 },
                                 {
                                     "value": "500mm",
                                     "label": "500mm"
+                                },
+                                {
+                                    "value": "550mm",
+                                    "label": "550mm"
+                                },
+                                {
+                                    "value": "600mm",
+                                    "label": "600mm"
+                                },
+                                {
+                                    "value": "650mm",
+                                    "label": "650mm"
+                                },
+                                {
+                                    "value": "700mm",
+                                    "label": "700mm"
                                 }
                             ],
                             "required": true
@@ -1403,7 +1481,7 @@
         "id": 108,
         "slug": "ergo-v-pro",
         "name": "Ergo-V PRO",
-        "description": "Premium version with integrated LED lighting and enhanced ergonomics",
+        "description": "Professional-grade variable magnification loupes with three high-power settings (5.6x / 7.4x / 10x) for advanced surgical and microsurgical applications.",
         "category": 3,
         "order": 2,
         "sku": "ADM-EVP",
@@ -1427,26 +1505,58 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "3 Magnifications, 1 Device, Same posture.",
-                    "secondary": "Experience precision like never before with adjustable loupes offering three magnifications in a single device. Great for clinicians who refuse to trade posture for precision—Ergo-V packs three magnifications into one feather-light loupe, letting you glide from overview to ultra-detail without breaking your workflow."
+                    "primary": "3 Magnifications. 1 Device. Same posture — at the professional level.",
+                    "secondary": "The Ergo V Pro takes the patent-pending variable magnification concept to higher power: 5.6x, 7.4x, and 10x in a single device. High-index, scratch-resistant optical glass with anti-reflective, waterproof, and dust-resistant coating. Individually handcrafted for surgical-grade precision with the same neutral ergonomic posture."
                 }
             },
             {
                 "type": "specifications",
                 "data": {
-                    "title": "Technical Details",
+                    "title": "Technical Specifications",
                     "rows": [
                         {
                             "label": "Magnification Options",
-                            "value": "5.6x, 7.4x, 10.0x"
+                            "value": "5.6x / 7.4x / 10x (switchable)"
                         },
                         {
                             "label": "Working Distance",
-                            "value": "400mm - 700mm"
+                            "value": "340mm–500mm (fully customizable)"
+                        },
+                        {
+                            "label": "Field of View @ 5.6x",
+                            "value": "55mm"
+                        },
+                        {
+                            "label": "Field of View @ 7.4x",
+                            "value": "41mm"
+                        },
+                        {
+                            "label": "Field of View @ 10x",
+                            "value": "31mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 5.6x",
+                            "value": "80mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 7.4x",
+                            "value": "50mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 10x",
+                            "value": "33mm"
                         },
                         {
                             "label": "Weight",
-                            "value": "63g"
+                            "value": "60g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Ergo Prism, High-Index Optical Glass"
+                        },
+                        {
+                            "label": "Coating",
+                            "value": "Anti-reflective, waterproof, dust-resistant"
                         }
                     ]
                 }
@@ -1455,14 +1565,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Ergo V Pro loupe system",
-                        "Integrated LED headlight",
-                        "Premium titanium frame",
-                        "Battery pack with charger",
-                        "Hard protective case",
+                        "Ergo V PRO loupe system",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -1473,30 +1584,6 @@
                     "addToCart": true,
                     "customization": true,
                     "customFields": [
-                        {
-                            "name": "magnification",
-                            "label": "Magnification",
-                            "type": "select",
-                            "options": [
-                                {
-                                    "value": "3.0x",
-                                    "label": "3.0x"
-                                },
-                                {
-                                    "value": "4.0x",
-                                    "label": "4.0x (+$200)"
-                                },
-                                {
-                                    "value": "5.0x",
-                                    "label": "5.0x (+$400)"
-                                },
-                                {
-                                    "value": "6.0x",
-                                    "label": "6.0x (+$600)"
-                                }
-                            ],
-                            "required": true
-                        },
                         {
                             "name": "workingDistance",
                             "label": "Working Distance",
@@ -1610,7 +1697,7 @@
         "id": 201,
         "slug": "galilean-2.5x",
         "name": "Galilean 2.5x",
-        "description": "Lightweight Galilean loupes perfect for general dentistry and examinations",
+        "description": "Extremely compact TTL Galilean loupes with a wide 135mm field of view — the lightest way to start your magnification journey with Admetec.",
         "category": 4,
         "order": 1,
         "sku": "ADM-G-25",
@@ -1631,8 +1718,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "The all time popular TTL loupes that will give you an incredible field of view while enlarging your image to be able to see more details and perform better work.",
-                    "secondary": "Incredible field of view while enlarging your image."
+                    "primary": "The all-time popular TTL loupes that deliver an incredible 135mm field of view while enlarging your image — perfect for clinicians who want to see more without sacrificing peripheral vision. Compact, lightweight Galilean optics make these the ideal entry point into magnification.",
+                    "secondary": "Individually handcrafted and customized to your working distance. Ultralight design (37–45g) minimizes fatigue during long procedures."
                 }
             },
             {
@@ -1646,15 +1733,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "350-450mm (adjustable)"
+                            "value": "450mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "105mm - 135mm"
+                            "value": "135mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "105mm - 160mm"
+                            "value": "160mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "37–45g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Galilean (TTL)"
                         }
                     ]
                 }
@@ -1663,12 +1758,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Galilean 2.5x loupes",
                         "Selected frame",
-                        "Soft protective case",
-                        "Cleaning cloth",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -1769,7 +1867,7 @@
         "id": 202,
         "slug": "galilean-2.7x",
         "name": "Galilean 2.7x",
-        "description": "Popular mid-range Galilean loupe with excellent balance of magnification and comfort",
+        "description": "Compact TTL Galilean loupes with 2.7x magnification, smaller oculars for better peripheral vision, and a 110mm field of view.",
         "category": 4,
         "order": 2,
         "sku": "ADM-G-27",
@@ -1805,15 +1903,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "350-450mm (adjustable)"
+                            "value": "450mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "90mm - 110mm"
+                            "value": "110mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "90mm - 135mm"
+                            "value": "135mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "37–45g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Galilean (TTL)"
                         }
                     ]
                 }
@@ -1822,12 +1928,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Galilean 2.7x loupes",
                         "Selected frame",
-                        "Soft protective case",
-                        "Cleaning cloth",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -1927,7 +2036,7 @@
         "id": 203,
         "slug": "galilean-3.2x",
         "name": "Galilean 3.2x",
-        "description": "Maximum magnification Galilean loupe for enhanced detail visualization",
+        "description": "The highest Galilean TTL magnification available — 3.2x with a 95mm field of view, lightweight and individually handcrafted.",
         "category": 4,
         "order": 3,
         "sku": "ADM-G-32",
@@ -1963,15 +2072,23 @@
                         },
                         {
                             "label": "Working Distance",
-                            "value": "350-450mm (adjustable)"
+                            "value": "450mm (fully customizable)"
                         },
                         {
                             "label": "Field of View",
-                            "value": "75mm - 95mm"
+                            "value": "95mm"
                         },
                         {
                             "label": "Depth of Field",
-                            "value": "60mm - 90mm"
+                            "value": "90mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "37–45g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Galilean (TTL)"
                         }
                     ]
                 }
@@ -1980,12 +2097,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "2 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Galilean 3.2x loupes",
                         "Selected frame",
-                        "Soft protective case",
-                        "Cleaning cloth",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -2087,7 +2207,7 @@
         "id": 301,
         "slug": "prismatic-loupe",
         "name": "Prismatic Loupes",
-        "description": "High-magnification prismatic loupes for precision work requiring exceptional detail",
+        "description": "Keplerian prismatic loupes combining high magnification with advanced ergonomic design — crystal-clear, edge-to-edge, color-true images across four magnification options.",
         "category": 5,
         "order": 1,
         "sku": "ADM-PL",
@@ -2131,19 +2251,51 @@
                     "rows": [
                         {
                             "label": "Magnification Options",
-                            "value": "3.8x, 4.8x, 5.8x, 7.2x"
+                            "value": "3.8x / 4.8x / 5.8x / 7.2x"
                         },
                         {
                             "label": "Working Distance",
-                            "value": "350 mm - 450mm (Adjustable)"
+                            "value": "450mm (fully customizable)"
                         },
                         {
-                            "label": "Field of View",
-                            "value": "35mm - 85mm (varies by magnification)"
+                            "label": "Field of View @ 3.8x",
+                            "value": "90mm"
                         },
                         {
-                            "label": "Depth of Field",
-                            "value": "40mm - 80mm (varies by magnification)"
+                            "label": "Field of View @ 4.8x",
+                            "value": "70mm"
+                        },
+                        {
+                            "label": "Field of View @ 5.8x",
+                            "value": "56mm"
+                        },
+                        {
+                            "label": "Field of View @ 7.2x",
+                            "value": "40mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 3.8x",
+                            "value": "85mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 4.8x",
+                            "value": "70mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 5.8x",
+                            "value": "55mm"
+                        },
+                        {
+                            "label": "Depth of Field @ 7.2x",
+                            "value": "50mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "50–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Keplerian (Prismatic)"
                         }
                     ]
                 }
@@ -2152,13 +2304,15 @@
                 "type": "info",
                 "data": {
                     "manufacturer": "Admetec",
-                    "warranty": "3 years comprehensive",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
                         "Prismatic loupe system",
-                        "Premium frame",
-                        "Hard protective case",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
                         "Microfiber cleaning cloth",
-                        "Adjustment tools",
+                        "Allen key",
                         "User manual"
                     ]
                 }
@@ -2175,16 +2329,20 @@
                             "type": "select",
                             "options": [
                                 {
-                                    "value": "4.0x",
-                                    "label": "4.0x"
+                                    "value": "3.8x",
+                                    "label": "3.8x"
                                 },
                                 {
-                                    "value": "5.0x",
-                                    "label": "5.0x (+$200)"
+                                    "value": "4.8x",
+                                    "label": "4.8x"
                                 },
                                 {
-                                    "value": "6.0x",
-                                    "label": "6.0x (+$400)"
+                                    "value": "5.8x",
+                                    "label": "5.8x"
+                                },
+                                {
+                                    "value": "7.2x",
+                                    "label": "7.2x"
                                 }
                             ],
                             "required": true
@@ -3217,7 +3375,7 @@
         "description": "Precision Howard pattern apical elevator for root tip removal and apical surgery",
         "category": 21,
         "order": 2,
-        "sku": "Howard Apical",
+        "sku": "MED-Howard Apical",
         "basePrice": 95,
         "currency": "AUD",
         "hasVariants": false,
@@ -4277,7 +4435,7 @@
         "description": "Periosteal elevator with 3.0mm x 3.0mm blade",
         "category": 23,
         "order": 1,
-        "sku": "851-HP3 3.0mm x 3.0mm",
+        "sku": "MED-851-HP3 3.0mm x 3.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4363,7 +4521,7 @@
         "description": "Periosteal elevator with 5.2mm x 4.8mm blade",
         "category": 23,
         "order": 2,
-        "sku": "852-HP3 5.2mm x 4.8mm",
+        "sku": "MED-852-HP3 5.2mm x 4.8mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4449,7 +4607,7 @@
         "description": "Periosteal elevator with 3.3mm x 2.8mm blade",
         "category": 23,
         "order": 3,
-        "sku": "856 3.3mm x 2.8mm",
+        "sku": "MED-856 3.3mm x 2.8mm",
         "basePrice": 75,
         "currency": "AUD",
         "hasVariants": false,
@@ -4535,7 +4693,7 @@
         "description": "Periosteal elevator with 3.5mm x 8.0mm blade",
         "category": 23,
         "order": 4,
-        "sku": "869 3.5mm x 8.0mm",
+        "sku": "MED-869 3.5mm x 8.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4621,7 +4779,7 @@
         "description": "Periosteal elevator with 6.0mm x 2.7mm blade",
         "category": 23,
         "order": 5,
-        "sku": "871-2-4 6.0mm x 2.7mm",
+        "sku": "MED-871-2-4 6.0mm x 2.7mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4707,7 +4865,7 @@
         "description": "Periosteal elevator with 4.0mm x 4.0mm blade",
         "category": 23,
         "order": 6,
-        "sku": "877-HK4 4.0mm x 4.0mm",
+        "sku": "MED-877-HK4 4.0mm x 4.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4793,7 +4951,7 @@
         "description": "Periosteal elevator with 10.0mm x 4.5mm blade",
         "category": 23,
         "order": 7,
-        "sku": "878 10.0mm x 4.5mm",
+        "sku": "MED-878 10.0mm x 4.5mm",
         "basePrice": 85,
         "currency": "AUD",
         "hasVariants": false,
@@ -4879,7 +5037,7 @@
         "description": "Periosteal elevator with 4.0mm x 7.0mm blade",
         "category": 23,
         "order": 8,
-        "sku": "882 4.0mm x 7.0mm",
+        "sku": "MED-882 4.0mm x 7.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -4965,7 +5123,7 @@
         "description": "Periosteal elevator with 3.8mm x 4.0mm blade",
         "category": 23,
         "order": 9,
-        "sku": "883 3.8mm x 4.0mm",
+        "sku": "MED-883 3.8mm x 4.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -5051,7 +5209,7 @@
         "description": "Periosteal elevator with 4.0mm x 4.0mm blade",
         "category": 23,
         "order": 10,
-        "sku": "884 4.0mm x 4.0mm",
+        "sku": "MED-884 4.0mm x 4.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,
@@ -5137,7 +5295,7 @@
         "description": "Periosteal elevator with 4.5mm x 5.0mm blade",
         "category": 23,
         "order": 11,
-        "sku": "885 4.5mm x 5.0mm",
+        "sku": "MED-885 4.5mm x 5.0mm",
         "basePrice": 79,
         "currency": "AUD",
         "hasVariants": false,

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Product, Frame, HeadlightCategory } from "@/types";
 import ContentRenderer from "./ContentRenderer";
 import ProductGrid from "./ProductGrid";
+import { CompareActionPanel, InlineComparisonSection } from "@/components/compare";
+import { detectBrand } from "@/lib/brand";
 
 // Product with computed path for linking
 interface ProductWithPath extends Product {
@@ -20,6 +22,8 @@ interface ProductDetailProps {
 
 export default function ProductDetail({ product, relatedProducts = [], accessories = [], frames = [], headlightCategories = [] }: ProductDetailProps) {
     const [selectedVariantImage, setSelectedVariantImage] = useState<string | undefined>(undefined);
+    const brand = detectBrand(product.sku);
+    const compareAllowed = brand.name === "Admetec" || brand.name === "Salli";
 
     // Separate blocks for layout purposes
     const heroBlock = product.contentBlocks.find((b) => b.type === "hero");
@@ -58,6 +62,9 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
                             <ContentRenderer blocks={otherBlocks} product={product} />
                         </div>
                     )}
+
+                    {/* Compare action — at the bottom of right column */}
+                    <CompareActionPanel product={product} />
                 </div>
             </div>
 
@@ -76,6 +83,9 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
                     <ProductGrid items={relatedProducts} />
                 </div>
             )}
+
+            {/* Inline comparison — Admetec and Salli only */}
+            {compareAllowed && <InlineComparisonSection />}
         </div>
     );
 }

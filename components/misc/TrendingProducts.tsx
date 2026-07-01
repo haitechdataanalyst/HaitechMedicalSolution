@@ -8,6 +8,7 @@ import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { COMMERCE_ENABLED } from "@/lib/config";
 
 interface ProductWithPath extends Product {
     path: string;
@@ -67,18 +68,20 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
             <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
 
                 {/* Price — dominant */}
-                <div className="mb-1 leading-none">
-                    {product.basePrice ? (
-                        <>
-                            <span className="text-[17px] font-bold tracking-tight text-neutral-900">
-                                {formatPrice(product.basePrice, product.currency ?? "INR")}
-                            </span>
-                            <span className="ml-1.5 text-[10px] font-normal text-neutral-400">incl. GST</span>
-                        </>
-                    ) : (
-                        <span className="text-xs font-medium italic text-neutral-400">Price on request</span>
-                    )}
-                </div>
+                {COMMERCE_ENABLED && (
+                    <div className="mb-1 leading-none">
+                        {product.basePrice ? (
+                            <>
+                                <span className="text-[17px] font-bold tracking-tight text-neutral-900">
+                                    {formatPrice(product.basePrice, product.currency ?? "INR")}
+                                </span>
+                                <span className="ml-1.5 text-[10px] font-normal text-neutral-400">incl. GST</span>
+                            </>
+                        ) : (
+                            <span className="text-xs font-medium italic text-neutral-400">Price on request</span>
+                        )}
+                    </div>
+                )}
 
                 {/* Name */}
                 <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ArrowUpDown, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
 import { formatPrice, cn } from "@/lib/utils";
+import { COMMERCE_ENABLED } from "@/lib/config";
 
 export interface CategoryWithPath extends Category {
     path?: string;
@@ -146,13 +147,13 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                     <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
                         {product.name}
                     </h3>
-                    {product.basePrice ? (
+                    {COMMERCE_ENABLED && (product.basePrice ? (
                         <span className="mb-2 text-base font-bold text-neutral-900">
                             {formatPrice(product.basePrice, product.currency ?? "INR")}
                         </span>
                     ) : (
                         <span className="mb-2 text-xs text-neutral-400">Price on request</span>
-                    )}
+                    ))}
                     <div className="flex items-center justify-between pt-1">
                         <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
                         <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
@@ -179,13 +180,13 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 </div>
                 <div className="min-w-0 flex-1">
                     <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">{product.name}</p>
-                    {product.basePrice ? (
+                    {COMMERCE_ENABLED && (product.basePrice ? (
                         <p className="mt-0.5 text-sm font-bold text-neutral-900">
                             {formatPrice(product.basePrice, product.currency ?? "INR")}
                         </p>
                     ) : (
                         <p className="mt-0.5 text-xs text-neutral-400">Price on request</p>
-                    )}
+                    ))}
                     <p className="mt-0.5 text-[11px] font-medium text-emerald-600">Free Delivery</p>
                 </div>
                 <ArrowRight className="h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary-500" />
@@ -443,7 +444,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                             >
                                 <option value="default">Featured</option>
                                 <option value="name-asc">Name: A–Z</option>
-                                {content.status === "products" && (
+                                {COMMERCE_ENABLED && content.status === "products" && (
                                     <>
                                         <option value="price-asc">Price: Low → High</option>
                                         <option value="price-desc">Price: High → Low</option>
