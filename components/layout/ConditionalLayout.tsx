@@ -8,7 +8,7 @@ import siteConfig from "@/data/site-config.json";
 import { Toaster } from "sonner";
 import { CompareBar, CompareModal, useCompare } from "@/components/compare";
 import Link from "next/link";
-import { MessageSquare, CloudDownload, ArrowUp } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
 
 const AUTH_ROUTES = ["/login", "/signup", "/forgot-password"];
@@ -25,19 +25,6 @@ function FloatingButtons() {
     const handleWhatsApp = () => {
         const clean = siteConfig.company.phone.replace(/\D/g, "");
         window.open(`https://wa.me/${clean}`, "_blank", "noopener,noreferrer");
-    };
-
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = "/catalouges/Haitech Medical Solutions Catalog.pdf";
-        link.download = "Haitech Medical Solutions Catalog.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    const handleScrollTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (
@@ -73,31 +60,7 @@ function FloatingButtons() {
                 </button>
             </div>
 
-            {/* Download Catalogue */}
-            <button
-                type="button"
-                onClick={handleDownload}
-                className={`${PILL} bg-primary-500 shadow-[0_4px_16px_-2px_rgb(31_182_205/0.3)] hover:shadow-[0_6px_24px_-2px_rgb(31_182_205/0.4)] hover:bg-primary-600`}
-                aria-label="Download product catalogue"
-            >
-                <span className={`${ICON_WRAP} text-white`}>
-                    <CloudDownload size={20} />
-                </span>
-                <span className={`${LABEL} text-white`}>Catalogue</span>
-            </button>
 
-            {/* Back to Top */}
-            <button
-                type="button"
-                onClick={handleScrollTop}
-                className={`${PILL} border border-neutral-200 bg-white shadow-[0_2px_8px_-2px_rgba(0,0,0,0.12)] hover:bg-neutral-50 hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)]`}
-                aria-label="Scroll back to top"
-            >
-                <span className={`${ICON_WRAP} text-neutral-700`}>
-                    <ArrowUp size={20} />
-                </span>
-                <span className={`${LABEL} text-neutral-700`}>Back to Top</span>
-            </button>
         </div>
     );
 }
