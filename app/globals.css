@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
+    /* Extra-small breakpoint for 375px+ phones */
+    --breakpoint-xs: 375px;
     /* Primary palette (Teal brand) */
     --color-primary-50: var(--color-primary-50);
     --color-primary-100: var(--color-primary-100);
@@ -123,9 +125,9 @@
     --shadow-brand-lg: 0 12px 40px -8px rgb(31 182 205 / 0.4);
     --shadow-float: 0 16px 48px -8px rgb(0 0 0 / 0.18), 0 4px 16px -4px rgb(0 0 0 / 0.08);
 
-    /* Spacing */
-    --container-padding: 1.25rem;
-    --section-spacing: 5rem;
+    /* Spacing — responsive via clamp so mobile sections aren't huge */
+    --container-padding: 1.125rem;
+    --section-spacing: clamp(2.75rem, 8vw, 5rem);
 
     /* Border Radius */
     --radius-xs: 0.25rem;
@@ -148,6 +150,9 @@
     html {
         scroll-behavior: smooth;
         -webkit-tap-highlight-color: transparent;
+        /* Prevent iOS font-size inflation on orientation change */
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
     }
 
     body {
@@ -157,7 +162,30 @@
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        /* Prevent horizontal overflow globally */
+        overflow-x: hidden;
+        /* Smooth momentum scroll on iOS */
+        -webkit-overflow-scrolling: touch;
     }
+
+    /* Prevent images from ever overflowing */
+    img, video, svg, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Remove tap delay on interactive elements */
+    a, button, label, select, [role="button"] {
+        touch-action: manipulation;
+    }
+
+    /* Minimum 44px tap-target height on mobile (WCAG 2.5.5) */
+    @media (max-width: 767px) {
+        button, [role="button"], [type="button"], [type="submit"], [type="reset"] {
+            min-height: 2.75rem;
+        }
+    }
+
 
     /* Scrollbar — WebKit */
     ::-webkit-scrollbar {
@@ -431,6 +459,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        /* 44px tap target on mobile, compact on desktop */
+        min-width: 2.75rem;
+        min-height: 2.75rem;
         padding: 0.5rem;
         border-radius: var(--radius-lg);
         color: var(--text-muted);
@@ -535,6 +566,11 @@
     margin-right: auto;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+
+    /* Tighten padding on tiny phones (320-374px) */
+    @media (max-width: 374px) {
+        --container-padding: 1rem;
+    }
 
     @media (min-width: 640px) {
         max-width: 640px;
@@ -825,4 +861,47 @@
 @keyframes pulse-ring {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ---------- Safe-area utilities (iOS notch / home indicator) ---------- */
+@utility pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+@utility pt-safe {
+    padding-top: env(safe-area-inset-top, 0);
+}
+@utility pl-safe {
+    padding-left: env(safe-area-inset-left, 0);
+}
+@utility pr-safe {
+    padding-right: env(safe-area-inset-right, 0);
+}
+
+/* ---------- Reduced-motion: respect user OS preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Reveal elements immediately — no translate/fade needed */
+    [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Stop carousel autoplay motion */
+    .hero-carousel video {
+        animation: none !important;
+    }
+}
+
+/* ---------- Scrollbar hidden utility ---------- */
+@utility scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { display: none; }
 }

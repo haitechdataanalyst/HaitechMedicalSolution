@@ -111,7 +111,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
 
                                     {/* Mega Menu Categories for Mobile */}
                                     {hasMegaMenu && (
-                                        <ul className={cn("mt-1 ml-4 space-y-1 overflow-hidden transition-all duration-200", isExpanded ? "max-h-500 opacity-100" : "max-h-0 opacity-0")}>
+                                        <ul className={cn("mt-1 ml-4 space-y-1 overflow-hidden transition-all duration-300", isExpanded ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0")}>
                                             {item.megaMenu!.map((column) => {
                                                 const isCategoryExpanded = expandedCategories.includes(column.href);
                                                 const hasItems = column.items && column.items.length > 0;

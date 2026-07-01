@@ -13,10 +13,10 @@ import { WhatsAppIcon } from "@/components/icons";
 
 const AUTH_ROUTES = ["/login", "/signup", "/forgot-password"];
 
-// Shared classes for the pill expand pattern
+// Pill expands on hover (desktop); icon-only on mobile to save screen space
 const PILL = "group flex items-center overflow-hidden rounded-full transition-all duration-300";
-const ICON_WRAP = "flex h-12 w-12 shrink-0 items-center justify-center";
-const LABEL = "max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold transition-all duration-300 group-hover:max-w-[120px] group-hover:pr-4";
+const ICON_WRAP = "flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12";
+const LABEL = "hidden sm:block max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold transition-all duration-300 group-hover:max-w-[120px] group-hover:pr-4";
 
 function FloatingButtons() {
     const { items } = useCompare();
@@ -27,10 +27,14 @@ function FloatingButtons() {
         window.open(`https://wa.me/${clean}`, "_blank", "noopener,noreferrer");
     };
 
+    const bottom = hasCompareBar
+        ? "calc(68px + env(safe-area-inset-bottom, 0px) + 1rem)"
+        : "calc(env(safe-area-inset-bottom, 0px) + 1.25rem)";
+
     return (
         <div
-            className="fixed right-6 z-40 flex flex-col gap-2 transition-all duration-300"
-            style={{ bottom: hasCompareBar ? "calc(68px + 1.5rem)" : "1.5rem" }}
+            className="fixed right-4 z-40 flex flex-col gap-2 transition-all duration-300 sm:right-6"
+            style={{ bottom }}
         >
             {/* Get a Quote */}
             <Link
@@ -39,14 +43,14 @@ function FloatingButtons() {
                 aria-label="Get a Quote"
             >
                 <span className={`${ICON_WRAP} text-white`}>
-                    <MessageSquare size={20} />
+                    <MessageSquare size={18} />
                 </span>
                 <span className={`${LABEL} text-white`}>Get a Quote</span>
             </Link>
 
             {/* WhatsApp — pulse ring only on icon circle */}
             <div className="relative">
-                <span className="pointer-events-none absolute left-0 top-0 h-12 w-12 rounded-full bg-whatsapp animate-whatsapp-ping" />
+                <span className="pointer-events-none absolute left-0 top-0 h-11 w-11 rounded-full bg-whatsapp animate-whatsapp-ping sm:h-12 sm:w-12" />
                 <button
                     type="button"
                     onClick={handleWhatsApp}
@@ -54,13 +58,11 @@ function FloatingButtons() {
                     aria-label="Chat with us on WhatsApp"
                 >
                     <span className={`${ICON_WRAP} text-white`}>
-                        <WhatsAppIcon size={20} />
+                        <WhatsAppIcon size={18} />
                     </span>
                     <span className={`${LABEL} text-white`}>WhatsApp</span>
                 </button>
             </div>
-
-
         </div>
     );
 }
