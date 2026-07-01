@@ -13,7 +13,7 @@ export class JsonCatalogService implements ICatalogService {
         return resolvePathToEntity(pathSegments);
     }
 
-    getAllStaticPaths(): string[][] {
+    getAllStaticPaths(): Promise<string[][]> {
         return getAllStaticPaths();
     }
 }

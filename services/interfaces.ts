@@ -58,7 +58,7 @@ export interface ICategoryRepository {
 
 export interface ICatalogService {
     resolvePathToEntity(pathSegments: string[]): Promise<{ type: "category" | "product"; entity: Category | Product } | null>;
-    getAllStaticPaths(): string[][];
+    getAllStaticPaths(): Promise<string[][]>;
 }
 
 // ------------------------------------------------------------------
