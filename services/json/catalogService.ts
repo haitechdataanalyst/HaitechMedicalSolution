@@ -9,7 +9,7 @@ import type { ICatalogService } from "../interfaces";
 import type { Category, Product } from "@/types";
 
 export class JsonCatalogService implements ICatalogService {
-    resolvePathToEntity(pathSegments: string[]): { type: "category" | "product"; entity: Category | Product } | null {
+    resolvePathToEntity(pathSegments: string[]): Promise<{ type: "category" | "product"; entity: Category | Product } | null> {
         return resolvePathToEntity(pathSegments);
     }
 
