@@ -54,9 +54,9 @@ export default function ContactForm() {
 
     return (
         <form action={formAction} className="space-y-6">
-            {/* Honeypot field - hidden from users, bots will fill it */}
+            {/* Honeypot — must stay empty; bots fill it, browsers won't (non-semantic name) */}
             <div className="pointer-events-none absolute opacity-0" aria-hidden="true">
-                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                <input type="text" name="_h_check" tabIndex={-1} autoComplete="new-password" aria-hidden="true" />
             </div>
 
             {/* Hidden timestamp for bot detection */}

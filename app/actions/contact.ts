@@ -67,22 +67,22 @@ const contactSchema = z.object({
         .max(255, "Email must be less than 255 characters")
         .transform((val) => val.trim().toLowerCase()),
     phone: z.string().min(6, "Phone number must be at least 6 digits").max(20, "Phone number is too long").transform(sanitizePhone),
-    postcode: z.string().min(2, "Postcode must be at least 2 characters").max(15, "Postcode is too long").transform(sanitizePostcode),
+    postcode: z.string().max(15, "Postcode is too long").transform(sanitizePostcode),
     country: z
         .string()
         .length(2, "Please select a country")
         .transform((val) => val.toUpperCase()),
     subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters").transform(sanitizeString),
     message: z.string().min(10, "Message must be at least 10 characters").max(5000, "Message must be less than 5000 characters").transform(sanitizeString),
-    // Honeypot field - should be empty
-    website: z.string().max(0, "Bot detected").optional(),
-    // Timestamp validation - form should take at least 3 seconds to fill
+    // Honeypot field - must stay empty; non-semantic name prevents browser auto-fill
+    _h_check: z.string().max(0, "Bot detected").optional(),
+    // Timestamp validation - form should take at least 1.5 seconds to fill
     formTimestamp: z.string().transform((val) => {
         const timestamp = parseInt(val, 10);
         const now = Date.now();
         const timeTaken = now - timestamp;
-        // Form filled in less than 3 seconds is likely a bot
-        if (timeTaken < 3000) {
+        // Form filled in less than 1.5 seconds is likely a bot
+        if (timeTaken < 1500) {
             throw new Error("Form submitted too quickly");
         }
         // Form older than 1 hour is suspicious
@@ -123,7 +123,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             country: formData.get("country"),
             subject: formData.get("subject"),
             message: formData.get("message"),
-            website: formData.get("website"), // Honeypot
+            _h_check: formData.get("_h_check"), // Honeypot
             formTimestamp: formData.get("formTimestamp"),
         };
 
@@ -139,7 +139,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             });
 
             // Check for bot-related errors
-            if (fieldErrors.website || fieldErrors.formTimestamp) {
+            if (fieldErrors._h_check || fieldErrors.formTimestamp) {
                 // Don't reveal bot detection to potential attackers
                 return {
                     success: false,
