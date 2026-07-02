@@ -153,6 +153,9 @@
         /* Prevent iOS font-size inflation on orientation change */
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
+        /* Clip at the html boundary so position:fixed + translateX panels
+           (cart drawer, mobile menu) cannot widen the viewport on mobile */
+        overflow-x: hidden;
     }
 
     body {

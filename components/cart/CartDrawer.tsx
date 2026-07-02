@@ -45,8 +45,10 @@ export default function CartDrawer() {
                 onClick={closeCart}
             />
 
+            {/* Clip wrapper — prevents translate-x-full from widening the viewport on mobile */}
+            <div className="pointer-events-none fixed inset-y-0 right-0 z-50 w-full overflow-hidden sm:max-w-md">
             {/* Drawer */}
-            <div className={cn("fixed top-0 right-0 z-50 flex h-full w-full flex-col bg-white shadow-2xl transition-transform duration-300 sm:max-w-md", isOpen ? "translate-x-0" : "translate-x-full")}>
+            <div className={cn("pointer-events-auto flex h-full w-full flex-col bg-white shadow-2xl transition-transform duration-300", isOpen ? "translate-x-0" : "translate-x-full")}>
 
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-neutral-100 px-5 py-4">
@@ -196,6 +198,7 @@ export default function CartDrawer() {
                         </div>
                     </div>
                 )}
+            </div>
             </div>
         </>
     );
