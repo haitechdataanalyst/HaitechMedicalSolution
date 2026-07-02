@@ -4,139 +4,185 @@
             "id": "1",
             "name": "Mr. Mehul Rajesh Nagar",
             "designation": "CEO & Director",
-            "image": "/images/team/mehul-rajesh-nagar.jpg"
+            "image": "/images/team/mehul-rajesh-nagar.jpg",
+            "bio": "The captain at the helm, Mehul founded Haitech Medical with a dream to bring world-class dental equipment closer to practitioners across India and beyond. His clarity of vision and infectious passion for excellence is what keeps the entire crew sailing in the right direction. Ask anyone on the team — his energy in the room is half the motivation.",
+            "tags": ["🚀 Visionary", "🏆 Leader", "💡 Innovator"]
         },
         {
             "id": "2",
             "name": "Mr. Anand Singh Rajput",
             "designation": "General Manager – Sales & Customer Service",
-            "image": "/images/team/anand-singh-rajput.jpg"
+            "image": "/images/team/anand-singh-rajput.jpg",
+            "bio": "Anand doesn't just close deals — he opens doors to lasting partnerships. With an encyclopaedic knowledge of the dental industry and a natural ability to connect with people, he's the reason clients feel they're not just buying products, but gaining a trusted ally they can count on for years.",
+            "tags": ["🤝 Partnership Builder", "🎯 Sales Champion", "⭐ Client Favourite"]
         },
         {
             "id": "3",
             "name": "Mrs. Kavita Jukunte",
             "designation": "Operations Manager & HR",
-            "image": "/images/team/kavita-jukunte.jpg"
+            "image": "/images/team/kavita-jukunte.jpg",
+            "bio": "Behind every smooth-running office is someone quietly making sure all the pieces fit together perfectly — and that's Kavita. She brings order to complexity, warmth to every HR conversation, and an uncanny ability to make everyone feel seen and genuinely valued.",
+            "tags": ["⚙️ Operations Ace", "💛 People's Champion", "🗂️ Detail Master"]
         },
         {
             "id": "4",
             "name": "Mr. Shailendra Jadhav",
             "designation": "Senior Accounts Manager",
-            "image": "/images/team/shailendra-jadhav.jpg"
+            "image": "/images/team/shailendra-jadhav.jpg",
+            "bio": "Shailendra is the financial compass of Haitech Medical — precise, reliable, and always two steps ahead. Numbers don't just add up when he's around; they tell a story that guides smart decisions and keeps the business on solid ground.",
+            "tags": ["📊 Numbers Wizard", "🔍 Detail Obsessed", "💼 Finance Pro"]
         },
         {
             "id": "5",
             "name": "Mr. Parth Parmar",
             "designation": "Dealers Manager",
-            "image": "/images/team/parth-parmar.jpg"
+            "image": "/images/team/parth-parmar.jpg",
+            "bio": "If Haitech Medical's dealer network is a well-oiled machine, Parth is the mechanic who keeps it humming. He nurtures every dealer relationship with a rare combination of business savvy and genuine warmth, making partners feel less like vendors and more like family.",
+            "tags": ["🌐 Network Weaver", "🤝 Partnership Pro", "📈 Growth Driver"]
         },
         {
             "id": "6",
             "name": "Mr. Atharva Chavan",
             "designation": "Senior Inside Sales Executive",
-            "image": "/images/team/atharva-chavan.jpg"
+            "image": "/images/team/atharva-chavan.jpg",
+            "bio": "Atharva has a rare gift: he understands exactly what a client needs before they've even finished their sentence. His blend of technical product knowledge and easygoing personality makes every sales call feel less like business and more like a conversation with a knowledgeable friend.",
+            "tags": ["📞 Client Connector", "🎯 Sharp Closer", "😊 Warm Communicator"]
         },
         {
             "id": "7",
             "name": "Ms. Vanshika Pakhare",
             "designation": "Senior Inside Sales Executive",
-            "image": "/images/team/vanshika-pakhare.jpg"
+            "image": "/images/team/vanshika-pakhare.jpg",
+            "bio": "Vanshika brings a quiet confidence and sharp listening skills that make clients feel genuinely heard. She turns enquiries into long-term relationships effortlessly, and her follow-through is the stuff of legend within the team — clients always know she's got it handled.",
+            "tags": ["🌸 Relationship Builder", "🎯 Deal Maker", "✨ Trusted Advisor"]
         },
         {
             "id": "8",
             "name": "Mr. Manish Satam",
             "designation": "Senior Inside Sales Executive",
-            "image": "/images/team/manish-satam.jpg"
+            "image": "/images/team/manish-satam.jpg",
+            "bio": "There's always energy in the air when Manish is on a call. His enthusiasm for what he does is genuinely contagious, and clients pick up on it instantly. He cares about finding the right fit — not just making a sale — and that difference shows in every interaction.",
+            "tags": ["⚡ High Energy", "🏅 Sales Star", "😄 Positive Force"]
         },
         {
             "id": "9",
             "name": "Mr. Nitin Chavan",
             "designation": "Technical Service Specialist",
-            "image": "/images/team/nitin-chavan.jpg"
+            "image": "/images/team/nitin-chavan.jpg",
+            "bio": "When a piece of equipment acts up, Nitin is the calm in the storm. Armed with deep technical expertise and an almost Sherlock-like approach to problem-solving, he diagnoses and resolves issues with a speed that leaves clients quietly impressed every single time.",
+            "tags": ["🔧 Technical Genius", "🧩 Problem Solver", "⚡ Fast & Reliable"]
         },
         {
             "id": "10",
-            "name": "Mrs. Ranvijay Singh",
+            "name": "Mr. Ranvijay Singh",
             "designation": "Data Analyst",
-            "image": "/images/team/ranvijay-singh.jpg"
+            "image": "/images/team/ranvijay-singh.jpg",
+            "bio": "Ranvijay sees patterns where others see noise. With a sharp analytical mind and a love for turning raw data into clear, actionable insights, he's the team's guide for making sense of the numbers that shape Haitech's strategy — turning spreadsheets into stories that matter.",
+            "tags": ["📊 Data Storyteller", "💡 Insight Hunter", "🧠 Strategic Thinker"]
         },
         {
             "id": "11",
             "name": "Mr. Omkar Santosh Nikam",
             "designation": "Marketing Executive",
-            "image": "/images/team/omkar-santosh-nikam.jpg"
+            "image": "/images/team/omkar-santosh-nikam.jpg",
+            "bio": "Omkar is the creative force behind how the world sees Haitech Medical. With a keen eye for what resonates and a natural instinct for storytelling, he crafts campaigns that don't just inform — they inspire and leave a lasting impression.",
+            "tags": ["🎨 Creative Mind", "📣 Brand Voice", "✨ Story Crafter"]
         },
         {
             "id": "12",
             "name": "Ms. Akshada Pawar",
             "designation": "Procurement Executive",
-            "image": "/images/team/akshada-pawar.jpg"
+            "image": "/images/team/akshada-pawar.jpg",
+            "bio": "Akshada has an eagle eye for value — she ensures Haitech always gets the best quality at the right price without ever cutting corners. Her meticulous approach to procurement is what keeps the supply chain smooth, reliable, and always a step ahead.",
+            "tags": ["🦅 Value Hunter", "📦 Supply Pro", "✅ Detail Driven"]
         },
         {
             "id": "13",
             "name": "Ms. Supriya Joshi",
             "designation": "Commercial Executive",
-            "image": "/images/team/supriya-joshi.jpg"
+            "image": "/images/team/supriya-joshi.jpg",
+            "bio": "Supriya is the calm and methodical force behind Haitech's commercial operations. She brings clarity to complexity, ensuring every contract, deal, and commercial document is handled with the precision and professionalism that clients have come to rely on.",
+            "tags": ["📋 Precision Pro", "💼 Commercial Ace", "🤝 Deal Architect"]
         },
         {
             "id": "14",
             "name": "Mr. Sanjay Kumar Ram",
             "designation": "Field Sales Executive",
-            "image": "/images/team/sanjay-kumar-ram.jpg"
+            "image": "/images/team/sanjay-kumar-ram.jpg",
+            "bio": "Sanjay is Haitech's ambassador in the field — always on the move, always ready with a smile and a solution. He builds trust face-to-face, the old-fashioned way, and his clients genuinely appreciate the personal touch he brings to every visit.",
+            "tags": ["🌍 Road Warrior", "🤝 Trust Builder", "😊 Always Smiling"]
         },
         {
             "id": "15",
             "name": "Ms. Priyanka Palav",
             "designation": "Customer Service Executive",
-            "image": "/images/team/priyanka-palav.jpg"
+            "image": "/images/team/priyanka-palav.jpg",
+            "bio": "Priyanka is the friendly voice that makes everything feel manageable. Patient, empathetic, and wonderfully solution-focused, she turns every customer concern into an opportunity to leave someone's day a little brighter than when they called in.",
+            "tags": ["💛 Care Champion", "🌟 Problem Solver", "☎️ Go-To Support"]
         },
         {
             "id": "16",
             "name": "Ms. Jyotsna Patil",
             "designation": "Customer Service Executive",
-            "image": "/images/team/jyotsna-patil.jpg"
+            "image": "/images/team/jyotsna-patil.jpg",
+            "bio": "Jyotsna has a natural warmth that puts clients at ease the moment they connect with her. Her attentiveness and commitment to resolving queries swiftly has earned her a reputation as one of those rare people who make customer service feel genuinely personal.",
+            "tags": ["🌺 Warm Heart", "⚡ Quick Resolver", "💫 Client Favourite"]
         },
         {
             "id": "17",
             "name": "Mr. Dhiraj Bane",
             "designation": "Accounts Executive",
-            "image": "/images/team/dhiraj-bane.jpg"
+            "image": "/images/team/dhiraj-bane.jpg",
+            "bio": "Every rupee at Haitech Medical is in safe hands with Dhiraj around. He brings precision and quiet reliability to the accounts team, ensuring the financial gears are always turning smoothly — the kind of dependability that lets everyone else focus on what they do best.",
+            "tags": ["📐 Precision First", "💰 Balance Keeper", "🔍 Thorough Always"]
         },
         {
             "id": "18",
             "name": "Ms. Shrudi Pullani",
             "designation": "Logistics Executive",
-            "image": "/images/team/shrudi-pullani.jpg"
+            "image": "/images/team/shrudi-pullani.jpg",
+            "bio": "Shrudi is the unsung hero of deliveries — she makes the complex world of logistics look effortless. Her attention to timelines and knack for anticipating what could go wrong (and preventing it) is what keeps Haitech's products arriving exactly when clients need them.",
+            "tags": ["🚚 Delivery Maestro", "⏱️ On Time, Every Time", "🧩 Logistics Ninja"]
         },
         {
             "id": "19",
             "name": "Ms. Riya Kamble",
             "designation": "Inside Sales Executive",
-            "image": "/images/team/riya-kamble.jpg"
+            "image": "/images/team/riya-kamble.jpg",
+            "bio": "Riya brings fresh energy and genuine curiosity to every client conversation. Still early in her journey, she's already making a mark with her quick learning and thoughtful approach — someone the whole team is excited to watch grow.",
+            "tags": ["⭐ Rising Star", "💬 Great Listener", "🌱 Fast Learner"]
         },
         {
             "id": "20",
             "name": "Ms. Sejal Dalvi",
             "designation": "Inside Sales Executive",
-            "image": "/images/team/sejal-dalvi.jpg"
+            "image": "/images/team/sejal-dalvi.jpg",
+            "bio": "Sejal approaches every client interaction with care and intention. She's the kind of person who remembers the little details — a follow-up call, a specific requirement mentioned in passing — and that thoughtfulness is exactly what builds lasting client loyalty.",
+            "tags": ["💌 Thoughtful Touch", "🤝 Loyalty Builder", "📞 Client First"]
         },
         {
             "id": "21",
             "name": "Ms. Kaushiki Singh",
             "designation": "Inside Sales Executive",
-            "image": "/images/team/kaushiki-singh.jpg"
+            "image": "/images/team/kaushiki-singh.jpg",
+            "bio": "Kaushiki has a sharpness about her that clients notice right away — she spots opportunities quickly and communicates them clearly. Her professional poise and earnest work ethic make every conversation productive and every client feel truly well-served.",
+            "tags": ["🔍 Opportunity Spotter", "✨ Sharp & Poised", "🎯 Results Focused"]
         },
         {
             "id": "22",
             "name": "Mr. Nitin Ghanekar",
             "designation": "Office & Packing Executive",
-            "image": "/images/team/nitin-ghanekar.jpg"
+            "image": "/images/team/nitin-ghanekar.jpg",
+            "bio": "Nitin is the heartbeat of Haitech's operations floor. His meticulous care in packing ensures every order reaches clients in perfect condition — a small detail that speaks volumes about the standard of care this entire team holds itself to.",
+            "tags": ["📦 Packing Perfectionist", "🏅 Reliable Rock", "💪 Behind-the-Scenes Hero"]
         },
         {
             "id": "24",
             "name": "Mr. Sandeep Jadhav",
             "designation": "Office Assistant",
-            "image": "/images/team/sandeep-jadhav.jpg"
+            "image": "/images/team/sandeep-jadhav.jpg",
+            "bio": "Sandeep is the glue that holds daily office life together. Always dependable, always willing, and always there when someone needs a hand — his contributions happen behind the scenes, but the team knows exactly how much smoother everything runs because of him.",
+            "tags": ["🙌 Team Backbone", "💛 Always There", "⚙️ Office Hero"]
         }
     ]
 }

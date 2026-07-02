@@ -83,10 +83,6 @@ export default async function Home() {
 
             {/* CTA Section */}
             <section className="relative overflow-hidden bg-brand-gradient">
-                {/* Decorative elements */}
-                <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-                <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-primary-400/10 blur-2xl" />
-
                 <div className="section-lg container relative text-center">
                     <ScrollReveal variant="scale" duration={700}>
                         <span className="label-tag label-tag-white mb-6 inline-flex">

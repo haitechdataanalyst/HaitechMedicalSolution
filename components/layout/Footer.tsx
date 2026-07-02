@@ -51,9 +51,9 @@ export default function Footer({ sections, config }: FooterProps) {
 
             {/* Main footer body */}
             <div className="section container">
-                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+                <div className="grid grid-cols-2 gap-6 lg:grid-cols-12 lg:gap-8">
                     {/* Brand column */}
-                    <div className="sm:col-span-2 lg:col-span-4">
+                    <div className="col-span-2 lg:col-span-4">
                         <Link href="/" className="mb-5 inline-flex items-center gap-3">
                             <Image
                                 src="/haitech-medical.png"

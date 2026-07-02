@@ -24,9 +24,6 @@ export default function WhySection() {
                     backgroundSize: "32px 32px",
                 }}
             />
-            {/* Glow accents */}
-            <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary-500/10 blur-3xl" />
-            <div className="absolute -bottom-24 left-1/4 h-64 w-64 rounded-full bg-primary-400/8 blur-3xl" />
 
             <div className="section-lg container relative">
                 {/* Header */}
@@ -50,13 +47,9 @@ export default function WhySection() {
                     {stats.map((stat, index) => (
                         <ScrollReveal key={index} variant="up" delay={index * 100} threshold={0.06}>
                         <div
-                            className="group relative rounded-2xl border border-white/8 bg-white/5 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary-400/30 hover:bg-white/8 md:p-8"
+                            className="relative rounded-2xl border border-white/8 bg-white/5 p-6 text-center backdrop-blur-sm md:p-8"
                         >
-                            {/* Hover glow */}
-                            <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                style={{ background: "radial-gradient(circle at 50% 0%, rgb(31 182 205 / 0.08), transparent 70%)" }} />
-
-                            <div className="relative">
+                            <div>
                                 <div className="mb-3 flex justify-center">
                                     <Lordicon
                                         icon={stat.icon}

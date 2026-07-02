@@ -9,6 +9,7 @@ import { detectBrand } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { COMMERCE_ENABLED } from "@/lib/config";
+import type { CSSProperties } from "react";
 
 interface ProductWithPath extends Product {
     path: string;
@@ -32,7 +33,7 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
     return (
         <Link
             href={product.path}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0"
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-colors duration-200 hover:border-neutral-200 active:bg-neutral-50"
         >
             {/* Image zone */}
             <div className="relative aspect-square overflow-hidden bg-neutral-50">
@@ -40,8 +41,8 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
                     src={image}
                     alt={product.name}
                     fill
-                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
+                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 165px, (max-width: 1024px) 33vw, 220px"
                 />
 
                 {/* Brand chip */}
@@ -49,7 +50,7 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
                     {brand.name}
                 </span>
 
-                {/* Wishlist heart */}
+                {/* Wishlist */}
                 <button
                     onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(String(product.id)); }}
                     aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}
@@ -66,8 +67,6 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
 
             {/* Info zone */}
             <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
-
-                {/* Price — dominant */}
                 {COMMERCE_ENABLED && (
                     <div className="mb-1 leading-none">
                         {product.basePrice ? (
@@ -83,13 +82,11 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
                     </div>
                 )}
 
-                {/* Name */}
                 <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
                     {product.name}
                 </h3>
 
                 <div className="mt-auto space-y-2.5">
-                    {/* Trust signals */}
                     <div className="flex items-center gap-3 text-[10px] text-neutral-400">
                         <span className="flex items-center gap-1">
                             <Truck className="h-2.5 w-2.5 text-emerald-500" />
@@ -101,12 +98,11 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
                         </span>
                     </div>
 
-                    {/* CTA */}
                     <div className="flex items-center justify-between border-t border-neutral-100 pt-2">
                         <span className="text-[11px] font-semibold text-neutral-400 transition-colors duration-150 group-hover:text-primary-600">
                             View Details
                         </span>
-                        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400 transition-colors duration-150 group-hover:bg-primary-500 group-hover:text-white">
                             <ArrowRight className="h-3 w-3" />
                         </div>
                     </div>
@@ -117,6 +113,8 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
 }
 
 export default function TrendingProducts({ products }: TrendingProductsProps) {
+    const items = products.slice(0, 10);
+
     return (
         <section className="bg-neutral-50/60 py-10 md:py-14">
             <div className="container">
@@ -133,8 +131,21 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-                    {products.slice(0, 10).map((product, i) => (
+                {/* Mobile: horizontal scroll */}
+                <div
+                    className="flex gap-3 overflow-x-auto pb-3 md:hidden [&::-webkit-scrollbar]:hidden"
+                    style={{ scrollbarWidth: "none" } as CSSProperties}
+                >
+                    {items.map((product) => (
+                        <div key={`mob-${product.slug}`} className="w-[160px] flex-none">
+                            <TrendingCard product={product} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Tablet+: grid */}
+                <div className="hidden grid-cols-3 gap-3 md:grid md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
+                    {items.map((product, i) => (
                         <ScrollReveal key={product.slug} variant="up" delay={Math.min(i, 4) * 65} threshold={0.05}>
                             <TrendingCard product={product} />
                         </ScrollReveal>

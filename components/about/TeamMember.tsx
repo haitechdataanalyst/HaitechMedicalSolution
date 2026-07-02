@@ -8,13 +8,16 @@ export interface TeamMemberData {
     name: string;
     designation: string;
     image?: string;
+    bio?: string;
+    tags?: string[];
 }
 
 interface TeamMemberProps {
     member: TeamMemberData;
+    onClick?: () => void;
 }
 
-export function TeamMember({ member }: TeamMemberProps) {
+export function TeamMember({ member, onClick }: TeamMemberProps) {
     const [imageError, setImageError] = useState(false);
 
     const initials = member.name
@@ -26,7 +29,14 @@ export function TeamMember({ member }: TeamMemberProps) {
         .slice(0, 2);
 
     return (
-        <div className="group flex h-full flex-col items-center pt-2 text-center">
+        <div
+            className={`group flex h-full flex-col items-center pt-2 text-center${onClick ? " cursor-pointer" : ""}`}
+            onClick={onClick}
+            role={onClick ? "button" : undefined}
+            tabIndex={onClick ? 0 : undefined}
+            onKeyDown={onClick ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } } : undefined}
+            aria-label={onClick ? `View profile of ${member.name}` : undefined}
+        >
             {/* Photo circle */}
             <div className="relative mb-4 h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 lg:h-48 lg:w-48 flex-none overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-[1.03]">
                 {member.image && !imageError ? (

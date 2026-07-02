@@ -6,6 +6,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import type { CSSProperties } from "react";
 
 type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs";
 
@@ -74,16 +75,78 @@ const brands = [
 
 const FILTER_TABS: FilterCategory[] = ["All", "Optical", "Dental Chairs", "Surgical", "Ergonomic", "Burs"];
 
+type BrandItem = typeof brands[number];
+
+function BrandCard({ brand }: { brand: BrandItem }) {
+    return (
+        <Link
+            href={brand.href}
+            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_24px_rgba(0,0,0,0.09)]"
+        >
+            {/* Top accent bar */}
+            <div className={cn("h-0.5 w-full opacity-0 transition-opacity duration-200 group-hover:opacity-100", brand.accentColor)} />
+
+            {/* Image */}
+            <div className="relative h-36 w-full overflow-hidden bg-neutral-50 sm:h-40">
+                <Image
+                    src={brand.image}
+                    alt={brand.name}
+                    fill
+                    sizes="(max-width: 768px) 180px, (max-width: 1024px) 33vw, 20vw"
+                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+            </div>
+
+            {/* Info */}
+            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
+                <span className="mb-2 w-fit rounded-full border border-primary-100 bg-primary-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700">
+                    {brand.badge}
+                </span>
+
+                <h3 className="mb-1 text-sm font-bold text-neutral-900 transition-colors group-hover:text-primary-700">
+                    {brand.name}
+                </h3>
+                <p className="mb-2.5 flex-1 line-clamp-2 text-[11px] leading-relaxed text-neutral-500">
+                    {brand.tagline}
+                </p>
+
+                <div className="flex items-center justify-between pt-1">
+                    <span className="text-[11px] font-medium text-neutral-400">{brand.productCount} products</span>
+                    {brand.priceFrom && (
+                        <span className="text-[11px] font-semibold text-neutral-700">from {brand.priceFrom}</span>
+                    )}
+                </div>
+
+                <div className="mt-2.5 flex items-center gap-1 text-xs font-semibold text-primary-600 transition-all duration-150 group-hover:gap-1.5">
+                    Explore
+                    <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
+                </div>
+            </div>
+        </Link>
+    );
+}
+
 export default function BrandsSection() {
     const [activeFilter, setActiveFilter] = useState<FilterCategory>("All");
 
     const filteredBrands = activeFilter === "All" ? brands : brands.filter((b) => b.filter === activeFilter);
 
+    const gridClass = cn(
+        "gap-3 md:gap-4",
+        filteredBrands.length >= 4
+            ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+            : filteredBrands.length === 3
+            ? "grid-cols-1 sm:grid-cols-3"
+            : filteredBrands.length === 2
+            ? "grid-cols-2 max-w-lg mx-auto"
+            : "grid-cols-1 max-w-xs mx-auto"
+    );
+
     return (
         <section className="bg-white py-10 md:py-14">
             <div className="container">
 
-                {/* ── Section header ── */}
+                {/* Section header */}
                 <ScrollReveal variant="up">
                     <div className="mb-6 flex items-center justify-between">
                         <div>
@@ -97,7 +160,7 @@ export default function BrandsSection() {
                     </div>
                 </ScrollReveal>
 
-                {/* ── Filter pills ── */}
+                {/* Filter pills */}
                 <ScrollReveal variant="fade" delay={100}>
                     <div className="mb-6 flex flex-wrap items-center gap-2">
                         {FILTER_TABS.map((tab) => (
@@ -117,66 +180,23 @@ export default function BrandsSection() {
                     </div>
                 </ScrollReveal>
 
-                {/* ── Brand cards ── */}
-                <div className={cn(
-                    "grid gap-3 md:gap-4",
-                    filteredBrands.length >= 4
-                        ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
-                        : filteredBrands.length === 3
-                        ? "grid-cols-1 sm:grid-cols-3"
-                        : filteredBrands.length === 2
-                        ? "grid-cols-2 max-w-lg mx-auto"
-                        : "grid-cols-1 max-w-xs mx-auto"
-                )}>
+                {/* Mobile: horizontal scroll */}
+                <div
+                    className="flex gap-3 overflow-x-auto pb-3 md:hidden [&::-webkit-scrollbar]:hidden"
+                    style={{ scrollbarWidth: "none" } as CSSProperties}
+                >
+                    {filteredBrands.map((brand) => (
+                        <div key={`mob-${brand.name}`} className="w-[180px] flex-none">
+                            <BrandCard brand={brand} />
+                        </div>
+                    ))}
+                </div>
+
+                {/* md+: grid */}
+                <div className={cn("hidden md:grid", gridClass)}>
                     {filteredBrands.map((brand, i) => (
                         <ScrollReveal key={brand.name} variant="up" delay={i * 75} threshold={0.05}>
-                        <Link
-                            href={brand.href}
-                            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_24px_rgba(0,0,0,0.09)]"
-                        >
-                            {/* Top accent bar */}
-                            <div className={cn("h-0.5 w-full opacity-0 transition-opacity duration-200 group-hover:opacity-100", brand.accentColor)} />
-
-                            {/* Image */}
-                            <div className="relative h-36 w-full overflow-hidden bg-neutral-50 sm:h-40">
-                                <Image
-                                    src={brand.image}
-                                    alt={brand.name}
-                                    fill
-                                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
-                                />
-                            </div>
-
-                            {/* Info */}
-                            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                                {/* Badge */}
-                                <span className="mb-2 w-fit rounded-full border border-primary-100 bg-primary-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700">
-                                    {brand.badge}
-                                </span>
-
-                                <h3 className="mb-1 text-sm font-bold text-neutral-900 transition-colors group-hover:text-primary-700">
-                                    {brand.name}
-                                </h3>
-                                <p className="mb-2.5 flex-1 text-[11px] leading-relaxed text-neutral-500 line-clamp-2">
-                                    {brand.tagline}
-                                </p>
-
-                                {/* Bottom row */}
-                                <div className="flex items-center justify-between pt-1">
-                                    <span className="text-[11px] font-medium text-neutral-400">{brand.productCount} products</span>
-                                    {brand.priceFrom && (
-                                        <span className="text-[11px] font-semibold text-neutral-700">from {brand.priceFrom}</span>
-                                    )}
-                                </div>
-
-                                {/* Explore row */}
-                                <div className="mt-2.5 flex items-center gap-1 text-xs font-semibold text-primary-600 transition-all duration-150 group-hover:gap-1.5">
-                                    Explore
-                                    <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
-                                </div>
-                            </div>
-                        </Link>
+                            <BrandCard brand={brand} />
                         </ScrollReveal>
                     ))}
                 </div>
