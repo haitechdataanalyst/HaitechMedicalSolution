@@ -46,7 +46,7 @@ function TrendingCard({ product }: { product: ProductWithPath }) {
                 />
 
                 {/* Brand chip */}
-                <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-[9px] font-bold tracking-wide", brand.cls)}>
+                <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-xs font-bold tracking-wide", brand.cls)}>
                     {brand.name}
                 </span>
 

@@ -86,6 +86,22 @@ const nextConfig: NextConfig = {
         ];
     },
 
+    // URL redirects — keep old paths alive for SEO/bookmarks
+    async redirects() {
+        return [
+            {
+                source: "/our-instruments",
+                destination: "/product-category/medesy",
+                permanent: true,
+            },
+            {
+                source: "/our-instruments/:path*",
+                destination: "/product-category/medesy/:path*",
+                permanent: true,
+            },
+        ];
+    },
+
     // Optimize server external packages
     serverExternalPackages: ["pdfkit", "nodemailer"],
 };

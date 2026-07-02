@@ -221,7 +221,7 @@ export function ErgoMagnificationSelector() {
                                     <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
                                         {stat.label}
                                     </p>
-                                    <p className="mt-0.5 text-[9px] text-neutral-300">{stat.note}</p>
+                                    <p className="mt-0.5 text-xs text-neutral-300">{stat.note}</p>
                                 </div>
                             ))}
                         </div>

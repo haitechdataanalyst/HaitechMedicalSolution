@@ -150,7 +150,7 @@ export default function Footer({ sections, config }: FooterProps) {
                             href={config.social?.facebook}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white"
+                            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white sm:h-8 sm:w-8"
                             aria-label="Facebook"
                         >
                             <FacebookIcon size={16} />
@@ -159,7 +159,7 @@ export default function Footer({ sections, config }: FooterProps) {
                             href={config.social?.instagram}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white"
+                            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white sm:h-8 sm:w-8"
                             aria-label="Instagram"
                         >
                             <InstagramIcon size={16} />
@@ -169,7 +169,7 @@ export default function Footer({ sections, config }: FooterProps) {
                                 href={config.social.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white"
+                                className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white sm:h-8 sm:w-8"
                                 aria-label="LinkedIn"
                             >
                                 <LinkedInIcon size={16} />
@@ -177,7 +177,7 @@ export default function Footer({ sections, config }: FooterProps) {
                         )}
                         <a
                             href={`mailto:${config.company.email}`}
-                            className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white"
+                            className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-navy-400 transition-all duration-200 hover:bg-primary-500 hover:text-white sm:h-8 sm:w-8"
                             aria-label="Email"
                         >
                             <EmailIcon size={16} />

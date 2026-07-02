@@ -14,6 +14,9 @@ export default async function Home() {
 
     return (
         <>
+            {/* Visually-hidden H1 for SEO — the hero uses a video carousel with no visible heading */}
+            <h1 className="sr-only">Premium Dental &amp; Medical Equipment — Haitech Medical Solutions</h1>
+
             {/* Hero Section */}
             <Hero />
 

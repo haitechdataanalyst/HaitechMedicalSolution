@@ -18,3 +18,4 @@ export { default as Modal } from "./Modal";
 export { default as Banner } from "./Banner";
 export { default as SafeImage } from "./SafeImage";
 export { default as ScrollReveal } from "./ScrollReveal";
+export { Skeleton, ProductCardSkeleton, CategoryCardSkeleton, PageHeaderSkeleton } from "./Skeleton";
