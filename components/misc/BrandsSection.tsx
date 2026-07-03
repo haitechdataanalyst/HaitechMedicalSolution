@@ -55,7 +55,7 @@ const brands = [
         accentColor: "bg-amber-500",
         badge: "Ergonomic",
         filter: "Ergonomic" as FilterCategory,
-        productCount: 5,
+        productCount: 4,
         credibility: "Finnish-engineered · Clinically proven",
         priceFrom: "₹23,999",
     },

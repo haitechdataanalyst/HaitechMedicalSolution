@@ -63,7 +63,7 @@ export const MOCK_ORDERS: MockOrder[] = [
         id: "HT-2025-0301",
         date: "2025-04-22",
         items: [
-            { name: "Salli Chin Tilt Saddle Chair", sku: "SAL-CT-01", qty: 1, price: 55999, currency: "INR" },
+            { name: "Salli Triple Fit Saddle Chair", sku: "SAL-TF-BLK", qty: 1, price: 55999, currency: "INR" },
         ],
         total: 55999,
         currency: "INR",

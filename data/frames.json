@@ -61,13 +61,6 @@
             ]
         },
         {
-            "id": "bolle",
-            "name": "Bolle",
-            "image": "/images/products/admetec/Our-Frames/Bolle-Frame/Admatec---Bolle---Gun-Brown-Color.jpg",
-            "priceModifier": 75,
-            "colors": [{ "id": "gun-brown", "name": "Gun Brown", "hex": ["#4f5559", "#6b4e3d"], "image": "/images/products/admetec/Our-Frames/Bolle-Frame/Admatec---Bolle---Gun-Brown-Color.jpg" }]
-        },
-        {
             "id": "progear",
             "name": "Progear",
             "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp",
