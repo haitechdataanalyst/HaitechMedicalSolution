@@ -10,7 +10,7 @@ const stats: { value: string; label: string; icon: IconName }[] = [
     { value: "5+", label: "Global Brands", icon: "globe" },
     { value: "1000+", label: "Workshops & Conferences Supported", icon: "conference" },
     { value: "30+", label: "Partnerships & Expanding", icon: "users" },
-    { value: "13+", label: "Years of Excellence", icon: "award" },
+    { value: "15+", label: "Years of Excellence", icon: "award" },
 ];
 
 export default function WhySection() {

@@ -138,7 +138,7 @@ const BRANDS = [
 ];
 
 const STATS = [
-    { value: "13+",   label: "Years in business" },
+    { value: "15+",   label: "Years in business" },
     { value: "27+",   label: "Dealer partners" },
     { value: "5",     label: "Global brands" },
     { value: "1000+", label: "Professionals served" },

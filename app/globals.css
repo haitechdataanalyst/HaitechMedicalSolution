@@ -833,11 +833,12 @@
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-[data-reveal="up"]    { transform: translateY(32px); }
+/* Mobile-safe offsets — keep within viewport padding so transforms don't widen the page */
+[data-reveal="up"]    { transform: translateY(24px); }
 [data-reveal="fade"]  { transform: none; }
-[data-reveal="left"]  { transform: translateX(-48px); }
-[data-reveal="right"] { transform: translateX(48px); }
-[data-reveal="scale"] { transform: scale(0.93) translateY(12px); }
+[data-reveal="left"]  { transform: translateX(-24px); }
+[data-reveal="right"] { transform: translateX(24px); }
+[data-reveal="scale"] { transform: scale(0.95) translateY(10px); }
 [data-reveal].revealed { opacity: 1; transform: none; }
 
 .reveal-d1 { transition-delay: 0.1s; }

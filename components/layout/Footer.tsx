@@ -39,7 +39,7 @@ export default function Footer({ sections, config }: FooterProps) {
                         </div>
                         <div className="flex items-center gap-2 text-navy-400">
                             <Star className="h-4 w-4 text-primary-400 shrink-0" />
-                            <span className="text-xs font-medium">13+ Years of Excellence</span>
+                            <span className="text-xs font-medium">15+ Years of Excellence</span>
                         </div>
                         <div className="flex items-center gap-2 text-navy-400">
                             <Clock className="h-4 w-4 text-primary-400 shrink-0" />

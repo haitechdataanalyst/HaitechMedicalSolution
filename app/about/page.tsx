@@ -9,9 +9,9 @@ export const metadata = getMetadata("about");
 export default function AboutPage() {
     const breadcrumbs = getBreadcrumbs("about");
     return (
-        <>
+        <div className="overflow-x-hidden">
             <Breadcrumbs items={breadcrumbs} />
             <AboutPageClient teamMembers={teamData.team} />
-        </>
+        </div>
     );
 }
