@@ -66,7 +66,7 @@ export default function AboutSalliPage() {
                         Advancing research in sitting physiology, continuous product innovation, and solving sitting-related problems through a customer-oriented, integrated approach.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/products">
+                        <Link href="/product-category/salli">
                             <Button size="lg" className="rounded-full px-8">Explore Salli Chairs</Button>
                         </Link>
                         <Link href="/support/contact">

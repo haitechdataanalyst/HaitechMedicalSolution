@@ -1,49 +1,437 @@
 {
-    "faqs": [
+    "brands": [
         {
-            "id": 1,
-            "question": "What are the benefits of using Loupes and especially the Ergo Loupes?",
-            "answer": "Loupes improve precision and accuracy by magnifying the surgical area, reducing eye strain, and enhancing posture during long procedures. They are essential for maintaining high standards of care in dental and surgical practices."
+            "id": "admetec",
+            "label": "Admetec Loupes",
+            "faqs": [
+                {
+                    "id": 1,
+                    "question": "What are the benefits of using Loupes and especially the Ergo Loupes?",
+                    "answer": "Loupes improve precision and accuracy by magnifying the surgical area, reducing eye strain, and enhancing posture during long procedures. They are essential for maintaining high standards of care in dental and surgical practices."
+                },
+                {
+                    "id": 2,
+                    "question": "How do I choose the right magnification for my loupes?",
+                    "answer": "This is the million dollars question. If you ask 3 different dental practitioners, you might get 4 different answers. From our experience, a good magnification to start with would be 3.0X-5.0X in Ergo loupes (2.5X-4.5X in conventional loupes). Other criteria to consider when choosing your loupes would be: How many teeth do you want to see (the higher the magnification is, the smaller would your field of view be hence you'll see less teeth)? How much of your practice consists of endo, surgical or aesthetics? We found that most aesthetic dentistry practitioners prefer to see a wider part of the arch, while endo and surgical prefer to see more minute details while compromising on the field of view. Please remember that there's no one-size-fits-all solution here. Give us a call and we would be happy to give you further guidance."
+                },
+                {
+                    "id": 3,
+                    "question": "How do I know if my loupes fit correctly?",
+                    "answer": "Proper fitting is crucial for comfort and effectiveness. We insist on fitting consultations to ensure your loupes are tailored to your facial structure, posture, and working distance, providing optimal performance and comfort."
+                },
+                {
+                    "id": 4,
+                    "question": "What are the advantages of the Ergo over conventional TTL Loupes?",
+                    "answer": "Although all loupes enable you to sit with a straight back, only the Ergo helps you maintain a straight neck! These days, dental practitioners spend a significant amount of time outside their practice still bending their necks due to the increased use of mobile phones. From our observations (yet to be confirmed by research) there are more occasions of neck problems in young dental practitioners than there were 10 or even 5 years ago."
+                },
+                {
+                    "id": 5,
+                    "question": "What can I expect when I receive my loupes?",
+                    "answer": "There is always an adjustment period of 1-14 days, where your eyes and brain need to practice how to see with the unique visuals of Ergo loupes. Galilean loupes have little to no adjustment period. Once you have trained your eyes to see with the loupes – you will never be able to work without them."
+                },
+                {
+                    "id": 6,
+                    "question": "What types of lights do you offer, and how do they enhance visibility?",
+                    "answer": "We offer a variety of LED and fiber-optic lights designed to provide bright, focused illumination in your working area. These lights reduce shadows and improve visibility, allowing for more precise work."
+                },
+                {
+                    "id": 7,
+                    "question": "How do I attach a light to my loupes?",
+                    "answer": "Attaching a light to your loupes is simple and secure. Our lights are designed to integrate seamlessly with our loupes, and we provide step-by-step instructions along with support from our team if needed."
+                },
+                {
+                    "id": 8,
+                    "question": "How long does it take to receive my loupes or lights after ordering?",
+                    "answer": "Typically, orders are processed within 2 business days, and shipping times may vary depending on your location, but it can take between 6-8 weeks to make and ship your loupes. We'll provide you with tracking information so you can follow your order's progress."
+                },
+                {
+                    "id": 10,
+                    "question": "Can I try the loupes before purchasing?",
+                    "answer": "Please contact us to arrange a demo and experience the benefits of Admetec loupes firsthand. A member of our team will gladly reach out to you."
+                }
+            ]
         },
         {
-            "id": 2,
-            "question": "How do I choose the right magnification for my loupes?",
-            "answer": "This is the million dollars question. If you ask 3 different dental practitioners, you might get 4 different answers. From our experience, a good magnification to start with would be 3.0X-5.0X in Ergo loupes (2.5X-4.5X in conventional loupes). Other criteria to consider when choosing your loupes would be: How many teeth do you want to see (the higher the magnification is, the smaller would your field of view be hence you’ll see less teeth)? How much of your practice consists of endo, surgical or aesthetics? We found that most aesthetic dentistry practitioners prefer to see a wider part of the arch, while endo and surgical prefer to see more minute details while compromising on the field of view. Please remember that there’s no one-size-fits-all solution here. Give us a call and we would be happy to give you further guidance."
+            "id": "medesy",
+            "label": "Medesy Instruments",
+            "sections": [
+                {
+                    "title": "Brand & Origin",
+                    "faqs": [
+                        {
+                            "id": 100,
+                            "question": "What is Medesy and where is it manufactured?",
+                            "answer": "Medesy is an Italian manufacturer of premium dental and surgical instruments, headquartered in Maniago, in the Friuli-Venezia Giulia region of northern Italy. Maniago has been a globally recognised centre of steel craftsmanship for over 600 years — since the Renaissance period.\n\nEvery Medesy instrument is 100% designed and manufactured in Italy — not assembled from imported components."
+                        },
+                        {
+                            "id": 101,
+                            "question": "How long has Medesy been making dental instruments?",
+                            "answer": "Medesy draws on a heritage of over 600 years of Maniago steel artisanship. The company as a modern entity moved into the dental and medical instrument space in the 1970s and has since grown into a globally distributed brand with registrations in the USA, Canada, EU, Russia, China, Brazil, India, and more. It is one of very few instrument makers that combines centuries-old craftsmanship with ISO-certified manufacturing standards."
+                        },
+                        {
+                            "id": 102,
+                            "question": "Why is the 'Made in Italy' label significant for dental instruments?",
+                            "answer": "Italian steel craftsmanship — especially from the Maniago region — carries significant prestige in the surgical instrument industry:\n• Generations of metallurgical knowledge passed down through skilled artisans\n• Italian manufacturing standards for medical devices meet the strictest EU regulatory requirements\n• Focus on long-lasting precision instruments rather than cheap, disposable alternatives\n• CE certification framework ensures consistent quality control at every production stage\n\nDentists in Europe and the USA have long preferred Italian-made instruments for the same reason surgeons prefer German optical instruments — the country of origin carries a proven quality reputation."
+                        },
+                        {
+                            "id": 103,
+                            "question": "Is Medesy a premium or entry-level brand?",
+                            "answer": "Medesy is firmly a premium, professional-grade brand — positioned alongside internationally respected names like Hu-Friedy (USA). It is not an entry-level brand, and its pricing reflects the quality of Italian steel, the precision of manufacturing, and the lifetime warranty that comes with every instrument.\n\nFor dental clinics that use instruments heavily and daily, the cost-per-use of a Medesy instrument is actually lower than cheaper alternatives that need frequent replacement. A Medesy mirror or forcep used daily for 5+ years works out cheaper per procedure than replacing a low-cost instrument every 12-18 months."
+                        },
+                        {
+                            "id": 104,
+                            "question": "Who is the authorised distributor of Medesy in India?",
+                            "answer": "Haitech Medical Solutions is the authorised distributor of Medesy instruments in India. They supply through a pan-India dealer network as well as directly to hospitals, dental clinics, dental colleges, and institutional buyers. Haitech also participates in major dental conferences and exhibitions across India where Medesy products are demonstrated live.\n\nBuying through Haitech ensures you receive genuine Italian Medesy instruments with full warranty support — not grey-market or counterfeit products."
+                        }
+                    ]
+                },
+                {
+                    "title": "Products & Range",
+                    "faqs": [
+                        {
+                            "id": 105,
+                            "question": "What categories of dental instruments does Medesy offer?",
+                            "answer": "Medesy covers the full spectrum of dental disciplines:\n• Surgery — Forceps, elevators, periosteal elevators, scissors, needle holders, bone curettes, retractors, scalpel handles & blades\n• Diagnosis — Mirrors, probes, explorers, tweezers, diagnostic kits\n• Periodontics — Curettes, scalers, periodontal knives, pocket marking tweezers, sharpening stones\n• Conservative / Restorative — Composite instruments, spatulas, pluggers, carvers, matrix instruments\n• Implantology — Implant-specific surgical instruments and kits\n• Orthodontics — Bracket removers, pliers, band pushers, wire-bending instruments\n• Micro-Surgery — Microsurgical scissors, micro-tweezers, microsurgical needle holders (titanium options available)\n• Syringes — Standard, self-aspirating, intraligamental, stainless steel syringes\n• Impression — Polycarbonate & metal impression trays\n• Laboratory — Lab instruments for dental technicians"
+                        },
+                        {
+                            "id": 106,
+                            "question": "What are the most popular Medesy instruments in India?",
+                            "answer": "Based on Haitech's distribution experience, the top-selling and most recommended instruments include:\n• Dr. Comella Mirror (4903/10RO) — Distortion-free Italian glass for the clearest intraoral view; no optical distortion like Chinese mirrors\n• Cook-Waite Syringe (4969/1-RA) — Precision aspiration, smooth plunger action, ergonomic grip; significantly reduces hand fatigue\n• Polycarbonate Impression Trays (6008/24) — Autoclavable, unbreakable, reusable; cost-effective for high-volume practices\n• Dr. Comella Forcep (2400/70) — Ergonomic design with optimal grip force; reduces hand strain in long extraction procedures\n• Root Elevators — New line with improved ergonomics and DLC-coated options for enhanced durability"
+                        },
+                        {
+                            "id": 107,
+                            "question": "What is the Levante handle range and why is it special?",
+                            "answer": "Levante is Medesy's premium ergonomic handle line, co-designed with Pininfarina — the legendary Italian design studio behind some of the world's most iconic Ferrari and Maserati car designs.\n• Made from non-toxic, high-grip silicone with a special textured surface\n• Available in multiple colours — each colour designates a specific use or sterilisation tray assignment\n• Perfectly balanced weight distribution for comfort in extended procedures\n• Available across composite instruments, diagnostic handles, and more\n\nThe Levante range is ideal for clinics that want both function and aesthetics — a design-forward choice that also improves clinical ergonomics."
+                        },
+                        {
+                            "id": 108,
+                            "question": "What is DLC coating and which Medesy instruments have it?",
+                            "answer": "DLC stands for Diamond Like Carbon — a cutting-edge surface treatment that applies an ultra-hard, carbon-based coating to the instrument surface.\n• Hardness: DLC-coated instruments are significantly harder than standard stainless steel, making them highly resistant to wear and corrosion\n• Non-stick: The coating reduces adhesion of soft tissues and composites to the instrument tip\n• Sharpness retention: DLC-coated cutting instruments hold their edge much longer\n• Aesthetics: The coating gives a distinctive matte black finish\n\nMedesy has introduced DLC coating on select lines including curettes, periodontal instruments, and elevators. Think of it as the same technology used in aerospace and premium watchmaking — now applied to dental instruments for superior longevity."
+                        },
+                        {
+                            "id": 109,
+                            "question": "Does Medesy offer complete kits or only individual instruments?",
+                            "answer": "Medesy offers both. For clinics setting up or upgrading, the following kits are available:\n• Diagnostic Kit — Mirror, probe, explorer, tweezer in a Gammafix sterilisation tray\n• Surgery Kit — Complete extraction and soft tissue surgery set\n• Periodontal Instruments Kit — Full curette and scaler range in one set\n• Microsurgery Kits — Precision sets for endodontic surgery and implant procedures\n• Bone Curette Kits — Lucas, Miller, Volkmann, Willinger varieties in kit format\n\nKits are particularly cost-effective for new clinics and help with consistent tray setup across multiple procedure rooms."
+                        },
+                        {
+                            "id": 110,
+                            "question": "Does Medesy make titanium instruments?",
+                            "answer": "Yes. Medesy offers pure titanium instruments in select categories, particularly in the microsurgery range:\n• Pure titanium microsurgical needle holders\n• Pure titanium scissors with spring action\n• Titanium periodontal surgery kits (Pearson series)\n\nTitanium instruments offer the advantage of being lightweight, non-magnetic, non-corrosive, and biocompatible — preferred by periodontists and microsurgeons. They also have a TiN (Titanium Nitride) coated variant available for composite instruments, which provides excellent non-stick properties."
+                        }
+                    ]
+                },
+                {
+                    "title": "Quality & Certifications",
+                    "faqs": [
+                        {
+                            "id": 111,
+                            "question": "What certifications do Medesy instruments hold?",
+                            "answer": "All Medesy instruments are manufactured and verified in compliance with international standards:\n• CE Mark — Meets European Union Medical Device Directive; confirms safety, quality and performance for clinical use\n• ISO 9001:2008 — Quality Management System certification; consistent manufacturing processes at every stage\n• ISO 13485:2003 — Medical Device Quality Management; specifically covers design, production and post-market surveillance\n\nThese certifications are accepted in India for import approval and are also valid for government tender submissions (CGHS, ESIC, Railway, Army procurement)."
+                        },
+                        {
+                            "id": 112,
+                            "question": "What type of steel is used in Medesy instruments?",
+                            "answer": "Medesy uses high-quality surgical-grade stainless steel — the same classification used in operating room instruments globally. This steel is:\n• Corrosion-resistant even after hundreds of autoclave cycles\n• Hard enough to hold a fine working edge for cutters and scalers\n• Flexible enough to avoid fracture under normal clinical stress\n• Biocompatible — no leaching of metals into tissue or materials\n\nEach instrument undergoes quality checks at multiple production stages to ensure dimensional accuracy and surface finish before leaving the factory."
+                        },
+                        {
+                            "id": 113,
+                            "question": "How does Medesy quality compare to Chinese or Korean instruments?",
+                            "answer": "The differences are meaningful and clinically noticeable:\n• Steel grade: High-grade surgical stainless steel (Medesy) vs. often lower-grade alloys\n• Surface finish: Mirror-polished, smooth, uniform vs. inconsistent finish with visible pitting\n• Edge retention: Holds sharpness through 100+ autoclave cycles vs. blunts faster and needs replacement\n• Autoclave tolerance: Designed for lifetime autoclaving vs. corrosion or discolouration common\n• Ergonomics: Engineered handles with balanced weight vs. basic functional design only\n• Certification: CE, ISO 9001, ISO 13485 vs. often only self-declared compliance\n• Warranty: Lifetime on manufacturing defects vs. typically 1 year or none"
+                        },
+                        {
+                            "id": 114,
+                            "question": "Are Medesy instruments registered with Indian regulatory authorities?",
+                            "answer": "Medesy instruments imported and distributed by Haitech Medical Solutions comply with the applicable Indian medical device import regulations under the CDSCO (Central Drugs Standard Control Organisation) and the Medical Devices Rules 2017. The CE marking and ISO certifications from Italy are recognised by Indian authorities and are required documentation for institutional procurement including government tenders, hospitals, and dental colleges."
+                        },
+                        {
+                            "id": 115,
+                            "question": "Is Medesy registered in the USA and other major markets?",
+                            "answer": "Yes. Medesy has successfully obtained product registrations in several major markets including the United States, Canada, Russia, China, Brazil, and across the European Union. This global regulatory acceptance is a strong indicator of the brand's consistent quality and compliance with diverse national standards — making it one of the few Italian dental instrument brands with a true multi-country regulatory footprint."
+                        }
+                    ]
+                },
+                {
+                    "title": "Sterilisation & Care",
+                    "faqs": [
+                        {
+                            "id": 116,
+                            "question": "Are Medesy instruments autoclavable?",
+                            "answer": "Yes, all Medesy stainless steel instruments are designed to be autoclaved as the primary method of sterilisation. They are compatible with standard steam autoclaving at 134°C (Class B autoclave cycle). When handled correctly, Medesy instruments can withstand hundreds of autoclave cycles without corrosion, discolouration, or dimensional change.\n\nPolycarbonate impression trays (6008 series) are also autoclavable — a major advantage over disposable alternatives."
+                        },
+                        {
+                            "id": 117,
+                            "question": "What is the recommended cleaning process before autoclaving?",
+                            "answer": "Follow this sequence for optimal instrument longevity:\n• Step 1 — Rinse: Immediately after use, rinse under warm running water to remove blood, saliva, or debris. Do not allow biological material to dry on the surface.\n• Step 2 — Ultrasonic Clean: Place in an ultrasonic bath with an enzymatic cleaning solution for 5-10 minutes. This removes micro-debris from joints and serrations.\n• Step 3 — Rinse & Dry: Rinse with distilled water and dry thoroughly before autoclaving. Moisture can lead to residue build-up.\n• Step 4 — Lubricate: Apply instrument lubricant to joints of scissors, forceps, and needle holders before the autoclave cycle.\n• Step 5 — Autoclave: Use wrapped pouches or cassette trays (e.g., Gammafix trays) at 134°C / 3 bar for the standard cycle."
+                        },
+                        {
+                            "id": 118,
+                            "question": "Can Medesy instruments be cold sterilised (chemical/glutaraldehyde)?",
+                            "answer": "While Medesy instruments can technically tolerate cold sterilisation chemicals (glutaraldehyde, cidex solutions) for short periods, autoclaving is strongly preferred because:\n• Prolonged exposure to chemical sterilants can cause micro-corrosion on the instrument surface over time\n• Autoclaving provides validated sterility assurance level (SAL) that chemical cold sterilisation cannot always guarantee\n• It preserves the surface finish and longevity of the steel\n\nFor instruments with plastic or rubber components, always check the specific product instructions before autoclaving."
+                        },
+                        {
+                            "id": 119,
+                            "question": "How do I prevent corrosion or discolouration on Medesy instruments?",
+                            "answer": "Corrosion on stainless steel instruments is almost always caused by improper care. Follow these practices:\n• Always use distilled or deionised water in ultrasonic baths and autoclaves — tap water minerals cause spotting and pitting\n• Never mix stainless steel instruments with carbon steel in the same tray — ions transfer and cause rust\n• Lubricate hinged instruments regularly — dryness causes wear and micro-cracks at joints\n• Store instruments dry in a clean, moisture-free environment\n• Do not leave instruments in disinfectant solution for more than the recommended time\n\nNote: Light brown spots from water minerals are not rust — these can be cleaned with an instrument cleaner. True corrosion (pitting) is usually caused by incorrect water, chemicals, or instrument mixing."
+                        },
+                        {
+                            "id": 120,
+                            "question": "How often should I sharpen Medesy scalers and curettes?",
+                            "answer": "Medesy scaling instruments are manufactured with precision-ground working edges. As a general guide:\n• Sharpen before or after every 5-7 heavy scaling procedures\n• Test sharpness by lightly drawing the edge across a plastic testing stick — a sharp instrument grips, a dull one slides\n• Use a Medesy sharpening stone (Item 1207 or equivalent) with light oil for best results\n• DLC-coated instruments retain their edge longer and need sharpening less frequently\n\nA dull scaler increases the force needed and reduces patient comfort — regular sharpening maintains clinical effectiveness and protects instrument life."
+                        }
+                    ]
+                },
+                {
+                    "title": "Clinical Use",
+                    "faqs": [
+                        {
+                            "id": 121,
+                            "question": "Are Medesy instruments suitable for implant procedures?",
+                            "answer": "Yes. Medesy has a dedicated implantology instrument range. For implant cases specifically:\n• Titanium periosteal elevators — avoid scratching implant surfaces\n• Titanium or DLC-coated instruments for flap management to prevent metallic contamination of the implant site\n• Medesy implant kits — purpose-built sets with the instruments needed for guided surgery and bone preparation\n\nFor implant surgery, titanium instruments are the gold standard — they are non-magnetic, non-corrosive, and will not leave ferrous particles at the surgical site."
+                        },
+                        {
+                            "id": 122,
+                            "question": "Are Medesy instruments suitable for paediatric (pedodontic) dentistry?",
+                            "answer": "Medesy offers specifically designed paediatric instruments including:\n• Compact, child-sized extraction forceps (English pattern) for less traumatic extractions in primary teeth\n• Smaller mirror sizes for better intraoral access in children\n• Paediatric-scale scalers and probes with finer tips\n\nUsing adult-sized instruments on children is a common cause of soft tissue trauma and longer procedure time. Medesy's paediatric range reduces this risk significantly."
+                        },
+                        {
+                            "id": 123,
+                            "question": "Does Medesy offer left-handed instruments?",
+                            "answer": "Yes — Medesy is one of the few dental instrument brands that offers a dedicated left-handed scissors range. Left-handed dental scissors are the mirror-image of the standard design, allowing natural, comfortable cutting motions for left-handed clinicians without the hand fatigue or awkward grip that comes from using right-handed scissors. Ask Haitech for availability of left-handed variants from the current catalogue."
+                        },
+                        {
+                            "id": 124,
+                            "question": "Are Medesy composite instruments non-stick?",
+                            "answer": "Medesy offers composite instruments in three versions, each with different non-stick properties:\n• Standard stainless steel — good quality, may require light wetting during composite placement\n• Nerissimo — black-coated version with enhanced non-stick surface\n• TiN coated (Titanium Nitride) — gold-coloured, excellent non-stick properties due to titanium nitride surface chemistry; favoured for bulk-fill and highly filled composites\n• Levante handle versions — same heads as above but with the ergonomic silicone Levante handle\n\nFor high-volume composite work, the TiN or Nerissimo versions are the recommended choice."
+                        }
+                    ]
+                },
+                {
+                    "title": "Ordering & Availability in India",
+                    "faqs": [
+                        {
+                            "id": 125,
+                            "question": "How can I order Medesy instruments in India?",
+                            "answer": "Medesy instruments are available in India through:\n• Direct from Haitech Medical Solutions — contact directly for pricing, quotations, institutional bulk orders, or product demos. Haitech services pan-India.\n• Authorised Dental Dealers — Haitech's dealer network covers major cities and regions. Your local dental supplier may already stock or be able to order Medesy products.\n• Dental Conferences & Exhibitions — Haitech participates in major shows including Delhi Expodent, Mumbai Expodent, Famdent, Bangalore Expodent, Gujarat Dental Show, and more.\n\nFor institutional orders (hospitals, dental colleges, government procurement), Haitech provides full documentation including CE certificates, ISO certificates, and supply references."
+                        },
+                        {
+                            "id": 126,
+                            "question": "Is Medesy available on government tender portals (GeM, CPPP)?",
+                            "answer": "Medesy instruments distributed by Haitech Medical Solutions are eligible for government procurement through:\n• GeM (Government e-Marketplace) — for central government dental clinics, CGHS, ESIC facilities, and PSU hospitals\n• CPPP (Central Public Procurement Portal) — for defence, railways, and central ministry tenders\n• State Government Portals — for state health department and hospital tenders\n\nHaitech has past supply experience with Army dental centres (Delhi Cantt), railway hospitals (Kolkata), and government hospital chains. Contact Haitech directly for tender support, pricing, and documentation."
+                        },
+                        {
+                            "id": 127,
+                            "question": "What is the minimum order quantity for Medesy instruments?",
+                            "answer": "There is typically no minimum order restriction for individual instruments when buying through the dealer network or directly. However:\n• Single instruments can be purchased for personal clinic use\n• Bulk discounts apply for orders above certain quantity thresholds — check with Haitech\n• Kit formats (diagnostic kit, surgery kit, periodontic kit) offer the best value-per-instrument\n• For institutional / tender orders, Haitech can accommodate large quantities with flexible delivery schedules"
+                        },
+                        {
+                            "id": 128,
+                            "question": "How do I verify that I am buying genuine Medesy and not a copy?",
+                            "answer": "Counterfeit instruments are a real risk in the dental market. To ensure you receive genuine Medesy:\n• Purchase only from Haitech Medical Solutions or an authorised Haitech dealer\n• Genuine Medesy instruments are engraved or marked with the Medesy brand name and country of origin (Italy)\n• Ask for the invoice with Haitech's letterhead — this is your proof of authorised supply\n• Request to see the CE certificate or product catalogue — genuine products can be cross-verified on the official Medesy website (medesy.it) by product code\n\nBe wary of instruments sold at unusually low prices through unofficial channels claiming to be 'Medesy' — these are often cheap imitations with inferior steel and no warranty."
+                        }
+                    ]
+                },
+                {
+                    "title": "Medesy vs Competitors",
+                    "faqs": [
+                        {
+                            "id": 129,
+                            "question": "How does Medesy compare to Hu-Friedy?",
+                            "answer": "Both Medesy and Hu-Friedy (USA) are premium, globally respected dental instrument brands. Key differences:\n• Origin: Medesy — Italy (Maniago) | Hu-Friedy — USA (Chicago)\n• Steel Heritage: Medesy — 600+ years Italian artisanship | Hu-Friedy — Founded 1908, American manufacturing\n• Innovation: Medesy — DLC coating, Levante/Pininfarina ergonomics | Hu-Friedy — cassette and reusable product systems\n• Price in India: Medesy — generally more accessible | Hu-Friedy — often higher-priced due to import costs\n• Availability: Medesy — wide dealer network through Haitech | Hu-Friedy — limited authorised distribution\n• Warranty: Medesy — Lifetime on manufacturing defects | Hu-Friedy — Limited warranty\n\nFor Indian practices, Medesy offers comparable or superior quality to Hu-Friedy at a more accessible price point with stronger local after-sales support through Haitech."
+                        },
+                        {
+                            "id": 130,
+                            "question": "Why should I spend more on Medesy when cheaper alternatives exist?",
+                            "answer": "The true cost comparison is not the purchase price — it is the cost per use over the instrument's lifetime:\n• A cheaper instrument at ₹200 replaced every 12 months = ₹1,000 over 5 years\n• A Medesy instrument at ₹800 lasting 10+ years with a warranty = ₹80 per year\n\nBeyond economics, consider:\n• Clinical performance: Better edge retention means less force, less patient discomfort, more precision\n• Infection control: Higher-quality steel is less porous and easier to sterilise completely\n• Professional image: Premium instruments on your tray signal quality to discerning patients\n• Reliability: No instrument failure mid-procedure with Medesy's material quality"
+                        },
+                        {
+                            "id": 131,
+                            "question": "Is Medesy suitable for a general dentist or only for specialists?",
+                            "answer": "Medesy is designed for all levels of dental practice — from single-chair general practitioners to multi-specialty hospital dental departments. The range is structured so that:\n• General dentists start with diagnostic kits, basic surgery sets, and impression trays\n• Oral surgeons use the full extraction forceps, elevator, and periosteal elevator ranges\n• Periodontists use the curette, scaler, and periodontal surgery kits\n• Endodontists use micro-surgical instruments and root elevator lines\n• Implantologists use titanium and DLC-coated ranges\n\nThe broad range and tiered pricing mean you can start with a few key instruments and build your Medesy set over time."
+                        }
+                    ]
+                },
+                {
+                    "title": "Warranty & Support",
+                    "faqs": [
+                        {
+                            "id": 132,
+                            "question": "What does Medesy's lifetime warranty cover?",
+                            "answer": "Medesy guarantees all instruments against material and/or manufacturing defects for the entire life of the instrument. This means:\n• Any instrument that breaks or fails during proper clinical use will be replaced free of cost\n• Manufacturing defects (dimensional issues, steel impurities, surface defects) are covered from day one\n• The warranty is valid only when the instrument has been used and maintained per Medesy's recommended guidelines\n\nThe warranty does NOT cover: misuse or abuse, failure to follow sterilisation guidelines, physical damage from dropping or improper storage, or use outside the intended clinical application."
+                        },
+                        {
+                            "id": 133,
+                            "question": "How do I make a warranty claim in India?",
+                            "answer": "For warranty claims in India, contact Haitech Medical Solutions — your authorised distributor — with:\n• The original purchase invoice / proof of purchase\n• The instrument to be assessed (physical return)\n• A description of the issue and how it occurred\n\nHaitech will coordinate with Medesy Italy for replacement or resolution. Keeping your purchase records ensures a smooth claim process."
+                        },
+                        {
+                            "id": 134,
+                            "question": "Where can I find the official instructions for use for each instrument?",
+                            "answer": "Official Instructions for Use (IFU) are available:\n• On Medesy's official website at medesy.it/en/informations — instructions are available for each product category\n• From Haitech Medical Solutions — who can provide printed or digital copies for institutional procurement documentation\n• Included in kit packaging for Medesy kit products\n\nThe IFUs cover sterilisation parameters, intended use, contraindications, and care recommendations in line with EU Medical Device Directive requirements."
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "id": 3,
-            "question": "How do I know if my loupes fit correctly?",
-            "answer": "Proper fitting is crucial for comfort and effectiveness. We insist on fitting consultations to ensure your loupes are tailored to your facial structure, posture, and working distance, providing optimal performance and comfort."
-        },
-        {
-            "id": 4,
-            "question": "What are the advantages of the Ergo over conventional TTL Loupes?",
-            "answer": "Although all loupes enable you to sit with a straight back, only the Ergo helps you maintain a straight neck! These days, dental practitioners spend a significant amount of time outside their practice still bending their necks due to the increased use of mobile phones. From our observations (yet to be confirmed by research) there are more occasions of neck problems in young dental practitioners than there were 10 or even 5 years ago."
-        },
-        {
-            "id": 5,
-            "question": "What can I expect when I receive my loupes?",
-            "answer": "There is always an adjustment period of 1-14 days, where your eyes and brain need to practice how to see with the unique visuals of Ergo loupes. Galilean loupes have little to no adjustment period. Once you have trained your eyes to see with the loupes – you will never be able to work without them."
-        },
-        {
-            "id": 6,
-            "question": "What types of lights do you offer, and how do they enhance visibility?",
-            "answer": "We offer a variety of LED and fiber-optic lights designed to provide bright, focused illumination in your working area. These lights reduce shadows and improve visibility, allowing for more precise work."
-        },
-        {
-            "id": 7,
-            "question": "How do I attach a light to my loupes?",
-            "answer": "Attaching a light to your loupes is simple and secure. Our lights are designed to integrate seamlessly with our loupes, and we provide step-by-step instructions along with support from our team if needed."
-        },
-        {
-            "id": 8,
-            "question": "How long does it take to receive my loupes or lights after ordering?",
-            "answer": "Typically, orders are processed within 2 business days, and shipping times may vary depending on your location, but it can take between 6-8 weeks to make and ship your loupes. We’ll provide you with tracking information so you can follow your order’s progress."
-        },
-        {
-            "id": 10,
-            "question": "Can I try the loupes before purchasing?",
-            "answer": "Please contact us to arrange a demo and experience the benefits of Admetec loupes firsthand. A member of our team will gladly reach out to you."
+            "id": "salli",
+            "label": "Salli Saddle Chairs",
+            "sections": [
+                {
+                    "title": "About the Salli Saddle Chair",
+                    "faqs": [
+                        {
+                            "id": 200,
+                            "question": "What is the Salli Saddle Chair?",
+                            "answer": "The Salli Saddle Chair is an ergonomic seating solution with a unique two-part split seat designed to mimic a natural riding position. Developed in Finland, it promotes upright posture, reduces back strain, and supports healthy sitting for long working hours — making it ideal for dental clinics, healthcare settings, offices, and more."
+                        },
+                        {
+                            "id": 201,
+                            "question": "Why should I choose a saddle chair over a traditional office chair?",
+                            "answer": "A saddle chair positions the spine in a near-standing posture — with a gentle natural curve in the lower back — reducing pressure on the spinal discs. Unlike traditional chairs that force a 90-degree hip angle and cause the pelvis to tilt back, the Salli Saddle Chair maintains a healthy 135-degree hip and knee angle, improving posture, circulation, and energy levels throughout the day."
+                        },
+                        {
+                            "id": 202,
+                            "question": "Why does the Salli Saddle Chair have a gap (split seat)?",
+                            "answer": "The central gap allows the pelvis to tilt forward into its natural position without pressure on the genital area. On a one-part seat, discomfort in this area often causes the sitter to tilt the pelvis backward, which rounds the back and leads to chronic lower back issues. The gap also improves ventilation, circulation, and nerve function in the pelvic region."
+                        },
+                        {
+                            "id": 203,
+                            "question": "Does the Salli Saddle Chair have a backrest?",
+                            "answer": "No, and this is intentional. When seated at the correct height with feet positioned to the sides, the pelvis naturally tilts forward, keeping the back upright without any external support — just as we stand without needing a backrest. A backrest on a traditional chair is actually a compensatory measure for the unhealthy slouching posture it creates."
+                        }
+                    ]
+                },
+                {
+                    "title": "Health Benefits",
+                    "faqs": [
+                        {
+                            "id": 204,
+                            "question": "What health benefits does the Salli Saddle Chair offer?",
+                            "answer": "The Salli Saddle Chair delivers up to 10 documented health benefits:\n• Supports a natural back curve\n• Activates the pelvic floor muscles\n• Enhances blood and lymph circulation\n• Reduces pressure on the genital area\n• Improves brain circulation (boosting alertness)\n• Relieves tension in shoulders and reduces mouse-arm syndrome\n• Helps maintain a healthy weight\n• Promotes good intestinal function\n• Reduces sciatic-type pain\n• Increases overall mobility"
+                        },
+                        {
+                            "id": 205,
+                            "question": "Is the Salli Saddle Chair suitable for people with back problems?",
+                            "answer": "Yes. The Salli Saddle Chair is widely recommended for individuals with back pain. The saddle sitting position maintains the natural lumbar curve, relieving pressure on intervertebral discs and reducing sciatic discomfort. Multiple clinical and biomechanical studies — including doctoral research — support its positive effects on spinal health, particularly in professions requiring prolonged sitting such as dentistry and office work."
+                        },
+                        {
+                            "id": 206,
+                            "question": "Can sitting on a Salli Saddle Chair improve circulation?",
+                            "answer": "Yes. By positioning the thighs at a downward angle, the Salli reduces pressure on the thighs and pelvic area, allowing better blood and lymph flow throughout the lower body. Traditional chairs compress the thighs, restricting circulation and often causing leg fatigue or swelling. The split seat design specifically eliminates compression of the perineal area."
+                        },
+                        {
+                            "id": 207,
+                            "question": "Are there benefits for dental professionals specifically?",
+                            "answer": "Absolutely. Salli Saddle Chairs are particularly popular in dental care. The elevated sitting position reduces neck and shoulder strain by bringing the dentist closer to the patient's field. The upright posture reduces fatigue during long procedures, and clinical studies have confirmed improved postural angles for dental practitioners using saddle chairs compared to conventional seating."
+                        }
+                    ]
+                },
+                {
+                    "title": "Using Your Salli Saddle Chair",
+                    "faqs": [
+                        {
+                            "id": 208,
+                            "question": "How do I sit correctly on the Salli Saddle Chair?",
+                            "answer": "Follow three simple rules:\n• Sit HIGH enough — the hip and knee angle should be about 135 degrees. This allows the pelvis to tilt forward and maintain the natural lower back curve.\n• Sit BACK enough — your sitting bones should rest at the rear edge of the seat for maximum comfort.\n• Keep your feet to the SIDES — as if standing, with your shoulder, pelvis, and heel aligned. Feet placed in front tend to cause back rounding."
+                        },
+                        {
+                            "id": 209,
+                            "question": "Can I sit on the Salli Saddle Chair for the whole day?",
+                            "answer": "Yes, the two-part Salli models are designed for full-day use since the gap eliminates harmful pressure on the genital area. That said, we recommend alternating between sitting and standing when possible, and taking short walks during phone calls or breaks. Continuous static posture — even in an ergonomic chair — is best avoided."
+                        },
+                        {
+                            "id": 210,
+                            "question": "Why does the chair feel uncomfortable when I first use it?",
+                            "answer": "This is completely normal. Your body is adapting to a new, more active sitting posture. Your muscles, sitting bones, and tissues need time to adjust — similar to starting a new physical activity. If the seat feels hard at the sitting bones, the chair may be set too high. Ensure your feet rest flat on the floor so they share some of your body weight. Most users fully adapt within a few days to a few weeks."
+                        },
+                        {
+                            "id": 211,
+                            "question": "How long does it take to get used to the Salli Saddle Chair?",
+                            "answer": "This varies by individual. Some users adapt in just a few days; others may need two to four weeks. We recommend starting with shorter periods of use and gradually increasing. If you experience soreness, vary your position, use the swinging function (if available), and take standing breaks. Persistence pays off — your body will thank you for it."
+                        },
+                        {
+                            "id": 212,
+                            "question": "Do I need a special desk to use with the Salli Saddle Chair?",
+                            "answer": "Yes. Because you sit 15-20 cm higher on a Salli Saddle Chair than on a traditional chair, your desk must also be higher. We strongly recommend a height-adjustable (sit-stand) desk with a front recess. The recess allows you to position your arms close to your body, reducing shoulder tension and allowing the upper body weight to partially rest on the elbows."
+                        }
+                    ]
+                },
+                {
+                    "title": "Models & Suitability",
+                    "faqs": [
+                        {
+                            "id": 213,
+                            "question": "Are all Salli Saddle Chair models suitable for both men and women?",
+                            "answer": "The two-part Salli models (such as Twin, Swing, SwingFit, MultiAdjuster) are suitable for all genders. However, the one-part Solo models are not recommended for men, and for women only for part-time use, as the one-part seat does not have the central gap and can exert pressure on the pelvic floor and genital area."
+                        },
+                        {
+                            "id": 214,
+                            "question": "What is the difference between the Salli Swing/SwingFit and other models?",
+                            "answer": "The Swing and SwingFit models feature an active swinging mechanism that follows the body's natural movements, engaging the deep back muscles and further enhancing core stability. The SwingFit also allows adjustment of the seat width. On swinging models, you should sit slightly lower than usual so the feet can stabilize the movement. The sensitivity of the swing mechanism can be adjusted to your preference."
+                        },
+                        {
+                            "id": 215,
+                            "question": "What is the Salli MultiAdjuster?",
+                            "answer": "The MultiAdjuster is Salli's most adjustable model, allowing individual customization of both seat width (the gap between the two seat halves) and the tilt of each seat half. This makes it particularly suitable for users who need a highly personalized fit, such as in clinical or intensive professional environments."
+                        },
+                        {
+                            "id": 216,
+                            "question": "Can I try the Salli Saddle Chair before purchasing?",
+                            "answer": "Yes! Haitech Medical Solutions offers a free trial period for the Salli Saddle Chair. This is especially recommended for first-time saddle chair users. Please contact our team to arrange a trial, and make sure to follow the correct sitting guidelines during the trial period for an accurate assessment."
+                        }
+                    ]
+                },
+                {
+                    "title": "Care, Maintenance & Warranty",
+                    "faqs": [
+                        {
+                            "id": 217,
+                            "question": "What upholstery options are available?",
+                            "answer": "Salli Saddle Chairs are available in genuine leather (Elmosoft), artificial leather, and wool fabric upholstery in a range of colours. Seat covers are also available as accessories. The chair can be re-upholstered by your authorized dealer, including with a fabric of your own choice provided it is sufficiently durable."
+                        },
+                        {
+                            "id": 218,
+                            "question": "How do I assemble my new Salli Saddle Chair?",
+                            "answer": "Assembly is simple and requires no tools. The chair consists of only three main parts. If your chair arrives in cold weather, allow the gas spring to warm to room temperature before assembly. Detailed instruction manuals are available and can also be obtained from Haitech Medical Solutions."
+                        },
+                        {
+                            "id": 219,
+                            "question": "How often should I replace the castors?",
+                            "answer": "Salli recommends replacing castors every five years to maintain smooth mobility. Sand, dust, and floor debris can accumulate between the floor and castors over time, causing wear. Replacement castors and spare parts can be obtained through Haitech Medical Solutions."
+                        },
+                        {
+                            "id": 220,
+                            "question": "What warranty does the Salli Saddle Chair come with?",
+                            "answer": "Salli products come with a manufacturer's warranty covering defects in materials and workmanship. Please contact Haitech Medical Solutions for specific warranty terms applicable to your purchase. Salli Systems is ISO 9001 certified, reflecting their commitment to consistent product quality."
+                        },
+                        {
+                            "id": 221,
+                            "question": "Are spare parts available?",
+                            "answer": "Yes. A comprehensive range of spare parts and accessories is available, including castors, seat covers, gas springs, and more. Please reach out to Haitech Medical Solutions for assistance sourcing the correct parts for your specific Salli model."
+                        }
+                    ]
+                },
+                {
+                    "title": "Ordering & Support",
+                    "faqs": [
+                        {
+                            "id": 222,
+                            "question": "How can I purchase a Salli Saddle Chair through Haitech Medical Solutions?",
+                            "answer": "You can contact Haitech Medical Solutions directly to discuss your requirements, arrange a product demonstration, or place an order. Our team will help you identify the right model based on your profession, body type, and working environment."
+                        },
+                        {
+                            "id": 223,
+                            "question": "Can Haitech Medical Solutions assist with installation and training?",
+                            "answer": "Yes. Our team provides guidance on correct assembly, chair adjustment, and proper sitting technique to ensure you get the full ergonomic benefit from your Salli Saddle Chair from day one."
+                        },
+                        {
+                            "id": 224,
+                            "question": "Who should I contact for after-sales support?",
+                            "answer": "For any product queries, spare parts, warranty claims, or service needs related to your Salli Saddle Chair, please contact Haitech Medical Solutions. Our dedicated support team is available to assist you promptly."
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

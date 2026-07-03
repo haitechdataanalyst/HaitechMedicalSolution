@@ -84,7 +84,7 @@ export default function HelpCenterPage() {
             {/* FAQ Section */}
             <section id="faq">
                 <FAQ
-                    faqs={data.faqs}
+                    brands={data.brands}
                     title="Frequently Asked Questions"
                     subtitle="Find answers to the most common questions about our products and services."
                 />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { ShieldCheck, HeartPulse, Settings2, Sparkles, ChevronDown } from "lucide-react";
+import { ShieldCheck, Settings2, Sparkles, ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 
 const pillars = [
     { icon: <ShieldCheck className="h-7 w-7" />, title: "Performance", description: "Built to perform consistently under the demands of daily clinical use — reliability when it matters most." },
-    { icon: <HeartPulse className="h-7 w-7" />, title: "Ergonomics", description: "Designed with practitioner comfort in mind, reducing strain and fatigue during long procedures." },
     { icon: <Settings2 className="h-7 w-7" />, title: "Functionality", description: "Intuitive controls and streamlined workflows so you can focus entirely on patient care." },
     { icon: <Sparkles className="h-7 w-7" />, title: "Durability", description: "Premium materials and rigorous quality testing guarantee equipment that stands the test of time." },
 ];
@@ -198,14 +197,39 @@ export default function AlmadentAboutPage() {
                 </div>
             </section>
 
+            {/* ── Product Catalogue ── */}
+            <section className="bg-white py-12 md:py-20">
+                <div className="container">
+                    <div className="mb-8 text-center md:mb-12">
+                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Product Catalogue</span>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl">Browse the Full Almadent Range</h2>
+                        <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500">
+                            Explore our complete product catalogue — all Almadent dental equipment lines, specifications, and models.
+                        </p>
+                    </div>
+                    <div className="mx-auto max-w-4xl overflow-x-auto rounded-2xl border border-neutral-100 shadow-lg">
+                        <iframe
+                            src="https://workdrive.zohoexternal.com/embed/b71f5ca0babeecf944a40ba4b96ee345489bb?toolbar=false&appearance=light&themecolor=green"
+                            scrolling="no"
+                            frameBorder={0}
+                            allowFullScreen
+                            width={800}
+                            height={520}
+                            title="Almadent Product Catalogue"
+                            className="block min-w-[320px]"
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* ── Four Pillars ── */}
             <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Almadent</span>
-                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Four Core Principles</h2>
+                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Three Core Principles</h2>
                     </div>
-                    <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
+                    <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
                         {pillars.map((pillar, index) => (
                             <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-6 transition-all duration-300 hover:border-primary-200 hover:shadow-lg md:p-8">
                                 <div className="absolute right-6 top-6 text-6xl font-black text-neutral-100 transition-colors group-hover:text-primary-50 md:text-7xl">
