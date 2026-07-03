@@ -130,11 +130,11 @@ const TIMELINE = [
 ];
 
 const BRANDS = [
-    { name: "Admetec",  logo: "/BrandLogo/AdmetecLogo.png",  cat: "Loupes & Optics",      desc: "Surgical loupes & LED headlights built for precision." },
-    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.png",  cat: "Burs & Rotary",        desc: "High-performance diamond burs & rotary instruments." },
-    { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality." },
-    { name: "Salli",    logo: "/BrandLogo/SalliLogo.png",    cat: "Ergonomic Seating",     desc: "Saddle chairs that protect posture over long procedures." },
-    { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpg", cat: "Dental Chairs",         desc: "Feature-rich treatment chairs for the modern clinic." },
+    { name: "Admetec",  logo: "/BrandLogo/AdmetecLogo.jpeg",  cat: "Loupes & Optics",      desc: "Surgical loupes & LED headlights built for precision." },
+    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.jpeg",  cat: "Burs & Rotary",        desc: "High-performance diamond burs & rotary instruments." },
+    { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpeg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality." },
+    { name: "Salli",    logo: "/BrandLogo/SalliLogo.jpeg",    cat: "Ergonomic Seating",     desc: "Saddle chairs that protect posture over long procedures." },
+    { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpeg", cat: "Dental Chairs",         desc: "Feature-rich treatment chairs for the modern clinic." },
 ];
 
 const STATS = [

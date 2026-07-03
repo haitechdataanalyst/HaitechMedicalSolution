@@ -17,11 +17,11 @@ const PROFESSIONS = [
 ];
 
 const BRANDS = [
-    { name: "Admetec", src: "/BrandLogo/AdmetecLogo.png" },
-    { name: "Almadent", src: "/BrandLogo/AlmadentLogo.jpg" },
-    { name: "Medesy", src: "/BrandLogo/MedesyLogo.jpg" },
-    { name: "Salli", src: "/BrandLogo/SalliLogo.png" },
-    { name: "Strauss", src: "/BrandLogo/StraussLogo.png" },
+    { name: "Admetec", src: "/BrandLogo/AdmetecLogo.jpeg" },
+    { name: "Almadent", src: "/BrandLogo/AlmadentLogo.jpeg" },
+    { name: "Medesy", src: "/BrandLogo/MedesyLogo.jpeg" },
+    { name: "Salli", src: "/BrandLogo/SalliLogo.jpeg" },
+    { name: "Strauss", src: "/BrandLogo/StraussLogo.jpeg" },
 ];
 
 const STATS = [

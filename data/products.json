@@ -5393,7 +5393,7 @@
                 "colorCode": "#1a1a1a",
                 "sku": "SAL-UTF-BLK",
                 "price": 1899,
-                "image": "/images/products/salli/ultra-triple-fit.png"
+                "image": "/images/products/salli/ultra-triple-fit-black.jpg"
             },
             {
                 "id": "utf-red",
@@ -5401,7 +5401,7 @@
                 "colorCode": "#DC2626",
                 "sku": "SAL-UTF-RED",
                 "price": 1899,
-                "image": "/images/products/salli/ultra-triple-fit.png"
+                "image": "/images/products/salli/ultra-triple-fit-black.jpg"
             },
             {
                 "id": "utf-blue",
@@ -5409,7 +5409,7 @@
                 "colorCode": "#2563EB",
                 "sku": "SAL-UTF-BLU",
                 "price": 1899,
-                "image": "/images/products/salli/ultra-triple-fit.png"
+                "image": "/images/products/salli/ultra-triple-fit-black.jpg"
             },
             {
                 "id": "utf-wine",
@@ -5417,7 +5417,7 @@
                 "colorCode": "#7B1E3B",
                 "sku": "SAL-UTF-WIN",
                 "price": 1899,
-                "image": "/images/products/salli/ultra-triple-fit.png"
+                "image": "/images/products/salli/ultra-triple-fit-black.jpg"
             },
             {
                 "id": "utf-beige",
@@ -5425,18 +5425,18 @@
                 "colorCode": "#D4B896",
                 "sku": "SAL-UTF-BEI",
                 "price": 1899,
-                "image": "/images/products/salli/ultra-triple-fit.png"
+                "image": "/images/products/salli/ultra-triple-fit-black.jpg"
             }
         ],
-        "defaultImage": "/images/products/salli/ultra-triple-fit.png",
+        "defaultImage": "/images/products/salli/ultra-triple-fit-black.jpg",
         "catalogueFile": "/catalogues/ultra-triple-fit.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/salli/ultra-triple-fit.png",
+                    "primaryImage": "/images/products/salli/ultra-triple-fit-black.jpg",
                     "gallery": [
-                        "/images/products/salli/ultra-triple-fit.png"
+                        "/images/products/salli/ultra-triple-fit-black.jpg"
                     ]
                 }
             },
@@ -5600,7 +5600,7 @@
                 "colorCode": "#1a1a1a",
                 "sku": "SAL-TF-BLK",
                 "price": 1499,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-black.jpg"
             },
             {
                 "id": "tf-red",
@@ -5608,7 +5608,7 @@
                 "colorCode": "#DC2626",
                 "sku": "SAL-TF-RED",
                 "price": 1499,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-red.jpg"
             },
             {
                 "id": "tf-blue",
@@ -5616,7 +5616,7 @@
                 "colorCode": "#2563EB",
                 "sku": "SAL-TF-BLU",
                 "price": 1499,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-blue.jpg"
             },
             {
                 "id": "tf-wine",
@@ -5624,7 +5624,7 @@
                 "colorCode": "#7B1E3B",
                 "sku": "SAL-TF-WIN",
                 "price": 1499,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-wine.jpg"
             },
             {
                 "id": "tf-beige",
@@ -5632,19 +5632,16 @@
                 "colorCode": "#D4B896",
                 "sku": "SAL-TF-BEI",
                 "price": 1499,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-beige.jpg"
             }
         ],
-        "defaultImage": "/images/products/salli/triple-fit.png",
+        "defaultImage": "/images/products/salli/triple-fit-black.jpg",
         "catalogueFile": "/catalogues/triple-fit.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/salli/triple-fit.png",
-                    "gallery": [
-                        "/images/products/salli/triple-fit.png"
-                    ]
+                    "useVariantImages": true
                 }
             },
             {
@@ -5810,7 +5807,7 @@
                 "colorCode": "#1a1a1a",
                 "sku": "SAL-CT-BLK",
                 "price": 1399,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-black.jpg"
             },
             {
                 "id": "ct-red",
@@ -5818,7 +5815,7 @@
                 "colorCode": "#DC2626",
                 "sku": "SAL-CT-RED",
                 "price": 1399,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-red.jpg"
             },
             {
                 "id": "ct-blue",
@@ -5826,7 +5823,7 @@
                 "colorCode": "#2563EB",
                 "sku": "SAL-CT-BLU",
                 "price": 1399,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-blue.jpg"
             },
             {
                 "id": "ct-wine",
@@ -5834,7 +5831,7 @@
                 "colorCode": "#7B1E3B",
                 "sku": "SAL-CT-WIN",
                 "price": 1399,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-wine.jpg"
             },
             {
                 "id": "ct-beige",
@@ -5842,19 +5839,16 @@
                 "colorCode": "#D4B896",
                 "sku": "SAL-CT-BEI",
                 "price": 1399,
-                "image": "/images/products/salli/triple-fit.png"
+                "image": "/images/products/salli/triple-fit-beige.jpg"
             }
         ],
-        "defaultImage": "/images/products/salli/triple-fit.png",
+        "defaultImage": "/images/products/salli/triple-fit-black.jpg",
         "catalogueFile": "/catalogues/chin-tilt.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/salli/triple-fit.png",
-                    "gallery": [
-                        "/images/products/salli/triple-fit.png"
-                    ]
+                    "useVariantImages": true
                 }
             },
             {
@@ -6008,7 +6002,7 @@
                 "colorCode": "#1a1a1a",
                 "sku": "SAL-SF-BLK",
                 "price": 1599,
-                "image": "/images/products/salli/sway-fit.png"
+                "image": "/images/products/salli/sway-fit-black.jpg"
             },
             {
                 "id": "sf-red",
@@ -6016,7 +6010,7 @@
                 "colorCode": "#DC2626",
                 "sku": "SAL-SF-RED",
                 "price": 1599,
-                "image": "/images/products/salli/sway-fit.png"
+                "image": "/images/products/salli/sway-fit-red.jpg"
             },
             {
                 "id": "sf-blue",
@@ -6024,7 +6018,7 @@
                 "colorCode": "#2563EB",
                 "sku": "SAL-SF-BLU",
                 "price": 1599,
-                "image": "/images/products/salli/sway-fit.png"
+                "image": "/images/products/salli/sway-fit-blue.jpg"
             },
             {
                 "id": "sf-wine",
@@ -6032,7 +6026,7 @@
                 "colorCode": "#7B1E3B",
                 "sku": "SAL-SF-WIN",
                 "price": 1599,
-                "image": "/images/products/salli/sway-fit.png"
+                "image": "/images/products/salli/sway-fit-wine.jpg"
             },
             {
                 "id": "sf-beige",
@@ -6040,19 +6034,16 @@
                 "colorCode": "#D4B896",
                 "sku": "SAL-SF-BEI",
                 "price": 1599,
-                "image": "/images/products/salli/sway-fit.png"
+                "image": "/images/products/salli/sway-fit-beige.jpg"
             }
         ],
-        "defaultImage": "/images/products/salli/sway-fit.png",
+        "defaultImage": "/images/products/salli/sway-fit-black.jpg",
         "catalogueFile": "/catalogues/sway-fit.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/salli/sway-fit.png",
-                    "gallery": [
-                        "/images/products/salli/sway-fit.png"
-                    ]
+                    "useVariantImages": true
                 }
             },
             {
@@ -6210,18 +6201,18 @@
         "basePrice": 23999,
         "currency": "INR",
         "hasVariants": false,
-        "defaultImage": "/images/products/salli/sway-fit.png",
+        "defaultImage": "/images/products/salli/salli-light.png",
         "gallery": [
-            "/images/products/salli/sway-fit.png"
+            "/images/products/salli/salli-light.png"
         ],
         "catalogueFile": "/catalogues/salli-light.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/salli/sway-fit.png",
+                    "primaryImage": "/images/products/salli/salli-light.png",
                     "gallery": [
-                        "/images/products/salli/sway-fit.png"
+                        "/images/products/salli/salli-light.png"
                     ]
                 }
             },

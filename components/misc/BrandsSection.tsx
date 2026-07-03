@@ -14,7 +14,7 @@ const brands = [
     {
         name: "Admetec",
         tagline: "Surgical loupes & LED headlights engineered for dental professionals.",
-        image: "/BrandLogo/AdmetecLogo.png",
+        image: "/BrandLogo/AdmetecLogo.jpeg",
         href: "/product/admetec",
         accentColor: "bg-teal-500",
         badge: "Optical",
@@ -26,7 +26,7 @@ const brands = [
     {
         name: "Almadent",
         tagline: "Premium dental chairs & units for the modern clinic.",
-        image: "/BrandLogo/AlmadentLogo.jpg",
+        image: "/BrandLogo/AlmadentLogo.jpeg",
         href: "/product/almadent",
         accentColor: "bg-blue-500",
         badge: "Dental Chairs",
@@ -38,7 +38,7 @@ const brands = [
     {
         name: "Medesy",
         tagline: "Precision stainless steel instruments trusted by surgeons worldwide.",
-        image: "/BrandLogo/MedesyLogo.jpg",
+        image: "/BrandLogo/MedesyLogo.jpeg",
         href: "/product/medesy",
         accentColor: "bg-emerald-500",
         badge: "Surgical",
@@ -50,7 +50,7 @@ const brands = [
     {
         name: "Salli",
         tagline: "Ergonomic saddle chairs designed for the modern clinic.",
-        image: "/BrandLogo/SalliLogo.png",
+        image: "/BrandLogo/SalliLogo.jpeg",
         href: "/product/salli",
         accentColor: "bg-amber-500",
         badge: "Ergonomic",
@@ -62,7 +62,7 @@ const brands = [
     {
         name: "Strauss",
         tagline: "Diamond burs & precision cutting instruments for every procedure.",
-        image: "/BrandLogo/StraussLogo.png",
+        image: "/BrandLogo/StraussLogo.jpeg",
         href: "/product/strauss",
         accentColor: "bg-violet-500",
         badge: "Burs",
@@ -81,13 +81,13 @@ function BrandCard({ brand }: { brand: BrandItem }) {
     return (
         <Link
             href={brand.href}
-            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_24px_rgba(0,0,0,0.09)]"
+            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-200 hover:border-neutral-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.11)]"
         >
             {/* Top accent bar */}
             <div className={cn("h-0.5 w-full opacity-0 transition-opacity duration-200 group-hover:opacity-100", brand.accentColor)} />
 
             {/* Image */}
-            <div className="relative h-36 w-full overflow-hidden bg-neutral-50 sm:h-40">
+            <div className="relative h-36 w-full overflow-hidden bg-white sm:h-40">
                 <Image
                     src={brand.image}
                     alt={brand.name}
@@ -98,7 +98,7 @@ function BrandCard({ brand }: { brand: BrandItem }) {
             </div>
 
             {/* Info */}
-            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
+            <div className="flex flex-1 flex-col border-t border-neutral-100 px-3.5 py-3.5">
                 <span className="mb-2 w-fit rounded-full border border-primary-100 bg-primary-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700">
                     {brand.badge}
                 </span>

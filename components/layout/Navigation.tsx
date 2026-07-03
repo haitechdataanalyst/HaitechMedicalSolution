@@ -17,11 +17,11 @@ interface MegaMenuProps {
 }
 
 const BRAND_LOGOS: Record<string, string> = {
-    Admetec: "/BrandLogo/AdmetecLogo.png",
-    Almadent: "/BrandLogo/AlmadentLogo.jpg",
-    Medesy: "/BrandLogo/MedesyLogo.jpg",
-    Salli: "/BrandLogo/SalliLogo.png",
-    Strauss: "/BrandLogo/StraussLogo.png",
+    Admetec: "/BrandLogo/AdmetecLogo.jpeg",
+    Almadent: "/BrandLogo/AlmadentLogo.jpeg",
+    Medesy: "/BrandLogo/MedesyLogo.jpeg",
+    Salli: "/BrandLogo/SalliLogo.jpeg",
+    Strauss: "/BrandLogo/StraussLogo.jpeg",
 };
 
 const LINKS_MAX = 5;
