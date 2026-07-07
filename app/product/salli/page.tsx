@@ -375,7 +375,7 @@ export default function AboutSalliPage() {
                         Talk to us about which model fits your clinic — Sway Fit, Triple Lift, or Ultra.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/products">
+                        <Link href="/product-category/salli">
                             <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
                                 Shop Salli Chairs
                             </Button>

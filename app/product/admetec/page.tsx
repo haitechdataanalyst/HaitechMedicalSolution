@@ -52,7 +52,7 @@ export default function AboutAdmetecPage() {
                         World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/products">
+                        <Link href="/product-category/admetec">
                             <Button size="lg" className="rounded-full px-8">Explore Loupes</Button>
                         </Link>
                         <Link href="/support/contact">
@@ -227,7 +227,7 @@ export default function AboutAdmetecPage() {
                         Book a fitting call — our team measures your working distance and interpupillary distance so your loupes are dialed in before they ship.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/products">
+                        <Link href="/product-category/admetec">
                             <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
                                 Browse Products
                             </Button>

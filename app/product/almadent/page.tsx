@@ -48,7 +48,7 @@ export default function AlmadentAboutPage() {
                         Complete dental equipment for the modern practice — from chairs to handpieces, every product engineered for performance, ergonomics, and day-to-day clinical convenience.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/products">
+                        <Link href="/product-category/almadent">
                             <Button size="lg" className="rounded-full px-8">Browse Products</Button>
                         </Link>
                         <Link href="/support/contact">
@@ -249,7 +249,7 @@ export default function AlmadentAboutPage() {
                         Tell us your chair count and workflow and we&apos;ll put together a configuration quote for AY-series chairs, handpieces, and auxiliary equipment.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/products">
+                        <Link href="/product-category/almadent">
                             <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
                                 Explore Products
                             </Button>

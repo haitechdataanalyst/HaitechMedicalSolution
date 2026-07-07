@@ -57,7 +57,7 @@ export default function AboutStraussPage() {
                         Precision-engineered rotary instruments designed to deliver efficient cutting, smooth performance, and consistent clinical results for the modern dental practice.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/products">
+                        <Link href="/product-category/strauss">
                             <Button size="lg" className="rounded-full px-8">Explore Diamond Burs</Button>
                         </Link>
                         <Link href="/support/contact">
@@ -208,7 +208,7 @@ export default function AboutStraussPage() {
                         Request a sample set for your next case and see the difference in cutting efficiency and finish.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/products">
+                        <Link href="/product-category/strauss">
                             <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
                                 Shop Diamond Burs
                             </Button>
