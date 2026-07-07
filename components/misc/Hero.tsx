@@ -26,7 +26,7 @@ export default function Hero() {
                 className="hero-carousel"
             >
                 {heroSlides.map((slide, index) => (
-                    <div key={index} className="relative h-52 overflow-hidden xs:h-60 sm:h-72 md:h-[420px] lg:h-[600px] xl:h-[720px] 2xl:min-h-screen">
+                    <div key={index} className="relative h-52 overflow-hidden xs:h-60 sm:h-72 md:h-[420px] lg:h-[600px] xl:h-[720px] 2xl:h-[calc(100vh-140px)]">
                         {/* Video */}
                         <video
                             src={slide.video}
