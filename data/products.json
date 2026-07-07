@@ -2708,7 +2708,10 @@
         "hasVariants": false,
         "defaultImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
         "gallery": [
-            "/images/products/almadent/chairs/ay-8000-1.jpg"
+            "/images/products/almadent/chairs/ay-8000-1.jpg",
+            "/images/products/almadent/chairs/ay-8000-2.jpg",
+            "/images/products/almadent/chairs/ay-8000-3.jpg",
+            "/images/products/almadent/chairs/ay-8000-4.jpg"
         ],
         "catalogueFile": "/catalogues/ay-8000.pdf",
         "contentBlocks": [
@@ -2717,7 +2720,10 @@
                 "data": {
                     "primaryImage": "/images/products/almadent/chairs/ay-8000-1.jpg",
                     "gallery": [
-                        "/images/products/almadent/chairs/ay-8000-1.jpg"
+                        "/images/products/almadent/chairs/ay-8000-1.jpg",
+                        "/images/products/almadent/chairs/ay-8000-2.jpg",
+                        "/images/products/almadent/chairs/ay-8000-3.jpg",
+                        "/images/products/almadent/chairs/ay-8000-4.jpg"
                     ]
                 }
             },
