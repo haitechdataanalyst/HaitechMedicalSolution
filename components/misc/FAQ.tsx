@@ -127,7 +127,7 @@ export function FAQ({ brands, title = "Frequently Asked Questions", subtitle = "
                             value={searchQuery}
                             onChange={(e) => { setSearchQuery(e.target.value); setOpenId(null); }}
                             placeholder="Search questions…"
-                            className="w-full rounded-2xl border border-neutral-200 bg-white py-3.5 pl-11 pr-11 text-sm text-neutral-800 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+                            className="w-full rounded-xl border border-neutral-200 bg-white py-3.5 pl-11 pr-11 text-sm text-neutral-800 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
                         />
                         {searchQuery && (
                             <button

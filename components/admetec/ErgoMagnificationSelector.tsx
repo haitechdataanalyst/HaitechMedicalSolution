@@ -72,7 +72,7 @@ export function ErgoMagnificationSelector() {
                     <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">
                         Variable Magnification
                     </span>
-                    <h2 className="text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                    <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                         Choose your<br />magnification.
                     </h2>
                     <p className="mt-4 max-w-md text-base text-neutral-500 md:text-lg">
@@ -116,7 +116,7 @@ export function ErgoMagnificationSelector() {
                                         onClick={() => setMagIdx(i)}
                                         className={
                                             magIdx === i
-                                                ? "rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-black text-white shadow-[0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-200"
+                                                ? "rounded-full bg-neutral-900 px-6 py-2.5 text-sm font-bold text-white shadow-[0_4px_16px_-4px_rgba(0,0,0,0.3)] transition-all duration-200"
                                                 : "rounded-full border border-neutral-200 bg-white px-6 py-2.5 text-sm font-semibold text-neutral-500 shadow-sm transition-all duration-200 hover:border-neutral-300 hover:text-neutral-800"
                                         }
                                     >
@@ -181,7 +181,7 @@ export function ErgoMagnificationSelector() {
                                 ) : (
                                     <div className="flex h-full w-full items-center justify-center bg-neutral-100">
                                         <div className="text-center">
-                                            <p className="text-3xl font-black text-neutral-600 tabular-nums">
+                                            <p className="text-3xl font-bold text-neutral-600 tabular-nums">
                                                 {mag.fov}<span className="text-base font-semibold text-neutral-400">mm</span>
                                             </p>
                                             <p className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
@@ -194,7 +194,7 @@ export function ErgoMagnificationSelector() {
 
                             {/* Magnification badge — top right of circle */}
                             <div className="absolute right-[calc(50%-160px)] top-4 rounded-full border border-neutral-200 bg-white px-3 py-1.5 shadow-sm">
-                                <span className="text-xs font-black text-neutral-800">{mag.label}</span>
+                                <span className="text-xs font-bold text-neutral-800">{mag.label}</span>
                             </div>
 
                             {/* Caption */}
@@ -214,7 +214,7 @@ export function ErgoMagnificationSelector() {
                                     key={stat.label}
                                     className="rounded-2xl border border-neutral-100 bg-white p-4 text-center shadow-sm"
                                 >
-                                    <p className="text-2xl font-black tabular-nums text-neutral-900 md:text-3xl">
+                                    <p className="text-2xl font-bold tabular-nums text-neutral-900 md:text-3xl">
                                         {stat.value}
                                         <span className="text-sm font-semibold text-neutral-400">{stat.unit}</span>
                                     </p>

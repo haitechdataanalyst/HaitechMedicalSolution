@@ -13,7 +13,6 @@ const contactMethods = [
         value: siteConfig.company.email,
         href: `mailto:${siteConfig.company.email}`,
         description: "We respond within 24 hours",
-        accent: "bg-blue-50 text-blue-600",
     },
     {
         id: "call",
@@ -22,7 +21,6 @@ const contactMethods = [
         value: siteConfig.company.phone,
         href: `tel:${siteConfig.company.phone.replace(/\s/g, "")}`,
         description: "Mon–Fri 10am–6pm IST",
-        accent: "bg-primary-50 text-primary-600",
     },
     {
         id: "hours",
@@ -30,7 +28,6 @@ const contactMethods = [
         title: "Business Hours",
         value: "Mon – Fri: 10:00 AM – 6:00 PM",
         description: "Indian Standard Time",
-        accent: "bg-emerald-50 text-emerald-600",
     },
     {
         id: "address",
@@ -38,7 +35,6 @@ const contactMethods = [
         title: "Visit Us",
         value: `${siteConfig.company.address.city}, ${siteConfig.company.address.country}`,
         description: siteConfig.company.address.street,
-        accent: "bg-amber-50 text-amber-600",
     },
 ];
 
@@ -46,26 +42,24 @@ export default function ContactPage() {
     return (
         <div className="mx-auto max-w-6xl space-y-10 scroll-mt-32">
 
-            {/* Contact Method Cards */}
-            <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {/* Contact Methods */}
+            <section className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-neutral-200 pt-5 md:grid-cols-4">
                 {contactMethods.map((method) => {
                     const Icon = method.icon;
-                    const card = (
-                        <div className="group flex flex-col gap-3 rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-neutral-200 hover:shadow-md">
-                            <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${method.accent}`}>
-                                <Icon className="h-5 w-5" />
-                            </div>
-                            <div>
+                    const content = (
+                        <div className="flex items-start gap-2.5">
+                            <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
+                            <div className="min-w-0">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400">{method.title}</p>
-                                <p className="mt-0.5 truncate text-sm font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">{method.value}</p>
+                                <p className="mt-0.5 truncate text-sm font-semibold text-neutral-900">{method.value}</p>
                                 <p className="mt-0.5 text-xs text-neutral-400">{method.description}</p>
                             </div>
                         </div>
                     );
                     return method.href ? (
-                        <a key={method.id} href={method.href}>{card}</a>
+                        <a key={method.id} href={method.href} className="transition-opacity hover:opacity-70">{content}</a>
                     ) : (
-                        <div key={method.id}>{card}</div>
+                        <div key={method.id}>{content}</div>
                     );
                 })}
             </section>

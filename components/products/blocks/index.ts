@@ -10,6 +10,7 @@ export { default as PrescriptionSection } from "./PrescriptionSection";
 export { default as MatchHeadlightsSection } from "./MatchHeadlightsSection";
 export { default as TempleTipEngraving } from "./TempleTipEngraving";
 export { default as BoxEngraving } from "./BoxEngraving";
+export { default as SalliCustomizationSection } from "./SalliCustomizationSection";
 
 // Variant Selectors
 export { default as VariantSelector } from "./VariantSelector";

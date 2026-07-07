@@ -25,9 +25,9 @@ export function HeadlightCategoryCard({ category, isSelected, onSelect }: Headli
                 <Image src={category.image} alt={category.name} fill className="object-contain p-4 transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 50vw" />
             </div>
 
-            <div className="flex justify-center">
-                <span className={`btn btn-primary w-full py-2 ${isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"}`}>{category.name}</span>
-            </div>
+            <h3 className={`text-center text-base font-bold transition-colors ${isSelected ? "text-primary-700" : "text-neutral-800 group-hover:text-primary-700"}`}>
+                {category.name}
+            </h3>
 
             {isSelected && (
                 <div className="bg-primary-500 absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full text-white">
@@ -74,9 +74,7 @@ function HeadlightProductCard({ product }: HeadlightProductCardProps) {
                 />
             </div>
 
-            <div className="mb-3 flex justify-center">
-                <span className="btn btn-primary hover:bg-primary-500 w-full cursor-default py-2">{product.name}</span>
-            </div>
+            <h4 className="mb-2 text-center text-base font-bold text-neutral-900">{product.name}</h4>
 
             <p className="mb-4 text-sm text-neutral-600">{product.description}</p>
 

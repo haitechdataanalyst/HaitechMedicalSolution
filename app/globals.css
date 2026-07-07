@@ -36,8 +36,8 @@
     --color-subtle: var(--text-subtle);
     --color-border: var(--border-color);
 
-    /* Font → font-sans uses Poppins */
-    --font-sans: var(--font-poppins, "Poppins"), system-ui, -apple-system, sans-serif;
+    /* Font → font-sans uses Inter */
+    --font-sans: var(--font-inter, "Inter"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
     /* Page transition animation */
     --animate-page-enter: page-enter 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -121,8 +121,11 @@
     --shadow-lg: 0 12px 32px -4px rgb(0 0 0 / 0.1), 0 4px 12px -4px rgb(0 0 0 / 0.06);
     --shadow-xl: 0 24px 56px -8px rgb(0 0 0 / 0.12), 0 8px 20px -8px rgb(0 0 0 / 0.06);
     --shadow-2xl: 0 40px 80px -16px rgb(0 0 0 / 0.16);
-    --shadow-brand: 0 6px 24px -4px rgb(31 182 205 / 0.35);
-    --shadow-brand-lg: 0 12px 40px -8px rgb(31 182 205 / 0.4);
+    /* Reserved for the single primary call-to-action on a screen — restrained
+       on purpose, so it reads as "the one thing to do here," not as a
+       decorative glow repeated on every button. */
+    --shadow-brand: 0 4px 16px -4px rgb(31 182 205 / 0.28);
+    --shadow-brand-lg: 0 8px 28px -6px rgb(31 182 205 / 0.32);
     --shadow-float: 0 16px 48px -8px rgb(0 0 0 / 0.18), 0 4px 16px -4px rgb(0 0 0 / 0.08);
 
     /* Spacing — responsive via clamp so mobile sections aren't huge */
@@ -161,7 +164,7 @@
     body {
         background: var(--background);
         color: var(--foreground);
-        font-family: var(--font-poppins, "Poppins"), system-ui, -apple-system, sans-serif;
+        font-family: var(--font-sans);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -246,9 +249,9 @@
     }
 
     .card-hover:hover {
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-md);
         border-color: var(--color-primary-200);
-        transform: translateY(-4px);
+        transform: translateY(-2px);
     }
 
     /* ---------- Label Tag ---------- */
@@ -429,8 +432,7 @@
     .btn-outline:hover:not(:disabled) {
         background: var(--color-primary-500);
         color: white;
-        box-shadow: var(--shadow-brand);
-        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
     }
 
     .btn-ghost {

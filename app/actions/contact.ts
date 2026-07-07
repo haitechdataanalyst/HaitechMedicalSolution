@@ -158,7 +158,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
 
         // Send email
         await sendContactEmail({
-            to: process.env.CONTACT_EMAIL || "info@haitechmedical.com.au",
+            to: process.env.CONTACT_EMAIL || "sales@haitech-group.com",
             from: data.email,
             name: data.name,
             subject: data.subject,

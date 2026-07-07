@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory } from "@/types";
+import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory, SpecificationsBlock } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
+import { useWishlist } from "@/components/cart/WishlistProvider";
+import { useCompare } from "@/components/compare";
 import { Button } from "@/components/ui";
 import VariantSelector, { VariantSelection } from "./VariantSelector";
 import FrameSizeSelector from "./FrameSizeSelector";
@@ -10,10 +12,11 @@ import PrescriptionSection from "./PrescriptionSection";
 import MatchHeadlightsSection from "./MatchHeadlightsSection";
 import TempleTipEngraving from "./TempleTipEngraving";
 import BoxEngraving from "./BoxEngraving";
-import { ShoppingCart, FileDown, HelpCircle, Tag, Zap, FileText } from "lucide-react";
+import SalliCustomizationSection, { SalliSelection } from "./SalliCustomizationSection";
+import { ShoppingCart, FileDown, HelpCircle, Tag, Zap, FileText, Heart, GitCompareArrows, Share2 } from "lucide-react";
 import { toast } from "sonner";
 import { formatPrice } from "@/lib/utils";
-import { detectBrand } from "@/lib/brand";
+import { detectBrand, requiresConsultation } from "@/lib/brand";
 import ProductQuoteModal from "./ProductQuoteModal";
 import { COMMERCE_ENABLED } from "@/lib/config";
 
@@ -35,9 +38,57 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     const [templeTipText, setTempleTipText] = useState("");
     const [boxEngravingText, setBoxEngravingText] = useState("");
     const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+    const [salliSelection, setSalliSelection] = useState<SalliSelection>({ piston: null, material: null, seatSize: null, accessoryIds: [] });
 
     const brandName = detectBrand(product.sku).name;
-    const isAdmetec = brandName === "Admetec";
+    // Capital equipment (loupes, dental chairs, saddle chairs) is bought via
+    // quote/consultation, not instant checkout — see DESIGN_PRINCIPLES.md.
+    const needsQuote = requiresConsultation(brandName);
+
+    // Convenience actions (Wishlist, Compare, Share) support research without
+    // competing with the primary Quote decision — see DESIGN_PRINCIPLES.md,
+    // Principle 12: Decision-Based Interfaces.
+    const { toggle: toggleWishlist, isWished } = useWishlist();
+    const wished = isWished(String(product.id));
+    const { add: compareAdd, remove: compareRemove, isAdded: compareIsAdded, items: compareItems } = useCompare();
+    const compareAdded = compareIsAdded(String(product.id));
+    const compareFull = compareItems.length >= 3 && !compareAdded;
+    const compareAllowed = brandName === "Admetec" || brandName === "Salli";
+
+    const handleToggleCompare = () => {
+        if (compareAdded) {
+            compareRemove(String(product.id));
+            return;
+        }
+        if (compareFull) return;
+        const specs = product.contentBlocks
+            ?.filter((b): b is SpecificationsBlock => b.type === "specifications")
+            .flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+        compareAdd({
+            id: String(product.id),
+            name: product.name,
+            image: product.defaultImage,
+            href: typeof window !== "undefined" ? window.location.pathname : "",
+            price: product.basePrice,
+            currency: product.currency,
+            brand: brandName,
+            specs,
+        });
+    };
+
+    const handleShare = async () => {
+        const url = typeof window !== "undefined" ? window.location.href : "";
+        if (typeof navigator !== "undefined" && navigator.share) {
+            try {
+                await navigator.share({ title: product.name, url });
+            } catch {
+                // user cancelled the native share sheet — no action needed
+            }
+        } else if (typeof navigator !== "undefined") {
+            await navigator.clipboard.writeText(url);
+            toast.success("Link copied to clipboard");
+        }
+    };
 
     const CATALOGUE_URLS: Partial<Record<string, string>> = {
         Admetec: "https://workdrive.zohoexternal.com/embed/383450ad81ce1c0b64e39baa4600dc9953d5e?toolbar=true&appearance=light&themecolor=green",
@@ -96,6 +147,19 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
         if (boxEngravingText) {
             customization.boxEngraving = boxEngravingText;
+        }
+
+        if (data.salliCustomization?.enabled) {
+            const materials = data.salliCustomization.materials ?? [];
+            const selectedMaterial = materials.find((m) => m.value === salliSelection.material) ?? materials[0];
+
+            if (salliSelection.piston) customization.pistonSize = salliSelection.piston;
+            if (salliSelection.seatSize) customization.seatSize = salliSelection.seatSize;
+            if (selectedMaterial) customization.upholstery = selectedMaterial.label;
+            if (salliSelection.accessoryIds.length > 0) {
+                const labels = (data.salliCustomization.accessories ?? []).filter((a) => salliSelection.accessoryIds.includes(a.id)).map((a) => a.label);
+                if (labels.length > 0) customization.accessories = labels.join(", ");
+            }
         }
 
         return customization;
@@ -163,13 +227,18 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                                 </div>
                             )}
                             {product.currency === "INR" && (
-                                <p className="mt-1 text-xs text-emerald-600">All frames included free · Prices valid 2026-2027</p>
+                                <p className="mt-1 text-xs text-neutral-500">All frames included free · Prices valid 2026-2027</p>
                             )}
                         </div>
                     )}
 
                     {/* Variant Selection */}
                     <VariantSelector product={product} frames={frames} onSelectionChange={handleVariantChange} />
+
+                    {/* Salli Saddle Chair Customization (piston size, upholstery, accessories) */}
+                    {data.salliCustomization?.enabled && (
+                        <SalliCustomizationSection config={data.salliCustomization} selection={salliSelection} onChange={setSalliSelection} currency={product.currency} />
+                    )}
 
                     {/* Frame Size Selector */}
                     {data.frameSizes && data.frameSizes.length > 0 && <FrameSizeSelector sizes={data.frameSizes} selectedSize={selectedFrameSize} onSizeChange={setSelectedFrameSize} />}
@@ -224,21 +293,44 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                     {/* Box Engraving Section */}
                     {data.boxEngraving?.enabled && <BoxEngraving config={data.boxEngraving} onTextChange={setBoxEngravingText} />}
 
-                    {/* Cart / order buttons */}
-                    {COMMERCE_ENABLED && (
-                        <div className="flex flex-col gap-3">
-                            {isAdmetec ? (
-                                <div className="flex gap-3">
-                                    <Button onClick={handleAddToCart} className="flex-1 gap-2" size="lg">
-                                        <ShoppingCart className="h-4 w-4" />
+                    {/* Cart / order buttons — the quote CTA for capital equipment
+                        is never gated behind COMMERCE_ENABLED: requesting a quote
+                        is the site's primary lead-generation path today and has
+                        never depended on online payment being live. Only the
+                        actual cart/checkout actions wait for that flag.
+
+                        Hierarchy follows DESIGN_PRINCIPLES.md, Principle 12
+                        (Decision-Based Interfaces): one primary business
+                        objective, supporting documentation demoted below,
+                        convenience actions kept small so they never compete
+                        with the decision the buyer actually needs to make. */}
+                    <div className="flex flex-col gap-3">
+                        {needsQuote ? (
+                            <>
+                                {/* Primary — the core business objective */}
+                                <Button
+                                    onClick={() => setQuoteModalOpen(true)}
+                                    size="lg"
+                                    className="w-full gap-2"
+                                >
+                                    <FileText className="h-4 w-4" />
+                                    Request a Quote
+                                </Button>
+                                {/* Convenience — Add to Cart stays part of the system for when
+                                    e-commerce goes live, but for consultation-based products it
+                                    is subordinate to Quote, not equal to it. */}
+                                {COMMERCE_ENABLED && (
+                                    <button
+                                        onClick={handleAddToCart}
+                                        className="flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-700"
+                                    >
+                                        <ShoppingCart className="h-3.5 w-3.5" />
                                         Add to Cart
-                                    </Button>
-                                    <Button onClick={() => setQuoteModalOpen(true)} variant="outline" size="lg" className="flex-1 gap-2">
-                                        <FileText className="h-4 w-4" />
-                                        Get a Quote
-                                    </Button>
-                                </div>
-                            ) : (
+                                    </button>
+                                )}
+                            </>
+                        ) : (
+                            COMMERCE_ENABLED && (
                                 <>
                                     <Button onClick={handleAddToCart} className="w-full gap-2" size="lg">
                                         <ShoppingCart className="h-4 w-4" />
@@ -254,29 +346,66 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                                         Buy Now
                                     </Button>
                                 </>
-                            )}
-                        </div>
-                    )}
+                            )
+                        )}
+                    </div>
                 </>
             )}
 
-            {/* Catalogue button — always shown for every brand that has a URL */}
+            {/* Convenience row — Wishlist, Compare, Share assist research
+                without competing for attention against the primary decision. */}
+            <div className="flex items-center justify-center gap-1 border-t border-neutral-100 pt-4 text-xs font-medium text-neutral-400">
+                <button
+                    onClick={() => toggleWishlist(String(product.id))}
+                    className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 transition-colors hover:bg-rose-50 hover:text-rose-500"
+                >
+                    <Heart className={wished ? "h-3.5 w-3.5 fill-current text-rose-500" : "h-3.5 w-3.5"} />
+                    {wished ? "Saved" : "Save"}
+                </button>
+                {compareAllowed && (
+                    <button
+                        onClick={handleToggleCompare}
+                        disabled={compareFull}
+                        className={
+                            compareAdded
+                                ? "flex items-center gap-1.5 rounded-lg bg-primary-50 px-2.5 py-1.5 text-primary-700"
+                                : compareFull
+                                ? "flex cursor-not-allowed items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-neutral-200"
+                                : "flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
+                        }
+                    >
+                        <GitCompareArrows className="h-3.5 w-3.5" />
+                        {compareAdded ? "Added" : "Compare"}
+                    </button>
+                )}
+                <button
+                    onClick={handleShare}
+                    className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
+                >
+                    <Share2 className="h-3.5 w-3.5" />
+                    Share
+                </button>
+            </div>
+
+            {/* Supporting — documentation aids the decision but should never
+                visually compete with Quote; hence ghost, not filled or
+                outlined. */}
             {catalogueUrl ? (
-                <Button onClick={handleOpenCatalogue} variant="secondary" size="lg" className="w-full gap-2">
+                <Button onClick={handleOpenCatalogue} variant="ghost" size="lg" className="w-full gap-2 text-neutral-600">
                     <FileDown className="h-4 w-4" />
-                    Get Catalogue
+                    Download Brochure
                 </Button>
             ) : product.catalogueFile ? (
-                <Button onClick={handleDownloadCatalogue} variant="secondary" size="lg" className="w-full gap-2">
+                <Button onClick={handleDownloadCatalogue} variant="ghost" size="lg" className="w-full gap-2 text-neutral-600">
                     <FileDown className="h-4 w-4" />
-                    Download Catalogue
+                    Download Brochure
                 </Button>
             ) : null}
 
         </div>
 
-        {/* Quote modal — Admetec only */}
-        {isAdmetec && (
+        {/* Quote modal — capital equipment brands only (see DESIGN_PRINCIPLES.md) */}
+        {needsQuote && (
             <ProductQuoteModal
                 isOpen={quoteModalOpen}
                 onClose={() => setQuoteModalOpen(false)}

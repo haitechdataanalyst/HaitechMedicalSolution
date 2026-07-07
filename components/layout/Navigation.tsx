@@ -119,7 +119,7 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                                                     <p className="truncate text-xs font-bold text-neutral-800 transition-colors group-hover:text-primary-700">
                                                         {featuredItem.label}
                                                     </p>
-                                                    <span className="mt-0.5 text-[10px] font-semibold text-amber-600">⭐ Popular</span>
+                                                    <span className="mt-0.5 text-[10px] font-semibold text-neutral-400">{column.title}</span>
                                                 </div>
                                             </Link>
                                         )}

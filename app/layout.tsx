@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { NavigationProvider } from "@/components/layout";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import { SplashScreen } from "@/components/misc";
 
-const poppins = Poppins({
+// Inter — the standard typeface for enterprise SaaS/technology brands (Stripe,
+// Linear, GitHub, Vercel). Chosen over the previous Poppins because Poppins'
+// geometric, rounded letterforms read as consumer/startup-friendly, while
+// Inter is neutral, highly legible at every size, and signals precision and
+// technical credibility — the tone a global medical technology brand needs.
+const inter = Inter({
     subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700"],
-    variable: "--font-poppins",
+    variable: "--font-inter",
     display: "swap",
 });
 
@@ -33,7 +37,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${poppins.variable} bg-surface font-sans antialiased`}>
+            <body className={`${inter.variable} bg-surface font-sans antialiased`}>
                 <SplashScreen />
                 <Providers>
                     <NavigationProvider>

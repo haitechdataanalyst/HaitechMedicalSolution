@@ -178,7 +178,7 @@ export default function CartDrawer() {
                             </div>
                         )}
 
-                        <p className="text-center text-xs text-neutral-400">Prices incl. GST · Delivery charges as applicable</p>
+                        <p className="text-center text-xs text-neutral-400">Prices incl. GST · Free delivery on all orders</p>
 
                         {/* Actions */}
                         <div className="flex gap-2">

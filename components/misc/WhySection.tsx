@@ -3,29 +3,20 @@
 import Link from "next/link";
 import { Button } from "@/components/ui";
 import { Lordicon, type IconName } from "@/components/icons";
-import { RocketIcon } from "lucide-react";
+import { FileText } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const stats: { value: string; label: string; icon: IconName }[] = [
     { value: "5+", label: "Global Brands", icon: "globe" },
     { value: "1000+", label: "Workshops & Conferences Supported", icon: "conference" },
-    { value: "30+", label: "Partnerships & Expanding", icon: "users" },
+    { value: "30+", label: "Active Partnerships", icon: "users" },
     { value: "15+", label: "Years of Excellence", icon: "award" },
 ];
 
 export default function WhySection() {
     return (
-        <section className="relative overflow-hidden bg-navy-gradient">
-            {/* Subtle dot grid */}
-            <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                    backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-                    backgroundSize: "32px 32px",
-                }}
-            />
-
-            <div className="section-lg container relative">
+        <section className="bg-navy-gradient">
+            <div className="section-lg container">
                 {/* Header */}
                 <ScrollReveal variant="up">
                     <div className="mb-14 text-center md:mb-16">
@@ -47,7 +38,7 @@ export default function WhySection() {
                     {stats.map((stat, index) => (
                         <ScrollReveal key={index} variant="up" delay={index * 100} threshold={0.06}>
                         <div
-                            className="relative rounded-2xl border border-white/8 bg-white/5 p-6 text-center backdrop-blur-sm md:p-8"
+                            className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center md:p-8"
                         >
                             <div>
                                 <div className="mb-3 flex justify-center">
@@ -73,14 +64,14 @@ export default function WhySection() {
                 {/* CTA */}
                 <ScrollReveal variant="up" delay={100}>
                     <div className="text-center">
-                        <Link href="/support/contact?demo=true">
+                        <Link href="/support/contact">
                             <Button
                                 size="lg"
                                 className="group gap-3 rounded-full bg-primary-500 px-10 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-400"
                                 style={{ boxShadow: "0 8px 32px -4px rgb(31 182 205 / 0.5)" }}
                             >
-                                <RocketIcon size={18} />
-                                Book a Demo
+                                <FileText size={18} />
+                                Request a Quote
                             </Button>
                         </Link>
                     </div>

@@ -8,24 +8,19 @@ const ITEM_TYPE_STYLES: Record<string, string> = {
     Spare:  "bg-blue-50   text-blue-700   border border-blue-200",
 };
 
-const BRAND_COLORS: Record<string, string> = {
-    Admetec: "bg-indigo-100 text-indigo-800",
-    Medesy:  "bg-rose-100   text-rose-800",
-    Strauss: "bg-violet-100 text-violet-800",
-    Salli:   "bg-teal-100   text-teal-800",
-    Almadent:"bg-orange-100 text-orange-800",
-};
+// One restrained, neutral treatment for every brand — see lib/brand.ts for the
+// same decision applied to the main product card.
+const NEUTRAL_BRAND_BADGE = "bg-neutral-100 text-neutral-600";
 
 export default function InventoryItemCard({ item }: { item: InventoryItem }) {
     const inStock    = item.StockOnHand > 0;
     const typeStyle  = ITEM_TYPE_STYLES[item.ItemType] ?? "bg-neutral-100 text-neutral-600";
-    const brandStyle = BRAND_COLORS[item.Brand]        ?? "bg-neutral-100 text-neutral-700";
 
     return (
         <div className="flex flex-col gap-3 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_24px_rgba(31,182,205,0.10)] active:translate-y-0">
             {/* Header row — brand + type */}
             <div className="flex items-start justify-between gap-2">
-                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${brandStyle}`}>{item.Brand}</span>
+                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${NEUTRAL_BRAND_BADGE}`}>{item.Brand}</span>
                 <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${typeStyle}`}>{item.ItemType}</span>
             </div>
 
@@ -86,10 +81,14 @@ export default function InventoryItemCard({ item }: { item: InventoryItem }) {
 
             {/* CTA */}
             <Link
-                href={`/support/contact?subject=Quote+Request:+${encodeURIComponent(item.StandardSKU || item.OriginalSKU)}&product=${encodeURIComponent(item.ProductName || item.OriginalName)}`}
-                className="mt-auto block w-full rounded-full border border-neutral-200 py-2 text-center text-xs font-medium text-neutral-700 transition-colors hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+                href={`/support/contact?subject=${inStock ? "Quote+Request" : "Restock+Enquiry"}:+${encodeURIComponent(item.StandardSKU || item.OriginalSKU)}&product=${encodeURIComponent(item.ProductName || item.OriginalName)}`}
+                className={`mt-auto block w-full rounded-full border py-2 text-center text-xs font-medium transition-colors ${
+                    inStock
+                        ? "border-neutral-200 text-neutral-700 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+                        : "border-neutral-100 text-neutral-400 hover:border-neutral-200 hover:bg-neutral-50 hover:text-neutral-600"
+                }`}
             >
-                Request Quote
+                {inStock ? "Request Quote" : "Ask About Restock"}
             </Link>
         </div>
     );

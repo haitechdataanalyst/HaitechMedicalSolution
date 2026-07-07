@@ -25,10 +25,10 @@ const BRANDS = [
 ];
 
 const STATS = [
-    { value: "500+", label: "Professionals" },
     { value: "5", label: "Brands" },
-    { value: "24/7", label: "Support" },
-    { value: "4.9★", label: "Rating" },
+    { value: "80+", label: "Products" },
+    { value: "15+", label: "Years" },
+    { value: "24-Hr", label: "Response" },
 ];
 
 const STEPS = [
@@ -189,10 +189,7 @@ export default function SignupPage() {
         <div className="flex min-h-screen">
 
             {/* ── Left Panel ── */}
-            <div className="relative hidden flex-col justify-between overflow-hidden bg-navy-gradient p-10 lg:flex lg:w-[42%] xl:w-[38%]">
-                <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary-500/10 blur-3xl" />
-                <div className="absolute -left-20 bottom-20 h-64 w-64 rounded-full bg-primary-400/5 blur-3xl" />
-
+            <div className="hidden flex-col justify-between bg-navy-gradient p-10 lg:flex lg:w-[42%] xl:w-[38%]">
                 {/* Logo */}
                 <div className="relative z-10">
                     <Link href="/" className="flex items-center gap-3">
@@ -206,16 +203,13 @@ export default function SignupPage() {
 
                 {/* Headline + brand logos */}
                 <div className="relative z-10 flex flex-1 flex-col justify-center py-10">
-                    <span className="mb-4 inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/80">
-                        Join the Community
-                    </span>
                     <h2 className="mb-3 text-3xl font-bold leading-tight text-white">
                         Access 5 world-class
                         <br />
                         <span className="text-primary-300">dental brands</span>
                     </h2>
                     <p className="mb-8 text-sm leading-relaxed text-white/60">
-                        Join 500+ dental professionals who trust Haitech for premium equipment &amp; dedicated support.
+                        One account for quotes, orders, and support across Admetec, Almadent, Medesy, Salli, and Strauss.
                     </p>
 
                     {/* Brand names grid */}
@@ -223,7 +217,7 @@ export default function SignupPage() {
                         {BRANDS.map((brand) => (
                             <div
                                 key={brand.name}
-                                className="flex items-center justify-center rounded-xl border border-white/10 bg-white/8 px-3 py-3.5 backdrop-blur-sm"
+                                className="flex items-center justify-center rounded-xl border border-white/10 bg-white/8 px-3 py-3.5"
                             >
                                 <span className="text-xs font-bold tracking-wide text-white/75">{brand.name}</span>
                             </div>
@@ -235,7 +229,7 @@ export default function SignupPage() {
                 </div>
 
                 {/* Stats bar */}
-                <div className="relative z-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
+                <div className="relative z-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
                     {STATS.map((s) => (
                         <div key={s.label} className="flex flex-col items-center gap-0.5">
                             <p className="text-lg font-bold text-white">{s.value}</p>

@@ -6,7 +6,6 @@
             "description": "Our customer service is always here for you!",
             "icon": "Headset",
             "path": "/support/contact",
-            "color": "bg-blue-50 text-blue-600",
             "children": [
                 {
                     "id": "email",
@@ -23,13 +22,6 @@
                     "path": "/support/contact#call"
                 },
                 {
-                    "id": "chat",
-                    "title": "Let's Chat",
-                    "description": "Start a live chat conversation",
-                    "icon": "MessageCircle",
-                    "path": "/support/contact#chat"
-                },
-                {
                     "id": "info",
                     "title": "General Info",
                     "description": "Business hours and location details",
@@ -44,7 +36,6 @@
             "description": "Browse FAQs, guides, and articles to find answers",
             "icon": "LifeBuoy",
             "path": "/support/faq",
-            "color": "bg-primary-50 text-primary-600",
             "children": [
                 {
                     "id": "guides",
@@ -75,7 +66,6 @@
             "description": "Review our privacy policy and other important information",
             "icon": "FileCheck",
             "path": "/support/policies",
-            "color": "bg-amber-50 text-amber-600",
             "children": [
                 {
                     "id": "privacy",

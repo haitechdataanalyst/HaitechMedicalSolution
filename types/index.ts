@@ -237,6 +237,50 @@ export interface EngravingConfig {
     placeholder?: string;
 }
 
+// Salli saddle-chair customization options
+export interface SalliPistonOption {
+    value: string;
+    label: string;
+    description?: string;
+}
+
+export interface SalliMaterialColor {
+    code: string;
+    name: string;
+    hex: string;
+}
+
+export interface SalliMaterialOption {
+    value: string;
+    label: string;
+    priceModifier?: number;
+    colors: SalliMaterialColor[];
+}
+
+export interface SalliSeatSizeOption {
+    value: string;
+    label: string;
+    priceModifier?: number;
+}
+
+// Add-on accessory (e.g. Gas Cylinder, Castor) — only offered where compatible with the model
+export interface SalliAccessory {
+    id: string;
+    label: string;
+    /** 0 means pricing isn't finalized yet — shown as "Price on request" rather than free. */
+    price: number;
+}
+
+export interface SalliCustomizationConfig {
+    enabled: boolean;
+    tier?: string;
+    warrantyText?: string;
+    pistons?: SalliPistonOption[];
+    materials?: SalliMaterialOption[];
+    seatSizes?: SalliSeatSizeOption[];
+    accessories?: SalliAccessory[];
+}
+
 export interface ActionsBlock {
     type: "actions";
     data: {
@@ -248,6 +292,7 @@ export interface ActionsBlock {
         matchHeadlights?: MatchHeadlightsConfig;
         templeTipEngraving?: EngravingConfig;
         boxEngraving?: EngravingConfig;
+        salliCustomization?: SalliCustomizationConfig;
     };
 }
 

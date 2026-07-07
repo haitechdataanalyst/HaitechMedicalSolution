@@ -15,7 +15,6 @@ const helpResources = [
         title: "Product Guides",
         description: "Step-by-step tutorials and video guides for our products",
         href: "#guides",
-        accent: "bg-blue-50 text-blue-600",
     },
     {
         id: "articles",
@@ -23,7 +22,6 @@ const helpResources = [
         title: "Knowledge Base",
         description: "In-depth articles and documentation",
         href: "#articles",
-        accent: "bg-emerald-50 text-emerald-600",
     },
     {
         id: "terms",
@@ -31,7 +29,6 @@ const helpResources = [
         title: "Policies",
         description: "Privacy policy, terms & conditions",
         href: "/support/policies",
-        accent: "bg-purple-50 text-purple-600",
     },
 ];
 
@@ -63,9 +60,9 @@ export default function HelpCenterPage() {
                             <Link
                                 key={resource.id}
                                 href={resource.href}
-                                className="group flex items-start gap-4 rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-neutral-200 hover:shadow-md"
+                                className="group flex items-start gap-4 rounded-xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-primary-200 hover:shadow-md"
                             >
-                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${resource.accent}`}>
+                                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-600">
                                     <Icon className="h-5 w-5" />
                                 </div>
                                 <div className="min-w-0 flex-1">
@@ -104,9 +101,9 @@ export default function HelpCenterPage() {
 
             {/* Still need help CTA */}
             <section className="rounded-2xl bg-navy-gradient p-8 text-center">
-                <h3 className="heading-3 mb-2 text-white">Still need help?</h3>
+                <h3 className="heading-3 mb-2 text-white">Question not answered here?</h3>
                 <p className="mb-6 text-sm text-navy-300">
-                    Can&apos;t find what you&apos;re looking for? Our support team is ready to assist.
+                    Send us the details and a specialist will follow up directly.
                 </p>
                 <Link
                     href="/support/contact"

@@ -16,7 +16,6 @@ const brands = [
         tagline: "Surgical loupes & LED headlights engineered for dental professionals.",
         image: "/BrandLogo/AdmetecLogo.jpeg",
         href: "/product/admetec",
-        accentColor: "bg-teal-500",
         badge: "Optical",
         filter: "Optical" as FilterCategory,
         productCount: 12,
@@ -28,7 +27,6 @@ const brands = [
         tagline: "Premium dental chairs & units for the modern clinic.",
         image: "/BrandLogo/AlmadentLogo.jpeg",
         href: "/product/almadent",
-        accentColor: "bg-blue-500",
         badge: "Dental Chairs",
         filter: "Dental Chairs" as FilterCategory,
         productCount: 7,
@@ -40,7 +38,6 @@ const brands = [
         tagline: "Precision stainless steel instruments trusted by surgeons worldwide.",
         image: "/BrandLogo/MedesyLogo.jpeg",
         href: "/product/medesy",
-        accentColor: "bg-emerald-500",
         badge: "Surgical",
         filter: "Surgical" as FilterCategory,
         productCount: 21,
@@ -52,10 +49,9 @@ const brands = [
         tagline: "Ergonomic saddle chairs designed for the modern clinic.",
         image: "/BrandLogo/SalliLogo.jpeg",
         href: "/product/salli",
-        accentColor: "bg-amber-500",
         badge: "Ergonomic",
         filter: "Ergonomic" as FilterCategory,
-        productCount: 4,
+        productCount: 5,
         credibility: "Finnish-engineered · Clinically proven",
         priceFrom: "₹23,999",
     },
@@ -64,7 +60,6 @@ const brands = [
         tagline: "Diamond burs & precision cutting instruments for every procedure.",
         image: "/BrandLogo/StraussLogo.jpeg",
         href: "/product/strauss",
-        accentColor: "bg-violet-500",
         badge: "Burs",
         filter: "Burs" as FilterCategory,
         productCount: 39,
@@ -81,11 +76,8 @@ function BrandCard({ brand }: { brand: BrandItem }) {
     return (
         <Link
             href={brand.href}
-            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-200 hover:border-neutral-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.11)]"
+            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-200 hover:border-primary-200 hover:shadow-[0_6px_24px_rgba(0,0,0,0.11)]"
         >
-            {/* Top accent bar */}
-            <div className={cn("h-0.5 w-full opacity-0 transition-opacity duration-200 group-hover:opacity-100", brand.accentColor)} />
-
             {/* Image */}
             <div className="relative h-36 w-full overflow-hidden bg-white sm:h-40">
                 <Image

@@ -17,10 +17,8 @@ export default async function OurHeadlightsPage() {
             <Breadcrumbs items={getBreadcrumbs("ourHeadlights")} />
 
             {/* Hero */}
-            <section className="bg-brand-gradient relative overflow-hidden text-white">
-                <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-12 left-1/4 h-56 w-56 rounded-full bg-primary-400/8 blur-2xl" />
-                <div className="section-lg container relative">
+            <section className="bg-brand-gradient text-white">
+                <div className="section-lg container">
                     <div className="mx-auto max-w-3xl text-center">
                         <span className="label-tag label-tag-white mb-5 inline-flex">LED Technology</span>
                         <h1 className="heading-1 mb-5">{headlightsData.intro.title}</h1>
@@ -40,14 +38,12 @@ export default async function OurHeadlightsPage() {
                                 All our lights are ultra-lightweight and engineered for demanding clinical environments.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-x-8 gap-y-4 border-t border-neutral-200 pt-6 sm:grid-cols-2 lg:grid-cols-4">
                             {headlightsData.intro.features.map((feature, index) => (
-                                <div key={index} className="flex items-center gap-3 rounded-2xl border border-neutral-100 bg-neutral-50 p-5">
-                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
-                                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
+                                <div key={index} className="flex items-start gap-2.5">
+                                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
                                     <span className="text-sm font-medium text-neutral-700">{feature}</span>
                                 </div>
                             ))}

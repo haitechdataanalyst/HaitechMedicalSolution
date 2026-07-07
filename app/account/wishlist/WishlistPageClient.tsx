@@ -7,7 +7,7 @@ import { useWishlist } from "@/components/cart/WishlistProvider";
 import { useCart } from "@/components/cart/CartProvider";
 import { Product } from "@/types";
 import { cn, formatPrice } from "@/lib/utils";
-import { detectBrand } from "@/lib/brand";
+import { detectBrand, requiresConsultation } from "@/lib/brand";
 import { toast } from "sonner";
 
 interface WishlistProduct extends Product {
@@ -110,10 +110,10 @@ export default function WishlistPageClient({ products }: Props) {
                             </Link>
 
                             <div className="mt-auto flex gap-2">
-                                {brand.name === "Admetec" ? (
+                                {requiresConsultation(brand.name) ? (
                                     <Link
                                         href={product.path}
-                                        className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-indigo-500 py-2.5 text-xs font-bold text-white transition-colors hover:bg-indigo-600"
+                                        className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-primary-500 py-2.5 text-xs font-bold text-white transition-colors hover:bg-primary-600"
                                     >
                                         <FileText className="h-3.5 w-3.5" />
                                         Get Quote

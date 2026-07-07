@@ -15,7 +15,7 @@ export default function SupportSectionsGrid() {
                         href={section.path}
                         className="group flex flex-col rounded-2xl border border-neutral-100 bg-white p-7 transition-all duration-300 hover:border-primary-100 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
                     >
-                        <div className={`mb-5 flex h-13 w-13 items-center justify-center rounded-xl transition-colors ${section.color}`}>
+                        <div className="mb-5 flex h-13 w-13 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-100">
                             <Icon className="h-6 w-6" aria-hidden="true" />
                         </div>
                         <h3 className="heading-4 mb-2 text-neutral-900 transition-colors group-hover:text-primary-600">

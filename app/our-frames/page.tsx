@@ -18,15 +18,13 @@ export default async function OurFramesPage() {
             <Breadcrumbs items={breadcrumbs} />
 
             {/* Hero */}
-            <section className="bg-brand-gradient relative overflow-hidden text-white">
-                <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-16 left-1/3 h-56 w-56 rounded-full bg-primary-400/8 blur-2xl" />
-                <div className="section-lg container relative">
-                    <div className="relative z-10 mx-auto max-w-3xl text-center">
+            <section className="bg-brand-gradient text-white">
+                <div className="section-lg container">
+                    <div className="mx-auto max-w-3xl text-center">
                         <span className="label-tag label-tag-white mb-5 inline-flex">Frame Styles</span>
-                        <h1 className="heading-1 mb-5">What Style Makes Your Heart Sing?</h1>
+                        <h1 className="heading-1 mb-5">Frames Built for All-Day Wear</h1>
                         <p className="text-body-lg text-white/80">
-                            Every professional has their own style. Our premium frames complement your personality while delivering all-day comfort and durability.
+                            Five frame families — Blues, Indie, Jazz, Soul, and Progear — in a range of colors and fits, included free with every Admetec loupe.
                         </p>
                     </div>
                 </div>
@@ -63,9 +61,9 @@ export default async function OurFramesPage() {
                 <div className="container">
                     <div className="mx-auto max-w-2xl text-center">
                         <span className="label-tag label-tag-primary mb-5 inline-flex">Choose Your Loupes</span>
-                        <h2 className="heading-3 mb-4 text-neutral-900">Ready to Find Your Perfect Match?</h2>
+                        <h2 className="heading-3 mb-4 text-neutral-900">Pick a Loupe, Then Pick Your Frame</h2>
                         <p className="mb-8 text-sm leading-relaxed text-neutral-500">
-                            Browse our loupe collections and customize your perfect pair with your favourite frame style and color.
+                            Frame selection happens during checkout on any Ergo or Galilean loupe — start with the magnification you need.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/product-category/admetec/ergo-loupes">

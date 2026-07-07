@@ -18,9 +18,22 @@ import {
     Building2,
     FileText,
     CreditCard,
+    Smartphone,
+    Landmark,
+    Banknote,
     ShoppingCart,
     ArrowLeft,
 } from "lucide-react";
+
+const PAYMENT_METHOD_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+    "UPI / GPay": Smartphone,
+    "Credit Card": CreditCard,
+    "Debit Card": CreditCard,
+    "Net Banking": Landmark,
+    "Bank Transfer": Landmark,
+    "Cheque": FileText,
+    "Cash on Delivery": Banknote,
+};
 import { formatPrice } from "@/lib/utils";
 
 declare global {
@@ -98,7 +111,6 @@ export default function CheckoutPage() {
                 // Fall back to quote flow via server action for price-on-request items
                 const { submitQuoteRequest } = await import("@/app/actions/quote");
                 const result = await submitQuoteRequest({ success: false }, formData);
-                    console.log("[DEBUG] submitQuoteRequest result:", result);
                 if (result.success) {
                     clearCart();
                     setShowSuccess(true);
@@ -280,10 +292,10 @@ export default function CheckoutPage() {
 
                         <div className="overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm">
                             <div className="flex items-center gap-3 border-b border-neutral-100 px-6 py-4">
-                                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary-500 text-xs font-bold text-white">1</div>
+                                <MapPin className="h-4 w-4 shrink-0 text-primary-500" />
                                 <div>
                                     <h2 className="font-bold text-neutral-900">Delivery Details</h2>
-                                    <p className="text-xs text-neutral-400">We'll ship to this address</p>
+                                    <p className="text-xs text-neutral-400">We&apos;ll ship to this address</p>
                                 </div>
                             </div>
 
@@ -356,7 +368,7 @@ export default function CheckoutPage() {
                                 {/* Payment note */}
                                 <div className="mt-6 rounded-xl border border-neutral-100 bg-neutral-50 p-4">
                                     <div className="flex items-start gap-3">
-                                        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary-500 text-xs font-bold text-white shrink-0 mt-0.5">2</div>
+                                        <CreditCard className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" />
                                         <div>
                                             <h3 className="font-semibold text-neutral-800">
                                                 {hasPricedItems ? "Secure Online Payment" : "Payment on Confirmation"}
@@ -373,15 +385,18 @@ export default function CheckoutPage() {
                                         {(hasPricedItems
                                             ? ["UPI / GPay", "Credit Card", "Debit Card", "Net Banking"]
                                             : ["Bank Transfer", "UPI / GPay", "Cheque", "Cash on Delivery"]
-                                        ).map((method) => (
-                                            <span
-                                                key={method}
-                                                className="flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
-                                            >
-                                                <CreditCard className="h-3 w-3 text-neutral-400" />
-                                                {method}
-                                            </span>
-                                        ))}
+                                        ).map((method) => {
+                                            const Icon = PAYMENT_METHOD_ICONS[method] ?? CreditCard;
+                                            return (
+                                                <span
+                                                    key={method}
+                                                    className="flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
+                                                >
+                                                    <Icon className="h-3 w-3 text-neutral-400" />
+                                                    {method}
+                                                </span>
+                                            );
+                                        })}
                                     </div>
                                 </div>
 
@@ -403,11 +418,6 @@ export default function CheckoutPage() {
                                         </>
                                     )}
                                 </button>
-
-                                <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-neutral-400">
-                                    <Shield className="h-3.5 w-3.5" />
-                                    Safe and Secure · Your details are protected
-                                </div>
                                 </form>
                             ) : (
                                 <QuoteForm onBack={() => {}} onSuccess={() => { setShowSuccess(true); }} />

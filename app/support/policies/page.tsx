@@ -11,7 +11,6 @@ const policies = [
         title: "Privacy Policy",
         description: "Learn how we collect, use, and protect your personal information.",
         href: "/support/policies/privacy",
-        accent: "bg-blue-50 text-blue-600 group-hover:bg-blue-100",
         lastUpdated: "January 2026",
     },
     {
@@ -20,7 +19,6 @@ const policies = [
         title: "Terms of Service",
         description: "Read the terms and regulations for using our services.",
         href: "/support/policies/terms",
-        accent: "bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100",
         lastUpdated: "February 2026",
     },
 ];
@@ -38,7 +36,7 @@ export default function PoliciesPage() {
                             href={policy.href}
                             className="group flex items-center gap-6 rounded-2xl border border-neutral-100 bg-white p-6 transition-all duration-300 hover:border-primary-100 hover:shadow-lg"
                         >
-                            <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl transition-colors ${policy.accent}`}>
+                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-100">
                                 <Icon className="h-7 w-7" />
                             </div>
                             <div className="min-w-0 flex-1">

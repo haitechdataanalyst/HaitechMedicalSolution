@@ -2,7 +2,7 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, MapPin, FileDown, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowLeft, MapPin, FileDown, CheckCircle2, Clock, Loader2 } from "lucide-react";
 import { orderApi, Order } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { StatusBadge } from "@/components/account";
@@ -71,10 +71,13 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                         <p className="mt-0.5 text-sm text-neutral-500">Placed on {fmtDate(order.createdAt)}</p>
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="flex items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-600 transition-all hover:border-neutral-300 hover:shadow-sm">
+                        <Link
+                            href={`/account/orders/${order.id}/invoice`}
+                            className="flex items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-600 transition-all hover:border-neutral-300 hover:shadow-sm"
+                        >
                             <FileDown className="h-4 w-4" />
                             Invoice
-                        </button>
+                        </Link>
                         <StatusBadge status={order.status} size="lg" />
                     </div>
                 </div>
@@ -178,10 +181,11 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                             </div>
                             <div className="pt-1">
                                 <span className={cn(
-                                    "inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold",
+                                    "inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold",
                                     order.paymentStatus === "paid" ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
                                 )}>
-                                    {order.paymentStatus === "paid" ? "✓ Paid" : "⏳ Unpaid"}
+                                    {order.paymentStatus === "paid" ? <CheckCircle2 className="h-3 w-3" /> : <Clock className="h-3 w-3" />}
+                                    {order.paymentStatus === "paid" ? "Paid" : "Unpaid"}
                                 </span>
                             </div>
                         </div>

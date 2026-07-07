@@ -5556,19 +5556,12 @@
                                         "hex": "#D4B896"
                                     }
                                 ]
-                            },
-                            {
-                                "value": "artificial",
-                                "label": "Artificial Leather",
-                                "priceModifier": -150,
-                                "colors": [
-                                    {
-                                        "code": "BLK",
-                                        "name": "Black",
-                                        "hex": "#1a1a1a"
-                                    }
-                                ]
                             }
+                        ],
+                        "accessories": [
+                            { "id": "stretching-support", "label": "Stretching Support", "price": 0 },
+                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
+                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
                         ]
                     }
                 }
@@ -5576,6 +5569,7 @@
         ],
         "relatedProducts": [
             902,
+            903,
             904,
             905
         ]
@@ -5750,18 +5744,6 @@
                                         "hex": "#D4B896"
                                     }
                                 ]
-                            },
-                            {
-                                "value": "artificial",
-                                "label": "Artificial Leather",
-                                "priceModifier": -150,
-                                "colors": [
-                                    {
-                                        "code": "BLK",
-                                        "name": "Black",
-                                        "hex": "#1a1a1a"
-                                    }
-                                ]
                             }
                         ],
                         "seatSizes": [
@@ -5775,6 +5757,11 @@
                                 "label": "Small",
                                 "priceModifier": 0
                             }
+                        ],
+                        "accessories": [
+                            { "id": "stretching-support", "label": "Stretching Support", "price": 0 },
+                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
+                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
                         ]
                     }
                 }
@@ -5782,6 +5769,197 @@
         ],
         "relatedProducts": [
             901,
+            903,
+            904,
+            905
+        ]
+    },
+    {
+        "id": 903,
+        "slug": "chin-tilt",
+        "name": "Salli Chin Tilt",
+        "description": "Ergonomic saddle chair with tilt function to maintain natural upright posture and prevent chin-forward position.",
+        "category": 30,
+        "order": 3,
+        "sku": "SAL-CT",
+        "basePrice": 55999,
+        "currency": "INR",
+        "hasVariants": true,
+        "variantType": "color",
+        "variants": [
+            {
+                "id": "ct-black",
+                "name": "Black",
+                "colorCode": "#1a1a1a",
+                "sku": "SAL-CT-BLK",
+                "price": 1399,
+                "image": "/images/placeholder.svg"
+            },
+            {
+                "id": "ct-red",
+                "name": "Red",
+                "colorCode": "#DC2626",
+                "sku": "SAL-CT-RED",
+                "price": 1399,
+                "image": "/images/placeholder.svg"
+            },
+            {
+                "id": "ct-blue",
+                "name": "Blue",
+                "colorCode": "#2563EB",
+                "sku": "SAL-CT-BLU",
+                "price": 1399,
+                "image": "/images/placeholder.svg"
+            },
+            {
+                "id": "ct-wine",
+                "name": "Wine",
+                "colorCode": "#7B1E3B",
+                "sku": "SAL-CT-WIN",
+                "price": 1399,
+                "image": "/images/placeholder.svg"
+            },
+            {
+                "id": "ct-beige",
+                "name": "Beige",
+                "colorCode": "#D4B896",
+                "sku": "SAL-CT-BEI",
+                "price": 1399,
+                "image": "/images/placeholder.svg"
+            }
+        ],
+        "defaultImage": "/images/placeholder.svg",
+        "catalogueFile": "/catalogues/chin-tilt.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/placeholder.svg",
+                    "gallery": [
+                        "/images/placeholder.svg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "The Salli Chin Tilt features a tilt function that helps maintain a natural upright posture, preventing the common chin-forward position caused by leaning.",
+                    "secondary": "Designed with a pressure-relieving central gap, the split saddle frees the tailbone and promotes an open pelvic angle for healthier sitting."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "specs": [
+                        {
+                            "label": "Type",
+                            "value": "Saddle Chair"
+                        },
+                        {
+                            "label": "Tilt Mechanism",
+                            "value": "Yes"
+                        },
+                        {
+                            "label": "Split Saddle",
+                            "value": "Yes"
+                        },
+                        {
+                            "label": "Height Adjustment",
+                            "value": "Gas Lift"
+                        },
+                        {
+                            "label": "Upholstery",
+                            "value": "100% Genuine Leather"
+                        },
+                        {
+                            "label": "Origin",
+                            "value": "Finland"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Salli",
+                    "warranty": "5 years",
+                    "packageContents": [
+                        "Salli Chin Tilt Chair",
+                        "User Manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": true,
+                    "salliCustomization": {
+                        "enabled": true,
+                        "tier": "standard",
+                        "warrantyText": "1 Year Local Warranty included",
+                        "pistons": [
+                            {
+                                "value": "short",
+                                "label": "Short",
+                                "description": "User height < 5'0\" (150 cm)"
+                            },
+                            {
+                                "value": "medium",
+                                "label": "Medium",
+                                "description": "5'0\" – 6'0\" (150–183 cm)"
+                            },
+                            {
+                                "value": "large",
+                                "label": "Large",
+                                "description": "User height > 6'0\" (183 cm)"
+                            }
+                        ],
+                        "materials": [
+                            {
+                                "value": "genuine",
+                                "label": "Genuine Leather",
+                                "priceModifier": 0,
+                                "colors": [
+                                    {
+                                        "code": "BLK",
+                                        "name": "Black",
+                                        "hex": "#1a1a1a"
+                                    },
+                                    {
+                                        "code": "RED",
+                                        "name": "Red",
+                                        "hex": "#DC2626"
+                                    },
+                                    {
+                                        "code": "BLU",
+                                        "name": "Blue",
+                                        "hex": "#2563EB"
+                                    },
+                                    {
+                                        "code": "WIN",
+                                        "name": "Wine",
+                                        "hex": "#7B1E3B"
+                                    },
+                                    {
+                                        "code": "BEI",
+                                        "name": "Beige",
+                                        "hex": "#D4B896"
+                                    }
+                                ]
+                            }
+                        ],
+                        "accessories": [
+                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
+                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                        ]
+                    }
+                }
+            }
+        ],
+        "relatedProducts": [
+            901,
+            902,
             904,
             905
         ]
@@ -5792,7 +5970,7 @@
         "name": "Salli Sway Fit",
         "description": "Dynamic saddle chair with swing mechanism supporting natural body movement to reduce strain during long clinical hours.",
         "category": 30,
-        "order": 3,
+        "order": 4,
         "sku": "SAL-SF",
         "basePrice": 55999,
         "currency": "INR",
@@ -5956,18 +6134,6 @@
                                         "hex": "#D4B896"
                                     }
                                 ]
-                            },
-                            {
-                                "value": "artificial",
-                                "label": "Artificial Leather",
-                                "priceModifier": -150,
-                                "colors": [
-                                    {
-                                        "code": "BLK",
-                                        "name": "Black",
-                                        "hex": "#1a1a1a"
-                                    }
-                                ]
                             }
                         ],
                         "seatSizes": [
@@ -5981,6 +6147,10 @@
                                 "label": "Small",
                                 "priceModifier": 0
                             }
+                        ],
+                        "accessories": [
+                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
+                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
                         ]
                     }
                 }
@@ -5989,6 +6159,7 @@
         "relatedProducts": [
             901,
             902,
+            903,
             905
         ]
     },
@@ -5998,7 +6169,7 @@
         "name": "Salli Light",
         "description": "Lightweight and mobile saddle chair designed for easy movement between rooms with natural spine alignment.",
         "category": 30,
-        "order": 4,
+        "order": 5,
         "sku": "SAL-LT",
         "basePrice": 23999,
         "currency": "INR",
@@ -6102,6 +6273,10 @@
                                     }
                                 ]
                             }
+                        ],
+                        "accessories": [
+                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
+                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
                         ]
                     }
                 }
@@ -6109,6 +6284,7 @@
         ],
         "relatedProducts": [
             902,
+            903,
             904
         ]
     },

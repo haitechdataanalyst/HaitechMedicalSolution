@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Eye, EyeOff, ArrowLeft, ShieldCheck, Star } from "lucide-react";
+import { Eye, EyeOff, ArrowLeft, ShieldCheck, Star, Clock } from "lucide-react";
 import { GoogleLogin, CredentialResponse } from "@react-oauth/google";
 import { useAuth } from "@/components/auth/AuthProvider";
 
@@ -63,11 +63,7 @@ export default function LoginPage() {
         <main className="flex min-h-screen">
 
             {/* ── Left panel — hidden below lg, matches register ── */}
-            <div className="relative hidden flex-col justify-between overflow-hidden bg-[#001926] p-10 lg:flex lg:w-[42%] xl:w-[38%]">
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#001926] via-[#002f43] to-[#00465e] opacity-90" />
-                <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#1fb6cd] opacity-10 blur-3xl" />
-                <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full bg-[#1fb6cd] opacity-5 blur-2xl" />
-
+            <div className="hidden flex-col justify-between bg-[#001926] p-10 lg:flex lg:w-[42%] xl:w-[38%]" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
                 {/* Logo */}
                 <div className="relative z-10">
                     <Link href="/" className="flex items-center gap-3">
@@ -93,39 +89,32 @@ export default function LoginPage() {
                         Empowering healthcare professionals with precision technology.
                     </p>
 
-                    {/* Testimonial glassmorphism card */}
-                    <div
-                        className="rounded-2xl border border-white/10 p-6"
-                        style={{ background: "rgba(0,47,67,0.5)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
-                    >
-                        <div className="mb-3 flex gap-0.5">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                                <Star key={i} className="h-3.5 w-3.5 fill-[#FFD700] text-[#FFD700]" />
-                            ))}
-                        </div>
-                        <p className="mb-5 text-sm italic leading-relaxed text-white/80">
-                            &quot;Haitech transformed how we source dental equipment. The quality and support
-                            are simply outstanding — a true expert partner in our clinical growth.&quot;
-                        </p>
-                        <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1fb6cd] text-sm font-bold text-white">
-                                D
-                            </div>
-                            <div>
-                                <p className="text-sm font-semibold text-white">Dr. Priya Mehta</p>
-                                <p className="text-[11px] text-white/50">Senior Orthodontist, Pune</p>
-                            </div>
-                        </div>
+                    {/* Credentials */}
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                        <ul className="space-y-3.5">
+                            <li className="flex items-center gap-3 text-sm text-white/80">
+                                <ShieldCheck className="h-4 w-4 shrink-0 text-[#1fb6cd]" />
+                                ISO Certified Distributor
+                            </li>
+                            <li className="flex items-center gap-3 text-sm text-white/80">
+                                <Star className="h-4 w-4 shrink-0 text-[#1fb6cd]" />
+                                15+ Years of Clinical Equipment Experience
+                            </li>
+                            <li className="flex items-center gap-3 text-sm text-white/80">
+                                <Clock className="h-4 w-4 shrink-0 text-[#1fb6cd]" />
+                                24-Hour Response Guarantee
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 {/* Stats bar */}
-                <div className="relative z-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
+                <div className="relative z-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
                     {[
-                        { value: "500+", label: "Professionals" },
-                        { value: "5",    label: "Brands"        },
-                        { value: "24/7", label: "Support"       },
-                        { value: "4.9★", label: "Rating"        },
+                        { value: "5",     label: "Brands"    },
+                        { value: "80+",   label: "Products"  },
+                        { value: "15+",   label: "Years"     },
+                        { value: "24-Hr", label: "Response"  },
                     ].map((s) => (
                         <div key={s.label} className="flex flex-col items-center gap-0.5">
                             <p className="text-lg font-bold text-white">{s.value}</p>

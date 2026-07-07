@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const LOGO_IN_MS   = 380;
 const SHUTTER_MS   = 480;
-const AUTO_OPEN_MS = 2200;
+const AUTO_OPEN_MS = 1300;
 
 type Phase = "entering" | "idle" | "opening" | "done";
 
@@ -45,6 +45,14 @@ export default function SplashScreen() {
             return;
         }
         sessionStorage.setItem("hms_splash", "1");
+
+        // Respect the user's OS-level motion preference outright rather than
+        // just speeding up the CSS transition — they asked for less motion,
+        // not a shorter wait for the same motion.
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setPhase("done");
+            return;
+        }
 
         rafRef.current = requestAnimationFrame(() => {
             rafRef.current = requestAnimationFrame(() => setLogoIn(true));

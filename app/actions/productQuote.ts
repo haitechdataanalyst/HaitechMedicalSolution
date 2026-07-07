@@ -143,7 +143,7 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
 
         const emailHtml = `
       <h2>New Product Quote Request</h2>
-      
+
       <h3>Customer Information</h3>
       <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
@@ -193,8 +193,8 @@ This email was sent from the product quote form on Haitech Medical website.
 
         // Send email
         await sendEmail({
-            to: process.env.QUOTE_EMAIL || "quotes@haitechmedical.com.au",
-            from: process.env.EMAIL_FROM || "noreply@haitechmedical.com.au",
+            to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
+            from: process.env.EMAIL_FROM || process.env.SMTP_FROM || "sales@haitech-group.com",
             replyTo: data.email,
             subject: emailSubject,
             html: emailHtml,

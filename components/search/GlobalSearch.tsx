@@ -12,21 +12,25 @@ import { searchCatalog, getTrendingProducts, type SearchResult } from "@/app/act
 import { cn, formatPrice } from "@/lib/utils";
 import { COMMERCE_ENABLED } from "@/lib/config";
 
+// One consistent treatment for every quick-link category — the icon already
+// differentiates them, so color doesn't need to do that job too.
 const POPULAR_CATEGORIES = [
-    { label: "Dental Loupes", href: "/product-category/admetec", icon: ZoomIn, bg: "bg-teal-50 border-teal-100", text: "text-teal-700", hover: "hover:bg-teal-100 hover:border-teal-300" },
-    { label: "LED Headlights", href: "/our-headlights", icon: Zap, bg: "bg-amber-50 border-amber-100", text: "text-amber-700", hover: "hover:bg-amber-100 hover:border-amber-300" },
-    { label: "Dental Chairs", href: "/product-category/almadent/chairs", icon: Monitor, bg: "bg-blue-50 border-blue-100", text: "text-blue-700", hover: "hover:bg-blue-100 hover:border-blue-300" },
-    { label: "Diamond Burs", href: "/product-category/strauss", icon: Gem, bg: "bg-violet-50 border-violet-100", text: "text-violet-700", hover: "hover:bg-violet-100 hover:border-violet-300" },
-    { label: "Instruments", href: "/our-instruments", icon: Scissors, bg: "bg-emerald-50 border-emerald-100", text: "text-emerald-700", hover: "hover:bg-emerald-100 hover:border-emerald-300" },
-    { label: "Saddle Chairs", href: "/product-category/salli", icon: Activity, bg: "bg-rose-50 border-rose-100", text: "text-rose-700", hover: "hover:bg-rose-100 hover:border-rose-300" },
+    { label: "Dental Loupes", href: "/product-category/admetec", icon: ZoomIn, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    { label: "LED Headlights", href: "/our-headlights", icon: Zap, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    { label: "Dental Chairs", href: "/product-category/almadent/chairs", icon: Monitor, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    { label: "Diamond Burs", href: "/product-category/strauss", icon: Gem, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    { label: "Instruments", href: "/our-instruments", icon: Scissors, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    { label: "Saddle Chairs", href: "/product-category/salli", icon: Activity, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
 ];
 
+// One consistent treatment for every brand — a manufacturer label is
+// informational metadata, not a decorative tag (see lib/brand.ts).
 const BRAND_STYLES: Record<string, { label: string; bar: string; badge: string }> = {
-    admetec: { label: "Admetec", bar: "bg-indigo-400", badge: "bg-indigo-50 text-indigo-700" },
-    almadent: { label: "Almadent", bar: "bg-amber-400", badge: "bg-amber-50 text-amber-700" },
-    medesy:   { label: "Medesy",  bar: "bg-emerald-400", badge: "bg-emerald-50 text-emerald-700" },
-    salli:    { label: "Salli",   bar: "bg-rose-400",    badge: "bg-rose-50 text-rose-700" },
-    strauss:  { label: "Strauss", bar: "bg-violet-400",  badge: "bg-violet-50 text-violet-700" },
+    admetec:  { label: "Admetec",  bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    almadent: { label: "Almadent", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    medesy:   { label: "Medesy",   bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    salli:    { label: "Salli",    bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    strauss:  { label: "Strauss",  bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
 };
 
 function detectBrandFromPath(path: string) {

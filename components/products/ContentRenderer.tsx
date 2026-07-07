@@ -1,5 +1,5 @@
 import { ContentBlock, Product, Frame, HeadlightCategory } from "@/types";
-import { HeroBlock, DescriptionBlock, SpecificationsTable, ActionsBlock, GalleryBlock } from "./blocks";
+import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock } from "./blocks";
 
 interface ContentRendererProps {
     blocks: ContentBlock[];
@@ -34,8 +34,8 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
                         return <DescriptionBlock key={index} data={block.data} />;
                     case "specifications":
                         return <SpecificationsTable key={index} data={block.data} />;
-                    // case "info":
-                    //   return <InfoBlock key={index} data={block.data} />;
+                    case "info":
+                        return <InfoBlock key={index} data={block.data} />;
                     case "actions":
                         return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} frames={frames} headlightCategories={headlightCategories} />;
                     case "gallery":

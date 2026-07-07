@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { Eye, Crosshair, Lightbulb, Sparkles, Award, Shield, ChevronDown } from "lucide-react";
+import { Eye, Crosshair, Lightbulb, Sparkles, Award, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 
@@ -42,10 +42,10 @@ export default function AboutAdmetecPage() {
                 </nav>
 
                 <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
+                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Israeli Precision · Made for Dentistry
                     </span>
-                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
+                    <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
                         Admetec
                     </h1>
                     <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
@@ -57,14 +57,10 @@ export default function AboutAdmetecPage() {
                         </Link>
                         <Link href="/support/contact">
                             <Button size="lg" variant="outline" className="rounded-full border-white/25 px-8 text-white hover:bg-white/10">
-                                Request a Demo
+                                Contact Us
                             </Button>
                         </Link>
                     </div>
-                </div>
-
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <ChevronDown className="h-6 w-6 text-white/30" />
                 </div>
             </section>
 
@@ -82,7 +78,7 @@ export default function AboutAdmetecPage() {
                             { v: "2",        l: "Optical Systems"    },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-2xl font-black text-[#1fb6cd] md:text-3xl lg:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-bold text-[#1fb6cd] md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -96,7 +92,7 @@ export default function AboutAdmetecPage() {
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / Galilean Loupes</span>
-                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Lightweight.<br />Wide. Clear.
                             </h2>
                             <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
@@ -140,7 +136,7 @@ export default function AboutAdmetecPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Prismatic Ergo</span>
-                            <h2 className="mb-4 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
                                 Higher Power.<br />Better Posture.
                             </h2>
                             <p className="mb-6 text-base leading-relaxed text-white/55 md:text-lg">
@@ -165,7 +161,7 @@ export default function AboutAdmetecPage() {
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Headlights</span>
-                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Shadow-Free<br />Illumination.
                             </h2>
                             <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
@@ -179,7 +175,7 @@ export default function AboutAdmetecPage() {
                                     "Long-lasting battery life",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3 text-sm text-neutral-600">
-                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-[10px] font-black text-primary-600">✓</span>
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-[10px] font-bold text-primary-600">✓</span>
                                         {item}
                                     </li>
                                 ))}
@@ -205,15 +201,15 @@ export default function AboutAdmetecPage() {
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Professionals Choose Admetec</span>
-                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Built on Six Pillars</h2>
+                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Built on Six Pillars</h2>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
                         {features.map((f) => (
-                            <div key={f.title} className="group rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-primary-200 hover:shadow-lg md:p-8">
-                                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
+                            <div key={f.title} className="border-t border-neutral-200 pt-5">
+                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
                                     {f.icon}
+                                    <h3 className="text-sm font-bold text-neutral-900">{f.title}</h3>
                                 </div>
-                                <h3 className="mb-2 text-base font-bold text-neutral-900">{f.title}</h3>
                                 <p className="text-sm leading-relaxed text-neutral-500">{f.description}</p>
                             </div>
                         ))}
@@ -222,18 +218,13 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden py-14 text-white md:py-28" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
-                <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#1fb6cd] opacity-10 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#1fb6cd] opacity-5 blur-2xl" />
-                <div className="container relative text-center">
-                    <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
-                        Get Started Today
-                    </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
-                        Experience the Admetec Difference
+            <section className="py-14 text-white md:py-28" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
+                <div className="container text-center">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+                        Try Before You Order
                     </h2>
                     <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
-                        Ready to elevate your clinical precision? Discover the full range of Admetec loupes and headlights, trusted by professionals worldwide.
+                        Book a fitting call — our team measures your working distance and interpupillary distance so your loupes are dialed in before they ship.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/products">
@@ -243,7 +234,7 @@ export default function AboutAdmetecPage() {
                         </Link>
                         <Link href="/support/contact">
                             <Button size="lg" variant="outline" className="rounded-full border-white/25 px-10 text-white hover:border-white hover:bg-white/10">
-                                Request a Demo
+                                Book a Fitting Call
                             </Button>
                         </Link>
                     </div>

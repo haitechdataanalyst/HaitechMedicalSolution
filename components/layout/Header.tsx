@@ -9,7 +9,7 @@ import { MenuIcon } from "@/components/icons";
 import Image from "next/image";
 import { Button } from "../ui";
 import { useHeaderNavigation } from "./NavigationProvider";
-import { RocketIcon, Search, X, UserCircle, ChevronDown, LogOut, LayoutDashboard, ShoppingBag, Settings } from "lucide-react";
+import { FileText, Search, X, UserCircle, ChevronDown, LogOut, LayoutDashboard, ShoppingBag, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlobalSearchDropdown, GlobalSearchMobile } from "@/components/search/GlobalSearch";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -224,12 +224,9 @@ export default function Header() {
                                 )}
                                 {COMMERCE_ENABLED && <div className="mx-1 hidden h-5 w-px bg-neutral-200 md:block" />}
                                 <Link href="/support/contact" className="hidden md:flex">
-                                    <Button
-                                        className="gap-2 rounded-full px-5 text-sm font-semibold shadow-[0_2px_12px_-2px_rgb(31_182_205/0.45)]"
-                                        variant="solid"
-                                    >
-                                        <RocketIcon size={14} />
-                                        Book a Demo
+                                    <Button className="gap-2 rounded-full px-5 text-sm font-semibold" variant="primary">
+                                        <FileText size={14} />
+                                        Request a Quote
                                     </Button>
                                 </Link>
                                 {COMMERCE_ENABLED && <CartButton />}

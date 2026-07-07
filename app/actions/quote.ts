@@ -175,7 +175,7 @@ export async function submitQuoteRequest(prevState: QuoteFormState, formData: Fo
 
         // Send email
         await sendQuoteEmail({
-            to: process.env.QUOTE_EMAIL || "quotes@haitechmedical.com.au",
+            to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
             customerEmail: data.email,
             customerName: data.name,
             customerPhone: data.phone,

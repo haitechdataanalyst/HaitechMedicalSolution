@@ -29,9 +29,9 @@ function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCa
                 />
             </div>
 
-            <div className="flex justify-center">
-                <span className={`btn btn-primary w-full py-2 ${isSelected ? "bg-primary-600 text-white" : "bg-primary-600 group-hover:bg-primary-700 text-white"}`}>{category.name}</span>
-            </div>
+            <h3 className={`text-center text-base font-bold transition-colors ${isSelected ? "text-primary-700" : "text-neutral-800 group-hover:text-primary-700"}`}>
+                {category.name}
+            </h3>
 
             <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-neutral-100 px-2 text-xs font-semibold text-neutral-600">{category.products.length}</div>
 
@@ -63,15 +63,7 @@ function MedesyProductCard({ product }: MedesyProductCardProps) {
                 />
             </div>
 
-            <div className="mb-3 flex justify-center">
-                {!product.catalogueFile ? (
-                    <Link href={`/our-instruments/${product.id}`} className="btn btn-primary w-full py-2">
-                        {product.name}
-                    </Link>
-                ) : (
-                    <span className="btn btn-primary w-full py-2">{product.name}</span>
-                )}
-            </div>
+            <h4 className="mb-2 text-center text-base font-bold text-neutral-900">{product.name}</h4>
 
             <p className="mb-4 grow text-center text-sm text-neutral-600">{product.description}</p>
 

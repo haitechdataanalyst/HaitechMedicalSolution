@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { HeartPulse, ArrowDownUp, Brain, Armchair, Activity, CheckCircle, ChevronDown } from "lucide-react";
+import { HeartPulse, ArrowDownUp, Brain, Armchair, Activity, CheckCircle, Wind, Shield, Droplets, Bone, RefreshCw } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,17 +20,50 @@ const sittingProblems = [
     "Headaches and poor pelvic circulation",
 ];
 
+const healthBenefits = [
+    {
+        icon: <Bone className="h-6 w-6" />,
+        title: "Good Posture",
+        description: "Prevents spinal issues and muscle tension in the neck, shoulders and lower back, poor blood circulation to the brain and eyes, shallow breathing, and weaker intestinal function.",
+    },
+    {
+        icon: <Shield className="h-6 w-6" />,
+        title: "Better Pelvic Health",
+        description: "The gap in the middle of the seat prevents the pressure build-up that can affect the organs within the pelvis.",
+    },
+    {
+        icon: <Droplets className="h-6 w-6" />,
+        title: "Enhanced Genital Health",
+        description: "The gap keeps the genital area dry, avoiding sweating and sitting pressure.",
+    },
+    {
+        icon: <Activity className="h-6 w-6" />,
+        title: "Healthier Hip & Knee Joints",
+        description: "A 135-degree seating angle reduces pressure on the joints and avoids sitting directly on the thighs.",
+    },
+    {
+        icon: <RefreshCw className="h-6 w-6" />,
+        title: "More Movement, Better Circulation",
+        description: "Increased activity in the core, pelvis and legs combats the effects of immobility. Stretching and rolling on the Salli chair is easy and enjoyable, promoting movement and tissue health.",
+    },
+    {
+        icon: <Wind className="h-6 w-6" />,
+        title: "Deeper Breathing & Focus",
+        description: "An upright, balanced posture allows deeper breathing that keeps energy levels high, along with better digestion, mental clarity and concentration.",
+    },
+];
+
 const pillars = [
-    { icon: <Brain className="h-7 w-7" />, title: "Research in Sitting Physiology", description: "Decades of scientific research into how sitting affects the body, informing every design decision." },
-    { icon: <ArrowDownUp className="h-7 w-7" />, title: "Continuous Innovation", description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals." },
-    { icon: <Armchair className="h-7 w-7" />, title: "High-Quality Manufacturing", description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance." },
-    { icon: <HeartPulse className="h-7 w-7" />, title: "Customer-Oriented Approach", description: "Solving real sitting problems through an integrated, user-focused design philosophy." },
+    { icon: <Brain className="h-6 w-6" />, title: "Research in Sitting Physiology", description: "Decades of scientific research into how sitting affects the body, informing every design decision." },
+    { icon: <ArrowDownUp className="h-6 w-6" />, title: "Continuous Innovation", description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals." },
+    { icon: <Armchair className="h-6 w-6" />, title: "High-Quality Manufacturing", description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance." },
+    { icon: <HeartPulse className="h-6 w-6" />, title: "Customer-Oriented Approach", description: "Solving real sitting problems through an integrated, user-focused design philosophy." },
 ];
 
 const products = [
-    { name: "Salli SwayFit", image: "/images/products/salli/salli-swayfit-main.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment." },
-    { name: "Salli TripleLift", image: "/images/products/salli/salli-triplelift-main.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution." },
-    { name: "Salli Ultra", image: "/images/products/salli/salli-ultra-main.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience." },
+    { name: "Salli SwayFit", image: "/images/products/salli/sway-fit-black.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment." },
+    { name: "Salli TripleLift", image: "/images/products/salli/triple-fit-black.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution." },
+    { name: "Salli Ultra", image: "/images/products/salli/ultra-triple-fit-black.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience." },
 ];
 
 export default function AboutSalliPage() {
@@ -39,7 +72,7 @@ export default function AboutSalliPage() {
             {/* ── Hero ── */}
             <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950">
                 <Image
-                    src="/images/products/salli/salli-banner.jpg"
+                    src="/images/products/salli/triple-fit-black.jpg"
                     alt="Salli ergonomic saddle chairs"
                     fill
                     className="object-cover opacity-25"
@@ -56,10 +89,10 @@ export default function AboutSalliPage() {
                 </nav>
 
                 <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm">
+                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
                         Finnish-Engineered · Clinically Proven
                     </span>
-                    <h1 className="text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl">
+                    <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
                         Salli
                     </h1>
                     <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
@@ -76,14 +109,10 @@ export default function AboutSalliPage() {
                         </Link>
                     </div>
                 </div>
-
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <ChevronDown className="h-6 w-6 text-white/30" />
-                </div>
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-amber-950 py-10 md:py-20 lg:py-28">
+            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;The way we sit is broken. Salli built the fix.&rdquo;
@@ -96,7 +125,7 @@ export default function AboutSalliPage() {
                             { v: "Finland", l: "Engineered"          },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-2xl font-black text-amber-400 md:text-3xl lg:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -110,7 +139,7 @@ export default function AboutSalliPage() {
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / The Problem</span>
-                            <h2 className="mb-4 text-3xl font-black leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Traditional Sitting<br />Is Hurting You.
                             </h2>
                             <p className="mb-5 text-base leading-relaxed text-neutral-500 md:text-lg">
@@ -128,7 +157,7 @@ export default function AboutSalliPage() {
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
                                 <Image
-                                    src="/images/products/salli/salli-swayfit-1.jpg"
+                                    src="/images/products/salli/sway-fit-black.jpg"
                                     alt="Salli SwayFit saddle chair"
                                     width={700}
                                     height={700}
@@ -147,7 +176,7 @@ export default function AboutSalliPage() {
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
                                 <Image
-                                    src="/images/products/salli/salli-triplelift-main.jpg"
+                                    src="/images/products/salli/triple-fit-black.jpg"
                                     alt="Salli TripleLift saddle chair"
                                     width={700}
                                     height={525}
@@ -157,7 +186,7 @@ export default function AboutSalliPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / The Solution</span>
-                            <h2 className="mb-4 text-3xl font-black leading-tight text-white md:text-4xl lg:text-5xl">
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
                                 Designed to<br />Transform How You Sit.
                             </h2>
                             <p className="mb-5 text-base leading-relaxed text-white/55 md:text-lg">
@@ -166,7 +195,7 @@ export default function AboutSalliPage() {
                             <div className="flex flex-wrap gap-2">
                                 {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((b) => (
                                     <div key={b} className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+                                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-primary-400" />
                                         <span className="text-sm font-medium text-white/80">{b}</span>
                                     </div>
                                 ))}
@@ -176,12 +205,120 @@ export default function AboutSalliPage() {
                 </div>
             </section>
 
-            {/* ── 03 Product Range ── */}
+            {/* ── 03 The Science / Benefits ── */}
+            <section className="bg-neutral-50 py-12 md:py-24 lg:py-32">
+                <div className="container">
+                    <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
+                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / The Science</span>
+                        <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                            Why Your Sitting Position Matters
+                        </h2>
+                        <p className="text-base leading-relaxed text-neutral-500 md:text-lg">
+                            Back problems are the most common cause of sick leave in the world today. Our increasingly sedentary lifestyle is a major contributing factor — but the two-part Salli saddle chair both prevents and rehabilitates the damage traditional sitting causes.
+                        </p>
+                    </div>
+
+                    <div className="mx-auto mb-14 max-w-2xl overflow-hidden rounded-2xl bg-white shadow-xl shadow-neutral-200/60 md:mb-20">
+                        <Image
+                            src="/images/products/salli/benefits-spine-comparison.jpg"
+                            alt="Illustration comparing spine position when sitting on a one-part chair versus a two-part Salli saddle chair"
+                            width={1000}
+                            height={550}
+                            className="h-auto w-full object-contain p-6 md:p-10"
+                        />
+                    </div>
+
+                    {/* Bad vs Good comparison */}
+                    <div className="mb-14 grid gap-6 md:mb-20 lg:grid-cols-2 lg:gap-8">
+                        {/* Traditional sitting — bad */}
+                        <div className="overflow-hidden rounded-2xl border border-red-100 bg-white shadow-sm">
+                            <div className="border-b border-red-100 bg-red-50 px-6 py-4 md:px-8">
+                                <span className="text-xs font-bold uppercase tracking-widest text-red-500">Traditional 90&deg; Sitting</span>
+                            </div>
+                            <div className="grid grid-cols-2 items-start gap-4 p-6 md:p-8">
+                                <div className="overflow-hidden rounded-xl bg-neutral-50">
+                                    <Image
+                                        src="/images/products/salli/benefits-bad-posture.jpg"
+                                        alt="Man sitting in a slouched, poor position on an ordinary office chair"
+                                        width={500}
+                                        height={667}
+                                        className="h-auto w-full object-contain p-2"
+                                    />
+                                </div>
+                                <div className="overflow-hidden rounded-xl bg-neutral-50">
+                                    <Image
+                                        src="/images/products/salli/benefits-bad-pelvis-angle.jpg"
+                                        alt="Diagram showing a 90-degree hip angle and 30-degree flattening of the lumbar region in traditional sitting"
+                                        width={500}
+                                        height={709}
+                                        className="h-auto w-full object-contain p-2"
+                                    />
+                                </div>
+                            </div>
+                            <p className="px-6 pb-6 text-sm leading-relaxed text-neutral-500 md:px-8 md:pb-8">
+                                In traditional 90-degree sitting, the vertebrae and discs are loaded incorrectly — pressed together at the front while the back muscles and ligaments stay constantly stretched. This leads to poor circulation, weak muscles, and a higher risk of back aches, lumbago and herniated discs. Out of balance, the body looks for something to lean on, and poor circulation over time can contribute to serious conditions such as heart disease, high blood pressure and stroke.
+                            </p>
+                        </div>
+
+                        {/* Salli saddle sitting — good */}
+                        <div className="overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+                            <div className="border-b border-emerald-100 bg-emerald-50 px-6 py-4 md:px-8">
+                                <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">Salli Saddle Sitting</span>
+                            </div>
+                            <div className="grid grid-cols-2 items-start gap-4 p-6 md:p-8">
+                                <div className="overflow-hidden rounded-xl bg-neutral-50">
+                                    <Image
+                                        src="/images/products/salli/benefits-good-posture.jpg"
+                                        alt="Woman sitting in an upright, balanced position on a Salli saddle chair"
+                                        width={500}
+                                        height={898}
+                                        className="h-auto w-full object-contain p-2"
+                                    />
+                                </div>
+                                <div className="overflow-hidden rounded-xl bg-neutral-50">
+                                    <Image
+                                        src="/images/products/salli/benefits-good-pelvis-angle.jpg"
+                                        alt="Diagram showing the ergonomic 135-degree hip angle achieved on a Salli saddle chair"
+                                        width={500}
+                                        height={709}
+                                        className="h-auto w-full object-contain p-2"
+                                    />
+                                </div>
+                            </div>
+                            <p className="px-6 pb-6 text-sm leading-relaxed text-neutral-500 md:px-8 md:pb-8">
+                                The Salli saddle chair offers an unburdened, standing-like, active way of sitting in balance. You sit in an upright vertical position — where the body is at its strongest, physically and mentally. The pelvis rests in its neutral position, the spine holds up the upper body, and the muscles relax. Discs are evenly loaded, and the small movements you make when turning or reaching activate and strengthen your back and core muscles, all while circulation stays undisturbed throughout the day.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Key health benefits grid */}
+                    <div className="mb-10 text-center md:mb-14">
+                        <h3 className="text-2xl font-bold text-neutral-900 md:text-3xl">Key Health Effects of the Salli Saddle Chair</h3>
+                    </div>
+                    <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+                        {healthBenefits.map((benefit) => (
+                            <div key={benefit.title} className="border-t border-neutral-200 pt-5">
+                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
+                                    {benefit.icon}
+                                    <h4 className="text-sm font-bold text-neutral-900">{benefit.title}</h4>
+                                </div>
+                                <p className="text-sm leading-relaxed text-neutral-500">{benefit.description}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <p className="mx-auto mt-12 max-w-3xl text-center text-sm leading-relaxed text-neutral-500 md:text-base">
+                        The optimally and ergonomically designed two-part seat is the prerequisite for sitting in good posture with undisturbed circulation — with no heat or harmful pressure on the pelvic floor or genital area, and no need to lean away into a slouched position.
+                    </p>
+                </div>
+            </section>
+
+            {/* ── 04 Product Range ── */}
             <section className="bg-white py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
-                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Product Range</span>
-                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">The Salli Range</h2>
+                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">04 / Product Range</span>
+                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">The Salli Range</h2>
                         <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500 md:text-base">
                             Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals.
                         </p>
@@ -212,18 +349,15 @@ export default function AboutSalliPage() {
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Salli</span>
-                        <h2 className="text-3xl font-black text-neutral-900 md:text-4xl lg:text-5xl">Four Pillars of Design</h2>
+                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Four Pillars of Design</h2>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {pillars.map((pillar, index) => (
-                            <div key={pillar.title} className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-5 transition-all duration-200 hover:border-amber-200 hover:shadow-lg md:p-7">
-                                <div className="mb-3 text-5xl font-black text-neutral-100 transition-colors group-hover:text-amber-50">
-                                    0{index + 1}
-                                </div>
-                                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+                    <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+                        {pillars.map((pillar) => (
+                            <div key={pillar.title} className="border-t border-neutral-200 pt-5">
+                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
                                     {pillar.icon}
+                                    <h3 className="text-sm font-bold text-neutral-900">{pillar.title}</h3>
                                 </div>
-                                <h3 className="mb-2 text-sm font-bold text-neutral-900">{pillar.title}</h3>
                                 <p className="text-sm leading-relaxed text-neutral-500">{pillar.description}</p>
                             </div>
                         ))}
@@ -232,22 +366,17 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="relative overflow-hidden bg-amber-950 py-14 text-white md:py-28">
-                <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-amber-500 opacity-10 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-amber-400 opacity-5 blur-2xl" />
-                <div className="container relative text-center">
-                    <span className="mb-5 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
-                        Salli Chairs
-                    </span>
-                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-black leading-tight md:text-4xl lg:text-5xl">
+            <section className="bg-[#001926] py-14 text-white md:py-28">
+                <div className="container text-center">
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         Invest in Your Health & Productivity
                     </h2>
                     <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
-                        Join thousands of dental and medical professionals who have transformed their practice with Salli ergonomic seating.
+                        Talk to us about which model fits your clinic — Sway Fit, Triple Lift, or Ultra.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/products">
-                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-amber-700 shadow-lg hover:bg-amber-50">
+                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
                                 Shop Salli Chairs
                             </Button>
                         </Link>

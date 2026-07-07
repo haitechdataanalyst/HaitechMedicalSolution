@@ -141,10 +141,13 @@ export default function OrdersPage() {
 
                             {/* Footer actions */}
                             <div className="flex flex-wrap items-center justify-end gap-2 border-t border-neutral-50 bg-neutral-50/30 px-5 py-3">
-                                <button className="flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:border-neutral-300 hover:text-neutral-800">
+                                <Link
+                                    href={`/account/orders/${order.id}/invoice`}
+                                    className="flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:border-neutral-300 hover:text-neutral-800"
+                                >
                                     <FileDown className="h-3.5 w-3.5" />
                                     Invoice
-                                </button>
+                                </Link>
                                 <Link
                                     href={`/account/orders/${order.id}`}
                                     className="flex items-center gap-1.5 rounded-lg bg-primary-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary-600"

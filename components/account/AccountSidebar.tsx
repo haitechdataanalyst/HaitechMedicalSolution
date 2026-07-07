@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LayoutDashboard, ShoppingBag, Heart, MapPin, Settings, HelpCircle, LogOut, ChevronRight, BadgeCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useWishlist } from "@/components/cart/WishlistProvider";
-import { MOCK_USER } from "@/lib/mock-account";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 const NAV = [
     { href: "/account",           label: "Dashboard",      icon: LayoutDashboard },
@@ -19,9 +19,21 @@ export default function AccountSidebar() {
     const pathname = usePathname();
     const router = useRouter();
     const { count: wishlistCount } = useWishlist();
+    const { user, logout } = useAuth();
 
     const isActive = (href: string) =>
         href === "/account" ? pathname === "/account" : pathname.startsWith(href);
+
+    const fullName = user ? `${user.firstName} ${user.lastName}`.trim() : "";
+    const initials = user ? `${user.firstName?.[0] ?? ""}${user.lastName?.[0] ?? ""}`.toUpperCase() : "";
+    const joinedDate = user
+        ? new Date(user.createdAt).toLocaleDateString("en-IN", { month: "long", year: "numeric" })
+        : "";
+
+    const handleSignOut = async () => {
+        await logout();
+        router.push("/");
+    };
 
     return (
         <aside className="flex w-full flex-col lg:w-72 lg:shrink-0">
@@ -34,22 +46,19 @@ export default function AccountSidebar() {
                     {/* Avatar */}
                     <div className="-mt-7 mb-3 flex items-end justify-between">
                         <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white bg-primary-700 text-lg font-bold text-white shadow-md">
-                            {MOCK_USER.initials}
+                            {initials}
                         </div>
-                        <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700 border border-emerald-200">
-                            <BadgeCheck className="h-3 w-3" />
-                            GST Verified
-                        </span>
+                        {user?.emailVerified && (
+                            <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700 border border-emerald-200">
+                                <BadgeCheck className="h-3 w-3" />
+                                Email Verified
+                            </span>
+                        )}
                     </div>
 
-                    <p className="text-sm font-bold text-neutral-900">{MOCK_USER.name}</p>
-                    <p className="mt-0.5 text-xs text-neutral-500">{MOCK_USER.designation}</p>
-                    <p className="mt-1 text-[11px] font-medium text-primary-600 line-clamp-1">{MOCK_USER.company}</p>
-
-                    <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-neutral-50 px-3 py-2">
-                        <span className="text-[10px] font-medium text-neutral-500">GSTIN</span>
-                        <span className="font-mono text-[11px] font-semibold text-neutral-700">{MOCK_USER.gst}</span>
-                    </div>
+                    <p className="text-sm font-bold text-neutral-900">{fullName}</p>
+                    <p className="mt-0.5 text-xs text-neutral-500">{user?.email}</p>
+                    {user?.phone && <p className="mt-1 text-[11px] font-medium text-neutral-500">{user.phone}</p>}
                 </div>
             </div>
 
@@ -92,7 +101,7 @@ export default function AccountSidebar() {
                         Help & Support
                     </Link>
                     <button
-                        onClick={() => router.push("/")}
+                        onClick={handleSignOut}
                         className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-500 transition-colors hover:bg-red-50 hover:text-red-600"
                     >
                         <LogOut className="h-4 w-4 shrink-0 text-neutral-400" />
@@ -102,9 +111,11 @@ export default function AccountSidebar() {
             </nav>
 
             {/* Member since */}
-            <p className="mt-3 px-2 text-center text-[10px] text-neutral-400">
-                Member since {MOCK_USER.joinedDate}
-            </p>
+            {joinedDate && (
+                <p className="mt-3 px-2 text-center text-[10px] text-neutral-400">
+                    Member since {joinedDate}
+                </p>
+            )}
         </aside>
     );
 }

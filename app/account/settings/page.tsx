@@ -1,12 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { User, Lock, Bell, Save, Eye, EyeOff, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { User, Lock, Bell, Save, Eye, EyeOff, AlertCircle, Loader2 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { userApi } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { AccountPageHeader, SectionCard, FormField } from "@/components/account";
+
+const NOTIFS_STORAGE_KEY = "haitech-notification-prefs";
+const DEFAULT_NOTIFS = { orderUpdates: true, promotions: false, newsletters: true, smsAlerts: true };
 
 function PasswordStrengthBar({ password }: { password: string }) {
     let score = 0;
@@ -45,8 +49,17 @@ export default function SettingsPage() {
     const [pwLoading, setPwLoading] = useState(false);
     const [pwError, setPwError] = useState("");
 
-    // Notifications (local only — no backend endpoint yet)
-    const [notifs, setNotifs] = useState({ orderUpdates: true, promotions: false, newsletters: true, smsAlerts: true });
+    // Notifications — no backend endpoint yet, so preferences are persisted to this
+    // device only (localStorage) rather than faking a server-side save.
+    const [notifs, setNotifs] = useState<typeof DEFAULT_NOTIFS>(() => {
+        if (typeof window === "undefined") return DEFAULT_NOTIFS;
+        try {
+            const stored = localStorage.getItem(NOTIFS_STORAGE_KEY);
+            return stored ? { ...DEFAULT_NOTIFS, ...(JSON.parse(stored) as Partial<typeof DEFAULT_NOTIFS>) } : DEFAULT_NOTIFS;
+        } catch {
+            return DEFAULT_NOTIFS;
+        }
+    });
 
     // Populate profile from auth context
     useEffect(() => {
@@ -58,6 +71,15 @@ export default function SettingsPage() {
             });
         }
     }, [user]);
+
+    const handleSaveNotifs = () => {
+        try {
+            localStorage.setItem(NOTIFS_STORAGE_KEY, JSON.stringify(notifs));
+            toast.success("Preferences saved to this device", { description: "Notification settings will apply next time you sign in here." });
+        } catch {
+            toast.error("Couldn't save preferences", { description: "Your browser may be blocking local storage." });
+        }
+    };
 
     // ── Save profile ───────────────────────────────────────────────────────────
     const handleSaveProfile = async () => {
@@ -299,7 +321,7 @@ export default function SettingsPage() {
                 </div>
                 <div className="flex justify-end pt-3">
                     <button
-                        onClick={() => toast.success("Preferences saved", { description: "Notification settings updated." })}
+                        onClick={handleSaveNotifs}
                         className="flex items-center gap-2 rounded-xl bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-600"
                     >
                         <Save className="h-4 w-4" /> Save Preferences
@@ -315,11 +337,14 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between gap-4 px-6 py-5">
                     <div>
                         <p className="text-sm font-semibold text-neutral-800">Close Account</p>
-                        <p className="text-xs text-neutral-500">Permanently delete your account and all associated data. This action cannot be undone.</p>
+                        <p className="text-xs text-neutral-500">Our team handles account closure directly to make sure your order history and data are removed correctly.</p>
                     </div>
-                    <button className="shrink-0 rounded-xl border border-red-200 px-4 py-2.5 text-sm font-semibold text-red-600 transition-all hover:bg-red-500 hover:text-white">
-                        Close Account
-                    </button>
+                    <Link
+                        href="/support/contact?subject=close-account"
+                        className="shrink-0 rounded-xl border border-red-200 px-4 py-2.5 text-sm font-semibold text-red-600 transition-all hover:bg-red-500 hover:text-white"
+                    >
+                        Contact Support
+                    </Link>
                 </div>
             </div>
         </div>

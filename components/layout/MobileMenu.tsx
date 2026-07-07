@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { CloseIcon, ChevronDownIcon } from "@/components/icons";
 import { EnhancedNavItem } from "@/lib/navigation";
-import { RocketIcon } from "lucide-react";
+import { FileText } from "lucide-react";
 import { COMMERCE_ENABLED } from "@/lib/config";
 
 interface MobileMenuProps {
@@ -222,8 +222,8 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                         className="flex w-full items-center justify-center gap-2.5 rounded-full bg-primary-500 px-4 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-primary-600"
                         style={{ boxShadow: "0 4px 16px -2px rgb(31 182 205 / 0.4)" }}
                     >
-                        <RocketIcon size={16} />
-                        Book a Demo
+                        <FileText size={16} />
+                        Request a Quote
                     </Link>
                 </div>
             </div>

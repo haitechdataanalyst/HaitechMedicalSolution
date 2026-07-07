@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Heart, Truck, ShieldCheck, ArrowRight, FileText, GitCompareArrows } from "lucide-react";
 import { Product, Category, SpecificationsBlock } from "@/types";
 import { cn, formatPrice } from "@/lib/utils";
-import { detectBrand } from "@/lib/brand";
+import { detectBrand, requiresConsultation } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { COMMERCE_ENABLED } from "@/lib/config";
 import { useCompare } from "@/components/compare";
@@ -25,7 +25,7 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
     const product = entityIsProduct ? (entity as Product) : null;
     const displayImage = image || "/images/placeholder.jpg";
     const brand = product ? detectBrand(product.sku) : null;
-    const isAdmetec = brand?.name === "Admetec";
+    const needsQuote = brand ? requiresConsultation(brand.name) : false;
     const compareAllowed = brand?.name === "Admetec" || brand?.name === "Salli";
     const { toggle, isWished } = useWishlist();
     const wished = product ? isWished(String(product.id)) : false;
@@ -137,26 +137,26 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
                                     }
                                 }}
                                 disabled={compareFull}
-                                                                aria-label={compareAdded ? "Remove from compare" : "Add to compare"}
-                                                                                                className={cn(
-                                                                                                                                    "flex items-center gap-1 rounded-lg px-1.5 py-1 text-[10px] font-semibold transition-all duration-150",
-                                                                                                                                                                        compareAdded
-                                                                                                                                                                                                                ? "bg-primary-100 text-primary-700"
-                                                                                                                                                                                                                                                        : compareFull
-                                                                                                                                                                                                                                                                                                ? "cursor-not-allowed text-neutral-200"
-                                                                                                                                                                                                                                                                                                                                        : "text-neutral-300 hover:bg-neutral-100 hover:text-neutral-600"
-                                                                                                                                                                                                                                                                                                                                                                        )}
-                                                                                                                                                                                                                                                                                                                                                                                                    >
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <GitCompareArrows className="h-3 w-3" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    {compareAdded ? "Added" : "Compare"}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </button>}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div className="flex items-center gap-1.5">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span className={`text-[11px] font-semibold transition-colors duration-150 ${isAdmetec ? "text-indigo-500 group-hover:text-indigo-700" : "text-neutral-400 group-hover:text-primary-600"}`}>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {isAdmetec ? "Get Quote" : "View Details"}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div className={`flex h-6 w-6 items-center justify-center rounded-lg transition-all duration-150 ${isAdmetec ? "bg-indigo-50 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white" : "bg-neutral-100 text-neutral-400 group-hover:bg-primary-500 group-hover:text-white"}`}>
-                                    {isAdmetec ? <FileText className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
+                                aria-label={compareAdded ? "Remove from compare" : "Add to compare"}
+                                className={cn(
+                                    "flex items-center gap-1 rounded-lg px-1.5 py-1 text-[10px] font-semibold transition-all duration-150",
+                                    compareAdded
+                                        ? "bg-primary-100 text-primary-700"
+                                        : compareFull
+                                        ? "cursor-not-allowed text-neutral-200"
+                                        : "text-neutral-300 hover:bg-neutral-100 hover:text-neutral-600"
+                                )}
+                            >
+                                <GitCompareArrows className="h-3 w-3" />
+                                {compareAdded ? "Added" : "Compare"}
+                            </button>}
+
+                            <div className="flex items-center gap-1.5">
+                                <span className="text-[11px] font-semibold text-neutral-400 transition-colors duration-150 group-hover:text-primary-600">
+                                    {needsQuote ? "Get Quote" : "View Details"}
+                                </span>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
+                                    {needsQuote ? <FileText className="h-3 w-3" /> : <ArrowRight className="h-3 w-3" />}
                                 </div>
                             </div>
                         </div>
