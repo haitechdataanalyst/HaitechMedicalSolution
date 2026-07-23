@@ -193,31 +193,6 @@ export default function AlmadentAboutPage() {
                 </div>
             </section>
 
-            {/* ── Product Catalogue ── */}
-            <section className="bg-white py-12 md:py-20">
-                <div className="container">
-                    <div className="mb-8 text-center md:mb-12">
-                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Product Catalogue</span>
-                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl">Browse the Full Almadent Range</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500">
-                            Explore our complete product catalogue — all Almadent dental equipment lines, specifications, and models.
-                        </p>
-                    </div>
-                    <div className="mx-auto max-w-4xl overflow-x-auto rounded-2xl border border-neutral-100 shadow-lg">
-                        <iframe
-                            src="https://workdrive.zohoexternal.com/embed/b71f5ca0babeecf944a40ba4b96ee345489bb?toolbar=false&appearance=light&themecolor=green"
-                            scrolling="no"
-                            frameBorder={0}
-                            allowFullScreen
-                            width={800}
-                            height={520}
-                            title="Almadent Product Catalogue"
-                            className="block min-w-[320px]"
-                        />
-                    </div>
-                </div>
-            </section>
-
             {/* ── Four Pillars ── */}
             <section className="bg-neutral-50 py-12 md:py-24">
                 <div className="container">

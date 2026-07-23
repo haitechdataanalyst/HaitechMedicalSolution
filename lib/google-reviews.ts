@@ -10,6 +10,7 @@ interface GoogleReviewRaw {
     text?: { text?: string };
     originalText?: { text?: string };
     authorAttribution?: { displayName?: string; photoUri?: string; uri?: string };
+    publishTime?: string;
 }
 
 export interface GooglePlaceReviewsResult {
@@ -41,10 +42,9 @@ export async function getGooglePlaceReviews(): Promise<GooglePlaceReviewsResult>
                 "X-Goog-Api-Key": apiKey,
                 "X-Goog-FieldMask": FIELD_MASK,
             },
-            // Google's Places API terms require cached review content to be refreshed
-            // periodically rather than stored indefinitely — 24h keeps us compliant
+            // Refresh at most every 6h — keeps review content reasonably fresh
             // while avoiding a live API call (and cost) on every page load.
-            next: { revalidate: 86400 },
+            next: { revalidate: 21600 },
         });
 
         if (!res.ok) {
@@ -67,6 +67,7 @@ export async function getGooglePlaceReviews(): Promise<GooglePlaceReviewsResult>
                 image: r.authorAttribution?.photoUri,
                 source: "google" as const,
                 sourceUrl: r.authorAttribution?.uri,
+                publishTime: r.publishTime,
             }))
             .filter((t) => t.text.length > 0);
 

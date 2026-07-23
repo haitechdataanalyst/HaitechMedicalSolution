@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Carousel } from "@/components/ui";
 import { StarIcon } from "@/components/icons";
 import { Quote } from "lucide-react";
@@ -19,6 +19,19 @@ export interface Testimonial {
     source?: "google";
     /** Link to the reviewer's Google profile — required for Google review attribution. */
     sourceUrl?: string;
+    /** ISO 8601 timestamp from Google — rendered as "4 months ago". */
+    publishTime?: string;
+}
+
+function relativeTime(iso?: string): string | null {
+    if (!iso) return null;
+    const days = Math.round((Date.now() - new Date(iso).getTime()) / 86400000);
+    const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+    if (days < 1) return "Today";
+    if (days < 30) return rtf.format(-days, "day");
+    const months = Math.round(days / 30);
+    if (months < 12) return rtf.format(-months, "month");
+    return rtf.format(-Math.round(months / 12), "year");
 }
 
 interface TestimonialsProps {
@@ -43,11 +56,28 @@ function GoogleGIcon({ className }: { className?: string }) {
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [imgLoaded, setImgLoaded] = useState(false);
+    const [imgError, setImgError] = useState(false);
+
+    // Google's review-photo URLs are best-effort and get rate-limited (429)
+    // under repeated hits. A plain server-rendered <img> can fail before React
+    // hydrates and attaches its onError listener, silently losing the event
+    // and leaving a permanently broken icon — so the load is checked here via
+    // a real client-side Image() instead, after mount, and only then is the
+    // <img> (or the initials fallback) rendered.
+    useEffect(() => {
+        if (!testimonial.image) return;
+        const img = new window.Image();
+        img.onload = () => setImgLoaded(true);
+        img.onerror = () => setImgError(true);
+        img.src = testimonial.image;
+    }, [testimonial.image]);
 
     const initials = testimonial.name
         .split(" ")
         .map((n) => n[0])
         .join("");
+    const timeAgo = relativeTime(testimonial.publishTime);
 
     return (
         <div className="flex h-full flex-col rounded-2xl border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary-100 md:p-8">
@@ -89,7 +119,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             {/* Author */}
             <div className="flex items-center justify-between gap-3.5">
                 <div className="flex min-w-0 items-center gap-3.5">
-                    {testimonial.image ? (
+                    {testimonial.image && imgLoaded && !imgError ? (
                         // eslint-disable-next-line @next/next/no-img-element -- avatars come from an external, unoptimized source (Google profile photos); a plain img avoids Next/Image config churn for a 40px thumbnail
                         <img
                             src={testimonial.image}
@@ -97,9 +127,6 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                             width={40}
                             height={40}
                             className="h-10 w-10 shrink-0 rounded-full object-cover shadow-sm"
-                            onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                            }}
                         />
                     ) : (
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-400 to-primary-600 text-sm font-semibold text-white shadow-sm">
@@ -111,6 +138,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                         <p className="truncate text-xs text-neutral-400">
                             {testimonial.role}
                             {testimonial.company ? `, ${testimonial.company}` : ""}
+                            {timeAgo && ` · ${timeAgo}`}
                         </p>
                     </div>
                 </div>

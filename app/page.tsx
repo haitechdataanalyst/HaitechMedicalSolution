@@ -3,7 +3,6 @@ import { getRandomProductsForEachCategory, getProductPath } from "@/lib/catalog"
 import { getGooglePlaceReviews } from "@/lib/google-reviews";
 import { Button, ScrollReveal } from "@/components/ui";
 import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
-import { testimonials as curatedTestimonials } from "@/data/testimonials.json";
 import Image from "next/image";
 import { ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 
@@ -13,10 +12,10 @@ export default async function Home() {
         products.map(async (p) => ({ ...p, path: await getProductPath(p) }))
     );
 
-    // Live Google reviews are shown first, backfilled with curated testimonials.
-    // Falls back to curated-only automatically if Google Places isn't configured yet.
+    // Live Google reviews only — see lib/google-reviews.ts. Returns an empty
+    // array (never throws) if unconfigured or the API call fails, so the
+    // section below just doesn't render rather than showing stale/fake data.
     const { reviews: googleReviews, rating: googleRating, totalReviews: googleReviewCount } = await getGooglePlaceReviews();
-    const testimonials = [...googleReviews, ...curatedTestimonials];
 
     return (
         <>
@@ -76,8 +75,10 @@ export default async function Home() {
             {/* Why Section */}
             <WhySection />
 
-            {/* Testimonials Section */}
-            <Testimonials testimonials={testimonials} googleRating={googleRating} googleReviewCount={googleReviewCount} />
+            {/* Testimonials Section — hidden entirely if Google Places isn't configured or returns nothing */}
+            {googleReviews.length > 0 && (
+                <Testimonials testimonials={googleReviews} googleRating={googleRating} googleReviewCount={googleReviewCount} />
+            )}
 
             {/* Featured Products Section */}
             <TrendingProducts products={featuredProducts} />

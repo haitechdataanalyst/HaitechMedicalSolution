@@ -126,7 +126,7 @@ const TIMELINE = [
     { year: "2013", title: "Founded in Mumbai", body: "Haitech Medical Solutions incorporated with a focus on importing precision dental instruments." },
     { year: "2015", title: "First Brand Partnership", body: "Became the authorised distributor for Admetec surgical loupes across India." },
     { year: "2018", title: "Network Expansion", body: "Grew to 15+ dealer partners spanning major metros — Delhi, Bangalore, Chennai, Pune." },
-    { year: "2024", title: "5 Brands · 27+ Dealers", body: "Now India's most trusted partner for five world-class global dental brands." },
+    { year: "2026", title: "5 Brands · 27+ Dealers", body: "Now India's most trusted partner for five world-class global dental brands." },
 ];
 
 const BRANDS = [
