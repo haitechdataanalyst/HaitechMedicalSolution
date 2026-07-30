@@ -98,44 +98,52 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
     const hasFrameVariants = product?.frameVariants && Object.keys(product.frameVariants.images).length > 0;
     const showThumbnails = !hasFrameVariants && allImages.length > 1;
 
+    const productName = product?.name ?? "Product";
+
     return (
         <div className="space-y-4">
             {/* Main Image */}
-            <div className="relative aspect-square overflow-hidden rounded-xl">
+            <div className="card group relative aspect-square overflow-hidden bg-neutral-50">
                 <Image
                     key={selectedImage}
                     src={failedImages.has(selectedImage) ? PLACEHOLDER_IMAGE : selectedImage}
-                    alt="Product"
+                    alt={productName}
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="animate-in fade-in object-contain duration-500"
+                    className="animate-in fade-in object-contain p-6 duration-500 transition-transform group-hover:scale-[1.03] sm:p-10"
                     onError={() => handleImageError(selectedImage)}
                 />
             </div>
 
             {/* Thumbnails - hidden for products with frame variants */}
             {showThumbnails && (
-                <div className="flex gap-3 overflow-x-auto pb-2">
-                    {allImages.map((image, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setUserSelectedImage(image)}
-                            className={cn(
-                                "h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 hover:scale-105",
-                                selectedImage === image ? "border-primary-600 ring-primary-500 ring-2 ring-offset-2" : "cursor-pointer border-transparent hover:border-neutral-300"
-                            )}
-                        >
-                            <Image
-                                src={failedImages.has(image) ? PLACEHOLDER_IMAGE : image}
-                                alt={`Product view ${index + 1}`}
-                                width={80}
-                                height={80}
-                                className="object-cover"
-                                onError={() => handleImageError(image)}
-                            />
-                        </button>
-                    ))}
+                <div className="flex gap-3 overflow-x-auto pb-2" role="listbox" aria-label={`${productName} images`}>
+                    {allImages.map((image, index) => {
+                        const isSelected = selectedImage === image;
+                        return (
+                            <button
+                                key={index}
+                                onClick={() => setUserSelectedImage(image)}
+                                role="option"
+                                aria-selected={isSelected}
+                                aria-label={`View ${productName} — image ${index + 1} of ${allImages.length}`}
+                                className={cn(
+                                    "h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 bg-neutral-50 transition-all duration-200 hover:scale-105 sm:h-24 sm:w-24",
+                                    isSelected ? "border-primary-600 ring-2 ring-primary-500 ring-offset-2 shadow-md" : "cursor-pointer border-transparent hover:border-neutral-300"
+                                )}
+                            >
+                                <Image
+                                    src={failedImages.has(image) ? PLACEHOLDER_IMAGE : image}
+                                    alt={`${productName} — view ${index + 1}`}
+                                    width={96}
+                                    height={96}
+                                    className="h-full w-full object-contain p-1.5"
+                                    onError={() => handleImageError(image)}
+                                />
+                            </button>
+                        );
+                    })}
                 </div>
             )}
         </div>

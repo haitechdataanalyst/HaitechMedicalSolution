@@ -224,20 +224,23 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
 
     return (
         <>
-        <div className="bg-surface sticky top-24 space-y-6 rounded-xl border border-neutral-200 p-4 sm:p-6">
+        {/* overflow-visible overrides .card's overflow-hidden — this panel hosts
+            absolutely-positioned children (e.g. FrameColorSelector's swatch
+            tooltip) that must be able to extend past its edges. */}
+        <div className="card overflow-visible sticky top-24 space-y-6 p-5 sm:p-7">
 
             {/* Commerce sections — only when addToCart is enabled */}
             {data.addToCart && (
                 <>
                     {/* Price display */}
                     {shouldShowPrice(brandName) && (
-                        <div className="border-b border-neutral-100 pb-4">
+                        <div className="border-b border-neutral-100 pb-5">
                             {product.basePrice ? (
-                                <div className="flex flex-wrap items-end gap-2">
-                                    <span className="text-3xl font-bold tracking-tight text-neutral-900">
+                                <div className="flex flex-wrap items-end gap-2.5">
+                                    <span className="text-4xl font-bold tracking-tight text-neutral-900">
                                         {formatPrice(product.basePrice, product.currency ?? "INR")}
                                     </span>
-                                    <span className="mb-0.5 text-sm text-neutral-400">incl. GST &amp; all taxes</span>
+                                    <span className="label-tag label-tag-neutral mb-1 text-[10px] normal-case tracking-normal">incl. GST &amp; all taxes</span>
                                 </div>
                             ) : (
                                 <div className="flex items-center gap-2 text-neutral-500">
@@ -245,8 +248,11 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                                     <span className="text-sm font-medium">Price available on request</span>
                                 </div>
                             )}
-                            {product.currency === "INR" && (
-                                <p className="mt-1 text-xs text-neutral-500">All frames included free · Prices valid 2026-2027</p>
+                            {/* "Frames included free" is a loupe-frame-customization claim —
+                                only true for products that actually offer frame variants
+                                (Admetec), not every INR-priced product regardless of brand. */}
+                            {product.frameVariants && (
+                                <p className="mt-2 text-xs text-neutral-500">All frames included free · Prices valid 2026-2027</p>
                             )}
                         </div>
                     )}

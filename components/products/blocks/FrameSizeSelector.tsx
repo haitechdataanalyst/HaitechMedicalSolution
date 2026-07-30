@@ -58,6 +58,8 @@ export default function FrameSizeSelector({ sizes, selectedSize, onSizeChange }:
                             type="button"
                             onClick={() => onSizeChange(size.value)}
                             title={SIZE_GUIDE[size.value] ?? size.label}
+                            aria-label={`Frame size ${size.label}`}
+                            aria-pressed={isSelected}
                             className={cn(
                                 "flex h-12 w-12 items-center justify-center rounded-full border-2 text-sm font-semibold transition-all",
                                 isSelected

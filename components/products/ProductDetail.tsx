@@ -6,6 +6,7 @@ import ContentRenderer from "./ContentRenderer";
 import ProductGrid from "./ProductGrid";
 import { CompareActionPanel, InlineComparisonSection } from "@/components/compare";
 import { detectBrand } from "@/lib/brand";
+import TrustBadges from "./TrustBadges";
 
 // Product with computed path for linking
 interface ProductWithPath extends Product {
@@ -46,9 +47,12 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
                 <div className="space-y-6 lg:w-1/2">
                     {/* Title & SKU */}
                     <div>
-                        <h1 className="heading-2 lg:heading-1 mb-2">{product.name}</h1>
-                        <p className="text-muted">SKU: {product.sku}</p>
+                        <h1 className="heading-2 lg:heading-1 mb-2.5 tracking-tight text-neutral-900">{product.name}</h1>
+                        <p className="font-mono text-xs tracking-wide text-neutral-400">SKU {product.sku}</p>
                     </div>
+
+                    {/* Dynamic trust badges — only ever shows fields this product actually has */}
+                    <TrustBadges product={product} />
 
                     {/* Description */}
                     {descriptionBlock && <ContentRenderer blocks={[descriptionBlock]} product={product} />}

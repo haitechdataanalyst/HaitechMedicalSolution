@@ -30,6 +30,8 @@ export default function LegacyVariantSelector({ variants, variantType, selectedV
                             onClick={() => onVariantSelect(variant)}
                             className="group relative flex flex-col items-center gap-2"
                             title={variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku}
+                            aria-label={variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku}
+                            aria-pressed={isSelected}
                         >
                             {isColorSwatch ? (
                                 <span

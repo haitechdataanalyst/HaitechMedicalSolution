@@ -239,6 +239,8 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
                             key={frame.id}
                             type="button"
                             onClick={() => handleFrameSelect(frame.id)}
+                            aria-label={`Frame ${frame.name}`}
+                            aria-pressed={selectedFrameId === frame.id}
                             className={cn(
                                 "group relative flex flex-col items-center gap-2 rounded-lg border-2 p-1 transition-all",
                                 selectedFrameId === frame.id ? "border-primary-500 bg-primary-50" : "hover:border-primary-300 cursor-pointer border-neutral-200 bg-white hover:bg-neutral-50"
@@ -266,7 +268,15 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
                     <label className="mb-3 block text-sm font-medium text-neutral-700">Select Color</label>
                     <div className="flex flex-wrap gap-3">
                         {availableColors.map((color) => (
-                            <button key={color.id} type="button" onClick={() => handleColorSelect(color.id)} className="group relative" title={color.name}>
+                            <button
+                                key={color.id}
+                                type="button"
+                                onClick={() => handleColorSelect(color.id)}
+                                className="group relative"
+                                title={color.name}
+                                aria-label={`Color ${color.name}`}
+                                aria-pressed={selectedColorId === color.id}
+                            >
                                 {renderColorSwatch(color.hex, selectedColorId === color.id)}
                                 {/* Tooltip */}
                                 <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 rounded bg-neutral-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity group-hover:opacity-100">
