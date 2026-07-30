@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Bondent | German Dental Technology Group",
-    description: "Bondent Group — German-registered dental technology group offering endodontic equipment, imaging systems, implants, and digital workflow solutions built on over a decade of in-house R&D.",
+    description: "Bondent Group — German-registered dental technology group offering endodontic equipment and imaging systems built on over a decade of in-house R&D.",
 };
 
 const pillars = [
@@ -17,11 +17,8 @@ const pillars = [
 ];
 
 const flagshipProducts = [
-    "Semorr Dental Microscope",
     "CBCT Imaging Systems",
     "UDG Endodontic Files",
-    "iEZ Implant System",
-    "Dr. Clear Invisible Aligner",
 ];
 
 export default function BondentAboutPage() {
@@ -54,7 +51,7 @@ export default function BondentAboutPage() {
                         Bondent
                     </h1>
                     <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
-                        A full-spectrum dental technology group offering equipment, consumables, and digital solutions—from diagnostic imaging to implant surgery—built on over a decade of in-house research and manufacturing.
+                        A full-spectrum dental technology group offering equipment, consumables, and digital solutions—from diagnostic imaging to precision endodontics—built on over a decade of in-house research and manufacturing.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
                         <Link href="/product-category/bondent">
@@ -77,7 +74,7 @@ export default function BondentAboutPage() {
                     </p>
                     <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
-                            { v: "6",        l: "Product Categories" },
+                            { v: "5",        l: "Product Categories" },
                             { v: "CE",       l: "Certified"          },
                             { v: "180,000+", l: "Academy Learners"   },
                             { v: "15+",      l: "Years in R&D"       },
@@ -131,8 +128,8 @@ export default function BondentAboutPage() {
                         <div className="w-full lg:w-1/2">
                             <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
                                 <Image
-                                    src="/images/products/bondent/DOM 3000D-4K PRO.png"
-                                    alt="Bondent Semorr dental microscope"
+                                    src="/images/products/bondent/CBCT 1020MS.png"
+                                    alt="Bondent CBCT imaging system"
                                     width={700}
                                     height={525}
                                     className="h-auto w-full object-contain p-6 md:p-10"
@@ -145,12 +142,11 @@ export default function BondentAboutPage() {
                                 See More.<br />Miss Nothing.
                             </h2>
                             <p className="mb-6 text-base leading-relaxed text-white/55 md:text-lg">
-                                High-resolution CBCT systems with advanced metal-artifact reduction technology, Semorr dental microscopes, and surgical loupes built for enhanced clinical precision.
+                                High-resolution CBCT systems with advanced metal-artifact reduction technology and surgical loupes built for enhanced clinical precision.
                             </p>
                             <ul className="space-y-3">
                                 {[
                                     "CBCT with metal-artifact reduction",
-                                    "Semorr dental microscopes",
                                     "Surgical loupes for precision work",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3 text-sm text-neutral-300">
@@ -159,39 +155,6 @@ export default function BondentAboutPage() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── 03 Implants & Digital Workflow ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
-                <div className="container">
-                    <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
-                        <div className="w-full lg:w-1/2">
-                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Implants & Digital Workflow</span>
-                            <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
-                                Plan Digital.<br />Place Precisely.
-                            </h2>
-                            <p className="mb-6 text-base leading-relaxed text-neutral-500 md:text-lg">
-                                iEZ implant systems, semi-circular surgical guides, modern dental chair units, and the Dr. Clear invisible aligner supporting complete digital dentistry workflows.
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                                {["iEZ Implants", "Surgical Guides", "Dental Chair Units", "Dr. Clear Aligner"].map((t) => (
-                                    <span key={t} className="rounded-full bg-[#0F5EA8]/8 px-4 py-2 text-sm font-bold text-[#0F5EA8]">{t}</span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
-                                <Image
-                                    src="/images/products/bondent/iEZ Dental Implant.jpg"
-                                    alt="Bondent iEZ implant system"
-                                    width={700}
-                                    height={525}
-                                    className="h-auto w-full object-contain p-6 md:p-10"
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,7 +188,7 @@ export default function BondentAboutPage() {
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">About Bondent Group</span>
                             <p className="text-base leading-relaxed text-neutral-500 md:text-lg">
-                                Bondent Group GmbH is a German-registered dental technology company established in 2021, with operational roots dating back to 2009. Headquartered in Shanghai, Bondent develops products across six major dental categories including Endodontics, Optics, Orthodontics, Imaging, Dental Units, and Implant Systems.
+                                Bondent Group GmbH is a German-registered dental technology company established in 2021, with operational roots dating back to 2009. Headquartered in Shanghai, Bondent develops products across five major dental categories including Endodontics, Optics, Orthodontics, Imaging, and Dental Units.
                             </p>
                             <p className="mt-4 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 The company also operates <strong className="font-semibold text-neutral-700">Bondent Academy</strong>, an educational platform dedicated to clinician training and professional development.
@@ -255,7 +218,7 @@ export default function BondentAboutPage() {
                         Interested in Bondent equipment for your clinic?
                     </h2>
                     <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
-                        Talk to our team about endodontic systems, imaging equipment, or digital implant workflows for your practice.
+                        Talk to our team about endodontic systems or imaging equipment for your practice.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/support/contact">
