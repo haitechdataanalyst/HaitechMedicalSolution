@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...except example/template files — no secrets, meant as setup docs
+!.env.local.example
+!haitech-medical-backend-main/.env.example
 
 # vercel
 .vercel
