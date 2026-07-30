@@ -87,7 +87,7 @@ export default async function Home() {
             <section className="relative overflow-hidden bg-brand-gradient">
                 <div className="section-lg container relative text-center">
                     <ScrollReveal variant="scale" duration={700}>
-                        <h2 className="heading-1 mb-5 text-white">One Quote, Five Brands</h2>
+                        <h2 className="heading-1 mb-5 text-white">One Quote, Six Brands</h2>
                         <p className="text-body-lg mx-auto mb-10 max-w-xl text-primary-100/90">
                             Tell us what your clinic needs — loupes, chairs, instruments, or seating — and our team puts together a single quote across the full catalog.
                         </p>
