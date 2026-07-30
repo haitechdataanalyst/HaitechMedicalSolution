@@ -6,6 +6,7 @@ import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, Headl
 const framesPath     = path.join(process.cwd(), "data", "frames.json");
 const headlightsPath = path.join(process.cwd(), "data", "headlights.json");
 const medesyPath     = path.join(process.cwd(), "data", "medesy.json");
+const trendingPath   = path.join(process.cwd(), "data", "trending.json");
 
 let framesCache:     Frame[]        | null = null;
 let headlightsCache: HeadlightsData | null = null;
@@ -327,18 +328,15 @@ export async function getAllStaticPaths(): Promise<string[][]> {
 
 // ── Misc helpers ──────────────────────────────────────────────────────────────
 
-export async function getRandomProductsForEachCategory(count: number): Promise<Product[]> {
-    const [cats, prods] = await Promise.all([getAllCategories(), getAllProducts()]);
-    const results: Product[] = [];
-
-    for (const cat of cats) {
-        const catProds = prods.filter((p) => p.category === cat.id);
-        if (catProds.length === 0) continue;
-        const idx = Math.floor(Math.random() * catProds.length);
-        results.push(catProds[idx]);
-        if (results.length >= count) break;
-    }
-    return results;
+// Editorial pick list, not an algorithm — no randomization, no round-robin.
+// data/trending.json is a plain ordered array of product slugs; edit that
+// file directly to change what shows in the homepage trending section as
+// real market conditions change.
+export async function getFeaturedProducts(): Promise<Product[]> {
+    const slugs: string[] = JSON.parse(fs.readFileSync(trendingPath, "utf8"));
+    const prods = await getAllProducts();
+    const bySlug = new Map(prods.map((p) => [p.slug, p]));
+    return slugs.map((slug) => bySlug.get(slug)).filter((p): p is Product => p !== undefined);
 }
 
 export function getProductImage(product: Product): string {

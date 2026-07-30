@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getRandomProductsForEachCategory, getProductPath } from "@/lib/catalog";
+import { getFeaturedProducts, getProductPath } from "@/lib/catalog";
 import { getGooglePlaceReviews } from "@/lib/google-reviews";
 import { Button, ScrollReveal } from "@/components/ui";
 import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
@@ -7,7 +7,8 @@ import Image from "next/image";
 import { ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 
 export default async function Home() {
-    const products = await getRandomProductsForEachCategory(8);
+    // Fixed editorial pick list — see data/trending.json.
+    const products = await getFeaturedProducts();
     const featuredProducts = await Promise.all(
         products.map(async (p) => ({ ...p, path: await getProductPath(p) }))
     );

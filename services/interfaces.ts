@@ -34,7 +34,7 @@ export interface IProductRepository {
     getImage(product: Product): string;
     getPath(product: Product): Promise<string>;
     getBreadcrumbs(product: Product): Promise<Breadcrumb[]>;
-    getRandomForEachCategory(count: number): Promise<Product[]>;
+    getFeatured(): Promise<Product[]>;
 }
 
 // ------------------------------------------------------------------

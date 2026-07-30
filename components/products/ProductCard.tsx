@@ -123,9 +123,18 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
                 )}
 
                 {/* 2 — NAME */}
-                <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
+                <h3 className="mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
                     {entity.name}
                 </h3>
+
+                {/* 2.5 — DESCRIPTION — fixed height so cards stay aligned in a row regardless of copy length.
+                    3.25em = 2 lines at leading-relaxed (1.625) — must match exactly, or line-clamp-2's own
+                    ellipsis gets clipped early by a shorter box before the browser can render "…". */}
+                {entityIsProduct && (
+                    <p className="mb-2.5 mt-1 line-clamp-2 h-[3.25em] text-[11px] leading-relaxed text-neutral-500">
+                        {product?.description}
+                    </p>
+                )}
 
                 {entityIsProduct ? (
                     <div className="mt-auto space-y-2.5">

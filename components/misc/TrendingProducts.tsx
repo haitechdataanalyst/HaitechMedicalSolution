@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { Product } from "@/types";
 import ProductCard from "@/components/products/ProductCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { Carousel } from "@/components/ui";
 import type { CSSProperties } from "react";
 
 interface ProductWithPath extends Product {
@@ -21,7 +20,7 @@ function productImage(product: ProductWithPath) {
 }
 
 export default function TrendingProducts({ products }: TrendingProductsProps) {
-    const items = products.slice(0, 10);
+    const items = products.slice(0, 18); // 6 cols × 3 rows at the widest breakpoint
 
     return (
         <section className="bg-neutral-50/60 py-10 md:py-14">
@@ -51,18 +50,11 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
                     ))}
                 </div>
 
-                {/* Tablet+: arrow-nav shelf */}
-                <div className="hidden md:block">
-                    <Carousel
-                        showDots={false}
-                        loop={false}
-                        arrowSize="sm"
-                        responsive={{ 0: { slidesToShow: 3, gap: 16 }, 1024: { slidesToShow: 4, gap: 16 }, 1280: { slidesToShow: 5, gap: 16 } }}
-                    >
-                        {items.map((product) => (
-                            <ProductCard key={product.slug} entity={product} href={product.path} image={productImage(product)} />
-                        ))}
-                    </Carousel>
+                {/* Tablet+: static grid — three rows at the widest breakpoint, not a shuffled carousel */}
+                <div className="hidden gap-4 md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+                    {items.map((product) => (
+                        <ProductCard key={product.slug} entity={product} href={product.path} image={productImage(product)} />
+                    ))}
                 </div>
             </div>
         </section>

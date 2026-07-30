@@ -15,7 +15,7 @@ import {
     getProductImage,
     getProductPath,
     getProductBreadcrumbs,
-    getRandomProductsForEachCategory,
+    getFeaturedProducts,
 } from "@/lib/catalog";
 import type { IProductRepository } from "../interfaces";
 import type { Product, Breadcrumb } from "@/types";
@@ -57,7 +57,7 @@ export class JsonProductRepository implements IProductRepository {
         return getProductBreadcrumbs(product);
     }
 
-    getRandomForEachCategory(count: number): Promise<Product[]> {
-        return getRandomProductsForEachCategory(count);
+    getFeatured(): Promise<Product[]> {
+        return getFeaturedProducts();
     }
 }
