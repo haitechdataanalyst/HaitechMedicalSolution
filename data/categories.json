@@ -5,7 +5,7 @@
         "name": "Admetec",
         "type": "category",
         "description": "Premium dental loupes and magnification systems from Israel's leading optics manufacturer",
-        "image": "/BrandLogo/AdmetecLogo.jpeg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/admeteclogo.jpg",
         "parent": null,
         "order": 1,
         "children": [
@@ -24,7 +24,7 @@
         "name": "Ergo Loupes",
         "type": "category",
         "description": "Ergonomic loupe systems with multiple magnification options from 3.0x to 10x. Available in various frame styles and colors.",
-        "image": "/images/products/admetec/ergo/ergo-category.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308162/haitech/images/products/admetec/ergo/ergo-category.jpg",
         "parent": 1,
         "order": 2,
         "children": []
@@ -35,7 +35,7 @@
         "name": "Ergo V Series",
         "type": "category",
         "description": "Advanced Ergo V and Ergo V Pro loupes with adjustable declination for enhanced ergonomics",
-        "image": "/images/products/admetec/ergo-v/ergo-v-category.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308163/haitech/images/products/admetec/ergo-v/ergo-v-category.jpg",
         "parent": 1,
         "order": 1,
         "children": []
@@ -46,7 +46,7 @@
         "name": "Galilean Loupes",
         "type": "category",
         "description": "Lightweight Galilean optical systems ideal for general dentistry. Available in 2.5x, 2.7x, and 3.2x magnifications.",
-        "image": "/images/products/admetec/galilean/galilean-category.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308176/haitech/images/products/admetec/galilean/galilean-category.jpg",
         "parent": 1,
         "order": 3,
         "children": []
@@ -57,7 +57,7 @@
         "name": "Prismatic Loupes",
         "type": "category",
         "description": "High-magnification prismatic loupes for precision work",
-        "image": "/images/products/admetec/prismatic/prismatic-category.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308187/haitech/images/products/admetec/prismatic/prismatic-category.png",
         "parent": 1,
         "order": 4,
         "children": []
@@ -68,7 +68,7 @@
         "name": "Frames",
         "type": "category",
         "description": "Premium frames compatible with Admetec loupe systems",
-        "image": "/images/products/admetec/Frames-for-select-frames/Blues-Black.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308166/haitech/images/products/admetec/frames-for-select-frames/blues-black.jpg",
         "parent": 1,
         "order": 5,
         "children": [],
@@ -80,7 +80,7 @@
         "name": "Lights",
         "type": "category",
         "description": "Premium LED headlights for dental loupes - wireless and wired options available",
-        "image": "/images/products/admetec/Lights/HeadLights/Wired/Wired.webp",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308594/haitech/images/products/admetec/lights/headlights/wired/wired.webp",
         "parent": 1,
         "order": 6,
         "children": [],
@@ -92,7 +92,7 @@
         "name": "Camera",
         "type": "category",
         "description": "Precision dental camera systems designed to mount seamlessly with Admetec loupes for clear intraoral imaging",
-        "image": "/Camera/Flamingo-with-Loupes.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308671/haitech/camera/flamingo-with-loupes.jpg",
         "parent": 1,
         "order": 7,
         "children": []
@@ -103,7 +103,7 @@
         "name": "Almadent",
         "type": "category",
         "description": "Comprehensive dental equipment including chairs, handpieces, and auxiliary equipment",
-        "image": "/BrandLogo/AlmadentLogo.jpeg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/almadentlogo.jpg",
         "parent": null,
         "order": 4,
         "children": [
@@ -121,7 +121,7 @@
         "name": "Dental Chairs",
         "type": "category",
         "description": "Anya dental chairs - ergonomic design for patient comfort and practitioner efficiency",
-        "image": "/images/products/almadent/almadent-primary.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/almadent/almadent-primary.jpg",
         "parent": 10,
         "order": 1,
         "children": []
@@ -132,7 +132,7 @@
         "name": "Handpieces",
         "type": "category",
         "description": "Tealth dental handpieces with precision engineering",
-        "image": "/images/products/almadent/handpiece/tealth-handpiece.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308212/haitech/images/products/almadent/handpiece/tealth-handpiece.png",
         "parent": 10,
         "order": 2,
         "children": []
@@ -143,7 +143,7 @@
         "name": "Implant Motor",
         "type": "category",
         "description": "Precision implant motors for dental implant placement procedures",
-        "image": "/images/products/almadent/auxiliary/implant-motor-1.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308189/haitech/images/products/almadent/auxiliary/implant-motor-1.jpg",
         "parent": 10,
         "order": 3,
         "children": []
@@ -154,7 +154,7 @@
         "name": "Lubricator Machine",
         "type": "category",
         "description": "Automatic handpiece lubrication and maintenance systems",
-        "image": "/images/products/almadent/auxiliary/lubricator-1.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308192/haitech/images/products/almadent/auxiliary/lubricator-1.png",
         "parent": 10,
         "order": 4,
         "children": []
@@ -165,7 +165,7 @@
         "name": "Brushless Electric Motor",
         "type": "category",
         "description": "High-torque brushless electric motors for dental handpieces",
-        "image": "/images/products/almadent/auxiliary/implant-motor-4.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308191/haitech/images/products/almadent/auxiliary/implant-motor-4.png",
         "parent": 10,
         "order": 5,
         "children": []
@@ -176,7 +176,7 @@
         "name": "3-in-1 Dental Piezo Surgery",
         "type": "category",
         "description": "Ultrasonic piezo surgery system for precise bone cutting and dental procedures",
-        "image": "/images/products/almadent/auxiliary/ptx-main.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308195/haitech/images/products/almadent/auxiliary/ptx-main.png",
         "parent": 10,
         "order": 6,
         "children": []
@@ -187,7 +187,7 @@
         "name": "Medesy",
         "type": "category",
         "description": "Premium Italian surgical instruments for dental professionals - elevators, forceps, periosteal elevators, and scissors",
-        "image": "/BrandLogo/MedesyLogo.jpeg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308666/haitech/brandlogo/medesylogo.jpg",
         "parent": null,
         "order": 3,
         "children": [
@@ -203,7 +203,7 @@
         "name": "Elevators",
         "type": "category",
         "description": "Dental elevators including Heidbrink, Lussatore, Warwick-James, and Coupland patterns",
-        "image": "/images/products/medesy/elevator/700slash8.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308213/haitech/images/products/medesy/elevator/700slash8.jpg",
         "parent": 20,
         "order": 1,
         "children": []
@@ -214,7 +214,7 @@
         "name": "Forceps",
         "type": "category",
         "description": "Extraction forceps for upper and lower teeth, roots, and fragments",
-        "image": "/images/products/medesy/forceps/2500slash17.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308232/haitech/images/products/medesy/forceps/2500slash17.jpg",
         "parent": 20,
         "order": 2,
         "children": []
@@ -225,7 +225,7 @@
         "name": "Periosteal Elevators",
         "type": "category",
         "description": "Periosteal elevators for tissue reflection and bone manipulation",
-        "image": "/images/products/medesy/periosteal-elevators/856.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308242/haitech/images/products/medesy/periosteal-elevators/856.jpg",
         "parent": 20,
         "order": 3,
         "children": []
@@ -236,7 +236,7 @@
         "name": "Scissors",
         "type": "category",
         "description": "Surgical scissors including Kelly, Goldman-Fox, and Castroviejo patterns",
-        "image": "/images/products/medesy/scissors/3509.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308249/haitech/images/products/medesy/scissors/3509.jpg",
         "parent": 20,
         "order": 4,
         "children": []
@@ -247,7 +247,7 @@
         "name": "Salli",
         "type": "category",
         "description": "Finnish ergonomic saddle chairs designed to promote healthy posture and reduce strain during long clinical hours",
-        "image": "/BrandLogo/SalliLogo.jpeg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308667/haitech/brandlogo/sallilogo.jpg",
         "parent": null,
         "order": 2,
         "children": []
@@ -258,7 +258,7 @@
         "name": "Strauss",
         "type": "category",
         "description": "Premium dental diamond burs and rotary instruments from Israel - precision engineered for optimal cutting performance",
-        "image": "/BrandLogo/StraussLogo.jpeg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308668/haitech/brandlogo/strausslogo.jpg",
         "parent": null,
         "order": 5,
         "children": [
@@ -282,7 +282,7 @@
         "name": "Round Burs",
         "type": "category",
         "description": "Round diamond burs for cavity preparation and caries removal",
-        "image": "/images/products/strauss/a-series/A0C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308255/haitech/images/products/strauss/a-series/a0c.jpg",
         "parent": 40,
         "order": 1,
         "children": []
@@ -293,7 +293,7 @@
         "name": "Pear Burs",
         "type": "category",
         "description": "Pear-shaped diamond burs for cavity preparation and undercuts",
-        "image": "/images/products/strauss/b-series/B0C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308270/haitech/images/products/strauss/b-series/b0c.jpg",
         "parent": 40,
         "order": 2,
         "children": []
@@ -304,7 +304,7 @@
         "name": "Flame Burs",
         "type": "category",
         "description": "Flame-shaped diamond burs for interproximal reduction and finishing",
-        "image": "/images/products/strauss/c-series/C0C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308278/haitech/images/products/strauss/c-series/c0c.jpg",
         "parent": 40,
         "order": 3,
         "children": []
@@ -315,7 +315,7 @@
         "name": "Cylinder Burs",
         "type": "category",
         "description": "Cylindrical diamond burs for crown preparation and reduction",
-        "image": "/images/products/strauss/d-series/D11C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308291/haitech/images/products/strauss/d-series/d11c.jpg",
         "parent": 40,
         "order": 4,
         "children": []
@@ -326,7 +326,7 @@
         "name": "Taper Burs",
         "type": "category",
         "description": "Tapered diamond burs for crown and veneer preparation",
-        "image": "/images/products/strauss/e-series/E11C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308301/haitech/images/products/strauss/e-series/e11c.jpg",
         "parent": 40,
         "order": 5,
         "children": []
@@ -337,7 +337,7 @@
         "name": "Football Burs",
         "type": "category",
         "description": "Football-shaped diamond burs for occlusal reduction",
-        "image": "/images/products/strauss/f-series/F09RC.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308310/haitech/images/products/strauss/f-series/f09rc.jpg",
         "parent": 40,
         "order": 6,
         "children": []
@@ -348,7 +348,7 @@
         "name": "Carbide Burs",
         "type": "category",
         "description": "Friction grip carbide burs for high-speed handpieces",
-        "image": "/images/products/strauss/fg-series/FGB557.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308317/haitech/images/products/strauss/fg-series/fgb557.jpg",
         "parent": 40,
         "order": 7,
         "children": []
@@ -359,7 +359,7 @@
         "name": "Needle Burs",
         "type": "category",
         "description": "Needle-point diamond burs for fine detail work",
-        "image": "/images/products/strauss/g-series/G1C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308320/haitech/images/products/strauss/g-series/g1c.jpg",
         "parent": 40,
         "order": 8,
         "children": []
@@ -370,7 +370,7 @@
         "name": "Inverted Cone Burs",
         "type": "category",
         "description": "Inverted cone diamond burs for undercut preparation",
-        "image": "/images/products/strauss/j-series/J10C.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308326/haitech/images/products/strauss/j-series/j10c.jpg",
         "parent": 40,
         "order": 9,
         "children": []
@@ -381,7 +381,7 @@
         "name": "End Cutting Burs",
         "type": "category",
         "description": "End-cutting diamond burs for shoulder preparation",
-        "image": "/images/products/strauss/k-series/K2RC.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308332/haitech/images/products/strauss/k-series/k2rc.jpg",
         "parent": 40,
         "order": 10,
         "children": []
@@ -392,7 +392,7 @@
         "name": "Polishing Burs",
         "type": "category",
         "description": "Polishing burs for finishing and surface refinement",
-        "image": "/images/products/strauss/p-series/PR12M.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308349/haitech/images/products/strauss/p-series/pr12m.jpg",
         "parent": 40,
         "order": 11,
         "children": []
@@ -403,7 +403,7 @@
         "name": "Bur Kits",
         "type": "category",
         "description": "Complete bur kit sets for various procedures",
-        "image": "/images/products/strauss/kits/MagicT1.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308344/haitech/images/products/strauss/kits/magict1.jpg",
         "parent": 40,
         "order": 12,
         "children": []
@@ -414,7 +414,7 @@
         "name": "Bondent Group",
         "type": "category",
         "description": "German-registered global dental technology group — endodontics, optics/microscopes, and imaging systems",
-        "image": "/BrandLogo/BondentGroupLogo.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308665/haitech/brandlogo/bondentgrouplogo.jpg",
         "parent": null,
         "order": 6,
         "children": [
@@ -428,7 +428,7 @@
         "name": "Endo",
         "type": "category",
         "description": "Bondent Group Endo range",
-        "image": "/images/products/bondent/Actor I pro.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/bondent/actor-i-pro.png",
         "parent": 60,
         "order": 1,
         "children": [
@@ -443,7 +443,7 @@
         "name": "Irrigation",
         "type": "category",
         "description": "Bondent Group Irrigation",
-        "image": "/images/products/bondent/Actor I pro.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/bondent/actor-i-pro.png",
         "parent": 61,
         "order": 1,
         "children": []
@@ -454,7 +454,7 @@
         "name": "Obturation",
         "type": "category",
         "description": "Bondent Group Obturation",
-        "image": "/images/products/bondent/eFiller.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308064/haitech/images/products/bondent/efiller.png",
         "parent": 61,
         "order": 2,
         "children": []
@@ -465,7 +465,7 @@
         "name": "Preparation",
         "type": "category",
         "description": "Bondent Group Preparation",
-        "image": "/images/products/bondent/Endo Box.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308066/haitech/images/products/bondent/endo-box.jpg",
         "parent": 61,
         "order": 3,
         "children": [
@@ -484,7 +484,7 @@
         "name": "Accessory",
         "type": "category",
         "description": "Bondent Group Accessory",
-        "image": "/images/products/bondent/Endo Box.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308066/haitech/images/products/bondent/endo-box.jpg",
         "parent": 64,
         "order": 1,
         "children": []
@@ -495,7 +495,7 @@
         "name": "Apex Locator",
         "type": "category",
         "description": "Bondent Group Apex Locator",
-        "image": "/images/products/bondent/iRoot Apex.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308076/haitech/images/products/bondent/iroot-apex.jpg",
         "parent": 64,
         "order": 2,
         "children": []
@@ -506,7 +506,7 @@
         "name": "Endo Motor",
         "type": "category",
         "description": "Bondent Group Endo Motor",
-        "image": "/images/products/bondent/Endo Wise.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308069/haitech/images/products/bondent/endo-wise.png",
         "parent": 64,
         "order": 3,
         "children": []
@@ -517,7 +517,7 @@
         "name": "Hand Files",
         "type": "category",
         "description": "Bondent Group Hand Files",
-        "image": "/images/products/bondent/Stainless Steel C Files.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308108/haitech/images/products/bondent/stainless-steel-c-files.jpg",
         "parent": 64,
         "order": 4,
         "children": []
@@ -528,7 +528,7 @@
         "name": "Reciprocating Files",
         "type": "category",
         "description": "Bondent Group Reciprocating Files",
-        "image": "/images/products/bondent/CC One Blue.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308058/haitech/images/products/bondent/cc-one-blue.jpg",
         "parent": 64,
         "order": 5,
         "children": []
@@ -539,7 +539,7 @@
         "name": "Rotary Files",
         "type": "category",
         "description": "Bondent Group Rotary Files",
-        "image": "/images/products/bondent/CC Premium.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308060/haitech/images/products/bondent/cc-premium.jpg",
         "parent": 64,
         "order": 6,
         "children": []
@@ -550,7 +550,7 @@
         "name": "Special Function NiTi",
         "type": "category",
         "description": "Bondent Group Special Function NiTi",
-        "image": "/images/products/bondent/M3 Immature Blue.jpg",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308079/haitech/images/products/bondent/m3-immature-blue.jpg",
         "parent": 64,
         "order": 7,
         "children": []
@@ -561,7 +561,7 @@
         "name": "Imaging",
         "type": "category",
         "description": "Bondent Group Imaging range",
-        "image": "/images/products/bondent/Bondent CBCT-1030 Pro.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
         "parent": 60,
         "order": 4,
         "children": [
@@ -574,7 +574,7 @@
         "name": "CBCT Systems",
         "type": "category",
         "description": "Bondent Group CBCT Systems",
-        "image": "/images/products/bondent/Bondent CBCT-1030 Pro.png",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
         "parent": 77,
         "order": 7,
         "children": []
