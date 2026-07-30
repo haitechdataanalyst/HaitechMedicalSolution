@@ -1,15 +1,21 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import ImageWithFallback from "./ImageWithFallback";
 
-interface CardProps {
+interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, "className"> {
     children: ReactNode;
     className?: string;
     hover?: boolean;
+    /** "dark" uses a tinted border/fill instead of a drop-shadow, for cards placed on a dark or gradient surface. Shares the same radius token either way. */
+    tone?: "light" | "dark";
 }
 
-export default function Card({ children, className, hover = false }: CardProps) {
-    return <div className={cn("card", hover && "card-hover", className)}>{children}</div>;
+export default function Card({ children, className, hover = false, tone = "light", ...rest }: CardProps) {
+    return (
+        <div className={cn(tone === "dark" ? "card-dark" : "card", hover && "card-hover", className)} {...rest}>
+            {children}
+        </div>
+    );
 }
 
 interface CardImageProps {

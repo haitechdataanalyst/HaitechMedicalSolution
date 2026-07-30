@@ -96,7 +96,7 @@ export function ErgoMagnificationSelector() {
                                         onClick={() => handleVariantChange(v.key)}
                                         className={
                                             variantKey === v.key
-                                                ? "rounded-xl bg-primary-500 px-5 py-2 text-sm font-bold text-white shadow-[0_2px_12px_-2px_rgba(31,182,205,0.45)] transition-all duration-200"
+                                                ? "rounded-xl bg-[#AE132A] px-5 py-2 text-sm font-bold text-white shadow-[0_2px_12px_-2px_rgba(174,19,42,0.45)] transition-all duration-200"
                                                 : "rounded-xl px-5 py-2 text-sm font-semibold text-neutral-400 transition-all duration-200 hover:text-neutral-700"
                                         }
                                     >
@@ -137,7 +137,7 @@ export function ErgoMagnificationSelector() {
                                 className="h-auto w-full object-contain p-6 transition-opacity duration-300"
                             />
                             <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary-700">
+                                <span className="rounded-full bg-[#AE132A]/8 px-3 py-1 text-xs font-bold text-[#AE132A]">
                                     {variant.label}
                                 </span>
                                 <span className="rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs font-medium text-neutral-400">
@@ -149,7 +149,7 @@ export function ErgoMagnificationSelector() {
                         {/* CTA */}
                         <Link
                             href={variant.href}
-                            className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-600 shadow-sm transition-all hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
+                            className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-600 shadow-sm transition-all hover:border-[#AE132A]/30 hover:bg-[#AE132A]/5 hover:text-[#AE132A]"
                         >
                             View {variant.label} details
                             <ArrowRight className="h-4 w-4" />

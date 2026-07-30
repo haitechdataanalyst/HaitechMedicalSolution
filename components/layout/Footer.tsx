@@ -68,7 +68,7 @@ export default function Footer({ sections, config }: FooterProps) {
                             </div>
                         </Link>
                         <p className="mb-6 max-w-xs text-sm leading-relaxed text-navy-300">
-                            Premium medical and dental equipment for healthcare professionals across Australia, New Zealand and beyond — distributed globally from Mumbai, India.
+                            Premium medical and dental equipment for dental and medical professionals across India — proudly distributed from Mumbai since 2013, with a growing international footprint.
                         </p>
 
                         {/* Contact info */}
@@ -131,15 +131,15 @@ export default function Footer({ sections, config }: FooterProps) {
             {/* Bottom bar */}
             <div className="container">
                 <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-                    <p className="text-xs text-navy-500">
+                    <p className="text-xs text-navy-400">
                         © {currentYear} {config.company.name}. All rights reserved.
                     </p>
 
                     <div className="flex items-center gap-6">
-                        <Link href="/support/policies/privacy" className="text-xs text-navy-500 transition-colors hover:text-white">
+                        <Link href="/support/policies/privacy" className="text-xs text-navy-400 transition-colors hover:text-white">
                             Privacy Policy
                         </Link>
-                        <Link href="/support/policies/terms" className="text-xs text-navy-500 transition-colors hover:text-white">
+                        <Link href="/support/policies/terms" className="text-xs text-navy-400 transition-colors hover:text-white">
                             Terms of Service
                         </Link>
                     </div>

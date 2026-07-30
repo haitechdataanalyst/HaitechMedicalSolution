@@ -1,6 +1,7 @@
 import PDFDocument from "pdfkit";
 import { CartItem } from "@/types";
 import { formatCurrency, calculateCartTotal } from "./cart";
+import siteConfig from "@/data/site-config.json";
 
 interface QuotePDFData {
     customer: {
@@ -163,8 +164,8 @@ export async function generateQuotePDF(data: QuotePDFData): Promise<Buffer> {
         doc.fontSize(8)
             .fillColor("#666")
             .text("This is a quote request. Final pricing may vary based on customization options and shipping.", 50, footerY, { width: 500, align: "center" })
-            .text("Haitech Medical Australia | info@haitechmedical.com.au | +61 2 8000 1234", 50, footerY + 15, { width: 500, align: "center" })
-            .text("www.haitechmedical.com.au", 50, footerY + 30, { width: 500, align: "center" });
+            .text(`${siteConfig.company.name} | ${siteConfig.emails.contact} | ${siteConfig.company.phone}`, 50, footerY + 15, { width: 500, align: "center" })
+            .text("haitechmedical.com.au", 50, footerY + 30, { width: 500, align: "center" });
 
         doc.end();
     });

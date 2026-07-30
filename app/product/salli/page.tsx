@@ -112,9 +112,12 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
+            {/* Nordic-minimal, not Haitech's default dark teal box: Salli's own
+                identity carries no dark mode at all — white ground, navy ink,
+                thin rules. See DESIGN_PRINCIPLES.md brand-differentiation plan. */}
+            <section className="border-y border-[#e4e8eb] bg-white py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
+                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-[#0E3A5F] md:text-2xl lg:text-3xl">
                         &ldquo;The way we sit is broken. Salli built the fix.&rdquo;
                     </p>
                     <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
@@ -125,8 +128,8 @@ export default function AboutSalliPage() {
                             { v: "Finland", l: "Engineered"          },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
-                                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
+                                <p className="text-2xl font-bold text-[#0E3A5F] md:text-3xl lg:text-4xl">{s.v}</p>
+                                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-neutral-400">{s.l}</p>
                             </div>
                         ))}
                     </div>
@@ -170,11 +173,11 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 02 The Solution ── */}
-            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
+            <section className="bg-[#F4F6F7] py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-neutral-800 shadow-2xl">
+                            <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-neutral-200/60">
                                 <Image
                                     src="/images/products/salli/triple-fit-black.jpg"
                                     alt="Salli TripleLift saddle chair"
@@ -185,18 +188,18 @@ export default function AboutSalliPage() {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / The Solution</span>
-                            <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">02 / The Solution</span>
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Designed to<br />Transform How You Sit.
                             </h2>
-                            <p className="mb-5 text-base leading-relaxed text-white/55 md:text-lg">
+                            <p className="mb-5 text-base leading-relaxed text-neutral-500 md:text-lg">
                                 The Salli saddle chair tilts the pelvis forward naturally, restoring the spine&apos;s healthy S-curve. The result is active, healthy sitting that reduces pain and boosts circulation — even during long procedures.
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((b) => (
-                                    <div key={b} className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-primary-400" />
-                                        <span className="text-sm font-medium text-white/80">{b}</span>
+                                    <div key={b} className="flex items-center gap-2 rounded-full border border-[#0E3A5F]/15 bg-white px-4 py-2">
+                                        <CheckCircle className="h-3.5 w-3.5 shrink-0 text-[#0E3A5F]" />
+                                        <span className="text-sm font-medium text-neutral-700">{b}</span>
                                     </div>
                                 ))}
                             </div>
@@ -298,7 +301,7 @@ export default function AboutSalliPage() {
                     <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
                         {healthBenefits.map((benefit) => (
                             <div key={benefit.title} className="border-t border-neutral-200 pt-5">
-                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
+                                <div className="mb-2 flex items-center gap-2.5 text-[#0E3A5F]">
                                     {benefit.icon}
                                     <h4 className="text-sm font-bold text-neutral-900">{benefit.title}</h4>
                                 </div>
@@ -354,7 +357,7 @@ export default function AboutSalliPage() {
                     <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
                         {pillars.map((pillar) => (
                             <div key={pillar.title} className="border-t border-neutral-200 pt-5">
-                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
+                                <div className="mb-2 flex items-center gap-2.5 text-[#0E3A5F]">
                                     {pillar.icon}
                                     <h3 className="text-sm font-bold text-neutral-900">{pillar.title}</h3>
                                 </div>
@@ -366,22 +369,24 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-[#001926] py-14 text-white md:py-28">
+            {/* No dark box here either — the closing moment stays in the same
+                light, restrained register as the rest of the page. */}
+            <section className="border-t border-[#e4e8eb] bg-white py-14 md:py-28">
                 <div className="container text-center">
-                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-                        Invest in Your Health & Productivity
+                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                        Invest in Your Health &amp; Productivity
                     </h2>
-                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
+                    <p className="mx-auto mb-8 max-w-xl text-base text-neutral-500 md:text-lg">
                         Talk to us about which model fits your clinic — Sway Fit, Triple Lift, or Ultra.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/product-category/salli">
-                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
+                            <Button size="lg" className="rounded-full bg-[#0E3A5F] px-10 font-bold text-white shadow-lg hover:bg-[#0A2C48]">
                                 Shop Salli Chairs
                             </Button>
                         </Link>
                         <Link href="/support/contact">
-                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-10 text-white hover:border-white hover:bg-white/10">
+                            <Button size="lg" variant="outline" className="rounded-full border-[#0E3A5F]/25 px-10 text-[#0E3A5F] hover:border-[#0E3A5F] hover:bg-[#0E3A5F]/5">
                                 Contact Us
                             </Button>
                         </Link>

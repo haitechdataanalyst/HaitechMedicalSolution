@@ -24,7 +24,7 @@ const quickContacts = [
     {
         icon: Clock,
         title: "Business Hours",
-        value: "Mon–Fri: 10am – 6pm",
+        value: "Mon–Fri, 10am–6pm",
         description: "Indian Standard Time (IST)",
     },
 ];

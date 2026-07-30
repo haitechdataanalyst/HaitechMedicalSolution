@@ -65,7 +65,9 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
+            {/* Admetec's real identity runs charcoal + oxblood red, not
+                Haitech's teal-navy box — see brand-differentiation plan. */}
+            <section className="bg-[#1a1817] py-10 md:py-20 lg:py-28">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Precision magnification engineered for the clinicians who demand the best — because every detail matters in dentistry.&rdquo;
@@ -78,7 +80,7 @@ export default function AboutAdmetecPage() {
                             { v: "2",        l: "Optical Systems"    },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-2xl font-bold text-[#1fb6cd] md:text-3xl lg:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-bold text-[#D3374C] md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
                             </div>
                         ))}
@@ -100,7 +102,7 @@ export default function AboutAdmetecPage() {
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["2.5x", "2.7x", "3.2x"].map((m) => (
-                                    <span key={m} className="rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700">{m}</span>
+                                    <span key={m} className="rounded-full bg-[#AE132A]/8 px-4 py-2 text-sm font-bold text-[#AE132A]">{m}</span>
                                 ))}
                             </div>
                         </div>
@@ -175,7 +177,7 @@ export default function AboutAdmetecPage() {
                                     "Long-lasting battery life",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3 text-sm text-neutral-600">
-                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-[10px] font-bold text-primary-600">✓</span>
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#AE132A]/10 text-[10px] font-bold text-[#AE132A]">✓</span>
                                         {item}
                                     </li>
                                 ))}
@@ -206,7 +208,7 @@ export default function AboutAdmetecPage() {
                     <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
                         {features.map((f) => (
                             <div key={f.title} className="border-t border-neutral-200 pt-5">
-                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
+                                <div className="mb-2 flex items-center gap-2.5 text-[#AE132A]">
                                     {f.icon}
                                     <h3 className="text-sm font-bold text-neutral-900">{f.title}</h3>
                                 </div>
@@ -218,7 +220,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="py-14 text-white md:py-28" style={{ background: "linear-gradient(135deg, #001926 0%, #002f43 50%, #00465e 100%)" }}>
+            <section className="py-14 text-white md:py-28" style={{ background: "linear-gradient(135deg, #1a1817 0%, #2a1416 50%, #3a1218 100%)" }}>
                 <div className="container text-center">
                     <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         Try Before You Order
@@ -228,7 +230,7 @@ export default function AboutAdmetecPage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href="/product-category/admetec">
-                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
+                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-[#AE132A] shadow-lg hover:bg-neutral-50">
                                 Browse Products
                             </Button>
                         </Link>
