@@ -57,12 +57,12 @@ const nextConfig: NextConfig = {
                         key: "Content-Security-Policy",
                         value: [
                             "default-src 'self'",
-                            // Google Identity Services + Razorpay (checkout + CDN assets)
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.lordicon.com https://accounts.google.com https://checkout.razorpay.com https://cdn.razorpay.com",
+                            // Google Identity Services + Razorpay (checkout + CDN assets) + GA4
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.lordicon.com https://accounts.google.com https://checkout.razorpay.com https://cdn.razorpay.com https://www.googletagmanager.com",
                             "style-src 'self' 'unsafe-inline' https://accounts.google.com",
                             "img-src 'self' data: blob: https:",
                             "font-src 'self' data:",
-                            // Allow backend API, Google OAuth, and Razorpay API calls
+                            // Allow backend API, Google OAuth, Razorpay API, and GA4 calls
                             [
                                 "connect-src 'self'",
                                 isDev ? "http://localhost:5000" : "",
@@ -73,6 +73,10 @@ const nextConfig: NextConfig = {
                                 "https://api.razorpay.com",
                                 "https://cdn.razorpay.com",
                                 "https://lumberjack.razorpay.com",
+                                "https://www.googletagmanager.com",
+                                "https://www.google-analytics.com",
+                                "https://analytics.google.com",
+                                "https://*.google-analytics.com",
                             ].filter(Boolean).join(" "),
                             // Google + Razorpay iframes
                             "frame-src 'self' https://www.google.com https://maps.google.com https://accounts.google.com https://api.razorpay.com https://checkout.razorpay.com https://workdrive.zohoexternal.com",

@@ -4,7 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import { NavigationProvider } from "@/components/layout";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
-import { SplashScreen } from "@/components/misc";
+import { SplashScreen, GoogleAnalytics } from "@/components/misc";
 
 // Inter — the standard typeface for enterprise SaaS/technology brands (Stripe,
 // Linear, GitHub, Vercel). Chosen over the previous Poppins because Poppins'
@@ -38,6 +38,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`${inter.variable} bg-surface font-sans antialiased`}>
+                <GoogleAnalytics />
                 <SplashScreen />
                 <Providers>
                     <NavigationProvider>
