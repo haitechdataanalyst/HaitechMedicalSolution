@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { CSSProperties } from "react";
 
-type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs";
+type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs" | "Endo & Imaging";
 
 const brands = [
     {
@@ -66,9 +66,20 @@ const brands = [
         credibility: "ISO 9001 · Industry standard",
         priceFrom: null,
     },
+    {
+        name: "Bondent",
+        tagline: "German-registered endodontics, imaging & digital implant systems.",
+        image: "/BrandLogo/BondentGroupLogo.jpg",
+        href: "/product/bondent",
+        badge: "Endo & Imaging",
+        filter: "Endo & Imaging" as FilterCategory,
+        productCount: 50,
+        credibility: "German-registered · CE certified",
+        priceFrom: null,
+    },
 ];
 
-const FILTER_TABS: FilterCategory[] = ["All", "Optical", "Dental Chairs", "Surgical", "Ergonomic", "Burs"];
+const FILTER_TABS: FilterCategory[] = ["All", "Optical", "Dental Chairs", "Surgical", "Ergonomic", "Burs", "Endo & Imaging"];
 
 type BrandItem = typeof brands[number];
 
@@ -125,7 +136,9 @@ export default function BrandsSection() {
 
     const gridClass = cn(
         "gap-3 md:gap-4",
-        filteredBrands.length >= 4
+        filteredBrands.length >= 6
+            ? "grid-cols-3 sm:grid-cols-6 lg:grid-cols-6"
+            : filteredBrands.length >= 4
             ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
             : filteredBrands.length === 3
             ? "grid-cols-1 sm:grid-cols-3"

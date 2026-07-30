@@ -126,7 +126,7 @@ const TIMELINE = [
     { year: "2013", title: "Founded in Mumbai", body: "Haitech Medical Solutions incorporated with a focus on importing precision dental instruments." },
     { year: "2015", title: "First Brand Partnership", body: "Became the authorised distributor for Admetec surgical loupes across India." },
     { year: "2018", title: "Network Expansion", body: "Grew to 15+ dealer partners spanning major metros — Delhi, Bangalore, Chennai, Pune." },
-    { year: "2026", title: "5 Brands · 27+ Dealers", body: "Now India's most trusted partner for five world-class global dental brands." },
+    { year: "2026", title: "6 Brands · 27+ Dealers", body: "Now India's most trusted partner for six world-class global dental brands." },
 ];
 
 const BRANDS = [
@@ -135,12 +135,13 @@ const BRANDS = [
     { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpeg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality." },
     { name: "Salli",    logo: "/BrandLogo/SalliLogo.jpeg",    cat: "Ergonomic Seating",     desc: "Saddle chairs that protect posture over long procedures." },
     { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpeg", cat: "Dental Chairs",         desc: "Feature-rich treatment chairs for the modern clinic." },
+    { name: "Bondent",  logo: "/BrandLogo/BondentGroupLogo.jpg", cat: "Endo & Imaging",     desc: "German-registered endodontics, imaging & digital implant systems." },
 ];
 
 const STATS = [
     { value: "15+",   label: "Years in business" },
     { value: "27+",   label: "Dealer partners" },
-    { value: "5",     label: "Global brands" },
+    { value: "6",     label: "Global brands" },
     { value: "1000+", label: "Professionals served" },
 ];
 
@@ -252,7 +253,7 @@ export default function AboutPageClient({ teamMembers }: { teamMembers: TeamMemb
 
                     <div className="mb-12 grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
                         <h2 data-reveal="up" className="font-extrabold leading-tight text-neutral-900" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                            5 world-class brands,
+                            6 world-class brands,
                             <span className="block text-primary-500">one partner</span>
                         </h2>
                         <p data-reveal="fade" className="reveal-d1 max-w-xs text-base text-neutral-500">
@@ -260,7 +261,7 @@ export default function AboutPageClient({ teamMembers }: { teamMembers: TeamMemb
                         </p>
                     </div>
 
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                    <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
                         {BRANDS.map((brand, i) => (
                             <div
                                 key={brand.name}

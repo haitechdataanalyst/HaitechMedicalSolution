@@ -34,7 +34,7 @@ export default async function ProductsPage() {
 
                     <h1 className="text-2xl font-bold text-neutral-900">All Products</h1>
                     <p className="mt-0.5 text-sm text-neutral-400">
-                        Premium dental &amp; medical equipment · 5 global brands · 80+ products
+                        Premium dental &amp; medical equipment · 6 global brands · 130+ products
                     </p>
                 </div>
             </div>

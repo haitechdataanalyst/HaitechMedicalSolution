@@ -5565,9 +5565,21 @@
                             }
                         ],
                         "accessories": [
-                            { "id": "stretching-support", "label": "Stretching Support", "price": 0 },
-                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
-                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                            {
+                                "id": "stretching-support",
+                                "label": "Stretching Support",
+                                "price": 0
+                            },
+                            {
+                                "id": "gas-cylinder",
+                                "label": "Gas Cylinder",
+                                "price": 0
+                            },
+                            {
+                                "id": "castor",
+                                "label": "Castor (Per pc)",
+                                "price": 0
+                            }
                         ]
                     }
                 }
@@ -5765,9 +5777,21 @@
                             }
                         ],
                         "accessories": [
-                            { "id": "stretching-support", "label": "Stretching Support", "price": 0 },
-                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
-                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                            {
+                                "id": "stretching-support",
+                                "label": "Stretching Support",
+                                "price": 0
+                            },
+                            {
+                                "id": "gas-cylinder",
+                                "label": "Gas Cylinder",
+                                "price": 0
+                            },
+                            {
+                                "id": "castor",
+                                "label": "Castor (Per pc)",
+                                "price": 0
+                            }
                         ]
                     }
                 }
@@ -5956,8 +5980,16 @@
                             }
                         ],
                         "accessories": [
-                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
-                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                            {
+                                "id": "gas-cylinder",
+                                "label": "Gas Cylinder",
+                                "price": 0
+                            },
+                            {
+                                "id": "castor",
+                                "label": "Castor (Per pc)",
+                                "price": 0
+                            }
                         ]
                     }
                 }
@@ -6155,8 +6187,16 @@
                             }
                         ],
                         "accessories": [
-                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
-                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                            {
+                                "id": "gas-cylinder",
+                                "label": "Gas Cylinder",
+                                "price": 0
+                            },
+                            {
+                                "id": "castor",
+                                "label": "Castor (Per pc)",
+                                "price": 0
+                            }
                         ]
                     }
                 }
@@ -6281,8 +6321,16 @@
                             }
                         ],
                         "accessories": [
-                            { "id": "gas-cylinder", "label": "Gas Cylinder", "price": 0 },
-                            { "id": "castor", "label": "Castor (Per pc)", "price": 0 }
+                            {
+                                "id": "gas-cylinder",
+                                "label": "Gas Cylinder",
+                                "price": 0
+                            },
+                            {
+                                "id": "castor",
+                                "label": "Castor (Per pc)",
+                                "price": 0
+                            }
                         ]
                     }
                 }
@@ -10150,6 +10198,3254 @@
             1118,
             1115,
             1110
+        ]
+    },
+    {
+        "id": 2001,
+        "slug": "actor-i-pro",
+        "name": "Bondent Actor I pro",
+        "description": "Ultrasonic endo irrigation activation device with dual power modes",
+        "category": 62,
+        "order": 1,
+        "sku": "BON-ACTORIPRO",
+        "defaultImage": "/images/products/bondent/Actor I pro.png",
+        "gallery": [
+            "/images/products/bondent/Actor I pro.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Actor I pro.png",
+                    "gallery": [
+                        "/images/products/bondent/Actor I pro.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Ultrasonic endo irrigation activation device with dual power modes",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Irrigation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Pro"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "1600mAh battery, wireless charging, LED light, optional wireless foot control"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2002,
+        "slug": "irrigation-needle",
+        "name": "Bondent Irrigation Needle",
+        "description": "Bendable double-port irrigation needle that reduces apical hydraulic pressure",
+        "category": 62,
+        "order": 2,
+        "sku": "BON-IRRIGATIONNEEDLE",
+        "defaultImage": "/images/products/bondent/Irrigation Needle.jpg",
+        "gallery": [
+            "/images/products/bondent/Irrigation Needle.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Irrigation Needle.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Irrigation Needle.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Bendable double-port irrigation needle that reduces apical hydraulic pressure",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Irrigation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Available in 22mm and 26mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2003,
+        "slug": "efiller",
+        "name": "Bondent eFiller",
+        "description": "Rapid-heating gutta percha filling device",
+        "category": 63,
+        "order": 1,
+        "sku": "BON-EFILLER",
+        "defaultImage": "/images/products/bondent/eFiller.png",
+        "gallery": [
+            "/images/products/bondent/eFiller.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/eFiller.png",
+                    "gallery": [
+                        "/images/products/bondent/eFiller.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Rapid-heating gutta percha filling device",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Obturation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "14s heat-up, 2600mAh battery, 140-230C range, 4 tip types"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2004,
+        "slug": "eheater",
+        "name": "Bondent eHeater",
+        "description": "Obturation down-pack heat device with rotating tip",
+        "category": 63,
+        "order": 2,
+        "sku": "BON-EHEATER",
+        "defaultImage": "/images/products/bondent/eHeater.png",
+        "gallery": [
+            "/images/products/bondent/eHeater.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/eHeater.png",
+                    "gallery": [
+                        "/images/products/bondent/eHeater.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Obturation down-pack heat device with rotating tip",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Obturation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "0.2s to 200C, 4s work cycle, 2600mAh, optional wireless foot control"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2005,
+        "slug": "paper-points",
+        "name": "Bondent Paper Points",
+        "description": "Root canal paper points in three taper sizes",
+        "category": 63,
+        "order": 3,
+        "sku": "BON-PAPERPOINTS",
+        "defaultImage": "/images/products/bondent/Paper Points.jpg",
+        "gallery": [
+            "/images/products/bondent/Paper Points.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Paper Points.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Paper Points.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Root canal paper points in three taper sizes",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Obturation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "0.02/0.04/0.06 taper, color coded (white/pink/red)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2006,
+        "slug": "plugger",
+        "name": "Bondent Plugger",
+        "description": "Dual-size obturation plugger instrument",
+        "category": 63,
+        "order": 4,
+        "sku": "BON-PLUGGER",
+        "defaultImage": "/images/products/bondent/Plugger.jpg",
+        "gallery": [
+            "/images/products/bondent/Plugger.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Plugger.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Plugger.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Dual-size obturation plugger instrument",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Obturation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Small NiTi tip, large stainless steel tip"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2007,
+        "slug": "standard-gutta-percha-points",
+        "name": "Bondent Standard Gutta Percha Points",
+        "description": "Standard obturation gutta percha points",
+        "category": 63,
+        "order": 5,
+        "sku": "BON-STANDARDGUTTAPERCHAPOINTS",
+        "defaultImage": "/images/products/bondent/Standard Gutta Percha Points.jpg",
+        "gallery": [
+            "/images/products/bondent/Standard Gutta Percha Points.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Standard Gutta Percha Points.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Standard Gutta Percha Points.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Standard obturation gutta percha points",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Obturation"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "3 taper/color options (0.02/0.04/0.06)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2008,
+        "slug": "endo-box",
+        "name": "Bondent Endo Box",
+        "description": "Hand file organizer box",
+        "category": 65,
+        "order": 1,
+        "sku": "BON-ENDOBOX",
+        "defaultImage": "/images/products/bondent/Endo Box.jpg",
+        "gallery": [
+            "/images/products/bondent/Endo Box.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Endo Box.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Endo Box.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Hand file organizer box",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "TPX plastic material"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2009,
+        "slug": "endo-clean-box",
+        "name": "Bondent Endo Clean Box",
+        "description": "Autoclavable file cleaning box",
+        "category": 65,
+        "order": 2,
+        "sku": "BON-ENDOCLEANBOX",
+        "defaultImage": "/images/products/bondent/Endo Clean Box.jpg",
+        "gallery": [
+            "/images/products/bondent/Endo Clean Box.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Endo Clean Box.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Endo Clean Box.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Autoclavable file cleaning box",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "TPX plastic material"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2010,
+        "slug": "endo-training-tooth",
+        "name": "Bondent Endo Training Tooth",
+        "description": "3D-printed practice tooth for endodontic training",
+        "category": 65,
+        "order": 3,
+        "sku": "BON-ENDOTRAININGTOOTH",
+        "defaultImage": "/images/products/bondent/Endo Training Tooth.jpg",
+        "gallery": [
+            "/images/products/bondent/Endo Training Tooth.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Endo Training Tooth.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Endo Training Tooth.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "3D-printed practice tooth for endodontic training",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Replica of maxillary first molar with MB2 canal"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2011,
+        "slug": "hand-files-holder",
+        "name": "Bondent Hand Files Holder",
+        "description": "Stainless steel hand file holder",
+        "category": 65,
+        "order": 4,
+        "sku": "BON-HANDFILESHOLDER",
+        "defaultImage": "/images/products/bondent/Hand Files Holder.jpg",
+        "gallery": [
+            "/images/products/bondent/Hand Files Holder.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Hand Files Holder.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Hand Files Holder.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Stainless steel hand file holder",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Blue color, 3-year validity, sterilizable"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2012,
+        "slug": "measure-ruler",
+        "name": "Bondent Measure Ruler",
+        "description": "Autoclavable canal length measuring ruler",
+        "category": 65,
+        "order": 5,
+        "sku": "BON-MEASURERULER",
+        "defaultImage": "/images/products/bondent/Measure Ruler.jpg",
+        "gallery": [
+            "/images/products/bondent/Measure Ruler.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Measure Ruler.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Measure Ruler.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Autoclavable canal length measuring ruler",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2013,
+        "slug": "micro-opener",
+        "name": "Bondent Micro Opener",
+        "description": "Microscopic canal orifice opener file",
+        "category": 65,
+        "order": 6,
+        "sku": "BON-MICROOPENER",
+        "defaultImage": "/images/products/bondent/Micro Opener.jpg",
+        "gallery": [
+            "/images/products/bondent/Micro Opener.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Micro Opener.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Micro Opener.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Microscopic canal orifice opener file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm lengths, #10/15/20 sizes"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2014,
+        "slug": "micro-shaper",
+        "name": "Bondent Micro Shaper",
+        "description": "Microscopic canal negotiation file",
+        "category": 65,
+        "order": 7,
+        "sku": "BON-MICROSHAPER",
+        "defaultImage": "/images/products/bondent/Micro Shaper.jpg",
+        "gallery": [
+            "/images/products/bondent/Micro Shaper.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Micro Shaper.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Micro Shaper.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Microscopic canal negotiation file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm lengths, #20/25/30 sizes"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2015,
+        "slug": "paste-carrier",
+        "name": "Bondent Paste Carrier",
+        "description": "Obturation paste and sealant carrier",
+        "category": 65,
+        "order": 8,
+        "sku": "BON-PASTECARRIER",
+        "defaultImage": "/images/products/bondent/Paste Carrier.jpg",
+        "gallery": [
+            "/images/products/bondent/Paste Carrier.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Paste Carrier.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Paste Carrier.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Obturation paste and sealant carrier",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Lentulo and spring paste filler types"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2016,
+        "slug": "peeso-reamer",
+        "name": "Bondent Peeso Reamer",
+        "description": "Canal/post-space enlarging reamer",
+        "category": 65,
+        "order": 9,
+        "sku": "BON-PEESOREAMER",
+        "defaultImage": "/images/products/bondent/Peeso Reamer.jpg",
+        "gallery": [
+            "/images/products/bondent/Peeso Reamer.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Peeso Reamer.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Peeso Reamer.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Canal/post-space enlarging reamer",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Standard (32mm) and short (28mm) lengths"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2017,
+        "slug": "stopper",
+        "name": "Bondent Stopper",
+        "description": "Silicone endo file length stopper",
+        "category": 65,
+        "order": 10,
+        "sku": "BON-STOPPER",
+        "defaultImage": "/images/products/bondent/Stopper.jpg",
+        "gallery": [
+            "/images/products/bondent/Stopper.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Stopper.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Stopper.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Silicone endo file length stopper",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2018,
+        "slug": "training-block",
+        "name": "Bondent Training Block",
+        "description": "Resin endo practice block",
+        "category": 65,
+        "order": 11,
+        "sku": "BON-TRAININGBLOCK",
+        "defaultImage": "/images/products/bondent/Training Block.jpg",
+        "gallery": [
+            "/images/products/bondent/Training Block.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Training Block.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Training Block.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Resin endo practice block",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2019,
+        "slug": "training-kit",
+        "name": "Bondent Training Kit",
+        "description": "Endo workshop training kit",
+        "category": 65,
+        "order": 12,
+        "sku": "BON-TRAININGKIT",
+        "defaultImage": "/images/products/bondent/Training Kit.jpg",
+        "gallery": [
+            "/images/products/bondent/Training Kit.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Training Kit.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Training Kit.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Endo workshop training kit",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Accessory"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2020,
+        "slug": "iroot-apex",
+        "name": "Bondent iRoot Apex",
+        "description": "Bluetooth-enabled apex locator with gyroscope",
+        "category": 66,
+        "order": 1,
+        "sku": "BON-IROOTAPEX",
+        "defaultImage": "/images/products/bondent/iRoot Apex.jpg",
+        "gallery": [
+            "/images/products/bondent/iRoot Apex.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/iRoot Apex.jpg",
+                    "gallery": [
+                        "/images/products/bondent/iRoot Apex.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Bluetooth-enabled apex locator with gyroscope",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Apex Locator"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2021,
+        "slug": "wispex",
+        "name": "Bondent Wispex",
+        "description": "Multi-frequency apex locator with TFT screen",
+        "category": 66,
+        "order": 2,
+        "sku": "BON-WISPEX",
+        "defaultImage": "/images/products/bondent/Wispex.jpg",
+        "gallery": [
+            "/images/products/bondent/Wispex.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Wispex.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Wispex.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Multi-frequency apex locator with TFT screen",
+                    "secondary": "Manufactured by Wismy — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Apex Locator"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Wismy"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2022,
+        "slug": "endo-wise",
+        "name": "Bondent Endo Wise",
+        "description": "Cordless reciprocating endo motor",
+        "category": 67,
+        "order": 1,
+        "sku": "BON-ENDOWISE",
+        "defaultImage": "/images/products/bondent/Endo Wise.png",
+        "gallery": [
+            "/images/products/bondent/Endo Wise.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Endo Wise.png",
+                    "gallery": [
+                        "/images/products/bondent/Endo Wise.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Cordless reciprocating endo motor",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Endo Motor"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Large OLED screen"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2023,
+        "slug": "endo-wise-plus",
+        "name": "Bondent Endo Wise Plus",
+        "description": "Cordless endo motor with integrated apex locator",
+        "category": 67,
+        "order": 2,
+        "sku": "BON-ENDOWISEPLUS",
+        "defaultImage": "/images/products/bondent/Endo Wise Plus.png",
+        "gallery": [
+            "/images/products/bondent/Endo Wise Plus.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Endo Wise Plus.png",
+                    "gallery": [
+                        "/images/products/bondent/Endo Wise Plus.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Cordless endo motor with integrated apex locator",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Endo Motor"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Plus"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "4 working modes"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2024,
+        "slug": "iroot-pro",
+        "name": "Bondent iRoot Pro",
+        "description": "Cordless endo motor with integrated apex locator",
+        "category": 67,
+        "order": 3,
+        "sku": "BON-IROOTPRO",
+        "defaultImage": "/images/products/bondent/iRoot Pro.jpg",
+        "gallery": [
+            "/images/products/bondent/iRoot Pro.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/iRoot Pro.jpg",
+                    "gallery": [
+                        "/images/products/bondent/iRoot Pro.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Cordless endo motor with integrated apex locator",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Endo Motor"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Pro"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2025,
+        "slug": "marc-iii",
+        "name": "Bondent Marc III",
+        "description": "Cordless endo motor, pairs with iRoot Apex",
+        "category": 67,
+        "order": 4,
+        "sku": "BON-MARCIII",
+        "defaultImage": "/images/products/bondent/Marc III.jpg",
+        "gallery": [
+            "/images/products/bondent/Marc III.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Marc III.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Marc III.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Cordless endo motor, pairs with iRoot Apex",
+                    "secondary": "Manufactured by Bomedent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Endo Motor"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bomedent"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2026,
+        "slug": "stainless-steel-c-files",
+        "name": "Bondent Stainless Steel C Files",
+        "description": "Manual glide path and patency hand files",
+        "category": 68,
+        "order": 1,
+        "sku": "BON-STAINLESSSTEELCFILES",
+        "defaultImage": "/images/products/bondent/Stainless Steel C Files.jpg",
+        "gallery": [
+            "/images/products/bondent/Stainless Steel C Files.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Stainless Steel C Files.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Stainless Steel C Files.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Manual glide path and patency hand files",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Hand Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "ISO 06-15, 19/21/25mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2027,
+        "slug": "stainless-steel-h-files",
+        "name": "Bondent Stainless Steel H Files",
+        "description": "Stainless steel hand files",
+        "category": 68,
+        "order": 2,
+        "sku": "BON-STAINLESSSTEELHFILES",
+        "defaultImage": "/images/products/bondent/Stainless Steel H Files.jpg",
+        "gallery": [
+            "/images/products/bondent/Stainless Steel H Files.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Stainless Steel H Files.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Stainless Steel H Files.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Stainless steel hand files",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Hand Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "#6-80, 21/25/28/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2028,
+        "slug": "stainless-steel-k-files",
+        "name": "Bondent Stainless Steel K Files",
+        "description": "Stainless steel hand files",
+        "category": 68,
+        "order": 3,
+        "sku": "BON-STAINLESSSTEELKFILES",
+        "defaultImage": "/images/products/bondent/Stainless Steel K Files.jpg",
+        "gallery": [
+            "/images/products/bondent/Stainless Steel K Files.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Stainless Steel K Files.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Stainless Steel K Files.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Stainless steel hand files",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Hand Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "#6-80, 21/25/28/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2029,
+        "slug": "stainless-steel-reamers",
+        "name": "Bondent Stainless Steel Reamers",
+        "description": "Triangular cross-section hand reamers",
+        "category": 68,
+        "order": 4,
+        "sku": "BON-STAINLESSSTEELREAMERS",
+        "defaultImage": "/images/products/bondent/Stainless Steel Reamers.jpg",
+        "gallery": [
+            "/images/products/bondent/Stainless Steel Reamers.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Stainless Steel Reamers.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Stainless Steel Reamers.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Triangular cross-section hand reamers",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Hand Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "#6-80, 21/25/28/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2030,
+        "slug": "cc-one-blue",
+        "name": "Bondent CC One Blue",
+        "description": "Single-file reciprocating rotary file",
+        "category": 69,
+        "order": 1,
+        "sku": "BON-CCONEBLUE",
+        "defaultImage": "/images/products/bondent/CC One Blue.jpg",
+        "gallery": [
+            "/images/products/bondent/CC One Blue.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/CC One Blue.jpg",
+                    "gallery": [
+                        "/images/products/bondent/CC One Blue.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Single-file reciprocating rotary file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Reciprocating Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Blue"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Blue nano coating, 21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2031,
+        "slug": "cc-one-plus",
+        "name": "Bondent CC One Plus",
+        "description": "Single-file rotary/reciprocating hybrid file",
+        "category": 69,
+        "order": 2,
+        "sku": "BON-CCONEPLUS",
+        "defaultImage": "/images/products/bondent/CC One Plus.jpg",
+        "gallery": [
+            "/images/products/bondent/CC One Plus.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/CC One Plus.jpg",
+                    "gallery": [
+                        "/images/products/bondent/CC One Plus.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Single-file rotary/reciprocating hybrid file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Reciprocating Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Plus"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "Gold nano coating, 21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2032,
+        "slug": "cc-premium",
+        "name": "Bondent CC Premium",
+        "description": "Multi-file rotary sequence for complex cases",
+        "category": 70,
+        "order": 1,
+        "sku": "BON-CCPREMIUM",
+        "defaultImage": "/images/products/bondent/CC Premium.jpg",
+        "gallery": [
+            "/images/products/bondent/CC Premium.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/CC Premium.jpg",
+                    "gallery": [
+                        "/images/products/bondent/CC Premium.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Multi-file rotary sequence for complex cases",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "5-file sequence, 21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2033,
+        "slug": "cc-premium-v-eu",
+        "name": "Bondent CC Premium V.EU",
+        "description": "European-designed multi-file rotary sequence",
+        "category": 70,
+        "order": 2,
+        "sku": "BON-CCPREMIUMVEU",
+        "defaultImage": "/images/products/bondent/CC Premium V.EU.jpg",
+        "gallery": [
+            "/images/products/bondent/CC Premium V.EU.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/CC Premium V.EU.jpg",
+                    "gallery": [
+                        "/images/products/bondent/CC Premium V.EU.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "European-designed multi-file rotary sequence",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.EU"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2034,
+        "slug": "m3-l-platinum-v-1",
+        "name": "Bondent M3 L Platinum V.1",
+        "description": "M-Wire single-file rotary system",
+        "category": 70,
+        "order": 3,
+        "sku": "BON-M3LPLATINUMV1",
+        "defaultImage": "/images/products/bondent/M3 L Platinum V.1.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 L Platinum V.1.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 L Platinum V.1.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 L Platinum V.1.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "M-Wire single-file rotary system",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.1"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2035,
+        "slug": "m3-l-platinum-v-2",
+        "name": "Bondent M3 L Platinum V.2",
+        "description": "M-Wire multi-file rotary sequence",
+        "category": 70,
+        "order": 4,
+        "sku": "BON-M3LPLATINUMV2",
+        "defaultImage": "/images/products/bondent/M3 L Platinum V.2.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 L Platinum V.2.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 L Platinum V.2.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 L Platinum V.2.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "M-Wire multi-file rotary sequence",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.2"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2036,
+        "slug": "m3-pro-gold-v-1",
+        "name": "Bondent M3 Pro Gold V.1",
+        "description": "Gold CM alloy rotary file, classic sequence",
+        "category": 70,
+        "order": 5,
+        "sku": "BON-M3PROGOLDV1",
+        "defaultImage": "/images/products/bondent/M3 Pro Gold V.1.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Pro Gold V.1.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Pro Gold V.1.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Pro Gold V.1.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Gold CM alloy rotary file, classic sequence",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.1 (classic)"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2037,
+        "slug": "m3-pro-gold-v-2",
+        "name": "Bondent M3 Pro Gold V.2",
+        "description": "Gold CM alloy rotary file, 2017 sequence",
+        "category": 70,
+        "order": 6,
+        "sku": "BON-M3PROGOLDV2",
+        "defaultImage": "/images/products/bondent/M3 Pro Gold V.2.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Pro Gold V.2.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Pro Gold V.2.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Pro Gold V.2.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Gold CM alloy rotary file, 2017 sequence",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.2 (2017)"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2038,
+        "slug": "m3-pro-gold-v-3",
+        "name": "Bondent M3 Pro Gold V.3",
+        "description": "Gold CM alloy rotary file, 2018 sequence",
+        "category": 70,
+        "order": 7,
+        "sku": "BON-M3PROGOLDV3",
+        "defaultImage": "/images/products/bondent/M3 Pro Gold V.3.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Pro Gold V.3.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Pro Gold V.3.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Pro Gold V.3.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Gold CM alloy rotary file, 2018 sequence",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.3 (2018)"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2039,
+        "slug": "platinum-v-eu",
+        "name": "Bondent Platinum V.EU",
+        "description": "European-designed rotary file with S cross-section",
+        "category": 70,
+        "order": 8,
+        "sku": "BON-PLATINUMVEU",
+        "defaultImage": "/images/products/bondent/Platinum V.EU.jpg",
+        "gallery": [
+            "/images/products/bondent/Platinum V.EU.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Platinum V.EU.jpg",
+                    "gallery": [
+                        "/images/products/bondent/Platinum V.EU.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "European-designed rotary file with S cross-section",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Rotary Files"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "V.EU"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2040,
+        "slug": "m3-immature-blue",
+        "name": "Bondent M3 Immature Blue",
+        "description": "Rotary file for immature/deciduous teeth",
+        "category": 71,
+        "order": 1,
+        "sku": "BON-M3IMMATUREBLUE",
+        "defaultImage": "/images/products/bondent/M3 Immature Blue.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Immature Blue.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Immature Blue.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Immature Blue.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Rotary file for immature/deciduous teeth",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Blue"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "ISO 20-45, Taper 04/06, 21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2041,
+        "slug": "m3-opener",
+        "name": "Bondent M3 Opener",
+        "description": "Coronal orifice opener file",
+        "category": 71,
+        "order": 2,
+        "sku": "BON-M3OPENER",
+        "defaultImage": "/images/products/bondent/M3 Opener.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Opener.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Opener.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Opener.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Coronal orifice opener file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2042,
+        "slug": "m3-path",
+        "name": "Bondent M3 Path",
+        "description": "Glide path preparation file",
+        "category": 71,
+        "order": 3,
+        "sku": "BON-M3PATH",
+        "defaultImage": "/images/products/bondent/M3 Path.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Path.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Path.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Path.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Glide path preparation file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2043,
+        "slug": "m3-rt",
+        "name": "Bondent M3 RT",
+        "description": "Gutta-percha removal retreatment file",
+        "category": 71,
+        "order": 4,
+        "sku": "BON-M3RT",
+        "defaultImage": "/images/products/bondent/M3 RT.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 RT.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 RT.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 RT.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Gutta-percha removal retreatment file",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Retreatment"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2044,
+        "slug": "m3-safe-opener",
+        "name": "Bondent M3 Safe Opener",
+        "description": "Flat-side coronal opener with reduced screw-in effect",
+        "category": 71,
+        "order": 5,
+        "sku": "BON-M3SAFEOPENER",
+        "defaultImage": "/images/products/bondent/M3 Safe Opener.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Safe Opener.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Safe Opener.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Safe Opener.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Flat-side coronal opener with reduced screw-in effect",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Safe"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2045,
+        "slug": "m3-safe-path",
+        "name": "Bondent M3 Safe Path",
+        "description": "Glide path file with reduced screw-in effect",
+        "category": 71,
+        "order": 6,
+        "sku": "BON-M3SAFEPATH",
+        "defaultImage": "/images/products/bondent/M3 Safe Path.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 Safe Path.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 Safe Path.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 Safe Path.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Glide path file with reduced screw-in effect",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "Safe"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "#10/13/16vt, 21/25/31mm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2046,
+        "slug": "m3-t",
+        "name": "Bondent M3 T",
+        "description": "Pre-bent retreatment taper files",
+        "category": 71,
+        "order": 7,
+        "sku": "BON-M3T",
+        "defaultImage": "/images/products/bondent/M3 T.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 T.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 T.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 T.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Pre-bent retreatment taper files",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "T"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "10/04-30/09"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2047,
+        "slug": "m3-tp",
+        "name": "Bondent M3 TP",
+        "description": "Apical enlargement files",
+        "category": 71,
+        "order": 8,
+        "sku": "BON-M3TP",
+        "defaultImage": "/images/products/bondent/M3 TP.jpg",
+        "gallery": [
+            "/images/products/bondent/M3 TP.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/M3 TP.jpg",
+                    "gallery": [
+                        "/images/products/bondent/M3 TP.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Apical enlargement files",
+                    "secondary": "Manufactured by UDG — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "Preparation > Special Function NiTi"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "UDG"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "TP"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "30/02-60/02"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2055,
+        "slug": "bondent-cbct-1030-pro",
+        "name": "Bondent CBCT-1030 Pro",
+        "description": "AI-powered CBCT, panoramic and cephalometric imaging system",
+        "category": 78,
+        "order": 1,
+        "sku": "BON-BONDENTCBCT1030PRO",
+        "defaultImage": "/images/products/bondent/Bondent CBCT-1030 Pro.png",
+        "gallery": [
+            "/images/products/bondent/Bondent CBCT-1030 Pro.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Bondent CBCT-1030 Pro.png",
+                    "gallery": [
+                        "/images/products/bondent/Bondent CBCT-1030 Pro.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "AI-powered CBCT, panoramic and cephalometric imaging system",
+                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "CBCT Systems"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bondent"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "FOV 5x5 to 16x18cm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2056,
+        "slug": "bondent-cbct-1030-pro-2-in-1",
+        "name": "Bondent CBCT-1030 Pro (2-in-1)",
+        "description": "All-in-one CBCT, panoramic and cephalometric imaging system",
+        "category": 78,
+        "order": 2,
+        "sku": "BON-BONDENTCBCT1030PRO2IN1",
+        "defaultImage": "/images/products/bondent/Bondent CBCT-1030 Pro (2-in-1).png",
+        "gallery": [
+            "/images/products/bondent/Bondent CBCT-1030 Pro (2-in-1).png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/Bondent CBCT-1030 Pro (2-in-1).png",
+                    "gallery": [
+                        "/images/products/bondent/Bondent CBCT-1030 Pro (2-in-1).png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "All-in-one CBCT, panoramic and cephalometric imaging system",
+                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "CBCT Systems"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bondent"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "2-in-1"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "FOV 5x5 to 16x18cm"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
+        ]
+    },
+    {
+        "id": 2057,
+        "slug": "cbct-1020ms",
+        "name": "Bondent CBCT 1020MS",
+        "description": "3D CBCT, panoramic and cephalometric imaging system",
+        "category": 78,
+        "order": 3,
+        "sku": "BON-CBCT1020MS",
+        "defaultImage": "/images/products/bondent/CBCT 1020MS.png",
+        "gallery": [
+            "/images/products/bondent/CBCT 1020MS.png"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/bondent/CBCT 1020MS.png",
+                    "gallery": [
+                        "/images/products/bondent/CBCT 1020MS.png"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "3D CBCT, panoramic and cephalometric imaging system",
+                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Category",
+                            "value": "CBCT Systems"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bondent"
+                        },
+                        {
+                            "label": "Variant",
+                            "value": "1020MS"
+                        },
+                        {
+                            "label": "Specifications",
+                            "value": "FOV 18x10cm, 10-inch touch console"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Bondent Group"
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            }
         ]
     }
 ]
