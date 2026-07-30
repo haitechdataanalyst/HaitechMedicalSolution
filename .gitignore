@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.github/
+
+# one-off migration run artifacts
+/scripts/.cloudinary-upload-map.json

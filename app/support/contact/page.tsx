@@ -20,13 +20,13 @@ const contactMethods = [
         title: "Call Us",
         value: siteConfig.company.phone,
         href: `tel:${siteConfig.company.phone.replace(/\s/g, "")}`,
-        description: "Mon–Fri 10am–6pm IST",
+        description: "Mon–Fri, 10am–6pm IST",
     },
     {
         id: "hours",
         icon: Clock,
         title: "Business Hours",
-        value: "Mon – Fri: 10:00 AM – 6:00 PM",
+        value: "Mon–Fri, 10am–6pm",
         description: "Indian Standard Time",
     },
     {

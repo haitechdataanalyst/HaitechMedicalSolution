@@ -26,6 +26,11 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "lh3.googleusercontent.com",
             },
+            {
+                // Cloudinary-hosted product media
+                protocol: "https",
+                hostname: "res.cloudinary.com",
+            },
         ],
     },
 

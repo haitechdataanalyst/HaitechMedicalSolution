@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { Heart, Truck, ShieldCheck, ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Product } from "@/types";
-import { cn, formatPrice } from "@/lib/utils";
-import { detectBrand } from "@/lib/brand";
-import { useWishlist } from "@/components/cart/WishlistProvider";
+import ProductCard from "@/components/products/ProductCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { Carousel } from "@/components/ui";
 import type { CSSProperties } from "react";
 
 interface ProductWithPath extends Product {
@@ -19,97 +16,8 @@ interface TrendingProductsProps {
     products: ProductWithPath[];
 }
 
-function TrendingCard({ product }: { product: ProductWithPath }) {
-    const image =
-        product.defaultImage ||
-        product.variants?.[0]?.image ||
-        product.gallery?.[0] ||
-        "/images/placeholder.jpg";
-
-    const brand = detectBrand(product.sku);
-    const { toggle, isWished } = useWishlist();
-    const wished = isWished(String(product.id));
-
-    return (
-        <Link
-            href={product.path}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-colors duration-200 hover:border-neutral-200 active:bg-neutral-50"
-        >
-            {/* Image zone */}
-            <div className="relative aspect-square overflow-hidden bg-neutral-50">
-                <Image
-                    src={image}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 165px, (max-width: 1024px) 33vw, 220px"
-                />
-
-                {/* Brand chip */}
-                <span className={cn("absolute left-2 top-2 rounded-full border px-2 py-0.5 text-xs font-bold tracking-wide", brand.cls)}>
-                    {brand.name}
-                </span>
-
-                {/* Wishlist */}
-                <button
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(String(product.id)); }}
-                    aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}
-                    className={cn(
-                        "absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full border shadow-sm transition-all duration-150",
-                        wished
-                            ? "border-rose-200 bg-rose-50 text-rose-500"
-                            : "border-neutral-200 bg-white/90 text-neutral-300 opacity-0 group-hover:opacity-100 hover:border-rose-200 hover:text-rose-400"
-                    )}
-                >
-                    <Heart className={cn("h-3.5 w-3.5 transition-all", wished && "fill-current text-rose-500")} />
-                </button>
-            </div>
-
-            {/* Info zone */}
-            <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
-                {COMMERCE_ENABLED && (
-                    <div className="mb-1 leading-none">
-                        {product.basePrice ? (
-                            <>
-                                <span className="text-[17px] font-bold tracking-tight text-neutral-900">
-                                    {formatPrice(product.basePrice, product.currency ?? "INR")}
-                                </span>
-                                <span className="ml-1.5 text-[10px] font-normal text-neutral-400">incl. GST</span>
-                            </>
-                        ) : (
-                            <span className="text-xs font-medium italic text-neutral-400">Price on request</span>
-                        )}
-                    </div>
-                )}
-
-                <h3 className="mb-2.5 mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-neutral-700">
-                    {product.name}
-                </h3>
-
-                <div className="mt-auto space-y-2.5">
-                    <div className="flex items-center gap-3 text-[10px] text-neutral-400">
-                        <span className="flex items-center gap-1">
-                            <Truck className="h-2.5 w-2.5 text-emerald-500" />
-                            Free Delivery
-                        </span>
-                        <span className="flex items-center gap-1">
-                            <ShieldCheck className="h-2.5 w-2.5 text-primary-500" />
-                            Authorized
-                        </span>
-                    </div>
-
-                    <div className="flex items-center justify-between border-t border-neutral-100 pt-2">
-                        <span className="text-[11px] font-semibold text-neutral-400 transition-colors duration-150 group-hover:text-primary-600">
-                            View Details
-                        </span>
-                        <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neutral-100 text-neutral-400 transition-colors duration-150 group-hover:bg-primary-500 group-hover:text-white">
-                            <ArrowRight className="h-3 w-3" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Link>
-    );
+function productImage(product: ProductWithPath) {
+    return product.defaultImage || product.variants?.[0]?.image || product.gallery?.[0];
 }
 
 export default function TrendingProducts({ products }: TrendingProductsProps) {
@@ -138,18 +46,23 @@ export default function TrendingProducts({ products }: TrendingProductsProps) {
                 >
                     {items.map((product) => (
                         <div key={`mob-${product.slug}`} className="w-[160px] flex-none">
-                            <TrendingCard product={product} />
+                            <ProductCard entity={product} href={product.path} image={productImage(product)} />
                         </div>
                     ))}
                 </div>
 
-                {/* Tablet+: grid */}
-                <div className="hidden grid-cols-3 gap-3 md:grid md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-                    {items.map((product, i) => (
-                        <ScrollReveal key={product.slug} variant="up" delay={Math.min(i, 4) * 65} threshold={0.05}>
-                            <TrendingCard product={product} />
-                        </ScrollReveal>
-                    ))}
+                {/* Tablet+: arrow-nav shelf */}
+                <div className="hidden md:block">
+                    <Carousel
+                        showDots={false}
+                        loop={false}
+                        arrowSize="sm"
+                        responsive={{ 0: { slidesToShow: 3, gap: 16 }, 1024: { slidesToShow: 4, gap: 16 }, 1280: { slidesToShow: 5, gap: 16 } }}
+                    >
+                        {items.map((product) => (
+                            <ProductCard key={product.slug} entity={product} href={product.path} image={productImage(product)} />
+                        ))}
+                    </Carousel>
                 </div>
             </div>
         </section>

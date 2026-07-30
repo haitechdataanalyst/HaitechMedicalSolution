@@ -12,6 +12,8 @@ const pgClient = postgres({
 	database: config.POSTGRES.DB,
 	user: config.POSTGRES.USER,
 	password: config.POSTGRES.PASS,
+	// Hosted providers (e.g. Supabase) require SSL; local Postgres doesn't.
+	ssl: config.POSTGRES.SSL ? 'require' : false,
 	// Connection pool configuration
 	max: 20, // Maximum pool size
 	idle_timeout: 30, // Close idle connections after 30 seconds

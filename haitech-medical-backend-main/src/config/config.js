@@ -37,6 +37,7 @@ const config = {
 		USER: value.POSTGRES_USER,
 		PASS: value.POSTGRES_PASS,
 		DB: value.POSTGRES_DB,
+		SSL: value.POSTGRES_SSL,
 	},
 	FRONTEND_URL: value.FRONTEND_URL || 'http://localhost:3000',
 	RAZORPAY: {

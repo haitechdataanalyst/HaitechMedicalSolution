@@ -13,7 +13,8 @@
                 { "label": "Salli", "href": "/product-category/salli" },
                 { "label": "Medesy", "href": "/our-instruments" },
                 { "label": "Almadent", "href": "/product-category/almadent" },
-                { "label": "Strauss", "href": "/product-category/strauss" }
+                { "label": "Strauss", "href": "/product-category/strauss" },
+                { "label": "Bondent", "href": "/product-category/bondent" }
             ]
         },
         { "label": "ABOUT US", "href": "/about" },
@@ -28,7 +29,8 @@
                     { "label": "Salli", "href": "/product-category/salli" },
                     { "label": "Medesy", "href": "/product-category/medesy" },
                     { "label": "Almadent", "href": "/product-category/almadent" },
-                    { "label": "Strauss", "href": "/product-category/strauss" }
+                    { "label": "Strauss", "href": "/product-category/strauss" },
+                    { "label": "Bondent", "href": "/product-category/bondent" }
                 ]
             },
             {

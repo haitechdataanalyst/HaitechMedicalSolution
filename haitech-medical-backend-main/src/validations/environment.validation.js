@@ -30,6 +30,7 @@ export const envVarSchema = Joi.object().keys({
 	POSTGRES_USER: Joi.string().default('postgres').required(),
 	POSTGRES_PASS: Joi.string().allow('').optional(),
 	POSTGRES_DB: Joi.string().default('postgres').required(),
+	POSTGRES_SSL: Joi.boolean().default(false).description('Set true for hosted Postgres providers (e.g. Supabase) that require SSL'),
 
 	FRONTEND_URL: Joi.string().uri().optional().description('Frontend base URL used in email links'),
 

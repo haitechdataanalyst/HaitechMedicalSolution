@@ -138,6 +138,7 @@ export interface Product {
     frameVariants?: FrameVariantConfig; // New structured frame variants
     defaultImage?: string;
     gallery?: string[];
+    videos?: string[]; // Schema only for now — no PDP rendering yet
     catalogueFile?: string; // Path to product catalogue PDF for download
     contentBlocks: ContentBlock[];
     relatedProducts?: number[];
@@ -164,6 +165,7 @@ export interface HeroBlock {
     data: {
         primaryImage?: string;
         gallery?: string[];
+        videos?: string[]; // Schema only for now — no rendering yet, see HeroBlock.tsx
         useVariantImages?: boolean;
     };
 }
@@ -300,6 +302,7 @@ export interface GalleryBlock {
     type: "gallery";
     data: {
         images: string[];
+        videos?: string[]; // Schema only for now — no rendering yet, see GalleryBlock.tsx
         layout?: "grid" | "carousel";
     };
 }

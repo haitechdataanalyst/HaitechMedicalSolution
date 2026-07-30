@@ -3,73 +3,221 @@
         {
             "id": "blues",
             "name": "Blues",
-            "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Black.jpg",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308513/haitech/images/products/admetec/our-frames/blues-frame/blues-black.jpg",
             "priceModifier": 0,
             "colors": [
-                { "id": "black", "name": "Black", "hex": "#000000", "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Black.jpg" },
-                { "id": "blue", "name": "Blue", "hex": "#363966", "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Blue.jpg" },
-                { "id": "bronze", "name": "Bronze", "hex": "#a16207", "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Bronze.jpg" },
-                { "id": "pink", "name": "Pink", "hex": "#ec4899", "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Pink.jpg" },
-                { "id": "purple-grey", "name": "Purple Grey", "hex": ["#776094", "#87847f"], "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Frame---Purple---Grey.jpg" },
-                { "id": "rose-gold", "name": "Rose Gold", "hex": "#d9ad8a", "image": "/images/products/admetec/Our-Frames/Blues-Frame/Blues-Frame---Rose-Gold.jpg" }
+                {
+                    "id": "black",
+                    "name": "Black",
+                    "hex": "#000000",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308513/haitech/images/products/admetec/our-frames/blues-frame/blues-black.jpg"
+                },
+                {
+                    "id": "blue",
+                    "name": "Blue",
+                    "hex": "#363966",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308513/haitech/images/products/admetec/our-frames/blues-frame/blues-blue.jpg"
+                },
+                {
+                    "id": "bronze",
+                    "name": "Bronze",
+                    "hex": "#a16207",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308514/haitech/images/products/admetec/our-frames/blues-frame/blues-bronze.jpg"
+                },
+                {
+                    "id": "pink",
+                    "name": "Pink",
+                    "hex": "#ec4899",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308517/haitech/images/products/admetec/our-frames/blues-frame/blues-pink.jpg"
+                },
+                {
+                    "id": "purple-grey",
+                    "name": "Purple Grey",
+                    "hex": [
+                        "#776094",
+                        "#87847f"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308515/haitech/images/products/admetec/our-frames/blues-frame/blues-frame-purple-grey.jpg"
+                },
+                {
+                    "id": "rose-gold",
+                    "name": "Rose Gold",
+                    "hex": "#d9ad8a",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308516/haitech/images/products/admetec/our-frames/blues-frame/blues-frame-rose-gold.jpg"
+                }
             ]
         },
         {
             "id": "indie",
             "name": "Indie",
-            "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Champagne.jpg",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308518/haitech/images/products/admetec/our-frames/indie-frame/indie-champagne.jpg",
             "priceModifier": 50,
             "colors": [
-                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Black.jpg" },
-                { "id": "champagne", "name": "Champagne", "hex": "#C1B0AD", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Champagne.jpg" },
-                { "id": "midnight-blue", "name": "Midnight Blue", "hex": "#2C2F50", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Midnight-Blue.jpg" },
-                { "id": "orange-lava", "name": "Orange Lava", "hex": "#AF3936", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Orange-Lava.jpg" },
-                { "id": "green", "name": "Green", "hex": "#548558", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Frame---Green.jpg" },
-                { "id": "turquoise", "name": "Turquoise", "hex": "#48899b", "image": "/images/products/admetec/Our-Frames/Indie-Frame/Indie-Frame---Turquoise.jpg" }
+                {
+                    "id": "black",
+                    "name": "Black",
+                    "hex": "#1a1a1a",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308517/haitech/images/products/admetec/our-frames/indie-frame/indie-black.jpg"
+                },
+                {
+                    "id": "champagne",
+                    "name": "Champagne",
+                    "hex": "#C1B0AD",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308518/haitech/images/products/admetec/our-frames/indie-frame/indie-champagne.jpg"
+                },
+                {
+                    "id": "midnight-blue",
+                    "name": "Midnight Blue",
+                    "hex": "#2C2F50",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308521/haitech/images/products/admetec/our-frames/indie-frame/indie-midnight-blue.jpg"
+                },
+                {
+                    "id": "orange-lava",
+                    "name": "Orange Lava",
+                    "hex": "#AF3936",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308522/haitech/images/products/admetec/our-frames/indie-frame/indie-orange-lava.jpg"
+                },
+                {
+                    "id": "green",
+                    "name": "Green",
+                    "hex": "#548558",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308519/haitech/images/products/admetec/our-frames/indie-frame/indie-frame-green.jpg"
+                },
+                {
+                    "id": "turquoise",
+                    "name": "Turquoise",
+                    "hex": "#48899b",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308520/haitech/images/products/admetec/our-frames/indie-frame/indie-frame-turquoise.jpg"
+                }
             ]
         },
         {
             "id": "jazz",
             "name": "Jazz",
-            "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz-Frame---BlueBlack-Color.jpg",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308526/haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-blueblack-color.jpg",
             "priceModifier": 100,
             "colors": [
-                { "id": "blue-black", "name": "Blue & Black", "hex": ["#476DA5", "#000000"], "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz-Frame---BlueBlack-Color.jpg" },
-                { "id": "orange-black", "name": "Orange & Black", "hex": ["#E57F3D", "#000000"], "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz-Frame---OrangeBlack-Color.jpg" },
-                { "id": "red-black", "name": "Red & Black", "hex": ["#B44A4D", "#000000"], "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz-Frame---RedBlack-Color.jpg" },
-                { "id": "green-black", "name": "Green & Black", "hex": ["#4d885a", "#282a29"], "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz---Green---Black.jpg" },
+                {
+                    "id": "blue-black",
+                    "name": "Blue & Black",
+                    "hex": [
+                        "#476DA5",
+                        "#000000"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308526/haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-blueblack-color.jpg"
+                },
+                {
+                    "id": "orange-black",
+                    "name": "Orange & Black",
+                    "hex": [
+                        "#E57F3D",
+                        "#000000"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308528/haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-orangeblack-color.jpg"
+                },
+                {
+                    "id": "red-black",
+                    "name": "Red & Black",
+                    "hex": [
+                        "#B44A4D",
+                        "#000000"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308529/haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-redblack-color.jpg"
+                },
+                {
+                    "id": "green-black",
+                    "name": "Green & Black",
+                    "hex": [
+                        "#4d885a",
+                        "#282a29"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308523/haitech/images/products/admetec/our-frames/jazz-frame/jazz-green-black.jpg"
+                },
                 {
                     "id": "turquoise-rose-gold",
                     "name": "Turquoise & Rose Gold",
-                    "hex": ["#4e8999", "#d5a986"],
-                    "image": "/images/products/admetec/Our-Frames/Jazz-Frame/Jazz---Turquoise---Rose-Gold.jpg"
+                    "hex": [
+                        "#4e8999",
+                        "#d5a986"
+                    ],
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308524/haitech/images/products/admetec/our-frames/jazz-frame/jazz-turquoise-rose-gold.jpg"
                 }
             ]
         },
         {
             "id": "soul",
             "name": "Soul",
-            "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Black.jpg",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308532/haitech/images/products/admetec/our-frames/soul-frame/soul-black.jpg",
             "priceModifier": 100,
             "colors": [
-                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Black.jpg" },
-                { "id": "bordo", "name": "Bordo", "hex": "#77374B", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Bordo.jpg" },
-                { "id": "brown", "name": "Brown", "hex": "#4A3E40", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Brown.jpg" },
-                { "id": "pink", "name": "Pink", "hex": "#AA5976", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Pink.jpg" },
-                { "id": "turquoise", "name": "Turquoise", "hex": "#48899b", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Frame---Turquoise.jpg" },
-                { "id": "white-snow", "name": "White Snow", "hex": "#f8fafc", "image": "/images/products/admetec/Our-Frames/Soul-Frame/Soul-Frame---White-Snow.jpg" }
+                {
+                    "id": "black",
+                    "name": "Black",
+                    "hex": "#1a1a1a",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308532/haitech/images/products/admetec/our-frames/soul-frame/soul-black.jpg"
+                },
+                {
+                    "id": "bordo",
+                    "name": "Bordo",
+                    "hex": "#77374B",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308533/haitech/images/products/admetec/our-frames/soul-frame/soul-bordo.jpg"
+                },
+                {
+                    "id": "brown",
+                    "name": "Brown",
+                    "hex": "#4A3E40",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308534/haitech/images/products/admetec/our-frames/soul-frame/soul-brown.jpg"
+                },
+                {
+                    "id": "pink",
+                    "name": "Pink",
+                    "hex": "#AA5976",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308537/haitech/images/products/admetec/our-frames/soul-frame/soul-pink.jpg"
+                },
+                {
+                    "id": "turquoise",
+                    "name": "Turquoise",
+                    "hex": "#48899b",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308535/haitech/images/products/admetec/our-frames/soul-frame/soul-frame-turquoise.jpg"
+                },
+                {
+                    "id": "white-snow",
+                    "name": "White Snow",
+                    "hex": "#f8fafc",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308536/haitech/images/products/admetec/our-frames/soul-frame/soul-frame-white-snow.jpg"
+                }
             ]
         },
         {
             "id": "progear",
             "name": "Progear",
-            "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-black-color.webp",
             "priceModifier": 75,
             "colors": [
-                { "id": "black", "name": "Black", "hex": "#1a1a1a", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Black-Color.webp" },
-                { "id": "green", "name": "Green", "hex": "#6A7D79", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-Green-Color.webp" },
-                { "id": "red-black", "name": "Red & Black", "hex": "#524A42", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-RedBlack-Color.webp" },
-                { "id": "white-blue", "name": "White & Blue", "hex": "#E2DFE2", "image": "/images/products/admetec/Our-Frames/Progear-Frames/Progear-WhiteBlue-Color.webp" }
+                {
+                    "id": "black",
+                    "name": "Black",
+                    "hex": "#1a1a1a",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-black-color.webp"
+                },
+                {
+                    "id": "green",
+                    "name": "Green",
+                    "hex": "#6A7D79",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-green-color.webp"
+                },
+                {
+                    "id": "red-black",
+                    "name": "Red & Black",
+                    "hex": "#524A42",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308531/haitech/images/products/admetec/our-frames/progear-frames/progear-redblack-color.webp"
+                },
+                {
+                    "id": "white-blue",
+                    "name": "White & Blue",
+                    "hex": "#E2DFE2",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308532/haitech/images/products/admetec/our-frames/progear-frames/progear-whiteblue-color.webp"
+                }
             ]
         }
     ]

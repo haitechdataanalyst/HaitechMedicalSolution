@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { pgTable, uuid, varchar, timestamp, boolean, integer, index, uniqueIndex, text, smallint, decimal, date } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, varchar, timestamp, boolean, integer, index, uniqueIndex, text, smallint, decimal, date, jsonb } from 'drizzle-orm/pg-core';
 import { authProviders } from '../constants/index.js';
 
 export const users = pgTable('users', {
@@ -297,7 +297,7 @@ export const brands = pgTable(
 		slug: varchar('slug', { length: 100 }).notNull().unique(),
 		name: varchar('name', { length: 100 }).notNull(),
 		description: text('description'),
-		image: varchar('image', { length: 500 }),
+		image: text('image'), // Cloudinary URL — see products.defaultImage comment
 		sortOrder: integer('sort_order').default(0).notNull(),
 		active: boolean('active').default(true).notNull(),
 		createdAt: timestamp('created_at').defaultNow().notNull(),
@@ -320,7 +320,7 @@ export const categories = pgTable(
 		name: varchar('name', { length: 100 }).notNull(),
 		type: varchar('type', { length: 30 }).default('category').notNull(),
 		description: text('description'),
-		image: varchar('image', { length: 500 }),
+		image: text('image'), // Cloudinary URL — see products.defaultImage comment
 		parentId: integer('parent_id'),
 		brandId: integer('brand_id').references(() => brands.id, { onDelete: 'set null' }),
 		sortOrder: integer('sort_order').default(0).notNull(),
@@ -354,7 +354,10 @@ export const products = pgTable(
 		currency: varchar('currency', { length: 10 }).default('INR').notNull(),
 		hasVariants: boolean('has_variants').default(false).notNull(),
 		variantType: varchar('variant_type', { length: 50 }),
-		defaultImage: varchar('default_image', { length: 500 }),
+		// text, not varchar(500): Cloudinary CDN URLs run longer than the old local paths
+		defaultImage: text('default_image'),
+		gallery: jsonb('gallery'), // string[] of Cloudinary URLs — mirrors frontend Product.gallery
+		videos: jsonb('videos'), // string[] — schema only for now, mirrors frontend Product.videos
 		catalogueFile: varchar('catalogue_file', { length: 500 }),
 		colorCode: varchar('color_code', { length: 20 }),
 		sortOrder: integer('sort_order').default(0).notNull(),

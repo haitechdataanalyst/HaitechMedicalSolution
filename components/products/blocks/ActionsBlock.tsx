@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import Image from "next/image";
 import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory, SpecificationsBlock } from "@/types";
 import { useCart } from "@/components/cart/CartProvider";
 import { useWishlist } from "@/components/cart/WishlistProvider";
@@ -39,11 +40,29 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     const [boxEngravingText, setBoxEngravingText] = useState("");
     const [quoteModalOpen, setQuoteModalOpen] = useState(false);
     const [salliSelection, setSalliSelection] = useState<SalliSelection>({ piston: null, material: null, seatSize: null, accessoryIds: [] });
+    const [showStickyBar, setShowStickyBar] = useState(false);
+    const primaryActionRef = useRef<HTMLDivElement>(null);
 
     const brandName = detectBrand(product.sku).name;
     // Capital equipment (loupes, dental chairs, saddle chairs) is bought via
     // quote/consultation, not instant checkout — see DESIGN_PRINCIPLES.md.
     const needsQuote = requiresConsultation(brandName);
+    const hasPrimaryAction = data.addToCart && (needsQuote || COMMERCE_ENABLED);
+
+    // Long configurators (Salli piston/upholstery, Admetec frame + prescription
+    // + engraving) push the primary button far down the page — once it's been
+    // scrolled past, a persistent bottom bar keeps it one tap away.
+    useEffect(() => {
+        if (!hasPrimaryAction) return;
+        const el = primaryActionRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => setShowStickyBar(!entry.isIntersecting && entry.boundingClientRect.top < 0),
+            { threshold: 0 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [hasPrimaryAction]);
 
     // Convenience actions (Wishlist, Compare, Share) support research without
     // competing with the primary Quote decision — see DESIGN_PRINCIPLES.md,
@@ -304,7 +323,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                         objective, supporting documentation demoted below,
                         convenience actions kept small so they never compete
                         with the decision the buyer actually needs to make. */}
-                    <div className="flex flex-col gap-3">
+                    <div ref={primaryActionRef} className="flex flex-col gap-3">
                         {needsQuote ? (
                             <>
                                 {/* Primary — the core business objective */}
@@ -418,6 +437,39 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                         : variantSelection.legacyVariant?.name ?? undefined
                 }
             />
+        )}
+
+        {/* Sticky bar — reappears once the primary CTA above has scrolled out
+            of view, so it's always one tap away on long configurator pages.
+            Sits above CompareBar (68px, see FloatingButtons) when that's open. */}
+        {hasPrimaryAction && showStickyBar && (
+            <div
+                className="animate-in slide-in-from-bottom-4 fixed inset-x-0 z-50 border-t border-neutral-200 bg-white/95 shadow-[0_-8px_32px_rgba(0,0,0,0.12)] backdrop-blur-sm duration-200"
+                style={{ bottom: compareAllowed && compareItems.length > 0 ? "68px" : 0 }}
+            >
+                <div className="container flex items-center gap-3 py-2.5" style={{ paddingBottom: "max(0.625rem, env(safe-area-inset-bottom, 0px))" }}>
+                    <div className="relative hidden h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-neutral-100 bg-neutral-50 sm:block">
+                        <Image src={product.defaultImage || product.gallery?.[0] || "/images/placeholder.jpg"} alt={product.name} fill className="object-contain p-1" sizes="44px" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold text-neutral-900">{product.name}</p>
+                        {COMMERCE_ENABLED && product.basePrice && (
+                            <p className="text-xs text-neutral-500">{formatPrice(product.basePrice, product.currency ?? "INR")}</p>
+                        )}
+                    </div>
+                    {needsQuote ? (
+                        <Button onClick={() => setQuoteModalOpen(true)} className="shrink-0 gap-2">
+                            <FileText className="h-4 w-4" />
+                            Request a Quote
+                        </Button>
+                    ) : (
+                        <Button onClick={handleAddToCart} className="shrink-0 gap-2">
+                            <ShoppingCart className="h-4 w-4" />
+                            Add to Cart
+                        </Button>
+                    )}
+                </div>
+            </div>
         )}
 
         </>

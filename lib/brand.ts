@@ -13,6 +13,7 @@ export const BRAND_MAP: Record<string, BrandInfo> = {
     MED: { name: "Medesy",   cls: NEUTRAL_BADGE },
     SAL: { name: "Salli",    cls: NEUTRAL_BADGE },
     ALM: { name: "Almadent", cls: NEUTRAL_BADGE },
+    BON: { name: "Bondent",  cls: NEUTRAL_BADGE },
 };
 
 const STRAUSS: BrandInfo = { name: "Strauss", cls: NEUTRAL_BADGE };

@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, Truck, ShieldCheck, ArrowRight, FileText, GitCompareArrows } from "lucide-react";
+import { Heart, Truck, ShieldCheck, ArrowRight, FileText, GitCompareArrows, Plus } from "lucide-react";
 import { Product, Category, SpecificationsBlock } from "@/types";
 import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand, requiresConsultation } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
+import { useCart } from "@/components/cart/CartProvider";
 import { COMMERCE_ENABLED } from "@/lib/config";
 import { useCompare } from "@/components/compare";
 
@@ -32,11 +33,14 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
     const { add: compareAdd, remove: compareRemove, isAdded: compareIsAdded, items: compareItems } = useCompare();
     const compareAdded = product ? compareIsAdded(String(product.id)) : false;
     const compareFull = compareItems.length >= 3 && !compareAdded;
+    const { addItem } = useCart();
+    const optionsCount = product?.variants?.length || product?.frameVariants?.availableFrames?.length || 0;
+    const quickAddEligible = COMMERCE_ENABLED && !needsQuote && optionsCount <= 1 && !!product?.basePrice;
 
     return (
         <Link
             href={href}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0"
+            className="card card-hover group relative flex flex-col active:translate-y-0"
         >
             {/* Image zone */}
             <div className="relative aspect-square overflow-hidden bg-neutral-50">
@@ -70,6 +74,33 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
                         <Heart className={cn("h-3.5 w-3.5 transition-all", wished && "fill-current text-rose-500")} />
                     </button>
                 )}
+
+                {/* Options / quick-add pill — bottom-right of image */}
+                {optionsCount > 1 ? (
+                    <span className="absolute bottom-2 right-2 rounded-md border border-neutral-200 bg-white/95 px-2 py-1 text-[10px] font-semibold text-neutral-600 shadow-sm">
+                        {optionsCount} Options
+                    </span>
+                ) : quickAddEligible && product ? (
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            addItem({
+                                productId: String(product.id),
+                                productName: product.name,
+                                sku: product.sku,
+                                quantity: 1,
+                                basePrice: product.basePrice,
+                                image: displayImage,
+                            });
+                        }}
+                        aria-label="Add to cart"
+                        className="absolute bottom-2 right-2 flex items-center gap-0.5 rounded-md border border-primary-200 bg-white px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-primary-700 shadow-sm transition-colors hover:bg-primary-500 hover:text-white"
+                    >
+                        <Plus className="h-2.5 w-2.5" />
+                        Add
+                    </button>
+                ) : null}
             </div>
 
             {/* Info zone — reading order: Price → Name → Trust → Action */}

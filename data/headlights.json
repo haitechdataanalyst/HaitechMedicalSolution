@@ -2,7 +2,12 @@
     "intro": {
         "title": "Admetec Lights",
         "description": "Loupes and lights are two elements that make up a single solution and should be considered in conjunction, not as separate products. Matching the best light for your loupes is a key step in the customization process.",
-        "features": ["High-quality, durable LED", "Daylight \"living color\"", "Ergonomic and easy interface", "Anti-curing yellow filter"]
+        "features": [
+            "High-quality, durable LED",
+            "Daylight \"living color\"",
+            "Ergonomic and easy interface",
+            "Anti-curing yellow filter"
+        ]
     },
     "categories": [
         {
@@ -10,21 +15,37 @@
             "name": "Wireless",
             "description": "Powerful lighting. Ultra-lightweight. Wireless.",
             "tagline": "Meet the Butterfly EVO, Admetec's cordless headlight series, featuring two models designed for optimal efficiency.",
-            "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S.webp",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308596/haitech/images/products/admetec/lights/headlights/wireless/butterfly-s.webp",
             "products": [
                 {
                     "id": "butterfly-s-evo",
                     "name": "Butterfly-S EVO",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-S-Evo.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308596/haitech/images/products/admetec/lights/headlights/wireless/butterfly-s-evo.webp",
                     "description": "Butterflu-S™ EVO provides stronger light intensity to enable work with higher magnifications.",
-                    "features": ["Intensity: 55K LUX", "Weight: 24 gr", "Run time: 2 hrs", "Charge time: 1.25 hrs", "Batteries: 3 pcs", "Color temp': 5,750K", "Yellow filter: External"]
+                    "features": [
+                        "Intensity: 55K LUX",
+                        "Weight: 24 gr",
+                        "Run time: 2 hrs",
+                        "Charge time: 1.25 hrs",
+                        "Batteries: 3 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: External"
+                    ]
                 },
                 {
                     "id": "butterfly-evo",
                     "name": "Butterfly EVO",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wireless/Butterfly-Evo.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308595/haitech/images/products/admetec/lights/headlights/wireless/butterfly-evo.webp",
                     "description": "Butterfly™ EVO combines effective lighting in an ultra-lightweight, easy-to-use, wireless configuration",
-                    "features": ["Intensity: 35K LUX", "Weight: 24 gr", "Run time: 2 hrs", "Charge time: 1.25 hrs", "Batteries: 3 pcs", "Color temp': 5,750K", "Yellow filter: External"]
+                    "features": [
+                        "Intensity: 35K LUX",
+                        "Weight: 24 gr",
+                        "Run time: 2 hrs",
+                        "Charge time: 1.25 hrs",
+                        "Batteries: 3 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: External"
+                    ]
                 }
             ]
         },
@@ -33,35 +54,67 @@
             "name": "Wired",
             "description": "Ergonomic, Powerful, Designed for efficiency",
             "tagline": "Introducing Orchid™, Admetec’s wired headlight series, featuring three powerful models. Each Orchid™ model delivers optimal illumination according to your specific needs.",
-            "image": "/images/products/admetec/Lights/HeadLights/Wired/Wired.webp",
+            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308594/haitech/images/products/admetec/lights/headlights/wired/wired.webp",
             "products": [
                 {
                     "id": "orchid-s-headlight",
                     "name": "Orchid-S Headlight",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-S-HeadLight.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308594/haitech/images/products/admetec/lights/headlights/wired/orchid-s-headlight.webp",
                     "description": "Orchid-S™ Provides a higher-intensity light, ideal for surgical procedures and large magnifications.",
-                    "features": ["Intensity: 220K LUX", "Weight: 11 gr", "Run time: 4 hrs", "Charge time: 2.5 hrs", "Batteries: 2 pcs", "Color temp': 5,750K", "Yellow filter: External"]
+                    "features": [
+                        "Intensity: 220K LUX",
+                        "Weight: 11 gr",
+                        "Run time: 4 hrs",
+                        "Charge time: 2.5 hrs",
+                        "Batteries: 2 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: External"
+                    ]
                 },
                 {
                     "id": "orchid-f-headlight",
                     "name": "Orchid-F Headlight",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308592/haitech/images/products/admetec/lights/headlights/wired/orchid-f-headlight.webp",
                     "description": "Orchid-F™ features an integrated yellow filter that prevents composite hardening. The function can be turned on and off as needed",
-                    "features": ["Intensity: 80K LUX", "Weight: 9 gr", "Run time: 6 hrs", "Charge time: 2.5 hrs", "Batteries: 2 pcs", "Color temp': 5,750K", "Yellow filter: Built-in"]
+                    "features": [
+                        "Intensity: 80K LUX",
+                        "Weight: 9 gr",
+                        "Run time: 6 hrs",
+                        "Charge time: 2.5 hrs",
+                        "Batteries: 2 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: Built-in"
+                    ]
                 },
                 {
                     "id": "orchid-headlight",
                     "name": "Orchid Headlight",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-HeadLight.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308593/haitech/images/products/admetec/lights/headlights/wired/orchid-headlight.webp",
                     "description": "The original Orchid™ generates a focused, uniform, and shadow-free round beam for bright white illumination.",
-                    "features": ["Intensity: 80K LUX", "Weight: 9 gr", "Run time: 6 hrs", "Charge time: 2.5 hrs", "Batteries: 2 pcs", "Color temp': 5,750K", "Yellow filter: External"]
+                    "features": [
+                        "Intensity: 80K LUX",
+                        "Weight: 9 gr",
+                        "Run time: 6 hrs",
+                        "Charge time: 2.5 hrs",
+                        "Batteries: 2 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: External"
+                    ]
                 },
                 {
                     "id": "orchid-e-headlight",
                     "name": "Orchid-E Headlight",
-                    "image": "/images/products/admetec/Lights/HeadLights/Wired/Orchid-F-HeadLight.webp",
+                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308592/haitech/images/products/admetec/lights/headlights/wired/orchid-f-headlight.webp",
                     "description": "Orchid-E™ Designed for a high-intensity, narrow light beam. Particularly well suited for large magnifications.",
-                    "features": ["Intensity: 150K LUX", "Weight: 11 gr", "Run time: 6 hrs", "Charge time: 2.5 hrs", "Batteries: 2 pcs", "Color temp': 5,750K", "Yellow filter: Built-in"]
+                    "features": [
+                        "Intensity: 150K LUX",
+                        "Weight: 11 gr",
+                        "Run time: 6 hrs",
+                        "Charge time: 2.5 hrs",
+                        "Batteries: 2 pcs",
+                        "Color temp': 5,750K",
+                        "Yellow filter: Built-in"
+                    ]
                 }
             ]
         }
