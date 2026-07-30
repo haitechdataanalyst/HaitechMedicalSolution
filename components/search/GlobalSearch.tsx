@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { searchCatalog, getTrendingProducts, type SearchResult } from "@/app/actions/search";
 import { cn, formatPrice } from "@/lib/utils";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { shouldShowPrice } from "@/lib/config";
 
 // One consistent treatment for every quick-link category — the icon already
 // differentiates them, so color doesn't need to do that job too.
@@ -217,7 +217,7 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                                             )}
                                         </div>
                                         <p className="line-clamp-2 text-xs font-medium leading-snug text-neutral-700 transition-colors group-hover:text-primary-700">{product.name}</p>
-                                        {COMMERCE_ENABLED && (product.basePrice ? (
+                                        {shouldShowPrice(detectBrandFromPath(product.path)?.label) && (product.basePrice ? (
                                             <p className="mt-0.5 text-xs font-bold text-neutral-900">{formatPrice(product.basePrice, product.currency)}</p>
                                         ) : (
                                             <p className="mt-0.5 text-[11px] text-neutral-400">On request</p>
@@ -294,7 +294,7 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                                                 </div>
                                             </div>
                                             <div className="shrink-0 text-right">
-                                                {COMMERCE_ENABLED && (result.basePrice ? (
+                                                {shouldShowPrice(detectBrandFromPath(result.path)?.label) && (result.basePrice ? (
                                                     <p className="font-bold text-neutral-900">{formatPrice(result.basePrice, result.currency)}</p>
                                                 ) : (
                                                     <p className="text-xs text-neutral-400">On request</p>

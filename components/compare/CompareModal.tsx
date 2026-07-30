@@ -5,7 +5,7 @@ import Link from "next/link";
 import { X, Package2, ExternalLink, GitCompareArrows } from "lucide-react";
 import { useCompare } from "./CompareProvider";
 import { formatPrice } from "@/lib/utils";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { shouldShowPrice } from "@/lib/config";
 
 export function CompareModal() {
     const { items, isOpen, closeModal, remove } = useCompare();
@@ -98,13 +98,13 @@ export function CompareModal() {
                                             )}
 
                                             {/* Price */}
-                                            {COMMERCE_ENABLED && (item.price ? (
+                                            {shouldShowPrice(item.brand) && item.price ? (
                                                 <p className="text-base font-bold text-neutral-900">
                                                     {formatPrice(item.price, item.currency ?? "INR")}
                                                 </p>
                                             ) : (
                                                 <p className="text-xs italic text-neutral-400">Price on request</p>
-                                            ))}
+                                            )}
 
                                             {/* Link */}
                                             <Link

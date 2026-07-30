@@ -7,7 +7,8 @@ import type { CategoryWithPath, ProductWithPath } from "@/components/products";
 import { formatPrice, cn } from "@/lib/utils";
 import { ArrowRight, Search, X, Heart } from "lucide-react";
 import { useWishlist } from "@/components/cart/WishlistProvider";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { shouldShowPrice } from "@/lib/config";
+import { detectBrand } from "@/lib/brand";
 
 interface CategoryPageClientProps {
     initialItems: CategoryWithPath[] | ProductWithPath[];
@@ -57,6 +58,7 @@ function CategoryCard({ category }: { category: CategoryWithPath }) {
 function ProductCard({ product }: { product: ProductWithPath }) {
     const { toggle, isWished } = useWishlist();
     const wished = isWished(String(product.id));
+    const brand = detectBrand(product.sku);
     const image =
         product.defaultImage ||
         product.variants?.[0]?.image ||
@@ -90,17 +92,21 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 </button>
             </div>
             <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
+                <h3 className="mb-1 line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">
                     {product.name}
                 </h3>
-                {COMMERCE_ENABLED && (product.basePrice ? (
+                {/* Fixed height (2 lines at leading-relaxed) so cards stay aligned in a row regardless of copy length */}
+                <p className="mb-2 line-clamp-2 h-[3.25em] text-[11px] leading-relaxed text-neutral-500">
+                    {product.description}
+                </p>
+                {shouldShowPrice(brand.name) && (product.basePrice ? (
                     <p className="mb-2 text-base font-bold text-neutral-900">
                         {formatPrice(product.basePrice, product.currency ?? "INR")}
                     </p>
                 ) : (
                     <p className="mb-2 text-xs text-neutral-400">Price on request</p>
                 ))}
-                <div className="flex items-center justify-between pt-1">
+                <div className="mt-auto flex items-center justify-between pt-1">
                     <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
                         View
@@ -144,6 +150,7 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
     const priceMin = allPrices.length > 0 ? Math.min(...allPrices) : 0;
     const priceMax = allPrices.length > 0 ? Math.max(...allPrices) : 0;
     const hasPriceRange = priceMax > priceMin && allPrices.length > 1;
+    const pageShowsPrice = products.some((p) => shouldShowPrice(detectBrand(p.sku).name));
 
     const displayItems = useMemo(() => {
         const q = searchQuery.toLowerCase().trim();
@@ -172,7 +179,7 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
     const sortOptions: { value: SortOption; label: string }[] = [
         { value: "default", label: "Featured" },
         { value: "name-asc", label: "Name: A–Z" },
-        ...(COMMERCE_ENABLED && initialType === "products"
+        ...(pageShowsPrice && initialType === "products"
             ? [
                   { value: "price-asc" as SortOption, label: "Price: Low → High" },
                   { value: "price-desc" as SortOption, label: "Price: High → Low" },

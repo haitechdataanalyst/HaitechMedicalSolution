@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import { formatPrice } from "@/lib/utils";
 import { detectBrand, requiresConsultation } from "@/lib/brand";
 import ProductQuoteModal from "./ProductQuoteModal";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { COMMERCE_ENABLED, shouldShowPrice } from "@/lib/config";
 
 interface ActionsBlockProps {
     data: ActionsBlockType["data"];
@@ -230,7 +230,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
             {data.addToCart && (
                 <>
                     {/* Price display */}
-                    {COMMERCE_ENABLED && (
+                    {shouldShowPrice(brandName) && (
                         <div className="border-b border-neutral-100 pb-4">
                             {product.basePrice ? (
                                 <div className="flex flex-wrap items-end gap-2">
@@ -453,7 +453,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                     </div>
                     <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-semibold text-neutral-900">{product.name}</p>
-                        {COMMERCE_ENABLED && product.basePrice && (
+                        {shouldShowPrice(brandName) && product.basePrice && (
                             <p className="text-xs text-neutral-500">{formatPrice(product.basePrice, product.currency ?? "INR")}</p>
                         )}
                     </div>

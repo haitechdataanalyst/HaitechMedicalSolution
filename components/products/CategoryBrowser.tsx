@@ -7,7 +7,8 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ArrowUpDown, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
 import { formatPrice, cn } from "@/lib/utils";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { shouldShowPrice } from "@/lib/config";
+import { detectBrand } from "@/lib/brand";
 
 export interface CategoryWithPath extends Category {
     path?: string;
@@ -126,6 +127,7 @@ function ProductCard({ product }: { product: ProductWithPath }) {
         (product.gallery && product.gallery.length > 0 ? product.gallery[0] : "") ||
         PLACEHOLDER;
     const path = product.path || `/product/${product.slug}`;
+    const showPrice = shouldShowPrice(detectBrand(product.sku).name);
 
     return (
         <>
@@ -147,7 +149,7 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                     <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
                         {product.name}
                     </h3>
-                    {COMMERCE_ENABLED && (product.basePrice ? (
+                    {showPrice && (product.basePrice ? (
                         <span className="mb-2 text-base font-bold text-neutral-900">
                             {formatPrice(product.basePrice, product.currency ?? "INR")}
                         </span>
@@ -180,7 +182,7 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 </div>
                 <div className="min-w-0 flex-1">
                     <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">{product.name}</p>
-                    {COMMERCE_ENABLED && (product.basePrice ? (
+                    {showPrice && (product.basePrice ? (
                         <p className="mt-0.5 text-sm font-bold text-neutral-900">
                             {formatPrice(product.basePrice, product.currency ?? "INR")}
                         </p>
@@ -444,7 +446,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                             >
                                 <option value="default">Featured</option>
                                 <option value="name-asc">Name: A–Z</option>
-                                {COMMERCE_ENABLED && content.status === "products" && (
+                                {content.status === "products" && content.items.some((p) => shouldShowPrice(detectBrand(p.sku).name)) && (
                                     <>
                                         <option value="price-asc">Price: Low → High</option>
                                         <option value="price-desc">Price: High → Low</option>

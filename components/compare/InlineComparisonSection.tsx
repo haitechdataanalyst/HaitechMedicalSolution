@@ -6,7 +6,7 @@ import Link from "next/link";
 import { X, GitCompareArrows, Package2, ExternalLink, Minus } from "lucide-react";
 import { useCompare } from "./CompareProvider";
 import { formatPrice } from "@/lib/utils";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { shouldShowPrice } from "@/lib/config";
 
 export function InlineComparisonSection() {
     const { items, remove, clear } = useCompare();
@@ -29,6 +29,7 @@ export function InlineComparisonSection() {
     const allLabels = Array.from(
         new Set(items.flatMap((item) => (item.specs ?? []).map((s) => s.label)))
     );
+    const anyPriceVisible = items.some((item) => shouldShowPrice(item.brand));
 
     return (
         <div
@@ -103,14 +104,14 @@ export function InlineComparisonSection() {
                         {/* Price row */}
                         <tbody>
                             <tr className="border-b border-neutral-50 bg-primary-50/30">
-                                {COMMERCE_ENABLED && (
+                                {anyPriceVisible && (
                                     <td className="sticky left-0 bg-primary-50/30 px-5 py-3.5 text-xs font-bold text-neutral-500 border-r border-neutral-100">
                                         Price
                                     </td>
                                 )}
                                 {items.map((item) => (
                                     <td key={item.id} className="px-5 py-3.5">
-                                        {COMMERCE_ENABLED && (item.price ? (
+                                        {anyPriceVisible && (shouldShowPrice(item.brand) && item.price ? (
                                             <span className="text-base font-bold text-neutral-900">
                                                 {formatPrice(item.price, item.currency ?? "INR")}
                                             </span>
@@ -208,13 +209,13 @@ function ProductCompareCard({ item, onRemove }: { item: ReturnType<typeof useCom
                 <h3 className="font-bold leading-snug text-neutral-900">{item.name}</h3>
 
                 <div className="mt-2 flex items-center justify-between">
-                    {COMMERCE_ENABLED && (item.price ? (
+                    {shouldShowPrice(item.brand) && item.price ? (
                         <span className="text-base font-bold text-neutral-900">
                             {formatPrice(item.price, item.currency ?? "INR")}
                         </span>
                     ) : (
                         <span className="text-xs italic text-neutral-400">Price on request</span>
-                    ))}
+                    )}
                     <Link
                         href={item.href}
                         className="flex items-center gap-1 text-xs font-semibold text-primary-600 transition-colors hover:text-primary-700"

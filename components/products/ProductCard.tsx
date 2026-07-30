@@ -8,7 +8,7 @@ import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand, requiresConsultation } from "@/lib/brand";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { useCart } from "@/components/cart/CartProvider";
-import { COMMERCE_ENABLED } from "@/lib/config";
+import { COMMERCE_ENABLED, shouldShowPrice } from "@/lib/config";
 import { useCompare } from "@/components/compare";
 
 interface ProductCardProps {
@@ -107,7 +107,7 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
             <div className="flex flex-1 flex-col px-3.5 pb-3 pt-3">
 
                 {/* 1 — PRICE (dominant) */}
-                {COMMERCE_ENABLED && entityIsProduct && (
+                {shouldShowPrice(brand?.name) && entityIsProduct && (
                     <div className="mb-1 leading-none">
                         {product?.basePrice ? (
                             <>
