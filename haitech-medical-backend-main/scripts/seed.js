@@ -24,19 +24,20 @@ const sql = postgres({
 	user:     process.env.POSTGRES_USER     || 'postgres',
 	password: process.env.POSTGRES_PASS     || '',
 	database: process.env.POSTGRES_DB       || 'haitech_medical',
+	ssl:      process.env.POSTGRES_SSL === 'true' ? 'require' : false,
 	max: 1,
 });
 const db = drizzle(sql);
 
 // ── Schema (inline so script is self-contained) ───────────────────────────────
-import { pgTable, integer, varchar, text, boolean, timestamp, index, uniqueIndex } from 'drizzle-orm/pg-core';
+import { pgTable, integer, varchar, text, boolean, timestamp, index, uniqueIndex, jsonb } from 'drizzle-orm/pg-core';
 
 const brands = pgTable('brands', {
 	id: integer('id').primaryKey(),
 	slug: varchar('slug', { length: 100 }).notNull(),
 	name: varchar('name', { length: 100 }).notNull(),
 	description: text('description'),
-	image: varchar('image', { length: 500 }),
+	image: text('image'),
 	sortOrder: integer('sort_order').default(0).notNull(),
 	active: boolean('active').default(true).notNull(),
 	createdAt: timestamp('created_at').defaultNow().notNull(),
@@ -49,7 +50,7 @@ const categories = pgTable('categories', {
 	name: varchar('name', { length: 100 }).notNull(),
 	type: varchar('type', { length: 30 }).default('category').notNull(),
 	description: text('description'),
-	image: varchar('image', { length: 500 }),
+	image: text('image'),
 	parentId: integer('parent_id'),
 	brandId: integer('brand_id'),
 	sortOrder: integer('sort_order').default(0).notNull(),
@@ -71,7 +72,9 @@ const products = pgTable('products', {
 	currency: varchar('currency', { length: 10 }).default('INR').notNull(),
 	hasVariants: boolean('has_variants').default(false).notNull(),
 	variantType: varchar('variant_type', { length: 50 }),
-	defaultImage: varchar('default_image', { length: 500 }),
+	defaultImage: text('default_image'),
+	gallery: jsonb('gallery'),
+	videos: jsonb('videos'),
 	catalogueFile: varchar('catalogue_file', { length: 500 }),
 	colorCode: varchar('color_code', { length: 20 }),
 	sortOrder: integer('sort_order').default(0).notNull(),
@@ -197,6 +200,8 @@ async function seed() {
 			hasVariants:    p.hasVariants ?? false,
 			variantType:    p.variantType ?? null,
 			defaultImage:   p.defaultImage ?? null,
+			gallery:        p.gallery ?? null,
+			videos:         p.videos ?? null,
 			catalogueFile:  p.catalogueFile ?? null,
 			colorCode:      p.colorCode ?? null,
 			sortOrder:      p.order ?? 0,
@@ -218,6 +223,8 @@ async function seed() {
 				hasVariants:    p.hasVariants ?? false,
 				variantType:    p.variantType ?? null,
 				defaultImage:   p.defaultImage ?? null,
+				gallery:        p.gallery ?? null,
+				videos:         p.videos ?? null,
 				catalogueFile:  p.catalogueFile ?? null,
 				colorCode:      p.colorCode ?? null,
 				sortOrder:      p.order ?? 0,
