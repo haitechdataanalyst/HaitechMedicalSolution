@@ -60,16 +60,16 @@ const pillars = [
 ];
 
 const products = [
-    { name: "Salli SwayFit", image: "/images/products/salli/sway-fit-black.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment." },
-    { name: "Salli TripleLift", image: "/images/products/salli/triple-fit-black.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution." },
-    { name: "Salli Ultra", image: "/images/products/salli/ultra-triple-fit-black.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience." },
+    { name: "Salli SwayFit", image: "/images/products/salli/sway-fit-black.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment.", href: "/product-category/salli/sway-fit" },
+    { name: "Salli TripleLift", image: "/images/products/salli/triple-fit-black.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution.", href: "/product-category/salli/triple-fit" },
+    { name: "Salli Ultra", image: "/images/products/salli/ultra-triple-fit-black.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience.", href: "/product-category/salli/ultra-triple-fit" },
 ];
 
 export default function AboutSalliPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/salli/triple-fit-black.jpg"
                     alt="Salli ergonomic saddle chairs"
@@ -113,9 +113,9 @@ export default function AboutSalliPage() {
 
             {/* ── Brand Statement ── */}
             {/* Nordic-minimal: Salli's own layout carries no dark full-bleed
-                section here — white ground, thin rules — but colors follow
-                the site-wide primary/navy palette like every other brand page. */}
-            <section className="border-y border-neutral-200 bg-white py-10 md:py-20 lg:py-28">
+                section here — soft off-white ground, thin rules — but colors
+                follow the site-wide primary/navy palette like every other brand page. */}
+            <section className="border-y border-neutral-200 bg-neutral-50 py-10 md:py-20 lg:py-28">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-primary-800 md:text-2xl lg:text-3xl">
                         &ldquo;The way we sit is broken. Salli built the fix.&rdquo;
@@ -137,7 +137,7 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 01 The Problem ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -158,34 +158,34 @@ export default function AboutSalliPage() {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
+                            <Link href="/product-category/salli/sway-fit" className="group block overflow-hidden rounded-3xl bg-white shadow-2xl shadow-neutral-200">
                                 <Image
                                     src="/images/products/salli/sway-fit-black.jpg"
                                     alt="Salli SwayFit saddle chair"
                                     width={700}
                                     height={700}
-                                    className="h-auto w-full object-contain p-6 md:p-10"
+                                    className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-10"
                                 />
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* ── 02 The Solution ── */}
-            <section className="bg-neutral-50 py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-neutral-200/60">
+                            <Link href="/product-category/salli/triple-fit" className="group block overflow-hidden rounded-3xl bg-white shadow-xl shadow-neutral-200/60">
                                 <Image
                                     src="/images/products/salli/triple-fit-black.jpg"
                                     alt="Salli TripleLift saddle chair"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-6 md:p-10"
+                                    className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-10"
                                 />
-                            </div>
+                            </Link>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">02 / The Solution</span>
@@ -209,7 +209,7 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 03 The Science / Benefits ── */}
-            <section className="bg-neutral-50 py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / The Science</span>
@@ -317,7 +317,7 @@ export default function AboutSalliPage() {
             </section>
 
             {/* ── 04 Product Range ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">04 / Product Range</span>
@@ -328,7 +328,11 @@ export default function AboutSalliPage() {
                     </div>
                     <div className="grid gap-5 md:grid-cols-3">
                         {products.map((product) => (
-                            <div key={product.name} className="group overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-lg">
+                            <Link
+                                key={product.name}
+                                href={product.href}
+                                className="group block overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-lg"
+                            >
                                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-50">
                                     <Image
                                         src={product.image}
@@ -341,14 +345,14 @@ export default function AboutSalliPage() {
                                     <h3 className="mb-2 text-base font-bold text-neutral-900">{product.name}</h3>
                                     <p className="text-sm leading-relaxed text-neutral-500">{product.description}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* ── Four Pillars ── */}
-            <section className="bg-neutral-50 py-12 md:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Salli</span>
@@ -371,7 +375,7 @@ export default function AboutSalliPage() {
             {/* ── CTA ── */}
             {/* No dark box here either — the closing moment stays in the same
                 light, restrained register as the rest of the page. */}
-            <section className="border-t border-neutral-200 bg-white py-14 md:py-28">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-14 md:py-28">
                 <div className="container text-center">
                     <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                         Invest in Your Health &amp; Productivity

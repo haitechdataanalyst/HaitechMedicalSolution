@@ -28,7 +28,7 @@ function ProductShowcase({ src, alt, href, tone = "light" }: { src: string; alt:
             href={href}
             className={cn(
                 "group relative block overflow-hidden rounded-3xl shadow-xl transition-shadow duration-300 hover:shadow-2xl",
-                tone === "dark" ? "bg-navy-800 shadow-black/30" : "bg-neutral-50 shadow-neutral-200"
+                tone === "dark" ? "bg-navy-800 shadow-black/30" : "bg-white shadow-neutral-200"
             )}
         >
             <div
@@ -57,7 +57,7 @@ export default function AboutAdmetecPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/admetec/admetec-banner.jpg"
                     alt="Admetec dental loupes"
@@ -107,7 +107,7 @@ export default function AboutAdmetecPage() {
                     </p>
                     <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
                         {[
-                            { v: "3.5x–10x", l: "Magnification Range" },
+                            { v: "2.5x–10x", l: "Magnification Range" },
                             { v: "ISO",      l: "Certified Quality"  },
                             { v: "500+",     l: "Clinicians Served"  },
                             { v: "2",        l: "Optical Systems"    },
@@ -122,7 +122,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── 01 Galilean ── */}
-            <section className="bg-white py-16 md:py-20 lg:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -135,7 +135,13 @@ export default function AboutAdmetecPage() {
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["2.5x", "2.7x", "3.2x"].map((m) => (
-                                    <span key={m} className="rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700">{m}</span>
+                                    <Link
+                                        key={m}
+                                        href={`/product-category/admetec/galilean-loupes/galilean-${m}`}
+                                        className="rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-colors hover:bg-primary-100"
+                                    >
+                                        {m}
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -172,7 +178,13 @@ export default function AboutAdmetecPage() {
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["3.0x", "4.0x", "5.0x", "6.0x", "7.5x", "10x"].map((m) => (
-                                    <span key={m} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white/85">{m}</span>
+                                    <Link
+                                        key={m}
+                                        href={`/product-category/admetec/ergo-loupes/ergo-${m}`}
+                                        className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white/85 transition-colors hover:border-white/40 hover:bg-white/20"
+                                    >
+                                        {m}
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -184,7 +196,7 @@ export default function AboutAdmetecPage() {
             <ErgoMagnificationSelector />
 
             {/* ── 03 Headlights ── */}
-            <section className="bg-white py-16 md:py-20 lg:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -221,7 +233,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── Why Admetec ── */}
-            <section className="bg-neutral-50 py-16 md:py-20 lg:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="mb-10 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">Why Professionals Choose Admetec</span>

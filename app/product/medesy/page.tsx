@@ -18,17 +18,17 @@ const heritage = [
 ];
 
 const categories = [
-    { name: "Elevators", image: "/images/products/medesy/elevators/elevators-category.jpg", count: "20+ instruments" },
-    { name: "Forceps", image: "/images/products/medesy/forceps/forceps-category.jpg", count: "30+ instruments" },
-    { name: "Periosteal Elevators", image: "/images/products/medesy/periosteal/periosteal-category.jpg", count: "15+ instruments" },
-    { name: "Scissors", image: "/images/products/medesy/scissors/scissors-category.jpg", count: "10+ instruments" },
+    { name: "Elevators", image: "/images/products/medesy/elevators/elevators-category.jpg", count: "20+ instruments", href: "/product-category/medesy/elevators" },
+    { name: "Forceps", image: "/images/products/medesy/forceps/forceps-category.jpg", count: "30+ instruments", href: "/product-category/medesy/forceps" },
+    { name: "Periosteal Elevators", image: "/images/products/medesy/periosteal/periosteal-category.jpg", count: "15+ instruments", href: "/product-category/medesy/periosteal-elevators" },
+    { name: "Scissors", image: "/images/products/medesy/scissors/scissors-category.jpg", count: "10+ instruments", href: "/product-category/medesy/scissors" },
 ];
 
 export default function AboutMedesyPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/medesy/medesy-banner.jpg"
                     alt="Medesy dental instruments"
@@ -93,7 +93,7 @@ export default function AboutMedesyPage() {
             </section>
 
             {/* ── 01 Heritage ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -110,15 +110,15 @@ export default function AboutMedesyPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <div className="relative">
-                                <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
+                                <Link href="/product-category/medesy/forceps" className="group block overflow-hidden rounded-3xl bg-white shadow-2xl shadow-neutral-200">
                                     <Image
                                         src="/images/products/medesy/forceps/forceps-category.jpg"
                                         alt="Medesy dental forceps craftsmanship"
                                         width={700}
                                         height={525}
-                                        className="h-auto w-full object-contain p-6 md:p-10"
+                                        className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-10"
                                     />
-                                </div>
+                                </Link>
                                 <div className="absolute -bottom-4 -right-4 rounded-2xl bg-primary-600 px-5 py-3 text-white shadow-lg md:px-6 md:py-4">
                                     <div className="text-2xl font-bold md:text-3xl">600+</div>
                                     <div className="text-xs font-semibold uppercase tracking-widest text-primary-100">Years of Heritage</div>
@@ -143,7 +143,11 @@ export default function AboutMedesyPage() {
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {categories.map((cat) => (
-                            <div key={cat.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-200 hover:border-primary-500/40">
+                            <Link
+                                key={cat.name}
+                                href={cat.href}
+                                className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-200 hover:border-primary-500/40"
+                            >
                                 <div className="relative aspect-square overflow-hidden bg-white/5">
                                     <Image
                                         src={cat.image}
@@ -156,14 +160,14 @@ export default function AboutMedesyPage() {
                                     <h3 className="mb-1 text-sm font-bold text-white">{cat.name}</h3>
                                     <p className="text-xs text-white/40">{cat.count}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* ── The MEDESY Difference ── */}
-            <section className="bg-neutral-50 py-12 md:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">The MEDESY Difference</span>

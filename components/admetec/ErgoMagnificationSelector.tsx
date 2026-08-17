@@ -64,7 +64,7 @@ export function ErgoMagnificationSelector() {
     };
 
     return (
-        <section className="overflow-hidden bg-neutral-50 py-16 md:py-20 lg:py-24">
+        <section className="overflow-hidden border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
             <div className="container">
 
                 {/* Section header */}

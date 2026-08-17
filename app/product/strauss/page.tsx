@@ -18,16 +18,16 @@ const advantages = [
 ];
 
 const burSeries = [
-    { name: "A-Series", description: "Standard diamond burs for general preparation and restorative procedures.", image: "/images/products/strauss/a-series/A1M.jpg" },
-    { name: "B-Series", description: "Fine-grit burs designed for contouring, adjustment, and finishing work.", image: "/images/products/strauss/b-series/B1M.jpg" },
-    { name: "P-Series", description: "Specialty shapes and configurations for specific clinical indications.", image: "/images/products/strauss/p-series/PR13M.jpg" },
+    { name: "A-Series", description: "Standard diamond burs for general preparation and restorative procedures.", image: "/images/products/strauss/a-series/A1M.jpg", href: "/product-category/strauss/a-series" },
+    { name: "B-Series", description: "Fine-grit burs designed for contouring, adjustment, and finishing work.", image: "/images/products/strauss/b-series/B1M.jpg", href: "/product-category/strauss/b-series" },
+    { name: "P-Series", description: "Specialty shapes and configurations for specific clinical indications.", image: "/images/products/strauss/p-series/PR13M.jpg", href: "/product-category/strauss/p-series" },
 ];
 
 export default function AboutStraussPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/strauss/strauss-banner.jpg"
                     alt="Strauss diamond burs"
@@ -92,7 +92,7 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── 01 Engineering ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -109,18 +109,18 @@ export default function AboutStraussPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <div className="grid grid-cols-2 gap-3">
-                                <div className="overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/strauss/a-series/A2M.jpg" alt="Strauss A-series bur" width={350} height={350} className="h-auto w-full object-contain p-4" />
-                                </div>
-                                <div className="mt-6 overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/strauss/b-series/B2M.jpg" alt="Strauss B-series bur" width={350} height={350} className="h-auto w-full object-contain p-4" />
-                                </div>
-                                <div className="overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/strauss/p-series/PR24M.jpg" alt="Strauss P-series bur" width={350} height={350} className="h-auto w-full object-contain p-4" />
-                                </div>
-                                <div className="mt-6 overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/strauss/a-series/A4M.jpg" alt="Strauss bur closeup" width={350} height={350} className="h-auto w-full object-contain p-4" />
-                                </div>
+                                <Link href="/product-category/strauss/a-series" className="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/strauss/a-series/A2M.jpg" alt="Strauss A-series bur" width={350} height={350} className="h-auto w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/strauss/b-series" className="group mt-6 block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/strauss/b-series/B2M.jpg" alt="Strauss B-series bur" width={350} height={350} className="h-auto w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/strauss/p-series" className="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/strauss/p-series/PR24M.jpg" alt="Strauss P-series bur" width={350} height={350} className="h-auto w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/strauss/a-series" className="group mt-6 block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/strauss/a-series/A4M.jpg" alt="Strauss bur closeup" width={350} height={350} className="h-auto w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,11 @@ export default function AboutStraussPage() {
                     </div>
                     <div className="grid gap-5 md:grid-cols-3">
                         {burSeries.map((series) => (
-                            <div key={series.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-200 hover:border-primary-500/30 hover:bg-white/10">
+                            <Link
+                                key={series.name}
+                                href={series.href}
+                                className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-200 hover:border-primary-500/30 hover:bg-white/10"
+                            >
                                 <div className="relative aspect-square overflow-hidden bg-white/5">
                                     <Image
                                         src={series.image}
@@ -154,14 +158,14 @@ export default function AboutStraussPage() {
                                     <h3 className="mb-2 text-base font-bold text-white">{series.name}</h3>
                                     <p className="text-sm leading-relaxed text-white/50">{series.description}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* ── 03 Clinical Applications ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">03 / Clinical Applications</span>
@@ -169,7 +173,7 @@ export default function AboutStraussPage() {
                     </div>
                     <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-2.5">
                         {["Crown Preparation", "Cavity Preparation", "Material Adjustment", "Surface Finishing"].map((app) => (
-                            <span key={app} className="rounded-lg border border-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-700">
+                            <span key={app} className="rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 shadow-sm">
                                 {app}
                             </span>
                         ))}
@@ -178,7 +182,7 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── Why Strauss ── */}
-            <section className="bg-neutral-50 py-12 md:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Strauss</span>

@@ -18,7 +18,7 @@ export default function AlmadentAboutPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/almadent/almadent-banner.jpg"
                     alt="Almadent dental equipment"
@@ -83,7 +83,7 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── 01 Dental Chairs ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -110,18 +110,18 @@ export default function AlmadentAboutPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <div className="grid grid-cols-2 gap-3">
-                                <div className="overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/almadent/chairs/ay-3000-1.jpg" alt="AY-3000" width={400} height={300} className="h-auto w-full object-cover" />
-                                </div>
-                                <div className="mt-6 overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/almadent/chairs/ay-6000-1.jpg" alt="AY-6000" width={400} height={300} className="h-auto w-full object-cover" />
-                                </div>
-                                <div className="overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/almadent/chairs/ay-8000-1.jpg" alt="AY-8000" width={400} height={300} className="h-auto w-full object-cover" />
-                                </div>
-                                <div className="mt-6 overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/almadent/chairs/ay-3000-2.jpg" alt="AY-3000 detail" width={400} height={300} className="h-auto w-full object-cover" />
-                                </div>
+                                <Link href="/product-category/almadent/dental-chairs/ay-3000" className="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/almadent/chairs/ay-3000-1.jpg" alt="AY-3000" width={400} height={300} className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/almadent/dental-chairs/ay-6000" className="group mt-6 block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/almadent/chairs/ay-6000-1.jpg" alt="AY-6000" width={400} height={300} className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/almadent/dental-chairs/ay-8000" className="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/almadent/chairs/ay-8000-1.jpg" alt="AY-8000" width={400} height={300} className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/almadent/dental-chairs/ay-3000" className="group mt-6 block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/almadent/chairs/ay-3000-2.jpg" alt="AY-3000 detail" width={400} height={300} className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -133,15 +133,15 @@ export default function AlmadentAboutPage() {
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-navy-800 shadow-2xl">
+                            <Link href="/product-category/almadent" className="group block overflow-hidden rounded-3xl bg-navy-800 shadow-2xl">
                                 <Image
                                     src="/images/products/almadent/handpiece/tealth-handpiece.png"
                                     alt="Almadent Tealth Handpiece"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-6 md:p-12"
+                                    className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-12"
                                 />
-                            </div>
+                            </Link>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Handpieces</span>
@@ -162,7 +162,7 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── 03 Implant & Auxiliary ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -181,12 +181,12 @@ export default function AlmadentAboutPage() {
                         </div>
                         <div className="w-full lg:w-1/2">
                             <div className="grid grid-cols-2 gap-3">
-                                <div className="overflow-hidden rounded-2xl bg-neutral-50 shadow-lg">
-                                    <Image src="/images/products/almadent/auxiliary/implant-motor-1.jpg" alt="Almadent implant motor" width={400} height={350} className="h-auto w-full object-cover" />
-                                </div>
-                                <div className="mt-6 overflow-hidden rounded-2xl bg-neutral-50 p-4 shadow-lg">
-                                    <Image src="/images/products/almadent/auxiliary/ptx-main.png" alt="Almadent PTX" width={400} height={350} className="h-auto w-full object-contain" />
-                                </div>
+                                <Link href="/product-category/almadent/implant-motor/implant-motor" className="group block overflow-hidden rounded-2xl bg-white shadow-lg">
+                                    <Image src="/images/products/almadent/auxiliary/implant-motor-1.jpg" alt="Almadent implant motor" width={400} height={350} className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                                <Link href="/product-category/almadent" className="group mt-6 block overflow-hidden rounded-2xl bg-white p-4 shadow-lg">
+                                    <Image src="/images/products/almadent/auxiliary/ptx-main.png" alt="Almadent PTX" width={400} height={350} className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -194,7 +194,7 @@ export default function AlmadentAboutPage() {
             </section>
 
             {/* ── Four Pillars ── */}
-            <section className="bg-neutral-50 py-12 md:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Almadent</span>

@@ -24,7 +24,7 @@ export default function BondentAboutPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
+            <section className="relative flex min-h-[calc(100dvh-98px)] flex-col items-center justify-center overflow-hidden bg-navy-gradient md:min-h-[calc(100dvh-139px)]">
                 <Image
                     src="/images/products/bondent/Bondent CBCT-1030 Pro.png"
                     alt="Bondent dental technology"
@@ -89,7 +89,7 @@ export default function BondentAboutPage() {
             </section>
 
             {/* ── 01 Endo & Ortho ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -107,15 +107,18 @@ export default function BondentAboutPage() {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-neutral-50 shadow-2xl shadow-neutral-200">
+                            <Link
+                                href="/product-category/bondent/endo-files/rotary-files/cc-premium"
+                                className="group block overflow-hidden rounded-3xl bg-white shadow-2xl shadow-neutral-200"
+                            >
                                 <Image
                                     src="/images/products/bondent/CC Premium.jpg"
                                     alt="Bondent rotary endodontic files"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-6 md:p-10"
+                                    className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-10"
                                 />
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -126,15 +129,15 @@ export default function BondentAboutPage() {
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
-                            <div className="overflow-hidden rounded-3xl bg-navy-800 shadow-2xl">
+                            <Link href="/product-category/bondent/imaging/cbct-1020ms" className="group block overflow-hidden rounded-3xl bg-navy-800 shadow-2xl">
                                 <Image
                                     src="/images/products/bondent/CBCT 1020MS.png"
                                     alt="Bondent CBCT imaging system"
                                     width={700}
                                     height={525}
-                                    className="h-auto w-full object-contain p-6 md:p-10"
+                                    className="h-auto w-full object-contain p-6 transition-transform duration-300 group-hover:scale-105 md:p-10"
                                 />
-                            </div>
+                            </Link>
                         </div>
                         <div className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Imaging & Optics</span>
@@ -161,7 +164,7 @@ export default function BondentAboutPage() {
             </section>
 
             {/* ── Why Choose Bondent ── */}
-            <section className="bg-neutral-50 py-12 md:py-24">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">Why Choose Bondent</span>
@@ -182,7 +185,7 @@ export default function BondentAboutPage() {
             </section>
 
             {/* ── Brand Background ── */}
-            <section className="bg-white py-12 md:py-24 lg:py-32">
+            <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -195,7 +198,7 @@ export default function BondentAboutPage() {
                             </p>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="rounded-3xl border border-neutral-100 bg-neutral-50 p-6 md:p-8">
+                            <div className="rounded-3xl border border-neutral-100 bg-white p-6 shadow-sm md:p-8">
                                 <span className="mb-4 block text-xs font-bold uppercase tracking-widest text-neutral-400">Flagship Portfolio</span>
                                 <ul className="space-y-3">
                                     {flagshipProducts.map((item) => (
