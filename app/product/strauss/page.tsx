@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui";
 import { Diamond, Zap, ThermometerSun, Target, Clock, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -28,7 +27,7 @@ export default function AboutStraussPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950">
+            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
                 <Image
                     src="/images/products/strauss/strauss-banner.jpg"
                     alt="Strauss diamond burs"
@@ -36,7 +35,7 @@ export default function AboutStraussPage() {
                     className="object-cover opacity-25"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/20 via-neutral-950/50 to-neutral-950" />
+                <div className="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-navy-900/50 to-navy-900" />
 
                 <nav className="absolute left-0 top-0 z-20 px-6 py-5 text-xs text-white/40">
                     <Link href="/" className="transition-colors hover:text-white/70">Home</Link>
@@ -57,20 +56,21 @@ export default function AboutStraussPage() {
                         Precision-engineered rotary instruments designed to deliver efficient cutting, smooth performance, and consistent clinical results for the modern dental practice.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/product-category/strauss">
-                            <Button size="lg" className="rounded-full px-8">Explore Diamond Burs</Button>
+                        <Link href="/product-category/strauss" className="btn btn-lg btn-primary rounded-full px-8">
+                            Explore Diamond Burs
                         </Link>
-                        <Link href="/support/contact">
-                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-8 text-white hover:bg-white/10">
-                                Request Samples
-                            </Button>
+                        <Link
+                            href="/support/contact"
+                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
+                        >
+                            Request Samples
                         </Link>
                     </div>
                 </div>
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
+            <section className="bg-navy-gradient py-10 md:py-20 lg:py-28">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Diamond-sharp precision. Built to outlast, built to perform.&rdquo;
@@ -128,7 +128,7 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── 02 Bur Series ── */}
-            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
+            <section className="bg-navy-gradient py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Bur Series</span>
@@ -199,7 +199,7 @@ export default function AboutStraussPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-[#001926] py-14 text-white md:py-28">
+            <section className="bg-navy-gradient py-14 text-white md:py-28">
                 <div className="container text-center">
                     <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         Cut with Confidence
@@ -208,15 +208,17 @@ export default function AboutStraussPage() {
                         Request a sample set for your next case and see the difference in cutting efficiency and finish.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/product-category/strauss">
-                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
-                                Shop Diamond Burs
-                            </Button>
+                        <Link
+                            href="/product-category/strauss"
+                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:bg-primary-50"
+                        >
+                            Shop Diamond Burs
                         </Link>
-                        <Link href="/support/contact">
-                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-10 text-white hover:border-white hover:bg-white/10">
-                                Contact Sales
-                            </Button>
+                        <Link
+                            href="/support/contact"
+                            className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:border-white hover:bg-white/10"
+                        >
+                            Contact Sales
                         </Link>
                     </div>
                 </div>

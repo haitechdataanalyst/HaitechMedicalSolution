@@ -10,11 +10,6 @@ export const metadata: Metadata = {
     description: "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.",
 };
 
-// Admetec's real identity runs charcoal + oxblood red, not Haitech's
-// teal-navy box — see brand-differentiation plan. Kept as literal hex
-// (not a JS constant) since Tailwind's JIT only picks up static
-// arbitrary-value strings, not interpolated ones.
-
 const features = [
     { icon: <Eye className="h-5 w-5" />, title: "Superior Optics", description: "Crystal-clear magnification with edge-to-edge sharpness for precise clinical work." },
     { icon: <Crosshair className="h-5 w-5" />, title: "Precision Engineering", description: "Each loupe is meticulously crafted with aerospace-grade materials for lasting performance." },
@@ -33,7 +28,7 @@ function ProductShowcase({ src, alt, href, tone = "light" }: { src: string; alt:
             href={href}
             className={cn(
                 "group relative block overflow-hidden rounded-3xl shadow-xl transition-shadow duration-300 hover:shadow-2xl",
-                tone === "dark" ? "bg-[#221f1d] shadow-black/30" : "bg-neutral-50 shadow-neutral-200"
+                tone === "dark" ? "bg-navy-800 shadow-black/30" : "bg-neutral-50 shadow-neutral-200"
             )}
         >
             <div
@@ -41,8 +36,8 @@ function ProductShowcase({ src, alt, href, tone = "light" }: { src: string; alt:
                 className={cn(
                     "pointer-events-none absolute inset-0",
                     tone === "dark"
-                        ? "bg-[radial-gradient(circle_at_50%_38%,rgba(211,55,76,0.16),transparent_62%)]"
-                        : "bg-[radial-gradient(circle_at_50%_38%,rgba(174,19,42,0.07),transparent_62%)]"
+                        ? "bg-[radial-gradient(circle_at_50%_38%,rgba(31,182,205,0.18),transparent_62%)]"
+                        : "bg-[radial-gradient(circle_at_50%_38%,rgba(21,107,138,0.07),transparent_62%)]"
                 )}
             />
             <div className="relative aspect-[4/3] p-8 md:p-12">
@@ -62,7 +57,7 @@ export default function AboutAdmetecPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#1a1817]">
+            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
                 <Image
                     src="/images/products/admetec/admetec-banner.jpg"
                     alt="Admetec dental loupes"
@@ -70,7 +65,7 @@ export default function AboutAdmetecPage() {
                     className="object-cover opacity-25"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1a1817]/20 via-[#1a1817]/55 to-[#1a1817]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-navy-900/55 to-navy-900" />
 
                 <nav className="absolute left-0 top-0 z-20 px-6 py-5 text-xs text-white/50">
                     <Link href="/" className="transition-colors hover:text-white/80">Home</Link>
@@ -91,15 +86,12 @@ export default function AboutAdmetecPage() {
                         World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link
-                            href="/product-category/admetec"
-                            className="btn btn-lg rounded-full bg-[#AE132A] px-8 text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#951022]"
-                        >
+                        <Link href="/product-category/admetec" className="btn btn-lg btn-primary rounded-full px-8">
                             Explore Loupes
                         </Link>
                         <Link
                             href="/support/contact"
-                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:-translate-y-0.5 hover:bg-white/10"
+                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
                         >
                             Contact Us
                         </Link>
@@ -108,7 +100,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#1a1817] py-14 md:py-20 lg:py-24">
+            <section className="bg-navy-gradient py-14 md:py-20 lg:py-24">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/75 md:text-2xl lg:text-3xl">
                         &ldquo;Precision magnification engineered for the clinicians who demand the best — because every detail matters in dentistry.&rdquo;
@@ -121,7 +113,7 @@ export default function AboutAdmetecPage() {
                             { v: "2",        l: "Optical Systems"    },
                         ].map((s) => (
                             <div key={s.l} className="text-center">
-                                <p className="text-2xl font-bold text-[#D3374C] md:text-3xl lg:text-4xl">{s.v}</p>
+                                <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
                                 <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/50">{s.l}</p>
                             </div>
                         ))}
@@ -143,7 +135,7 @@ export default function AboutAdmetecPage() {
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {["2.5x", "2.7x", "3.2x"].map((m) => (
-                                    <span key={m} className="rounded-full bg-[#AE132A]/8 px-4 py-2 text-sm font-bold text-[#AE132A]">{m}</span>
+                                    <span key={m} className="rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700">{m}</span>
                                 ))}
                             </div>
                         </div>
@@ -159,7 +151,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── 02 Ergo / Prismatic ── */}
-            <section className="bg-[#1a1817] py-16 md:py-20 lg:py-24">
+            <section className="bg-navy-gradient py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-16">
                         <div className="w-full lg:w-1/2">
@@ -211,7 +203,7 @@ export default function AboutAdmetecPage() {
                                     "Long-lasting battery life",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3 text-sm text-neutral-700">
-                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#AE132A]/10 text-[10px] font-bold text-[#AE132A]">✓</span>
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-100 text-[10px] font-bold text-primary-600">✓</span>
                                         {item}
                                     </li>
                                 ))}
@@ -239,12 +231,12 @@ export default function AboutAdmetecPage() {
                         {features.map((f, i) => (
                             <div
                                 key={f.title}
-                                className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#AE132A]/25 hover:shadow-md"
+                                className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-md"
                             >
-                                <span aria-hidden className="pointer-events-none absolute right-5 top-4 select-none text-4xl font-black text-neutral-100 transition-colors group-hover:text-[#AE132A]/10">
+                                <span aria-hidden className="pointer-events-none absolute right-5 top-4 select-none text-4xl font-black text-neutral-100 transition-colors group-hover:text-primary-500/10">
                                     {String(i + 1).padStart(2, "0")}
                                 </span>
-                                <div className="relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#AE132A]/8 text-[#AE132A]">
+                                <div className="relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
                                     {f.icon}
                                 </div>
                                 <h3 className="relative mb-1.5 text-base font-bold text-neutral-900">{f.title}</h3>
@@ -256,7 +248,7 @@ export default function AboutAdmetecPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="py-16 text-white md:py-24" style={{ background: "linear-gradient(135deg, #1a1817 0%, #2a1416 50%, #3a1218 100%)" }}>
+            <section className="bg-brand-gradient py-16 text-white md:py-24">
                 <div className="container text-center">
                     <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         Try Before You Order
@@ -267,7 +259,7 @@ export default function AboutAdmetecPage() {
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link
                             href="/product-category/admetec"
-                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-[#AE132A] shadow-lg transition-all hover:-translate-y-0.5 hover:bg-neutral-50"
+                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-50"
                         >
                             Browse Products
                         </Link>

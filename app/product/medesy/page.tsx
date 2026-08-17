@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui";
 import { Gem, Factory, Wrench, Microscope, Globe, Flame } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -29,7 +28,7 @@ export default function AboutMedesyPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950">
+            <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy-gradient">
                 <Image
                     src="/images/products/medesy/medesy-banner.jpg"
                     alt="Medesy dental instruments"
@@ -37,7 +36,7 @@ export default function AboutMedesyPage() {
                     className="object-cover opacity-25"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/20 via-neutral-950/50 to-neutral-950" />
+                <div className="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-navy-900/50 to-navy-900" />
 
                 <nav className="absolute left-0 top-0 z-20 px-6 py-5 text-xs text-white/40">
                     <Link href="/" className="transition-colors hover:text-white/70">Home</Link>
@@ -58,20 +57,21 @@ export default function AboutMedesyPage() {
                         Italian dental instruments blending six centuries of artisan expertise with continuous innovation — precision, craftsmanship, and performance in every piece.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/product-category/medesy">
-                            <Button size="lg" className="rounded-full px-8">Explore Instruments</Button>
+                        <Link href="/product-category/medesy" className="btn btn-lg btn-primary rounded-full px-8">
+                            Explore Instruments
                         </Link>
-                        <Link href="/support/contact">
-                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-8 text-white hover:bg-white/10">
-                                Contact Us
-                            </Button>
+                        <Link
+                            href="/support/contact"
+                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
+                        >
+                            Contact Us
                         </Link>
                     </div>
                 </div>
             </section>
 
             {/* ── Brand Statement ── */}
-            <section className="bg-[#001926] py-10 md:py-20 lg:py-28">
+            <section className="bg-navy-gradient py-10 md:py-20 lg:py-28">
                 <div className="container">
                     <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
                         &ldquo;Six centuries of blade-making heritage — channeled into every instrument we forge.&rdquo;
@@ -130,7 +130,7 @@ export default function AboutMedesyPage() {
             </section>
 
             {/* ── 02 Instrument Range ── */}
-            <section className="bg-neutral-950 py-12 md:py-24 lg:py-32">
+            <section className="bg-navy-gradient py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="mb-8 text-center md:mb-14">
                         <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/30">02 / Instrument Range</span>
@@ -143,8 +143,8 @@ export default function AboutMedesyPage() {
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {categories.map((cat) => (
-                            <div key={cat.name} className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 transition-colors duration-200 hover:border-primary-500/40">
-                                <div className="relative aspect-square overflow-hidden bg-neutral-900">
+                            <div key={cat.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-200 hover:border-primary-500/40">
+                                <div className="relative aspect-square overflow-hidden bg-white/5">
                                     <Image
                                         src={cat.image}
                                         alt={cat.name}
@@ -187,7 +187,7 @@ export default function AboutMedesyPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-[#001926] py-14 text-white md:py-28">
+            <section className="bg-navy-gradient py-14 text-white md:py-28">
                 <div className="container text-center">
                     <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         Built in Maniago, Trusted in Your Clinic
@@ -196,15 +196,17 @@ export default function AboutMedesyPage() {
                         Browse the full elevator, forceps, and scissors range, or request pricing for your practice.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/product-category/medesy">
-                            <Button size="lg" className="rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg hover:bg-primary-50">
-                                Browse Instruments
-                            </Button>
+                        <Link
+                            href="/product-category/medesy"
+                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:bg-primary-50"
+                        >
+                            Browse Instruments
                         </Link>
-                        <Link href="/support/contact">
-                            <Button size="lg" variant="outline" className="rounded-full border-white/25 px-10 text-white hover:border-white hover:bg-white/10">
-                                Contact Sales
-                            </Button>
+                        <Link
+                            href="/support/contact"
+                            className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:border-white hover:bg-white/10"
+                        >
+                            Contact Sales
                         </Link>
                     </div>
                 </div>
