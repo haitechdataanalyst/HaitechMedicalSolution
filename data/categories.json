@@ -419,15 +419,16 @@
         "order": 6,
         "children": [
             61,
+            79,
             77
         ]
     },
     {
         "id": 61,
-        "slug": "endo",
-        "name": "Endo",
+        "slug": "endo-device",
+        "name": "Endo Device",
         "type": "category",
-        "description": "Bondent Group Endo range",
+        "description": "Bondent Group Endo Device range",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/bondent/actor-i-pro.png",
         "parent": 60,
         "order": 1,
@@ -471,11 +472,7 @@
         "children": [
             65,
             66,
-            67,
-            68,
-            69,
-            70,
-            71
+            67
         ]
     },
     {
@@ -518,8 +515,8 @@
         "type": "category",
         "description": "Bondent Group Hand Files",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308108/haitech/images/products/bondent/stainless-steel-c-files.jpg",
-        "parent": 64,
-        "order": 4,
+        "parent": 79,
+        "order": 1,
         "children": []
     },
     {
@@ -529,8 +526,8 @@
         "type": "category",
         "description": "Bondent Group Reciprocating Files",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308058/haitech/images/products/bondent/cc-one-blue.jpg",
-        "parent": 64,
-        "order": 5,
+        "parent": 79,
+        "order": 2,
         "children": []
     },
     {
@@ -540,8 +537,8 @@
         "type": "category",
         "description": "Bondent Group Rotary Files",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308060/haitech/images/products/bondent/cc-premium.jpg",
-        "parent": 64,
-        "order": 6,
+        "parent": 79,
+        "order": 3,
         "children": []
     },
     {
@@ -551,9 +548,25 @@
         "type": "category",
         "description": "Bondent Group Special Function NiTi",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308079/haitech/images/products/bondent/m3-immature-blue.jpg",
-        "parent": 64,
-        "order": 7,
+        "parent": 79,
+        "order": 4,
         "children": []
+    },
+    {
+        "id": 79,
+        "slug": "endo-files",
+        "name": "Endo Files",
+        "type": "category",
+        "description": "Bondent Group Endo Files range",
+        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308060/haitech/images/products/bondent/cc-premium.jpg",
+        "parent": 60,
+        "order": 2,
+        "children": [
+            68,
+            69,
+            70,
+            71
+        ]
     },
     {
         "id": 77,
@@ -563,7 +576,7 @@
         "description": "Bondent Group Imaging range",
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
         "parent": 60,
-        "order": 4,
+        "order": 3,
         "children": [
             78
         ]
