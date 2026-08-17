@@ -577,19 +577,6 @@
         "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
         "parent": 60,
         "order": 3,
-        "children": [
-            78
-        ]
-    },
-    {
-        "id": 78,
-        "slug": "cbct-systems",
-        "name": "CBCT Systems",
-        "type": "category",
-        "description": "Bondent Group CBCT Systems",
-        "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
-        "parent": 77,
-        "order": 7,
         "children": []
     }
 ]

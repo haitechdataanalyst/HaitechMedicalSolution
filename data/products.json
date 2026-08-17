@@ -13253,7 +13253,7 @@
         "slug": "bondent-cbct-1030-pro",
         "name": "Bondent CBCT-1030 Pro",
         "description": "AI-powered CBCT, panoramic and cephalometric imaging system",
-        "category": 78,
+        "category": 77,
         "order": 1,
         "sku": "BON-BONDENTCBCT1030PRO",
         "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
@@ -13284,7 +13284,7 @@
                     "rows": [
                         {
                             "label": "Category",
-                            "value": "CBCT Systems"
+                            "value": "Imaging"
                         },
                         {
                             "label": "Original Brand",
@@ -13317,7 +13317,7 @@
         "slug": "bondent-cbct-1030-pro-2-in-1",
         "name": "Bondent CBCT-1030 Pro (2-in-1)",
         "description": "All-in-one CBCT, panoramic and cephalometric imaging system",
-        "category": 78,
+        "category": 77,
         "order": 2,
         "sku": "BON-BONDENTCBCT1030PRO2IN1",
         "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308053/haitech/images/products/bondent/bondent-cbct-1030-pro-2-in-1.png",
@@ -13348,7 +13348,7 @@
                     "rows": [
                         {
                             "label": "Category",
-                            "value": "CBCT Systems"
+                            "value": "Imaging"
                         },
                         {
                             "label": "Original Brand",
@@ -13385,7 +13385,7 @@
         "slug": "cbct-1020ms",
         "name": "Bondent CBCT 1020MS",
         "description": "3D CBCT, panoramic and cephalometric imaging system",
-        "category": 78,
+        "category": 77,
         "order": 3,
         "sku": "BON-CBCT1020MS",
         "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308057/haitech/images/products/bondent/cbct-1020ms.png",
@@ -13416,7 +13416,7 @@
                     "rows": [
                         {
                             "label": "Category",
-                            "value": "CBCT Systems"
+                            "value": "Imaging"
                         },
                         {
                             "label": "Original Brand",
