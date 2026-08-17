@@ -1,46 +1,62 @@
 /**
  * Next.js Proxy (formerly Middleware)
  *
- * Currently handles:
+ * Handles:
  *   - API rate-limit headers
- *
- * Future additions when backend is connected:
- *   - Authentication guards for protected routes (e.g., /dashboard, /account)
- *   - Session validation
- *   - Role-based access control redirects
- *
- * To add auth protection, uncomment the protected routes section below
- * and integrate with your auth provider (NextAuth.js, Clerk, etc.)
+ *   - Supabase session refresh on every request, and auth guards for
+ *     protected routes (/dashboard)
  */
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { createServerClient } from "@supabase/ssr";
 
-// Routes that will require authentication when backend is connected
-// const PROTECTED_ROUTES = ["/dashboard", "/account", "/admin"];
+const PROTECTED_ROUTES = ["/dashboard"];
 
-// Routes that should redirect to dashboard if already authenticated
-// const AUTH_ROUTES = ["/login", "/register"];
+async function refreshSupabaseSession(request: NextRequest): Promise<NextResponse> {
+    let response = NextResponse.next({ request });
 
-export function proxy(request: NextRequest) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    // Supabase Auth isn't configured yet on this environment — skip rather
+    // than throwing on every request.
+    if (!supabaseUrl || !supabaseAnonKey) {
+        return response;
+    }
+
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+        cookies: {
+            getAll() {
+                return request.cookies.getAll();
+            },
+            setAll(cookiesToSet) {
+                cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+                response = NextResponse.next({ request });
+                cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
+            },
+        },
+    });
+
+    // getUser() re-validates the JWT against Supabase rather than trusting
+    // the cookie's contents outright — the correct check to run in proxy.
+    const {
+        data: { user },
+    } = await supabase.auth.getUser();
+
     const { pathname } = request.nextUrl;
+    const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
+    if (isProtected && !user) {
+        const loginUrl = new URL("/login", request.url);
+        loginUrl.searchParams.set("next", pathname);
+        return NextResponse.redirect(loginUrl);
+    }
 
-    // --- Future: Auth Guard ---
-    // Uncomment when authentication is implemented:
-    //
-    // const session = request.cookies.get("session")?.value;
-    // const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
-    // const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
-    //
-    // if (isProtected && !session) {
-    //     const loginUrl = new URL("/login", request.url);
-    //     loginUrl.searchParams.set("callbackUrl", pathname);
-    //     return NextResponse.redirect(loginUrl);
-    // }
-    //
-    // if (isAuthRoute && session) {
-    //     return NextResponse.redirect(new URL("/dashboard", request.url));
-    // }
+    return response;
+}
+
+export async function proxy(request: NextRequest) {
+    const { pathname } = request.nextUrl;
 
     // --- API Rate Limiting at the Edge ---
     if (pathname.startsWith("/api/")) {
@@ -50,7 +66,7 @@ export function proxy(request: NextRequest) {
         return response;
     }
 
-    return NextResponse.next();
+    return refreshSupabaseSession(request);
 }
 
 // Only run on specific paths for performance

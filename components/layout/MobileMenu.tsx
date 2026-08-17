@@ -208,7 +208,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                                 Sign In
                             </Link>
                             <Link
-                                href="/signup"
+                                href="/register"
                                 onClick={onClose}
                                 className="flex items-center justify-center rounded-xl border border-primary-200 bg-primary-50 py-2.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100"
                             >

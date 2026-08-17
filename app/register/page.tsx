@@ -1,24 +1,25 @@
 import { ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
-import LoginForm from "@/components/auth/LoginForm";
+import RegisterForm from "@/components/auth/RegisterForm";
 import AuthLayout from "@/components/auth/AuthLayout";
 
 export const metadata: Metadata = {
-    title: "Sign In | Haitech Medical",
-    description: "Sign in to your Haitech Medical account.",
+    title: "Create Account | Haitech Medical",
+    description: "Create a Haitech Medical account.",
 };
 
-interface LoginPageProps {
+interface RegisterPageProps {
     searchParams: Promise<{ error?: string; message?: string }>;
 }
 
-export default async function LoginPage({ searchParams }: LoginPageProps) {
+export default async function RegisterPage({ searchParams }: RegisterPageProps) {
     const params = await searchParams;
+    const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
     return (
         <AuthLayout
-            title="Welcome back"
-            subtitle="Sign in to your Haitech account to manage orders"
+            title="Create your account"
+            subtitle="Sign up to manage orders and quote requests"
             footer={
                 <div className="mt-6 flex items-center justify-center gap-2 text-xs text-neutral-400">
                     <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
@@ -28,7 +29,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         >
             {params.message === "check-email" && (
                 <div className="mb-5 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm text-primary-700" role="status">
-                    Check your email to confirm your account before signing in.
+                    Almost there — check your email for a confirmation link to activate your account.
                 </div>
             )}
             {params.error && (
@@ -37,7 +38,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 </div>
             )}
 
-            <LoginForm />
+            <RegisterForm turnstileSiteKey={turnstileSiteKey} />
         </AuthLayout>
     );
 }

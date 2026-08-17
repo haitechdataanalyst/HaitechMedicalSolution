@@ -11,7 +11,7 @@ import Link from "next/link";
 import { MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
 
-const AUTH_ROUTES = ["/login", "/signup", "/forgot-password"];
+const AUTH_ROUTES = ["/login", "/signup", "/register", "/forgot-password", "/dashboard/update-password", "/auth/mfa-verify"];
 
 // Pill expands on hover (desktop); icon-only on mobile to save screen space
 const PILL = "group flex items-center overflow-hidden rounded-full transition-all duration-300";

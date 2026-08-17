@@ -215,7 +215,7 @@ export default function Header() {
                                                 <Link href="/login" className="rounded-lg px-3 py-1.5 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-primary-600">
                                                     Sign In
                                                 </Link>
-                                                <Link href="/signup" className="rounded-full bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100">
+                                                <Link href="/register" className="rounded-full bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100">
                                                     Register
                                                 </Link>
                                             </>
