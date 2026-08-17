@@ -87,13 +87,20 @@ export default function Footer({ sections, config }: FooterProps) {
                                 <EmailIcon size={14} className="shrink-0 text-primary-400" />
                                 <span className="break-all">{config.company.email}</span>
                             </a>
-                            <div className="flex items-start gap-2.5 text-navy-400">
+                            <a
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                    `${config.company.address.street}, ${config.company.address.city}, ${config.company.address.state} ${config.company.address.postcode}`
+                                )}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-2.5 text-navy-400 transition-colors hover:text-white"
+                            >
                                 <LocationIcon size={14} className="mt-0.5 shrink-0 text-primary-400" />
                                 <span>
                                     {config.company.address.street}<br />
                                     {config.company.address.city}, {config.company.address.state} {config.company.address.postcode}
                                 </span>
-                            </div>
+                            </a>
                         </div>
                     </div>
 

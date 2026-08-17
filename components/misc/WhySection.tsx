@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const stats: { value: string; label: string; icon: IconName }[] = [
     { value: "6+", label: "Global Brands", icon: "globe" },
-    { value: "1000+", label: "Workshops & Conferences Supported", icon: "conference" },
+    { value: "1500+", label: "Workshops & Conferences Supported", icon: "conference" },
     { value: "30+", label: "Active Partnerships", icon: "users" },
     { value: "15+", label: "Years of Excellence", icon: "award" },
 ];
@@ -16,14 +16,14 @@ const stats: { value: string; label: string; icon: IconName }[] = [
 export default function WhySection() {
     return (
         <section className="bg-navy-gradient">
-            <div className="section-lg container">
+            <div className="section container">
                 {/* Header */}
                 <ScrollReveal variant="up">
-                    <div className="mb-14 text-center md:mb-16">
-                        <span className="label-tag label-tag-white mb-5 inline-flex">
+                    <div className="mb-10 text-center md:mb-12">
+                        <span className="label-tag label-tag-white mb-4 inline-flex">
                             Our Track Record
                         </span>
-                        <h2 className="heading-1 mb-4 text-white">
+                        <h2 className="heading-2 mb-3 text-white">
                             Why Choose{" "}
                             <span className="text-primary-400">Haitech Medical?</span>
                         </h2>
@@ -34,19 +34,19 @@ export default function WhySection() {
                 </ScrollReveal>
 
                 {/* Stats Grid */}
-                <div className="mb-14 grid grid-cols-2 gap-4 md:mb-16 md:gap-6 lg:grid-cols-4">
+                <div className="mb-10 grid grid-cols-2 gap-4 md:mb-12 md:gap-6 lg:grid-cols-4">
                     {stats.map((stat, index) => (
-                        <ScrollReveal key={index} variant="up" delay={index * 100} threshold={0.06}>
-                        <Card tone="dark" hover className="p-6 text-center md:p-8">
-                            <div className="mb-3 flex justify-center">
+                        <ScrollReveal key={index} variant="up" delay={index * 100} threshold={0.06} className="h-full">
+                        <Card tone="dark" hover className="flex h-full min-h-[160px] flex-col items-center justify-center p-5 text-center md:min-h-[180px] md:p-6">
+                            <div className="mb-2.5 flex justify-center">
                                 <Lordicon
                                     icon={stat.icon}
-                                    size={64}
+                                    size={48}
                                     trigger="hover"
                                     colors={{ primary: "#1fb6cd", secondary: "#33cbdb" }}
                                 />
                             </div>
-                            <div className="mb-1.5 text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+                            <div className="mb-1.5 text-2xl font-bold tracking-tight text-white md:text-3xl lg:text-4xl">
                                 {stat.value}
                             </div>
                             <div className="text-xs font-medium uppercase tracking-widest text-navy-300 md:text-sm">

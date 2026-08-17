@@ -130,12 +130,12 @@ const TIMELINE = [
 ];
 
 const BRANDS = [
-    { name: "Admetec",  logo: "/BrandLogo/AdmetecLogo.jpeg",  cat: "Loupes & Optics",      desc: "Surgical loupes & LED headlights built for precision." },
-    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.jpeg",  cat: "Burs & Rotary",        desc: "High-performance diamond burs & rotary instruments." },
-    { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpeg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality." },
-    { name: "Salli",    logo: "/BrandLogo/SalliLogo.jpeg",    cat: "Ergonomic Seating",     desc: "Saddle chairs that protect posture over long procedures." },
-    { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpeg", cat: "Dental Chairs",         desc: "Feature-rich treatment chairs for the modern clinic." },
-    { name: "Bondent",  logo: "/BrandLogo/BondentGroupLogo.jpg", cat: "Endo & Imaging",     desc: "German-registered endodontics, imaging & digital implant systems." },
+    { name: "Admetec",  logo: "/BrandLogo/AdmetecLogo.jpeg",  cat: "Loupes & Optics",      desc: "Surgical loupes & LED headlights built for precision.", href: "/product/admetec" },
+    { name: "Strauss",  logo: "/BrandLogo/StraussLogo.jpeg",  cat: "Burs & Rotary",        desc: "High-performance diamond burs & rotary instruments.", href: "/product/strauss" },
+    { name: "Medesy",   logo: "/BrandLogo/MedesyLogo.jpeg",   cat: "Instruments",           desc: "Italian-crafted dental instruments of unmatched quality.", href: "/product/medesy" },
+    { name: "Salli",    logo: "/BrandLogo/SalliLogo.jpeg",    cat: "Ergonomic Seating",     desc: "Saddle chairs that protect posture over long procedures.", href: "/product/salli" },
+    { name: "Almadent", logo: "/BrandLogo/AlmadentLogo.jpeg", cat: "Dental Chairs",         desc: "Feature-rich treatment chairs for the modern clinic.", href: "/product/almadent" },
+    { name: "Bondent",  logo: "/BrandLogo/BondentGroupLogo.jpg", cat: "Endo & Imaging",     desc: "German-registered endodontics, imaging & digital implant systems.", href: "/product/bondent" },
 ];
 
 const STATS = [
@@ -263,17 +263,18 @@ export default function AboutPageClient({ teamMembers }: { teamMembers: TeamMemb
 
                     <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
                         {BRANDS.map((brand, i) => (
-                            <div
+                            <Link
                                 key={brand.name}
+                                href={brand.href}
                                 data-reveal="scale"
-                                className={`reveal-d${Math.min(i + 1, 5)} group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-colors duration-200 hover:border-neutral-300`}
+                                className={`reveal-d${Math.min(i + 1, 5)} group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-colors duration-200 hover:border-primary-300 hover:shadow-md`}
                             >
                                 <div className="mb-5 flex h-10 items-center">
                                     <Image src={brand.logo} alt={brand.name} width={80} height={32} className="h-8 w-auto object-contain" />
                                 </div>
                                 <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-400">{brand.cat}</p>
                                 <p className="mt-auto text-sm leading-relaxed text-neutral-500">{brand.desc}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

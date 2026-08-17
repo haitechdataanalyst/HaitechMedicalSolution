@@ -64,18 +64,18 @@ export function ErgoMagnificationSelector() {
     };
 
     return (
-        <section className="overflow-hidden bg-neutral-50 py-16 md:py-24 lg:py-32">
+        <section className="overflow-hidden bg-neutral-50 py-16 md:py-20 lg:py-24">
             <div className="container">
 
                 {/* Section header */}
-                <div className="mb-10 md:mb-16">
-                    <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">
+                <div className="mb-10 md:mb-14">
+                    <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">
                         Variable Magnification
                     </span>
                     <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                         Choose your<br />magnification.
                     </h2>
-                    <p className="mt-4 max-w-md text-base text-neutral-500 md:text-lg">
+                    <p className="mt-4 max-w-md text-base text-neutral-600 md:text-lg">
                         Higher magnification reveals finer detail — at the cost of a narrower field and shallower depth. Pick the power that fits your procedure.
                     </p>
                 </div>
