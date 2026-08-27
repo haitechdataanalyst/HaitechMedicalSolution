@@ -1,0 +1,109 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      skip_migrations:
+        description: Skip database migrations
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy — VPS via SSH
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Build frontend for deployment ──────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install frontend deps
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
+
+      # ── SSH deploy to VPS ──────────────────────────────────────────────────
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Add server to known hosts
+        run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Sync code to server
+        run: |
+          rsync -az --delete \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='.next' \
+            --exclude='.env' \
+            --exclude='.env.local' \
+            --exclude='haitech-medical-backend-main/node_modules' \
+            --exclude='haitech-medical-backend-main/.env' \
+            --exclude='haitech-medical-backend-main/logs' \
+            . ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/
+
+      - name: Sync built frontend
+        run: |
+          rsync -az \
+            .next/standalone/ \
+            ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/
+          rsync -az \
+            .next/static/ \
+            ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/.next/static/
+
+      - name: Deploy on server
+        run: |
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << 'EOF'
+            set -e
+            cd ${{ secrets.DEPLOY_PATH }}
+
+            echo "==> Installing backend dependencies..."
+            cd haitech-medical-backend-main
+            npm ci --omit=dev --ignore-scripts
+
+            if [ "${{ github.event.inputs.skip_migrations }}" != "true" ]; then
+              echo "==> Running database migrations..."
+              node --env-file=.env node_modules/.bin/drizzle-kit migrate
+            fi
+
+            echo "==> Reloading backend with PM2 (zero-downtime)..."
+            pm2 reload ecosystem.config.cjs --env production --update-env
+
+            cd ..
+
+            echo "==> Restarting frontend..."
+            pm2 restart haitech-frontend || pm2 start server.js --name haitech-frontend --update-env
+
+            echo "==> Saving PM2 process list..."
+            pm2 save
+
+            echo "==> Deploy complete!"
+          EOF
+
+      - name: Verify deployment
+        run: |
+          sleep 5
+          curl -f ${{ secrets.DEPLOY_HEALTH_URL }}/health/live \
+            -H "X-Api-Key: ${{ secrets.API_KEY }}" \
+            || (echo "Health check failed!" && exit 1)
