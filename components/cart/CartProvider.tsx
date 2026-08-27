@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState, useRef, ReactNode, useCallback } from "react";
 import { CartItem } from "@/types";
 import { getCartItemKey } from "@/lib/cart";
-import { cartApi, getAccessToken } from "@/lib/api";
+import { cartApi } from "@/lib/api";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 interface CartContextType {
@@ -58,6 +58,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const serverItemIdMap = useRef(new Map<string, string>());
     // undefined = not yet initialized, null = guest, string = userId
     const prevUserIdRef = useRef<string | null | undefined>(undefined);
+    // Mirrors `user` for the stable ([]-dep) callbacks below, which otherwise
+    // would close over a stale value instead of the current login state.
+    const userRef = useRef(user);
+    useEffect(() => {
+        userRef.current = user;
+    }, [user]);
 
     // React to user login / logout / switch
     useEffect(() => {
@@ -146,7 +152,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
         setIsOpen(true);
 
-        if (getAccessToken()) {
+        if (userRef.current) {
             cartApi.addItem({
                 productId: newItem.productId,
                 productName: newItem.productName,
@@ -166,7 +172,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         setItems((current) => current.filter((item) => getCartItemKey(item) !== itemKey));
 
         const serverId = serverItemIdMap.current.get(itemKey);
-        if (getAccessToken() && serverId) {
+        if (userRef.current && serverId) {
             serverItemIdMap.current.delete(itemKey);
             cartApi.removeItem(serverId).catch(() => {});
         }
@@ -184,7 +190,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             );
 
             const serverId = serverItemIdMap.current.get(itemKey);
-            if (getAccessToken() && serverId) {
+            if (userRef.current && serverId) {
                 cartApi.updateItem(serverId, quantity).catch(() => {});
             }
         },
@@ -194,7 +200,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const clearCart = useCallback(() => {
         setItems([]);
         serverItemIdMap.current.clear();
-        if (getAccessToken()) {
+        if (userRef.current) {
             cartApi.clearCart().catch(() => {});
         }
     }, []);

@@ -1,4 +1,4 @@
-import { and, eq } from 'drizzle-orm';
+import { and, desc, eq, ilike, or, sql } from 'drizzle-orm';
 import { db } from '../config/index.js';
 import { authProviders, roleCodes } from '../constants/index.js';
 import { roles, userDetails, userRoles, users } from '../schema/index.js';
@@ -20,6 +20,7 @@ const mapUserAggregate = (rows) => {
 		passwordHash: details?.passwordHash ?? null,
 		oldPasswordHash: details?.oldPasswordHash ?? null,
 		googleSub: details?.googleSub ?? null,
+		supabaseId: details?.supabaseId ?? null,
 		authProvider: details?.authProvider ?? authProviders.LOCAL,
 		userDetailsActive: details?.active ?? true,
 		userDetailsModifiedAt: details?.modifiedAt ?? null,
@@ -86,6 +87,14 @@ export const findByGoogleSub = async (googleSub) => {
 	return findUserByCondition(eq(userDetails.googleSub, googleSub));
 };
 
+export const findBySupabaseId = async (supabaseId) => {
+	if (!supabaseId) {
+		return null;
+	}
+
+	return findUserByCondition(eq(userDetails.supabaseId, supabaseId));
+};
+
 export const create = async ({
 	email,
 	username,
@@ -94,6 +103,7 @@ export const create = async ({
 	phone = null,
 	passwordHash = null,
 	googleSub = null,
+	supabaseId = null,
 	authProvider = authProviders.LOCAL,
 	defaultRoleCode = roleCodes.USER,
 	emailVerified = false,
@@ -125,6 +135,7 @@ export const create = async ({
 				passwordHash,
 				oldPasswordHash: null,
 				googleSub,
+				supabaseId,
 				authProvider,
 				modifiedBy: createdBy ?? createdUser.id,
 				active: true,
@@ -148,6 +159,7 @@ export const create = async ({
 			passwordHash: createdDetails.passwordHash,
 			oldPasswordHash: createdDetails.oldPasswordHash,
 			googleSub: createdDetails.googleSub,
+			supabaseId: createdDetails.supabaseId,
 			authProvider: createdDetails.authProvider,
 			userDetailsActive: createdDetails.active,
 			userDetailsModifiedAt: createdDetails.modifiedAt,
@@ -181,4 +193,46 @@ export const updateById = async (id, data) => {
 export const deleteById = async (id) => {
 	const [deleted] = await db.delete(users).where(eq(users.id, id)).returning({ id: users.id });
 	return !!deleted;
+};
+
+// ── Admin ─────────────────────────────────────────────────────────────────────
+// Previously a raw inline query in admin.controller.js — moved here so the
+// admin user-listing follows the same repository pattern as every other
+// domain instead of the admin controller reaching into `db` directly.
+export const findManyAdmin = async ({ search, limit = 20, offset = 0 } = {}) => {
+	const conditions = [eq(users.active, true)];
+	if (search) {
+		const q = `%${search}%`;
+		conditions.push(or(ilike(users.firstName, q), ilike(users.lastName, q), ilike(users.email, q), ilike(users.username, q)));
+	}
+	const where = and(...conditions);
+
+	const columns = {
+		id: users.id,
+		firstName: users.firstName,
+		lastName: users.lastName,
+		username: users.username,
+		email: users.email,
+		phone: users.phone,
+		active: users.active,
+		createdAt: users.createdAt,
+		modifiedAt: users.modifiedAt,
+		emailVerified: userDetails.emailVerified,
+		blacklisted: userDetails.blacklisted,
+		authProvider: userDetails.authProvider,
+	};
+
+	const [rows, [countRow]] = await Promise.all([
+		db
+			.select(columns)
+			.from(users)
+			.leftJoin(userDetails, eq(userDetails.userId, users.id))
+			.where(where)
+			.orderBy(desc(users.createdAt))
+			.limit(limit)
+			.offset(offset),
+		db.select({ count: sql`count(*)::int` }).from(users).where(where),
+	]);
+
+	return { rows, total: countRow?.count ?? 0 };
 };

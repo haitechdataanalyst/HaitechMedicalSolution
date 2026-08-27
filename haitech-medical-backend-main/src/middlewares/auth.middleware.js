@@ -1,10 +1,9 @@
-import { tokenService, userService } from '../services/index.js';
+import { supabaseAuthService } from '../services/index.js';
 import { logger } from '../config/index.js';
 import {
 	unauthorizedError, forbiddenError, setRequestContext, extractToken,
 	isApiError, getRedisData, setRedisData, incrementRedisKey, expireRedisKey,
 } from '../utils/index.js';
-import { tokens } from '../constants/index.js';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const BRUTE_FORCE_MAX_ATTEMPTS = 5;
@@ -51,15 +50,16 @@ const isLockedOut = async (ip) => {
 };
 
 // ── Core authenticate helper (shared by auth and optionalAuth) ────────────────
+// Phase 4: identity comes from a Supabase-verified session, not a
+// self-issued JWT. verifySupabaseToken checks the token against Supabase's
+// own Auth server; resolveLocalUser resolves/JIT-provisions the local
+// `users` row that this app's business tables (orders, cart, etc.) FK to.
 const authenticate = async (req) => {
 	const accessToken = extractToken(req.headers.authorization);
 	if (!accessToken) return null;
 
-	// verifyToken throws typed ApiErrors for expired / revoked / invalid tokens.
-	const decoded = await tokenService.verifyToken(accessToken, tokens.ACCESS);
-	if (!decoded) return null;
-
-	const user = await userService.getUserById(decoded.sub);
+	const supabaseUser = await supabaseAuthService.verifySupabaseToken(accessToken);
+	const user = await supabaseAuthService.resolveLocalUser(supabaseUser);
 	if (!user) return null;
 
 	const resolvedRoles = Array.isArray(user.roles) ? user.roles : user.role ? [user.role] : [];
@@ -95,13 +95,8 @@ export const auth =
 			const accessToken = extractToken(req.headers.authorization);
 			if (!accessToken) return next(unauthorizedError('Authentication required'));
 
-			const decoded = await tokenService.verifyToken(accessToken, tokens.ACCESS);
-			if (!decoded) {
-				await recordAuthFailure(ip);
-				return next(unauthorizedError('Token expired, please get a new token'));
-			}
-
-			const user = await userService.getUserById(decoded.sub);
+			const supabaseUser = await supabaseAuthService.verifySupabaseToken(accessToken);
+			const user = await supabaseAuthService.resolveLocalUser(supabaseUser);
 			if (!user) {
 				await recordAuthFailure(ip);
 				return next(unauthorizedError('User not found'));
@@ -151,6 +146,9 @@ export const optionalAuth = async (req, res, next) => {
 	try {
 		const user = await authenticate(req);
 		if (user) {
+			// req is not concurrently mutated elsewhere in this codebase's
+			// single-pass middleware chain — safe despite the awaited call above.
+			// eslint-disable-next-line require-atomic-updates
 			req.user = user;
 			setRequestContext({ userId: user.id });
 		}

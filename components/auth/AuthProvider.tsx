@@ -1,14 +1,13 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from "react";
-import { authApi, userApi, getAccessToken, setAccessToken, removeAccessToken, User } from "@/lib/api";
+import { createClient } from "@/utils/supabase/client";
+import { userApi, User } from "@/lib/api";
 
 interface AuthContextValue {
     user: User | null;
     isLoading: boolean;
     isAuthenticated: boolean;
-    login: (email: string, password: string) => Promise<{ success: boolean; message: string }>;
-    googleLogin: (credential: string) => Promise<{ success: boolean; message: string }>;
     logout: () => Promise<void>;
     refreshUser: () => Promise<void>;
 }
@@ -19,62 +18,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
+    // Fetches the app's own profile (firstName/lastName/roles/etc. — richer
+    // than Supabase's bare auth user). The backend resolves/JIT-provisions
+    // the local user row from the Supabase session itself — see
+    // supabaseAuth.service.js — so this is safe to call whenever a session exists.
     const refreshUser = useCallback(async () => {
-        const token = getAccessToken();
-        if (!token) {
-            setUser(null);
-            return;
-        }
-
         try {
             const res = await userApi.getProfile();
-            if (res.success && res.data?.user) {
-                setUser(res.data.user);
-            } else {
-                setUser(null);
-                removeAccessToken();
-            }
+            setUser(res.success && res.data?.user ? res.data.user : null);
         } catch {
             setUser(null);
-            removeAccessToken();
         }
     }, []);
 
     useEffect(() => {
-        refreshUser().finally(() => setIsLoading(false));
+        const supabase = createClient();
+
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            (session ? refreshUser() : Promise.resolve(setUser(null))).finally(() => setIsLoading(false));
+        });
+
+        // Keep in sync across tabs / background token refresh / sign-out.
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, session) => {
+            if (session) {
+                refreshUser();
+            } else {
+                setUser(null);
+            }
+        });
+
+        return () => subscription.unsubscribe();
     }, [refreshUser]);
 
-    const login = useCallback(async (email: string, password: string) => {
-        const res = await authApi.login(email, password);
-
-        if (res.success && res.data) {
-            setAccessToken(res.data.accessToken);
-            setUser(res.data.user);
-            return { success: true, message: res.message || "Login successful" };
-        }
-
-        return { success: false, message: res.message || "Login failed" };
-    }, []);
-
-    const googleLogin = useCallback(async (credential: string) => {
-        const res = await authApi.googleSignIn({ credential });
-
-        if (res.success && res.data) {
-            setAccessToken(res.data.accessToken);
-            setUser(res.data.user);
-            return { success: true, message: res.message || "Google sign-in successful" };
-        }
-
-        return { success: false, message: res.message || "Google sign-in failed" };
-    }, []);
-
     const logout = useCallback(async () => {
-        try {
-            await authApi.logout();
-        } catch {
-            // clear local state even if server call fails
-        }
-        removeAccessToken();
+        const supabase = createClient();
+        await supabase.auth.signOut();
         setUser(null);
     }, []);
 
@@ -84,8 +64,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 user,
                 isLoading,
                 isAuthenticated: !!user,
-                login,
-                googleLogin,
                 logout,
                 refreshUser,
             }}

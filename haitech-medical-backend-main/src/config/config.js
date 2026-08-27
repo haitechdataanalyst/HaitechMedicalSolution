@@ -48,6 +48,10 @@ const config = {
 	GOOGLE: {
 		CLIENT_ID: value.GOOGLE_CLIENT_ID || null,
 	},
+	SUPABASE: {
+		URL: value.SUPABASE_URL || null,
+		ANON_KEY: value.SUPABASE_ANON_KEY || null,
+	},
 	SMTP: {
 		HOST: value.SMTP_HOST || null,
 		PORT: Number(value.SMTP_PORT) || 587,

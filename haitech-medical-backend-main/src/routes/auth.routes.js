@@ -23,6 +23,12 @@ import {
 } from '../validations/auth.validation.js';
 import { httpStatus } from '../constants/index.js';
 
+// Phase 4: Supabase is now the sole identity source (auth.middleware.js only
+// verifies Supabase-issued tokens). Every route below still issues/consumes
+// this backend's OWN legacy JWTs, which auth() no longer accepts — they are
+// effectively dead. Left mounted (not deleted) because full legacy-endpoint
+// removal was explicitly deferred to a later cleanup pass; see
+// [[feedback_architecture_policy]].
 const authRouter = Router();
 
 // Apply no-cache to every auth response so credentials are never stored by browsers or proxies.

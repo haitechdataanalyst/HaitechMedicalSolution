@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from "react";
-import { wishlistApi, getAccessToken } from "@/lib/api";
+import { wishlistApi } from "@/lib/api";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 interface WishlistContextValue {
@@ -33,6 +33,12 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
     const [items, setItems] = useState<string[]>([]);
     const { user, isLoading: authLoading } = useAuth();
     const prevUserIdRef = useRef<string | null | undefined>(undefined);
+    // Mirrors `user` for the stable ([]-dep) `toggle` callback below, which
+    // otherwise would close over a stale value instead of the current login state.
+    const userRef = useRef(user);
+    useEffect(() => {
+        userRef.current = user;
+    }, [user]);
 
     // React to user login / logout / switch
     useEffect(() => {
@@ -51,8 +57,6 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
         const storageKey = `haitech-wishlist-${currentUserId}`;
         const local = readLocal(storageKey);
         setItems(local);
-
-        if (!getAccessToken()) return;
 
         wishlistApi.getWishlist().then((res) => {
             if (res.success && res.data) {
@@ -80,7 +84,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
             const isInList = prev.includes(id);
             const next = isInList ? prev.filter((x) => x !== id) : [...prev, id];
 
-            if (getAccessToken()) {
+            if (userRef.current) {
                 if (isInList) {
                     wishlistApi.removeItem(id).catch(() => {});
                 } else {
