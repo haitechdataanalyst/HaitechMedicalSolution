@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Gem, Factory, Wrench, Microscope, Globe, Flame } from "lucide-react";
 import type { Metadata } from "next";
+import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
     title: "Medesy | Italian Dental Instruments & Equipment",
@@ -46,49 +48,55 @@ export default function AboutMedesyPage() {
                     <span className="text-white/60">Medesy</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
-                        Made in Italy · Maniago
-                    </span>
-                    <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
-                        MEDESY
-                    </h1>
-                    <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
-                        Italian dental instruments blending six centuries of artisan expertise with continuous innovation — precision, craftsmanship, and performance in every piece.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/product-category/medesy" className="btn btn-lg btn-primary rounded-full px-8">
-                            Explore Instruments
-                        </Link>
-                        <Link
-                            href="/support/contact"
-                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
-                        >
-                            Contact Us
-                        </Link>
+                <ScrollReveal variant="up" duration={800}>
+                    <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
+                        <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70">
+                            Made in Italy · Maniago
+                        </span>
+                        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
+                            MEDESY
+                        </h1>
+                        <p className="max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
+                            Italian dental instruments blending six centuries of artisan expertise with continuous innovation — precision, craftsmanship, and performance in every piece.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-3 pt-1">
+                            <Link href="/product-category/medesy" className="btn btn-lg btn-primary rounded-full px-8">
+                                Explore Instruments
+                            </Link>
+                            <Link
+                                href="/support/contact"
+                                className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
+                            >
+                                Contact Us
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* ── Brand Statement ── */}
             <section className="bg-navy-gradient py-10 md:py-20 lg:py-28">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/70 md:text-2xl lg:text-3xl">
-                        &ldquo;Six centuries of blade-making heritage — channeled into every instrument we forge.&rdquo;
-                    </p>
-                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
-                        {[
-                            { v: "600+",  l: "Years of Heritage"    },
-                            { v: "100+",  l: "Instruments"          },
-                            { v: "4",     l: "Instrument Categories" },
-                            { v: "Italy", l: "Made in Maniago"      },
-                        ].map((s) => (
-                            <div key={s.l} className="text-center">
-                                <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
-                                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <ScrollReveal variant="up">
+                        <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-loose text-white/70 md:text-2xl md:leading-relaxed lg:text-3xl">
+                            &ldquo;Six centuries of blade-making heritage — channeled into every instrument we forge.&rdquo;
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal variant="up" delay={100}>
+                        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
+                            {[
+                                { v: "600+",  l: "Years of Heritage"    },
+                                { v: "100+",  l: "Instruments"          },
+                                { v: "4",     l: "Instrument Categories" },
+                                { v: "Italy", l: "Made in Maniago"      },
+                            ].map((s) => (
+                                <div key={s.l} className="text-center">
+                                    <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
+                                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/40">{s.l}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -96,7 +104,7 @@ export default function AboutMedesyPage() {
             <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24 lg:py-32">
                 <div className="container">
                     <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-16">
-                        <div className="w-full lg:w-1/2">
+                        <ScrollReveal variant="up" className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">01 / Heritage</span>
                             <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 A Legacy<br />Forged in Steel.
@@ -107,8 +115,8 @@ export default function AboutMedesyPage() {
                             <p className="text-sm leading-relaxed text-neutral-400 md:text-base">
                                 Blending centuries-old artisan expertise with continuous innovation, MEDESY focuses on advanced design, superior ergonomics, and reliable functionality — trusted by professionals worldwide.
                             </p>
-                        </div>
-                        <div className="w-full lg:w-1/2">
+                        </ScrollReveal>
+                        <ScrollReveal variant="scale" delay={100} className="w-full lg:w-1/2">
                             <div className="relative">
                                 <Link href="/product-category/medesy/forceps" className="group block overflow-hidden rounded-3xl bg-white shadow-2xl shadow-neutral-200">
                                     <Image
@@ -124,7 +132,7 @@ export default function AboutMedesyPage() {
                                     <div className="text-xs font-semibold uppercase tracking-widest text-primary-100">Years of Heritage</div>
                                 </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -142,25 +150,26 @@ export default function AboutMedesyPage() {
                         </p>
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {categories.map((cat) => (
-                            <Link
-                                key={cat.name}
-                                href={cat.href}
-                                className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-200 hover:border-primary-500/40"
-                            >
-                                <div className="relative aspect-square overflow-hidden bg-white/5">
-                                    <Image
-                                        src={cat.image}
-                                        alt={cat.name}
-                                        fill
-                                        className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                </div>
-                                <div className="border-t border-white/10 p-4 md:p-5">
-                                    <h3 className="mb-1 text-sm font-bold text-white">{cat.name}</h3>
-                                    <p className="text-xs text-white/40">{cat.count}</p>
-                                </div>
-                            </Link>
+                        {categories.map((cat, i) => (
+                            <ScrollReveal key={cat.name} variant="up" delay={i * 70} threshold={0.15}>
+                                <Link
+                                    href={cat.href}
+                                    className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-200 hover:border-primary-500/40"
+                                >
+                                    <div className="relative aspect-square overflow-hidden bg-white/5">
+                                        <Image
+                                            src={cat.image}
+                                            alt={cat.name}
+                                            fill
+                                            className="object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="border-t border-white/10 p-4 md:p-5">
+                                        <h3 className="mb-1 text-sm font-bold text-white">{cat.name}</h3>
+                                        <p className="text-xs text-white/40">{cat.count}</p>
+                                    </div>
+                                </Link>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
@@ -169,50 +178,58 @@ export default function AboutMedesyPage() {
             {/* ── The MEDESY Difference ── */}
             <section className="border-t border-neutral-200 bg-neutral-50 py-12 md:py-24">
                 <div className="container">
-                    <div className="mb-8 text-center md:mb-14">
-                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">The MEDESY Difference</span>
-                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Where Craft Meets Clinic</h2>
-                        <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500 md:text-base">
-                            Where centuries of Italian craftsmanship meets modern dental innovation.
-                        </p>
-                    </div>
+                    <ScrollReveal variant="up">
+                        <div className="mb-8 text-center md:mb-14">
+                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-400">The MEDESY Difference</span>
+                            <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Where Craft Meets Clinic</h2>
+                            <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-500 md:text-base">
+                                Where centuries of Italian craftsmanship meets modern dental innovation.
+                            </p>
+                        </div>
+                    </ScrollReveal>
                     <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
-                        {heritage.map((item) => (
-                            <div key={item.title} className="border-t border-neutral-200 pt-5">
-                                <div className="mb-2 flex items-center gap-2.5 text-primary-600">
-                                    {item.icon}
-                                    <h3 className="text-sm font-bold text-neutral-900">{item.title}</h3>
+                        {heritage.map((item, i) => (
+                            <ScrollReveal key={item.title} variant="up" delay={i * 70} threshold={0.15}>
+                                <div className="border-t border-neutral-200 pt-5">
+                                    <div className="mb-2 flex items-center gap-2.5 text-primary-600">
+                                        {item.icon}
+                                        <h3 className="text-sm font-bold text-neutral-900">{item.title}</h3>
+                                    </div>
+                                    <p className="text-sm leading-relaxed text-neutral-500">{item.description}</p>
                                 </div>
-                                <p className="text-sm leading-relaxed text-neutral-500">{item.description}</p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
             </section>
 
+            <HaitechPartnership brand="Medesy" />
+
             {/* ── CTA ── */}
             <section className="bg-navy-gradient py-14 text-white md:py-28">
                 <div className="container text-center">
-                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-                        Built in Maniago, Trusted in Your Clinic
-                    </h2>
-                    <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
-                        Browse the full elevator, forceps, and scissors range, or request pricing for your practice.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Link
-                            href="/product-category/medesy"
-                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:bg-primary-50"
-                        >
-                            Browse Instruments
-                        </Link>
-                        <Link
-                            href="/support/contact"
-                            className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:border-white hover:bg-white/10"
-                        >
-                            Contact Sales
-                        </Link>
-                    </div>
+                    <ScrollReveal variant="scale">
+                        <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+                            Built in Maniago, Trusted in Your Clinic
+                        </h2>
+                        <p className="mx-auto mb-8 max-w-xl text-base text-white/55 md:text-lg">
+                            Browse the full elevator, forceps, and scissors range, or request pricing for your practice.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link
+                                href="/product-category/medesy"
+                                className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:bg-primary-50"
+                            >
+                                Browse Instruments
+                            </Link>
+                            <Link
+                                href="/support/contact"
+                                className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:border-white hover:bg-white/10"
+                            >
+                                Contact Sales
+                            </Link>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
         </>

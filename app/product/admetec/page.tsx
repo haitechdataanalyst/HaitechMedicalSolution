@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { Eye, Crosshair, Lightbulb, Sparkles, Award, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
+import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
     title: "Admetec | Premium Dental Loupes & Headlights",
@@ -75,49 +77,55 @@ export default function AboutAdmetecPage() {
                     <span className="text-white/70">Admetec</span>
                 </nav>
 
-                <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
-                    <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/75">
-                        Israeli Precision · Made for Dentistry
-                    </span>
-                    <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
-                        Admetec
-                    </h1>
-                    <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                        World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-3 pt-1">
-                        <Link href="/product-category/admetec" className="btn btn-lg btn-primary rounded-full px-8">
-                            Explore Loupes
-                        </Link>
-                        <Link
-                            href="/support/contact"
-                            className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
-                        >
-                            Contact Us
-                        </Link>
+                <ScrollReveal variant="up" duration={800}>
+                    <div className="relative z-10 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
+                        <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/75">
+                            Israeli Precision · Made for Dentistry
+                        </span>
+                        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl md:text-9xl">
+                            Admetec
+                        </h1>
+                        <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+                            World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-3 pt-1">
+                            <Link href="/product-category/admetec" className="btn btn-lg btn-primary rounded-full px-8">
+                                Explore Loupes
+                            </Link>
+                            <Link
+                                href="/support/contact"
+                                className="btn btn-lg rounded-full border border-white/25 px-8 text-white transition-all hover:bg-white/10"
+                            >
+                                Contact Us
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* ── Brand Statement ── */}
             <section className="bg-navy-gradient py-14 md:py-20 lg:py-24">
                 <div className="container">
-                    <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/75 md:text-2xl lg:text-3xl">
-                        &ldquo;Precision magnification engineered for the clinicians who demand the best — because every detail matters in dentistry.&rdquo;
-                    </p>
-                    <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
-                        {[
-                            { v: "2.5x–10x", l: "Magnification Range" },
-                            { v: "ISO",      l: "Certified Quality"  },
-                            { v: "500+",     l: "Clinicians Served"  },
-                            { v: "2",        l: "Optical Systems"    },
-                        ].map((s) => (
-                            <div key={s.l} className="text-center">
-                                <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
-                                <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/50">{s.l}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <ScrollReveal variant="up">
+                        <p className="mx-auto max-w-4xl text-center text-lg font-light italic leading-relaxed text-white/75 md:text-2xl lg:text-3xl">
+                            &ldquo;Precision magnification engineered for the clinicians who demand the best — because every detail matters in dentistry.&rdquo;
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal variant="up" delay={100}>
+                        <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-6 md:mt-14 md:grid-cols-4">
+                            {[
+                                { v: "2.5x–10x", l: "Magnification Range" },
+                                { v: "ISO",      l: "Certified Quality"  },
+                                { v: "500+",     l: "Clinicians Served"  },
+                                { v: "2",        l: "Optical Systems"    },
+                            ].map((s) => (
+                                <div key={s.l} className="text-center">
+                                    <p className="text-2xl font-bold text-primary-400 md:text-3xl lg:text-4xl">{s.v}</p>
+                                    <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/50">{s.l}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
@@ -125,7 +133,7 @@ export default function AboutAdmetecPage() {
             <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
-                        <div className="w-full lg:w-1/2">
+                        <ScrollReveal variant="up" className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">01 / Galilean Loupes</span>
                             <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Lightweight.<br />Wide. Clear.
@@ -144,14 +152,14 @@ export default function AboutAdmetecPage() {
                                     </Link>
                                 ))}
                             </div>
-                        </div>
-                        <div className="w-full lg:w-1/2">
+                        </ScrollReveal>
+                        <ScrollReveal variant="scale" delay={100} className="w-full lg:w-1/2">
                             <ProductShowcase
                                 href="/product-category/admetec"
                                 src="/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg"
                                 alt="Admetec Galilean Loupes"
                             />
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -160,15 +168,15 @@ export default function AboutAdmetecPage() {
             <section className="bg-navy-gradient py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:gap-16">
-                        <div className="w-full lg:w-1/2">
+                        <ScrollReveal variant="scale" className="w-full lg:w-1/2">
                             <ProductShowcase
                                 href="/product-category/admetec"
                                 src="/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg"
                                 alt="Admetec Ergo Prismatic Loupes"
                                 tone="dark"
                             />
-                        </div>
-                        <div className="w-full lg:w-1/2">
+                        </ScrollReveal>
+                        <ScrollReveal variant="up" delay={100} className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-white/45">02 / Prismatic Ergo</span>
                             <h2 className="mb-4 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
                                 Higher Power.<br />Better Posture.
@@ -187,7 +195,7 @@ export default function AboutAdmetecPage() {
                                     </Link>
                                 ))}
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -199,7 +207,7 @@ export default function AboutAdmetecPage() {
             <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
                     <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
-                        <div className="w-full lg:w-1/2">
+                        <ScrollReveal variant="up" className="w-full lg:w-1/2">
                             <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">03 / Headlights</span>
                             <h2 className="mb-4 text-3xl font-bold leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                                 Shadow-Free<br />Illumination.
@@ -220,14 +228,14 @@ export default function AboutAdmetecPage() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                        <div className="w-full lg:w-1/2">
+                        </ScrollReveal>
+                        <ScrollReveal variant="scale" delay={100} className="w-full lg:w-1/2">
                             <ProductShowcase
                                 href="/our-headlights"
                                 src="/images/products/admetec/Lights/Flamingo/Flamingo-with-Loupes-and-PowerPack.webp"
                                 alt="Admetec Flamingo headlight with loupes"
                             />
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -235,53 +243,59 @@ export default function AboutAdmetecPage() {
             {/* ── Why Admetec ── */}
             <section className="border-t border-neutral-200 bg-neutral-50 py-16 md:py-20 lg:py-24">
                 <div className="container">
-                    <div className="mb-10 text-center md:mb-14">
-                        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">Why Professionals Choose Admetec</span>
-                        <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Built on Six Pillars</h2>
-                    </div>
+                    <ScrollReveal variant="up">
+                        <div className="mb-10 text-center md:mb-14">
+                            <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-neutral-500">Why Professionals Choose Admetec</span>
+                            <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-5xl">Built on Six Pillars</h2>
+                        </div>
+                    </ScrollReveal>
                     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {features.map((f, i) => (
-                            <div
-                                key={f.title}
-                                className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-md"
-                            >
-                                <span aria-hidden className="pointer-events-none absolute right-5 top-4 select-none text-4xl font-black text-neutral-100 transition-colors group-hover:text-primary-500/10">
-                                    {String(i + 1).padStart(2, "0")}
-                                </span>
-                                <div className="relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
-                                    {f.icon}
+                            <ScrollReveal key={f.title} variant="up" delay={i * 70} threshold={0.15}>
+                                <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-md">
+                                    <span aria-hidden className="pointer-events-none absolute right-5 top-4 select-none text-4xl font-black text-neutral-100 transition-colors group-hover:text-primary-500/10">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <div className="relative mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
+                                        {f.icon}
+                                    </div>
+                                    <h3 className="relative mb-1.5 text-base font-bold text-neutral-900">{f.title}</h3>
+                                    <p className="relative text-sm leading-relaxed text-neutral-600">{f.description}</p>
                                 </div>
-                                <h3 className="relative mb-1.5 text-base font-bold text-neutral-900">{f.title}</h3>
-                                <p className="relative text-sm leading-relaxed text-neutral-600">{f.description}</p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                     </div>
                 </div>
             </section>
 
+            {/* ── Haitech Partnership ── */}
+            <HaitechPartnership brand="Admetec" />
+
             {/* ── CTA ── */}
             <section className="bg-brand-gradient py-16 text-white md:py-24">
                 <div className="container text-center">
-                    <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-                        Try Before You Order
-                    </h2>
-                    <p className="mx-auto mb-8 max-w-xl text-base text-white/70 md:text-lg">
-                        Book a fitting call — our team measures your working distance and interpupillary distance so your loupes are dialed in before they ship.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Link
-                            href="/product-category/admetec"
-                            className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-50"
-                        >
-                            Browse Products
-                        </Link>
-                        <Link
-                            href="/support/contact"
-                            className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
-                        >
-                            Book a Fitting Call
-                        </Link>
-                    </div>
+                    <ScrollReveal variant="scale">
+                        <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+                            Try Before You Order
+                        </h2>
+                        <p className="mx-auto mb-8 max-w-xl text-base text-white/70 md:text-lg">
+                            Book a fitting call — our team measures your working distance and interpupillary distance so your loupes are dialed in before they ship.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link
+                                href="/product-category/admetec"
+                                className="btn btn-lg rounded-full bg-white px-10 font-bold text-primary-700 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-50"
+                            >
+                                Browse Products
+                            </Link>
+                            <Link
+                                href="/support/contact"
+                                className="btn btn-lg rounded-full border border-white/25 px-10 text-white transition-all hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+                            >
+                                Book a Fitting Call
+                            </Link>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
         </>
