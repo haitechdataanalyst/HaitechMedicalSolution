@@ -3,15 +3,7 @@
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Loader2, Printer } from "lucide-react";
-import { ordersApi } from "@/lib/api";
-
-type Invoice = {
-    invoiceNo: string;
-    orderId: string;
-    items: { id: string; productName: string; productSku: string | null; quantity: number; unitPrice: number; totalPrice: number }[];
-    total: number;
-    currency: string;
-};
+import { orderApi, Invoice } from "@/lib/api";
 
 const fmt = (paise: number, currency = "INR") =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 0 }).format(paise / 100);
@@ -23,7 +15,7 @@ export default function InvoicePage({ params }: { params: Promise<{ id: string }
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        ordersApi
+        orderApi
             .getInvoice(id)
             .then((res) => {
                 if (res.success && res.data?.invoice) {
