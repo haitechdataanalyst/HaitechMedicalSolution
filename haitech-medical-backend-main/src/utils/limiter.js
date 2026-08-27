@@ -16,27 +16,24 @@ export const createRedisRateLimitStore = (prefix, ttlSeconds) => {
 	const keyPrefix = `rl:${prefix}:`;
 
 	return {
+		// On any Redis error, this throws (uncaught) to trigger the safety-net
+		// fallback in createSafeRateLimiter.
 		async increment(key) {
-			try {
-				if (!isRedisConnected()) {
-					throw new Error('Redis not connected');
-				}
-
-				const redisClient = getRedisClient();
-				const fullKey = keyPrefix + key;
-
-				// Use INCR to increment the counter and EXPIRE to set TTL
-				await redisClient.incr(fullKey);
-				// Use the actual window TTL so the counter resets correctly
-				await redisClient.expire(fullKey, ttlSeconds);
-
-				// Get current value
-				const current = await redisClient.get(fullKey);
-				return { totalHits: parseInt(current, 10), resetTime: new Date() };
-			} catch (error) {
-				// On any Redis error, throw to trigger safety-net fallback
-				throw error;
+			if (!isRedisConnected()) {
+				throw new Error('Redis not connected');
 			}
+
+			const redisClient = getRedisClient();
+			const fullKey = keyPrefix + key;
+
+			// Use INCR to increment the counter and EXPIRE to set TTL
+			await redisClient.incr(fullKey);
+			// Use the actual window TTL so the counter resets correctly
+			await redisClient.expire(fullKey, ttlSeconds);
+
+			// Get current value
+			const current = await redisClient.get(fullKey);
+			return { totalHits: parseInt(current, 10), resetTime: new Date() };
 		},
 
 		async decrement(key) {
@@ -45,9 +42,8 @@ export const createRedisRateLimitStore = (prefix, ttlSeconds) => {
 				const redisClient = getRedisClient();
 				const fullKey = keyPrefix + key;
 				await redisClient.decr(fullKey);
-			} catch (error) {
+			} catch {
 				// Silently fail on decrement errors
-				return;
 			}
 		},
 
@@ -57,9 +53,8 @@ export const createRedisRateLimitStore = (prefix, ttlSeconds) => {
 				const redisClient = getRedisClient();
 				const fullKey = keyPrefix + key;
 				await redisClient.del(fullKey);
-			} catch (error) {
+			} catch {
 				// Silently fail on reset errors
-				return;
 			}
 		},
 	};

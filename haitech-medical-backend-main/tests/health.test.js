@@ -14,9 +14,9 @@ before(async () => {
 });
 
 after(async () => {
-	await new Promise((resolve, reject) =>
-		server.close((err) => (err ? reject(err) : resolve()))
-	);
+	await new Promise((resolve, reject) => {
+		server.close((err) => (err ? reject(err) : resolve()));
+	});
 	await closeDB();
 });
 

@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
         "out/**",
         "build/**",
         "next-env.d.ts",
+        // This repo also holds the separate Express backend as a subdirectory,
+        // with its own eslint.config.js — without this, the frontend's config
+        // (no eslint-plugin-security) tries to lint it too and produces bogus
+        // "rule not found" errors for every security/* rule the backend uses.
+        "haitech-medical-backend-main/**",
     ]),
 ]);
 

@@ -2,6 +2,8 @@ import { eq, and, ilike, gte, lte, or, desc, asc, sql } from 'drizzle-orm';
 import { db } from '../config/index.js';
 import { products, categories, brands } from '../schema/index.js';
 
+const isPresent = (v) => v !== null && v !== undefined;
+
 const parseJson = (str) => {
 	if (!str) return null;
 	try { return JSON.parse(str); } catch { return null; }
@@ -22,12 +24,12 @@ const hydrate = (row) => {
 export const findMany = async ({ search, categoryId, brandId, hasVariants, minPrice, maxPrice, currency, sort = 'order', page = 1, limit = 20 } = {}) => {
 	const conditions = [eq(products.active, true)];
 
-	if (categoryId != null)  conditions.push(eq(products.categoryId, Number(categoryId)));
-	if (brandId != null)     conditions.push(eq(products.brandId, Number(brandId)));
+	if (isPresent(categoryId)) conditions.push(eq(products.categoryId, Number(categoryId)));
+	if (isPresent(brandId))    conditions.push(eq(products.brandId, Number(brandId)));
 	if (hasVariants === 'true' || hasVariants === true) conditions.push(eq(products.hasVariants, true));
-	if (currency)            conditions.push(eq(products.currency, currency.toUpperCase()));
-	if (minPrice != null)    conditions.push(gte(products.basePrice, Number(minPrice)));
-	if (maxPrice != null)    conditions.push(lte(products.basePrice, Number(maxPrice)));
+	if (currency)              conditions.push(eq(products.currency, currency.toUpperCase()));
+	if (isPresent(minPrice))   conditions.push(gte(products.basePrice, Number(minPrice)));
+	if (isPresent(maxPrice))   conditions.push(lte(products.basePrice, Number(maxPrice)));
 
 	if (search) {
 		const q = `%${search}%`;
@@ -117,11 +119,11 @@ export const findAllBrands = async () => {
 export const searchAdvanced = async ({ q = '', filters = {}, sort = 'relevance', page = 1, limit = 20 } = {}) => {
 	const conditions = [eq(products.active, true)];
 
-	if (filters.categoryId != null) conditions.push(eq(products.categoryId, Number(filters.categoryId)));
-	if (filters.brandId != null)    conditions.push(eq(products.brandId, Number(filters.brandId)));
-	if (filters.currency)           conditions.push(eq(products.currency, filters.currency.toUpperCase()));
-	if (filters.minPrice != null)   conditions.push(gte(products.basePrice, Number(filters.minPrice)));
-	if (filters.maxPrice != null)   conditions.push(lte(products.basePrice, Number(filters.maxPrice)));
+	if (isPresent(filters.categoryId)) conditions.push(eq(products.categoryId, Number(filters.categoryId)));
+	if (isPresent(filters.brandId))    conditions.push(eq(products.brandId, Number(filters.brandId)));
+	if (filters.currency)              conditions.push(eq(products.currency, filters.currency.toUpperCase()));
+	if (isPresent(filters.minPrice))   conditions.push(gte(products.basePrice, Number(filters.minPrice)));
+	if (isPresent(filters.maxPrice))   conditions.push(lte(products.basePrice, Number(filters.maxPrice)));
 	if (filters.hasVariants === 'true' || filters.hasVariants === true) {
 		conditions.push(eq(products.hasVariants, true));
 	}

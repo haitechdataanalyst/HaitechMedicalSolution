@@ -47,6 +47,56 @@ export default [
 		},
 	},
 
+	// ── Architecture boundaries ────────────────────────────────────────────────
+	// Route → Controller → Service → Repository → Schema/DB (see
+	// feedback_architecture_policy). Only the two boundaries below are
+	// enforced by lint: Controller→Repository/DB skip, and Repository→
+	// Service/Controller (upward/circular). The Service→Repository boundary
+	// is deliberately NOT enforced here — several services legitimately
+	// import `db` for transaction orchestration (withRetryableTransaction),
+	// and payment.service.js has a documented row-locking exception; encoding
+	// that safely would need a per-file allowlist, left as a future addition
+	// rather than risking false positives on already-reviewed code.
+	{
+		files: ['src/controllers/**/*.js'],
+		rules: {
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['../repositories/*', '../schema/*'],
+							message: 'Controllers must not import repositories or schema directly — go through services/index.js.',
+						},
+					],
+					paths: [
+						{
+							name: '../config/index.js',
+							importNames: ['db', 'pg', 'checkDBHealth', 'closeDB'],
+							message: 'Controllers must not access the DB directly — go through services/index.js.',
+						},
+					],
+				},
+			],
+		},
+	},
+	{
+		files: ['src/repositories/**/*.js'],
+		rules: {
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['../services/*', '../controllers/*', '../routes/*'],
+							message: 'Repositories must not import services, controllers, or routes — that would create an upward/circular layer dependency.',
+						},
+					],
+				},
+			],
+		},
+	},
+
 	// Ignore patterns
 	{
 		ignores: ['node_modules/', 'logs/', 'public/', 'docs/', '*.config.js'],

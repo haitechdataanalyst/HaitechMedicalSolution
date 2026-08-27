@@ -74,8 +74,13 @@ const getTrackingToken = async () => {
 		throw serviceUnavailableError('Failed to obtain DTDC tracking token');
 	}
 
+	// Two concurrent calls can both miss the cache and both fetch a token —
+	// harmless (DTDC tokens aren't single-use), just an occasional duplicate
+	// auth request; not worth a mutex for a 23h-lived token.
+	// eslint-disable-next-line require-atomic-updates
 	_trackingToken = data.token;
 	// Tokens never expire per docs but we refresh every 23h as a safety measure
+	// eslint-disable-next-line require-atomic-updates
 	_trackingTokenExpiry = Date.now() + 23 * 60 * 60 * 1000;
 	return _trackingToken;
 };

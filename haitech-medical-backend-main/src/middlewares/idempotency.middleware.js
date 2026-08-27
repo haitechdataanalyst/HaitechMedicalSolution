@@ -1,4 +1,4 @@
-import { getRedisData, setRedisData, badRequestError } from '../utils/index.js';
+import { getRedisData, badRequestError } from '../utils/index.js';
 import { httpStatus } from '../constants/index.js';
 import { logger, redis } from '../config/index.js';
 
@@ -157,7 +157,7 @@ export const idempotency = async (req, res, next) => {
 	const lockKey = `idm:lock:${scopedKey}`;
 
 	// ── Step 1: Check for a completed cached response (fail-open on Redis error) ──
-	let cached = null;
+	let cached;
 	try {
 		cached = await getRedisData(scopedKey, { throwOnError: true });
 	} catch (err) {

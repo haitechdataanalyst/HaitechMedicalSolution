@@ -1,5 +1,4 @@
-import { Router } from 'express';
-import express from 'express';
+import express, { Router } from 'express';
 import { createPaymentOrder, verifyPayment, handleWebhook } from '../controllers/index.js';
 import { validate, auth, jsonBody, overallLimiter, paymentLimiter, webhookLimiter } from '../middlewares/index.js';
 import { createPaymentOrderSchema, verifyPaymentSchema } from '../validations/payments.validation.js';

@@ -1,9 +1,11 @@
 import { OAuth2Client } from 'google-auth-library';
 import { httpStatus } from '../constants/index.js';
 import { authService } from '../services/index.js';
-import { catchAsync, setRefreshTokenCookie, clearRefreshTokenCookie, getRefreshTokenFromCookie } from '../utils/index.js';
+import {
+	catchAsync, setRefreshTokenCookie, clearRefreshTokenCookie, getRefreshTokenFromCookie,
+	badRequestError, serviceUnavailableError,
+} from '../utils/index.js';
 import { env } from '../config/index.js';
-import { badRequestError, serviceUnavailableError } from '../utils/index.js';
 
 const getGoogleClient = () => {
 	if (!env.GOOGLE?.CLIENT_ID) throw serviceUnavailableError('Google OAuth is not configured');

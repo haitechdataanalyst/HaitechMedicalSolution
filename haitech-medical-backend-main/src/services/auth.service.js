@@ -1,14 +1,15 @@
 import crypto from 'crypto';
 import bcryptjs from 'bcryptjs';
-import { env } from '../config/index.js';
+import { env, logger } from '../config/index.js';
 import { authProviders, roleCodes, tokens } from '../constants/index.js';
 import { userRepository } from '../repositories/index.js';
 import * as tokenService from './token.service.js';
 import * as emailService from './email.service.js';
 import { buildUserPayload } from './user.service.js';
-import { conflictError, unauthorizedError, badRequestError, notFoundError } from '../utils/index.js';
-import { setRedisData, getRedisData, deleteRedisData } from '../utils/index.js';
-import { redis, logger } from '../config/index.js';
+import {
+	conflictError, unauthorizedError, badRequestError, notFoundError,
+	setRedisData, getRedisData, deleteRedisData,
+} from '../utils/index.js';
 
 // In-memory fallback for password-reset & email-verify tokens when Redis is down
 const memTokens = new Map();

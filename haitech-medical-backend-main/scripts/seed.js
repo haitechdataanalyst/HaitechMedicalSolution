@@ -30,7 +30,7 @@ const sql = postgres({
 const db = drizzle(sql);
 
 // ── Schema (inline so script is self-contained) ───────────────────────────────
-import { pgTable, integer, varchar, text, boolean, timestamp, index, uniqueIndex, jsonb } from 'drizzle-orm/pg-core';
+import { pgTable, integer, varchar, text, boolean, timestamp, jsonb } from 'drizzle-orm/pg-core';
 
 const brands = pgTable('brands', {
 	id: integer('id').primaryKey(),
@@ -92,7 +92,7 @@ const products = pgTable('products', {
 // INR prices in products.json are already in paise (e.g. 201000 = ₹2010).
 // AUD/USD prices are in the main unit (e.g. 12.99) → convert to cents (1299).
 const toSubunit = (price) => {
-	if (price == null) return null;
+	if (price === null || price === undefined) return null;
 	if (Number.isInteger(price)) return price;        // already paise / whole number
 	return Math.round(price * 100);                   // 12.99 AUD → 1299 cents
 };

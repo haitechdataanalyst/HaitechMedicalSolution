@@ -1,5 +1,5 @@
 import bcryptjs from 'bcryptjs';
-import { userRepository } from '../repositories/index.js';
+import { userRepository, addressRepository } from '../repositories/index.js';
 import * as tokenService from './token.service.js';
 import { notFoundError, conflictError, unauthorizedError, badRequestError } from '../utils/index.js';
 
@@ -70,6 +70,63 @@ export const changePassword = async (userId, { currentPassword, newPassword }) =
 	await tokenService.revokeAllUserTokens(userId);
 };
 
-const userService = { buildUserPayload, getUserById, updateProfile, changePassword };
+// ── Addresses ─────────────────────────────────────────────────────────────────
+// Previously the controller called addressRepository directly (a
+// Controller→Repository skip). Moved here so the controller only ever talks
+// to services — see [[feedback_architecture_policy]] Phase 8.
+
+export const getAddresses = async (userId) => addressRepository.findByUserId(userId);
+
+export const createAddress = async (userId, data) => addressRepository.create(userId, data);
+
+export const updateAddress = async (id, userId, data) => {
+	const address = await addressRepository.update(id, userId, data);
+	if (!address) throw notFoundError('Address not found');
+	return address;
+};
+
+export const deleteAddress = async (id, userId) => {
+	const deleted = await addressRepository.softDelete(id, userId);
+	if (!deleted) throw notFoundError('Address not found');
+};
+
+export const setDefaultAddress = async (id, userId) => {
+	const address = await addressRepository.setDefault(id, userId);
+	if (!address) throw notFoundError('Address not found');
+	return address;
+};
+
+// ── Admin ─────────────────────────────────────────────────────────────────────
+
+export const adminListUsers = async ({ page = 1, limit = 20, search } = {}) => {
+	const offset = (page - 1) * limit;
+	const { rows, total } = await userRepository.findManyAdmin({ search, limit, offset });
+	return { users: rows, meta: { page, limit, total, totalPages: Math.ceil(total / limit) || 1 } };
+};
+
+// `adminId` is the admin performing the action, distinct from `userId` (the
+// target account being activated/deactivated) — the original inline
+// implementation correctly recorded the admin as modifiedBy; kept that here.
+export const adminToggleUserStatus = async (adminId, userId) => {
+	const user = await userRepository.findById(userId);
+	if (!user) throw notFoundError('User not found');
+
+	const updated = await userRepository.updateById(userId, { active: !user.active, modifiedBy: adminId });
+	return { id: updated.id, active: updated.active, email: updated.email };
+};
+
+const userService = {
+	buildUserPayload,
+	getUserById,
+	updateProfile,
+	changePassword,
+	getAddresses,
+	createAddress,
+	updateAddress,
+	deleteAddress,
+	setDefaultAddress,
+	adminListUsers,
+	adminToggleUserStatus,
+};
 
 export default userService;

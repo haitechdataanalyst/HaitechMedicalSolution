@@ -1,6 +1,5 @@
-import { env } from '../config/index.js';
+import { env, logger } from '../config/index.js';
 import { getRedisClient, isRedisConnected } from '../config/redis.js';
-import { logger } from '../config/index.js';
 import { internalError, badRequestError } from '../utils/index.js';
 
 // ── Redis cache keys ───────────────────────────────────────────────────────────
@@ -94,7 +93,11 @@ const zohoFetch = async (path, options = {}) => {
 	if (res.status === 401) {
 		logger.warn('[Zoho] Got 401 — refreshing token and retrying');
 		if (isRedisConnected()) {
-			try { await getRedisClient().del(TOKEN_KEY); } catch {}
+			try {
+				await getRedisClient().del(TOKEN_KEY);
+			} catch {
+				// Best-effort invalidation — fetchNewAccessToken() below still runs either way.
+			}
 		}
 		const freshToken = await fetchNewAccessToken();
 		const retryRes = await fetch(url.toString(), {
