@@ -45,6 +45,13 @@ export const envVarSchema = Joi.object().keys({
 	GOOGLE_CLIENT_ID: Joi.string().allow('').optional().description('Google OAuth client ID for ID token verification'),
 	GOOGLE_CLIENT_SECRET: Joi.string().allow('').optional().description('Google OAuth client secret'),
 
+	// Supabase is the sole identity source (see [[feedback_architecture_policy]]
+	// Phase 4) — the auth middleware verifies frontend-issued Supabase access
+	// tokens against these. Safe to reuse the frontend's NEXT_PUBLIC_SUPABASE_*
+	// values verbatim; only the public anon key is needed, not the service role key.
+	SUPABASE_URL: Joi.string().uri().allow('').optional().description('Supabase project URL — used to verify frontend-issued auth tokens'),
+	SUPABASE_ANON_KEY: Joi.string().allow('').optional().description('Supabase anon/public API key'),
+
 	// DTDC shipping integration (all optional — server starts without them)
 	DTDC_PX_API_KEY: Joi.string().allow('').optional(),
 	DTDC_CUSTOMER_CODE: Joi.string().allow('').optional(),
@@ -211,6 +218,17 @@ export const validateEnv = (env) => {
 			// eslint-disable-next-line no-console
 			console.warn(`\n⚠️  DTDC shipping is partially configured — missing: ${dtdcMissing.join(', ')}. Shipment creation will fail at runtime.\n`);
 		}
+	}
+
+	// Supabase is the sole identity source — every auth()-protected route
+	// depends on it. Warn loudly (rather than crash) so environments without
+	// network access (local dev, CI) can still boot and run non-auth tests.
+	if (!value.SUPABASE_URL || !value.SUPABASE_ANON_KEY) {
+		// eslint-disable-next-line no-console
+		console.warn(
+			'\n⚠️  SUPABASE_URL / SUPABASE_ANON_KEY are not both set — no user will be able to authenticate.\n' +
+				'    Set both to the same values as the frontend\'s NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY.\n'
+		);
 	}
 
 	return value;
