@@ -7,6 +7,7 @@ import {
 	orderListSchema,
 	adminOrderListSchema,
 	adminUpdateStatusSchema,
+	returnRequestSchema,
 } from '../validations/orders.validation.js';
 
 const ordersRouter = Router();
@@ -24,7 +25,9 @@ ordersRouter.put('/admin/:id/status', auth('admin'), jsonBody('10kb'), validate(
 // Parameterised user routes
 ordersRouter.get('/:id', auth(), validate(orderIdSchema), getOrder);
 ordersRouter.put('/:id/cancel', auth(), validate(orderIdSchema), cancelOrder);
-ordersRouter.put('/:id/return', auth(), jsonBody('5kb'), validate(orderIdSchema), requestReturn);
+// returnRequestSchema validates both params.id and the body (reason/description)
+// — previously only params.id was validated here, the body was unchecked.
+ordersRouter.put('/:id/return', auth(), jsonBody('5kb'), validate(returnRequestSchema), requestReturn);
 ordersRouter.get('/:id/invoice', auth(), validate(orderIdSchema), getOrderInvoice);
 
 export default ordersRouter;

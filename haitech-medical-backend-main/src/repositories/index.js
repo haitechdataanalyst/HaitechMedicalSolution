@@ -8,3 +8,7 @@ export * as reviewRepository from './review.repository.js';
 export * as notificationRepository from './notification.repository.js';
 export * as couponRepository from './coupon.repository.js';
 export * as productRepository from './product.repository.js';
+export * as returnRepository from './return.repository.js';
+export * as inventoryRepository from './inventory.repository.js';
+export * as paymentTransactionRepository from './paymentTransaction.repository.js';
+export * as revenueRepository from './revenue.repository.js';

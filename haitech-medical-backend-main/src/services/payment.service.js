@@ -1,7 +1,6 @@
 import crypto from 'crypto';
-import { env } from '../config/index.js';
-import { db } from '../config/index.js';
-import { orderRepository } from '../repositories/index.js';
+import { env, db } from '../config/index.js';
+import { orderRepository, paymentTransactionRepository } from '../repositories/index.js';
 import { badRequestError, notFoundError, internalError } from '../utils/index.js';
 import { withRetryableTransaction } from '../utils/db/drizzle.utils.js';
 import { orders } from '../schema/index.js';
@@ -188,67 +187,101 @@ const processWebhookEvent = async (event) => {
 	});
 };
 
-// ── Fix 4: Refund initiation ──────────────────────────────────────────────────
-// Initiates a partial or full refund via Razorpay and persists the refund ID.
-// `amount` must be in the smallest currency unit (paise for INR).
-// Omit `amount` to trigger a full refund of the order total.
-export const initiateRefund = async (orderId, amount) => {
-	const order = await orderRepository.findById(orderId);
-	if (!order) throw notFoundError('Order not found');
-	if (order.paymentStatus !== 'paid') {
-		throw badRequestError('Order has not been paid — cannot refund');
-	}
-	if (!order.razorpayPaymentId) {
-		throw badRequestError('No Razorpay payment ID found for this order');
-	}
+// ── Lightweight DI ────────────────────────────────────────────────────────────
+// createPaymentOrder/verifyPayment/processWebhookEvent above are deliberately
+// NOT wrapped in DI: their entire value is the SELECT-FOR-UPDATE row-locking
+// under real concurrency (the documented repository-bypass exception for
+// payment code — see [[feedback_architecture_policy]]), which a fake repo
+// can't meaningfully exercise; they need a real Postgres integration test,
+// not a unit test. initiateRefund and adminListTransactions below have no
+// such requirement — their business logic (refund-amount guards, pagination)
+// is ordinary branching, so they're factored for fake-repo unit testing the
+// same way order/return/coupon services are.
+export const createPaymentService = ({
+	orderRepository: orderRepo = orderRepository,
+	paymentTransactionRepository: paymentTransactionRepo = paymentTransactionRepository,
+	getRazorpayClient = getRazorpay,
+} = {}) => {
+	// ── Fix 4: Refund initiation ────────────────────────────────────────────
+	// Initiates a partial or full refund via Razorpay and persists the refund ID.
+	// `amount` must be in the smallest currency unit (paise for INR).
+	// Omit `amount` to trigger a full refund of the order total.
+	const initiateRefund = async (orderId, amount) => {
+		const order = await orderRepo.findById(orderId);
+		if (!order) throw notFoundError('Order not found');
+		if (order.paymentStatus !== 'paid') {
+			throw badRequestError('Order has not been paid — cannot refund');
+		}
+		if (!order.razorpayPaymentId) {
+			throw badRequestError('No Razorpay payment ID found for this order');
+		}
 
-	// Default to a full refund when no amount is given
-	const refundAmount = amount == null ? order.total : amount;
+		// Default to a full refund when no amount is given
+		const refundAmount = amount === null || amount === undefined ? order.total : amount;
 
-	if (typeof refundAmount !== 'number' || refundAmount <= 0) {
-		throw badRequestError('Refund amount must be a positive number (in paise)');
-	}
-	if (refundAmount > order.total) {
-		throw badRequestError(`Refund amount (${refundAmount}) exceeds order total (${order.total})`);
-	}
+		if (typeof refundAmount !== 'number' || refundAmount <= 0) {
+			throw badRequestError('Refund amount must be a positive number (in paise)');
+		}
+		if (refundAmount > order.total) {
+			throw badRequestError(`Refund amount (${refundAmount}) exceeds order total (${order.total})`);
+		}
 
-	const rz = await getRazorpay();
+		const rz = await getRazorpayClient();
 
-	const refund = await rz.payments.refund(order.razorpayPaymentId, {
-		amount: refundAmount,
-		notes: { orderId, reason: 'customer_requested' },
-	});
+		const refund = await rz.payments.refund(order.razorpayPaymentId, {
+			amount: refundAmount,
+			notes: { orderId, reason: 'customer_requested' },
+		});
 
-	// Persist the refund ID in the notes field (avoids a schema migration) and
-	// update paymentStatus to reflect full vs. partial refund state.
-	const isFullRefund = refundAmount === order.total;
-	const newNotes = [
-		order.notes,
-		`refund_id:${refund.id}`,
-		`refund_amount:${refundAmount}`,
-	]
-		.filter(Boolean)
-		.join(' | ');
+		// Persist the refund ID in the notes field (avoids a schema migration) and
+		// update paymentStatus to reflect full vs. partial refund state.
+		const isFullRefund = refundAmount === order.total;
+		const newNotes = [
+			order.notes,
+			`refund_id:${refund.id}`,
+			`refund_amount:${refundAmount}`,
+		]
+			.filter(Boolean)
+			.join(' | ');
 
-	await db
-		.update(orders)
-		.set({
-			paymentStatus: isFullRefund ? 'refunded' : 'partially_refunded',
-			// varchar(500) column — truncate to be safe
-			notes: newNotes.slice(0, 500),
-			modifiedAt: new Date(),
-		})
-		.where(eq(orders.id, orderId));
+		await db
+			.update(orders)
+			.set({
+				paymentStatus: isFullRefund ? 'refunded' : 'partially_refunded',
+				// varchar(500) column — truncate to be safe
+				notes: newNotes.slice(0, 500),
+				modifiedAt: new Date(),
+			})
+			.where(eq(orders.id, orderId));
 
-	return {
-		refundId: refund.id,
-		amount: refund.amount,
-		currency: refund.currency,
-		status: refund.status,
-		orderId,
+		return {
+			refundId: refund.id,
+			amount: refund.amount,
+			currency: refund.currency,
+			status: refund.status,
+			orderId,
+		};
 	};
+
+	// ── Admin: list payment transactions ────────────────────────────────────
+	const adminListTransactions = async ({ page = 1, limit = 20, orderId, userId } = {}) => {
+		const offset = (page - 1) * limit;
+		const { rows, total } = await paymentTransactionRepo.findMany({ orderId, userId, limit, offset });
+		return { transactions: rows, meta: { page, limit, total, totalPages: Math.ceil(total / limit) || 1 } };
+	};
+
+	return { initiateRefund, adminListTransactions };
 };
 
-const paymentService = { createPaymentOrder, verifyPayment, handleWebhookPayment, initiateRefund };
+const defaultPaymentDomainService = createPaymentService();
+export const { initiateRefund, adminListTransactions } = defaultPaymentDomainService;
+
+const paymentService = {
+	createPaymentOrder,
+	verifyPayment,
+	handleWebhookPayment,
+	...defaultPaymentDomainService,
+	createPaymentService,
+};
 
 export default paymentService;

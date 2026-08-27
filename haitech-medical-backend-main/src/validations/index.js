@@ -7,3 +7,5 @@ export * from './custom.validation.js';
 export * from './shipments.validation.js';
 export * from './reviews.validation.js';
 export * from './coupons.validation.js';
+export * from './products.validation.js';
+export * from './admin.validation.js';

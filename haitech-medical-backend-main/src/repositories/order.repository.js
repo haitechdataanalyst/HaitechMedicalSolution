@@ -1,6 +1,6 @@
-import { and, desc, eq, sql } from 'drizzle-orm';
+import { and, desc, eq, gte, lte, sql } from 'drizzle-orm';
 import { db } from '../config/index.js';
-import { orders, orderItems } from '../schema/index.js';
+import { orders, orderItems, orderStatusHistory } from '../schema/index.js';
 
 // ── Internal helpers ──────────────────────────────────────────────────────────
 
@@ -98,8 +98,17 @@ export const findManyByUser = async (userId, { limit = 10, offset = 0 } = {}) =>
 	return { rows, total: countResult?.count ?? 0 };
 };
 
-export const findMany = async ({ limit = 20, offset = 0, status } = {}) => {
-	const where = status ? and(eq(orders.active, true), eq(orders.status, status)) : eq(orders.active, true);
+// userId/dateFrom/dateTo were previously duplicated as a second, ad-hoc query
+// directly inside admin.controller.js because this function didn't support
+// them — extended here instead of maintaining two admin order-listing
+// implementations. See [[feedback_architecture_policy]] Phase 2.
+export const findMany = async ({ limit = 20, offset = 0, status, userId, dateFrom, dateTo } = {}) => {
+	const conditions = [eq(orders.active, true)];
+	if (status) conditions.push(eq(orders.status, status));
+	if (userId) conditions.push(eq(orders.userId, userId));
+	if (dateFrom) conditions.push(gte(orders.createdAt, new Date(dateFrom)));
+	if (dateTo) conditions.push(lte(orders.createdAt, new Date(dateTo)));
+	const where = and(...conditions);
 
 	const rows = await db.select().from(orders).where(where).orderBy(desc(orders.createdAt)).limit(limit).offset(offset);
 
@@ -110,13 +119,29 @@ export const findMany = async ({ limit = 20, offset = 0, status } = {}) => {
 
 // ── Status / payment updates ──────────────────────────────────────────────────
 
-export const updateStatus = async (id, modifiedBy, status) => {
-	const [order] = await db
+// `conn` defaults to the shared pool but accepts a transaction context so
+// callers (e.g. return.service.js) can update an order's status atomically
+// alongside other writes in the same transaction.
+export const updateStatus = async (id, modifiedBy, status, conn = db) => {
+	const [order] = await conn
 		.update(orders)
 		.set({ status, modifiedAt: new Date(), modifiedBy })
 		.where(and(eq(orders.id, id), eq(orders.active, true)))
 		.returning();
 	return order || null;
+};
+
+// Type-safe replacement for the raw `db.execute(sql\`INSERT INTO
+// order_status_history ...\`)` that used to live inline in admin.controller.js
+// wrapped in a try/catch-swallow "table may not exist yet" guard — the table
+// is now a declared Drizzle schema (Phase 1), so a real failure here should
+// surface like any other write, not be silently discarded.
+export const recordStatusHistory = async ({ orderId, fromStatus, toStatus, changedBy, reason }, conn = db) => {
+	const [row] = await conn
+		.insert(orderStatusHistory)
+		.values({ orderId, fromStatus: fromStatus ?? null, toStatus, changedBy: changedBy ?? null, reason: reason ?? null })
+		.returning();
+	return row;
 };
 
 export const findByRazorpayOrderId = async (razorpayOrderId) => {

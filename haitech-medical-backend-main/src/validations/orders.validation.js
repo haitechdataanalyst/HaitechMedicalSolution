@@ -1,6 +1,10 @@
 import Joi from 'joi';
 
-const ORDER_STATUSES = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled'];
+// Must match every state in order.service.js's VALID_TRANSITIONS — 'returned'
+// was previously missing here even though STATUSES_REQUIRING_REASON already
+// referenced it, so the admin status-update endpoint could never legally
+// move an order into 'return_requested' or 'returned'.
+const ORDER_STATUSES = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled', 'return_requested', 'returned'];
 
 // Statuses that require a reason to be provided by the admin.
 const STATUSES_REQUIRING_REASON = ['cancelled', 'returned'];
@@ -63,6 +67,12 @@ export const adminOrderListSchema = {
 		status: Joi.string()
 			.valid(...ORDER_STATUSES)
 			.allow(null, ''),
+		// adminGetAllOrders also filters by these — previously unvalidated,
+		// so a malformed dateFrom/dateTo silently produced an empty/wrong
+		// result set instead of a clear 400.
+		userId: Joi.string().uuid().allow(null, ''),
+		dateFrom: Joi.date().iso().allow(null, ''),
+		dateTo: Joi.date().iso().allow(null, ''),
 	}),
 };
 
@@ -104,5 +114,20 @@ export const adminReturnSchema = {
 		status: Joi.string().valid(...RETURN_STATUSES).required(),
 		adminNotes: Joi.string().trim().max(1000).allow('', null),
 		refundAmount: Joi.number().integer().min(0).allow(null),
+	}),
+};
+
+export const returnListSchema = {
+	query: Joi.object().keys({
+		page: Joi.number().integer().min(1).default(1),
+		limit: Joi.number().integer().min(1).max(100).default(10),
+	}),
+};
+
+export const adminReturnListSchema = {
+	query: Joi.object().keys({
+		page: Joi.number().integer().min(1).default(1),
+		limit: Joi.number().integer().min(1).max(100).default(20),
+		status: Joi.string().valid(...RETURN_STATUSES).allow(null, ''),
 	}),
 };

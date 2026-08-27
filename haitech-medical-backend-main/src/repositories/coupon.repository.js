@@ -1,4 +1,4 @@
-import { eq, and, sql, lt } from 'drizzle-orm';
+import { eq, and, sql, desc } from 'drizzle-orm';
 import { db } from '../config/index.js';
 import { coupons, couponUses } from '../schema/index.js';
 
@@ -23,6 +23,42 @@ export const findMany = async ({ page = 1, limit = 20 } = {}) => {
 		.limit(limit)
 		.offset(offset);
 	const [{ count }] = await db.select({ count: sql`count(*)::int` }).from(coupons).where(eq(coupons.active, true));
+	return { rows, total: count };
+};
+
+// Admin listing: ALL coupons (including inactive) with per-coupon usage stats
+// from coupon_uses. Previously a bespoke inline query in admin.controller.js —
+// moved here since it's a coupon-domain read, same as the other repo methods.
+export const findManyWithStats = async ({ page = 1, limit = 20 } = {}) => {
+	const offset = (page - 1) * limit;
+
+	const [rows, [{ count }]] = await Promise.all([
+		db
+			.select({
+				id: coupons.id,
+				code: coupons.code,
+				type: coupons.type,
+				value: coupons.value,
+				minOrderAmount: coupons.minOrderAmount,
+				maxUses: coupons.maxUses,
+				usedCount: coupons.usedCount,
+				perUserLimit: coupons.perUserLimit,
+				validFrom: coupons.validFrom,
+				validUntil: coupons.validUntil,
+				active: coupons.active,
+				createdAt: coupons.createdAt,
+				modifiedAt: coupons.modifiedAt,
+				totalUses: sql`(SELECT COUNT(*)::int FROM coupon_uses WHERE coupon_id = ${coupons.id})`,
+				uniqueUsers: sql`(SELECT COUNT(DISTINCT user_id)::int FROM coupon_uses WHERE coupon_id = ${coupons.id})`,
+				totalDiscountGiven: sql`(SELECT COALESCE(SUM(discount_amount), 0)::bigint FROM coupon_uses WHERE coupon_id = ${coupons.id})`,
+			})
+			.from(coupons)
+			.orderBy(desc(coupons.createdAt))
+			.limit(limit)
+			.offset(offset),
+		db.select({ count: sql`count(*)::int` }).from(coupons),
+	]);
+
 	return { rows, total: count };
 };
 
@@ -84,7 +120,7 @@ export const atomicIncrementUsage = async (couponId, userId, orderId, discountAm
 		// Step 2: Enforce per-user limit inside the transaction using a row count
 		// taken with a FOR UPDATE lock on the user's existing use rows.  This prevents
 		// two simultaneous requests for the same user from both inserting records.
-		if (userId && updatedCoupon.perUserLimit != null) {
+		if (userId && updatedCoupon.perUserLimit !== null && updatedCoupon.perUserLimit !== undefined) {
 			const [{ userUseCount }] = await tx
 				.select({ userUseCount: sql`count(*)::int` })
 				.from(couponUses)
@@ -119,6 +155,6 @@ export const isValidNow = (coupon) => {
 	if (!coupon.active) return false;
 	if (coupon.validFrom && new Date(coupon.validFrom) > now) return false;
 	if (coupon.validUntil && new Date(coupon.validUntil) < now) return false;
-	if (coupon.maxUses != null && coupon.usedCount >= coupon.maxUses) return false;
+	if (coupon.maxUses !== null && coupon.maxUses !== undefined && coupon.usedCount >= coupon.maxUses) return false;
 	return true;
 };

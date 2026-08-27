@@ -1,5 +1,5 @@
 import { httpStatus } from '../constants/index.js';
-import { orderService } from '../services/index.js';
+import { orderService, returnService } from '../services/index.js';
 import { catchAsync } from '../utils/index.js';
 
 export const createOrder = catchAsync(async (req, res) => {
@@ -30,12 +30,16 @@ export const adminGetOrders = catchAsync(async (req, res) => {
 });
 
 export const adminUpdateOrderStatus = catchAsync(async (req, res) => {
-	const order = await orderService.adminUpdateOrderStatus(req.user.id, req.params.id, req.body.status);
+	const order = await orderService.adminUpdateOrderStatus(req.user.id, req.params.id, req.body.status, req.body.reason);
 	return res.respond(httpStatus.OK, { order }, 'Order status updated');
 });
 
+// Delegates to return.service.js — the single authoritative return
+// implementation also used by POST /returns/orders/:id/return — while
+// keeping this route's existing response shape ({ order }) for the frontend
+// (lib/api.ts's ordersApi.requestReturn expects { order: Order }).
 export const requestReturn = catchAsync(async (req, res) => {
-	const order = await orderService.requestReturn(req.user.id, req.params.id, req.body);
+	const { order } = await returnService.requestReturn(req.user.id, req.params.id, req.body);
 	return res.respond(httpStatus.OK, { order }, 'Return request submitted');
 });
 

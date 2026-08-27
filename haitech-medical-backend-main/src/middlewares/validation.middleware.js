@@ -26,11 +26,24 @@ export const validate = (schema) => {
 				return next(badRequestError(errorMessage));
 			}
 
-			if (value.params) req.params = value.params;
-			if (value.query) req.query = value.query;
-			if (value.body) req.body = value.body;
-			if (value.fields) req.fields = value.fields;
-			if (value.files) req.files = value.files;
+			// express-xss-sanitizer's xss() middleware redefines req.query (and
+			// sometimes req.params) as a non-writable property. Since this app
+			// runs as ES modules (implicit strict mode), a plain `req.query = ...`
+			// assignment throws a TypeError instead of silently failing — which
+			// previously meant ANY route with a query Joi schema 500'd as soon as
+			// validation actually needed to write back a coerced/defaulted value.
+			// Object.defineProperty bypasses the writable flag (the property is
+			// still configurable) without assuming which of these req properties
+			// xss() has frozen.
+			const assign = (key, val) => {
+				if (val === undefined) return;
+				Object.defineProperty(req, key, { value: val, writable: true, enumerable: true, configurable: true });
+			};
+			assign('params', value.params);
+			assign('query', value.query);
+			assign('body', value.body);
+			assign('fields', value.fields);
+			assign('files', value.files);
 
 			return next();
 		} catch (err) {

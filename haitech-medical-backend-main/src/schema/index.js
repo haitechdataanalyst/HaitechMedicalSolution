@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { pgTable, uuid, varchar, timestamp, boolean, integer, index, uniqueIndex, text, smallint, decimal, date, jsonb } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, varchar, timestamp, boolean, integer, index, uniqueIndex, text, smallint, decimal, date, jsonb, inet, check } from 'drizzle-orm/pg-core';
 import { authProviders } from '../constants/index.js';
 
 export const users = pgTable('users', {
@@ -28,6 +28,10 @@ export const userDetails = pgTable('user_details', {
 	passwordHash: varchar('password_hash', { length: 255 }),
 	oldPasswordHash: varchar('old_password_hash', { length: 255 }),
 	googleSub: varchar('google_sub', { length: 255 }).unique(),
+	// The Supabase auth.users.id for this account (Phase 4: Supabase is the
+	// sole identity source). Nullable/unique — legacy rows are linked to it
+	// lazily on first Supabase-authenticated request, matched by email.
+	supabaseId: uuid('supabase_id').unique(),
 	authProvider: varchar('auth_provider', { length: 30 }).default(authProviders.LOCAL).notNull(),
 	createdAt: timestamp('created_at').defaultNow().notNull(),
 	modifiedAt: timestamp('modified_at').defaultNow().notNull(),
@@ -123,6 +127,69 @@ export const orderItems = pgTable(
 	},
 	(table) => ({
 		orderIdIdx: index('idx_order_items_order_id').on(table.orderId),
+	})
+);
+
+// ── Payment Transactions ──────────────────────────────────────────────────────
+// Immutable financial audit log — one row per gateway event (order created,
+// payment captured, refund issued, etc.). Never updated after insert.
+// Declared here to match drizzle/0002_production_hardening.sql, which created
+// this table directly via raw SQL before it was added to this schema file.
+
+export const paymentTransactions = pgTable(
+	'payment_transactions',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		orderId: uuid('order_id')
+			.notNull()
+			.references(() => orders.id, { onDelete: 'restrict' }),
+		razorpayOrderId: varchar('razorpay_order_id', { length: 100 }),
+		razorpayPaymentId: varchar('razorpay_payment_id', { length: 100 }),
+		razorpaySignature: varchar('razorpay_signature', { length: 512 }),
+		eventType: varchar('event_type', { length: 50 }).notNull(),
+		amount: integer('amount').notNull(),
+		currency: varchar('currency', { length: 10 }).default('INR').notNull(),
+		status: varchar('status', { length: 50 }).notNull(),
+		gatewayResponse: jsonb('gateway_response').default({}).notNull(),
+		metadata: jsonb('metadata').default({}).notNull(),
+		processedAt: timestamp('processed_at', { withTimezone: true }).defaultNow().notNull(),
+		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+	},
+	(table) => ({
+		orderIdIdx: index('idx_pt_order_id').on(table.orderId),
+		razorpayPaymentIdIdx: index('idx_pt_razorpay_payment_id')
+			.on(table.razorpayPaymentId)
+			.where(sql`${table.razorpayPaymentId} IS NOT NULL`),
+		eventTypeIdx: index('idx_pt_event_type').on(table.eventType),
+		createdAtIdx: index('idx_pt_created_at').on(table.createdAt),
+		// Prevents the same gateway webhook event being recorded twice.
+		eventDedupUniq: uniqueIndex('idx_pt_event_dedup')
+			.on(table.razorpayPaymentId, table.eventType)
+			.where(sql`${table.razorpayPaymentId} IS NOT NULL`),
+	})
+);
+
+// ── Order Status History ─────────────────────────────────────────────────────
+// Audit trail for order.status transitions. Declared here to match
+// drizzle/0002_production_hardening.sql (see paymentTransactions comment above).
+
+export const orderStatusHistory = pgTable(
+	'order_status_history',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		orderId: uuid('order_id')
+			.notNull()
+			.references(() => orders.id, { onDelete: 'cascade' }),
+		fromStatus: varchar('from_status', { length: 50 }),
+		toStatus: varchar('to_status', { length: 50 }).notNull(),
+		changedBy: uuid('changed_by').references(() => users.id, { onDelete: 'set null' }),
+		reason: text('reason'),
+		metadata: jsonb('metadata').default({}).notNull(),
+		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+	},
+	(table) => ({
+		orderIdIdx: index('idx_osh_order_id').on(table.orderId),
+		createdAtIdx: index('idx_osh_created_at').on(table.createdAt),
 	})
 );
 
@@ -378,6 +445,33 @@ export const products = pgTable(
 	})
 );
 
+// ── Product Inventory ─────────────────────────────────────────────────────────
+// Stock levels with optimistic locking (version column) and a reservation
+// count separate from on-hand quantity. Declared here to match
+// drizzle/0002_production_hardening.sql (see paymentTransactions comment above).
+
+export const productInventory = pgTable(
+	'product_inventory',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.unique()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		quantity: integer('quantity').default(0).notNull(),
+		reservedQuantity: integer('reserved_quantity').default(0).notNull(),
+		reorderPoint: integer('reorder_point').default(10).notNull(),
+		version: integer('version').default(0).notNull(),
+		updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_inventory_product_id').on(table.productId),
+		quantityNonNegative: check('chk_inventory_quantity', sql`${table.quantity} >= 0`),
+		reservedNonNegative: check('chk_inventory_reserved', sql`${table.reservedQuantity} >= 0`),
+		availableNotOverReserved: check('chk_inventory_available', sql`${table.quantity} >= ${table.reservedQuantity}`),
+	})
+);
+
 // ── Coupons ───────────────────────────────────────────────────────────────────
 
 export const coupons = pgTable(
@@ -447,5 +541,31 @@ export const return_requests = pgTable(
 		orderIdIdx: index('idx_return_requests_order_id').on(table.orderId),
 		userIdIdx: index('idx_return_requests_user_id').on(table.userId),
 		statusIdx: index('idx_return_requests_status').on(table.status),
+	})
+);
+
+// ── Security Audit Log ───────────────────────────────────────────────────────
+// Cross-cutting security/auth event log (login attempts, lockouts, token
+// events, etc.) — not owned by any single business domain. Declared here to
+// match drizzle/0002_production_hardening.sql (see paymentTransactions
+// comment above).
+
+export const securityAuditLog = pgTable(
+	'security_audit_log',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		eventType: varchar('event_type', { length: 100 }).notNull(),
+		userId: uuid('user_id').references(() => users.id, { onDelete: 'set null' }),
+		ipAddress: inet('ip_address'),
+		userAgent: text('user_agent'),
+		requestId: varchar('request_id', { length: 100 }),
+		metadata: jsonb('metadata').default({}).notNull(),
+		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+	},
+	(table) => ({
+		userIdIdx: index('idx_sal_user_id').on(table.userId),
+		eventTypeIdx: index('idx_sal_event_type').on(table.eventType),
+		ipAddressIdx: index('idx_sal_ip_address').on(table.ipAddress),
+		createdAtIdx: index('idx_sal_created_at').on(table.createdAt),
 	})
 );
