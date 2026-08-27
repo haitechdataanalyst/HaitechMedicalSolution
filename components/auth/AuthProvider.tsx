@@ -33,6 +33,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         const supabase = createClient();
+        if (!supabase) {
+            Promise.resolve().then(() => setIsLoading(false));
+            return;
+        }
 
         supabase.auth.getSession().then(({ data: { session } }) => {
             (session ? refreshUser() : Promise.resolve(setUser(null))).finally(() => setIsLoading(false));
@@ -54,6 +58,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const logout = useCallback(async () => {
         const supabase = createClient();
+        if (!supabase) return;
         await supabase.auth.signOut();
         setUser(null);
     }, []);
