@@ -5,6 +5,7 @@ import Image from "next/image";
 import { HeadlightCategory, HeadlightProduct, CartItem } from "@/types";
 import { Button } from "@/components/ui";
 import { useCart } from "@/components/cart/CartProvider";
+import { COMMERCE_ENABLED } from "@/lib/config";
 import { Check, ShoppingCart } from "lucide-react";
 
 interface HeadlightCategoryCardProps {
@@ -89,11 +90,21 @@ function HeadlightProductCard({ product }: HeadlightProductCardProps) {
                 </ul>
             )}
 
-            <div className="mt-auto pt-2">
-                <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
-                    {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
-                </Button>
-            </div>
+            {/* Add to Cart stays part of the system for when e-commerce goes
+                live — gated the same way every other product surface
+                (ActionsBlock, ProductCard, MedesyVariantsGrid) already is.
+                Previously this was the one add-to-cart control on the whole
+                site NOT behind this flag, so it stayed live and reachable
+                even with commerce off, sending the JSON's string slug id
+                (e.g. "butterfly-s-evo") to the backend cart API instead of
+                a real integer product id — see [[feedback_architecture_policy]]. */}
+            {COMMERCE_ENABLED && (
+                <div className="mt-auto pt-2">
+                    <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
+                        {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }
