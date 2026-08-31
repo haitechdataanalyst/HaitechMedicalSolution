@@ -5388,7 +5388,7 @@
         "category": 30,
         "order": 1,
         "sku": "SAL-UTF",
-        "basePrice": 105999,
+        "basePrice": 112000,
         "currency": "INR",
         "hasVariants": true,
         "variantType": "color",
@@ -5573,12 +5573,12 @@
                             {
                                 "id": "gas-cylinder",
                                 "label": "Gas Cylinder",
-                                "price": 0
+                                "price": 2400
                             },
                             {
                                 "id": "castor",
                                 "label": "Castor (Per pc)",
-                                "price": 0
+                                "price": 1900
                             }
                         ]
                     }
@@ -5600,7 +5600,7 @@
         "category": 30,
         "order": 2,
         "sku": "SAL-TF",
-        "basePrice": 55999,
+        "basePrice": 62000,
         "currency": "INR",
         "hasVariants": true,
         "variantType": "color",
@@ -5780,17 +5780,22 @@
                             {
                                 "id": "stretching-support",
                                 "label": "Stretching Support",
-                                "price": 0
+                                "price": 20000
+                            },
+                            {
+                                "id": "ultra-only",
+                                "label": "Ultra Only",
+                                "price": 35000
                             },
                             {
                                 "id": "gas-cylinder",
                                 "label": "Gas Cylinder",
-                                "price": 0
+                                "price": 2400
                             },
                             {
                                 "id": "castor",
                                 "label": "Castor (Per pc)",
-                                "price": 0
+                                "price": 1900
                             }
                         ]
                     }
@@ -5983,12 +5988,12 @@
                             {
                                 "id": "gas-cylinder",
                                 "label": "Gas Cylinder",
-                                "price": 0
+                                "price": 2400
                             },
                             {
                                 "id": "castor",
                                 "label": "Castor (Per pc)",
-                                "price": 0
+                                "price": 1900
                             }
                         ]
                     }
@@ -6010,7 +6015,7 @@
         "category": 30,
         "order": 4,
         "sku": "SAL-SF",
-        "basePrice": 55999,
+        "basePrice": 62000,
         "currency": "INR",
         "hasVariants": true,
         "variantType": "color",
@@ -6190,12 +6195,12 @@
                             {
                                 "id": "gas-cylinder",
                                 "label": "Gas Cylinder",
-                                "price": 0
+                                "price": 2400
                             },
                             {
                                 "id": "castor",
                                 "label": "Castor (Per pc)",
-                                "price": 0
+                                "price": 1900
                             }
                         ]
                     }
@@ -6217,7 +6222,7 @@
         "category": 30,
         "order": 5,
         "sku": "SAL-LT",
-        "basePrice": 23999,
+        "basePrice": 26500,
         "currency": "INR",
         "hasVariants": false,
         "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308123/haitech/images/products/salli/salli-light.png",
@@ -6324,12 +6329,12 @@
                             {
                                 "id": "gas-cylinder",
                                 "label": "Gas Cylinder",
-                                "price": 0
+                                "price": 2400
                             },
                             {
                                 "id": "castor",
                                 "label": "Castor (Per pc)",
-                                "price": 0
+                                "price": 1900
                             }
                         ]
                     }
