@@ -5817,7 +5817,7 @@
         "category": 30,
         "order": 3,
         "sku": "SAL-CT",
-        "basePrice": 55999,
+        "basePrice": 62000,
         "currency": "INR",
         "hasVariants": true,
         "variantType": "color",
@@ -6021,20 +6021,20 @@
         "variantType": "color",
         "variants": [
             {
-                "id": "sf-black",
-                "name": "Black",
-                "colorCode": "#1a1a1a",
-                "sku": "SAL-SF-BLK",
-                "price": 1599,
-                "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg"
-            },
-            {
                 "id": "sf-red",
                 "name": "Red",
                 "colorCode": "#DC2626",
                 "sku": "SAL-SF-RED",
                 "price": 1599,
                 "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308126/haitech/images/products/salli/sway-fit-red.jpg"
+            },
+            {
+                "id": "sf-black",
+                "name": "Black",
+                "colorCode": "#1a1a1a",
+                "sku": "SAL-SF-BLK",
+                "price": 1599,
+                "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg"
             },
             {
                 "id": "sf-blue",
@@ -6061,7 +6061,7 @@
                 "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308123/haitech/images/products/salli/sway-fit-beige.jpg"
             }
         ],
-        "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg",
+        "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308126/haitech/images/products/salli/sway-fit-red.jpg",
         "catalogueFile": "/catalogues/sway-fit.pdf",
         "contentBlocks": [
             {
