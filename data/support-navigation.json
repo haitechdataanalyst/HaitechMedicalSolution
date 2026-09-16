@@ -6,29 +6,7 @@
             "description": "Our customer service is always here for you!",
             "icon": "Headset",
             "path": "/support/contact",
-            "children": [
-                {
-                    "id": "email",
-                    "title": "Email Us",
-                    "description": "Send us an email and we'll respond within 24 hours",
-                    "icon": "Mail",
-                    "path": "/support/contact#email"
-                },
-                {
-                    "id": "call",
-                    "title": "Call Us",
-                    "description": "Speak directly with our support team",
-                    "icon": "Phone",
-                    "path": "/support/contact#call"
-                },
-                {
-                    "id": "info",
-                    "title": "General Info",
-                    "description": "Business hours and location details",
-                    "icon": "Info",
-                    "path": "/support/contact#info"
-                }
-            ]
+            "children": []
         },
         {
             "id": "help-center",
