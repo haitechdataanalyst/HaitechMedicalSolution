@@ -75,7 +75,6 @@ export default function SplashScreen() {
     if (phase === "done") return null;
 
     const isOpening = phase === "opening";
-    const showHint  = phase === "idle";
 
     return (
         <div
@@ -113,20 +112,6 @@ export default function SplashScreen() {
                 className="pointer-events-none absolute inset-0 flex items-center justify-center"
                 style={{ zIndex: 2 }}
             >
-                {/* Expanding ping ring — silent tap invitation */}
-                {showHint && (
-                    <div
-                        aria-hidden
-                        className="absolute rounded-[40%]"
-                        style={{
-                            width:     "clamp(240px, 42vw, 500px)",
-                            height:    "clamp(80px, 13vw, 160px)",
-                            border:    "1.5px solid rgba(31,182,205,0.30)",
-                            animation: "splash-ping 2s cubic-bezier(0,0,0.2,1) infinite",
-                        }}
-                    />
-                )}
-
                 {/* Drop-shadow shell */}
                 <div style={{ filter: "drop-shadow(0 10px 40px rgba(31,182,205,0.20)) drop-shadow(0 2px 12px rgba(0,0,0,0.07))" }}>
                     {/* Entrance / exit wrapper */}
