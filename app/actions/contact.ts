@@ -161,17 +161,11 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             to: process.env.CONTACT_EMAIL || "sales@haitech-group.com",
             from: data.email,
             name: data.name,
+            phone: data.phone,
+            postcode: data.postcode,
+            country: data.country,
             subject: data.subject,
-            message: `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Postcode: ${data.postcode}
-Country: ${data.country}
-
-Message:
-${data.message}
-      `.trim(),
+            message: data.message,
         });
 
         return { success: true };
