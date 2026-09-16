@@ -370,26 +370,34 @@ export default function Carousel({
                 </div>
             )}
 
-            {/* Dot Indicators */}
+            {/* Dot Indicators — sizing/color live on the inner span, not the button:
+                a global mobile rule enforces a 44px min-height on every <button>
+                for tap-target accessibility, which would otherwise stretch these
+                tiny dots into tall capsules. The button keeps a comfortable
+                padded hit area; only the small round span is visible. */}
             {showDots && dotsPosition !== "none" && totalSlides > slidesToShow && (
-                <div className={cn("flex justify-center gap-2", dotsPosition === "outside" && "mt-4", dotsPosition === "inside" && "absolute bottom-6 left-1/2 z-30 -translate-x-1/2", dotsClassName)}>
+                <div className={cn("flex justify-center gap-1", dotsPosition === "outside" && "mt-4", dotsPosition === "inside" && "absolute bottom-6 left-1/2 z-30 -translate-x-1/2", dotsClassName)}>
                     {Array.from({ length: maxIndex + 1 }).map((_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
-                            className={cn(
-                                "h-2.5 w-2.5 rounded-full transition-all duration-200",
-                                index === effectiveIndex
-                                    ? dotsPosition === "inside"
-                                        ? "w-6 bg-white"
-                                        : "bg-primary-600 w-6"
-                                    : dotsPosition === "inside"
-                                      ? "bg-white/50 hover:bg-white/70"
-                                      : "bg-neutral-300 hover:bg-neutral-400"
-                            )}
+                            className="group flex items-center justify-center p-2.5"
                             aria-label={`Go to slide ${index + 1}`}
                             aria-current={index === effectiveIndex ? "true" : "false"}
-                        />
+                        >
+                            <span
+                                className={cn(
+                                    "block h-2.5 rounded-full transition-all duration-200",
+                                    index === effectiveIndex
+                                        ? dotsPosition === "inside"
+                                            ? "w-6 bg-white"
+                                            : "bg-primary-600 w-6"
+                                        : dotsPosition === "inside"
+                                          ? "w-2.5 bg-white/50 group-hover:bg-white/70"
+                                          : "w-2.5 bg-neutral-300 group-hover:bg-neutral-400"
+                                )}
+                            />
+                        </button>
                     ))}
                 </div>
             )}
