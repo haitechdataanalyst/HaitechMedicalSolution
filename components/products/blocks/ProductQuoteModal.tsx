@@ -82,24 +82,28 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                     <Input label="Email Address" name="email" type="email" required placeholder="ranvijay@example.com" error={state.fieldErrors?.email} maxLength={255} />
                 </div>
 
-                {/* Phone & Postcode Row */}
+                {/* Phone & Country Row */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <Input label="Phone Number" name="phone" type="tel" required placeholder="+91 9876543210" error={state.fieldErrors?.phone} maxLength={20} />
 
-                    <Input label="Postcode" name="postcode" type="text" required placeholder="400086" error={state.fieldErrors?.postcode} maxLength={15} />
+                    <div className="relative">
+                        <CountrySelect
+                            label="Country"
+                            name="country"
+                            required
+                            value={selectedCountry?.code}
+                            onChange={setSelectedCountry}
+                            error={state.fieldErrors?.country}
+                            placeholder="Select your country"
+                        />
+                    </div>
                 </div>
 
-                {/* Country Select */}
-                <div className="relative">
-                    <CountrySelect
-                        label="Country"
-                        name="country"
-                        required
-                        value={selectedCountry?.code}
-                        onChange={setSelectedCountry}
-                        error={state.fieldErrors?.country}
-                        placeholder="Select your country"
-                    />
+                {/* State & Postcode Row */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <Input label="State" name="state" type="text" required placeholder="Maharashtra" error={state.fieldErrors?.state} maxLength={100} />
+
+                    <Input label="Postcode" name="postcode" type="text" required placeholder="400086" error={state.fieldErrors?.postcode} maxLength={15} />
                 </div>
 
                 <Input label="Subject" name="subject" type="text" required placeholder="Quote request for this product" error={state.fieldErrors?.subject} maxLength={200} />

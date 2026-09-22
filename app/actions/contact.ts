@@ -67,6 +67,7 @@ const contactSchema = z.object({
         .max(255, "Email must be less than 255 characters")
         .transform((val) => val.trim().toLowerCase()),
     phone: z.string().min(6, "Phone number must be at least 6 digits").max(20, "Phone number is too long").transform(sanitizePhone),
+    state: z.string().max(100, "State is too long").transform(sanitizeString),
     postcode: z.string().max(15, "Postcode is too long").transform(sanitizePostcode),
     country: z
         .string()
@@ -119,6 +120,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             name: formData.get("name"),
             email: formData.get("email"),
             phone: formData.get("phone"),
+            state: formData.get("state"),
             postcode: formData.get("postcode"),
             country: formData.get("country"),
             subject: formData.get("subject"),
@@ -162,6 +164,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
             from: data.email,
             name: data.name,
             phone: data.phone,
+            state: data.state,
             postcode: data.postcode,
             country: data.country,
             subject: data.subject,

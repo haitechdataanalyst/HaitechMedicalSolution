@@ -53,6 +53,7 @@ const productQuoteSchema = z.object({
         .max(255)
         .transform((val) => val.trim().toLowerCase()),
     phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
+    state: z.string().min(2, "State is required").max(100).transform(sanitizeString),
     postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
     country: z.string().min(2, "Country is required").transform(sanitizeString),
     subject: z.string().min(3, "Subject must be at least 3 characters").max(200).transform(sanitizeString),
@@ -116,6 +117,7 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
             name: formData.get("name"),
             email: formData.get("email"),
             phone: formData.get("phone"),
+            state: formData.get("state"),
             postcode: formData.get("postcode"),
             country: formData.get("country"),
             subject: formData.get("subject"),
@@ -170,6 +172,7 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
           row("Name", data.name || "&mdash;") +
               row("Email", `<a href="mailto:${data.email}" style="color:#0f766e;text-decoration:none;">${data.email}</a>`) +
               row("Phone", `<a href="tel:${data.phone}" style="color:#0f766e;text-decoration:none;">${data.phone}</a>`) +
+              row("State", data.state || "&mdash;") +
               row("Postcode", data.postcode || "&mdash;") +
               row("Country", data.country || "&mdash;")
       )}
@@ -201,6 +204,7 @@ Customer:
 Name: ${data.name || "-"}
 Email: ${data.email}
 Phone: ${data.phone}
+State: ${data.state}
 Postcode: ${data.postcode}
 Country: ${data.country}
 

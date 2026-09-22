@@ -87,6 +87,7 @@ interface ContactEmailOptions {
     from: string;
     name: string;
     phone: string;
+    state: string;
     postcode: string;
     country: string;
     subject: string;
@@ -94,7 +95,7 @@ interface ContactEmailOptions {
 }
 
 export async function sendContactEmail(options: ContactEmailOptions) {
-    const { to, from, name, phone, postcode, country, subject, message } = options;
+    const { to, from, name, phone, state, postcode, country, subject, message } = options;
 
     const transporter = createTransporter();
 
@@ -115,6 +116,7 @@ New Haitech website lead:
 Name: ${name}
 Email: ${from}
 Phone: ${phone}
+State: ${state}
 Postcode: ${postcode}
 Country: ${country}
 Subject: ${subject}
@@ -134,6 +136,7 @@ ${message}
         ${row("Name", name)}
         ${row("Email", `<a href="mailto:${from}" style="color:#0f766e;text-decoration:none;">${from}</a>`)}
         ${row("Phone", phone)}
+        ${row("State", state)}
         ${row("Postcode", postcode)}
         ${row("Country", country)}
         ${row("Subject", subject)}

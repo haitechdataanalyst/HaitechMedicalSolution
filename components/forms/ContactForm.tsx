@@ -71,30 +71,43 @@ export default function ContactForm() {
                 <Input label="Email Address" name="email" type="email" required placeholder="you@example.com" error={state.fieldErrors?.email} maxLength={255} />
             </div>
 
-            {/* Phone & Postcode Row */}
+            {/* Phone & Country Row */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Input label="Phone Number" name="phone" type="tel" required placeholder="+1 555 0123" error={state.fieldErrors?.phone} maxLength={20} />
 
-                <Input label="Postcode" name="postcode" type="text" placeholder="Optional" error={state.fieldErrors?.postcode} maxLength={15} />
+                <div className="relative">
+                    <CountrySelect
+                        label="Country"
+                        name="country"
+                        required
+                        value={selectedCountry?.code}
+                        onChange={setSelectedCountry}
+                        error={state.fieldErrors?.country}
+                        placeholder="Select your country"
+                    />
+                </div>
             </div>
 
-            {/* Country Select */}
-            <div className="relative">
-                <CountrySelect
-                    label="Country"
-                    name="country"
-                    required
-                    value={selectedCountry?.code}
-                    onChange={setSelectedCountry}
-                    error={state.fieldErrors?.country}
-                    placeholder="Select your country"
-                />
+            {/* State & Postcode Row */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Input label="State" name="state" type="text" placeholder="Optional" error={state.fieldErrors?.state} maxLength={100} />
+
+                <Input label="Postcode" name="postcode" type="text" placeholder="Optional" error={state.fieldErrors?.postcode} maxLength={15} />
             </div>
 
             <Input label="Subject" name="subject" type="text" required placeholder="How can we help?" error={state.fieldErrors?.subject} maxLength={200} />
 
             <div>
-                <Textarea label="Message" name="message" required placeholder="Describe how we can help you — product questions, quote requests, etc." rows={6} error={state.fieldErrors?.message} maxLength={MESSAGE_MAX} onChange={(e) => setMessageLength(e.target.value.length)} />
+                <Textarea
+                    label="Message"
+                    name="message"
+                    required
+                    placeholder="Describe how we can help you — product questions, quote requests, etc."
+                    rows={6}
+                    error={state.fieldErrors?.message}
+                    maxLength={MESSAGE_MAX}
+                    onChange={(e) => setMessageLength(e.target.value.length)}
+                />
                 <p className={`mt-1.5 text-right text-xs ${messageLength > MESSAGE_MAX * 0.9 ? "text-amber-600" : "text-neutral-400"}`}>
                     {messageLength} / {MESSAGE_MAX.toLocaleString()}
                 </p>
