@@ -137,7 +137,7 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
         const data = validatedFields.data;
 
         // Prepare email content
-        const emailSubject = `Product Quote Request: ${data.productName} - ${data.subject}`;
+        const emailSubject = data.name ? `Product Quote Request: ${data.productName} - ${data.name}` : `Product Quote Request: ${data.productName}`;
 
         const variantInfo = data.selectedVariant ? `\nSelected Variant: ${data.selectedVariant}` : "";
 
