@@ -6,7 +6,7 @@ export const COMMERCE_ENABLED = false;
 
 // Brands whose price should show even while COMMERCE_ENABLED is off — a
 // separate concern from cart/checkout, which stays gated by that flag alone.
-const PRICE_VISIBLE_BRANDS = new Set(["Salli"]);
+const PRICE_VISIBLE_BRANDS = new Set(["Salli", "Bondent"]);
 
 export function shouldShowPrice(brandName?: string | null): boolean {
     return COMMERCE_ENABLED || (!!brandName && PRICE_VISIBLE_BRANDS.has(brandName));

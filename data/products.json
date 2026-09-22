@@ -10271,7 +10271,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 23000,
+        "currency": "INR"
     },
     {
         "id": 2002,
@@ -10399,7 +10401,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 41000,
+        "currency": "INR"
     },
     {
         "id": 2004,
@@ -10463,7 +10467,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 39000,
+        "currency": "INR"
     },
     {
         "id": 2005,
@@ -10719,7 +10725,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1590,
+        "currency": "INR"
     },
     {
         "id": 2009,
@@ -10783,7 +10791,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 640,
+        "currency": "INR"
     },
     {
         "id": 2010,
@@ -10847,7 +10857,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 2550,
+        "currency": "INR"
     },
     {
         "id": 2011,
@@ -10911,7 +10923,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 3820,
+        "currency": "INR"
     },
     {
         "id": 2012,
@@ -10971,7 +10985,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1920,
+        "currency": "INR"
     },
     {
         "id": 2013,
@@ -11035,7 +11051,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 970,
+        "currency": "INR"
     },
     {
         "id": 2014,
@@ -11099,7 +11117,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 970,
+        "currency": "INR"
     },
     {
         "id": 2015,
@@ -11163,7 +11183,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 830,
+        "currency": "INR"
     },
     {
         "id": 2016,
@@ -11227,7 +11249,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1220,
+        "currency": "INR"
     },
     {
         "id": 2017,
@@ -11467,7 +11491,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 20000,
+        "currency": "INR"
     },
     {
         "id": 2021,
@@ -11527,7 +11553,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 17000,
+        "currency": "INR"
     },
     {
         "id": 2022,
@@ -11723,7 +11751,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 62000,
+        "currency": "INR"
     },
     {
         "id": 2025,
@@ -11911,7 +11941,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 250,
+        "currency": "INR"
     },
     {
         "id": 2028,
@@ -11975,7 +12007,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 250,
+        "currency": "INR"
     },
     {
         "id": 2029,
@@ -12307,7 +12341,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 3340,
+        "currency": "INR"
     },
     {
         "id": 2034,
@@ -12647,7 +12683,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1130,
+        "currency": "INR"
     },
     {
         "id": 2039,
@@ -12715,7 +12753,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 3340,
+        "currency": "INR"
     },
     {
         "id": 2040,
@@ -12783,7 +12823,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1920,
+        "currency": "INR"
     },
     {
         "id": 2041,
@@ -13115,7 +13157,9 @@
                     "customization": false
                 }
             }
-        ]
+        ],
+        "basePrice": 1920,
+        "currency": "INR"
     },
     {
         "id": 2046,
