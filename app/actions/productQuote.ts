@@ -47,7 +47,11 @@ function checkRateLimit(ip: string): boolean {
 
 const productQuoteSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters").max(100).transform(sanitizeString),
-    email: z.string().email("Please enter a valid email address").max(255).transform((val) => val.trim().toLowerCase()),
+    email: z
+        .string()
+        .email("Please enter a valid email address")
+        .max(255)
+        .transform((val) => val.trim().toLowerCase()),
     phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
     postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
     country: z.string().min(2, "Country is required").transform(sanitizeString),
@@ -57,7 +61,11 @@ const productQuoteSchema = z.object({
     productName: z.string().max(200).transform(sanitizeString),
     productSku: z.string().max(100).transform(sanitizeString),
     productId: z.string().max(50).transform(sanitizeString),
-    selectedVariant: z.string().max(200).optional().transform((val) => (val ? sanitizeString(val) : undefined)),
+    selectedVariant: z
+        .string()
+        .max(200)
+        .optional()
+        .transform((val) => (val ? sanitizeString(val) : undefined)),
     // Anti-spam
     website: z.string().max(0).optional(),
     formTimestamp: z.string(),
@@ -139,56 +147,75 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
         // Prepare email content
         const emailSubject = data.name ? `Product Quote Request: ${data.productName} - ${data.name}` : `Product Quote Request: ${data.productName}`;
 
-        const variantInfo = data.selectedVariant ? `\nSelected Variant: ${data.selectedVariant}` : "";
+        const row = (label: string, value: string) => `
+        <tr>
+          <td style="padding:8px 0;color:#6b7280;font-size:13px;width:110px;vertical-align:top;">${label}</td>
+          <td style="padding:8px 0;color:#111827;font-size:14px;vertical-align:top;">${value}</td>
+        </tr>`;
+
+        const section = (title: string, rows: string) => `
+      <h2 style="margin:20px 0 8px;font-size:12px;color:#0f766e;text-transform:uppercase;letter-spacing:0.6px;">${title}</h2>
+      <table style="width:100%;border-collapse:collapse;">${rows}</table>`;
 
         const emailHtml = `
-      <h2>New Product Quote Request</h2>
+<div style="background:#f3f4f6;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;">
+    <div style="background:#0f766e;padding:20px 24px;">
+      <p style="margin:0;color:#ffffff;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Haitech Medical</p>
+      <h1 style="margin:4px 0 0;color:#ffffff;font-size:20px;">New Product Quote Request</h1>
+    </div>
+    <div style="padding:24px;">
+      ${section(
+          "Customer",
+          row("Name", data.name || "&mdash;") +
+              row("Email", `<a href="mailto:${data.email}" style="color:#0f766e;text-decoration:none;">${data.email}</a>`) +
+              row("Phone", `<a href="tel:${data.phone}" style="color:#0f766e;text-decoration:none;">${data.phone}</a>`) +
+              row("Postcode", data.postcode || "&mdash;") +
+              row("Country", data.country || "&mdash;")
+      )}
+      ${section(
+          "Product",
+          row("Product", data.productName || "&mdash;") +
+              row("SKU", data.productSku || "&mdash;") +
+              row("Product ID", data.productId || "&mdash;") +
+              (data.selectedVariant ? row("Selected Variant", data.selectedVariant) : "")
+      )}
+      ${section("Request", row("Subject", data.subject || "&mdash;"))}
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;">
+        <p style="margin:0 0 8px;color:#6b7280;font-size:13px;">Message</p>
+        <p style="margin:0;color:#111827;font-size:14px;line-height:1.6;white-space:pre-wrap;">${data.message.replace(/\n/g, "<br>")}</p>
+      </div>
+    </div>
+    <div style="padding:14px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;">
+      <p style="margin:0;color:#9ca3af;font-size:12px;">Sent from the product quote form at haitech-group.com</p>
+    </div>
+  </div>
+</div>`;
 
-      <h3>Customer Information</h3>
-      <p><strong>Name:</strong> ${data.name}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Phone:</strong> ${data.phone}</p>
-      <p><strong>Postcode:</strong> ${data.postcode}</p>
-      <p><strong>Country:</strong> ${data.country}</p>
-      
-      <h3>Product Details</h3>
-      <p><strong>Product:</strong> ${data.productName}</p>
-      <p><strong>SKU:</strong> ${data.productSku}</p>
-      <p><strong>Product ID:</strong> ${data.productId}${variantInfo}</p>
-      
-      <h3>Request Details</h3>
-      <p><strong>Subject:</strong> ${data.subject}</p>
-      <p><strong>Message:</strong></p>
-      <p>${data.message.replace(/\n/g, "<br>")}</p>
-      
-      <hr>
-      <p style="color: #666; font-size: 12px;">
-        This email was sent from the product quote form on Haitech Medical website.
-      </p>
-    `;
+        const variantLine = data.selectedVariant ? `\nSelected Variant: ${data.selectedVariant}` : "";
 
         const emailText = `
 New Product Quote Request
 
-Customer Information:
-Name: ${data.name}
+Customer:
+Name: ${data.name || "-"}
 Email: ${data.email}
 Phone: ${data.phone}
 Postcode: ${data.postcode}
 Country: ${data.country}
 
-Product Details:
+Product:
 Product: ${data.productName}
 SKU: ${data.productSku}
-Product ID: ${data.productId}${variantInfo}
+Product ID: ${data.productId}${variantLine}
 
-Request Details:
+Request:
 Subject: ${data.subject}
 Message:
 ${data.message}
 
 ---
-This email was sent from the product quote form on Haitech Medical website.
+Sent from the product quote form at haitech-group.com
     `;
 
         // Send email
