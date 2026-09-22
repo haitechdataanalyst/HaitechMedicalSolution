@@ -47,21 +47,16 @@ export default function ContactPage() {
                     const Icon = method.icon;
                     const content = (
                         <div className="flex h-full flex-col gap-2">
-                            <Icon className="h-4 w-4 shrink-0 text-primary-600" />
+                            <Icon className="text-primary-600 h-4 w-4 shrink-0" />
                             <div className="min-w-0">
-                                <p className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">{method.title}</p>
+                                <p className="text-[11px] font-semibold tracking-wider text-neutral-400 uppercase">{method.title}</p>
                                 <p className="mt-0.5 truncate text-sm font-semibold text-neutral-900">{method.value}</p>
                                 <p className="mt-0.5 line-clamp-2 text-xs text-neutral-400">{method.description}</p>
                             </div>
                         </div>
                     );
                     return method.href ? (
-                        <a
-                            key={method.id}
-                            id={method.id === "email" || method.id === "call" ? method.id : undefined}
-                            href={method.href}
-                            className="card card-hover scroll-mt-32 p-4"
-                        >
+                        <a key={method.id} id={method.id === "email" || method.id === "call" ? method.id : undefined} href={method.href} className="card card-hover scroll-mt-32 p-4">
                             {content}
                         </a>
                     ) : (
@@ -108,7 +103,7 @@ export default function ContactPage() {
                         href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.company.address.street + ", " + siteConfig.company.address.city)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700"
+                        className="text-primary-600 hover:text-primary-700 mt-3 inline-flex items-center gap-1.5 text-sm font-medium"
                     >
                         Open in Maps <ArrowRight size={14} />
                     </a>

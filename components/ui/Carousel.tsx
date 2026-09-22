@@ -343,21 +343,19 @@ export default function Carousel({
                 <button
                     onClick={() => setIsPausedByUser((p) => !p)}
                     className={cn(
-                        "absolute bottom-6 right-6 z-30 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200",
-                        dotsPosition === "inside"
-                            ? "bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm"
-                            : "bg-white/80 text-neutral-600 hover:bg-white border border-neutral-200 shadow-sm"
+                        "absolute right-6 bottom-6 z-30 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200",
+                        dotsPosition === "inside" ? "bg-black/30 text-white backdrop-blur-sm hover:bg-black/50" : "border border-neutral-200 bg-white/80 text-neutral-600 shadow-sm hover:bg-white"
                     )}
                     aria-label={isPausedByUser ? "Play slideshow" : "Pause slideshow"}
                     title={isPausedByUser ? "Play" : "Pause"}
                 >
                     {isPausedByUser ? (
                         <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z"/>
+                            <path d="M6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z" />
                         </svg>
                     ) : (
                         <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M5.5 3.5A1.5 1.5 0 017 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5zm5 0A1.5 1.5 0 0112 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5z"/>
+                            <path d="M5.5 3.5A1.5 1.5 0 017 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5zm5 0A1.5 1.5 0 0112 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5z" />
                         </svg>
                     )}
                 </button>

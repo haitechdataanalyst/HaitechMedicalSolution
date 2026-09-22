@@ -3,21 +3,20 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const LOGO_IN_MS   = 380;
-const SHUTTER_MS   = 480;
+const LOGO_IN_MS = 380;
+const SHUTTER_MS = 480;
 const AUTO_OPEN_MS = 1300;
 
 type Phase = "entering" | "idle" | "opening" | "done";
 
 // useLayoutEffect on client fires synchronously before the browser paints.
 // On the server it falls back to useEffect to suppress the SSR warning.
-const useIsomorphicLayoutEffect =
-    typeof window !== "undefined" ? useLayoutEffect : useEffect;
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export default function SplashScreen() {
     // Start as "entering" so white panels are in the DOM from the very first render —
     // this prevents the page from flashing through before the component mounts.
-    const [phase, setPhase]   = useState<Phase>("entering");
+    const [phase, setPhase] = useState<Phase>("entering");
     const [logoIn, setLogoIn] = useState(false);
     const rafRef = useRef<number>(0);
 
@@ -26,7 +25,9 @@ export default function SplashScreen() {
         if (phase === "done") return;
         const prev = document.documentElement.style.overflow;
         document.documentElement.style.overflow = "hidden";
-        return () => { document.documentElement.style.overflow = prev; };
+        return () => {
+            document.documentElement.style.overflow = prev;
+        };
     }, [phase]);
 
     // unmount after shutter finishes
@@ -58,8 +59,8 @@ export default function SplashScreen() {
             rafRef.current = requestAnimationFrame(() => setLogoIn(true));
         });
 
-        const t1 = setTimeout(() => setPhase(p => p === "entering" ? "idle" : p), LOGO_IN_MS + 80);
-        const t2 = setTimeout(() => setPhase(p => p === "idle"     ? "opening" : p), AUTO_OPEN_MS);
+        const t1 = setTimeout(() => setPhase((p) => (p === "entering" ? "idle" : p)), LOGO_IN_MS + 80);
+        const t2 = setTimeout(() => setPhase((p) => (p === "idle" ? "opening" : p)), AUTO_OPEN_MS);
 
         return () => {
             cancelAnimationFrame(rafRef.current);
@@ -69,7 +70,7 @@ export default function SplashScreen() {
     }, []);
 
     const open = useCallback(() => {
-        setPhase(p => (p === "idle" || p === "entering") ? "opening" : p);
+        setPhase((p) => (p === "idle" || p === "entering" ? "opening" : p));
     }, []);
 
     if (phase === "done") return null;
@@ -89,9 +90,9 @@ export default function SplashScreen() {
             <div
                 className="absolute inset-y-0 left-0 w-1/2 bg-white"
                 style={{
-                    transform:  isOpening ? "translateX(-101%)" : "translateX(0)",
+                    transform: isOpening ? "translateX(-101%)" : "translateX(0)",
                     transition: isOpening ? `transform ${SHUTTER_MS}ms cubic-bezier(0.77,0,0.175,1)` : "none",
-                    boxShadow:  "3px 0 18px rgba(0,0,0,0.04)",
+                    boxShadow: "3px 0 18px rgba(0,0,0,0.04)",
                     zIndex: 1,
                 }}
             />
@@ -100,26 +101,23 @@ export default function SplashScreen() {
             <div
                 className="absolute inset-y-0 right-0 w-1/2 bg-white"
                 style={{
-                    transform:  isOpening ? "translateX(101%)" : "translateX(0)",
+                    transform: isOpening ? "translateX(101%)" : "translateX(0)",
                     transition: isOpening ? `transform ${SHUTTER_MS}ms cubic-bezier(0.77,0,0.175,1)` : "none",
-                    boxShadow:  "-3px 0 18px rgba(0,0,0,0.04)",
+                    boxShadow: "-3px 0 18px rgba(0,0,0,0.04)",
                     zIndex: 1,
                 }}
             />
 
             {/* ── Logo layer (above both panels) ── */}
-            <div
-                className="pointer-events-none absolute inset-0 flex items-center justify-center"
-                style={{ zIndex: 2 }}
-            >
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ zIndex: 2 }}>
                 {/* Drop-shadow shell */}
                 <div style={{ filter: "drop-shadow(0 10px 40px rgba(31,182,205,0.20)) drop-shadow(0 2px 12px rgba(0,0,0,0.07))" }}>
                     {/* Entrance / exit wrapper */}
                     <div
                         style={{
-                            opacity:   isOpening ? 0       : logoIn ? 1    : 0,
+                            opacity: isOpening ? 0 : logoIn ? 1 : 0,
                             transform: isOpening ? "scale(1.07)" : logoIn ? "scale(1)" : "scale(0.88)",
-                            filter:    logoIn    ? "blur(0px)"   : "blur(8px)",
+                            filter: logoIn ? "blur(0px)" : "blur(8px)",
                             transition: isOpening
                                 ? `opacity ${Math.round(SHUTTER_MS * 0.45)}ms ease-in, transform ${Math.round(SHUTTER_MS * 0.45)}ms ease-in`
                                 : `opacity ${LOGO_IN_MS}ms cubic-bezier(0.16,1,0.3,1), transform ${LOGO_IN_MS}ms cubic-bezier(0.16,1,0.3,1), filter ${LOGO_IN_MS}ms cubic-bezier(0.16,1,0.3,1)`,
