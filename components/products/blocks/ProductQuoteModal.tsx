@@ -1,9 +1,12 @@
 "use client";
 
-import { useActionState, useState, useEffect } from "react";
+import { useActionState, useState, useEffect, useRef } from "react";
 import { submitProductQuote, ProductQuoteFormState } from "@/app/actions/productQuote";
-import { Input, Textarea, Button, CountrySelect, Modal } from "@/components/ui";
+import { Input, Textarea, Button, CountrySelect, Select, Modal } from "@/components/ui";
 import type { Country } from "@/components/ui/CountrySelect";
+import { INDIAN_STATES } from "@/lib/indian-states";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import type { CountryCode } from "libphonenumber-js";
 import { toast } from "sonner";
 
 const initialState: ProductQuoteFormState = {
@@ -23,6 +26,16 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
     const [state, formAction, isPending] = useActionState(submitProductQuote, initialState);
     const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
     const [formTimestamp] = useState<string>(() => Date.now().toString());
+    const [phoneError, setPhoneError] = useState<string | undefined>(undefined);
+    const phoneInputRef = useRef<HTMLInputElement>(null);
+
+    const validatePhone = (value: string, country: Country | null) => {
+        if (!value || !country) {
+            setPhoneError(undefined);
+            return;
+        }
+        setPhoneError(isValidPhoneNumber(value, country.code as CountryCode) ? undefined : `Enter a valid phone number for ${country.name}`);
+    };
 
     // Reset form when modal is closed
     useEffect(() => {
@@ -30,6 +43,7 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
             // Use setTimeout to avoid setState during render
             const timer = setTimeout(() => {
                 setSelectedCountry(null);
+                setPhoneError(undefined);
             }, 0);
             return () => clearTimeout(timer);
         }
@@ -38,15 +52,23 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
     // Close immediately on success — the toast carries the confirmation, so the
     // modal doesn't need to linger open (a delayed close here previously relied
     // on `onClose`'s identity staying stable across the wait, which it isn't).
+    // Guarded by object identity (not the `.success` boolean) because this
+    // component stays mounted across opens: comparing the boolean alone either
+    // re-fires the toast whenever `onClose`'s identity changes on an unrelated
+    // re-render, or — if that's fixed — misses a second real success in the same
+    // session because `true === true` looks like "nothing changed" to React.
+    const prevStateRef = useRef(state);
     useEffect(() => {
-        if (state.success) {
+        const isNewState = state !== prevStateRef.current;
+        prevStateRef.current = state;
+        if (isNewState && state.success) {
             toast.success("Quote Request Sent!", {
                 description: `We'll get back to you about ${productName} as soon as possible.`,
                 duration: 5000,
             });
             onClose();
         }
-    }, [state.success, productName, onClose]);
+    }, [state, productName, onClose]);
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="Request a Quote" size="lg">
@@ -84,7 +106,17 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
 
                 {/* Phone & Country Row */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <Input label="Phone Number" name="phone" type="tel" required placeholder="+91 9876543210" error={state.fieldErrors?.phone} maxLength={20} />
+                    <Input
+                        ref={phoneInputRef}
+                        label="Phone Number"
+                        name="phone"
+                        type="tel"
+                        required
+                        placeholder="+91 9876543210"
+                        error={phoneError || state.fieldErrors?.phone}
+                        maxLength={20}
+                        onBlur={(e) => validatePhone(e.target.value, selectedCountry)}
+                    />
 
                     <div className="relative">
                         <CountrySelect
@@ -92,7 +124,10 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                             name="country"
                             required
                             value={selectedCountry?.code}
-                            onChange={setSelectedCountry}
+                            onChange={(country) => {
+                                setSelectedCountry(country);
+                                validatePhone(phoneInputRef.current?.value ?? "", country);
+                            }}
                             error={state.fieldErrors?.country}
                             placeholder="Select your country"
                         />
@@ -101,7 +136,11 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
 
                 {/* State & Postcode Row */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <Input label="State" name="state" type="text" required placeholder="Maharashtra" error={state.fieldErrors?.state} maxLength={100} />
+                    {selectedCountry?.code === "IN" ? (
+                        <Select label="State" name="state" required options={INDIAN_STATES} error={state.fieldErrors?.state} />
+                    ) : (
+                        <Input label="State" name="state" type="text" required placeholder="Maharashtra" error={state.fieldErrors?.state} maxLength={100} />
+                    )}
 
                     <Input label="Postcode" name="postcode" type="text" required placeholder="400086" error={state.fieldErrors?.postcode} maxLength={15} />
                 </div>

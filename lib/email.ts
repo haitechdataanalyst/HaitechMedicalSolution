@@ -11,7 +11,10 @@ const BRAND = {
     primary: "#1fb6cd",
     primaryLight: "#99e5ed",
     primaryText: "#1980a6",
-    logoUrl: "https://medical.haitech-group.com/haitech_medical_logo.png",
+    // Flattened onto an opaque white background, not the site's transparent PNG:
+    // Outlook's Word rendering engine ignores PNG alpha and paints transparent
+    // pixels black, which showed up as a black box behind the logo.
+    logoUrl: "https://medical.haitech-group.com/haitech_medical_logo_email.png",
 };
 
 /** One label/value row inside an `emailSection` table. */
@@ -47,7 +50,7 @@ export function emailShell(options: { eyebrow: string; title: string; bodyHtml: 
   <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
     <div style="background:${BRAND.primary};height:4px;line-height:4px;font-size:0;">&nbsp;</div>
     <div style="background:#ffffff;padding:24px 24px 20px;text-align:center;border-bottom:1px solid #e5e7eb;">
-      <img src="${BRAND.logoUrl}" alt="Haitech Medical Solutions" width="170" style="display:inline-block;height:auto;max-width:170px;" />
+      <img src="${BRAND.logoUrl}" alt="Haitech Medical Solutions" width="170" height="45" style="display:inline-block;width:170px;height:45px;" />
     </div>
     <div style="background:${BRAND.navy};padding:16px 24px;">
       <p style="margin:0;color:${BRAND.primaryLight};font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:bold;">${eyebrow}</p>

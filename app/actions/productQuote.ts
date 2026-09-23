@@ -1,6 +1,8 @@
 "use server";
 
 import { z } from "zod";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import type { CountryCode } from "libphonenumber-js";
 import { sendEmail, emailRow, emailSection, emailMessageBlock, emailShell } from "@/lib/email";
 import { headers } from "next/headers";
 
@@ -55,7 +57,10 @@ const productQuoteSchema = z.object({
     phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
     state: z.string().min(2, "State is required").max(100).transform(sanitizeString),
     postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
-    country: z.string().min(2, "Country is required").transform(sanitizeString),
+    country: z
+        .string()
+        .length(2, "Please select a country")
+        .transform((val) => val.toUpperCase()),
     subject: z.string().min(3, "Subject must be at least 3 characters").max(200).transform(sanitizeString),
     message: z.string().min(10, "Message must be at least 10 characters").max(5000).transform(sanitizeString),
     // Hidden fields
@@ -70,6 +75,16 @@ const productQuoteSchema = z.object({
     // Anti-spam
     website: z.string().max(0).optional(),
     formTimestamp: z.string(),
+}).superRefine((data, ctx) => {
+    // See contact.ts's schema for why this is a cross-field check via
+    // libphonenumber-js rather than a fixed digit-count per form.
+    if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
+        ctx.addIssue({
+            code: "custom",
+            path: ["phone"],
+            message: "Please enter a valid phone number for the selected country",
+        });
+    }
 });
 
 export type ProductQuoteFormState = {
@@ -125,7 +140,11 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
             productName: formData.get("productName"),
             productSku: formData.get("productSku"),
             productId: formData.get("productId"),
-            selectedVariant: formData.get("selectedVariant"),
+            // FormData.get() returns null for a missing key (the hidden input isn't
+            // rendered when there's no variant), but the schema's z.optional() only
+            // accepts string | undefined, not null — coerce so validation doesn't
+            // spuriously fail every quote request for a product with no variant.
+            selectedVariant: formData.get("selectedVariant") || undefined,
             website: formData.get("website"),
             formTimestamp: formData.get("formTimestamp"),
         });

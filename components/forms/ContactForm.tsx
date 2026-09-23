@@ -2,9 +2,12 @@
 
 import { useActionState, useState, useEffect, useRef } from "react";
 import { submitContactForm, ContactFormState } from "@/app/actions/contact";
-import { Input, Textarea, Button, CountrySelect } from "@/components/ui";
+import { Input, Textarea, Button, CountrySelect, Select } from "@/components/ui";
 import { CheckIcon } from "@/components/icons";
 import type { Country } from "@/components/ui/CountrySelect";
+import { INDIAN_STATES } from "@/lib/indian-states";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import type { CountryCode } from "libphonenumber-js";
 import { toast } from "sonner";
 
 const initialState: ContactFormState = {
@@ -16,7 +19,17 @@ export default function ContactForm() {
     const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
     const [formTimestamp, setFormTimestamp] = useState<string>("");
     const [messageLength, setMessageLength] = useState(0);
+    const [phoneError, setPhoneError] = useState<string | undefined>(undefined);
+    const phoneInputRef = useRef<HTMLInputElement>(null);
     const MESSAGE_MAX = 5000;
+
+    const validatePhone = (value: string, country: Country | null) => {
+        if (!value || !country) {
+            setPhoneError(undefined);
+            return;
+        }
+        setPhoneError(isValidPhoneNumber(value, country.code as CountryCode) ? undefined : `Enter a valid phone number for ${country.name}`);
+    };
 
     useEffect(() => {
         setFormTimestamp(Date.now().toString());
@@ -73,7 +86,17 @@ export default function ContactForm() {
 
             {/* Phone & Country Row */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Input label="Phone Number" name="phone" type="tel" required placeholder="+1 555 0123" error={state.fieldErrors?.phone} maxLength={20} />
+                <Input
+                    ref={phoneInputRef}
+                    label="Phone Number"
+                    name="phone"
+                    type="tel"
+                    required
+                    placeholder="+1 555 0123"
+                    error={phoneError || state.fieldErrors?.phone}
+                    maxLength={20}
+                    onBlur={(e) => validatePhone(e.target.value, selectedCountry)}
+                />
 
                 <div className="relative">
                     <CountrySelect
@@ -81,7 +104,10 @@ export default function ContactForm() {
                         name="country"
                         required
                         value={selectedCountry?.code}
-                        onChange={setSelectedCountry}
+                        onChange={(country) => {
+                            setSelectedCountry(country);
+                            validatePhone(phoneInputRef.current?.value ?? "", country);
+                        }}
                         error={state.fieldErrors?.country}
                         placeholder="Select your country"
                     />
@@ -90,7 +116,11 @@ export default function ContactForm() {
 
             {/* State & Postcode Row */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Input label="State" name="state" type="text" placeholder="Optional" error={state.fieldErrors?.state} maxLength={100} />
+                {selectedCountry?.code === "IN" ? (
+                    <Select label="State" name="state" options={INDIAN_STATES} error={state.fieldErrors?.state} />
+                ) : (
+                    <Input label="State" name="state" type="text" placeholder="Optional" error={state.fieldErrors?.state} maxLength={100} />
+                )}
 
                 <Input label="Postcode" name="postcode" type="text" placeholder="Optional" error={state.fieldErrors?.postcode} maxLength={15} />
             </div>

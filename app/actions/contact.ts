@@ -1,6 +1,8 @@
 "use server";
 
 import { z } from "zod";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import type { CountryCode } from "libphonenumber-js";
 import { sendContactEmail } from "@/lib/email";
 import { headers } from "next/headers";
 
@@ -92,6 +94,18 @@ const contactSchema = z.object({
         }
         return timestamp;
     }),
+}).superRefine((data, ctx) => {
+    // Cross-field: a phone number's valid length/format depends on the country
+    // it's for (e.g. India is 10 digits, US is 10, UK varies) — libphonenumber-js
+    // is the industry-standard source for these rules rather than a hand-rolled
+    // digit-count check.
+    if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
+        ctx.addIssue({
+            code: "custom",
+            path: ["phone"],
+            message: "Please enter a valid phone number for the selected country",
+        });
+    }
 });
 
 export type ContactFormState = {

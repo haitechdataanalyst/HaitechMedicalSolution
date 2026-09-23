@@ -1,0 +1,43 @@
+// States and union territories of India, for the state dropdown shown when
+// Country = India — a static list is standard practice here (unlike phone
+// validation, there's no well-maintained library for this and the list rarely
+// changes), improving data accuracy over free text for the country the site's
+// primary market is in.
+export const INDIAN_STATES: Array<{ value: string; label: string }> = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Delhi (NCT)",
+    "Jammu and Kashmir",
+    "Ladakh",
+    "Lakshadweep",
+    "Puducherry",
+].map((name) => ({ value: name, label: name }));

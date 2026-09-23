@@ -39,6 +39,10 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
     const [templeTipText, setTempleTipText] = useState("");
     const [boxEngravingText, setBoxEngravingText] = useState("");
     const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+    // Stable identity: an inline `() => setQuoteModalOpen(false)` is recreated every
+    // render, which retriggers ProductQuoteModal's success effect (it depends on
+    // onClose) on any unrelated re-render — firing the "sent" toast more than once.
+    const handleCloseQuoteModal = useCallback(() => setQuoteModalOpen(false), []);
     const [salliSelection, setSalliSelection] = useState<SalliSelection>({ piston: null, material: null, seatSize: null, accessoryIds: [] });
     const [showStickyBar, setShowStickyBar] = useState(false);
     const primaryActionRef = useRef<HTMLDivElement>(null);
@@ -433,7 +437,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         {needsQuote && (
             <ProductQuoteModal
                 isOpen={quoteModalOpen}
-                onClose={() => setQuoteModalOpen(false)}
+                onClose={handleCloseQuoteModal}
                 productName={product.name}
                 productSku={variantSelection.legacyVariant?.sku ?? product.sku}
                 productId={String(product.id)}
