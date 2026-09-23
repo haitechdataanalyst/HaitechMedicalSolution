@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { sendEmail } from "@/lib/email";
+import { sendEmail, emailRow, emailSection, emailMessageBlock, emailShell } from "@/lib/email";
 import { headers } from "next/headers";
 
 // Sanitize string input — strip HTML tags and dangerous characters
@@ -149,51 +149,32 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
         // Prepare email content
         const emailSubject = data.name ? `Product Quote Request: ${data.productName} - ${data.name}` : `Product Quote Request: ${data.productName}`;
 
-        const row = (label: string, value: string) => `
-        <tr>
-          <td style="padding:8px 0;color:#6b7280;font-size:13px;width:110px;vertical-align:top;">${label}</td>
-          <td style="padding:8px 0;color:#111827;font-size:14px;vertical-align:top;">${value}</td>
-        </tr>`;
+        const bodyHtml =
+            emailSection(
+                "Customer",
+                emailRow("Name", data.name || "&mdash;") +
+                    emailRow("Email", `<a href="mailto:${data.email}" style="color:#1980a6;text-decoration:none;">${data.email}</a>`) +
+                    emailRow("Phone", `<a href="tel:${data.phone}" style="color:#1980a6;text-decoration:none;">${data.phone}</a>`) +
+                    emailRow("State", data.state || "&mdash;") +
+                    emailRow("Postcode", data.postcode || "&mdash;") +
+                    emailRow("Country", data.country || "&mdash;")
+            ) +
+            emailSection(
+                "Product",
+                emailRow("Product", data.productName || "&mdash;") +
+                    emailRow("SKU", data.productSku || "&mdash;") +
+                    emailRow("Product ID", data.productId || "&mdash;") +
+                    (data.selectedVariant ? emailRow("Selected Variant", data.selectedVariant) : "")
+            ) +
+            emailSection("Request", emailRow("Subject", data.subject || "&mdash;")) +
+            emailMessageBlock("Message", data.message);
 
-        const section = (title: string, rows: string) => `
-      <h2 style="margin:20px 0 8px;font-size:12px;color:#0f766e;text-transform:uppercase;letter-spacing:0.6px;">${title}</h2>
-      <table style="width:100%;border-collapse:collapse;">${rows}</table>`;
-
-        const emailHtml = `
-<div style="background:#f3f4f6;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
-  <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;">
-    <div style="background:#0f766e;padding:20px 24px;">
-      <p style="margin:0;color:#ffffff;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Haitech Medical</p>
-      <h1 style="margin:4px 0 0;color:#ffffff;font-size:20px;">New Product Quote Request</h1>
-    </div>
-    <div style="padding:24px;">
-      ${section(
-          "Customer",
-          row("Name", data.name || "&mdash;") +
-              row("Email", `<a href="mailto:${data.email}" style="color:#0f766e;text-decoration:none;">${data.email}</a>`) +
-              row("Phone", `<a href="tel:${data.phone}" style="color:#0f766e;text-decoration:none;">${data.phone}</a>`) +
-              row("State", data.state || "&mdash;") +
-              row("Postcode", data.postcode || "&mdash;") +
-              row("Country", data.country || "&mdash;")
-      )}
-      ${section(
-          "Product",
-          row("Product", data.productName || "&mdash;") +
-              row("SKU", data.productSku || "&mdash;") +
-              row("Product ID", data.productId || "&mdash;") +
-              (data.selectedVariant ? row("Selected Variant", data.selectedVariant) : "")
-      )}
-      ${section("Request", row("Subject", data.subject || "&mdash;"))}
-      <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;">
-        <p style="margin:0 0 8px;color:#6b7280;font-size:13px;">Message</p>
-        <p style="margin:0;color:#111827;font-size:14px;line-height:1.6;white-space:pre-wrap;">${data.message.replace(/\n/g, "<br>")}</p>
-      </div>
-    </div>
-    <div style="padding:14px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;">
-      <p style="margin:0;color:#9ca3af;font-size:12px;">Sent from the product quote form at haitech-group.com</p>
-    </div>
-  </div>
-</div>`;
+        const emailHtml = emailShell({
+            eyebrow: "Haitech Medical",
+            title: "New Product Quote Request",
+            bodyHtml,
+            footerText: "Sent from the product quote form at haitech-group.com",
+        });
 
         const variantLine = data.selectedVariant ? `\nSelected Variant: ${data.selectedVariant}` : "";
 

@@ -1,6 +1,68 @@
 import nodemailer from "nodemailer";
 import { CartItem } from "@/types";
 
+// ── Brand ─────────────────────────────────────────────────────────────────
+// Kept in sync with the site's actual tokens (app/globals.css: --color-navy-900,
+// --color-primary-500/200/700) — not arbitrary colors, so notification emails
+// read as the same brand as the website. The logo needs an absolute URL since
+// email clients fetch it from the recipient's inbox, not this codebase.
+const BRAND = {
+    navy: "#091c2e",
+    primary: "#1fb6cd",
+    primaryLight: "#99e5ed",
+    primaryText: "#1980a6",
+    logoUrl: "https://medical.haitech-group.com/haitech_medical_logo.png",
+};
+
+/** One label/value row inside an `emailSection` table. */
+export function emailRow(label: string, valueHtml: string): string {
+    return `
+        <tr>
+          <td style="padding:8px 0;color:#6b7280;font-size:13px;width:110px;vertical-align:top;">${label}</td>
+          <td style="padding:8px 0;color:#111827;font-size:14px;vertical-align:top;">${valueHtml}</td>
+        </tr>`;
+}
+
+/** A titled group of rows (e.g. "Customer", "Product"). */
+export function emailSection(title: string, rowsHtml: string): string {
+    return `
+      <h2 style="margin:20px 0 8px;font-size:12px;color:${BRAND.primaryText};text-transform:uppercase;letter-spacing:0.6px;">${title}</h2>
+      <table style="width:100%;border-collapse:collapse;">${rowsHtml}</table>`;
+}
+
+/** Free-text content (e.g. a message field), set apart from the structured rows above it. */
+export function emailMessageBlock(label: string, text: string): string {
+    return `
+      <div style="margin-top:20px;padding:16px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;">
+        <p style="margin:0 0 8px;color:#6b7280;font-size:12px;text-transform:uppercase;letter-spacing:0.4px;">${label}</p>
+        <p style="margin:0;color:#111827;font-size:14px;line-height:1.6;white-space:pre-wrap;">${text.replace(/\n/g, "<br>")}</p>
+      </div>`;
+}
+
+/** Wraps a notification email's body in the shared Haitech-branded shell: logo header, dark title band, dark footer. */
+export function emailShell(options: { eyebrow: string; title: string; bodyHtml: string; footerText: string }): string {
+    const { eyebrow, title, bodyHtml, footerText } = options;
+    return `
+<div style="background:#f3f4f6;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
+  <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+    <div style="background:${BRAND.primary};height:4px;line-height:4px;font-size:0;">&nbsp;</div>
+    <div style="background:#ffffff;padding:24px 24px 20px;text-align:center;border-bottom:1px solid #e5e7eb;">
+      <img src="${BRAND.logoUrl}" alt="Haitech Medical Solutions" width="170" style="display:inline-block;height:auto;max-width:170px;" />
+    </div>
+    <div style="background:${BRAND.navy};padding:16px 24px;">
+      <p style="margin:0;color:${BRAND.primaryLight};font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:bold;">${eyebrow}</p>
+      <h1 style="margin:4px 0 0;color:#ffffff;font-size:19px;font-weight:600;">${title}</h1>
+    </div>
+    <div style="padding:24px;">
+      ${bodyHtml}
+    </div>
+    <div style="padding:14px 24px;background:${BRAND.navy};">
+      <p style="margin:0;color:#8fb3c9;font-size:11px;">${footerText}</p>
+    </div>
+  </div>
+</div>`;
+}
+
 // Create reusable transporter
 const createTransporter = () => {
     return nodemailer.createTransport({
@@ -99,11 +161,18 @@ export async function sendContactEmail(options: ContactEmailOptions) {
 
     const transporter = createTransporter();
 
-    const row = (label: string, value: string) => `
-        <tr>
-          <td style="padding:8px 0;color:#6b7280;font-size:13px;width:110px;vertical-align:top;">${label}</td>
-          <td style="padding:8px 0;color:#111827;font-size:14px;vertical-align:top;">${value}</td>
-        </tr>`;
+    const bodyHtml =
+        emailSection(
+            "Contact",
+            emailRow("Name", name) +
+                emailRow("Email", `<a href="mailto:${from}" style="color:${BRAND.primaryText};text-decoration:none;">${from}</a>`) +
+                emailRow("Phone", phone) +
+                emailRow("State", state) +
+                emailRow("Postcode", postcode) +
+                emailRow("Country", country)
+        ) +
+        emailSection("Subject", emailRow("Subject", subject)) +
+        emailMessageBlock("Message", message);
 
     await transporter.sendMail({
         from: process.env.SMTP_FROM || "noreply@haitechmedical.com.au",
@@ -124,34 +193,12 @@ Subject: ${subject}
 Message:
 ${message}
     `,
-        html: `
-<div style="background:#f3f4f6;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;">
-  <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;">
-    <div style="background:#0f766e;padding:20px 24px;">
-      <p style="margin:0;color:#ffffff;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Haitech Medical</p>
-      <h1 style="margin:4px 0 0;color:#ffffff;font-size:20px;">New Website Lead</h1>
-    </div>
-    <div style="padding:24px;">
-      <table style="width:100%;border-collapse:collapse;">
-        ${row("Name", name)}
-        ${row("Email", `<a href="mailto:${from}" style="color:#0f766e;text-decoration:none;">${from}</a>`)}
-        ${row("Phone", phone)}
-        ${row("State", state)}
-        ${row("Postcode", postcode)}
-        ${row("Country", country)}
-        ${row("Subject", subject)}
-      </table>
-      <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;">
-        <p style="margin:0 0 8px;color:#6b7280;font-size:13px;">Message</p>
-        <p style="margin:0;color:#111827;font-size:14px;line-height:1.6;white-space:pre-wrap;">${message.replace(/\n/g, "<br>")}</p>
-      </div>
-    </div>
-    <div style="padding:14px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;">
-      <p style="margin:0;color:#9ca3af;font-size:12px;">Sent from the contact form at haitech-group.com</p>
-    </div>
-  </div>
-</div>
-    `,
+        html: emailShell({
+            eyebrow: "Haitech Medical",
+            title: "New Website Lead",
+            bodyHtml,
+            footerText: "Sent from the contact form at haitech-group.com",
+        }),
     });
 }
 
