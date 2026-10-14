@@ -45,3 +45,13 @@ next-env.d.ts
 
 # one-off migration run artifacts
 /scripts/.cloudinary-upload-map.json
+/haitech-medical-backend-main/scripts/phase3b-reconciliation-report*.json
+
+# local AI-assistant tooling: machine-specific, and .mcp.json carries an API key
+/.mcp.json
+/.claude/
+/.agents/
+/skills-lock.json
+
+# confidential commercial data (this repository is public)
+/data/seed/*price*.xlsx
