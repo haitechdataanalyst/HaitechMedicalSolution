@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
+import { safeNextPath } from "@/lib/safe-redirect";
 
 export interface AuthActionResult {
     error?: string;
@@ -94,7 +95,8 @@ export async function login(formData: FormData): Promise<AuthActionResult> {
         redirect("/auth/mfa-verify");
     }
 
-    redirect("/dashboard");
+    // Return to the page that sent the visitor to sign in (set by proxy.ts)
+    redirect(safeNextPath(formData.get("next")?.toString(), "/dashboard"));
 }
 
 const forgotPasswordSchema = z.object({
@@ -167,7 +169,10 @@ export async function signOut(): Promise<never> {
 }
 
 const mfaVerifySchema = z.object({
-    code: z.string().trim().regex(/^\d{6}$/, "Enter the 6-digit code from your authenticator app"),
+    code: z
+        .string()
+        .trim()
+        .regex(/^\d{6}$/, "Enter the 6-digit code from your authenticator app"),
 });
 
 export async function verifyMfa(formData: FormData): Promise<AuthActionResult> {

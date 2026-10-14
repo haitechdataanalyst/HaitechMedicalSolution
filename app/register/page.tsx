@@ -2,9 +2,11 @@ import { ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import RegisterForm from "@/components/auth/RegisterForm";
 import AuthLayout from "@/components/auth/AuthLayout";
+import AuthAlert from "@/components/auth/AuthAlert";
 
 export const metadata: Metadata = {
-    title: "Create Account | Haitech Medical",
+    title: "Create Account",
+    robots: { index: false, follow: true },
     description: "Create a Haitech Medical account.",
 };
 
@@ -21,21 +23,21 @@ export default async function RegisterPage({ searchParams }: RegisterPageProps) 
             title="Create your account"
             subtitle="Sign up to manage orders and quote requests"
             footer={
-                <div className="mt-6 flex items-center justify-center gap-2 text-xs text-neutral-400">
-                    <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
+                <p className="mt-6 flex items-center justify-center gap-2 px-2 text-center text-[13px] text-neutral-500">
+                    <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
                     Session verified on every request — never stored in the browser
-                </div>
+                </p>
             }
         >
             {params.message === "check-email" && (
-                <div className="mb-5 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm text-primary-700" role="status">
+                <AuthAlert tone="info" className="mb-5">
                     Almost there — check your email for a confirmation link to activate your account.
-                </div>
+                </AuthAlert>
             )}
             {params.error && (
-                <div className="mb-5 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
+                <AuthAlert tone="error" className="mb-5">
                     {params.error}
-                </div>
+                </AuthAlert>
             )}
 
             <RegisterForm turnstileSiteKey={turnstileSiteKey} />

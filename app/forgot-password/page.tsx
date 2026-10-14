@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import ForgotPasswordForm from "@/components/auth/ForgotPasswordForm";
 import AuthLayout from "@/components/auth/AuthLayout";
+import AuthAlert from "@/components/auth/AuthAlert";
 
 export const metadata: Metadata = {
-    title: "Reset Password | Haitech Medical",
+    title: "Reset Password",
+    robots: { index: false, follow: true },
     description: "Reset your Haitech Medical account password.",
 };
 
@@ -15,16 +17,16 @@ export default async function ForgotPasswordPage({ searchParams }: ForgotPasswor
     const params = await searchParams;
 
     return (
-        <AuthLayout title="Forgot your password?" subtitle="We'll email you a link to reset it">
+        <AuthLayout title="Forgot your password?" subtitle="We'll email you a link to reset it" showHighlights={false}>
             {params.message === "check-email" && (
-                <div className="mb-5 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm text-primary-700" role="status">
+                <AuthAlert tone="info" className="mb-5">
                     If an account exists for that email, a reset link is on its way.
-                </div>
+                </AuthAlert>
             )}
             {params.error && (
-                <div className="mb-5 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
+                <AuthAlert tone="error" className="mb-5">
                     {params.error}
-                </div>
+                </AuthAlert>
             )}
 
             <ForgotPasswordForm />

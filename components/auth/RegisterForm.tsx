@@ -5,12 +5,10 @@ import Link from "next/link";
 import { signup, type AuthActionResult } from "@/app/auth/actions";
 import TurnstileWidget from "./TurnstileWidget";
 import PasswordInput from "./PasswordInput";
+import AuthAlert from "./AuthAlert";
 
 export default function RegisterForm({ turnstileSiteKey }: { turnstileSiteKey?: string }) {
-    const [state, formAction, isPending] = useActionState<AuthActionResult, FormData>(
-        (_prev, formData) => signup(formData),
-        {}
-    );
+    const [state, formAction, isPending] = useActionState<AuthActionResult, FormData>((_prev, formData) => signup(formData), {});
     const [captchaToken, setCaptchaToken] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -19,12 +17,7 @@ export default function RegisterForm({ turnstileSiteKey }: { turnstileSiteKey?: 
 
     return (
         <form action={formAction} className="flex flex-col gap-5">
-            {state?.error && (
-                <div className="flex items-start gap-3 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert">
-                    <span className="mt-px shrink-0">⚠</span>
-                    {state.error}
-                </div>
-            )}
+            {state?.error && <AuthAlert tone="error">{state.error}</AuthAlert>}
 
             <div>
                 <label htmlFor="email" className="form-label">
@@ -65,18 +58,14 @@ export default function RegisterForm({ turnstileSiteKey }: { turnstileSiteKey?: 
                 </div>
             )}
 
-            <button
-                type="submit"
-                disabled={isPending || mismatch || (Boolean(turnstileSiteKey) && !captchaToken)}
-                className="btn btn-primary btn-lg w-full rounded-full disabled:opacity-60"
-            >
+            <button type="submit" disabled={isPending || mismatch || (Boolean(turnstileSiteKey) && !captchaToken)} className="btn btn-primary btn-lg mt-2 w-full">
                 {isPending ? "Creating account…" : "Create Account"}
             </button>
 
-            <p className="text-center text-sm text-neutral-500">
+            <p className="mt-1 text-center text-sm text-neutral-500">
                 Already have an account?{" "}
-                <Link href="/login" className="font-semibold text-primary-600 hover:text-primary-700">
-                    Sign in →
+                <Link href="/login" className="text-primary-700 hover:text-primary-800 font-medium hover:underline">
+                    Sign in
                 </Link>
             </p>
         </form>

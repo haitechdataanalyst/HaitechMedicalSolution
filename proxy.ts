@@ -2,16 +2,17 @@
  * Next.js Proxy (formerly Middleware)
  *
  * Handles:
- *   - API rate-limit headers
  *   - Supabase session refresh on every request, and auth guards for
- *     protected routes (/dashboard)
+ *     protected routes (/dashboard, /account, /checkout)
  */
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
-const PROTECTED_ROUTES = ["/dashboard"];
+// Signed-out visitors are redirected to /login before any of these render. This is a UX gate; the
+// backend still authorises every API call with the bearer token.
+const PROTECTED_ROUTES = ["/dashboard", "/account", "/checkout"];
 
 async function refreshSupabaseSession(request: NextRequest): Promise<NextResponse> {
     let response = NextResponse.next({ request });
@@ -45,10 +46,10 @@ async function refreshSupabaseSession(request: NextRequest): Promise<NextRespons
     } = await supabase.auth.getUser();
 
     const { pathname } = request.nextUrl;
-    const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
+    const isProtected = PROTECTED_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
     if (isProtected && !user) {
         const loginUrl = new URL("/login", request.url);
-        loginUrl.searchParams.set("next", pathname);
+        loginUrl.searchParams.set("next", pathname + request.nextUrl.search);
         return NextResponse.redirect(loginUrl);
     }
 
@@ -58,12 +59,9 @@ async function refreshSupabaseSession(request: NextRequest): Promise<NextRespons
 export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // --- API Rate Limiting at the Edge ---
+    // The read-only catalogue API routes need no session handling.
     if (pathname.startsWith("/api/")) {
-        const response = NextResponse.next();
-        response.headers.set("X-RateLimit-Limit", "100");
-        response.headers.set("X-RateLimit-Remaining", "99"); // Placeholder — use Redis in production
-        return response;
+        return NextResponse.next();
     }
 
     return refreshSupabaseSession(request);

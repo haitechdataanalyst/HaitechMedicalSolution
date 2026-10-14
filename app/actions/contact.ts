@@ -4,7 +4,8 @@ import { z } from "zod";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import type { CountryCode } from "libphonenumber-js";
 import { sendContactEmail } from "@/lib/email";
-import { headers } from "next/headers";
+import { createLead, markLeadEmailSent } from "@/lib/api/leads";
+import { getTrustedClientIp, getClientUserAgent } from "@/lib/client-ip";
 
 // Sanitize string input - remove potentially harmful characters
 function sanitizeString(input: string): string {
@@ -38,75 +39,55 @@ function sanitizePostcode(input: string): string {
         .substring(0, 15);
 }
 
-// Rate limiting storage (in production, use Redis or similar)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 5;
-
-function checkRateLimit(ip: string): boolean {
-    const now = Date.now();
-    const record = rateLimitMap.get(ip);
-
-    if (!record || now > record.resetTime) {
-        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-        return true;
-    }
-
-    if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
-        return false;
-    }
-
-    record.count++;
-    return true;
-}
-
 // Validation schema with sanitization
-const contactSchema = z.object({
-    name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters").transform(sanitizeString),
-    email: z
-        .string()
-        .email("Please enter a valid email address")
-        .max(255, "Email must be less than 255 characters")
-        .transform((val) => val.trim().toLowerCase()),
-    phone: z.string().min(6, "Phone number must be at least 6 digits").max(20, "Phone number is too long").transform(sanitizePhone),
-    state: z.string().max(100, "State is too long").transform(sanitizeString),
-    postcode: z.string().max(15, "Postcode is too long").transform(sanitizePostcode),
-    country: z
-        .string()
-        .length(2, "Please select a country")
-        .transform((val) => val.toUpperCase()),
-    subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters").transform(sanitizeString),
-    message: z.string().min(10, "Message must be at least 10 characters").max(5000, "Message must be less than 5000 characters").transform(sanitizeString),
-    // Honeypot field - must stay empty; non-semantic name prevents browser auto-fill
-    _h_check: z.string().max(0, "Bot detected").optional(),
-    // Timestamp validation - form should take at least 1.5 seconds to fill
-    formTimestamp: z.string().transform((val) => {
-        const timestamp = parseInt(val, 10);
-        const now = Date.now();
-        const timeTaken = now - timestamp;
-        // Form filled in less than 1.5 seconds is likely a bot
-        if (timeTaken < 1500) {
-            throw new Error("Form submitted too quickly");
+const contactSchema = z
+    .object({
+        name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters").transform(sanitizeString),
+        email: z
+            .string()
+            .email("Please enter a valid email address")
+            .max(255, "Email must be less than 255 characters")
+            .transform((val) => val.trim().toLowerCase()),
+        phone: z.string().min(6, "Phone number must be at least 6 digits").max(20, "Phone number is too long").transform(sanitizePhone),
+        state: z.string().max(100, "State is too long").transform(sanitizeString),
+        postcode: z.string().max(15, "Postcode is too long").transform(sanitizePostcode),
+        country: z
+            .string()
+            .length(2, "Please select a country")
+            .transform((val) => val.toUpperCase()),
+        subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters").transform(sanitizeString),
+        message: z.string().min(10, "Message must be at least 10 characters").max(5000, "Message must be less than 5000 characters").transform(sanitizeString),
+        // Honeypot field - must stay empty; non-semantic name prevents browser auto-fill
+        _h_check: z.string().max(0, "Bot detected").optional(),
+        // Timestamp validation - form should take at least 1.5 seconds to fill
+        formTimestamp: z.string().transform((val) => {
+            const timestamp = parseInt(val, 10);
+            const now = Date.now();
+            const timeTaken = now - timestamp;
+            // Form filled in less than 1.5 seconds is likely a bot
+            if (timeTaken < 1500) {
+                throw new Error("Form submitted too quickly");
+            }
+            // Form older than 1 hour is suspicious
+            if (timeTaken > 3600000) {
+                throw new Error("Form session expired");
+            }
+            return timestamp;
+        }),
+    })
+    .superRefine((data, ctx) => {
+        // Cross-field: a phone number's valid length/format depends on the country
+        // it's for (e.g. India is 10 digits, US is 10, UK varies) — libphonenumber-js
+        // is the industry-standard source for these rules rather than a hand-rolled
+        // digit-count check.
+        if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
+            ctx.addIssue({
+                code: "custom",
+                path: ["phone"],
+                message: "Please enter a valid phone number for the selected country",
+            });
         }
-        // Form older than 1 hour is suspicious
-        if (timeTaken > 3600000) {
-            throw new Error("Form session expired");
-        }
-        return timestamp;
-    }),
-}).superRefine((data, ctx) => {
-    // Cross-field: a phone number's valid length/format depends on the country
-    // it's for (e.g. India is 10 digits, US is 10, UK varies) — libphonenumber-js
-    // is the industry-standard source for these rules rather than a hand-rolled
-    // digit-count check.
-    if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
-        ctx.addIssue({
-            code: "custom",
-            path: ["phone"],
-            message: "Please enter a valid phone number for the selected country",
-        });
-    }
-});
+    });
 
 export type ContactFormState = {
     success: boolean;
@@ -116,19 +97,6 @@ export type ContactFormState = {
 
 export async function submitContactForm(prevState: ContactFormState, formData: FormData): Promise<ContactFormState> {
     try {
-        // Get client IP for rate limiting
-        const headersList = await headers();
-        const forwardedFor = headersList.get("x-forwarded-for");
-        const clientIp = forwardedFor?.split(",")[0].trim() || "unknown";
-
-        // Check rate limit
-        if (!checkRateLimit(clientIp)) {
-            return {
-                success: false,
-                error: "Too many requests. Please wait a minute before trying again.",
-            };
-        }
-
         // Extract form data
         const rawData = {
             name: formData.get("name"),
@@ -172,18 +140,60 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
 
         const data = validatedFields.data;
 
-        // Send email
-        await sendContactEmail({
-            to: process.env.CONTACT_EMAIL || "sales@haitech-group.com",
-            from: data.email,
-            name: data.name,
-            phone: data.phone,
-            state: data.state,
-            postcode: data.postcode,
-            country: data.country,
-            subject: data.subject,
-            message: data.message,
-        });
+        // DB-backed rate limit + durable persistence (replaces the old
+        // in-memory Map, which reset on every redeploy).
+        const clientIp = await getTrustedClientIp();
+        const userAgent = await getClientUserAgent();
+
+        const leadResult = await createLead(
+            {
+                source: "contact_form",
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                state: data.state || undefined,
+                postcode: data.postcode || undefined,
+                country: data.country,
+                subject: data.subject,
+                message: data.message,
+                userAgent,
+            },
+            clientIp
+        );
+
+        if (!leadResult.success || !leadResult.data?.lead) {
+            const isRateLimited = leadResult.statusCode === 429;
+            return {
+                success: false,
+                error: isRateLimited ? "Too many requests. Please wait a minute before trying again." : "Failed to send message. Please try again or contact us directly.",
+            };
+        }
+
+        const lead = leadResult.data.lead;
+
+        // Send email — the lead row above is already durably stored, so a
+        // failure here does not lose the submission (unlike the old
+        // email-only flow).
+        try {
+            await sendContactEmail({
+                to: process.env.CONTACT_EMAIL || "sales@haitech-group.com",
+                from: data.email,
+                name: data.name,
+                phone: data.phone,
+                state: data.state,
+                postcode: data.postcode,
+                country: data.country,
+                subject: data.subject,
+                message: data.message,
+            });
+            await markLeadEmailSent(lead.id).catch((err) => console.error("Failed to mark lead email as sent:", err));
+        } catch (emailError) {
+            console.error("Contact email send error:", emailError);
+            return {
+                success: false,
+                error: "Failed to send message. Please try again or contact us directly.",
+            };
+        }
 
         return { success: true };
     } catch (error) {

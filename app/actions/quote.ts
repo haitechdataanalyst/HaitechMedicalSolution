@@ -4,7 +4,8 @@ import { z } from "zod";
 import { sendQuoteEmail } from "@/lib/email";
 import { generateQuotePDF } from "@/lib/pdf";
 import { CartItem } from "@/types";
-import { headers } from "next/headers";
+import { createLead, markLeadEmailSent } from "@/lib/api/leads";
+import { getTrustedClientIp, getClientUserAgent } from "@/lib/client-ip";
 
 // Sanitize string input — strip HTML tags and dangerous characters
 function sanitizeString(input: string): string {
@@ -23,23 +24,6 @@ function sanitizePhone(input: string): string {
         .substring(0, 20);
 }
 
-// Rate limiting (in production, use Redis or similar persistent store)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
-
-function checkRateLimit(ip: string): boolean {
-    const now = Date.now();
-    const record = rateLimitMap.get(ip);
-    if (!record || now > record.resetTime) {
-        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-        return true;
-    }
-    if (record.count >= RATE_LIMIT_MAX_REQUESTS) return false;
-    record.count++;
-    return true;
-}
-
 // Zod schema for individual cart items (validate client JSON)
 const cartItemSchema = z.object({
     productId: z.string().max(50),
@@ -53,10 +37,22 @@ const cartItemSchema = z.object({
 
 const quoteSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters").max(100).transform(sanitizeString),
-    email: z.string().email("Please enter a valid email address").max(255).transform((val) => val.trim().toLowerCase()),
+    email: z
+        .string()
+        .email("Please enter a valid email address")
+        .max(255)
+        .transform((val) => val.trim().toLowerCase()),
     phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
-    company: z.string().max(200).optional().transform((val) => (val ? sanitizeString(val) : undefined)),
-    message: z.string().max(5000).optional().transform((val) => (val ? sanitizeString(val) : undefined)),
+    company: z
+        .string()
+        .max(200)
+        .optional()
+        .transform((val) => (val ? sanitizeString(val) : undefined)),
+    message: z
+        .string()
+        .max(5000)
+        .optional()
+        .transform((val) => (val ? sanitizeString(val) : undefined)),
     cartItems: z.string(),
     // Anti-spam
     website: z.string().max(0).optional(),
@@ -71,28 +67,7 @@ export type QuoteFormState = {
 
 export async function submitQuoteRequest(prevState: QuoteFormState, formData: FormData): Promise<QuoteFormState> {
     try {
-        // Debug: log incoming form keys and cartItems length to help trace aborted requests
-        try {
-            const keys: string[] = [];
-            formData.forEach((v, k) => keys.push(k));
-            const cartStr = formData.get("cartItems")?.toString() || "";
-            console.log("[DEBUG] submitQuoteRequest received keys:", keys, "cartItems length:", cartStr.length);
-        } catch (e) {
-            console.log("[DEBUG] submitQuoteRequest: failed to inspect formData", e);
-        }
-        // Rate limiting by IP — use the rightmost value in X-Forwarded-For (set by the
-        // trusted proxy/CDN) not the leftmost, which is client-supplied and spoofable.
-        const headersList = await headers();
-        const forwardedFor = headersList.get("x-forwarded-for");
-        const parts = forwardedFor?.split(",").map((s) => s.trim()).filter(Boolean) ?? [];
-        const clientIp = parts[parts.length - 1] || "unknown";
-
-        if (!checkRateLimit(clientIp)) {
-            return {
-                success: false,
-                error: "Too many requests. Please wait a minute before trying again.",
-            };
-        }
+        const clientIp = await getTrustedClientIp();
 
         // Bot detection — honeypot
         const honeypot = formData.get("website");
@@ -161,6 +136,42 @@ export async function submitQuoteRequest(prevState: QuoteFormState, formData: Fo
             return { success: false, error: "Too many items in cart" };
         }
 
+        // DB-backed rate limit + durable persistence (replaces the old
+        // in-memory Map, which reset on every redeploy). Line items are
+        // stored as normalized lead_cart_items rows, not the raw cart JSON.
+        const userAgent = await getClientUserAgent();
+        const subject = `Cart Quote Request${data.company ? ` - ${data.company}` : ""}`;
+
+        const leadResult = await createLead(
+            {
+                source: "cart_quote",
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                subject,
+                message: data.message,
+                userAgent,
+                cartItems: cartItems.map((item) => ({
+                    productName: item.productName,
+                    sku: item.sku || undefined,
+                    quantity: item.quantity,
+                    unitPrice: item.basePrice !== undefined ? Math.round(item.basePrice * 100) : undefined,
+                    customization: item.customization ? JSON.stringify(item.customization) : undefined,
+                })),
+            },
+            clientIp
+        );
+
+        if (!leadResult.success || !leadResult.data?.lead) {
+            const isRateLimited = leadResult.statusCode === 429;
+            return {
+                success: false,
+                error: isRateLimited ? "Too many requests. Please wait a minute before trying again." : "Failed to submit quote request. Please try again or contact us directly.",
+            };
+        }
+
+        const lead = leadResult.data.lead;
+
         // Generate PDF
         const pdfBuffer = await generateQuotePDF({
             customer: {
@@ -173,17 +184,27 @@ export async function submitQuoteRequest(prevState: QuoteFormState, formData: Fo
             message: data.message,
         });
 
-        // Send email
-        await sendQuoteEmail({
-            to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
-            customerEmail: data.email,
-            customerName: data.name,
-            customerPhone: data.phone,
-            customerCompany: data.company,
-            pdfBuffer,
-            items: cartItems,
-            message: data.message,
-        });
+        // Send email — the lead + line items above are already durably
+        // stored, so a failure here does not lose the submission.
+        try {
+            await sendQuoteEmail({
+                to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
+                customerEmail: data.email,
+                customerName: data.name,
+                customerPhone: data.phone,
+                customerCompany: data.company,
+                pdfBuffer,
+                items: cartItems,
+                message: data.message,
+            });
+            await markLeadEmailSent(lead.id).catch((err) => console.error("Failed to mark lead email as sent:", err));
+        } catch (emailError) {
+            console.error("Quote email send error:", emailError);
+            return {
+                success: false,
+                error: "Failed to submit quote request. Please try again or contact us directly.",
+            };
+        }
 
         return { success: true };
     } catch (error) {

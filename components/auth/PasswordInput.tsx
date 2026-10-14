@@ -17,26 +17,15 @@ interface PasswordInputProps {
     labelExtra?: React.ReactNode;
 }
 
-export default function PasswordInput({
-    id,
-    name,
-    label,
-    autoComplete = "current-password",
-    required,
-    minLength,
-    placeholder,
-    value,
-    onChange,
-    error,
-    labelExtra,
-}: PasswordInputProps) {
+export default function PasswordInput({ id, name, label, autoComplete = "current-password", required, minLength, placeholder, value, onChange, error, labelExtra }: PasswordInputProps) {
     const autoId = useId();
     const inputId = id ?? autoId;
+    const errorId = `${inputId}-error`;
     const [visible, setVisible] = useState(false);
 
     return (
         <div>
-            <div className="mb-1.5 flex items-center justify-between">
+            <div className="mb-1.5 flex items-center justify-between gap-3">
                 <label htmlFor={inputId} className="form-label mb-0">
                     {label}
                 </label>
@@ -53,19 +42,25 @@ export default function PasswordInput({
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange ? (e) => onChange(e.target.value) : undefined}
-                    className={`form-input pr-11 ${error ? "form-input-error" : ""}`}
+                    aria-invalid={error ? true : undefined}
+                    aria-describedby={error ? errorId : undefined}
+                    className={`form-input pr-12 ${error ? "form-input-error" : ""}`}
                 />
                 <button
                     type="button"
                     onClick={() => setVisible((v) => !v)}
-                    tabIndex={-1}
-                    className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-neutral-400 transition-colors hover:text-neutral-600"
+                    className="focus-visible:outline-primary-500 absolute top-1/2 right-0.5 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 ease-out hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-[-2px]"
                     aria-label={visible ? "Hide password" : "Show password"}
+                    aria-pressed={visible}
                 >
-                    {visible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {visible ? <EyeOff className="h-[18px] w-[18px]" aria-hidden="true" /> : <Eye className="h-[18px] w-[18px]" aria-hidden="true" />}
                 </button>
             </div>
-            {error && <p className="form-error">{error}</p>}
+            {error && (
+                <p id={errorId} className="form-error" role="alert">
+                    {error}
+                </p>
+            )}
         </div>
     );
 }

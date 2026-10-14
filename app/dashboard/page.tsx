@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { KeyRound, LogOut, ShieldCheck } from "lucide-react";
+import { ChevronRight, KeyRound, LogOut } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/utils/supabase/server";
 import { signOut } from "@/app/auth/actions";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+import AuthAlert from "@/components/auth/AuthAlert";
 
 export const metadata: Metadata = {
-    title: "Dashboard | Haitech Medical",
+    title: "Dashboard",
+    robots: { index: false, follow: true },
 };
+
+const ROW =
+    "flex min-h-14 w-full items-center gap-3 px-5 text-left text-[15px] font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-500";
 
 export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ message?: string }> }) {
     const params = await searchParams;
@@ -21,38 +27,30 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
     }
 
     return (
-        <main className="flex min-h-screen items-center justify-center bg-neutral-50 px-6 py-16">
+        <main className="flex min-h-[70vh] justify-center bg-neutral-50 px-4 py-16 sm:px-6 md:py-24">
             <div className="w-full max-w-md">
-                <div className="rounded-2xl border border-neutral-100 bg-white p-8 shadow-sm">
-                    <h1 className="mb-1.5 text-2xl font-bold text-neutral-900">Your account</h1>
-                    <p className="mb-6 text-sm text-neutral-500">{user.email}</p>
+                <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-neutral-900">Your account</h1>
+                <p className="mt-2 truncate text-[15px] text-neutral-500">{user.email}</p>
 
-                    {params.message === "password-updated" && (
-                        <div className="mb-5 flex items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-700" role="status">
-                            <ShieldCheck className="h-4 w-4 shrink-0" />
-                            Password updated successfully.
-                        </div>
-                    )}
+                {params.message === "password-updated" && (
+                    <AuthAlert tone="success" className="mt-6">
+                        Password updated successfully.
+                    </AuthAlert>
+                )}
 
-                    <div className="flex flex-col gap-3">
-                        <Link
-                            href="/dashboard/update-password"
-                            className="flex items-center gap-2.5 rounded-xl border border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
-                        >
-                            <KeyRound className="h-4 w-4 text-neutral-400" />
-                            Change password
-                        </Link>
+                <div className={`${SURFACE_CARD} mt-8 divide-y divide-neutral-900/[0.06] overflow-hidden`}>
+                    <Link href="/dashboard/update-password" className={`${ROW} text-neutral-800 hover:bg-neutral-900/[0.03]`}>
+                        <KeyRound className="h-[18px] w-[18px] text-neutral-500" aria-hidden="true" />
+                        <span className="flex-1">Change password</span>
+                        <ChevronRight className="h-4 w-4 text-neutral-400" aria-hidden="true" />
+                    </Link>
 
-                        <form action={signOut}>
-                            <button
-                                type="submit"
-                                className="flex w-full items-center gap-2.5 rounded-xl border border-neutral-200 px-4 py-3 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
-                            >
-                                <LogOut className="h-4 w-4" />
-                                Sign out
-                            </button>
-                        </form>
-                    </div>
+                    <form action={signOut}>
+                        <button type="submit" className={`${ROW} text-red-700 hover:bg-red-50`}>
+                            <LogOut className="h-[18px] w-[18px]" aria-hidden="true" />
+                            Sign out
+                        </button>
+                    </form>
                 </div>
             </div>
         </main>

@@ -2,6 +2,8 @@ import { createClient } from "@/utils/supabase/client";
 
 export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY || "";
+// Longest a browser request may wait on the backend before it is abandoned
+const REQUEST_TIMEOUT_MS = 30_000;
 
 export type ApiResponse<T = unknown> = {
     timestamp: string;
@@ -39,10 +41,7 @@ export type FetchOptions = RequestInit & {
     skipAuth?: boolean;
 };
 
-export const apiFetch = async <T = unknown>(
-    endpoint: string,
-    options: FetchOptions = {}
-): Promise<ApiResponse<T>> => {
+export const apiFetch = async <T = unknown>(endpoint: string, options: FetchOptions = {}): Promise<ApiResponse<T>> => {
     const { skipAuth = false, headers: extraHeaders, ...rest } = options;
 
     const token = skipAuth ? null : await getSupabaseAccessToken();
@@ -55,10 +54,22 @@ export const apiFetch = async <T = unknown>(
     };
 
     const res = await fetch(`${API_BASE}${endpoint}`, {
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         ...rest,
         credentials: "include",
         headers,
     });
 
-    return res.json() as Promise<ApiResponse<T>>;
+    try {
+        return (await res.json()) as ApiResponse<T>;
+    } catch {
+        // A gateway error page or empty body isn't JSON — report it in the normal response shape instead of throwing a parse error.
+        return {
+            timestamp: new Date().toISOString(),
+            statusCode: res.status,
+            status: res.status,
+            success: false,
+            message: "The server returned an unexpected response. Please try again.",
+        };
+    }
 };

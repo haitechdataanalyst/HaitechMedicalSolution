@@ -4,7 +4,9 @@ import { z } from "zod";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import type { CountryCode } from "libphonenumber-js";
 import { sendEmail, emailRow, emailSection, emailMessageBlock, emailShell } from "@/lib/email";
-import { headers } from "next/headers";
+import { createLead, markLeadEmailSent } from "@/lib/api/leads";
+import { getTrustedClientIp, getClientUserAgent } from "@/lib/client-ip";
+import { isCatalogueProductId } from "@/lib/headlight-products";
 
 // Sanitize string input — strip HTML tags and dangerous characters
 function sanitizeString(input: string): string {
@@ -30,62 +32,47 @@ function sanitizePostcode(input: string): string {
         .substring(0, 15);
 }
 
-// Rate limiting (in production, use Redis or similar persistent store)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 5;
-
-function checkRateLimit(ip: string): boolean {
-    const now = Date.now();
-    const record = rateLimitMap.get(ip);
-    if (!record || now > record.resetTime) {
-        rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-        return true;
-    }
-    if (record.count >= RATE_LIMIT_MAX_REQUESTS) return false;
-    record.count++;
-    return true;
-}
-
-const productQuoteSchema = z.object({
-    name: z.string().min(2, "Name must be at least 2 characters").max(100).transform(sanitizeString),
-    email: z
-        .string()
-        .email("Please enter a valid email address")
-        .max(255)
-        .transform((val) => val.trim().toLowerCase()),
-    phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
-    state: z.string().min(2, "State is required").max(100).transform(sanitizeString),
-    postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
-    country: z
-        .string()
-        .length(2, "Please select a country")
-        .transform((val) => val.toUpperCase()),
-    subject: z.string().min(3, "Subject must be at least 3 characters").max(200).transform(sanitizeString),
-    message: z.string().min(10, "Message must be at least 10 characters").max(5000).transform(sanitizeString),
-    // Hidden fields
-    productName: z.string().max(200).transform(sanitizeString),
-    productSku: z.string().max(100).transform(sanitizeString),
-    productId: z.string().max(50).transform(sanitizeString),
-    selectedVariant: z
-        .string()
-        .max(200)
-        .optional()
-        .transform((val) => (val ? sanitizeString(val) : undefined)),
-    // Anti-spam
-    website: z.string().max(0).optional(),
-    formTimestamp: z.string(),
-}).superRefine((data, ctx) => {
-    // See contact.ts's schema for why this is a cross-field check via
-    // libphonenumber-js rather than a fixed digit-count per form.
-    if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
-        ctx.addIssue({
-            code: "custom",
-            path: ["phone"],
-            message: "Please enter a valid phone number for the selected country",
-        });
-    }
-});
+const productQuoteSchema = z
+    .object({
+        name: z.string().min(2, "Name must be at least 2 characters").max(100).transform(sanitizeString),
+        email: z
+            .string()
+            .email("Please enter a valid email address")
+            .max(255)
+            .transform((val) => val.trim().toLowerCase()),
+        phone: z.string().min(10, "Phone number must be at least 10 digits").max(20).transform(sanitizePhone),
+        state: z.string().min(2, "State is required").max(100).transform(sanitizeString),
+        postcode: z.string().min(2, "Postcode is required").max(15).transform(sanitizePostcode),
+        country: z
+            .string()
+            .length(2, "Please select a country")
+            .transform((val) => val.toUpperCase()),
+        subject: z.string().min(3, "Subject must be at least 3 characters").max(200).transform(sanitizeString),
+        message: z.string().min(10, "Message must be at least 10 characters").max(5000).transform(sanitizeString),
+        // Hidden fields
+        productName: z.string().max(200).transform(sanitizeString),
+        productSku: z.string().max(100).transform(sanitizeString),
+        productId: z.string().max(50).transform(sanitizeString),
+        selectedVariant: z
+            .string()
+            .max(200)
+            .optional()
+            .transform((val) => (val ? sanitizeString(val) : undefined)),
+        // Anti-spam
+        website: z.string().max(0).optional(),
+        formTimestamp: z.string(),
+    })
+    .superRefine((data, ctx) => {
+        // See contact.ts's schema for why this is a cross-field check via
+        // libphonenumber-js rather than a fixed digit-count per form.
+        if (!isValidPhoneNumber(data.phone, data.country as CountryCode)) {
+            ctx.addIssue({
+                code: "custom",
+                path: ["phone"],
+                message: "Please enter a valid phone number for the selected country",
+            });
+        }
+    });
 
 export type ProductQuoteFormState = {
     success: boolean;
@@ -95,18 +82,6 @@ export type ProductQuoteFormState = {
 
 export async function submitProductQuote(prevState: ProductQuoteFormState, formData: FormData): Promise<ProductQuoteFormState> {
     try {
-        // Rate limiting by IP
-        const headersList = await headers();
-        const forwardedFor = headersList.get("x-forwarded-for");
-        const clientIp = forwardedFor?.split(",")[0].trim() || "unknown";
-
-        if (!checkRateLimit(clientIp)) {
-            return {
-                success: false,
-                error: "Too many requests. Please wait a minute before trying again.",
-            };
-        }
-
         // Basic bot detection - check if honeypot field is filled
         const honeypot = formData.get("website");
         if (honeypot && honeypot.toString().length > 0) {
@@ -165,6 +140,44 @@ export async function submitProductQuote(prevState: ProductQuoteFormState, formD
 
         const data = validatedFields.data;
 
+        // DB-backed rate limit + durable persistence (replaces the old
+        // in-memory Map, which reset on every redeploy).
+        const clientIp = await getTrustedClientIp();
+        const userAgent = await getClientUserAgent();
+        const productIdNum = Number(data.productId);
+
+        const leadResult = await createLead(
+            {
+                source: "product_quote",
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                state: data.state,
+                postcode: data.postcode,
+                country: data.country,
+                subject: data.subject,
+                message: data.message,
+                // Only a real products.id may be sent: leads.product_id is a foreign key, so an empty (0) or synthetic id
+                // (Admetec lights, see lib/headlight-products.ts) would make the whole lead fail to save.
+                productId: Number.isInteger(productIdNum) && productIdNum > 0 && isCatalogueProductId(productIdNum) ? productIdNum : undefined,
+                productName: data.productName,
+                productSku: data.productSku,
+                selectedVariant: data.selectedVariant,
+                userAgent,
+            },
+            clientIp
+        );
+
+        if (!leadResult.success || !leadResult.data?.lead) {
+            const isRateLimited = leadResult.statusCode === 429;
+            return {
+                success: false,
+                error: isRateLimited ? "Too many requests. Please wait a minute before trying again." : "Failed to submit quote request. Please try again or contact us directly.",
+            };
+        }
+
+        const lead = leadResult.data.lead;
+
         // Prepare email content
         const emailSubject = data.name ? `Product Quote Request: ${data.productName} - ${data.name}` : `Product Quote Request: ${data.productName}`;
 
@@ -222,15 +235,25 @@ ${data.message}
 Sent from the product quote form at haitech-group.com
     `;
 
-        // Send email
-        await sendEmail({
-            to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
-            from: process.env.EMAIL_FROM || process.env.SMTP_FROM || "sales@haitech-group.com",
-            replyTo: data.email,
-            subject: emailSubject,
-            html: emailHtml,
-            text: emailText,
-        });
+        // Send email — the lead row above is already durably stored, so a
+        // failure here does not lose the submission.
+        try {
+            await sendEmail({
+                to: process.env.QUOTE_EMAIL || process.env.CONTACT_EMAIL || "sales@haitech-group.com",
+                from: process.env.EMAIL_FROM || process.env.SMTP_FROM || "sales@haitech-group.com",
+                replyTo: data.email,
+                subject: emailSubject,
+                html: emailHtml,
+                text: emailText,
+            });
+            await markLeadEmailSent(lead.id).catch((err) => console.error("Failed to mark lead email as sent:", err));
+        } catch (emailError) {
+            console.error("Product quote email send error:", emailError);
+            return {
+                success: false,
+                error: "Failed to submit quote request. Please try again or contact us directly.",
+            };
+        }
 
         return { success: true };
     } catch (error) {
