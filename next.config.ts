@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
+import fs from "fs";
 import path from "path";
 
 const isDev = process.env.NODE_ENV !== "production";
+
+// Catalogue URLs that used to exist and where the same category or product lives now (e.g. Bondent's "endo" became
+// "endo-device" / "endo-files"). Generated from git history by scripts/build-url-redirects.mjs; rerun it after
+// changing a category slug or moving a product, and commit the result.
+const catalogueRedirects: { from: string; to: string }[] = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "url-redirects.json"), "utf8"));
 
 const nextConfig: NextConfig = {
     transpilePackages: ["lucide-react"],
@@ -86,7 +92,9 @@ const nextConfig: NextConfig = {
                                 "https://*.google-analytics.com",
                                 "https://*.supabase.co",
                                 "https://challenges.cloudflare.com",
-                            ].filter(Boolean).join(" "),
+                            ]
+                                .filter(Boolean)
+                                .join(" "),
                             // Google + Razorpay iframes + Turnstile challenge widget
                             "frame-src 'self' https://www.google.com https://maps.google.com https://accounts.google.com https://api.razorpay.com https://checkout.razorpay.com https://workdrive.zohoexternal.com https://challenges.cloudflare.com",
                             "object-src 'none'",
@@ -117,11 +125,17 @@ const nextConfig: NextConfig = {
                 destination: "/product-category/medesy/:path*",
                 permanent: true,
             },
+            ...catalogueRedirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true })),
         ];
     },
 
     // Optimize server external packages
     serverExternalPackages: ["pdfkit", "nodemailer"],
+
+    experimental: {
+        // Lets <ViewTransition> cross-fade page content on client navigations (see PageTransition)
+        viewTransition: true,
+    },
 };
 
 export default nextConfig;

@@ -9,7 +9,10 @@
         "lint": "eslint",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "migrate:cloudinary": "node scripts/migrate-media-to-cloudinary.mjs"
+        "migrate:cloudinary": "node scripts/migrate-media-to-cloudinary.mjs",
+        "seo:audit": "node --no-warnings scripts/seo-audit.mjs",
+        "catalog:redirects": "node scripts/build-url-redirects.mjs",
+        "catalog:check-sync": "node scripts/check-catalog-sync.mjs"
     },
     "dependencies": {
         "@lordicon/react": "^1.11.0",

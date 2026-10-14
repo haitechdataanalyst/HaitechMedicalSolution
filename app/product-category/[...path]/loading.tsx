@@ -1,49 +1,25 @@
+import { BreadcrumbSkeleton, LoadingShell, SkeletonBar, SkeletonGrid } from "@/components/catalog/listing";
+
+// Mirrors the redesigned category page: header, pill toolbar, quiet count, calm card grid.
+// No sidebar — the real page only shows one when a price range exists.
 export default function CategoryPageLoading() {
     return (
-        <div className="animate-pulse">
-            {/* Breadcrumb */}
-            <div className="border-b border-neutral-100 bg-white px-4 py-3">
-                <div className="container mx-auto flex gap-2">
-                    {[60, 12, 80, 12, 100].map((w, i) => (
-                        <div key={i} className="h-4 rounded bg-neutral-200" style={{ width: w }} />
-                    ))}
+        <LoadingShell label="Loading category">
+            <BreadcrumbSkeleton />
+            <div className="container py-8 md:py-12">
+                <div className="mb-8 md:mb-10">
+                    <SkeletonBar className="h-9 w-56 sm:h-10 sm:w-80" />
+                    <SkeletonBar className="mt-4 h-4 w-72 max-w-full sm:w-[28rem]" />
                 </div>
-            </div>
 
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col gap-8 lg:flex-row">
-                    {/* Sidebar */}
-                    <aside className="hidden w-64 shrink-0 space-y-4 lg:block">
-                        <div className="h-6 w-32 rounded bg-neutral-100" />
-                        {Array.from({ length: 5 }).map((_, i) => (
-                            <div key={i} className="h-5 rounded bg-neutral-100" style={{ width: `${60 + i * 8}%` }} />
-                        ))}
-                    </aside>
-
-                    {/* Main */}
-                    <div className="flex-1">
-                        {/* Page header */}
-                        <div className="mb-6 space-y-2">
-                            <div className="h-8 w-48 rounded bg-neutral-200" />
-                            <div className="h-4 w-64 rounded bg-neutral-100" />
-                        </div>
-
-                        {/* Product grid */}
-                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                            {Array.from({ length: 9 }).map((_, i) => (
-                                <div key={i} className="overflow-hidden rounded-xl border border-neutral-100 bg-white">
-                                    <div className="aspect-square bg-neutral-100" />
-                                    <div className="space-y-2 p-3">
-                                        <div className="h-3 w-3/4 rounded bg-neutral-100" />
-                                        <div className="h-3 w-1/2 rounded bg-neutral-100" />
-                                        <div className="h-8 rounded-lg bg-neutral-100" />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                <div className="flex gap-3">
+                    <SkeletonBar className="h-12 flex-1 bg-white ring-1 ring-neutral-900/[0.06]" />
+                    <SkeletonBar className="h-12 w-36 bg-white ring-1 ring-neutral-900/[0.06]" />
                 </div>
+                <SkeletonBar className="mt-5 mb-4 h-3 w-20" />
+
+                <SkeletonGrid count={9} className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6 2xl:grid-cols-4" />
             </div>
-        </div>
+        </LoadingShell>
     );
 }

@@ -1,0 +1,367 @@
+[
+  {
+    "from": "/product-category/almadent/auxiliary-equipment",
+    "to": "/product-category/almadent/implant-motor",
+    "reason": "category 12 was retired; its products now live here (seen in 4532946)"
+  },
+  {
+    "from": "/product-category/almadent/auxiliary-equipment/electric-motor",
+    "to": "/product-category/almadent/brushless-electric-motor/electric-motor",
+    "reason": "product 407 moved or renamed (seen in 4532946)"
+  },
+  {
+    "from": "/product-category/almadent/auxiliary-equipment/implant-motor",
+    "to": "/product-category/almadent/implant-motor/implant-motor",
+    "reason": "product 404 moved or renamed (seen in 4532946)"
+  },
+  {
+    "from": "/product-category/almadent/auxiliary-equipment/lubricator",
+    "to": "/product-category/almadent/lubricator-machine/lubricator",
+    "reason": "product 406 moved or renamed (seen in 4532946)"
+  },
+  {
+    "from": "/product-category/almadent/auxiliary-equipment/three-in-one-dental-piezo",
+    "to": "/product-category/almadent/piezo-surgery/three-in-one-dental-piezo",
+    "reason": "product 408 moved or renamed (seen in 4532946)"
+  },
+  {
+    "from": "/product-category/almadent/electric-motor",
+    "to": "/product-category/almadent/brushless-electric-motor/electric-motor",
+    "reason": "product 407 moved or renamed (seen in 20f5862)"
+  },
+  {
+    "from": "/product-category/almadent/lubricator",
+    "to": "/product-category/almadent/lubricator-machine/lubricator",
+    "reason": "product 406 moved or renamed (seen in 20f5862)"
+  },
+  {
+    "from": "/product-category/almadent/three-in-one-dental-piezo",
+    "to": "/product-category/almadent/piezo-surgery/three-in-one-dental-piezo",
+    "reason": "product 408 moved or renamed (seen in 20f5862)"
+  },
+  {
+    "from": "/product-category/bondent/endo",
+    "to": "/product-category/bondent/endo-device",
+    "reason": "category 61 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/irrigation",
+    "to": "/product-category/bondent/endo-device/irrigation",
+    "reason": "category 62 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/irrigation/actor-i-pro",
+    "to": "/product-category/bondent/endo-device/irrigation/actor-i-pro",
+    "reason": "product 2001 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/irrigation/irrigation-needle",
+    "to": "/product-category/bondent/endo-device/irrigation/irrigation-needle",
+    "reason": "product 2002 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation",
+    "to": "/product-category/bondent/endo-device/obturation",
+    "reason": "category 63 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation/efiller",
+    "to": "/product-category/bondent/endo-device/obturation/efiller",
+    "reason": "product 2003 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation/eheater",
+    "to": "/product-category/bondent/endo-device/obturation/eheater",
+    "reason": "product 2004 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation/paper-points",
+    "to": "/product-category/bondent/endo-device/obturation/paper-points",
+    "reason": "product 2005 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation/plugger",
+    "to": "/product-category/bondent/endo-device/obturation/plugger",
+    "reason": "product 2006 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/obturation/standard-gutta-percha-points",
+    "to": "/product-category/bondent/endo-device/obturation/standard-gutta-percha-points",
+    "reason": "product 2007 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation",
+    "to": "/product-category/bondent/endo-device/preparation",
+    "reason": "category 64 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory",
+    "to": "/product-category/bondent/endo-device/preparation/accessory",
+    "reason": "category 65 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/endo-box",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/endo-box",
+    "reason": "product 2008 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/endo-clean-box",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/endo-clean-box",
+    "reason": "product 2009 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/endo-training-tooth",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/endo-training-tooth",
+    "reason": "product 2010 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/hand-files-holder",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/hand-files-holder",
+    "reason": "product 2011 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/measure-ruler",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/measure-ruler",
+    "reason": "product 2012 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/micro-opener",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/micro-opener",
+    "reason": "product 2013 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/micro-shaper",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/micro-shaper",
+    "reason": "product 2014 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/paste-carrier",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/paste-carrier",
+    "reason": "product 2015 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/peeso-reamer",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/peeso-reamer",
+    "reason": "product 2016 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/stopper",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/stopper",
+    "reason": "product 2017 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/training-block",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/training-block",
+    "reason": "product 2018 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/accessory/training-kit",
+    "to": "/product-category/bondent/endo-device/preparation/accessory/training-kit",
+    "reason": "product 2019 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/apex-locator",
+    "to": "/product-category/bondent/endo-device/preparation/apex-locator",
+    "reason": "category 66 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/apex-locator/iroot-apex",
+    "to": "/product-category/bondent/endo-device/preparation/apex-locator/iroot-apex",
+    "reason": "product 2020 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/apex-locator/wispex",
+    "to": "/product-category/bondent/endo-device/preparation/apex-locator/wispex",
+    "reason": "product 2021 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/endo-motor",
+    "to": "/product-category/bondent/endo-device/preparation/endo-motor",
+    "reason": "category 67 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/endo-motor/endo-wise",
+    "to": "/product-category/bondent/endo-device/preparation/endo-motor/endo-wise",
+    "reason": "product 2022 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/endo-motor/endo-wise-plus",
+    "to": "/product-category/bondent/endo-device/preparation/endo-motor/endo-wise-plus",
+    "reason": "product 2023 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/endo-motor/iroot-pro",
+    "to": "/product-category/bondent/endo-device/preparation/endo-motor/iroot-pro",
+    "reason": "product 2024 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/endo-motor/marc-iii",
+    "to": "/product-category/bondent/endo-device/preparation/endo-motor/marc-iii",
+    "reason": "product 2025 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/hand-files",
+    "to": "/product-category/bondent/endo-files/hand-files",
+    "reason": "category 68 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/hand-files/stainless-steel-c-files",
+    "to": "/product-category/bondent/endo-files/hand-files/stainless-steel-c-files",
+    "reason": "product 2026 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/hand-files/stainless-steel-h-files",
+    "to": "/product-category/bondent/endo-files/hand-files/stainless-steel-h-files",
+    "reason": "product 2027 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/hand-files/stainless-steel-k-files",
+    "to": "/product-category/bondent/endo-files/hand-files/stainless-steel-k-files",
+    "reason": "product 2028 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/hand-files/stainless-steel-reamers",
+    "to": "/product-category/bondent/endo-files/hand-files/stainless-steel-reamers",
+    "reason": "product 2029 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/reciprocating-files",
+    "to": "/product-category/bondent/endo-files/reciprocating-files",
+    "reason": "category 69 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/reciprocating-files/cc-one-blue",
+    "to": "/product-category/bondent/endo-files/reciprocating-files/cc-one-blue",
+    "reason": "product 2030 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/reciprocating-files/cc-one-plus",
+    "to": "/product-category/bondent/endo-files/reciprocating-files/cc-one-plus",
+    "reason": "product 2031 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files",
+    "to": "/product-category/bondent/endo-files/rotary-files",
+    "reason": "category 70 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/cc-premium",
+    "to": "/product-category/bondent/endo-files/rotary-files/cc-premium",
+    "reason": "product 2032 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/cc-premium-v-eu",
+    "to": "/product-category/bondent/endo-files/rotary-files/cc-premium-v-eu",
+    "reason": "product 2033 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/m3-l-platinum-v-1",
+    "to": "/product-category/bondent/endo-files/rotary-files/m3-l-platinum-v-1",
+    "reason": "product 2034 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/m3-l-platinum-v-2",
+    "to": "/product-category/bondent/endo-files/rotary-files/m3-l-platinum-v-2",
+    "reason": "product 2035 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/m3-pro-gold-v-1",
+    "to": "/product-category/bondent/endo-files/rotary-files/m3-pro-gold-v-1",
+    "reason": "product 2036 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/m3-pro-gold-v-2",
+    "to": "/product-category/bondent/endo-files/rotary-files/m3-pro-gold-v-2",
+    "reason": "product 2037 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/m3-pro-gold-v-3",
+    "to": "/product-category/bondent/endo-files/rotary-files/m3-pro-gold-v-3",
+    "reason": "product 2038 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/rotary-files/platinum-v-eu",
+    "to": "/product-category/bondent/endo-files/rotary-files/platinum-v-eu",
+    "reason": "product 2039 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti",
+    "to": "/product-category/bondent/endo-files/special-function-niti",
+    "reason": "category 71 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-immature-blue",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-immature-blue",
+    "reason": "product 2040 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-opener",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-opener",
+    "reason": "product 2041 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-path",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-path",
+    "reason": "product 2042 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-rt",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-rt",
+    "reason": "product 2043 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-safe-opener",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-safe-opener",
+    "reason": "product 2044 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-safe-path",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-safe-path",
+    "reason": "product 2045 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-t",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-t",
+    "reason": "product 2046 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/endo/preparation/special-function-niti/m3-tp",
+    "to": "/product-category/bondent/endo-files/special-function-niti/m3-tp",
+    "reason": "product 2047 moved or renamed (seen in 3f0a27b)"
+  },
+  {
+    "from": "/product-category/bondent/imaging/cbct-systems",
+    "to": "/product-category/bondent/imaging",
+    "reason": "category 78 was retired; its products now live here (seen in 785d3aa)"
+  },
+  {
+    "from": "/product-category/bondent/imaging/cbct-systems/bondent-cbct-1030-pro",
+    "to": "/product-category/bondent/imaging/bondent-cbct-1030-pro",
+    "reason": "product 2055 moved or renamed (seen in 785d3aa)"
+  },
+  {
+    "from": "/product-category/bondent/imaging/cbct-systems/bondent-cbct-1030-pro-2-in-1",
+    "to": "/product-category/bondent/imaging/bondent-cbct-1030-pro-2-in-1",
+    "reason": "product 2056 moved or renamed (seen in 785d3aa)"
+  },
+  {
+    "from": "/product-category/bondent/imaging/cbct-systems/cbct-1020ms",
+    "to": "/product-category/bondent/imaging/cbct-1020ms",
+    "reason": "product 2057 moved or renamed (seen in 785d3aa)"
+  },
+  {
+    "from": "/product-category/medesy/elevators/700-8",
+    "to": "/product-category/medesy/elevators/heidbrink-elevator",
+    "reason": "product 501 moved or renamed (seen in fb9b0ec)"
+  },
+  {
+    "from": "/product-category/medesy/scissors/3509",
+    "to": "/product-category/medesy/scissors/kelly-scissors",
+    "reason": "product 801 moved or renamed (seen in af18973)"
+  },
+  {
+    "from": "/product-category/strauss/strauss-kits/magic-touch-kit",
+    "to": "/product-category/strauss/strauss-kits/magic-touch-t1",
+    "reason": "product 1110 moved or renamed (seen in f837462)"
+  }
+]
