@@ -5,7 +5,12 @@ import { absoluteUrl } from "@/lib/metadata";
 import { isStoriesPageLive } from "@/lib/customer-stories.server";
 import { STORIES_PAGE_PATH } from "@/lib/customer-story-listing";
 import { articles } from "@/components/articles";
+import { isCatalogueProductId } from "@/lib/headlight-products";
+import lastmodData from "@/data/lastmod.json";
 import { Category, Product } from "@/types";
+
+// <lastmod> per page, kept in data/lastmod.json by `npm run seo:lastmod` (see scripts/build-lastmod.mjs).
+const lastmodOf = (key: string): string | undefined => (lastmodData as Record<string, { lastmod: string }>)[key]?.lastmod;
 
 // Rebuilt hourly so new catalog products appear without a deploy.
 export const revalidate = 3600;
@@ -50,16 +55,20 @@ function isListingCategory(category: Category, categories: Category[], products:
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const [categories, products] = await Promise.all([getAllCategories(), getAllProducts()]);
 
-    const categoryPaths = await Promise.all(categories.filter((c) => isListingCategory(c, categories, products)).map((c) => getCategoryPath(c)));
-    const productPaths = await Promise.all(products.map((p) => getProductPath(p)));
+    const listingCategories = categories.filter((c) => isListingCategory(c, categories, products));
+    const categoryEntries = await Promise.all(listingCategories.map(async (c) => ({ url: absoluteUrl(await getCategoryPath(c)), lastModified: lastmodOf(`category:${c.id}`) })));
+    // The Admetec lights are not in products.json; their pages change with data/headlights.json.
+    const productEntries = await Promise.all(
+        products.map(async (p) => ({ url: absoluteUrl(await getProductPath(p)), lastModified: lastmodOf(isCatalogueProductId(p.id) ? `product:${p.slug}` : "lights") }))
+    );
 
     const entries: MetadataRoute.Sitemap = [
-        ...STATIC_PATHS.map((path) => ({ url: absoluteUrl(path) })),
+        ...STATIC_PATHS.map((path) => ({ url: absoluteUrl(path), lastModified: lastmodOf(`page:${path}`) })),
         // Listed only once enough approved customer stories exist; before that the page is a 404.
-        ...(isStoriesPageLive() ? [{ url: absoluteUrl(STORIES_PAGE_PATH) }] : []),
-        ...HUBS.map((hub) => ({ url: absoluteUrl(hubPath(hub)) })),
-        ...categoryPaths.map((path) => ({ url: absoluteUrl(path) })),
-        ...productPaths.map((path) => ({ url: absoluteUrl(path) })),
+        ...(isStoriesPageLive() ? [{ url: absoluteUrl(STORIES_PAGE_PATH), lastModified: lastmodOf("stories") }] : []),
+        ...HUBS.map((hub) => ({ url: absoluteUrl(hubPath(hub)), lastModified: lastmodOf("hubs") })),
+        ...categoryEntries,
+        ...productEntries,
         ...articles.map((article) => ({ url: absoluteUrl(`/support/articles/${article.slug}`), lastModified: article.publishedAt })),
     ];
 

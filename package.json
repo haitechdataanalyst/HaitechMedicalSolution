@@ -11,6 +11,7 @@
         "format:check": "prettier --check .",
         "migrate:cloudinary": "node scripts/migrate-media-to-cloudinary.mjs",
         "seo:audit": "node --no-warnings scripts/seo-audit.mjs",
+        "seo:lastmod": "node scripts/build-lastmod.mjs",
         "catalog:redirects": "node scripts/build-url-redirects.mjs",
         "catalog:check-sync": "node scripts/check-catalog-sync.mjs"
     },

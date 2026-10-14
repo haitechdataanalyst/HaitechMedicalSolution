@@ -85,6 +85,8 @@ async function main() {
     await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
     const errors = [];
+    const undated = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].filter((m) => !/<lastmod>\d{4}-\d{2}-\d{2}/.test(m[1])).length;
+    if (undated) errors.push(`${undated} sitemap entries have no <lastmod> (run npm run seo:lastmod and commit data/lastmod.json)`);
     const warnings = [];
     const seen = { title: new Map(), description: new Map() };
     const add = (list, page, message) => list.push(`${page.path}  ${message}`);

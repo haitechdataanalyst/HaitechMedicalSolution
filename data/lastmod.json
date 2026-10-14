@@ -1,0 +1,826 @@
+{
+  "category:1": {
+    "hash": "f17750f2529eca49",
+    "lastmod": "2026-10-14"
+  },
+  "category:10": {
+    "hash": "b4e1b23234349ae8",
+    "lastmod": "2026-10-14"
+  },
+  "category:11": {
+    "hash": "9f82c58d4a4236d7",
+    "lastmod": "2026-10-14"
+  },
+  "category:13": {
+    "hash": "2060d9d668e4f7a2",
+    "lastmod": "2026-10-14"
+  },
+  "category:14": {
+    "hash": "b614bcb09828981a",
+    "lastmod": "2026-10-14"
+  },
+  "category:15": {
+    "hash": "838c6e6842bac3dc",
+    "lastmod": "2026-10-14"
+  },
+  "category:16": {
+    "hash": "e3b5cf772115808c",
+    "lastmod": "2026-10-14"
+  },
+  "category:17": {
+    "hash": "0f6a0ea6044c433d",
+    "lastmod": "2026-10-14"
+  },
+  "category:2": {
+    "hash": "2dd9793381f108c8",
+    "lastmod": "2026-10-14"
+  },
+  "category:20": {
+    "hash": "c113f6915ef2aeb2",
+    "lastmod": "2026-10-14"
+  },
+  "category:21": {
+    "hash": "8fb8785ad3f5547a",
+    "lastmod": "2026-10-14"
+  },
+  "category:22": {
+    "hash": "1671e03efbb18391",
+    "lastmod": "2026-10-14"
+  },
+  "category:23": {
+    "hash": "4833769eca4860f3",
+    "lastmod": "2026-10-14"
+  },
+  "category:24": {
+    "hash": "8876e91549b4d88d",
+    "lastmod": "2026-10-14"
+  },
+  "category:3": {
+    "hash": "db7b63f2e7d7bfb2",
+    "lastmod": "2026-10-14"
+  },
+  "category:30": {
+    "hash": "b0f97f7f039587c2",
+    "lastmod": "2026-10-14"
+  },
+  "category:4": {
+    "hash": "26936021386416a1",
+    "lastmod": "2026-10-14"
+  },
+  "category:40": {
+    "hash": "1e8fa653db1e0149",
+    "lastmod": "2026-10-14"
+  },
+  "category:41": {
+    "hash": "6604d3227376df1b",
+    "lastmod": "2026-10-14"
+  },
+  "category:42": {
+    "hash": "54487789caa02238",
+    "lastmod": "2026-10-14"
+  },
+  "category:43": {
+    "hash": "ee52c753f62fa0be",
+    "lastmod": "2026-10-14"
+  },
+  "category:44": {
+    "hash": "9b1f51e0a509a300",
+    "lastmod": "2026-10-14"
+  },
+  "category:45": {
+    "hash": "f05630e7bc4d4cec",
+    "lastmod": "2026-10-14"
+  },
+  "category:46": {
+    "hash": "da31b2fc4c632e37",
+    "lastmod": "2026-10-14"
+  },
+  "category:47": {
+    "hash": "5f358471650d287a",
+    "lastmod": "2026-10-14"
+  },
+  "category:48": {
+    "hash": "f731359783832c95",
+    "lastmod": "2026-10-14"
+  },
+  "category:49": {
+    "hash": "adf75b05da433079",
+    "lastmod": "2026-10-14"
+  },
+  "category:5": {
+    "hash": "ac24c6f7310bc524",
+    "lastmod": "2026-10-14"
+  },
+  "category:50": {
+    "hash": "c86557f5f29d5412",
+    "lastmod": "2026-10-14"
+  },
+  "category:51": {
+    "hash": "1cc82cce9ad34443",
+    "lastmod": "2026-10-14"
+  },
+  "category:52": {
+    "hash": "ccae8ee5f895ae47",
+    "lastmod": "2026-10-14"
+  },
+  "category:6": {
+    "hash": "9670449e45971cdd",
+    "lastmod": "2026-10-14"
+  },
+  "category:60": {
+    "hash": "761eafc74172e883",
+    "lastmod": "2026-10-14"
+  },
+  "category:61": {
+    "hash": "185d1843d9e7c1a5",
+    "lastmod": "2026-10-14"
+  },
+  "category:62": {
+    "hash": "f654035db2dd3133",
+    "lastmod": "2026-10-14"
+  },
+  "category:63": {
+    "hash": "32412ebde9999404",
+    "lastmod": "2026-10-14"
+  },
+  "category:64": {
+    "hash": "f4b69630d5aa0407",
+    "lastmod": "2026-10-14"
+  },
+  "category:65": {
+    "hash": "e074c26fda6bc508",
+    "lastmod": "2026-10-14"
+  },
+  "category:66": {
+    "hash": "7ac775e588b882f9",
+    "lastmod": "2026-10-14"
+  },
+  "category:67": {
+    "hash": "ae365cbfeb04e1d5",
+    "lastmod": "2026-10-14"
+  },
+  "category:68": {
+    "hash": "797604b60924bb68",
+    "lastmod": "2026-10-14"
+  },
+  "category:69": {
+    "hash": "d0be2dcc4d5ec7bc",
+    "lastmod": "2026-10-14"
+  },
+  "category:7": {
+    "hash": "66e44d412af25de5",
+    "lastmod": "2026-10-14"
+  },
+  "category:70": {
+    "hash": "181da4e62c6a04aa",
+    "lastmod": "2026-10-14"
+  },
+  "category:71": {
+    "hash": "c29aae6328da7d6b",
+    "lastmod": "2026-10-14"
+  },
+  "category:77": {
+    "hash": "9aa41d7c31bb8ab4",
+    "lastmod": "2026-10-14"
+  },
+  "category:79": {
+    "hash": "a8f018d3cd57e954",
+    "lastmod": "2026-10-14"
+  },
+  "category:8": {
+    "hash": "cd88ade7cfd1ade2",
+    "lastmod": "2026-10-14"
+  },
+  "hubs": {
+    "hash": "63376fa732fdbd96",
+    "lastmod": "2026-10-14"
+  },
+  "lights": {
+    "hash": "85b9dac2056d40da",
+    "lastmod": "2026-10-14"
+  },
+  "page:/": {
+    "hash": "798acafe44cf7440",
+    "lastmod": "2026-10-14"
+  },
+  "page:/about": {
+    "hash": "21d2f006a8c58a85",
+    "lastmod": "2026-07-03"
+  },
+  "page:/book-demo": {
+    "hash": "120be6eaf7c7d619",
+    "lastmod": "2026-10-14"
+  },
+  "page:/book-loupe-fitting": {
+    "hash": "17dbcd215e4d3f60",
+    "lastmod": "2026-10-14"
+  },
+  "page:/our-frames": {
+    "hash": "386057b5eaded45f",
+    "lastmod": "2026-10-14"
+  },
+  "page:/our-headlights": {
+    "hash": "1476b968fea8b942",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/admetec": {
+    "hash": "e1c6e5a8d05368af",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/almadent": {
+    "hash": "3d732035fb2daac2",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/bondent": {
+    "hash": "0504c5d3d860f929",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/medesy": {
+    "hash": "eedd534e241f2b04",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/salli": {
+    "hash": "639f4eb6d62f39fd",
+    "lastmod": "2026-10-14"
+  },
+  "page:/product/strauss": {
+    "hash": "931ac831ecc75939",
+    "lastmod": "2026-10-14"
+  },
+  "page:/products": {
+    "hash": "a430c1630f97915d",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support": {
+    "hash": "93c56a160cf0b0c8",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support/articles": {
+    "hash": "8db77a01012d231b",
+    "lastmod": "2026-02-24"
+  },
+  "page:/support/contact": {
+    "hash": "137917a0e68fe41b",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support/faq": {
+    "hash": "b73f3de733c14727",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support/policies": {
+    "hash": "92a03c2db185f960",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support/policies/privacy": {
+    "hash": "e248902f85901ccf",
+    "lastmod": "2026-10-14"
+  },
+  "page:/support/policies/terms": {
+    "hash": "0e2e6e929b854f70",
+    "lastmod": "2026-10-14"
+  },
+  "product:851-hp3": {
+    "hash": "f28859794a1b0884",
+    "lastmod": "2026-10-14"
+  },
+  "product:852-hp3": {
+    "hash": "df321ff2db90a4ad",
+    "lastmod": "2026-10-14"
+  },
+  "product:856": {
+    "hash": "85ea4bd3841ec0be",
+    "lastmod": "2026-10-14"
+  },
+  "product:869": {
+    "hash": "09c40ab2052b9b98",
+    "lastmod": "2026-10-14"
+  },
+  "product:871-2-4": {
+    "hash": "f7aca5592eec138b",
+    "lastmod": "2026-10-14"
+  },
+  "product:877-hk4": {
+    "hash": "c0c80d1b137f8e3f",
+    "lastmod": "2026-10-14"
+  },
+  "product:878": {
+    "hash": "5273ee556d7b80a5",
+    "lastmod": "2026-10-14"
+  },
+  "product:882": {
+    "hash": "95597e930fa5a6dc",
+    "lastmod": "2026-10-14"
+  },
+  "product:883": {
+    "hash": "fee80fe6b64448ec",
+    "lastmod": "2026-10-14"
+  },
+  "product:884": {
+    "hash": "4bb6d993fce59e53",
+    "lastmod": "2026-10-14"
+  },
+  "product:885": {
+    "hash": "9a1efbb3dcb40576",
+    "lastmod": "2026-10-14"
+  },
+  "product:a0": {
+    "hash": "0afe18223230d164",
+    "lastmod": "2026-10-14"
+  },
+  "product:a1": {
+    "hash": "e413fcc4e17eba03",
+    "lastmod": "2026-10-14"
+  },
+  "product:a2": {
+    "hash": "4fa4525a7083336c",
+    "lastmod": "2026-10-14"
+  },
+  "product:a3": {
+    "hash": "8107927aa6ce68e2",
+    "lastmod": "2026-10-14"
+  },
+  "product:a4": {
+    "hash": "cc72aa9b63dd0d10",
+    "lastmod": "2026-10-14"
+  },
+  "product:actor-i-pro": {
+    "hash": "892887a17aaecc2f",
+    "lastmod": "2026-10-14"
+  },
+  "product:axl-kit": {
+    "hash": "55018562e7f23ce3",
+    "lastmod": "2026-10-14"
+  },
+  "product:ay-3000": {
+    "hash": "300a41308e92f92b",
+    "lastmod": "2026-10-14"
+  },
+  "product:ay-6000": {
+    "hash": "59976e1692b04f1b",
+    "lastmod": "2026-10-14"
+  },
+  "product:ay-8000": {
+    "hash": "8f5f1baa52599075",
+    "lastmod": "2026-10-14"
+  },
+  "product:b0": {
+    "hash": "bc82d83b2381ea4e",
+    "lastmod": "2026-10-14"
+  },
+  "product:b1": {
+    "hash": "f077e2607aea737b",
+    "lastmod": "2026-10-14"
+  },
+  "product:b2": {
+    "hash": "aa4fedd3c4f08256",
+    "lastmod": "2026-10-14"
+  },
+  "product:b3": {
+    "hash": "e824231012f5d523",
+    "lastmod": "2026-10-14"
+  },
+  "product:b4": {
+    "hash": "5a7049bc0cb7ddf2",
+    "lastmod": "2026-10-14"
+  },
+  "product:bondent-cbct-1030-pro": {
+    "hash": "7ab4471ea8131928",
+    "lastmod": "2026-10-14"
+  },
+  "product:bondent-cbct-1030-pro-2-in-1": {
+    "hash": "9a73aa6a14d1338a",
+    "lastmod": "2026-10-14"
+  },
+  "product:c0": {
+    "hash": "9982b2a7d4f7c432",
+    "lastmod": "2026-10-14"
+  },
+  "product:c1": {
+    "hash": "f3228442df31cfe6",
+    "lastmod": "2026-10-14"
+  },
+  "product:c2": {
+    "hash": "64c6d2d14813c6f8",
+    "lastmod": "2026-10-14"
+  },
+  "product:castroviejo-scissors": {
+    "hash": "b697df12003f6717",
+    "lastmod": "2026-10-14"
+  },
+  "product:cbct-1020ms": {
+    "hash": "c816adad9140e502",
+    "lastmod": "2026-10-14"
+  },
+  "product:cc-one-blue": {
+    "hash": "e39368f0ec68f55e",
+    "lastmod": "2026-10-14"
+  },
+  "product:cc-one-plus": {
+    "hash": "24214c0faaecc840",
+    "lastmod": "2026-10-14"
+  },
+  "product:cc-premium": {
+    "hash": "12d2c8d8f8edbd1b",
+    "lastmod": "2026-10-14"
+  },
+  "product:cc-premium-v-eu": {
+    "hash": "f3c5867616d3540e",
+    "lastmod": "2026-10-14"
+  },
+  "product:chin-tilt": {
+    "hash": "6cec16a2aa5bc85b",
+    "lastmod": "2026-10-14"
+  },
+  "product:compset-1": {
+    "hash": "a07f76df303fc888",
+    "lastmod": "2026-10-14"
+  },
+  "product:compset-3": {
+    "hash": "ac28fef778393e46",
+    "lastmod": "2026-10-14"
+  },
+  "product:coupland-elevator": {
+    "hash": "8b210414057841cf",
+    "lastmod": "2026-10-14"
+  },
+  "product:d11": {
+    "hash": "c24a26bccbc163ce",
+    "lastmod": "2026-10-14"
+  },
+  "product:d12": {
+    "hash": "b2e077c99e4f37cb",
+    "lastmod": "2026-10-14"
+  },
+  "product:e11": {
+    "hash": "2b4c7e7f479024ca",
+    "lastmod": "2026-10-14"
+  },
+  "product:e3": {
+    "hash": "dca481f000eefc85",
+    "lastmod": "2026-10-14"
+  },
+  "product:e32": {
+    "hash": "a9355b32c1271999",
+    "lastmod": "2026-10-14"
+  },
+  "product:efiller": {
+    "hash": "30dfe75bbb99a7a7",
+    "lastmod": "2026-10-14"
+  },
+  "product:eheater": {
+    "hash": "02707f56cd50dacf",
+    "lastmod": "2026-10-14"
+  },
+  "product:electric-motor": {
+    "hash": "226ea138af51d116",
+    "lastmod": "2026-10-14"
+  },
+  "product:endo-box": {
+    "hash": "01af70ca9913b584",
+    "lastmod": "2026-10-14"
+  },
+  "product:endo-clean-box": {
+    "hash": "24d421f0c697df5d",
+    "lastmod": "2026-10-14"
+  },
+  "product:endo-training-tooth": {
+    "hash": "4557a544022e85fd",
+    "lastmod": "2026-10-14"
+  },
+  "product:endo-wise": {
+    "hash": "3267fd18c2065b54",
+    "lastmod": "2026-10-14"
+  },
+  "product:endo-wise-plus": {
+    "hash": "4f704c2a2fae6f41",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-10x": {
+    "hash": "b9c8ccd23c334746",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-3.0x": {
+    "hash": "22cf7b6d2e6df2a9",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-4.0x": {
+    "hash": "9539bd44a2a1638e",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-5.0x": {
+    "hash": "a85184df7881711f",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-6.0x": {
+    "hash": "948a311c6a0c1e20",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-7.5x": {
+    "hash": "01a2754052b4c448",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-v": {
+    "hash": "a444a8a7519836d6",
+    "lastmod": "2026-10-14"
+  },
+  "product:ergo-v-pro": {
+    "hash": "b5c44a421f19eab3",
+    "lastmod": "2026-10-14"
+  },
+  "product:f09r": {
+    "hash": "9654712db7a992e6",
+    "lastmod": "2026-10-14"
+  },
+  "product:fgb557": {
+    "hash": "1ab628c8c2aad5ee",
+    "lastmod": "2026-10-14"
+  },
+  "product:fgb558": {
+    "hash": "4a323425f4025560",
+    "lastmod": "2026-10-14"
+  },
+  "product:fgb701": {
+    "hash": "b135d2a101a20530",
+    "lastmod": "2026-10-14"
+  },
+  "product:flamingo": {
+    "hash": "562699b6c9f4b12c",
+    "lastmod": "2026-10-14"
+  },
+  "product:forceps-2400": {
+    "hash": "90755e1178059e78",
+    "lastmod": "2026-10-14"
+  },
+  "product:forceps-2500": {
+    "hash": "009dc8e793017d69",
+    "lastmod": "2026-10-14"
+  },
+  "product:g1": {
+    "hash": "29a61a3d92977b19",
+    "lastmod": "2026-10-14"
+  },
+  "product:g2": {
+    "hash": "79d30fc90a48ad1d",
+    "lastmod": "2026-10-14"
+  },
+  "product:galilean-2.5x": {
+    "hash": "a20f5f2207816583",
+    "lastmod": "2026-10-14"
+  },
+  "product:galilean-2.7x": {
+    "hash": "db4b0395106f3501",
+    "lastmod": "2026-10-14"
+  },
+  "product:galilean-3.2x": {
+    "hash": "6e4ebb1621650144",
+    "lastmod": "2026-10-14"
+  },
+  "product:goldman-fox-scissors": {
+    "hash": "6cef12d4c74fb50b",
+    "lastmod": "2026-10-14"
+  },
+  "product:hand-files-holder": {
+    "hash": "ea1f97f919c943b3",
+    "lastmod": "2026-10-14"
+  },
+  "product:heidbrink-elevator": {
+    "hash": "7dc0f6a5a273b79c",
+    "lastmod": "2026-10-14"
+  },
+  "product:howard-apical-elevator": {
+    "hash": "0d21a748e240b58a",
+    "lastmod": "2026-10-14"
+  },
+  "product:implant-motor": {
+    "hash": "a29e52c96810cb1e",
+    "lastmod": "2026-10-14"
+  },
+  "product:ipr-kit": {
+    "hash": "515e2dbbdc6265f8",
+    "lastmod": "2026-10-14"
+  },
+  "product:iroot-apex": {
+    "hash": "0a04d336551be0a9",
+    "lastmod": "2026-10-14"
+  },
+  "product:iroot-pro": {
+    "hash": "39fac9f1d9417f18",
+    "lastmod": "2026-10-14"
+  },
+  "product:irrigation-needle": {
+    "hash": "8d7cff576bf46249",
+    "lastmod": "2026-10-14"
+  },
+  "product:j10": {
+    "hash": "2cb5ee2f16b8ac7a",
+    "lastmod": "2026-10-14"
+  },
+  "product:k2r": {
+    "hash": "8189aba50212d39e",
+    "lastmod": "2026-10-14"
+  },
+  "product:k2s": {
+    "hash": "36d8fca3fd59d35d",
+    "lastmod": "2026-10-14"
+  },
+  "product:kelly-scissors": {
+    "hash": "2fba0db054af4e23",
+    "lastmod": "2026-10-14"
+  },
+  "product:lubricator": {
+    "hash": "4d242343f8140dd8",
+    "lastmod": "2026-10-14"
+  },
+  "product:lussatore-elevator": {
+    "hash": "a7e24ba6dd0a59cd",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-immature-blue": {
+    "hash": "15d10ad29e4b4f00",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-l-platinum-v-1": {
+    "hash": "c144fd00563d98ae",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-l-platinum-v-2": {
+    "hash": "a4be6ec9351383ed",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-opener": {
+    "hash": "34c2422e45ae6e31",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-path": {
+    "hash": "aed2f24177a65af5",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-pro-gold-v-1": {
+    "hash": "56601b6f70e1809f",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-pro-gold-v-2": {
+    "hash": "a9abe08a979df46c",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-pro-gold-v-3": {
+    "hash": "c5b7993512e00897",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-rt": {
+    "hash": "cd44d6a166d11295",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-safe-opener": {
+    "hash": "2305ecba4a4b1ed3",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-safe-path": {
+    "hash": "d23d01a28abf9c0c",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-t": {
+    "hash": "3d02c5a1674ec15a",
+    "lastmod": "2026-10-14"
+  },
+  "product:m3-tp": {
+    "hash": "4ab52215f10596de",
+    "lastmod": "2026-10-14"
+  },
+  "product:magic-touch-t1": {
+    "hash": "4b1ac6b8d7cb3671",
+    "lastmod": "2026-10-14"
+  },
+  "product:magic-touch-t2": {
+    "hash": "08ac811cfd3c1d7b",
+    "lastmod": "2026-10-14"
+  },
+  "product:magic-touch-t3": {
+    "hash": "8c01fe61f03fbb40",
+    "lastmod": "2026-10-14"
+  },
+  "product:marc-iii": {
+    "hash": "b2d623c11f87e394",
+    "lastmod": "2026-10-14"
+  },
+  "product:measure-ruler": {
+    "hash": "ce1694d053707c3f",
+    "lastmod": "2026-10-14"
+  },
+  "product:micro-opener": {
+    "hash": "18b76ab6d8abd987",
+    "lastmod": "2026-10-14"
+  },
+  "product:micro-shaper": {
+    "hash": "1692d58dfedb2dd5",
+    "lastmod": "2026-10-14"
+  },
+  "product:mini-magic-t1": {
+    "hash": "d2659162148ce54c",
+    "lastmod": "2026-10-14"
+  },
+  "product:ms-ds-kit": {
+    "hash": "7d56d902b2a8362f",
+    "lastmod": "2026-10-14"
+  },
+  "product:paper-points": {
+    "hash": "b6af4914d4543d05",
+    "lastmod": "2026-10-14"
+  },
+  "product:paste-carrier": {
+    "hash": "3f90186b90b07d26",
+    "lastmod": "2026-10-14"
+  },
+  "product:peeso-reamer": {
+    "hash": "c897dd82a76bcb53",
+    "lastmod": "2026-10-14"
+  },
+  "product:platinum-v-eu": {
+    "hash": "fa8a72b8de6bae1b",
+    "lastmod": "2026-10-14"
+  },
+  "product:plugger": {
+    "hash": "6bc7d0fb444c1589",
+    "lastmod": "2026-10-14"
+  },
+  "product:pr12m": {
+    "hash": "ac664210f738bd7f",
+    "lastmod": "2026-10-14"
+  },
+  "product:pr13m": {
+    "hash": "28a5d01808235e19",
+    "lastmod": "2026-10-14"
+  },
+  "product:prismatic-loupe": {
+    "hash": "df7d3522ce1285a9",
+    "lastmod": "2026-10-14"
+  },
+  "product:rsi-intro": {
+    "hash": "77f9c161ec3a713b",
+    "lastmod": "2026-10-14"
+  },
+  "product:salli-light": {
+    "hash": "9578bfa44febcb11",
+    "lastmod": "2026-10-14"
+  },
+  "product:stainless-steel-c-files": {
+    "hash": "decec625294f98ee",
+    "lastmod": "2026-10-14"
+  },
+  "product:stainless-steel-h-files": {
+    "hash": "4d6dad6262eb54da",
+    "lastmod": "2026-10-14"
+  },
+  "product:stainless-steel-k-files": {
+    "hash": "97bfb0b9816c1dae",
+    "lastmod": "2026-10-14"
+  },
+  "product:stainless-steel-reamers": {
+    "hash": "45636a8ca36eeb71",
+    "lastmod": "2026-10-14"
+  },
+  "product:standard-gutta-percha-points": {
+    "hash": "77522273355a28ad",
+    "lastmod": "2026-10-14"
+  },
+  "product:stopper": {
+    "hash": "14ecd5d2ce21637b",
+    "lastmod": "2026-10-14"
+  },
+  "product:sway-fit": {
+    "hash": "6e192137ffa8e579",
+    "lastmod": "2026-10-14"
+  },
+  "product:three-in-one-dental-piezo": {
+    "hash": "b6477f6e68478018",
+    "lastmod": "2026-10-14"
+  },
+  "product:training-block": {
+    "hash": "b06c084259cd0800",
+    "lastmod": "2026-10-14"
+  },
+  "product:training-kit": {
+    "hash": "990eeb65ed4111cb",
+    "lastmod": "2026-10-14"
+  },
+  "product:triple-fit": {
+    "hash": "00eb4200097b1fbc",
+    "lastmod": "2026-10-14"
+  },
+  "product:ultra-triple-fit": {
+    "hash": "90741f0fe19c7746",
+    "lastmod": "2026-10-14"
+  },
+  "product:warwick-james-elevator": {
+    "hash": "706a37915bcc12ef",
+    "lastmod": "2026-10-14"
+  },
+  "product:wispex": {
+    "hash": "3445de5a0582d053",
+    "lastmod": "2026-10-14"
+  },
+  "stories": {
+    "hash": "65498af813c4903d",
+    "lastmod": "2026-10-14"
+  }
+}

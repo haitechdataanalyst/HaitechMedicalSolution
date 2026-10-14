@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getAllProducts, getProductBySlug, getProductPath } from "@/lib/catalog";
 import ProductPageView, { getProductMetadata } from "@/components/products/ProductPageView";
 import { getMetadata } from "@/lib/metadata";
@@ -17,8 +17,8 @@ export async function generateStaticParams() {
     }
 }
 
-// The canonical is the product's category URL when it has one, so this
-// fallback route never competes with it as a duplicate.
+// This route is only the home of products with no category. A product that has one lives at its category URL, so
+// /product/<slug> permanently redirects there instead of serving the same page twice.
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
     const product = await getProductBySlug(slug);
@@ -32,6 +32,9 @@ export default async function ProductPage({ params }: PageProps) {
     if (!product) {
         notFound();
     }
+
+    const mainPath = await getProductPath(product);
+    if (!mainPath.startsWith("/product/")) permanentRedirect(mainPath);
 
     return <ProductPageView product={product} />;
 }
