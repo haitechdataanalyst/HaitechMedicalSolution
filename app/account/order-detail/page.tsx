@@ -1,10 +1,11 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, FileDown, CheckCircle2, Clock, Loader2 } from "lucide-react";
 import { orderApi, Order } from "@/lib/api";
 import { cn } from "@/lib/utils";
+import { usePathId } from "@/lib/use-path-id";
 import { StatusBadge } from "@/components/account";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
 
@@ -22,13 +23,15 @@ const TIMELINE: Record<string, { steps: string[]; current: number }> = {
     cancelled:  { steps: ["Order Placed", "Cancelled"],                          current: 1 },
 };
 
-export default function OrderDetailPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = use(params);
+// Served for /account/orders/<id> through a rewrite (next.config.ts); the id comes from the URL.
+export default function OrderDetailPage() {
+    const id = usePathId("orders");
     const [order, setOrder] = useState<Order | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
+        if (!id) return;
         orderApi.getOrder(id).then((res) => {
             if (res.success && res.data?.order) {
                 setOrder(res.data.order);

@@ -6,7 +6,7 @@ import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
 import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
-import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
+import { getCommittedProduct, getHeadlightsData, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
 
 export const metadata: Metadata = getDynamicMetadata("Admetec | Premium Dental Loupes & Headlights", "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.", { path: "/product/admetec" });
@@ -26,7 +26,7 @@ const ergoMags = ["3.0x", "4.0x", "5.0x", "6.0x", "7.5x", "10x"].map((m) => ({ l
 export default async function AboutAdmetecPage() {
     const headlights = await getHeadlightsData();
     const lightModels = headlightFigures(headlights.categories).models;
-    const flamingo = await getProductBySlug("flamingo");
+    const flamingo = getCommittedProduct("flamingo");
     const flamingoHref = flamingo ? await getProductPath(flamingo) : null;
 
     return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { usePathId } from "@/lib/use-path-id";
 import Link from "next/link";
 import { inventoryApi, ZohoInventoryItem } from "@/lib/api";
 import { formatPrice } from "@/lib/utils";
@@ -76,8 +76,9 @@ function DetailSkeleton() {
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
+// Served for /inventory/<itemId> through a rewrite (next.config.ts); the id comes from the URL.
 export default function InventoryItemPage() {
-    const { itemId } = useParams<{ itemId: string }>();
+    const itemId = usePathId("inventory");
     const [item, setItem] = useState<ZohoInventoryItem | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

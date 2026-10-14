@@ -2,7 +2,7 @@ import { ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import LoginForm from "@/components/auth/LoginForm";
 import AuthLayout from "@/components/auth/AuthLayout";
-import AuthAlert from "@/components/auth/AuthAlert";
+import AuthNotice from "@/components/auth/AuthNotice";
 
 export const metadata: Metadata = {
     title: "Sign In",
@@ -10,13 +10,7 @@ export const metadata: Metadata = {
     description: "Sign in to your Haitech Medical account.",
 };
 
-interface LoginPageProps {
-    searchParams: Promise<{ error?: string; message?: string; next?: string }>;
-}
-
-export default async function LoginPage({ searchParams }: LoginPageProps) {
-    const params = await searchParams;
-
+export default function LoginPage() {
     return (
         <AuthLayout
             title="Welcome back"
@@ -28,18 +22,9 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 </p>
             }
         >
-            {params.message === "check-email" && (
-                <AuthAlert tone="info" className="mb-5">
-                    Check your email to confirm your account before signing in.
-                </AuthAlert>
-            )}
-            {params.error && (
-                <AuthAlert tone="error" className="mb-5">
-                    {params.error}
-                </AuthAlert>
-            )}
+            <AuthNotice checkEmail="Check your email to confirm your account before signing in." />
 
-            <LoginForm next={params.next} />
+            <LoginForm />
         </AuthLayout>
     );
 }

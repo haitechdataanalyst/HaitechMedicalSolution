@@ -17,6 +17,11 @@ export async function generateStaticParams() {
     }
 }
 
+// Products that have a category live at their category URL; /product/<slug> for those is a permanent redirect set in
+// next.config.ts (no function needed). Only a product with no category is served here, prerendered, and anything
+// else is a 404, so this route never renders on demand (each on-demand route is a Vercel function; Hobby allows 12).
+export const dynamicParams = false;
+
 // This route is only the home of products with no category. A product that has one lives at its category URL, so
 // /product/<slug> permanently redirects there instead of serving the same page twice.
 export async function generateMetadata({ params }: PageProps) {
