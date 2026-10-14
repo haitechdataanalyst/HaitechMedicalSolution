@@ -217,15 +217,6 @@ function reconcile(product: Product): Product {
     return reconcileAdmetecPricing(reconcileCategory(product));
 }
 
-/**
- * A product from the committed catalogue file, with no backend call. For pages that only need a stable fact about it
- * (where it lives) and so can stay fully static: a page that fetches the backend is revalidated every few minutes, which
- * on Vercel makes it a serverless function (the Hobby plan allows 12).
- */
-export function getCommittedProduct(slug: string): Product | null {
-    return readFileProducts().get(slug) ?? null;
-}
-
 export async function getAllProducts(): Promise<Product[]> {
     const cached = readCache(_prodCache);
     if (cached) return cached;

@@ -1,27 +1,18 @@
 "use client";
 
-import { Suspense, useActionState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useActionState } from "react";
 import Link from "next/link";
 import { login, type AuthActionResult } from "@/app/auth/actions";
 import PasswordInput from "./PasswordInput";
 import AuthAlert from "./AuthAlert";
 
-// ?next= is read in the browser so the page can be prerendered. It only becomes a hidden field; the sign-in action validates it.
-function NextField() {
-    const next = useSearchParams().get("next");
-    return next ? <input type="hidden" name="next" value={next} /> : null;
-}
-
-export default function LoginForm() {
+export default function LoginForm({ next }: { next?: string }) {
     const [state, formAction, isPending] = useActionState<AuthActionResult, FormData>((_prev, formData) => login(formData), {});
 
     return (
         <form action={formAction} className="flex flex-col gap-5">
             {state?.error && <AuthAlert tone="error">{state.error}</AuthAlert>}
-            <Suspense fallback={null}>
-                <NextField />
-            </Suspense>
+            {next && <input type="hidden" name="next" value={next} />}
 
             <div>
                 <label htmlFor="email" className="form-label">

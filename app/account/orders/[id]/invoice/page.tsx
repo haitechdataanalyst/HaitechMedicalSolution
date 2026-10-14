@@ -1,24 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Loader2, Printer } from "lucide-react";
 import { orderApi, Invoice } from "@/lib/api";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
-import { usePathId } from "@/lib/use-path-id";
 
 const fmt = (paise: number, currency = "INR") =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 0 }).format(paise / 100);
 
-// Served for /account/orders/<id>/invoice through a rewrite (next.config.ts); the id comes from the URL.
-export default function InvoicePage() {
-    const id = usePathId("orders");
+export default function InvoicePage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = use(params);
     const [invoice, setInvoice] = useState<Invoice | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        if (!id) return;
         orderApi
             .getInvoice(id)
             .then((res) => {

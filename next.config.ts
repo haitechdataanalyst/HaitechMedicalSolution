@@ -9,22 +9,6 @@ const isDev = process.env.NODE_ENV !== "production";
 // changing a category slug or moving a product, and commit the result.
 const catalogueRedirects: { from: string; to: string }[] = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "url-redirects.json"), "utf8"));
 
-// /product/<slug> was a second address for every product that has a category. Send each to its category URL here, at
-// the edge, instead of rendering app/product/[slug] on demand. Built from the same files the catalogue falls back to.
-function productRedirects(): { from: string; to: string }[] {
-    const read = (name: string) => JSON.parse(fs.readFileSync(path.join(__dirname, "data", name), "utf8"));
-    const categories: { id: number; slug: string; parent: number | null }[] = read("categories.json");
-    const byId = new Map(categories.map((c) => [c.id, c]));
-    const categoryPath = (id: number): string[] | null => {
-        const category = byId.get(id);
-        return category ? [...(category.parent === null ? [] : (categoryPath(category.parent) ?? [])), category.slug] : null;
-    };
-    return (read("products.json") as { slug: string; category: number | null }[]).flatMap((product) => {
-        const parts = product.category === null ? null : categoryPath(product.category);
-        return parts ? [{ from: `/product/${product.slug}`, to: `/product-category/${parts.join("/")}/${product.slug}` }] : [];
-    });
-}
-
 const nextConfig: NextConfig = {
     transpilePackages: ["lucide-react"],
 
@@ -123,17 +107,6 @@ const nextConfig: NextConfig = {
         ];
     },
 
-    // These three pages fetch their data in the browser, so they are static shells that read the id from the URL
-    // (lib/use-path-id.ts). A dynamic [id] route would be an on-demand serverless function, and Vercel's Hobby plan
-    // allows 12 in all. The address bar keeps the public URL; the proxy still sees (and protects) the original path.
-    async rewrites() {
-        return [
-            { source: "/account/orders/:id/invoice", destination: "/account/order-invoice" },
-            { source: "/account/orders/:id", destination: "/account/order-detail" },
-            { source: "/inventory/:itemId", destination: "/inventory/item-detail" },
-        ];
-    },
-
     // URL redirects — keep old paths alive for SEO/bookmarks
     async redirects() {
         return [
@@ -153,7 +126,6 @@ const nextConfig: NextConfig = {
                 permanent: true,
             },
             ...catalogueRedirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true })),
-            ...productRedirects().map(({ from, to }) => ({ source: from, destination: to, permanent: true })),
         ];
     },
 

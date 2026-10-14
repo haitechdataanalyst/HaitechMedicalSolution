@@ -2,7 +2,7 @@ import { ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import RegisterForm from "@/components/auth/RegisterForm";
 import AuthLayout from "@/components/auth/AuthLayout";
-import AuthNotice from "@/components/auth/AuthNotice";
+import AuthAlert from "@/components/auth/AuthAlert";
 
 export const metadata: Metadata = {
     title: "Create Account",
@@ -10,7 +10,12 @@ export const metadata: Metadata = {
     description: "Create a Haitech Medical account.",
 };
 
-export default function RegisterPage() {
+interface RegisterPageProps {
+    searchParams: Promise<{ error?: string; message?: string }>;
+}
+
+export default async function RegisterPage({ searchParams }: RegisterPageProps) {
+    const params = await searchParams;
     const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
     return (
@@ -24,7 +29,16 @@ export default function RegisterPage() {
                 </p>
             }
         >
-            <AuthNotice checkEmail="Almost there — check your email for a confirmation link to activate your account." />
+            {params.message === "check-email" && (
+                <AuthAlert tone="info" className="mb-5">
+                    Almost there — check your email for a confirmation link to activate your account.
+                </AuthAlert>
+            )}
+            {params.error && (
+                <AuthAlert tone="error" className="mb-5">
+                    {params.error}
+                </AuthAlert>
+            )}
 
             <RegisterForm turnstileSiteKey={turnstileSiteKey} />
         </AuthLayout>

@@ -16,10 +16,6 @@ interface PageProps {
 
 const RELATED_GUIDE_LIMIT = 3;
 
-// The articles are a fixed list in code, so an unknown slug is a plain 404 rather than an on-demand render (each
-// on-demand route is a Vercel serverless function, and the Hobby plan allows 12).
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
     return articles.map((article) => ({
         slug: article.slug,

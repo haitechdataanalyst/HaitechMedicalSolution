@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug, getRelatedProducts, getProductAccessories, getAllFrames, getHeadlightCategories, getMedesyCategories } from "@/lib/catalog";
+import { getProductBySlug, getRelatedProducts, getProductAccessories, getAllFrames, getHeadlightCategories } from "@/lib/catalog";
 import { ProductDetail } from "@/components/products";
 import { Breadcrumbs } from "@/components/ui";
 import { getDynamicMetadata, getMetadata } from "@/lib/metadata";
@@ -7,14 +7,6 @@ import { getMedesyProductBreadcrumbs } from "@/lib/breadcrumbs";
 
 interface PageProps {
     params: Promise<{ product: string }>;
-}
-
-// These are the Medesy instruments of data/medesy.json, a fixed list, so they are prerendered. Any other slug is a 404
-// instead of an on-demand render: every on-demand route is one more Vercel serverless function (Hobby allows 12).
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-    return getMedesyCategories().flatMap((category) => category.products.map((product) => ({ product: product.id })));
 }
 
 export async function generateMetadata({ params }: PageProps) {
