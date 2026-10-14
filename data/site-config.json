@@ -15,12 +15,12 @@
         "service": "+91 9769403892"
     },
     "emails": {
-        "quotes": "quotes@haitechmedical.com.au",
-        "contact": "info@haitechmedical.com.au",
+        "quotes": "sales@haitech-group.com",
+        "contact": "sales@haitech-group.com",
         "support": "sales@haitech-group.com"
     },
-    "currencies": ["AUD", "NZD"],
-    "defaultCurrency": "AUD",
+    "currencies": ["INR"],
+    "defaultCurrency": "INR",
     "social": {
         "facebook": "https://facebook.com/haitechmedical",
         "instagram": "https://instagram.com/haitechmedical",

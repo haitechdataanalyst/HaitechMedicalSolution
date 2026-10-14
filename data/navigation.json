@@ -6,24 +6,49 @@
     ],
     "header": [
         {
-            "label": "PRODUCTS",
+            "label": "Equipment",
+            "href": "/products#equipment",
+            "children": [
+                { "label": "Dental Loupes", "href": "/dental-loupes" },
+                { "label": "Dental Chairs", "href": "/dental-chairs" },
+                { "label": "Saddle Chairs", "href": "/saddle-chairs" },
+                { "label": "Endodontics", "href": "/endodontics" },
+                { "label": "CBCT Imaging", "href": "/cbct" },
+                { "label": "Diamond Burs", "href": "/product-category/strauss" },
+                { "label": "Surgical Instruments", "href": "/product-category/medesy" }
+            ]
+        },
+        {
+            "label": "Brands",
             "href": "/products",
             "children": [
                 { "label": "Admetec", "href": "/product-category/admetec" },
                 { "label": "Salli", "href": "/product-category/salli" },
-                { "label": "Medesy", "href": "/our-instruments" },
+                { "label": "Medesy", "href": "/product-category/medesy" },
                 { "label": "Almadent", "href": "/product-category/almadent" },
                 { "label": "Strauss", "href": "/product-category/strauss" },
                 { "label": "Bondent", "href": "/product-category/bondent" }
             ]
         },
-        { "label": "ABOUT US", "href": "/about" },
-        { "label": "SUPPORT", "href": "/support" }
+        { "label": "About Us", "href": "/about" },
+        { "label": "Support", "href": "/support" }
     ],
     "footer": {
         "sections": [
             {
-                "title": "Products",
+                "title": "Equipment",
+                "links": [
+                    { "label": "Dental Loupes", "href": "/dental-loupes" },
+                    { "label": "Dental Chairs", "href": "/dental-chairs" },
+                    { "label": "Saddle Chairs", "href": "/saddle-chairs" },
+                    { "label": "Endodontics", "href": "/endodontics" },
+                    { "label": "CBCT Imaging", "href": "/cbct" },
+                    { "label": "Diamond Burs", "href": "/product-category/strauss" },
+                    { "label": "Surgical Instruments", "href": "/product-category/medesy" }
+                ]
+            },
+            {
+                "title": "Brands",
                 "links": [
                     { "label": "Admetec", "href": "/product-category/admetec" },
                     { "label": "Salli", "href": "/product-category/salli" },
@@ -37,9 +62,9 @@
                 "title": "Support",
                 "links": [
                     { "label": "Contact Us", "href": "/support/contact" },
+                    { "label": "Book a Demo", "href": "/book-demo" },
+                    { "label": "Book a Loupe Fitting", "href": "/book-loupe-fitting" },
                     { "label": "Help Center", "href": "/support/faq" },
-                    { "label": "Guides", "href": "/support/faq#guides" },
-                    { "label": "FAQ", "href": "/support/faq#faq" },
                     { "label": "Articles", "href": "/support/articles" }
                 ]
             },

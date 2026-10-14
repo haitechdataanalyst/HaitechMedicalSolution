@@ -49,14 +49,6 @@
             "tags": ["📞 Client Connector", "🎯 Sharp Closer", "😊 Warm Communicator"]
         },
         {
-            "id": "7",
-            "name": "Ms. Vanshika Pakhare",
-            "designation": "Senior Inside Sales Executive",
-            "image": "/images/team/vanshika-pakhare.jpg",
-            "bio": "Vanshika brings a quiet confidence and sharp listening skills that make clients feel genuinely heard. She turns enquiries into long-term relationships effortlessly, and her follow-through is the stuff of legend within the team — clients always know she's got it handled.",
-            "tags": ["🌸 Relationship Builder", "🎯 Deal Maker", "✨ Trusted Advisor"]
-        },
-        {
             "id": "8",
             "name": "Mr. Manish Satam",
             "designation": "Senior Inside Sales Executive",
@@ -111,14 +103,6 @@
             "image": "/images/team/sanjay-kumar-ram.jpg",
             "bio": "Sanjay is Haitech's ambassador in the field — always on the move, always ready with a smile and a solution. He builds trust face-to-face, the old-fashioned way, and his clients genuinely appreciate the personal touch he brings to every visit.",
             "tags": ["🌍 Road Warrior", "🤝 Trust Builder", "😊 Always Smiling"]
-        },
-        {
-            "id": "15",
-            "name": "Ms. Priyanka Palav",
-            "designation": "Customer Service Executive",
-            "image": "/images/team/priyanka-palav.jpg",
-            "bio": "Priyanka is the friendly voice that makes everything feel manageable. Patient, empathetic, and wonderfully solution-focused, she turns every customer concern into an opportunity to leave someone's day a little brighter than when they called in.",
-            "tags": ["💛 Care Champion", "🌟 Problem Solver", "☎️ Go-To Support"]
         },
         {
             "id": "16",
@@ -183,6 +167,30 @@
             "image": "/images/team/sandeep-jadhav.jpg",
             "bio": "Sandeep is the glue that holds daily office life together. Always dependable, always willing, and always there when someone needs a hand — his contributions happen behind the scenes, but the team knows exactly how much smoother everything runs because of him.",
             "tags": ["🙌 Team Backbone", "💛 Always There", "⚙️ Office Hero"]
+        },
+        {
+            "id": "25",
+            "name": "Ms. Shraddharani Salunkhe",
+            "designation": "Customer Support Executive",
+            "image": "/images/team/shraddharani-salunkhe.jpg",
+            "bio": "Shraddharani is the reassuring voice clients reach when they need an answer quickly. Patient and thorough, she listens first, explains clearly, and follows every query through to a resolution — so no customer is ever left wondering what happens next.",
+            "tags": ["💬 Clear Communicator", "🤝 Patient Listener", "✅ Follow-Through Pro"]
+        },
+        {
+            "id": "26",
+            "name": "Ms. Kimaya Shinde",
+            "designation": "Accounts Assistant",
+            "image": "/images/team/kimaya-shinde.jpg",
+            "bio": "Kimaya keeps the numbers behind Haitech tidy, accurate, and on time. Her careful eye for detail and steady, organised approach make invoicing and reconciliations feel effortless — the quiet reliability that helps the whole team and its clients move with confidence.",
+            "tags": ["🧮 Detail Driven", "📒 Always Accurate", "⏱️ On-Time Every Time"]
+        },
+        {
+            "id": "27",
+            "name": "Mr. Prathamesh Matekar",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/prathamesh-matekar.jpg",
+            "bio": "Prathamesh brings fresh energy and genuine curiosity to every client conversation. He takes the time to understand what a clinic really needs, then matches it with the right product and a clear, honest recommendation — building trust one call at a time.",
+            "tags": ["⚡ Fresh Energy", "🎯 Needs Matcher", "😊 Honest Advisor"]
         }
     ]
 }

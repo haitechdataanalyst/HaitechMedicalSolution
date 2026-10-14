@@ -150,6 +150,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -361,6 +390,35 @@
                         "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
                         "maxLength": 30,
                         "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
                     }
                 }
             }
@@ -576,6 +634,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -787,6 +874,35 @@
                         "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
                         "maxLength": 30,
                         "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
                     }
                 }
             }
@@ -1002,6 +1118,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -1213,6 +1358,35 @@
                         "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
                         "maxLength": 30,
                         "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
                     }
                 }
             }
@@ -1435,6 +1609,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -1651,6 +1854,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -1844,6 +2076,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -2014,6 +2275,35 @@
                         "placeholder": "Your Name"
                     }
                 }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ],
         "relatedProducts": [
@@ -2181,6 +2471,35 @@
                         "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
                         "maxLength": 30,
                         "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
                     }
                 }
             }
@@ -2412,6 +2731,35 @@
                         "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
                         "maxLength": 30,
                         "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
                     }
                 }
             }
@@ -13301,7 +13649,7 @@
         "id": 2055,
         "slug": "bondent-cbct-1030-pro",
         "name": "Bondent CBCT-1030 Pro",
-        "description": "AI-powered CBCT, panoramic and cephalometric imaging system",
+        "description": "AI-powered CBCT, panoramic and cephalometric imaging system.",
         "category": 77,
         "order": 1,
         "sku": "BON-BONDENTCBCT1030PRO",
@@ -13322,8 +13670,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "AI-powered CBCT, panoramic and cephalometric imaging system",
-                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                    "primary": "AI-powered CBCT, panoramic and cephalometric imaging system.",
+                    "secondary": "The Bondent CBCT-1030 Pro is an AI-powered CBCT system built for modern digital dentistry. It integrates 3D CBCT, 2D panoramic and cephalometric imaging with intelligent software, supporting a more efficient clinical workflow. 1. Six selectable CBCT fields of view: 16x18, 16x10, 12x8, 8x8, 8x5 and 5x5 cm 2. 16x18 cm FOV covers the entire dental-maxillofacial region (suited to orthognathic surgery) 3. 16x10 cm FOV: full mouth, maxilla and mandible, sinus and airway, and both TMJs in a single scan 4. 12x8 cm FOV: upper and lower dentition with precise checking of surrounding bone 5. 5x5 cm FOV: small-FOV scanning for fine detail in root canals and apical lesions 6. Bon MAR: iterative metal artifact reduction for implants, restorations and fillings 7. Low-dose CT with AI-enhanced signal-to-noise ratio 8. Voxel sizes from 70 µm to 300 µm 9. Panoramic programs: Standard, Paediatric (low-dose primary dentition), Horizontal and Vertical Segmenting (free zone selection), and TMJ (lateral or PA, mouth open or closed) 10. Multilayer Focusing Panoramic Technology 11. BonDiag: in-house AI engine that identifies anatomical structures and conditions such as caries, cysts and implant-related issues, with progress simulation and a diagnosis report 12. BonCeph: automatic landmark recognition, 25+ analyses (Steiner, Tweed, Jarabak, Wits), AI facial and profile analysis, and VTO treatment simulation 13. Clinical software modules: implant planning (with bone density evaluation), impaction assessment, endodontics, orthodontics, airway analysis (minimum cross-sectional area and endoscopic view), and TMJ analysis 14. PACS support"
                 }
             },
             {
@@ -13332,18 +13680,99 @@
                     "title": "Technical Specifications",
                     "rows": [
                         {
+                            "label": "Function",
+                            "value": "CT, Pano, Ceph"
+                        },
+                        {
+                            "label": "FOVs",
+                            "value": "16x18, 16x10, 12x8, 8x8, 8x5, 5x5 cm"
+                        },
+                        {
+                            "label": "Tube voltage",
+                            "value": "60-100 kV"
+                        },
+                        {
+                            "label": "Tube current",
+                            "value": "1-10 mA"
+                        },
+                        {
+                            "label": "Pano/CT detector",
+                            "value": "CsI + IGZO TFT (automatic detector switching)"
+                        },
+                        {
+                            "label": "Scan time",
+                            "value": "CT 8 s or 24 s; Pano 14 s; Ceph 8.4 s or 14 s"
+                        },
+                        {
+                            "label": "Min. installation area",
+                            "value": "2000 x 2500 x 2456 mm"
+                        },
+                        {
+                            "label": "Net weight",
+                            "value": "245 kg"
+                        },
+                        {
+                            "label": "Focal spot",
+                            "value": "0.5 mm"
+                        },
+                        {
+                            "label": "Ceph detector",
+                            "value": "CsI + CMOS"
+                        },
+                        {
+                            "label": "Image acquisition",
+                            "value": "360 degree rotation"
+                        },
+                        {
+                            "label": "Voxel size (3D)",
+                            "value": "70, 100, 150, 200, 250, 300 µm"
+                        },
+                        {
+                            "label": "Pixel size (2D)",
+                            "value": "100 µm"
+                        },
+                        {
+                            "label": "Spatial resolution",
+                            "value": ">1.0 lp/mm (CT), >1.8 lp/mm (Pano), >2.0 lp/mm (Ceph)"
+                        },
+                        {
+                            "label": "Grey scale",
+                            "value": "16 bit"
+                        },
+                        {
+                            "label": "Reconstruction time",
+                            "value": "60 s or less"
+                        },
+                        {
+                            "label": "Model scan, BonDiag, BonCeph, Implant mode, PACS",
+                            "value": "Included"
+                        },
+                        {
+                            "label": "Vertical movement range",
+                            "value": "1754-2456 mm"
+                        },
+                        {
+                            "label": "Column height movement",
+                            "value": "600 mm or more"
+                        },
+                        {
+                            "label": "Min. dimension in reset state",
+                            "value": "1845 x 1153 x 1754 mm"
+                        },
+                        {
+                            "label": "Max. motion dimension after installation",
+                            "value": "1950 x 1153 x 2456 mm"
+                        },
+                        {
                             "label": "Category",
                             "value": "Imaging"
                         },
                         {
                             "label": "Original Brand",
                             "value": "Bondent"
-                        },
-                        {
-                            "label": "Specifications",
-                            "value": "FOV 5x5 to 16x18cm"
                         }
-                    ]
+                    ],
+                    "footnote": "Specifications are subject to change without notice."
                 }
             },
             {
@@ -13358,6 +13787,42 @@
                     "addToCart": true,
                     "customization": false
                 }
+            },
+            {
+                "type": "seo",
+                "data": {
+                    "title": "Bondent CBCT-1030 Pro | AI CBCT, Pano & Ceph Dental Imaging System",
+                    "description": "Bondent CBCT-1030 Pro combines 3D CBCT with six FOVs up to 16x18 cm, panoramic and cephalometric imaging, with AI tools for diagnosis and orthodontics."
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": true,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ]
     },
@@ -13365,7 +13830,7 @@
         "id": 2056,
         "slug": "bondent-cbct-1030-pro-2-in-1",
         "name": "Bondent CBCT-1030 Pro (2-in-1)",
-        "description": "All-in-one CBCT, panoramic and cephalometric imaging system",
+        "description": "All-in-one CBCT, panoramic and 3D cephalometric imaging system.",
         "category": 77,
         "order": 2,
         "sku": "BON-BONDENTCBCT1030PRO2IN1",
@@ -13386,8 +13851,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "All-in-one CBCT, panoramic and cephalometric imaging system",
-                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                    "primary": "All-in-one CBCT, panoramic and 3D cephalometric imaging system.",
+                    "secondary": "The Bondent CBCT-1030 Pro (2-in-1) uses the same AI-powered 1030 Pro platform and combines CBCT, panoramic imaging and Smart 3D Ceph in a more compact unit. 1. Same six FOVs, Bon MAR, AI low-dose enhancement, panoramic programs, BonDiag, BonCeph and clinical software modules as the Bondent CBCT-1030 Pro 2. Smart 3D Ceph: frontal and lateral images acquired simultaneously in one shot 3. AI one-click automatic ear-point alignment 4. Direct connection to BonCeph cephalometric measurement 5. Seamless integration with PACS and digital workflows"
                 }
             },
             {
@@ -13396,20 +13861,100 @@
                     "title": "Technical Specifications",
                     "rows": [
                         {
-                            "label": "Category",
-                            "value": "Imaging"
+                            "label": "Function",
+                            "value": "CT, Pano, 3D Ceph"
                         },
                         {
-                            "label": "Original Brand",
-                            "value": "Bondent"
+                            "label": "FOVs",
+                            "value": "16x18, 16x10, 12x8, 8x8, 8x5, 5x5 cm"
+                        },
+                        {
+                            "label": "Tube voltage",
+                            "value": "60-100 kV"
+                        },
+                        {
+                            "label": "Tube current",
+                            "value": "1-10 mA"
+                        },
+                        {
+                            "label": "Pano/CT detector",
+                            "value": "CsI + IGZO TFT (automatic detector switching)"
+                        },
+                        {
+                            "label": "Scan time",
+                            "value": "CT 8 s or 24 s; Pano 14 s"
+                        },
+                        {
+                            "label": "Min. installation area",
+                            "value": "1070 x 2500 x 2456 mm"
+                        },
+                        {
+                            "label": "Net weight",
+                            "value": "215 kg"
                         },
                         {
                             "label": "Variant",
                             "value": "2-in-1"
                         },
                         {
-                            "label": "Specifications",
-                            "value": "FOV 5x5 to 16x18cm"
+                            "label": "Focal spot",
+                            "value": "0.5 mm"
+                        },
+                        {
+                            "label": "Image acquisition",
+                            "value": "360 degree rotation"
+                        },
+                        {
+                            "label": "Voxel size (3D)",
+                            "value": "70, 100, 150, 200, 250, 300 µm"
+                        },
+                        {
+                            "label": "Pixel size (2D)",
+                            "value": "100 µm"
+                        },
+                        {
+                            "label": "Spatial resolution",
+                            "value": ">1.0 lp/mm (CT), >1.8 lp/mm (Pano)"
+                        },
+                        {
+                            "label": "Grey scale",
+                            "value": "16 bit"
+                        },
+                        {
+                            "label": "Reconstruction time",
+                            "value": "60 s or less"
+                        },
+                        {
+                            "label": "BonDiag, BonCeph, Implant mode, PACS",
+                            "value": "Included"
+                        },
+                        {
+                            "label": "Model scan and HD Endo Mode",
+                            "value": "Optional"
+                        },
+                        {
+                            "label": "Vertical movement range",
+                            "value": "1754-2456 mm"
+                        },
+                        {
+                            "label": "Column height movement",
+                            "value": "600 mm or more"
+                        },
+                        {
+                            "label": "Min. dimension in reset state",
+                            "value": "975 x 1153 x 1754 mm"
+                        },
+                        {
+                            "label": "Max. motion dimension after installation",
+                            "value": "1021 x 1153 x 2456 mm"
+                        },
+                        {
+                            "label": "Category",
+                            "value": "Imaging"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bondent"
                         }
                     ]
                 }
@@ -13426,6 +13971,42 @@
                     "addToCart": true,
                     "customization": false
                 }
+            },
+            {
+                "type": "seo",
+                "data": {
+                    "title": "Bondent CBCT-1030 Pro (2-in-1) | CBCT, Pano & 3D Ceph System",
+                    "description": "A compact AI-powered CBCT and panoramic system with Smart 3D Ceph, FOVs up to 16x18 cm and BonCeph orthodontic analysis."
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": true,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ]
     },
@@ -13433,7 +14014,7 @@
         "id": 2057,
         "slug": "cbct-1020ms",
         "name": "Bondent CBCT 1020MS",
-        "description": "3D CBCT, panoramic and cephalometric imaging system",
+        "description": "3D CBCT, panoramic and cephalometric imaging system with an 18x10 cm FOV.",
         "category": 77,
         "order": 3,
         "sku": "BON-CBCT1020MS",
@@ -13454,8 +14035,8 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "3D CBCT, panoramic and cephalometric imaging system",
-                    "secondary": "Manufactured by Bondent — part of the Bondent Group portfolio."
+                    "primary": "3D CBCT, panoramic and cephalometric imaging system with an 18x10 cm FOV.",
+                    "secondary": "The Bondent CBCT 1020MS provides all-in-one imaging, with panoramic, 3D and cephalometric modules in one unit, designed for high-quality images, digital workflows and operational efficiency, with AI-powered software. 1. 18x10 cm FOV captures extensive anatomical regions in a single scan 2. FOVs: 18x10, 8x8, 5x5 and 4x4 cm 3. 10-inch touch console for real-time interaction 4. Bon MAR: iterative reduction of artifacts from implants, ceramic crowns and metal brackets 5. Bon Noise Reduction: reduces noise while preserving real detail; minimum reconstructed voxel size 70 µm 6. Multilayer Focusing Panoramic Technology; Adaptive Pano images (standard and enhanced) 7. Ceph: lateral, frontal and carpus projections; fast scan options; Smart Auto Tracing 8. BonCeph: cephalometric analysis in seconds, 25+ analyses (Steiner, Tweed, Jarabak, Wits), automatic airway marking with one-click airway report, VTO simulation 9. Bondream 3D post-processing software: MPR mode (automatic mandibular nerve canal tracing in 3 seconds), Dental mode (implant simulation with bone density), Airway mode, TMJ mode 10. Pano AI report (BonDiag): optional"
                 }
             },
             {
@@ -13464,20 +14045,104 @@
                     "title": "Technical Specifications",
                     "rows": [
                         {
-                            "label": "Category",
-                            "value": "Imaging"
+                            "label": "Function",
+                            "value": "CT, Pano, Ceph"
                         },
                         {
-                            "label": "Original Brand",
-                            "value": "Bondent"
+                            "label": "FOVs",
+                            "value": "18x10, 8x8, 5x5, 4x4 cm"
+                        },
+                        {
+                            "label": "Tube voltage",
+                            "value": "60-90 kV"
+                        },
+                        {
+                            "label": "Tube current",
+                            "value": "4-10 mA"
+                        },
+                        {
+                            "label": "Pano/CT detector",
+                            "value": "CsI + IGZO TFT (automatic detector switching)"
+                        },
+                        {
+                            "label": "Scan time",
+                            "value": "CT 8 s or 24 s; Pano 14 s; Ceph 4.2 s or 8.4 s"
+                        },
+                        {
+                            "label": "Min. installation area",
+                            "value": "1933 x 1304 x 2342 mm"
+                        },
+                        {
+                            "label": "Net weight",
+                            "value": "260 kg"
                         },
                         {
                             "label": "Variant",
                             "value": "1020MS"
                         },
                         {
-                            "label": "Specifications",
-                            "value": "FOV 18x10cm, 10-inch touch console"
+                            "label": "Focal spot",
+                            "value": "0.5 mm"
+                        },
+                        {
+                            "label": "Ceph detector",
+                            "value": "CsI + CMOS"
+                        },
+                        {
+                            "label": "Image acquisition",
+                            "value": "360 degree rotation"
+                        },
+                        {
+                            "label": "Voxel size (3D)",
+                            "value": "70, 100, 150, 200, 250, 300 µm"
+                        },
+                        {
+                            "label": "Pixel size (2D)",
+                            "value": "100 µm"
+                        },
+                        {
+                            "label": "Spatial resolution",
+                            "value": ">1.8 lp/mm (CT and Panoramic), >2.0 lp/mm (Ceph)"
+                        },
+                        {
+                            "label": "Grey scale",
+                            "value": "16 bit"
+                        },
+                        {
+                            "label": "Reconstruction time",
+                            "value": "60 s or less"
+                        },
+                        {
+                            "label": "Ceph scanning, Implant mode, Endodontic mode, PACS",
+                            "value": "Yes"
+                        },
+                        {
+                            "label": "Model scan and Intraoral X-ray unit",
+                            "value": "Not included"
+                        },
+                        {
+                            "label": "Vertical movement range",
+                            "value": "1642-2342 mm"
+                        },
+                        {
+                            "label": "Column height movement",
+                            "value": "600 mm or more"
+                        },
+                        {
+                            "label": "Min. dimension in reset state",
+                            "value": "1886 x 1183 x 1642 mm"
+                        },
+                        {
+                            "label": "Max. motion dimension after installation",
+                            "value": "1933 x 1304 x 2292 mm"
+                        },
+                        {
+                            "label": "Category",
+                            "value": "Imaging"
+                        },
+                        {
+                            "label": "Original Brand",
+                            "value": "Bondent"
                         }
                     ]
                 }
@@ -13494,7 +14159,177 @@
                     "addToCart": true,
                     "customization": false
                 }
+            },
+            {
+                "type": "seo",
+                "data": {
+                    "title": "Bondent CBCT 1020MS | 3D CBCT, Pano & Ceph with AI Software",
+                    "description": "Bondent 1020MS offers an 18x10 cm FOV, 70 µm voxels, fast ceph options, a 10-inch touch console and AI tools for nerve canal tracing, implants, airway and TMJ."
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": true,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
             }
         ]
+    },
+    {
+        "id": 2058,
+        "slug": "flamingo",
+        "name": "Flamingo Wireless Camera for Loupes",
+        "description": "Full HD 1080p wireless camera and 60K LUX headlight for loupes, with voice recording, AI video editing, cloud sharing and interchangeable 21/25/35 mm lenses.",
+        "category": 8,
+        "order": 1,
+        "sku": "ADM-FLAMINGO",
+        "hasVariants": false,
+        "defaultImage": "/images/products/admetec/catalog/flamingo-camera.jpg",
+        "gallery": [
+            "/images/products/admetec/catalog/flamingo-camera.jpg",
+            "/images/products/admetec/catalog/flamingo-product.jpg",
+            "/images/products/admetec/catalog/flamingo-kit.webp",
+            "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
+            "/images/products/admetec/catalog/flamingo-25mm-lens.jpg"
+        ],
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "/images/products/admetec/catalog/flamingo-camera.jpg",
+                    "gallery": [
+                        "/images/products/admetec/catalog/flamingo-camera.jpg",
+                        "/images/products/admetec/catalog/flamingo-product.jpg",
+                        "/images/products/admetec/catalog/flamingo-kit.webp",
+                        "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
+                        "/images/products/admetec/catalog/flamingo-25mm-lens.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Full HD 1080p wireless camera and 60K LUX headlight for loupes, with voice recording, AI video editing, cloud sharing and interchangeable 21/25/35 mm lenses.",
+                    "secondary": "Flamingo® is a groundbreaking integration of a Full HD camera, headlight and AI-powered video editing, designed specifically for loupes. Unlike other systems, Flamingo® combines in-house optics, lighting and imaging for seamless performance and effortless visual documentation. Built-in voice recording lets clinicians capture real-time spoken commentary alongside video, adding context for documentation, teaching and case review without interrupting workflow. 1. Voice Recording: record real-time commentary during procedures, hands-free 2. AI Editing: instantly turn raw footage into clear, ready-to-share highlights 3. Remote Control: control recording and settings remotely without breaking focus 4. AI Cleanup: auto-removes pauses and dead time 5. Cloud Sync: secure, real-time uploads across devices 6. Smart Sharing: share videos with one simple link 7. Secure Storage: encrypted cloud built for compliance 8. Easy documentation: simplifies live documentation during procedures, ensuring clear, instant visual sharing 9. Teaching tool: real-time demonstrations to colleagues and students 10. Patient confidence: shows patients exactly what you see in real time in clear HD, building trust and increasing treatment acceptance 11. Lens options: 21 mm \"Wide\" (broad field of view, approx. magnification 4.0× with Ergo loupes), 25 mm \"Focus\" (tighter field of view for focused detail) and 35 mm \"Precision\" (narrowest field for fine, high-magnification work) 12. Rapid lens exchange in seconds, no tools required; coaxial light stays aligned for bright, shadow-free images with any lens"
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Camera resolution",
+                            "value": "Full HD 1080p | 30 fps"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "19 gram"
+                        },
+                        {
+                            "label": "Light intensity",
+                            "value": "60K LUX"
+                        },
+                        {
+                            "label": "Run time (per battery)",
+                            "value": "8 hrs camera or light; 4 hrs camera + light"
+                        },
+                        {
+                            "label": "Charging time",
+                            "value": "3 hours"
+                        },
+                        {
+                            "label": "Video format",
+                            "value": "MP4"
+                        },
+                        {
+                            "label": "Lenses",
+                            "value": "21 mm \"Wide\", 25 mm \"Focus\", 35 mm \"Precision\""
+                        },
+                        {
+                            "label": "Software",
+                            "value": "Windows, macOS (Apple Silicon), macOS (Intel)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Admetec",
+                    "packageContents": [
+                        "Camera & light module",
+                        "Control unit with 2 batteries",
+                        "WiFi USB/Type-C dongle",
+                        "Charging stand",
+                        "USB PD charger",
+                        "Remote control",
+                        "Type-C & Micro USB cables (1.5 m)",
+                        "Screwdriver",
+                        "Yellow filter"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": false
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
+            }
+        ],
+        "relatedProducts": []
     }
 ]

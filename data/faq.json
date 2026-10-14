@@ -1,8 +1,8 @@
 {
-    "brands": [
+    "categories": [
         {
-            "id": "admetec",
-            "label": "Admetec Loupes",
+            "id": "dental-loupes",
+            "label": "Dental Loupes",
             "faqs": [
                 {
                     "id": 1,
@@ -52,8 +52,257 @@
             ]
         },
         {
-            "id": "medesy",
-            "label": "Medesy Instruments",
+            "id": "dental-chairs",
+            "label": "Dental Chairs",
+            "faqs": [
+                {
+                    "id": 300,
+                    "question": "What is the difference between the Anya AY-3000, AY-6000 and AY-8000?",
+                    "answer": "The AY-3000 is a hydraulic chair with a 150 kg weight capacity. The AY-6000 is electric, with 6 preset positions, a synchronised backrest, an LED shadowless operating light and a 180 kg weight capacity. The AY-8000 is fully electric with servo motors, a touchscreen with voice control, 12 preset positions and a 200 kg weight capacity. The comparison table on the Dental Chairs page lists every specification."
+                },
+                {
+                    "id": 301,
+                    "question": "What warranty comes with Anya dental chairs?",
+                    "answer": "The warranty listed for each model is:\n• AY-3000: 2 years comprehensive\n• AY-6000: 3 years comprehensive\n• AY-8000: 5 years comprehensive\n\nYour quotation confirms the warranty terms for your order."
+                },
+                {
+                    "id": 302,
+                    "question": "What is included with an Anya dental chair?",
+                    "answer": "Every model ships with the chair unit, a delivery system, an operating light, an installation manual and a user guide. The AY-3000 includes an assistant's arm, and the AY-6000 and AY-8000 include assistant instrumentation. The AY-6000 adds a foot controller, and the AY-8000 adds a touchscreen controller and a patient multimedia monitor. Each product page lists the full package contents."
+                },
+                {
+                    "id": 303,
+                    "question": "What power supply does a dental chair need?",
+                    "answer": "The AY-3000 specification lists a 220–240 V AC power supply. Ask the Haitech team for the site requirements of the AY-6000 and AY-8000 before installation."
+                },
+                {
+                    "id": 304,
+                    "question": "How do I get a price for a dental chair?",
+                    "answer": "Dental chair prices are shared on request. Use Request a Quote on the chair's product page, or book a demo, and the Haitech team will contact you."
+                }
+            ]
+        },
+        {
+            "id": "saddle-chairs",
+            "label": "Saddle Chairs",
+            "sections": [
+                {
+                    "title": "About the Salli Saddle Chair",
+                    "faqs": [
+                        {
+                            "id": 200,
+                            "question": "What is the Salli Saddle Chair?",
+                            "answer": "The Salli Saddle Chair is an ergonomic seating solution with a unique two-part split seat designed to mimic a natural riding position. Developed in Finland, it promotes upright posture, reduces back strain, and supports healthy sitting for long working hours — making it ideal for dental clinics, healthcare settings, offices, and more."
+                        },
+                        {
+                            "id": 201,
+                            "question": "Why should I choose a saddle chair over a traditional office chair?",
+                            "answer": "A saddle chair positions the spine in a near-standing posture — with a gentle natural curve in the lower back — reducing pressure on the spinal discs. Unlike traditional chairs that force a 90-degree hip angle and cause the pelvis to tilt back, the Salli Saddle Chair maintains a healthy 135-degree hip and knee angle, improving posture, circulation, and energy levels throughout the day."
+                        },
+                        {
+                            "id": 202,
+                            "question": "Why does the Salli Saddle Chair have a gap (split seat)?",
+                            "answer": "The central gap allows the pelvis to tilt forward into its natural position without pressure on the genital area. On a one-part seat, discomfort in this area often causes the sitter to tilt the pelvis backward, which rounds the back and leads to chronic lower back issues. The gap also improves ventilation, circulation, and nerve function in the pelvic region."
+                        },
+                        {
+                            "id": 203,
+                            "question": "Does the Salli Saddle Chair have a backrest?",
+                            "answer": "No, and this is intentional. When seated at the correct height with feet positioned to the sides, the pelvis naturally tilts forward, keeping the back upright without any external support — just as we stand without needing a backrest. A backrest on a traditional chair is actually a compensatory measure for the unhealthy slouching posture it creates."
+                        }
+                    ]
+                },
+                {
+                    "title": "Health Benefits",
+                    "faqs": [
+                        {
+                            "id": 204,
+                            "question": "What health benefits does the Salli Saddle Chair offer?",
+                            "answer": "The Salli Saddle Chair delivers up to 10 documented health benefits:\n• Supports a natural back curve\n• Activates the pelvic floor muscles\n• Enhances blood and lymph circulation\n• Reduces pressure on the genital area\n• Improves brain circulation (boosting alertness)\n• Relieves tension in shoulders and reduces mouse-arm syndrome\n• Helps maintain a healthy weight\n• Promotes good intestinal function\n• Reduces sciatic-type pain\n• Increases overall mobility"
+                        },
+                        {
+                            "id": 205,
+                            "question": "Is the Salli Saddle Chair suitable for people with back problems?",
+                            "answer": "Yes. The Salli Saddle Chair is widely recommended for individuals with back pain. The saddle sitting position maintains the natural lumbar curve, relieving pressure on intervertebral discs and reducing sciatic discomfort. Multiple clinical and biomechanical studies — including doctoral research — support its positive effects on spinal health, particularly in professions requiring prolonged sitting such as dentistry and office work."
+                        },
+                        {
+                            "id": 206,
+                            "question": "Can sitting on a Salli Saddle Chair improve circulation?",
+                            "answer": "Yes. By positioning the thighs at a downward angle, the Salli reduces pressure on the thighs and pelvic area, allowing better blood and lymph flow throughout the lower body. Traditional chairs compress the thighs, restricting circulation and often causing leg fatigue or swelling. The split seat design specifically eliminates compression of the perineal area."
+                        },
+                        {
+                            "id": 207,
+                            "question": "Are there benefits for dental professionals specifically?",
+                            "answer": "Absolutely. Salli Saddle Chairs are particularly popular in dental care. The elevated sitting position reduces neck and shoulder strain by bringing the dentist closer to the patient's field. The upright posture reduces fatigue during long procedures, and clinical studies have confirmed improved postural angles for dental practitioners using saddle chairs compared to conventional seating."
+                        }
+                    ]
+                },
+                {
+                    "title": "Using Your Salli Saddle Chair",
+                    "faqs": [
+                        {
+                            "id": 208,
+                            "question": "How do I sit correctly on the Salli Saddle Chair?",
+                            "answer": "Follow three simple rules:\n• Sit HIGH enough — the hip and knee angle should be about 135 degrees. This allows the pelvis to tilt forward and maintain the natural lower back curve.\n• Sit BACK enough — your sitting bones should rest at the rear edge of the seat for maximum comfort.\n• Keep your feet to the SIDES — as if standing, with your shoulder, pelvis, and heel aligned. Feet placed in front tend to cause back rounding."
+                        },
+                        {
+                            "id": 209,
+                            "question": "Can I sit on the Salli Saddle Chair for the whole day?",
+                            "answer": "Yes, the two-part Salli models are designed for full-day use since the gap eliminates harmful pressure on the genital area. That said, we recommend alternating between sitting and standing when possible, and taking short walks during phone calls or breaks. Continuous static posture — even in an ergonomic chair — is best avoided."
+                        },
+                        {
+                            "id": 210,
+                            "question": "Why does the chair feel uncomfortable when I first use it?",
+                            "answer": "This is completely normal. Your body is adapting to a new, more active sitting posture. Your muscles, sitting bones, and tissues need time to adjust — similar to starting a new physical activity. If the seat feels hard at the sitting bones, the chair may be set too high. Ensure your feet rest flat on the floor so they share some of your body weight. Most users fully adapt within a few days to a few weeks."
+                        },
+                        {
+                            "id": 211,
+                            "question": "How long does it take to get used to the Salli Saddle Chair?",
+                            "answer": "This varies by individual. Some users adapt in just a few days; others may need two to four weeks. We recommend starting with shorter periods of use and gradually increasing. If you experience soreness, vary your position, use the swinging function (if available), and take standing breaks. Persistence pays off — your body will thank you for it."
+                        },
+                        {
+                            "id": 212,
+                            "question": "Do I need a special desk to use with the Salli Saddle Chair?",
+                            "answer": "Yes. Because you sit 15-20 cm higher on a Salli Saddle Chair than on a traditional chair, your desk must also be higher. We strongly recommend a height-adjustable (sit-stand) desk with a front recess. The recess allows you to position your arms close to your body, reducing shoulder tension and allowing the upper body weight to partially rest on the elbows."
+                        }
+                    ]
+                },
+                {
+                    "title": "Models & Suitability",
+                    "faqs": [
+                        {
+                            "id": 213,
+                            "question": "Are all Salli Saddle Chair models suitable for both men and women?",
+                            "answer": "The two-part Salli models (such as Twin, Swing, SwingFit, MultiAdjuster) are suitable for all genders. However, the one-part Solo models are not recommended for men, and for women only for part-time use, as the one-part seat does not have the central gap and can exert pressure on the pelvic floor and genital area."
+                        },
+                        {
+                            "id": 214,
+                            "question": "What is the difference between the Salli Swing/SwingFit and other models?",
+                            "answer": "The Swing and SwingFit models feature an active swinging mechanism that follows the body's natural movements, engaging the deep back muscles and further enhancing core stability. The SwingFit also allows adjustment of the seat width. On swinging models, you should sit slightly lower than usual so the feet can stabilize the movement. The sensitivity of the swing mechanism can be adjusted to your preference."
+                        },
+                        {
+                            "id": 215,
+                            "question": "What is the Salli MultiAdjuster?",
+                            "answer": "The MultiAdjuster is Salli's most adjustable model, allowing individual customization of both seat width (the gap between the two seat halves) and the tilt of each seat half. This makes it particularly suitable for users who need a highly personalized fit, such as in clinical or intensive professional environments."
+                        },
+                        {
+                            "id": 216,
+                            "question": "Can I try the Salli Saddle Chair before purchasing?",
+                            "answer": "Yes! Haitech Medical Solutions offers a free trial period for the Salli Saddle Chair. This is especially recommended for first-time saddle chair users. Please contact our team to arrange a trial, and make sure to follow the correct sitting guidelines during the trial period for an accurate assessment."
+                        }
+                    ]
+                },
+                {
+                    "title": "Care, Maintenance & Warranty",
+                    "faqs": [
+                        {
+                            "id": 217,
+                            "question": "What upholstery options are available?",
+                            "answer": "Salli Saddle Chairs are available in genuine leather (Elmosoft), artificial leather, and wool fabric upholstery in a range of colours. Seat covers are also available as accessories. The chair can be re-upholstered by your authorized dealer, including with a fabric of your own choice provided it is sufficiently durable."
+                        },
+                        {
+                            "id": 218,
+                            "question": "How do I assemble my new Salli Saddle Chair?",
+                            "answer": "Assembly is simple and requires no tools. The chair consists of only three main parts. If your chair arrives in cold weather, allow the gas spring to warm to room temperature before assembly. Detailed instruction manuals are available and can also be obtained from Haitech Medical Solutions."
+                        },
+                        {
+                            "id": 219,
+                            "question": "How often should I replace the castors?",
+                            "answer": "Salli recommends replacing castors every five years to maintain smooth mobility. Sand, dust, and floor debris can accumulate between the floor and castors over time, causing wear. Replacement castors and spare parts can be obtained through Haitech Medical Solutions."
+                        },
+                        {
+                            "id": 220,
+                            "question": "What warranty does the Salli Saddle Chair come with?",
+                            "answer": "Salli products come with a manufacturer's warranty covering defects in materials and workmanship. Please contact Haitech Medical Solutions for specific warranty terms applicable to your purchase. Salli Systems is ISO 9001 certified, reflecting their commitment to consistent product quality."
+                        },
+                        {
+                            "id": 221,
+                            "question": "Are spare parts available?",
+                            "answer": "Yes. A comprehensive range of spare parts and accessories is available, including castors, seat covers, gas springs, and more. Please reach out to Haitech Medical Solutions for assistance sourcing the correct parts for your specific Salli model."
+                        }
+                    ]
+                },
+                {
+                    "title": "Ordering & Support",
+                    "faqs": [
+                        {
+                            "id": 222,
+                            "question": "How can I purchase a Salli Saddle Chair through Haitech Medical Solutions?",
+                            "answer": "You can contact Haitech Medical Solutions directly to discuss your requirements, arrange a product demonstration, or place an order. Our team will help you identify the right model based on your profession, body type, and working environment."
+                        },
+                        {
+                            "id": 223,
+                            "question": "Can Haitech Medical Solutions assist with installation and training?",
+                            "answer": "Yes. Our team provides guidance on correct assembly, chair adjustment, and proper sitting technique to ensure you get the full ergonomic benefit from your Salli Saddle Chair from day one."
+                        },
+                        {
+                            "id": 224,
+                            "question": "Who should I contact for after-sales support?",
+                            "answer": "For any product queries, spare parts, warranty claims, or service needs related to your Salli Saddle Chair, please contact Haitech Medical Solutions. Our dedicated support team is available to assist you promptly."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "endodontics",
+            "label": "Endodontics",
+            "faqs": [
+                {
+                    "id": 500,
+                    "question": "Which endo motors have a built-in apex locator?",
+                    "answer": "The Bondent Endo Wise Plus and iRoot Pro are cordless endo motors with an integrated apex locator. The Endo Wise is a cordless reciprocating endo motor, and the Marc III is a cordless endo motor that pairs with the iRoot Apex."
+                },
+                {
+                    "id": 501,
+                    "question": "Which apex locators are available?",
+                    "answer": "Two apex locators are available:\n• iRoot Apex: a Bluetooth-enabled apex locator with gyroscope\n• Wispex: a multi-frequency apex locator with a TFT screen"
+                },
+                {
+                    "id": 502,
+                    "question": "Which NiTi file systems are available?",
+                    "answer": "The range includes rotary files (CC Premium, M3 L Platinum, M3 Pro Gold and Platinum V.EU), reciprocating files (CC One Blue and CC One Plus) and special-function NiTi files such as the M3 Opener, M3 Path and M3 RT. Stainless steel C, H and K files and reamers are also available."
+                },
+                {
+                    "id": 503,
+                    "question": "Is there anything for practising endodontics?",
+                    "answer": "Yes. The Bondent Endo Training Tooth, Training Block and Training Kit are available for practice before clinical work."
+                },
+                {
+                    "id": 504,
+                    "question": "Are prices shown for endodontic products?",
+                    "answer": "Where a price is listed, it is shown in INR on the product page. For other items, use Request a Quote and the Haitech team will contact you."
+                }
+            ]
+        },
+        {
+            "id": "cbct",
+            "label": "CBCT Imaging",
+            "faqs": [
+                {
+                    "id": 400,
+                    "question": "Which CBCT machines does Haitech supply?",
+                    "answer": "Haitech supplies three Bondent systems:\n• Bondent CBCT-1030 Pro: an AI-powered CBCT, panoramic and cephalometric imaging system\n• Bondent CBCT-1030 Pro (2-in-1): an all-in-one CBCT, panoramic and 3D cephalometric imaging system\n• Bondent CBCT 1020MS: a 3D CBCT, panoramic and cephalometric imaging system with an 18x10 cm FOV"
+                },
+                {
+                    "id": 401,
+                    "question": "What field of view do the CBCT models offer?",
+                    "answer": "The Bondent CBCT-1030 Pro and CBCT-1030 Pro (2-in-1) offer six fields of view: 16x18, 16x10, 12x8, 8x8, 8x5 and 5x5 cm. The Bondent CBCT 1020MS offers four: 18x10, 8x8, 5x5 and 4x4 cm."
+                },
+                {
+                    "id": 402,
+                    "question": "Can I see a CBCT system before buying?",
+                    "answer": "You can request a demonstration on the Book a Demo page. The Haitech team will contact you to discuss your requirements and arrange it."
+                },
+                {
+                    "id": 403,
+                    "question": "How do I get a price for a CBCT machine?",
+                    "answer": "CBCT prices are shared on request. Use Request a Quote on the CBCT product page and the Haitech team will contact you."
+                }
+            ]
+        },
+        {
+            "id": "surgical-instruments",
+            "label": "Surgical Instruments",
             "sections": [
                 {
                     "title": "Brand & Origin",
@@ -267,167 +516,6 @@
                             "id": 134,
                             "question": "Where can I find the official instructions for use for each instrument?",
                             "answer": "Official Instructions for Use (IFU) are available:\n• On Medesy's official website at medesy.it/en/informations — instructions are available for each product category\n• From Haitech Medical Solutions — who can provide printed or digital copies for institutional procurement documentation\n• Included in kit packaging for Medesy kit products\n\nThe IFUs cover sterilisation parameters, intended use, contraindications, and care recommendations in line with EU Medical Device Directive requirements."
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "salli",
-            "label": "Salli Saddle Chairs",
-            "sections": [
-                {
-                    "title": "About the Salli Saddle Chair",
-                    "faqs": [
-                        {
-                            "id": 200,
-                            "question": "What is the Salli Saddle Chair?",
-                            "answer": "The Salli Saddle Chair is an ergonomic seating solution with a unique two-part split seat designed to mimic a natural riding position. Developed in Finland, it promotes upright posture, reduces back strain, and supports healthy sitting for long working hours — making it ideal for dental clinics, healthcare settings, offices, and more."
-                        },
-                        {
-                            "id": 201,
-                            "question": "Why should I choose a saddle chair over a traditional office chair?",
-                            "answer": "A saddle chair positions the spine in a near-standing posture — with a gentle natural curve in the lower back — reducing pressure on the spinal discs. Unlike traditional chairs that force a 90-degree hip angle and cause the pelvis to tilt back, the Salli Saddle Chair maintains a healthy 135-degree hip and knee angle, improving posture, circulation, and energy levels throughout the day."
-                        },
-                        {
-                            "id": 202,
-                            "question": "Why does the Salli Saddle Chair have a gap (split seat)?",
-                            "answer": "The central gap allows the pelvis to tilt forward into its natural position without pressure on the genital area. On a one-part seat, discomfort in this area often causes the sitter to tilt the pelvis backward, which rounds the back and leads to chronic lower back issues. The gap also improves ventilation, circulation, and nerve function in the pelvic region."
-                        },
-                        {
-                            "id": 203,
-                            "question": "Does the Salli Saddle Chair have a backrest?",
-                            "answer": "No, and this is intentional. When seated at the correct height with feet positioned to the sides, the pelvis naturally tilts forward, keeping the back upright without any external support — just as we stand without needing a backrest. A backrest on a traditional chair is actually a compensatory measure for the unhealthy slouching posture it creates."
-                        }
-                    ]
-                },
-                {
-                    "title": "Health Benefits",
-                    "faqs": [
-                        {
-                            "id": 204,
-                            "question": "What health benefits does the Salli Saddle Chair offer?",
-                            "answer": "The Salli Saddle Chair delivers up to 10 documented health benefits:\n• Supports a natural back curve\n• Activates the pelvic floor muscles\n• Enhances blood and lymph circulation\n• Reduces pressure on the genital area\n• Improves brain circulation (boosting alertness)\n• Relieves tension in shoulders and reduces mouse-arm syndrome\n• Helps maintain a healthy weight\n• Promotes good intestinal function\n• Reduces sciatic-type pain\n• Increases overall mobility"
-                        },
-                        {
-                            "id": 205,
-                            "question": "Is the Salli Saddle Chair suitable for people with back problems?",
-                            "answer": "Yes. The Salli Saddle Chair is widely recommended for individuals with back pain. The saddle sitting position maintains the natural lumbar curve, relieving pressure on intervertebral discs and reducing sciatic discomfort. Multiple clinical and biomechanical studies — including doctoral research — support its positive effects on spinal health, particularly in professions requiring prolonged sitting such as dentistry and office work."
-                        },
-                        {
-                            "id": 206,
-                            "question": "Can sitting on a Salli Saddle Chair improve circulation?",
-                            "answer": "Yes. By positioning the thighs at a downward angle, the Salli reduces pressure on the thighs and pelvic area, allowing better blood and lymph flow throughout the lower body. Traditional chairs compress the thighs, restricting circulation and often causing leg fatigue or swelling. The split seat design specifically eliminates compression of the perineal area."
-                        },
-                        {
-                            "id": 207,
-                            "question": "Are there benefits for dental professionals specifically?",
-                            "answer": "Absolutely. Salli Saddle Chairs are particularly popular in dental care. The elevated sitting position reduces neck and shoulder strain by bringing the dentist closer to the patient's field. The upright posture reduces fatigue during long procedures, and clinical studies have confirmed improved postural angles for dental practitioners using saddle chairs compared to conventional seating."
-                        }
-                    ]
-                },
-                {
-                    "title": "Using Your Salli Saddle Chair",
-                    "faqs": [
-                        {
-                            "id": 208,
-                            "question": "How do I sit correctly on the Salli Saddle Chair?",
-                            "answer": "Follow three simple rules:\n• Sit HIGH enough — the hip and knee angle should be about 135 degrees. This allows the pelvis to tilt forward and maintain the natural lower back curve.\n• Sit BACK enough — your sitting bones should rest at the rear edge of the seat for maximum comfort.\n• Keep your feet to the SIDES — as if standing, with your shoulder, pelvis, and heel aligned. Feet placed in front tend to cause back rounding."
-                        },
-                        {
-                            "id": 209,
-                            "question": "Can I sit on the Salli Saddle Chair for the whole day?",
-                            "answer": "Yes, the two-part Salli models are designed for full-day use since the gap eliminates harmful pressure on the genital area. That said, we recommend alternating between sitting and standing when possible, and taking short walks during phone calls or breaks. Continuous static posture — even in an ergonomic chair — is best avoided."
-                        },
-                        {
-                            "id": 210,
-                            "question": "Why does the chair feel uncomfortable when I first use it?",
-                            "answer": "This is completely normal. Your body is adapting to a new, more active sitting posture. Your muscles, sitting bones, and tissues need time to adjust — similar to starting a new physical activity. If the seat feels hard at the sitting bones, the chair may be set too high. Ensure your feet rest flat on the floor so they share some of your body weight. Most users fully adapt within a few days to a few weeks."
-                        },
-                        {
-                            "id": 211,
-                            "question": "How long does it take to get used to the Salli Saddle Chair?",
-                            "answer": "This varies by individual. Some users adapt in just a few days; others may need two to four weeks. We recommend starting with shorter periods of use and gradually increasing. If you experience soreness, vary your position, use the swinging function (if available), and take standing breaks. Persistence pays off — your body will thank you for it."
-                        },
-                        {
-                            "id": 212,
-                            "question": "Do I need a special desk to use with the Salli Saddle Chair?",
-                            "answer": "Yes. Because you sit 15-20 cm higher on a Salli Saddle Chair than on a traditional chair, your desk must also be higher. We strongly recommend a height-adjustable (sit-stand) desk with a front recess. The recess allows you to position your arms close to your body, reducing shoulder tension and allowing the upper body weight to partially rest on the elbows."
-                        }
-                    ]
-                },
-                {
-                    "title": "Models & Suitability",
-                    "faqs": [
-                        {
-                            "id": 213,
-                            "question": "Are all Salli Saddle Chair models suitable for both men and women?",
-                            "answer": "The two-part Salli models (such as Twin, Swing, SwingFit, MultiAdjuster) are suitable for all genders. However, the one-part Solo models are not recommended for men, and for women only for part-time use, as the one-part seat does not have the central gap and can exert pressure on the pelvic floor and genital area."
-                        },
-                        {
-                            "id": 214,
-                            "question": "What is the difference between the Salli Swing/SwingFit and other models?",
-                            "answer": "The Swing and SwingFit models feature an active swinging mechanism that follows the body's natural movements, engaging the deep back muscles and further enhancing core stability. The SwingFit also allows adjustment of the seat width. On swinging models, you should sit slightly lower than usual so the feet can stabilize the movement. The sensitivity of the swing mechanism can be adjusted to your preference."
-                        },
-                        {
-                            "id": 215,
-                            "question": "What is the Salli MultiAdjuster?",
-                            "answer": "The MultiAdjuster is Salli's most adjustable model, allowing individual customization of both seat width (the gap between the two seat halves) and the tilt of each seat half. This makes it particularly suitable for users who need a highly personalized fit, such as in clinical or intensive professional environments."
-                        },
-                        {
-                            "id": 216,
-                            "question": "Can I try the Salli Saddle Chair before purchasing?",
-                            "answer": "Yes! Haitech Medical Solutions offers a free trial period for the Salli Saddle Chair. This is especially recommended for first-time saddle chair users. Please contact our team to arrange a trial, and make sure to follow the correct sitting guidelines during the trial period for an accurate assessment."
-                        }
-                    ]
-                },
-                {
-                    "title": "Care, Maintenance & Warranty",
-                    "faqs": [
-                        {
-                            "id": 217,
-                            "question": "What upholstery options are available?",
-                            "answer": "Salli Saddle Chairs are available in genuine leather (Elmosoft), artificial leather, and wool fabric upholstery in a range of colours. Seat covers are also available as accessories. The chair can be re-upholstered by your authorized dealer, including with a fabric of your own choice provided it is sufficiently durable."
-                        },
-                        {
-                            "id": 218,
-                            "question": "How do I assemble my new Salli Saddle Chair?",
-                            "answer": "Assembly is simple and requires no tools. The chair consists of only three main parts. If your chair arrives in cold weather, allow the gas spring to warm to room temperature before assembly. Detailed instruction manuals are available and can also be obtained from Haitech Medical Solutions."
-                        },
-                        {
-                            "id": 219,
-                            "question": "How often should I replace the castors?",
-                            "answer": "Salli recommends replacing castors every five years to maintain smooth mobility. Sand, dust, and floor debris can accumulate between the floor and castors over time, causing wear. Replacement castors and spare parts can be obtained through Haitech Medical Solutions."
-                        },
-                        {
-                            "id": 220,
-                            "question": "What warranty does the Salli Saddle Chair come with?",
-                            "answer": "Salli products come with a manufacturer's warranty covering defects in materials and workmanship. Please contact Haitech Medical Solutions for specific warranty terms applicable to your purchase. Salli Systems is ISO 9001 certified, reflecting their commitment to consistent product quality."
-                        },
-                        {
-                            "id": 221,
-                            "question": "Are spare parts available?",
-                            "answer": "Yes. A comprehensive range of spare parts and accessories is available, including castors, seat covers, gas springs, and more. Please reach out to Haitech Medical Solutions for assistance sourcing the correct parts for your specific Salli model."
-                        }
-                    ]
-                },
-                {
-                    "title": "Ordering & Support",
-                    "faqs": [
-                        {
-                            "id": 222,
-                            "question": "How can I purchase a Salli Saddle Chair through Haitech Medical Solutions?",
-                            "answer": "You can contact Haitech Medical Solutions directly to discuss your requirements, arrange a product demonstration, or place an order. Our team will help you identify the right model based on your profession, body type, and working environment."
-                        },
-                        {
-                            "id": 223,
-                            "question": "Can Haitech Medical Solutions assist with installation and training?",
-                            "answer": "Yes. Our team provides guidance on correct assembly, chair adjustment, and proper sitting technique to ensure you get the full ergonomic benefit from your Salli Saddle Chair from day one."
-                        },
-                        {
-                            "id": 224,
-                            "question": "Who should I contact for after-sales support?",
-                            "answer": "For any product queries, spare parts, warranty claims, or service needs related to your Salli Saddle Chair, please contact Haitech Medical Solutions. Our dedicated support team is available to assist you promptly."
                         }
                     ]
                 }
