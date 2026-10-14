@@ -1,13 +1,69 @@
 {
-	"version": "7",
-	"dialect": "postgresql",
-	"entries": [
-		{
-			"idx": 0,
-			"version": "7",
-			"when": 1777309981708,
-			"tag": "0000_premium_kabuki",
-			"breakpoints": true
-		}
-	]
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1777309981708,
+      "tag": "0000_premium_kabuki",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1782882541000,
+      "tag": "0001_orders",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1782882541001,
+      "tag": "0002_production_hardening",
+      "breakpoints": false
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1785386723000,
+      "tag": "0003_product_media_columns",
+      "breakpoints": false
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1787829710000,
+      "tag": "0004_supabase_auth_migration",
+      "breakpoints": false
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790231585446,
+      "tag": "0005_regular_wallop",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790233855243,
+      "tag": "0006_leads_persistence",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1790234846539,
+      "tag": "0007_leads_nullable_country_message",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1790244028560,
+      "tag": "0008_product_normalization",
+      "breakpoints": true
+    }
+  ]
 }

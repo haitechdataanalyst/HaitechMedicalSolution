@@ -17,3 +17,4 @@ export * from './admin-payments.controller.js';
 export * from './admin-coupons.controller.js';
 export * from './admin-revenue.controller.js';
 export * from './returns.controller.js';
+export * from './lead.controller.js';

@@ -1,5 +1,23 @@
 import { sql } from 'drizzle-orm';
-import { pgTable, uuid, varchar, timestamp, boolean, integer, index, uniqueIndex, text, smallint, decimal, date, jsonb, inet, check } from 'drizzle-orm/pg-core';
+import {
+	pgTable,
+	uuid,
+	varchar,
+	timestamp,
+	boolean,
+	integer,
+	index,
+	uniqueIndex,
+	unique,
+	text,
+	smallint,
+	decimal,
+	date,
+	jsonb,
+	inet,
+	check,
+	primaryKey,
+} from 'drizzle-orm/pg-core';
 import { authProviders } from '../constants/index.js';
 
 export const users = pgTable('users', {
@@ -106,6 +124,18 @@ export const orders = pgTable(
 	(table) => ({
 		userIdIdx: index('idx_orders_user_id').on(table.userId),
 		statusIdx: index('idx_orders_status').on(table.status),
+		// Phase 1 reconciliation (2026-09-24): these already existed live via
+		// drizzle/0002_production_hardening.sql, run directly against
+		// production outside drizzle-kit (CREATE INDEX CONCURRENTLY cannot run
+		// inside drizzle-kit's transaction-wrapped migrations) — declared here
+		// so the schema file matches reality.
+		paymentStatusIdx: index('idx_orders_payment_status').on(table.paymentStatus),
+		createdAtIdx: index('idx_orders_created_at').on(table.createdAt.desc()),
+		razorpayOrderIdIdx: index('idx_orders_razorpay_order_id')
+			.on(table.razorpayOrderId)
+			.where(sql`${table.razorpayOrderId} IS NOT NULL`),
+		razorpayOrderIdUniq: unique('uq_orders_razorpay_order_id').on(table.razorpayOrderId),
+		razorpayPaymentIdUniq: unique('uq_orders_razorpay_payment_id').on(table.razorpayPaymentId),
 	})
 );
 
@@ -127,6 +157,9 @@ export const orderItems = pgTable(
 	},
 	(table) => ({
 		orderIdIdx: index('idx_order_items_order_id').on(table.orderId),
+		// Phase 1 reconciliation (2026-09-24): already live via 0002, declared
+		// here to match reality — see orders table comment above.
+		quantityPositive: check('chk_order_items_quantity', sql`${table.quantity} > 0`),
 	})
 );
 
@@ -228,6 +261,9 @@ export const cartItems = pgTable(
 	},
 	(table) => ({
 		cartIdIdx: index('idx_cart_items_cart_id').on(table.cartId),
+		// Phase 1 reconciliation (2026-09-24): already live via 0002, declared
+		// here to match reality — see orders table comment above.
+		quantityPositive: check('chk_cart_items_quantity', sql`${table.quantity} > 0`),
 	})
 );
 
@@ -493,6 +529,9 @@ export const coupons = pgTable(
 	},
 	(table) => ({
 		codeIdx: uniqueIndex('uq_coupons_code').on(table.code),
+		// Phase 1 reconciliation (2026-09-24): already live via 0002, declared
+		// here to match reality — see orders table comment above.
+		valuePositive: check('chk_coupons_discount', sql`${table.value} > 0`),
 	})
 );
 
@@ -512,6 +551,13 @@ export const couponUses = pgTable(
 	},
 	(table) => ({
 		couponUserIdx: index('idx_coupon_uses_coupon_user').on(table.couponId, table.userId),
+		// Phase 1 reconciliation (2026-09-24): already live via 0002, declared
+		// here to match reality — see orders table comment above.
+		couponIdIdx: index('idx_coupon_uses_coupon_id').on(table.couponId),
+		userIdIdx: index('idx_coupon_uses_user_id').on(table.userId),
+		couponUserUniq: uniqueIndex('idx_coupon_uses_unique')
+			.on(table.couponId, table.userId)
+			.where(sql`${table.couponId} IS NOT NULL`),
 	})
 );
 
@@ -541,6 +587,11 @@ export const return_requests = pgTable(
 		orderIdIdx: index('idx_return_requests_order_id').on(table.orderId),
 		userIdIdx: index('idx_return_requests_user_id').on(table.userId),
 		statusIdx: index('idx_return_requests_status').on(table.status),
+		// Phase 1 reconciliation (2026-09-24): added as a supplemental
+		// statement alongside 0002, since chk_return_status was originally
+		// defined inline inside a CREATE TABLE IF NOT EXISTS that no-ops when
+		// the table already exists (it did) — declared here to match reality.
+		statusAllowed: check('chk_return_status', sql`${table.status} IN ('pending', 'approved', 'rejected', 'completed')`),
 	})
 );
 
@@ -567,5 +618,266 @@ export const securityAuditLog = pgTable(
 		eventTypeIdx: index('idx_sal_event_type').on(table.eventType),
 		ipAddressIdx: index('idx_sal_ip_address').on(table.ipAddress),
 		createdAtIdx: index('idx_sal_created_at').on(table.createdAt),
+	})
+);
+
+// ── Leads ─────────────────────────────────────────────────────────────────────
+// Phase 2: durable persistence for the 3 previously email-only lead-capture
+// flows (contact form, single-product quote, cart-wide quote). `source`
+// discriminates which flow produced the row. `productId`/`productName`/
+// `productSku`/`selectedVariant` are only populated for source=product_quote;
+// `lead_cart_items` rows are only populated for source=cart_quote (a cart
+// quote can list multiple products — one lead row, many line-item rows).
+// No FK to a variants table yet — product_variants doesn't exist until
+// Phase 3, so `selectedVariant` stays a plain label snapshot for now.
+
+export const leads = pgTable(
+	'leads',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		source: varchar('source', { length: 30 }).notNull(),
+		name: varchar('name', { length: 100 }).notNull(),
+		email: varchar('email', { length: 255 }).notNull(),
+		phone: varchar('phone', { length: 20 }).notNull(),
+		state: varchar('state', { length: 100 }),
+		postcode: varchar('postcode', { length: 15 }),
+		// Nullable, unlike contact_form/product_quote's required country: the
+		// cart_quote flow (quote.ts) never collects a country field at all.
+		country: varchar('country', { length: 2 }),
+		subject: varchar('subject', { length: 200 }).notNull(),
+		// Nullable: contact_form/product_quote require a message, but
+		// cart_quote's message field is optional (the cart items themselves
+		// carry the request).
+		message: text('message'),
+		productId: integer('product_id').references(() => products.id, { onDelete: 'set null' }),
+		productName: varchar('product_name', { length: 200 }),
+		productSku: varchar('product_sku', { length: 100 }),
+		selectedVariant: varchar('selected_variant', { length: 200 }),
+		status: varchar('status', { length: 20 }).default('new').notNull(),
+		ipAddress: inet('ip_address'),
+		userAgent: text('user_agent'),
+		emailSent: boolean('email_sent').default(false).notNull(),
+		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+	},
+	(table) => ({
+		emailIdx: index('idx_leads_email').on(table.email),
+		ipAddressIdx: index('idx_leads_ip_address').on(table.ipAddress),
+		createdAtIdx: index('idx_leads_created_at').on(table.createdAt),
+		statusIdx: index('idx_leads_status').on(table.status),
+		productIdIdx: index('idx_leads_product_id').on(table.productId),
+		sourceAllowed: check('chk_leads_source', sql`${table.source} IN ('contact_form', 'product_quote', 'cart_quote')`),
+		statusAllowed: check('chk_leads_status', sql`${table.status} IN ('new', 'contacted', 'converted', 'closed')`),
+	})
+);
+
+export const leadCartItems = pgTable(
+	'lead_cart_items',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		leadId: uuid('lead_id')
+			.notNull()
+			.references(() => leads.id, { onDelete: 'cascade' }),
+		productName: varchar('product_name', { length: 255 }).notNull(),
+		sku: varchar('sku', { length: 100 }),
+		quantity: integer('quantity').notNull(),
+		unitPrice: integer('unit_price'),
+		customization: text('customization'),
+	},
+	(table) => ({
+		leadIdIdx: index('idx_lead_cart_items_lead_id').on(table.leadId),
+		quantityPositive: check('chk_lead_cart_items_quantity', sql`${table.quantity} > 0`),
+	})
+);
+
+// ── Product Normalization (Phase 3A) ─────────────────────────────────────────
+// EXPAND-only: these tables exist alongside products.contentBlocks/
+// frameVariants/variants (still the live source for the storefront). No data
+// is migrated into them yet, no API/route reads or writes them yet. Phase 3B+
+// backfills from data/products.json; only then does the frontend cut over.
+
+export const productOptions = pgTable(
+	'product_options',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		name: varchar('name', { length: 100 }).notNull(),
+		inputType: varchar('input_type', { length: 20 }).notNull(),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+		modifiedAt: timestamp('modified_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_options_product_id').on(table.productId),
+		inputTypeAllowed: check('chk_product_options_input_type', sql`${table.inputType} IN ('select', 'swatch', 'radio')`),
+	})
+);
+
+export const productOptionValues = pgTable(
+	'product_option_values',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		optionId: uuid('option_id')
+			.notNull()
+			.references(() => productOptions.id, { onDelete: 'cascade' }),
+		label: varchar('label', { length: 100 }).notNull(),
+		code: varchar('code', { length: 50 }),
+		hexColor: varchar('hex_color', { length: 20 }),
+		priceModifier: integer('price_modifier').default(0).notNull(),
+		imageUrl: text('image_url'),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		optionIdIdx: index('idx_product_option_values_option_id').on(table.optionId),
+	})
+);
+
+export const productVariants = pgTable(
+	'product_variants',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		sku: varchar('sku', { length: 100 }).notNull().unique(),
+		price: integer('price'),
+		currency: varchar('currency', { length: 10 }).default('INR').notNull(),
+		imageUrl: text('image_url'),
+		active: boolean('active').default(true).notNull(),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+		modifiedAt: timestamp('modified_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_variants_product_id').on(table.productId),
+	})
+);
+
+// Records which option values make up a given variant (e.g. variant X =
+// {Frame: Blues} + {Color: Grey}) — without this, product_variants and
+// product_options/product_option_values would be structurally unrelated.
+export const productVariantOptionValues = pgTable(
+	'product_variant_option_values',
+	{
+		variantId: uuid('variant_id')
+			.notNull()
+			.references(() => productVariants.id, { onDelete: 'cascade' }),
+		optionValueId: uuid('option_value_id')
+			.notNull()
+			.references(() => productOptionValues.id, { onDelete: 'cascade' }),
+	},
+	(table) => ({
+		pk: primaryKey({ columns: [table.variantId, table.optionValueId] }),
+		optionValueIdIdx: index('idx_pvov_option_value_id').on(table.optionValueId),
+	})
+);
+
+export const productImages = pgTable(
+	'product_images',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		url: text('url').notNull(),
+		altText: varchar('alt_text', { length: 255 }),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		isPrimary: boolean('is_primary').default(false).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_images_product_id').on(table.productId),
+	})
+);
+
+export const productSpecifications = pgTable(
+	'product_specifications',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		label: varchar('label', { length: 100 }).notNull(),
+		value: text('value').notNull(),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_specifications_product_id').on(table.productId),
+	})
+);
+
+export const productPackageContents = pgTable(
+	'product_package_contents',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		itemLabel: varchar('item_label', { length: 255 }).notNull(),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_package_contents_product_id').on(table.productId),
+	})
+);
+
+export const productRelationships = pgTable(
+	'product_relationships',
+	{
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		relatedProductId: integer('related_product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		pk: primaryKey({ columns: [table.productId, table.relatedProductId] }),
+		relatedProductIdIdx: index('idx_product_relationships_related_product_id').on(table.relatedProductId),
+	})
+);
+
+export const productAddons = pgTable(
+	'product_addons',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		label: varchar('label', { length: 200 }).notNull(),
+		price: integer('price'),
+		sku: varchar('sku', { length: 100 }),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_addons_product_id').on(table.productId),
+	})
+);
+
+export const productCustomFields = pgTable(
+	'product_custom_fields',
+	{
+		id: uuid('id').defaultRandom().primaryKey(),
+		productId: integer('product_id')
+			.notNull()
+			.references(() => products.id, { onDelete: 'cascade' }),
+		fieldKey: varchar('field_key', { length: 100 }).notNull(),
+		label: varchar('label', { length: 200 }).notNull(),
+		fieldType: varchar('field_type', { length: 20 }).notNull(),
+		options: jsonb('options'),
+		required: boolean('required').default(false).notNull(),
+		maxLength: integer('max_length'),
+		sortOrder: integer('sort_order').default(0).notNull(),
+		createdAt: timestamp('created_at').defaultNow().notNull(),
+	},
+	(table) => ({
+		productIdIdx: index('idx_product_custom_fields_product_id').on(table.productId),
+		fieldTypeAllowed: check('chk_product_custom_fields_field_type', sql`${table.fieldType} IN ('text', 'number', 'select', 'textarea', 'boolean')`),
 	})
 );

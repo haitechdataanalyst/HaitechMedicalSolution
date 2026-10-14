@@ -11,6 +11,7 @@ export const httpStatus = {
 	NOT_FOUND: 404, // Resource not found
 	CONFLICT: 409, // Duplicate, already exists (e.g., user/email conflict)
 	UNPROCESSABLE_ENTITY: 422, // Validation failed, semantic errors
+	TOO_MANY_REQUESTS: 429, // Rate limit exceeded
 
 	// 5xx Server Errors
 	INTERNAL_SERVER_ERROR: 500, // Unexpected server crash

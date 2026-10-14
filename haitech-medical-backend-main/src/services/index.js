@@ -19,4 +19,5 @@ export * as inventoryService from './inventory.service.js';
 export * as revenueService from './revenue.service.js';
 export * as supabaseAuthService from './supabaseAuth.service.js';
 export * as zohoService from './zoho.service.js';
+export * as leadService from './lead.service.js';
 export { checkDependencies } from './health.service.js';

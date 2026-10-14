@@ -14,6 +14,7 @@ import dashboardRouter from './dashboard.routes.js';
 import adminRouter from './admin.routes.js';
 import returnsRouter from './returns.routes.js';
 import inventoryRouter from './inventory.routes.js';
+import leadRouter from './lead.routes.js';
 import { env } from '../config/index.js';
 import { catchAsync, getMemorySnapshot } from '../utils/index.js';
 import { checkDependencies } from '../services/index.js';
@@ -40,6 +41,7 @@ const routers = {
 	'/admin': adminRouter,
 	'/returns': returnsRouter,
 	'/inventory': inventoryRouter,
+	'/leads': leadRouter,
 };
 
 Object.entries(routers).forEach(([path, router]) => {

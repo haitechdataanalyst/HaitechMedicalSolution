@@ -17,6 +17,7 @@ export const forbiddenError = (message = 'Forbidden') => new ApiError(httpStatus
 export const notFoundError = (message = 'Not found') => new ApiError(httpStatus.NOT_FOUND, message);
 export const conflictError = (message = 'Conflict') => new ApiError(httpStatus.CONFLICT, message);
 export const validationError = (message = 'Validation failed') => new ApiError(httpStatus.UNPROCESSABLE_ENTITY, message);
+export const tooManyRequestsError = (message = 'Too many requests') => new ApiError(httpStatus.TOO_MANY_REQUESTS, message);
 
 // 5xx — server errors (isOperational = false, unexpected failures)
 export const internalError = (message = 'Internal server error') => new ApiError(httpStatus.INTERNAL_SERVER_ERROR, message, false);
