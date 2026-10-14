@@ -1,91 +1,92 @@
 "use client";
 
 import Image from "next/image";
-import { X, GitCompareArrows, Trash2, Package2 } from "lucide-react";
+import { X, Package2 } from "lucide-react";
 import { useCompare } from "./CompareProvider";
 
 export function CompareBar() {
-    const { items, remove, clear, openModal } = useCompare();
+    const { items, remove, clear, openModal, activeGroup } = useCompare();
 
     if (items.length === 0) return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-[60] animate-in slide-in-from-bottom-4 duration-300">
-            <div className="border-t border-neutral-200 bg-white shadow-[0_-8px_32px_rgba(0,0,0,0.12)]">
-                <div className="container py-3">
-                    <div className="flex items-center gap-4">
+        <div
+            role="region"
+            aria-label="Product comparison"
+            className="material-bar pb-safe fixed right-0 bottom-0 left-0 z-[60] shadow-[0_-1px_0_rgba(15,23,42,0.08),0_-12px_32px_-16px_rgba(15,23,42,0.18)] transition-[opacity,transform] duration-300 ease-out starting:opacity-0 motion-safe:starting:translate-y-4"
+        >
+            <div className="container py-3">
+                <div className="flex items-center gap-3 sm:gap-4">
+                    {/* Label */}
+                    <p className="hidden shrink-0 text-sm font-semibold text-neutral-900 sm:block">
+                        Compare <span className="font-normal text-neutral-500 tabular-nums">{items.length}/3</span>
+                        {activeGroup && <span className="font-normal text-neutral-500"> · {activeGroup.label}</span>}
+                    </p>
 
-                        {/* Label */}
-                        <div className="hidden shrink-0 items-center gap-2 sm:flex">
-                            <GitCompareArrows className="h-4 w-4 text-primary-500" />
-                            <span className="text-sm font-semibold text-neutral-700">Compare</span>
-                            <span className="rounded-full bg-primary-100 px-2 py-0.5 text-xs font-bold text-primary-700">
-                                {items.length}/3
-                            </span>
-                        </div>
-
-                        {/* Product slots */}
-                        <div className="flex flex-1 items-center gap-3 overflow-x-auto pb-0.5">
-                            {items.map((item) => (
-                                <div
-                                    key={item.id}
-                                    className="group relative flex shrink-0 items-center gap-2.5 rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2"
+                    {/* Product slots */}
+                    <ul className="scrollbar-hide flex flex-1 items-center gap-2 overflow-x-auto">
+                        {items.map((item) => (
+                            <li key={item.id} className="flex shrink-0 items-center gap-2.5 rounded-2xl bg-white py-1.5 pl-1.5 shadow-[0_0_0_1px_rgba(15,23,42,0.06)]">
+                                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-neutral-50">
+                                    {item.image ? (
+                                        <Image src={item.image} alt={item.name} fill className="object-contain p-1 mix-blend-multiply" sizes="40px" />
+                                    ) : (
+                                        <div className="flex h-full w-full items-center justify-center">
+                                            <Package2 className="h-4 w-4 text-neutral-400" aria-hidden="true" />
+                                        </div>
+                                    )}
+                                </div>
+                                <span className="max-w-[120px] truncate text-[13px] font-medium text-neutral-800">{item.name}</span>
+                                <button
+                                    type="button"
+                                    onClick={() => remove(item.id)}
+                                    className="flex h-11 w-9 items-center justify-center text-neutral-500 transition-colors hover:text-neutral-900"
+                                    aria-label={`Remove ${item.name}`}
                                 >
-                                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-neutral-100 bg-white">
-                                        {item.image ? (
-                                            <Image src={item.image} alt={item.name} fill className="object-contain p-1" sizes="40px" />
-                                        ) : (
-                                            <div className="flex h-full w-full items-center justify-center">
-                                                <Package2 className="h-4 w-4 text-neutral-300" />
-                                            </div>
-                                        )}
-                                    </div>
-                                    <span className="max-w-[110px] truncate text-xs font-medium text-neutral-700">
-                                        {item.name}
+                                    <span className="flex h-6 w-6 items-center justify-center rounded-full hover:bg-neutral-900/[0.06]">
+                                        <X className="h-3.5 w-3.5" aria-hidden="true" />
                                     </span>
-                                    <button
-                                        onClick={() => remove(item.id)}
-                                        className="ml-0.5 rounded-full p-0.5 text-neutral-300 transition-colors hover:bg-neutral-200 hover:text-neutral-600"
-                                        aria-label={`Remove ${item.name}`}
-                                    >
-                                        <X className="h-3 w-3" />
-                                    </button>
-                                </div>
-                            ))}
+                                </button>
+                            </li>
+                        ))}
 
-                            {/* Empty slots */}
-                            {Array.from({ length: Math.max(0, 2 - items.length) }).map((_, i) => (
-                                <div
-                                    key={i}
-                                    className="flex h-[52px] w-[80px] shrink-0 items-center justify-center rounded-xl border border-dashed border-neutral-200 bg-neutral-50"
-                                >
-                                    <span className="text-[10px] text-neutral-300">+ Add more</span>
-                                </div>
-                            ))}
-                        </div>
+                        {/* Empty slots */}
+                        {Array.from({ length: Math.max(0, 2 - items.length) }).map((_, i) => (
+                            <li key={i} className="flex h-[53px] w-24 shrink-0 items-center justify-center rounded-2xl bg-neutral-900/[0.04]">
+                                <span className="text-xs text-neutral-500">Add another</span>
+                            </li>
+                        ))}
+                    </ul>
 
-                        {/* Actions */}
-                        <div className="flex shrink-0 items-center gap-2">
-                            <button
-                                onClick={clear}
-                                className="flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-700"
-                            >
-                                <Trash2 className="h-3.5 w-3.5" />
-                                <span className="hidden sm:inline">Clear</span>
-                            </button>
-                            <button
-                                onClick={() => {
-                                    const section = document.getElementById("inline-compare-section");
-                                    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
-                                    else openModal();
-                                }}
-                                disabled={items.length < 2}
-                                className="flex items-center gap-2 rounded-xl bg-primary-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_2px_12px_-2px_rgb(31_182_205/0.45)] transition-all hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-40"
-                            >
-                                <GitCompareArrows className="h-4 w-4" />
-                                Compare Now
-                            </button>
-                        </div>
+                    {/* Actions */}
+                    <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+                        <button
+                            type="button"
+                            onClick={clear}
+                            className="hidden min-h-11 items-center rounded-full px-4 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-900/[0.05] hover:text-neutral-900 sm:inline-flex"
+                        >
+                            Clear
+                        </button>
+                        <button
+                            type="button"
+                            onClick={clear}
+                            className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-600 transition-colors hover:bg-neutral-900/[0.05] sm:hidden"
+                            aria-label="Clear comparison"
+                        >
+                            <X className="h-4 w-4" aria-hidden="true" />
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                const section = document.getElementById("inline-compare-section");
+                                if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+                                else openModal();
+                            }}
+                            disabled={items.length < 2}
+                            className="bg-primary-800 hover:bg-primary-900 focus-visible:outline-primary-500 inline-flex min-h-11 items-center rounded-full px-5 text-sm font-semibold text-white transition-[background-color,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40 motion-safe:enabled:active:scale-[0.97]"
+                        >
+                            Compare<span className="hidden sm:inline">&nbsp;now</span>
+                        </button>
                     </div>
                 </div>
             </div>

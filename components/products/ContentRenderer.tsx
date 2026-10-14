@@ -1,5 +1,7 @@
 import { ContentBlock, Product, Frame, HeadlightCategory } from "@/types";
-import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock } from "./blocks";
+import { HeroBlock, DescriptionBlock, SpecificationsTable, InfoBlock, ActionsBlock, GalleryBlock, AudienceBlock, CareBlock } from "./blocks";
+import { productNameWithBrand } from "@/lib/product-seo";
+import type { ResolvedPresentation } from "@/lib/product-presentation";
 
 interface ContentRendererProps {
     blocks: ContentBlock[];
@@ -9,6 +11,8 @@ interface ContentRendererProps {
     onVariantSelect?: (imageUrl: string) => void;
     frames?: Frame[];
     headlightCategories?: HeadlightCategory[];
+    /** Opt-in progressive disclosure for this product (see lib/product-presentation). */
+    presentation?: ResolvedPresentation | null;
 }
 
 // Define which blocks go in which section for the product layout
@@ -16,7 +20,7 @@ const leftSectionBlocks = ["hero", "gallery"];
 const rightSectionBlocks = ["description", "actions"];
 const bottomSectionBlocks = ["specifications", "info"];
 
-export default function ContentRenderer({ blocks, product, section = "all", selectedVariantImage, onVariantSelect, frames = [], headlightCategories = [] }: ContentRendererProps) {
+export default function ContentRenderer({ blocks, product, section = "all", selectedVariantImage, onVariantSelect, frames = [], headlightCategories = [], presentation }: ContentRendererProps) {
     const filteredBlocks = blocks.filter((block) => {
         if (section === "all") return true;
         if (section === "left") return leftSectionBlocks.includes(block.type);
@@ -31,15 +35,19 @@ export default function ContentRenderer({ blocks, product, section = "all", sele
                     case "hero":
                         return <HeroBlock key={index} data={block.data} product={product} externalSelectedImage={selectedVariantImage} />;
                     case "description":
-                        return <DescriptionBlock key={index} data={block.data} />;
+                        return <DescriptionBlock key={index} data={block.data} presentation={presentation} />;
                     case "specifications":
-                        return <SpecificationsTable key={index} data={block.data} />;
+                        return <SpecificationsTable key={index} data={block.data} visibleRows={presentation?.specVisibleRows} />;
                     case "info":
                         return <InfoBlock key={index} data={block.data} />;
                     case "actions":
                         return <ActionsBlock key={index} data={block.data} product={product} onVariantSelect={onVariantSelect} frames={frames} headlightCategories={headlightCategories} />;
                     case "gallery":
-                        return <GalleryBlock key={index} data={block.data} />;
+                        return <GalleryBlock key={index} data={block.data} productName={productNameWithBrand(product)} />;
+                    case "audience":
+                        return <AudienceBlock key={index} data={block.data} />;
+                    case "care":
+                        return <CareBlock key={index} data={block.data} />;
                     default:
                         return null;
                 }

@@ -1,92 +1,74 @@
 import { InventoryItem } from "@/lib/inventory";
-import { Package2, Tag, Layers, AlertCircle } from "lucide-react";
+import { Package2, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 
 const ITEM_TYPE_STYLES: Record<string, string> = {
-    Sale:   "bg-emerald-50 text-emerald-700 border border-emerald-200",
-    Demo:   "bg-amber-50  text-amber-700  border border-amber-200",
-    Spare:  "bg-blue-50   text-blue-700   border border-blue-200",
+    Sale: "bg-emerald-50 text-emerald-800",
+    Demo: "bg-amber-50 text-amber-800",
+    Spare: "bg-blue-50 text-blue-800",
 };
 
 // One restrained, neutral treatment for every brand — see lib/brand.ts for the
 // same decision applied to the main product card.
-const NEUTRAL_BRAND_BADGE = "bg-neutral-100 text-neutral-600";
+const NEUTRAL_BRAND_BADGE = "bg-neutral-900/[0.05] text-neutral-700";
+
+const BADGE = "rounded-full px-2.5 py-1 text-xs font-medium";
 
 export default function InventoryItemCard({ item }: { item: InventoryItem }) {
-    const inStock    = item.StockOnHand > 0;
-    const typeStyle  = ITEM_TYPE_STYLES[item.ItemType] ?? "bg-neutral-100 text-neutral-600";
+    const inStock = item.StockOnHand > 0;
+    const typeStyle = ITEM_TYPE_STYLES[item.ItemType] ?? NEUTRAL_BRAND_BADGE;
 
     return (
-        <div className="flex flex-col gap-3 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_24px_rgba(31,182,205,0.10)] active:translate-y-0">
+        <div className={cn(SURFACE_CARD, "flex flex-col p-5")}>
             {/* Header row — brand + type */}
             <div className="flex items-start justify-between gap-2">
-                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${NEUTRAL_BRAND_BADGE}`}>{item.Brand}</span>
-                <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${typeStyle}`}>{item.ItemType}</span>
+                <span className={cn(BADGE, NEUTRAL_BRAND_BADGE)}>{item.Brand}</span>
+                <span className={cn(BADGE, typeStyle)}>{item.ItemType}</span>
             </div>
 
             {/* Product name */}
-            <div>
-                <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-900">
-                    {item.ProductName || item.OriginalName}
-                </p>
-                {item.Variant && (
-                    <p className="mt-0.5 text-xs text-neutral-500">{item.Variant}</p>
-                )}
-            </div>
+            <h3 className="mt-4 line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.ProductName || item.OriginalName}</h3>
+            {item.Variant && <p className="mt-1 text-[13px] text-neutral-600">{item.Variant}</p>}
 
-            {/* Category breadcrumb */}
-            <div className="flex items-center gap-1 text-xs text-neutral-400">
-                <Layers size={11} />
-                <span>{item.Category}</span>
-                {item.Subcategory && item.Subcategory !== item.Category && (
-                    <>
-                        <span>/</span>
-                        <span>{item.Subcategory}</span>
-                    </>
-                )}
-            </div>
-
-            {/* SKU */}
-            <div className="flex items-center gap-1 text-xs text-neutral-400">
-                <Tag size={11} />
-                <span className="font-mono">{item.StandardSKU || item.OriginalSKU}</span>
-            </div>
+            {/* Category trail + SKU */}
+            <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+                {item.Category}
+                {item.Subcategory && item.Subcategory !== item.Category && <> / {item.Subcategory}</>}
+            </p>
+            <p className="mt-0.5 font-mono text-xs text-neutral-500">{item.StandardSKU || item.OriginalSKU}</p>
 
             {/* Price + stock */}
-            <div className="flex items-center justify-between border-t border-neutral-50 pt-1">
-                <div>
-                    {item.SellingPrice > 0 ? (
-                        <p className="text-sm font-bold text-neutral-800">
-                            ₹{item.SellingPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
-                        </p>
-                    ) : (
-                        <p className="text-xs italic text-neutral-400">Price on request</p>
-                    )}
-                </div>
+            <div className="mt-5 flex items-center justify-between gap-2 pb-4">
+                {item.SellingPrice > 0 ? (
+                    <p className="text-base font-semibold text-neutral-900 tabular-nums">₹{item.SellingPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</p>
+                ) : (
+                    <p className="text-[13px] text-neutral-500">Price on request</p>
+                )}
 
-                <div className={`flex items-center gap-1 text-xs font-medium ${inStock ? "text-emerald-600" : "text-neutral-400"}`}>
+                <p className={cn("flex items-center gap-1 text-[13px] font-medium", inStock ? "text-emerald-700" : "text-neutral-500")}>
                     {inStock ? (
                         <>
-                            <Package2 size={12} />
+                            <Package2 className="h-3.5 w-3.5" aria-hidden="true" />
                             <span>{item.StockOnHand} in stock</span>
                         </>
                     ) : (
                         <>
-                            <AlertCircle size={12} />
+                            <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
                             <span>Out of stock</span>
                         </>
                     )}
-                </div>
+                </p>
             </div>
 
             {/* CTA */}
             <Link
                 href={`/support/contact?subject=${inStock ? "Quote+Request" : "Restock+Enquiry"}:+${encodeURIComponent(item.StandardSKU || item.OriginalSKU)}&product=${encodeURIComponent(item.ProductName || item.OriginalName)}`}
-                className={`mt-auto block w-full rounded-full border py-2 text-center text-xs font-medium transition-colors ${
-                    inStock
-                        ? "border-neutral-200 text-neutral-700 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
-                        : "border-neutral-100 text-neutral-400 hover:border-neutral-200 hover:bg-neutral-50 hover:text-neutral-600"
-                }`}
+                className={cn(
+                    "focus-visible:outline-primary-500 mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full text-sm font-semibold transition-[transform,background-color] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]",
+                    inStock ? "bg-primary-50 text-primary-800 hover:bg-primary-100" : "bg-neutral-900/[0.05] text-neutral-800 hover:bg-neutral-900/[0.08]"
+                )}
             >
                 {inStock ? "Request Quote" : "Ask About Restock"}
             </Link>

@@ -14,19 +14,19 @@ export default function InlineSpecificationsTable({ title, rows }: InlineSpecifi
 
     return (
         <div>
-            {title && <h3 className="mb-3 text-sm font-semibold text-neutral-700">{title}</h3>}
-            <div className="overflow-hidden rounded-lg border border-neutral-200">
-                <table className="w-full text-sm">
-                    <tbody>
-                        {rows.map((row, idx) => (
-                            <tr key={idx} className={idx % 2 === 0 ? "bg-neutral-50" : "bg-white"}>
-                                <td className="w-1/3 px-3 py-2.5 font-medium text-neutral-600">{row.label}</td>
-                                <td className="px-3 py-2.5 text-neutral-800">{row.value}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+            {title && <h3 className="mb-1 text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{title}</h3>}
+            <table className="w-full border-collapse text-[15px]">
+                <tbody>
+                    {rows.map((row, idx) => (
+                        <tr key={idx} className="border-b border-neutral-900/[0.06] last:border-b-0">
+                            <th scope="row" className="w-2/5 py-3 pr-4 text-left align-top font-normal text-neutral-500">
+                                {row.label}
+                            </th>
+                            <td className="py-3 align-top text-neutral-900">{row.value}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }

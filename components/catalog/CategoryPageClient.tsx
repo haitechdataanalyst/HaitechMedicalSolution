@@ -9,6 +9,8 @@ import { ArrowRight, Search, X, Heart } from "lucide-react";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { shouldShowPrice } from "@/lib/config";
 import { detectBrand } from "@/lib/brand";
+import { isCatalogueProductId } from "@/lib/headlight-products";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
 
 interface CategoryPageClientProps {
     initialItems: CategoryWithPath[] | ProductWithPath[];
@@ -25,31 +27,33 @@ function SafeImage({ src, alt, ...props }: React.ComponentProps<typeof Image>) {
     return <Image {...props} src={imgSrc} alt={alt} onError={() => setImgSrc(PLACEHOLDER)} />;
 }
 
+// Card material + hover/press motion are shared with the home page (components/ui/surfaces).
+const CARD_CLASS = `${INTERACTIVE_CARD} p-2`;
+const CARD_MEDIA = "relative aspect-square overflow-hidden rounded-xl bg-neutral-50";
+const CARD_IMAGE = "mix-blend-multiply object-contain p-6 transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]";
+const CARD_SIZES = "(max-width: 1024px) 50vw, 360px";
+
+function CardLink({ label }: { label: string }) {
+    return (
+        <span className="text-primary-700 mt-auto inline-flex items-center gap-1 pt-3 text-sm font-medium">
+            {label}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
+        </span>
+    );
+}
+
 function CategoryCard({ category }: { category: CategoryWithPath }) {
     const href = category.path || category.specialPage || `/product-category/${category.slug}`;
     const image = category.image || PLACEHOLDER;
     return (
-        <Link
-            href={href}
-            className="group flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
-        >
-            <div className="relative aspect-square overflow-hidden bg-white">
-                <SafeImage
-                    src={image}
-                    alt={category.name}
-                    fill
-                    className="mix-blend-multiply object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 220px"
-                />
+        <Link href={href} className={CARD_CLASS}>
+            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+            <div className={CARD_MEDIA}>
+                <SafeImage src={image} alt={category.name} fill className={CARD_IMAGE} sizes={CARD_SIZES} />
             </div>
-            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                <h3 className="mb-3 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
-                    {category.name}
-                </h3>
-                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
-                    View Range
-                    <ArrowRight className="h-3 w-3" />
-                </span>
+            <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
+                <h2 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{category.name}</h2>
+                <CardLink label="View range" />
             </div>
         </Link>
     );
@@ -59,81 +63,99 @@ function ProductCard({ product }: { product: ProductWithPath }) {
     const { toggle, isWished } = useWishlist();
     const wished = isWished(String(product.id));
     const brand = detectBrand(product.sku);
-    const image =
-        product.defaultImage ||
-        product.variants?.[0]?.image ||
-        (product.gallery && product.gallery.length > 0 ? product.gallery[0] : "") ||
-        PLACEHOLDER;
+    const image = product.defaultImage || product.variants?.[0]?.image || (product.gallery && product.gallery.length > 0 ? product.gallery[0] : "") || PLACEHOLDER;
     const path = product.path || `/product/${product.slug}`;
     return (
-        <Link
-            href={path}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:border-neutral-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
-        >
-            <div className="relative aspect-square overflow-hidden bg-white">
-                <SafeImage
-                    src={image}
-                    alt={product.name}
-                    fill
-                    className="mix-blend-multiply object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 220px"
-                />
+        <Link href={path} className={CARD_CLASS}>
+            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+            <div className={CARD_MEDIA}>
+                <SafeImage src={image} alt={product.name} fill className={CARD_IMAGE} sizes={CARD_SIZES} />
+            </div>
+            {/* 44px hit area around a 32px visual. Always visible on touch; revealed on hover only where hover exists. */}
+            {isCatalogueProductId(product.id) && (
                 <button
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggle(String(product.id)); }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggle(String(product.id));
+                    }}
                     aria-label={wished ? "Remove from wishlist" : "Save to wishlist"}
+                    aria-pressed={wished}
                     className={cn(
-                        "absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full border shadow-sm transition-all duration-150",
-                        wished
-                            ? "border-rose-200 bg-rose-50 text-rose-500"
-                            : "border-neutral-200 bg-white/90 text-neutral-300 opacity-0 group-hover:opacity-100 hover:border-rose-200 hover:text-rose-400"
+                        "focus-visible:outline-primary-500 absolute top-2 right-2 flex h-11 w-11 items-center justify-center rounded-full transition-opacity duration-200 ease-out focus-visible:opacity-100 focus-visible:outline-2",
+                        !wished && "[@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100"
                     )}
                 >
-                    <Heart className={cn("h-3.5 w-3.5 transition-all", wished && "fill-current text-rose-500")} />
-                </button>
-            </div>
-            <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                <h3 className="mb-1 line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">
-                    {product.name}
-                </h3>
-                {/* Fixed height (2 lines at leading-relaxed) so cards stay aligned in a row regardless of copy length */}
-                <p className="mb-2 line-clamp-2 h-[3.25em] text-[11px] leading-relaxed text-neutral-500">
-                    {product.description}
-                </p>
-                {shouldShowPrice(brand.name) && (product.basePrice ? (
-                    <p className="mb-2 text-base font-bold text-neutral-900">
-                        {formatPrice(product.basePrice, product.currency ?? "INR")}
-                    </p>
-                ) : (
-                    <p className="mb-2 text-xs text-neutral-400">Price on request</p>
-                ))}
-                <div className="mt-auto flex items-center justify-between pt-1">
-                    <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
-                        View
-                        <ArrowRight className="h-2.5 w-2.5" />
+                    <span
+                        className={cn(
+                            "flex h-8 w-8 items-center justify-center rounded-full shadow-[0_1px_3px_rgba(15,23,42,0.12)]",
+                            wished ? "bg-rose-50 text-rose-500" : "bg-white/90 text-neutral-400 hover:text-rose-500"
+                        )}
+                    >
+                        <Heart className={cn("h-4 w-4", wished && "fill-current")} />
                     </span>
+                </button>
+            )}
+            <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
+                <h2 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{product.name}</h2>
+                {/* Fixed height (2 lines at leading-relaxed) so cards stay aligned in a row regardless of copy length */}
+                <p className="mt-1 line-clamp-2 h-[3.25em] text-[13px] leading-relaxed text-neutral-500">{product.description}</p>
+                {shouldShowPrice(brand.name) &&
+                    (product.basePrice ? (
+                        <p className="mt-2 text-base font-semibold text-neutral-900 tabular-nums">{formatPrice(product.basePrice, product.currency ?? "INR")}</p>
+                    ) : (
+                        <p className="mt-2 text-[13px] text-neutral-500">Price on request</p>
+                    ))}
+                <div className="mt-auto flex items-end justify-between">
+                    <CardLink label="View" />
+                    <span className="pb-px text-xs font-medium text-emerald-700">Free Delivery</span>
                 </div>
             </div>
         </Link>
     );
 }
 
-function RadioOption({ label, checked, onChange }: { label: string; checked: boolean; onChange: () => void }) {
-    return (
-        <label className="group flex cursor-pointer items-center gap-2.5">
-            <div
-                className={cn(
-                    "flex h-4 w-4 items-center justify-center rounded-full border-2 transition-colors",
-                    checked ? "border-primary-500 bg-primary-500" : "border-neutral-300 group-hover:border-primary-400"
-                )}
+// Two choices get an inline segmented control next to the search it affects; longer lists fall back to a select.
+const SEGMENTED_MAX_OPTIONS = 2;
+
+function SortControl({ options, value, onChange }: { options: { value: SortOption; label: string }[]; value: SortOption; onChange: (value: SortOption) => void }) {
+    if (options.length > SEGMENTED_MAX_OPTIONS) {
+        return (
+            <select
+                value={value}
+                onChange={(e) => onChange(e.target.value as SortOption)}
+                aria-label="Sort by"
+                className="focus-visible:ring-primary-500 h-12 rounded-full bg-white px-4 text-sm font-medium text-neutral-800 ring-1 ring-neutral-900/[0.08] focus:outline-none focus-visible:ring-2"
             >
-                {checked && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
-            </div>
-            <input type="radio" checked={checked} onChange={onChange} className="sr-only" />
-            <span className={cn("text-sm", checked ? "font-semibold text-primary-700" : "text-neutral-600 group-hover:text-neutral-800")}>
-                {label}
-            </span>
-        </label>
+                {options.map((o) => (
+                    <option key={o.value} value={o.value}>
+                        {o.label}
+                    </option>
+                ))}
+            </select>
+        );
+    }
+    return (
+        <div role="radiogroup" aria-label="Sort by" className="flex h-12 shrink-0 rounded-full bg-neutral-900/[0.05] p-0.5">
+            {options.map((o) => {
+                const isActive = value === o.value;
+                return (
+                    <button
+                        key={o.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={isActive}
+                        onClick={() => onChange(o.value)}
+                        className={cn(
+                            "focus-visible:outline-primary-500 rounded-full px-4 text-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-2",
+                            isActive ? "bg-white text-neutral-900 shadow-[0_1px_3px_rgba(15,23,42,0.12)]" : "text-neutral-500 hover:text-neutral-800"
+                        )}
+                    >
+                        {o.label}
+                    </button>
+                );
+            })}
+        </div>
     );
 }
 
@@ -169,7 +191,6 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
         return items;
     }, [initialType, categories, products, sortBy, searchQuery, maxPrice]);
 
-    const visibleItems = displayItems.slice(0, visibleCount);
     const hasMore = visibleCount < displayItems.length;
     const remaining = displayItems.length - visibleCount;
     const contentLabel = initialType === "categories" ? "categories" : "products";
@@ -190,47 +211,30 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
     if (initialType === "products" && products.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center py-20 text-center">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-primary-50">
-                    <svg className="h-10 w-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div className="bg-primary-50 mb-6 flex h-20 w-20 items-center justify-center rounded-full">
+                    <svg className="text-primary-400 h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
                     </svg>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-neutral-800">Products Coming Soon</h3>
-                <p className="mb-6 max-w-sm text-sm text-neutral-500">
-                    We&apos;re updating our catalogue for this category. Contact us for availability.
-                </p>
-                <a
-                    href="/support/contact"
-                    className="rounded-full bg-primary-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700"
-                >
+                <h2 className="mb-2 text-lg font-semibold text-neutral-800">Products Coming Soon</h2>
+                <p className="mb-6 max-w-sm text-sm text-neutral-500">We&apos;re updating our catalogue for this category. Contact us for availability.</p>
+                <Link href="/support/contact" className="bg-primary-600 hover:bg-primary-700 rounded-full px-6 py-2.5 text-sm font-medium text-white transition-colors">
                     Contact Us
-                </a>
+                </Link>
             </div>
         );
     }
 
+    const gridClass = hasPriceRange ? "grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 xl:grid-cols-4" : "grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6 2xl:grid-cols-4";
+
     return (
         <div className="flex gap-6 lg:gap-8">
-            {/* ── Sidebar ── */}
-            <aside className="hidden w-52 shrink-0 lg:block">
-                <div className="sticky top-4 overflow-hidden rounded-2xl border border-neutral-100 bg-white">
-                    <div className="border-b border-neutral-100 p-5">
-                        <p className="mb-3.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">Sort by</p>
-                        <div className="space-y-2.5">
-                            {sortOptions.map((opt) => (
-                                <RadioOption
-                                    key={opt.value}
-                                    label={opt.label}
-                                    checked={sortBy === opt.value}
-                                    onChange={() => { setSortBy(opt.value); resetCount(); }}
-                                />
-                            ))}
-                        </div>
-                    </div>
-
-                    {hasPriceRange && (
+            {/* ── Sidebar: only earns its space when there is a price range to filter ── */}
+            {hasPriceRange && (
+                <aside className="hidden w-56 shrink-0 lg:block">
+                    <div className="sticky top-4 rounded-2xl bg-white ring-1 ring-neutral-900/[0.05]">
                         <div className="p-5">
-                            <p className="mb-3.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">Price</p>
+                            <p className="mb-3 text-xs font-semibold text-neutral-500">Price</p>
                             <input
                                 type="range"
                                 min={priceMin}
@@ -242,87 +246,95 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
                                     setMaxPrice(v === priceMax ? null : v);
                                     resetCount();
                                 }}
-                                className="w-full accent-primary-600"
+                                className="accent-primary-600 w-full"
                             />
                             <div className="mt-2 flex items-center justify-between">
-                                <span className="text-xs text-neutral-400">{formatPrice(priceMin, "INR")}</span>
-                                <span className="text-xs font-semibold text-primary-700">
-                                    ≤ {formatPrice(maxPrice ?? priceMax, "INR")}
-                                </span>
+                                <span className="text-xs text-neutral-500 tabular-nums">{formatPrice(priceMin, "INR")}</span>
+                                <span className="text-primary-700 text-xs font-semibold tabular-nums">≤ {formatPrice(maxPrice ?? priceMax, "INR")}</span>
                             </div>
                             {maxPrice !== null && (
                                 <button
-                                    onClick={() => { setMaxPrice(null); resetCount(); }}
-                                    className="mt-2 text-[11px] text-neutral-400 transition-colors hover:text-primary-600"
+                                    onClick={() => {
+                                        setMaxPrice(null);
+                                        resetCount();
+                                    }}
+                                    className="hover:text-primary-700 mt-1 -ml-2 min-h-11 rounded-full px-2 text-xs font-medium text-neutral-500 transition-colors"
                                 >
-                                    Clear ×
+                                    Clear price filter
                                 </button>
                             )}
                         </div>
-                    )}
-                </div>
-            </aside>
+                    </div>
+                </aside>
+            )}
 
             {/* ── Main content ── */}
             <div className="min-w-0 flex-1">
-                <div className="mb-5 flex flex-wrap items-center gap-3 border-b border-neutral-100 pb-4">
-                    <div className="relative min-w-0 flex-1">
-                        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
+                <div className="flex flex-wrap items-center gap-3">
+                    <div className="relative min-w-0 flex-1 basis-60">
+                        <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-neutral-400" aria-hidden="true" />
                         <input
-                            type="text"
+                            type="search"
                             value={searchQuery}
-                            onChange={(e) => { setSearchQuery(e.target.value); resetCount(); }}
-                            placeholder={`Search ${contentLabel}...`}
-                            className="w-full rounded-xl border border-neutral-200 bg-white py-2 pl-9 pr-9 text-sm placeholder:text-neutral-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                resetCount();
+                            }}
+                            placeholder={`Search ${contentLabel}`}
+                            aria-label={`Search ${contentLabel}`}
+                            className="focus-visible:ring-primary-500 h-12 w-full rounded-full bg-white pr-12 pl-11 text-[15px] text-neutral-900 ring-1 ring-neutral-900/[0.08] transition-shadow placeholder:text-neutral-400 focus:outline-none focus-visible:ring-2 [&::-webkit-search-cancel-button]:hidden"
                         />
                         {searchQuery && (
                             <button
-                                onClick={() => { setSearchQuery(""); resetCount(); }}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                                onClick={() => {
+                                    setSearchQuery("");
+                                    resetCount();
+                                }}
+                                aria-label="Clear search"
+                                className="focus-visible:outline-primary-500 absolute top-1/2 right-0.5 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-400 hover:text-neutral-700 focus-visible:outline-2"
                             >
                                 <X className="h-4 w-4" />
                             </button>
                         )}
                     </div>
 
-                    <span className="shrink-0 text-sm text-neutral-500">
-                        <span className="font-bold text-neutral-800">{displayItems.length}</span> {contentLabel}
-                    </span>
-
-                    <select
+                    <SortControl
+                        options={sortOptions}
                         value={sortBy}
-                        onChange={(e) => { setSortBy(e.target.value as SortOption); resetCount(); }}
-                        className="rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 focus:border-primary-300 focus:outline-none lg:hidden"
-                    >
-                        {sortOptions.map((o) => (
-                            <option key={o.value} value={o.value}>{o.label}</option>
-                        ))}
-                    </select>
+                        onChange={(v) => {
+                            setSortBy(v);
+                            resetCount();
+                        }}
+                    />
                 </div>
 
+                <p className="mt-5 mb-4 text-[13px] text-neutral-500 tabular-nums" aria-live="polite">
+                    {displayItems.length} {contentLabel}
+                </p>
+
                 {displayItems.length === 0 && (
-                    <div className="flex h-40 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
+                    <div className="flex h-40 items-center justify-center rounded-2xl bg-white text-sm text-neutral-500 ring-1 ring-neutral-900/[0.05]">
                         No {contentLabel} found{searchQuery ? ` for "${searchQuery}"` : ""}
                     </div>
                 )}
 
                 {displayItems.length > 0 && (
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-4">
-                        {initialType === "categories"
-                            ? (visibleItems as CategoryWithPath[]).map((cat) => (
-                                  <CategoryCard key={cat.id} category={cat} />
-                              ))
-                            : (visibleItems as ProductWithPath[]).map((prod) => (
-                                  <ProductCard key={prod.id} product={prod} />
-                              ))}
+                    <div className={gridClass}>
+                        {/* Every card is in the HTML so each product link is crawlable; "Load More" only reveals the rest.
+                            `contents` leaves the grid layout untouched, `hidden` keeps the not-yet-loaded cards out of view. */}
+                        {displayItems.map((item, index) => (
+                            <div key={item.id} className={index < visibleCount ? "contents" : "hidden"}>
+                                {initialType === "categories" ? <CategoryCard category={item as CategoryWithPath} /> : <ProductCard product={item as ProductWithPath} />}
+                            </div>
+                        ))}
                     </div>
                 )}
 
                 {hasMore && (
-                    <div className="mt-8 flex justify-center">
+                    <div className="mt-10 flex justify-center">
                         <button
                             onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-                            className="rounded-full border border-neutral-200 bg-white px-8 py-2.5 text-sm font-semibold text-neutral-700 transition-all hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700"
+                            className="hover:text-primary-700 focus-visible:outline-primary-500 min-h-11 rounded-full bg-white px-8 text-sm font-medium text-neutral-800 ring-1 ring-neutral-900/[0.08] transition-transform duration-100 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
                         >
                             Load More · {remaining} remaining
                         </button>

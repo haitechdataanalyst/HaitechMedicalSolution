@@ -39,37 +39,41 @@ export default function PrescriptionSection({ config, onFileChange }: Prescripti
             {/* Header with toggle */}
             <div className="flex items-start justify-between gap-4">
                 <div>
-                    <h4 className="text-sm font-semibold text-neutral-800">Add Prescription</h4>
-                    <p className="mt-0.5 text-xs text-neutral-500">Required if you need corrective lenses integrated into your loupes.</p>
+                    <h2 className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">Add Prescription</h2>
+                    <p className="mt-1 text-[13px] leading-relaxed text-neutral-500">Required if you need corrective lenses integrated into your loupes.</p>
                 </div>
                 <button
                     type="button"
                     role="switch"
+                    aria-label="Add Prescription"
                     aria-checked={isEnabled}
                     onClick={handleToggle}
-                    className={cn("relative inline-flex h-8 w-14 shrink-0 items-center rounded-full transition-colors duration-200", isEnabled ? "bg-primary-500" : "bg-neutral-300")}
+                    className={cn(
+                        "focus-visible:outline-primary-500 relative mt-0.5 inline-flex h-8 w-[52px] before:absolute before:-inset-1.5 before:content-[''] shrink-0 items-center rounded-full transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2",
+                        isEnabled ? "bg-primary-700" : "bg-neutral-300"
+                    )}
                 >
-                    <span className={cn("inline-block h-6 w-6 transform rounded-full bg-white shadow-sm transition-transform duration-200", isEnabled ? "translate-x-[30px]" : "translate-x-1")} />
+                    <span className={cn("inline-block h-7 w-7 rounded-full bg-white shadow-[0_1px_3px_rgba(15,23,42,0.25)] transition-transform duration-200 ease-out", isEnabled ? "translate-x-[22px]" : "translate-x-0.5")} />
                 </button>
             </div>
 
             {/* Content - shown when toggled on */}
             {isEnabled && (
-                <div className="space-y-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-                    {config.disclaimer && <p className="text-sm text-neutral-600">{config.disclaimer}</p>}
+                <div className="space-y-3 rounded-xl bg-neutral-50 p-4">
+                    {config.disclaimer && <p className="text-[15px] leading-relaxed text-neutral-600">{config.disclaimer}</p>}
 
                     <input ref={fileInputRef} type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" onChange={handleFileChange} className="hidden" />
 
                     <button
                         type="button"
                         onClick={handleFileSelect}
-                        className="bg-primary-500 hover:bg-primary-600 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors"
+                        className="btn btn-outline btn-md gap-2 bg-white"
                     >
-                        <Paperclip className="h-4 w-4" />
+                        <Paperclip className="h-4 w-4" aria-hidden="true" />
                         Attach Document
                     </button>
 
-                    {fileName && <p className="text-primary-600 text-sm font-medium">Attached: {fileName}</p>}
+                    {fileName && <p className="text-primary-800 text-[15px] font-medium">Attached: {fileName}</p>}
                 </div>
             )}
         </div>

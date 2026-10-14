@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/ui";
 import { getCategoryBySlug, getChildCategories, getCategoryPath, getCategoryBreadcrumbs } from "@/lib/catalog";
 import { CategoryPageClient } from "@/components/catalog/CategoryPageClient";
+import { PAGE_SUBTITLE, PAGE_TITLE } from "@/components/catalog/listing";
 import { getMetadata } from "@/lib/metadata";
 import { notFound } from "next/navigation";
 import type { Category } from "@/types";
@@ -31,13 +32,11 @@ export default async function OurInstrumentsPage() {
         <>
             <Breadcrumbs items={breadcrumbs} />
 
-            <section className="bg-neutral-50/50 min-h-screen">
-                <div className="container py-6 md:py-8">
-                    <div className="mb-6">
-                        <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{medesyCategory.name}</h1>
-                        {medesyCategory.description && (
-                            <p className="mt-1 line-clamp-2 text-sm text-neutral-500">{medesyCategory.description}</p>
-                        )}
+            <section className="min-h-screen bg-neutral-50/50">
+                <div className="container pt-10 pb-16 md:pt-16 md:pb-24">
+                    <div className="mb-8 md:mb-10">
+                        <h1 className={PAGE_TITLE}>{medesyCategory.name}</h1>
+                        {medesyCategory.description && <p className={`${PAGE_SUBTITLE} line-clamp-2`}>{medesyCategory.description}</p>}
                     </div>
 
                     <CategoryPageClient initialItems={itemsWithPaths} initialType="categories" />

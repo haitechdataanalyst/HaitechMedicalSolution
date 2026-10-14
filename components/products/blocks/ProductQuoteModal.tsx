@@ -8,6 +8,7 @@ import { INDIAN_STATES } from "@/lib/indian-states";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import type { CountryCode } from "libphonenumber-js";
 import { toast } from "sonner";
+import { trackEvent } from "@/lib/analytics";
 
 const initialState: ProductQuoteFormState = {
     success: false,
@@ -62,17 +63,18 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
         const isNewState = state !== prevStateRef.current;
         prevStateRef.current = state;
         if (isNewState && state.success) {
+            trackEvent("quote_request", { form: "product_quote", item_id: productSku, item_name: productName });
             toast.success("Quote Request Sent!", {
                 description: `We'll get back to you about ${productName} as soon as possible.`,
                 duration: 5000,
             });
             onClose();
         }
-    }, [state, productName, onClose]);
+    }, [state, productName, productSku, onClose]);
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="Request a Quote" size="lg">
-            <form action={formAction} className="space-y-6">
+            <form action={formAction} className="space-y-5">
                 {/* Honeypot field - hidden from users, bots will fill it */}
                 <div className="pointer-events-none absolute opacity-0" aria-hidden="true">
                     <input type="text" name="website" tabIndex={-1} autoComplete="off" />
@@ -86,26 +88,31 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                 {selectedVariant && <input type="hidden" name="selectedVariant" value={selectedVariant} />}
 
                 {/* Error Message */}
-                {state.error && !state.fieldErrors && <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-600">{state.error}</div>}
+                {state.error && !state.fieldErrors && (
+                    <div role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-[15px] text-red-700">
+                        {state.error}
+                    </div>
+                )}
 
                 {/* Product Info Display */}
-                <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
-                    <h4 className="mb-1 font-medium text-neutral-900">Requesting Quote For:</h4>
-                    <p className="text-neutral-700">
-                        {productName} <span className="text-neutral-500">(SKU: {productSku})</span>
+                <div className="rounded-2xl bg-neutral-50 px-4 py-3.5">
+                    <p className="text-[13px] text-neutral-500">Requesting quote for</p>
+                    <p className="mt-0.5 text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{productName}</p>
+                    <p className="mt-0.5 text-[13px] text-neutral-500">
+                        SKU {productSku}
+                        {selectedVariant && <> · {selectedVariant}</>}
                     </p>
-                    {selectedVariant && <p className="mt-1 text-sm text-neutral-600">Variant: {selectedVariant}</p>}
                 </div>
 
                 {/* Name & Email Row */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                     <Input label="Full Name" name="name" type="text" required placeholder="Ranvijay Singh" error={state.fieldErrors?.name} maxLength={100} />
 
                     <Input label="Email Address" name="email" type="email" required placeholder="ranvijay@example.com" error={state.fieldErrors?.email} maxLength={255} />
                 </div>
 
                 {/* Phone & Country Row */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                     <Input
                         ref={phoneInputRef}
                         label="Phone Number"
@@ -135,7 +142,7 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                 </div>
 
                 {/* State & Postcode Row */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                     {selectedCountry?.code === "IN" ? (
                         <Select label="State" name="state" required options={INDIAN_STATES} error={state.fieldErrors?.state} />
                     ) : (
@@ -157,7 +164,7 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                     maxLength={5000}
                 />
 
-                <div className="flex gap-3">
+                <div className="flex flex-col-reverse gap-3 pt-1 sm:flex-row">
                     <Button type="submit" size="lg" isLoading={isPending} disabled={isPending} className="flex-1">
                         {isPending ? "Sending..." : "Send Quote Request"}
                     </Button>

@@ -117,30 +117,35 @@ export default function TempleTipEngraving({ config, onTextChange }: TempleTipEn
             {/* Header with toggle */}
             <div className="flex items-start justify-between gap-4">
                 <div>
-                    <h4 className="text-sm font-semibold text-neutral-800">Add a Temple Tip Engraving</h4>
-                    <p className="mt-0.5 text-xs text-neutral-500">Personalise with your name or initials on the temple arm. No extra charge.</p>
+                    <h2 className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">Add a Temple Tip Engraving</h2>
+                    <p className="mt-1 text-[13px] leading-relaxed text-neutral-500">Personalise with your name or initials on the temple arm. No extra charge.</p>
                 </div>
                 <button
                     type="button"
                     role="switch"
+                    aria-label="Add a Temple Tip Engraving"
                     aria-checked={isEnabled}
                     onClick={handleToggle}
-                    className={cn("relative inline-flex h-8 w-14 shrink-0 items-center rounded-full transition-colors duration-200", isEnabled ? "bg-primary-500" : "bg-neutral-300")}
+                    className={cn(
+                        "focus-visible:outline-primary-500 relative mt-0.5 inline-flex h-8 w-[52px] before:absolute before:-inset-1.5 before:content-[''] shrink-0 items-center rounded-full transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2",
+                        isEnabled ? "bg-primary-700" : "bg-neutral-300"
+                    )}
                 >
-                    <span className={cn("inline-block h-6 w-6 transform rounded-full bg-white shadow-sm transition-transform duration-200", isEnabled ? "translate-x-[30px]" : "translate-x-1")} />
+                    <span className={cn("inline-block h-7 w-7 rounded-full bg-white shadow-[0_1px_3px_rgba(15,23,42,0.25)] transition-transform duration-200 ease-out", isEnabled ? "translate-x-[22px]" : "translate-x-0.5")} />
                 </button>
             </div>
 
             {/* Content */}
             {isEnabled && (
-                <div className="space-y-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                <div className="space-y-3 rounded-xl bg-neutral-50 p-4">
                     <input
                         type="text"
                         value={text}
                         onChange={(e) => handleTextChange(e.target.value)}
+                        aria-label="Engraving text"
                         placeholder={config.placeholder || "Your Name"}
                         maxLength={config.maxLength}
-                        className="focus:border-primary-500 focus:ring-primary-500 w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-700 transition-colors outline-none focus:ring-1"
+                        className="form-input"
                     />
 
                     {/* Preview */}
@@ -149,13 +154,13 @@ export default function TempleTipEngraving({ config, onTextChange }: TempleTipEn
                         <canvas ref={canvasRef} className="h-auto w-full rounded-lg" style={{ display: imageLoaded ? "block" : "none" }} />
                         {!imageLoaded && (
                             <div className="flex h-48 items-center justify-center rounded-lg bg-neutral-100">
-                                <p className="text-sm text-neutral-400">Loading preview...</p>
+                                <p className="text-[13px] text-neutral-500">Loading preview...</p>
                             </div>
                         )}
                     </div>
 
                     {config.maxLength && (
-                        <p className="text-right text-xs text-neutral-400">
+                        <p className="text-right text-[13px] text-neutral-500 tabular-nums">
                             {text.length}/{config.maxLength}
                         </p>
                     )}

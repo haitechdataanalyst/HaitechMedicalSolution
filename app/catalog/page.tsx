@@ -3,10 +3,12 @@ import { getAllInventoryItems, filterInventory, getInventoryFacets, PAGE_SIZE } 
 import InventoryItemCard from "@/components/catalog/InventoryItemCard";
 import InventoryFilters from "@/components/catalog/InventoryFilters";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui";
+import { EmptyState, PageIntro, RESULT_COUNT, chipClass } from "@/components/catalog/listing";
 
-export const metadata = { title: "Product Catalog | Haitech Medical" };
+// Inventory-backed listing that duplicates the catalog pages; kept out of search results.
+export const metadata = { title: "Product Catalog", robots: { index: false, follow: true } };
 
 interface PageProps {
     searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -50,23 +52,15 @@ export default async function CatalogPage({ searchParams }: PageProps) {
     }
 
     return (
-        <main className="min-h-screen bg-neutral-50/50">
-            {/* Page header */}
-            <div className="border-b border-neutral-100 bg-white">
-                <div className="container py-10 md:py-14">
-                    <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Catalog", path: "/catalog" }]} />
-                    <div className="mt-4 max-w-xl">
-                        <span className="label-tag label-tag-primary mb-4 inline-flex">Full Inventory</span>
-                        <h1 className="heading-2 text-neutral-900">Product Catalog</h1>
-                        <p className="mt-2 text-sm text-neutral-500">
-                            {allItems.length.toLocaleString()} products across {facets.brands.length} brands
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div className="min-h-screen bg-neutral-50/50">
+            <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Catalog", path: "/catalog" }]} />
+            <PageIntro
+                title="Product Catalog"
+                subtitle={`${allItems.length.toLocaleString()} products across ${facets.brands.length} brands`}
+            />
 
-            <div className="container py-8">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+            <div className="container pb-16 md:pb-24">
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
                     {/* Filters sidebar */}
                     <Suspense>
                         <InventoryFilters
@@ -82,7 +76,7 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                     <div className="min-w-0 flex-1">
                         {/* Active filter chips */}
                         {(brands.length || categories.length || itemTypes.length || search || inStockOnly) ? (
-                            <div className="mb-5 flex flex-wrap gap-2">
+                            <div className="mb-4 flex flex-wrap gap-2">
                                 {search && <Chip label={`"${search}"`} href={buildClearUrl(sp, "search")} />}
                                 {brands.map((b) => <Chip key={b} label={b} href={buildClearArrayUrl(sp, "brand", b)} />)}
                                 {categories.map((c) => <Chip key={c} label={c} href={buildClearArrayUrl(sp, "category", c)} />)}
@@ -92,28 +86,21 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                         ) : null}
 
                         {/* Result count */}
-                        <p className="mb-5 text-sm text-neutral-500">
-                            Showing{" "}
-                            <span className="font-semibold text-neutral-800">
-                                {(currentPage - 1) * PAGE_SIZE + 1}–{Math.min(currentPage * PAGE_SIZE, filteredCount)}
-                            </span>{" "}
-                            of <span className="font-semibold text-neutral-800">{filteredCount}</span> results
+                        <p className={`mb-4 ${RESULT_COUNT}`}>
+                            {filteredCount === 0
+                                ? "0 results"
+                                : `Showing ${(currentPage - 1) * PAGE_SIZE + 1}–${Math.min(currentPage * PAGE_SIZE, filteredCount)} of ${filteredCount} results`}
                         </p>
 
                         {/* Grid */}
                         {items.length === 0 ? (
-                            <div className="flex flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white py-24 text-center">
-                                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-100">
-                                    <span className="text-2xl">🔍</span>
-                                </div>
-                                <p className="text-base font-semibold text-neutral-700">No products match your filters</p>
-                                <p className="mt-1 text-sm text-neutral-400">Try adjusting your search or removing some filters</p>
-                                <Link href="/catalog" className="text-primary-600 hover:text-primary-700 mt-4 text-sm font-medium">
+                            <EmptyState title="No products match your filters" body="Try a different search, or remove a filter or two.">
+                                <Link href="/catalog" className={chipClass(false)}>
                                     Clear all filters
                                 </Link>
-                            </div>
+                            </EmptyState>
                         ) : (
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 2xl:grid-cols-4">
                                 {items.map((item, idx) => (
                                     // Use idx suffix to guard against duplicate ItemIDs from Zoho data
                                     <InventoryItemCard key={`${item.ItemID}-${idx}`} item={item} />
@@ -123,27 +110,23 @@ export default async function CatalogPage({ searchParams }: PageProps) {
 
                         {/* Pagination */}
                         {totalPages > 1 && (
-                            <div className="mt-10 flex items-center justify-center gap-2">
+                            <nav aria-label="Pagination" className="mt-12 flex flex-wrap items-center justify-center gap-1.5">
                                 {currentPage > 1 && (
-                                    <Link
-                                        href={buildPageUrl(currentPage - 1)}
-                                        className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
-                                    >
-                                        <ChevronLeft size={14} /> Prev
+                                    <Link href={buildPageUrl(currentPage - 1)} className={`${PAGE_LINK} gap-1 px-4 text-neutral-700 hover:bg-white`}>
+                                        <ChevronLeft className="h-4 w-4" aria-hidden="true" /> Prev
                                     </Link>
                                 )}
 
                                 {getPaginationPages(currentPage, totalPages).map((p, i) =>
                                     p === "…" ? (
-                                        <span key={`ellipsis-${i}`} className="px-1 text-neutral-400">…</span>
+                                        <span key={`ellipsis-${i}`} className="px-1 text-neutral-500" aria-hidden="true">…</span>
                                     ) : (
                                         <Link
                                             key={p}
                                             href={buildPageUrl(p as number)}
-                                            className={`min-w-[38px] rounded-full border px-3 py-2 text-center text-sm font-medium transition-colors ${
-                                                p === currentPage
-                                                    ? "border-primary-500 bg-primary-500 text-white"
-                                                    : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50"
+                                            aria-current={p === currentPage ? "page" : undefined}
+                                            className={`${PAGE_LINK} min-w-11 px-3 tabular-nums ${
+                                                p === currentPage ? "bg-neutral-900 text-white" : "text-neutral-700 hover:bg-white"
                                             }`}
                                         >
                                             {p}
@@ -152,31 +135,29 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                                 )}
 
                                 {currentPage < totalPages && (
-                                    <Link
-                                        href={buildPageUrl(currentPage + 1)}
-                                        className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50 hover:border-neutral-300"
-                                    >
-                                        Next <ChevronRight size={14} />
+                                    <Link href={buildPageUrl(currentPage + 1)} className={`${PAGE_LINK} gap-1 px-4 text-neutral-700 hover:bg-white`}>
+                                        Next <ChevronRight className="h-4 w-4" aria-hidden="true" />
                                     </Link>
                                 )}
-                            </div>
+                            </nav>
                         )}
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
+const PAGE_LINK =
+    "focus-visible:outline-primary-500 inline-flex h-11 items-center justify-center rounded-full text-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2";
+
 function Chip({ label, href }: { label: string; href: string }) {
     return (
-        <Link
-            href={href}
-            className="flex items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 transition-colors hover:bg-primary-100"
-        >
-            {label} <span className="ml-0.5 text-primary-400">×</span>
+        <Link href={href} aria-label={`Remove filter ${label}`} className={chipClass(true)}>
+            {label}
+            <X className="h-3.5 w-3.5 opacity-80" aria-hidden="true" />
         </Link>
     );
 }

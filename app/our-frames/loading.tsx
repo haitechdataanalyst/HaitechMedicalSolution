@@ -1,32 +1,29 @@
+import { BreadcrumbSkeleton, LoadingShell, SkeletonBar } from "@/components/catalog/listing";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+
 export default function OurFramesLoading() {
     return (
-        <div className="animate-pulse">
-            {/* Breadcrumb */}
-            <div className="border-b border-neutral-100 bg-white px-4 py-3">
-                <div className="container mx-auto flex gap-2">
-                    <div className="h-4 w-16 rounded bg-neutral-200" />
-                    <div className="h-4 w-3 rounded bg-neutral-200" />
-                    <div className="h-4 w-24 rounded bg-neutral-200" />
-                </div>
-            </div>
+        <LoadingShell label="Loading frames">
+            <BreadcrumbSkeleton />
 
-            {/* Hero banner */}
-            <div className="h-56 bg-neutral-200 sm:h-72" />
+            {/* Hero band */}
+            <div className="h-64 bg-neutral-900/[0.06] sm:h-80" />
 
             {/* Frame cards grid */}
-            <div className="container mx-auto px-4 py-10">
-                <div className="mb-6 h-7 w-48 rounded bg-neutral-100" />
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="container py-16">
+                <div className="mx-auto mb-12 flex max-w-xl flex-col items-center gap-4">
+                    <SkeletonBar className="h-9 w-80 max-w-full" />
+                    <SkeletonBar className="h-4 w-full" />
+                </div>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
                     {Array.from({ length: 6 }).map((_, i) => (
-                        <div key={i} className="overflow-hidden rounded-2xl border border-neutral-100 bg-white">
-                            <div className="aspect-[4/3] bg-neutral-100" />
-                            <div className="space-y-3 p-5">
-                                <div className="h-5 w-3/4 rounded bg-neutral-100" />
-                                <div className="h-3 w-full rounded bg-neutral-100" />
-                                <div className="h-3 w-5/6 rounded bg-neutral-100" />
-                                <div className="flex gap-2 pt-1">
+                        <div key={i} className={`${SURFACE_CARD} p-2`}>
+                            <div className="aspect-[4/3] rounded-xl bg-neutral-50" />
+                            <div className="flex flex-col items-center gap-3 px-4 pt-5 pb-4">
+                                <SkeletonBar className="h-5 w-24" />
+                                <div className="flex gap-3">
                                     {[1, 2, 3, 4].map((j) => (
-                                        <div key={j} className="h-6 w-6 rounded-full bg-neutral-200" />
+                                        <div key={j} className="h-8 w-8 rounded-full bg-neutral-900/[0.06]" />
                                     ))}
                                 </div>
                             </div>
@@ -34,6 +31,6 @@ export default function OurFramesLoading() {
                     ))}
                 </div>
             </div>
-        </div>
+        </LoadingShell>
     );
 }

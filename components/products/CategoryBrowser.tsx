@@ -4,11 +4,13 @@ import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ArrowUpDown, Search, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
 import { formatPrice, cn } from "@/lib/utils";
 import { shouldShowPrice } from "@/lib/config";
 import { detectBrand } from "@/lib/brand";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, SURFACE_CARD } from "@/components/ui/surfaces";
+import { CardSkeleton, PILL_SELECT, RESULT_COUNT, SEARCH_INPUT } from "@/components/catalog/listing";
 
 export interface CategoryWithPath extends Category {
     path?: string;
@@ -33,6 +35,8 @@ type NavEntry = { id: number; name: string; path?: string };
 type SortOption = "default" | "price-asc" | "price-desc" | "name-asc";
 
 const PAGE_SIZE = 12;
+// Search and sort only earn their space on longer lists; a handful of categories needs neither.
+const SEARCH_SORT_MIN_ITEMS = 8;
 const PLACEHOLDER = "/images/placeholder.jpg";
 
 const BRAND_CATEGORY: Record<string, string> = {
@@ -43,18 +47,13 @@ const BRAND_CATEGORY: Record<string, string> = {
     Strauss: "Burs · Rotary",
 };
 
-function SkeletonCard() {
-    return (
-        <div className="animate-pulse overflow-hidden rounded-xl border border-neutral-100 bg-white">
-            <div className="aspect-square bg-neutral-100" />
-            <div className="space-y-2 p-3.5">
-                <div className="h-4 w-3/4 rounded bg-neutral-100" />
-                <div className="h-3 w-1/2 rounded bg-neutral-100" />
-                <div className="mt-3 h-7 w-24 rounded-full bg-neutral-100" />
-            </div>
-        </div>
-    );
-}
+// Same card material and grid as components/catalog/CategoryPageClient.
+const CARD_CLASS = `${INTERACTIVE_CARD} p-2`;
+const CARD_MEDIA = "relative aspect-square overflow-hidden rounded-xl bg-neutral-50";
+const CARD_IMAGE = "mix-blend-multiply object-contain p-6 transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]";
+const CARD_SIZES = "(max-width: 1024px) 50vw, 300px";
+const GRID = "grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4";
+const EMPTY = `${SURFACE_CARD} flex h-40 items-center justify-center px-6 text-center text-sm text-neutral-500`;
 
 function SafeImage({ src, alt, ...props }: React.ComponentProps<typeof Image>) {
     const [imgSrc, setImgSrc] = useState((src as string) || PLACEHOLDER);
@@ -69,54 +68,27 @@ function SafeImage({ src, alt, ...props }: React.ComponentProps<typeof Image>) {
     );
 }
 
-function CategoryCard({ category, onClick }: { category: CategoryWithPath; onClick: () => void }) {
-    const image = category.image || PLACEHOLDER;
-    const cardClass = "group flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0";
-
+function CardLink({ label }: { label: string }) {
     return (
-        <>
-            {/* Desktop / tablet grid card */}
-            <button onClick={onClick} className={cn(cardClass, "hidden w-full text-left sm:flex sm:flex-col")}>
-                <div className="relative aspect-square overflow-hidden bg-white">
-                    <SafeImage
-                        src={image}
-                        alt={category.name}
-                        fill
-                        className="mix-blend-multiply object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
-                        sizes="(max-width: 1024px) 33vw, 220px"
-                    />
-                </div>
-                <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                    <h3 className="mb-3 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
-                        {category.name}
-                    </h3>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-3 py-1.5 text-xs font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
-                        View Range
-                        <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
-                    </span>
-                </div>
-            </button>
+        <span className="text-primary-700 mt-auto inline-flex items-center gap-1 pt-3 text-sm font-medium">
+            {label}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
+        </span>
+    );
+}
 
-            {/* Mobile list row */}
-            <button
-                onClick={onClick}
-                className="group flex w-full items-center gap-3 border-b border-neutral-100 bg-white px-1 py-3 text-left transition-colors last:border-b-0 active:bg-neutral-50 sm:hidden"
-            >
-                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white">
-                    <SafeImage
-                        src={image}
-                        alt={category.name}
-                        fill
-                        className="mix-blend-multiply object-contain p-2"
-                        sizes="64px"
-                    />
-                </div>
-                <div className="min-w-0 flex-1">
-                    <p className="line-clamp-2 text-sm font-semibold text-neutral-800">{category.name}</p>
-                </div>
-                <ArrowRight className="h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary-500" />
-            </button>
-        </>
+function CategoryCard({ category, onClick }: { category: CategoryWithPath; onClick: () => void }) {
+    return (
+        <button type="button" onClick={onClick} className={cn(CARD_CLASS, "w-full text-left")}>
+            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+            <div className={CARD_MEDIA}>
+                <SafeImage src={category.image || PLACEHOLDER} alt={category.name} fill className={CARD_IMAGE} sizes={CARD_SIZES} />
+            </div>
+            <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
+                <h3 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{category.name}</h3>
+                <CardLink label="View range" />
+            </div>
+        </button>
     );
 }
 
@@ -130,70 +102,26 @@ function ProductCard({ product }: { product: ProductWithPath }) {
     const showPrice = shouldShowPrice(detectBrand(product.sku).name);
 
     return (
-        <>
-            {/* Desktop / tablet grid card */}
-            <Link
-                href={path}
-                className="group hidden flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-primary-100 hover:shadow-[0_8px_28px_rgba(31,182,205,0.12)] active:translate-y-0 sm:flex"
-            >
-                <div className="relative aspect-square overflow-hidden bg-neutral-50">
-                    <SafeImage
-                        src={image}
-                        alt={product.name}
-                        fill
-                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.04]"
-                        sizes="(max-width: 1024px) 33vw, 220px"
-                    />
+        <Link href={path} className={CARD_CLASS}>
+            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+            <div className={CARD_MEDIA}>
+                <SafeImage src={image} alt={product.name} fill className={CARD_IMAGE} sizes={CARD_SIZES} />
+            </div>
+            <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
+                <h3 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{product.name}</h3>
+                {showPrice && (product.basePrice ? (
+                    <p className="mt-2 text-base font-semibold text-neutral-900 tabular-nums">
+                        {formatPrice(product.basePrice, product.currency ?? "INR")}
+                    </p>
+                ) : (
+                    <p className="mt-2 text-[13px] text-neutral-500">Price on request</p>
+                ))}
+                <div className="mt-auto flex items-end justify-between gap-2">
+                    <CardLink label="View" />
+                    <span className="pb-px text-xs font-medium text-emerald-700">Free Delivery</span>
                 </div>
-                <div className="flex flex-1 flex-col border-t border-neutral-50 px-3.5 py-3.5">
-                    <h3 className="mb-2 line-clamp-2 flex-1 text-sm font-semibold leading-snug text-neutral-800">
-                        {product.name}
-                    </h3>
-                    {showPrice && (product.basePrice ? (
-                        <span className="mb-2 text-base font-bold text-neutral-900">
-                            {formatPrice(product.basePrice, product.currency ?? "INR")}
-                        </span>
-                    ) : (
-                        <span className="mb-2 text-xs text-neutral-400">Price on request</span>
-                    ))}
-                    <div className="flex items-center justify-between pt-1">
-                        <span className="text-[11px] font-medium text-emerald-600">Free Delivery</span>
-                        <span className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-semibold text-primary-700 transition-all duration-150 group-hover:bg-primary-500 group-hover:text-white">
-                            View
-                            <ArrowRight className="h-2.5 w-2.5" />
-                        </span>
-                    </div>
-                </div>
-            </Link>
-
-            {/* Mobile list row */}
-            <Link
-                href={path}
-                className="group flex items-center gap-3 border-b border-neutral-100 bg-white px-1 py-3 transition-colors last:border-b-0 active:bg-neutral-50 sm:hidden"
-            >
-                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50">
-                    <SafeImage
-                        src={image}
-                        alt={product.name}
-                        fill
-                        className="object-contain p-2"
-                        sizes="64px"
-                    />
-                </div>
-                <div className="min-w-0 flex-1">
-                    <p className="line-clamp-2 text-sm font-semibold leading-snug text-neutral-800">{product.name}</p>
-                    {showPrice && (product.basePrice ? (
-                        <p className="mt-0.5 text-sm font-bold text-neutral-900">
-                            {formatPrice(product.basePrice, product.currency ?? "INR")}
-                        </p>
-                    ) : (
-                        <p className="mt-0.5 text-xs text-neutral-400">Price on request</p>
-                    ))}
-                    <p className="mt-0.5 text-[11px] font-medium text-emerald-600">Free Delivery</p>
-                </div>
-                <ArrowRight className="h-4 w-4 shrink-0 text-neutral-300 transition-colors group-hover:text-primary-500" />
-            </Link>
-        </>
+            </div>
+        </Link>
     );
 }
 
@@ -201,7 +129,8 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     const router = useRouter();
     const cache = useRef<Map<number, { type: "categories" | "products"; items: CategoryWithPath[] | ProductWithPath[] }>>(new Map());
     const fadeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const isInitialized = useRef(false);
+    const resultsRef = useRef<HTMLDivElement>(null);
+    const scrollToResults = useRef(false);
 
     const [navStack, setNavStack] = useState<NavEntry[]>([]);
     const [content, setContent] = useState<ContentState>({ status: "idle" });
@@ -265,19 +194,11 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
         [fetchCategoryContents, router, transitionTo]
     );
 
-    useEffect(() => {
-        if (!isInitialized.current && initialCategories.length > 0) {
-            isInitialized.current = true;
-            const first = initialCategories[0];
-            setNavStack([{ id: first.id, name: first.name, path: first.path }]);
-            loadNode(first.id, first.path);
-        }
-    }, [initialCategories, loadNode]);
-
     const handleBrandTabClick = (cat: CategoryWithPath) => {
         if (navStack.length === 1 && navStack[0]?.id === cat.id) return;
         setSortBy("default");
         setSearchQuery("");
+        scrollToResults.current = true;
         setNavStack([{ id: cat.id, name: cat.name, path: cat.path }]);
         loadNode(cat.id, cat.path);
     };
@@ -285,6 +206,7 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     const handleSubCategoryClick = (cat: CategoryWithPath) => {
         setSortBy("default");
         setSearchQuery("");
+        scrollToResults.current = true;
         setNavStack((prev) => {
             const base = prev.length > 0 ? [prev[0]] : [];
             return [...base, { id: cat.id, name: cat.name, path: cat.path }];
@@ -296,11 +218,24 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
         if (navStack.length <= 1) return;
         setSortBy("default");
         setSearchQuery("");
+        scrollToResults.current = true;
         const newStack = navStack.slice(0, -1);
         setNavStack(newStack);
         const parent = newStack[newStack.length - 1];
         loadNode(parent.id, parent.path);
     };
+
+    // After the visitor picks a brand or category, bring the results into view (instantly under reduced motion).
+    useEffect(() => {
+        if (!scrollToResults.current || content.status === "idle") return;
+        scrollToResults.current = false;
+        const header = resultsRef.current;
+        if (!header) return;
+        const { top } = header.getBoundingClientRect();
+        if (top >= 0 && top < window.innerHeight * 0.45) return;
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        header.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    }, [content]);
 
     const displayItems = useMemo(() => {
         const q = searchQuery.toLowerCase().trim();
@@ -330,123 +265,105 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
     const isDrilledDown = navStack.length > 1;
     const parentName = isDrilledDown ? navStack[navStack.length - 2]?.name : null;
     const contentLabel = content.status === "categories" ? "categories" : content.status === "products" ? "products" : "";
-    const showControls = content.status === "categories" || content.status === "products" || content.status === "loading";
+
+    const activeNode = navStack[navStack.length - 1] ?? null;
+    const hasResults = content.status === "categories" || content.status === "products";
+    const showSearchSort = hasResults && content.items.length > SEARCH_SORT_MIN_ITEMS;
+
+    const showPriceSort = content.status === "products" && content.items.some((p) => shouldShowPrice(detectBrand(p.sku).name));
 
     return (
         <div className="flex flex-col">
 
-            {/* ── Brand Identity Tabs — desktop ── */}
-            <div className="mb-6 hidden gap-3 overflow-x-auto pb-2 scrollbar-none sm:flex">
+            {/* ── Brand tiles: logos on every screen size ── */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6" role="group" aria-label="Brands">
                 {initialCategories.map((cat) => {
                     const isActive = activeBrandId === cat.id;
                     const categoryLabel = BRAND_CATEGORY[cat.name];
                     return (
                         <button
                             key={cat.id}
+                            type="button"
                             onClick={() => handleBrandTabClick(cat)}
+                            aria-pressed={isActive}
                             className={cn(
-                                "relative flex min-w-[110px] flex-1 shrink-0 flex-col items-center gap-2.5 overflow-hidden rounded-2xl border px-4 py-4 text-center transition-all duration-200",
-                                isActive
-                                    ? "border-primary-300 bg-primary-50 shadow-sm"
-                                    : "border-neutral-100 bg-white hover:border-primary-200 hover:bg-neutral-50"
+                                "focus-visible:outline-primary-500 flex min-h-11 min-w-0 flex-col items-center gap-2 rounded-2xl bg-white px-2 py-4 text-center transition-transform duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.985] sm:gap-3 sm:px-4 sm:py-5",
+                                isActive ? "ring-primary-600 shadow-[0_1px_2px_rgba(15,23,42,0.04)] ring-2" : "ring-1 ring-neutral-900/[0.06] hover:ring-neutral-900/[0.14]"
                             )}
                         >
-                            {isActive && (
-                                <span className="absolute bottom-0 left-0 right-0 h-[3px] rounded-t bg-primary-500" />
-                            )}
                             {cat.image && (
-                                <div className="relative h-10 w-16 shrink-0">
-                                    <Image src={cat.image} alt={cat.name} fill className="object-contain" sizes="64px" />
+                                <div className="relative h-8 w-16 shrink-0 sm:h-10 sm:w-20">
+                                    <Image src={cat.image} alt="" fill className="object-contain" sizes="80px" />
                                 </div>
                             )}
                             <div className="space-y-0.5">
-                                <p className={cn("text-sm font-bold leading-tight", isActive ? "text-primary-700" : "text-neutral-800")}>
-                                    {cat.name}
-                                </p>
-                                {categoryLabel && (
-                                    <p className={cn("text-[11px] leading-tight", isActive ? "text-primary-500" : "text-neutral-400")}>
-                                        {categoryLabel}
-                                    </p>
-                                )}
+                                <p className={cn("text-[13px] leading-tight font-semibold tracking-[-0.01em] sm:text-[15px]", isActive ? "text-primary-800" : "text-neutral-900")}>{cat.name}</p>
+                                {categoryLabel && <p className="hidden text-[13px] leading-tight text-neutral-500 sm:block">{categoryLabel}</p>}
                             </div>
                         </button>
                     );
                 })}
             </div>
 
-            {/* ── Brand Pill Tabs — mobile ── */}
-            <div className="mb-4 flex flex-wrap justify-center gap-2 sm:hidden">
-                {initialCategories.map((cat) => {
-                    const isActive = activeBrandId === cat.id;
-                    return (
-                        <button
-                            key={cat.id}
-                            onClick={() => handleBrandTabClick(cat)}
-                            className={cn(
-                                "shrink-0 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-150",
-                                isActive
-                                    ? "border-primary-500 bg-primary-500 text-white shadow-sm"
-                                    : "border-neutral-200 bg-white text-neutral-600 active:bg-neutral-50"
-                            )}
-                        >
-                            {cat.name}
-                        </button>
-                    );
-                })}
-            </div>
-
-            {/* ── Control Bar ── */}
-            {showControls && (
-                <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-                    {/* Back button */}
-                    {isDrilledDown && (
-                        <button
-                            onClick={handleBack}
-                            className="flex shrink-0 items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-600 transition-colors hover:border-primary-300 hover:text-primary-600"
-                        >
-                            <ChevronLeft className="h-4 w-4" />
-                            {parentName}
-                        </button>
-                    )}
-
-                    {/* Search input */}
-                    <div className="relative flex-1">
-                        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder={`Search ${contentLabel || "products"}...`}
-                            className="w-full rounded-xl border border-neutral-200 bg-white py-2 pl-9 pr-9 text-sm transition-colors placeholder:text-neutral-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
-                        />
-                        {searchQuery && (
+            {/* ── Results header: where you are, how many, and (only for long lists) search + sort ── */}
+            {content.status !== "idle" && (
+                <div ref={resultsRef} className="mt-10 flex scroll-mt-24 flex-wrap items-center justify-between gap-x-4 gap-y-3">
+                    <div className="flex min-w-0 items-center gap-3">
+                        {isDrilledDown && (
                             <button
-                                onClick={() => setSearchQuery("")}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600"
+                                type="button"
+                                onClick={handleBack}
+                                aria-label={`Back to ${parentName}`}
+                                className="focus-visible:outline-primary-500 hover:text-primary-700 inline-flex h-11 shrink-0 items-center gap-1 rounded-full bg-white pr-4 pl-3 text-sm font-medium text-neutral-800 ring-1 ring-neutral-900/[0.08] transition-transform duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
                             >
-                                <X className="h-4 w-4" />
+                                <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                                {parentName}
                             </button>
                         )}
+                        <div className="min-w-0">
+                            <h3 className="truncate text-xl font-semibold tracking-[-0.02em] text-neutral-900">{activeNode?.name}</h3>
+                            <p className={cn("min-h-5", RESULT_COUNT)} aria-live="polite">
+                                {content.status !== "loading" && `${displayItems.length} ${contentLabel}`}
+                            </p>
+                        </div>
                     </div>
 
-                    {/* Count + Sort */}
-                    <div className="flex shrink-0 items-center gap-3">
-                        {content.status !== "loading" && (
-                            <span className="text-sm text-neutral-500">
-                                <span className="font-bold text-neutral-800">{displayItems.length}</span>{" "}
-                                {contentLabel}
-                            </span>
-                        )}
-                        <div className="flex items-center gap-1.5">
-                            <ArrowUpDown className="h-3.5 w-3.5 shrink-0 text-neutral-400" />
+                    {showSearchSort && (
+                        <div className="flex w-full flex-wrap items-center gap-3 sm:w-auto">
+                            <div className="relative min-w-0 flex-1 basis-56 sm:w-64 sm:flex-none">
+                                <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-neutral-500" aria-hidden="true" />
+                                <input
+                                    type="search"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    placeholder={`Search ${contentLabel}`}
+                                    aria-label={`Search ${contentLabel}`}
+                                    className={SEARCH_INPUT}
+                                />
+                                {searchQuery && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setSearchQuery("")}
+                                        aria-label="Clear search"
+                                        className="focus-visible:outline-primary-500 absolute top-1/2 right-0.5 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-800 focus-visible:outline-2"
+                                    >
+                                        <X className="h-4 w-4" aria-hidden="true" />
+                                    </button>
+                                )}
+                            </div>
+
                             <select
                                 value={sortBy}
-                                onChange={(e) => { setSortBy(e.target.value as SortOption); setVisibleCount(PAGE_SIZE); }}
-                                className="rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                                onChange={(e) => {
+                                    setSortBy(e.target.value as SortOption);
+                                    setVisibleCount(PAGE_SIZE);
+                                }}
+                                aria-label="Sort by"
+                                className={PILL_SELECT}
                             >
                                 <option value="default">Featured</option>
                                 <option value="name-asc">Name: A–Z</option>
-                                {content.status === "products" && content.items.some((p) => shouldShowPrice(detectBrand(p.sku).name)) && (
+                                {showPriceSort && (
                                     <>
                                         <option value="price-asc">Price: Low → High</option>
                                         <option value="price-desc">Price: High → Low</option>
@@ -454,43 +371,27 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                                 )}
                             </select>
                         </div>
-                    </div>
+                    )}
                 </div>
             )}
 
             {/* ── Grid ── */}
-            <div className={`transition-opacity duration-150 ${isFading ? "opacity-0" : "opacity-100"}`}>
-                {content.status === "idle" && (
-                    <div className="flex h-48 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
-                        Select a brand to browse products
-                    </div>
-                )}
+            <div className={cn("transition-opacity duration-150", content.status !== "idle" && "mt-6", isFading ? "opacity-0" : "opacity-100")}>
 
                 {content.status === "loading" && (
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                    <div className={cn(GRID, "motion-safe:animate-pulse")} aria-hidden="true">
                         {Array.from({ length: 8 }).map((_, i) => (
-                            <div key={i} className="hidden sm:block"><SkeletonCard /></div>
-                        ))}
-                        {Array.from({ length: 5 }).map((_, i) => (
-                            <div key={`m${i}`} className="flex animate-pulse items-center gap-3 border-b border-neutral-100 py-3 sm:hidden">
-                                <div className="h-16 w-16 shrink-0 rounded-xl bg-neutral-100" />
-                                <div className="flex-1 space-y-2">
-                                    <div className="h-3.5 w-3/4 rounded bg-neutral-100" />
-                                    <div className="h-3 w-1/2 rounded bg-neutral-100" />
-                                </div>
-                            </div>
+                            <CardSkeleton key={i} />
                         ))}
                     </div>
                 )}
 
                 {content.status === "categories" && displayItems.length === 0 && (
-                    <div className="flex h-32 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
-                        No categories found{searchQuery ? ` for "${searchQuery}"` : ""}
-                    </div>
+                    <div className={EMPTY}>No categories found{searchQuery ? ` for "${searchQuery}"` : ""}</div>
                 )}
 
                 {content.status === "categories" && displayItems.length > 0 && (
-                    <div className="rounded-xl border border-neutral-100 bg-white sm:rounded-none sm:border-0 sm:bg-transparent sm:grid sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                    <div className={GRID}>
                         {(visibleItems as CategoryWithPath[]).map((cat) => (
                             <CategoryCard key={cat.id} category={cat} onClick={() => handleSubCategoryClick(cat)} />
                         ))}
@@ -498,13 +399,11 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                 )}
 
                 {content.status === "products" && displayItems.length === 0 && (
-                    <div className="flex h-32 items-center justify-center rounded-xl border border-neutral-100 bg-neutral-50 text-sm text-neutral-400">
-                        No products found{searchQuery ? ` for "${searchQuery}"` : ""}
-                    </div>
+                    <div className={EMPTY}>No products found{searchQuery ? ` for "${searchQuery}"` : ""}</div>
                 )}
 
                 {content.status === "products" && displayItems.length > 0 && (
-                    <div className="rounded-xl border border-neutral-100 bg-white sm:rounded-none sm:border-0 sm:bg-transparent sm:grid sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+                    <div className={GRID}>
                         {(visibleItems as ProductWithPath[]).map((prod) => (
                             <ProductCard key={prod.id} product={prod} />
                         ))}
@@ -514,10 +413,11 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
 
             {/* ── Load More ── */}
             {hasMore && !isFading && (
-                <div className="mt-8 flex justify-center">
+                <div className="mt-10 flex justify-center">
                     <button
+                        type="button"
                         onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-                        className="rounded-full border border-neutral-200 bg-white px-8 py-2.5 text-sm font-semibold text-neutral-700 transition-all duration-150 hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700"
+                        className="hover:text-primary-700 focus-visible:outline-primary-500 min-h-11 rounded-full bg-white px-8 text-sm font-medium text-neutral-800 ring-1 ring-neutral-900/[0.08] transition-transform duration-100 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
                     >
                         Load More · {remaining} remaining
                     </button>

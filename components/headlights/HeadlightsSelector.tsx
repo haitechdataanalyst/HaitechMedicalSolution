@@ -7,6 +7,8 @@ import { Button } from "@/components/ui";
 import { useCart } from "@/components/cart/CartProvider";
 import { COMMERCE_ENABLED } from "@/lib/config";
 import { Check, ShoppingCart } from "lucide-react";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+import { SelectionMark, StepHeading, selectorTileClass } from "@/components/catalog/listing";
 
 interface HeadlightCategoryCardProps {
     category: HeadlightCategory;
@@ -16,27 +18,20 @@ interface HeadlightCategoryCardProps {
 
 export function HeadlightCategoryCard({ category, isSelected, onSelect }: HeadlightCategoryCardProps) {
     return (
-        <button
-            onClick={onSelect}
-            className={`group relative w-full cursor-pointer overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
-                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-neutral-100 hover:border-neutral-200"
-            }`}
-        >
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
-                <Image src={category.image} alt={category.name} fill className="object-contain p-4 transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 50vw" />
+        <button type="button" onClick={onSelect} aria-pressed={isSelected} className={selectorTileClass(isSelected)}>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-50">
+                <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-contain p-6 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                />
             </div>
-
-            <h3 className={`text-center text-base font-bold transition-colors ${isSelected ? "text-primary-700" : "text-neutral-800 group-hover:text-primary-700"}`}>
-                {category.name}
-            </h3>
-
-            {isSelected && (
-                <div className="bg-primary-500 absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full text-white">
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-            )}
+            <div className="flex min-h-11 items-center justify-between gap-3 px-3 pt-4 pb-3">
+                <h3 className="text-lg font-semibold tracking-[-0.015em] text-neutral-900">{category.name}</h3>
+                <SelectionMark isSelected={isSelected} />
+            </div>
         </button>
     );
 }
@@ -64,47 +59,51 @@ function HeadlightProductCard({ product }: HeadlightProductCardProps) {
     };
 
     return (
-        <div className="group rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm transition-all hover:border-primary-100 hover:shadow-lg">
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
-                <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+        <div className={`${SURFACE_CARD} flex h-full flex-col p-2`}>
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
+                <Image src={product.image} alt={product.name} fill className="object-contain p-6 mix-blend-multiply" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
             </div>
 
-            <h4 className="mb-2 text-center text-base font-bold text-neutral-900">{product.name}</h4>
+            <div className="flex flex-1 flex-col px-3 pt-5 pb-3">
+                <h4 className="text-lg font-semibold tracking-[-0.015em] text-neutral-900">{product.name}</h4>
 
-            <p className="mb-4 text-sm text-neutral-600">{product.description}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-neutral-600">{product.description}</p>
 
-            {product.features && product.features.length > 0 && (
-                <ul className="mb-4 space-y-1">
-                    {product.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-neutral-600">
-                            <Check className="size-4" />
-                            {feature}
-                        </li>
-                    ))}
-                </ul>
-            )}
+                {product.features && product.features.length > 0 && (
+                    <ul className="mt-4 space-y-2">
+                        {product.features.map((feature, index) => (
+                            <li key={index} className="flex items-start gap-2.5 text-sm leading-relaxed text-neutral-700">
+                                <Check className="text-primary-700 mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                )}
 
-            {/* Add to Cart stays part of the system for when e-commerce goes
-                live — gated the same way every other product surface
-                (ActionsBlock, ProductCard, MedesyVariantsGrid) already is.
-                Previously this was the one add-to-cart control on the whole
-                site NOT behind this flag, so it stayed live and reachable
-                even with commerce off, sending the JSON's string slug id
-                (e.g. "butterfly-s-evo") to the backend cart API instead of
-                a real integer product id — see [[feedback_architecture_policy]]. */}
-            {COMMERCE_ENABLED && (
-                <div className="mt-auto pt-2">
-                    <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
-                        {added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to Cart</>}
-                    </Button>
-                </div>
-            )}
+                {/* Add to Cart stays part of the system for when e-commerce goes
+                    live — gated the same way every other product surface
+                    (ActionsBlock, ProductCard, MedesyVariantsGrid) already is.
+                    Previously this was the one add-to-cart control on the whole
+                    site NOT behind this flag, so it stayed live and reachable
+                    even with commerce off, sending the JSON's string slug id
+                    (e.g. "butterfly-s-evo") to the backend cart API instead of
+                    a real integer product id — see [[feedback_architecture_policy]]. */}
+                {COMMERCE_ENABLED && (
+                    <div className="mt-auto pt-5">
+                        <Button variant={added ? "primary" : "outline"} className="w-full gap-2" onClick={handleAddToCart}>
+                            {added ? (
+                                <>
+                                    <Check className="h-4 w-4" aria-hidden="true" /> Added
+                                </>
+                            ) : (
+                                <>
+                                    <ShoppingCart className="h-4 w-4" aria-hidden="true" /> Add to Cart
+                                </>
+                            )}
+                        </Button>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
@@ -122,34 +121,82 @@ export function HeadlightsSelector({ categories }: HeadlightsSelectorProps) {
     };
 
     return (
-        <div className="space-y-12">
-            <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
-                {categories.map((category) => (
-                    <HeadlightCategoryCard key={category.id} category={category} isSelected={selectedCategoryId === category.id} onSelect={() => handleCategorySelect(category.id)} />
-                ))}
+        <div className="space-y-14 md:space-y-16">
+            <div className="mx-auto max-w-5xl">
+                <StepHeading step={1}>Choose a power type</StepHeading>
+                <div className="mt-5 grid max-w-3xl grid-cols-2 gap-3 sm:gap-4 md:gap-5">
+                    {categories.map((category) => (
+                        <HeadlightCategoryCard key={category.id} category={category} isSelected={selectedCategoryId === category.id} onSelect={() => handleCategorySelect(category.id)} />
+                    ))}
+                </div>
             </div>
 
             {selectedCategory && (
-                <div className="animate-in fade-in slide-in-from-top-4 duration-300">
-                    <div className="mb-8 border-t-4 border-neutral-100 pt-8">
-                        <div className="mx-auto mb-8 flex max-w-4xl flex-col items-center gap-8 md:flex-row">
-                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-neutral-50 md:w-1/2">
-                                <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 50vw" />
+                <div className="motion-safe:animate-popover-in">
+                    <div className="mx-auto max-w-5xl">
+                        <StepHeading step={2}>Choose your model</StepHeading>
+                        <div className="mt-5 flex flex-col items-center gap-6 md:flex-row md:gap-10">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-white ring-1 ring-neutral-900/[0.05] md:w-1/2">
+                                <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-6" sizes="(max-width: 768px) 100vw, 50vw" />
                             </div>
-                            <div className="flex-1 text-center md:text-left">
-                                <h3 className="heading-3 text-primary-800 mb-3">{selectedCategory.description}</h3>
-                                <p className="text-body text-neutral-600">{selectedCategory.tagline}</p>
+                            <div className="flex-1">
+                                <p className="text-2xl leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-[1.75rem]">{selectedCategory.description}</p>
+                                <p className="mt-3 text-base leading-relaxed text-neutral-600 md:text-[17px]">{selectedCategory.tagline}</p>
                             </div>
-                        </div>
-
-                        <div className="flex flex-wrap justify-center gap-6">
-                            {selectedCategory.products.map((product) => (
-                                <div key={product.id} className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-                                    <HeadlightProductCard product={product} />
-                                </div>
-                            ))}
                         </div>
                     </div>
+
+                    <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-5 md:gap-6">
+                        {selectedCategory.products.map((product) => (
+                            <div key={product.id} className="flex w-full flex-col sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+                                <HeadlightProductCard product={product} />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Series benefits and case contents — only when the data provides them */}
+                    {(selectedCategory.benefits?.length || selectedCategory.inTheBox) && (
+                        <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:gap-6 lg:grid-cols-[1.4fr_1fr]">
+                            {selectedCategory.benefits && selectedCategory.benefits.length > 0 && (
+                                <div className={`${SURFACE_CARD} p-6 md:p-8`}>
+                                    <h4 className="mb-5 text-lg font-semibold tracking-[-0.015em] text-neutral-900">Benefits</h4>
+                                    <ul className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                                        {selectedCategory.benefits.map((benefit) => (
+                                            <li key={benefit.title} className="text-sm leading-relaxed text-neutral-600">
+                                                <span className="mb-0.5 block text-[15px] font-semibold text-neutral-900">{benefit.title}</span>
+                                                {benefit.text}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {selectedCategory.inTheBox && (
+                                <div className={`${SURFACE_CARD} p-6 md:p-8`}>
+                                    <h4 className="mb-5 text-lg font-semibold tracking-[-0.015em] text-neutral-900">What&apos;s in the case</h4>
+                                    {selectedCategory.inTheBox.image && (
+                                        <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-50">
+                                            <Image
+                                                src={selectedCategory.inTheBox.image}
+                                                alt={`${selectedCategory.name} headlight case contents`}
+                                                fill
+                                                className="object-contain p-4 mix-blend-multiply"
+                                                sizes="(max-width: 1024px) 100vw, 33vw"
+                                            />
+                                        </div>
+                                    )}
+                                    <ul className="space-y-2 text-sm leading-relaxed text-neutral-700">
+                                        {selectedCategory.inTheBox.items.map((item) => (
+                                            <li key={item} className="flex gap-2.5">
+                                                <span className="bg-primary-600 mt-2 h-1.5 w-1.5 shrink-0 rounded-full" aria-hidden="true" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {selectedCategory.inTheBox.note && <p className="mt-4 text-[13px] leading-relaxed text-neutral-500">{selectedCategory.inTheBox.note}</p>}
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
             )}
         </div>

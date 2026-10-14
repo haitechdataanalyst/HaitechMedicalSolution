@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
-import { getAllProducts, getProductBySlug, getProductBreadcrumbs, getProductPath, getRelatedProducts, getProductAccessories, getAllFrames, getHeadlightCategories } from "@/lib/catalog";
-import { ProductDetail } from "@/components/products";
-import { Breadcrumbs } from "@/components/ui";
-import { getDynamicMetadata, getMetadata } from "@/lib/metadata";
+import { getAllProducts, getProductBySlug, getProductPath } from "@/lib/catalog";
+import ProductPageView, { getProductMetadata } from "@/components/products/ProductPageView";
+import { getMetadata } from "@/lib/metadata";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -11,26 +10,19 @@ interface PageProps {
 export async function generateStaticParams() {
     try {
         const products = await getAllProducts();
-        const paths = await Promise.all(
-            products.map(async (p) => ({ slug: p.slug, path: await getProductPath(p) }))
-        );
-        return paths
-            .filter((p) => p.path.startsWith("/product/"))
-            .map((p) => ({ slug: p.slug }));
+        const paths = await Promise.all(products.map(async (p) => ({ slug: p.slug, path: await getProductPath(p) })));
+        return paths.filter((p) => p.path.startsWith("/product/")).map((p) => ({ slug: p.slug }));
     } catch {
         return [];
     }
 }
 
+// The canonical is the product's category URL when it has one, so this
+// fallback route never competes with it as a duplicate.
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
     const product = await getProductBySlug(slug);
-
-    if (!product) {
-        return getMetadata("productNotFound");
-    }
-
-    return getDynamicMetadata(product.name, product.description || `View ${product.name} at Haitech Medical`);
+    return product ? getProductMetadata(product) : getMetadata("productNotFound");
 }
 
 export default async function ProductPage({ params }: PageProps) {
@@ -41,26 +33,5 @@ export default async function ProductPage({ params }: PageProps) {
         notFound();
     }
 
-    const [breadcrumbs, relatedRaw, accessoriesRaw, headlightCategories] = await Promise.all([
-        getProductBreadcrumbs(product),
-        getRelatedProducts(product),
-        getProductAccessories(product),
-        getHeadlightCategories(),
-    ]);
-
-    const frames = getAllFrames();
-
-    const relatedProducts = await Promise.all(
-        relatedRaw.map(async (p) => ({ ...p, path: await getProductPath(p) }))
-    );
-    const accessories = await Promise.all(
-        accessoriesRaw.map(async (p) => ({ ...p, path: await getProductPath(p) }))
-    );
-
-    return (
-        <>
-            <Breadcrumbs items={breadcrumbs} />
-            <ProductDetail product={product} relatedProducts={relatedProducts} accessories={accessories} frames={frames} headlightCategories={headlightCategories} />
-        </>
-    );
+    return <ProductPageView product={product} />;
 }

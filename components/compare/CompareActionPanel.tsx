@@ -6,17 +6,21 @@ import { usePathname } from "next/navigation";
 import { type Product, type SpecificationsBlock } from "@/types";
 import { detectBrand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
+import { getCompareGroup } from "@/lib/compare-group.resolve";
 
 interface CompareActionPanelProps {
     product: Product;
 }
 
 export function CompareActionPanel({ product }: CompareActionPanelProps) {
-    const { items, add, remove, isAdded } = useCompare();
+    const { items, add, remove, isAdded, activeGroup } = useCompare();
     const pathname = usePathname();
     const added = isAdded(String(product.id));
     const isFull = items.length >= 3 && !added;
     const brand = detectBrand(product.sku);
+    const group = getCompareGroup(product.category);
+    // Only products from the same category family can be compared (e.g. loupes with loupes, never with a Salli chair)
+    const mismatch = !!activeGroup && !added && activeGroup.key !== group.key;
 
     if (brand.name !== "Admetec" && brand.name !== "Salli") return null;
 
@@ -33,6 +37,7 @@ export function CompareActionPanel({ product }: CompareActionPanelProps) {
             currency: product.currency,
             brand: brand.name,
             specs,
+            group,
         };
     };
 
@@ -52,25 +57,30 @@ export function CompareActionPanel({ product }: CompareActionPanelProps) {
     return (
         <div className="flex items-center gap-2">
             <button
+                type="button"
                 onClick={handleToggle}
                 disabled={isFull}
+                aria-pressed={added}
+                title={mismatch ? `Compare works within one category — you are comparing ${activeGroup?.label}` : undefined}
                 className={cn(
-                    "flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200",
+                    "inline-flex min-h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold transition-[background-color,color,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 motion-safe:enabled:active:scale-[0.97]",
                     added
-                        ? "bg-primary-500 text-white shadow-[0_2px_12px_-2px_rgb(31_182_205/0.45)]"
+                        ? "bg-primary-50 text-primary-800 hover:bg-primary-100"
                         : isFull
-                        ? "cursor-not-allowed border border-neutral-200 bg-neutral-100 text-neutral-300"
-                        : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
+                          ? "cursor-not-allowed bg-neutral-900/[0.04] text-neutral-500"
+                          : mismatch
+                            ? "bg-neutral-900/[0.04] text-neutral-500 hover:bg-neutral-900/[0.08]"
+                          : "bg-neutral-900/[0.05] text-neutral-800 hover:bg-neutral-900/[0.08]"
                 )}
             >
                 {added ? (
                     <>
-                        <Check className="h-4 w-4" />
+                        <Check className="h-4 w-4" aria-hidden="true" />
                         Added to Compare
                     </>
                 ) : (
                     <>
-                        <GitCompareArrows className="h-4 w-4" />
+                        <GitCompareArrows className="h-4 w-4" aria-hidden="true" />
                         {isFull ? "Compare full (3/3)" : "Add to Compare"}
                     </>
                 )}
@@ -79,11 +89,12 @@ export function CompareActionPanel({ product }: CompareActionPanelProps) {
             {/* Scroll anchor — show when this product is added and there are others to compare with */}
             {added && items.length >= 2 && (
                 <button
+                    type="button"
                     onClick={scrollToCompare}
-                    className="flex items-center gap-1.5 rounded-xl border border-primary-200 bg-primary-50 px-3 py-2 text-sm font-semibold text-primary-700 transition-all hover:bg-primary-100"
+                    className="text-primary-700 hover:text-primary-800 inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-medium transition-colors duration-200"
                 >
                     See comparison
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-4 w-4" aria-hidden="true" />
                 </button>
             )}
         </div>

@@ -2,22 +2,27 @@
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
-import { SlidersHorizontal, X, ChevronDown, ChevronUp } from "lucide-react";
+import { SlidersHorizontal, X, ChevronDown, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+import { PILL_SELECT, RESULT_COUNT, SEARCH_INPUT } from "@/components/catalog/listing";
 
 type Facet = { label: string; count: number };
 
 interface FilterSidebarProps {
-    brands:      Facet[];
-    categories:  Facet[];
-    itemTypes:   Facet[];
-    total:       number;
-    filtered:    number;
+    brands: Facet[];
+    categories: Facet[];
+    itemTypes: Facet[];
+    total: number;
+    filtered: number;
 }
 
+const GROUP_TITLE = "text-[15px] font-semibold tracking-[-0.01em] text-neutral-900";
+
 function useFilterParam(key: string): [string[], (val: string) => void, () => void] {
-    const router     = useRouter();
-    const pathname   = usePathname();
-    const params     = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
+    const params = useSearchParams();
 
     const current = params.getAll(key);
 
@@ -49,40 +54,41 @@ function useFilterParam(key: string): [string[], (val: string) => void, () => vo
 
 function FilterSection({ title, facets, paramKey }: { title: string; facets: Facet[]; paramKey: string }) {
     const [selected, toggle] = useFilterParam(paramKey);
-    const [open, setOpen]    = useState(true);
+    const [open, setOpen] = useState(true);
     const [showAll, setShowAll] = useState(false);
     const visible = showAll ? facets : facets.slice(0, 8);
 
     return (
-        <div className="border-b border-neutral-100 pb-4">
+        <div>
             <button
+                type="button"
                 onClick={() => setOpen((o) => !o)}
-                className="flex w-full items-center justify-between py-2 text-sm font-semibold text-neutral-800"
+                aria-expanded={open}
+                className={cn(GROUP_TITLE, "focus-visible:outline-primary-500 flex min-h-11 w-full items-center justify-between rounded-lg focus-visible:outline-2")}
             >
                 {title}
-                {open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                <ChevronDown className={cn("h-4 w-4 text-neutral-500 transition-transform duration-200 ease-out", open && "rotate-180")} aria-hidden="true" />
             </button>
 
             {open && (
-                <div className="mt-2 space-y-1">
+                <div className="mt-1">
                     {visible.map(({ label, count }) => (
-                        <label key={label} className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 text-sm hover:bg-neutral-50">
-                            <input
-                                type="checkbox"
-                                checked={selected.includes(label)}
-                                onChange={() => toggle(label)}
-                                className="h-3.5 w-3.5 rounded accent-primary-500"
-                            />
+                        <label
+                            key={label}
+                            className="-mx-2 flex min-h-10 cursor-pointer items-center gap-3 rounded-lg px-2 text-sm transition-colors duration-200 ease-out hover:bg-neutral-900/[0.03]"
+                        >
+                            <input type="checkbox" checked={selected.includes(label)} onChange={() => toggle(label)} className="accent-primary-700 h-4 w-4 shrink-0 rounded" />
                             <span className="flex-1 truncate text-neutral-700">{label}</span>
-                            <span className="text-xs text-neutral-400">{count}</span>
+                            <span className="text-[13px] text-neutral-500 tabular-nums">{count}</span>
                         </label>
                     ))}
                     {facets.length > 8 && (
                         <button
+                            type="button"
                             onClick={() => setShowAll((s) => !s)}
-                            className="mt-1 text-xs text-primary-600 hover:underline"
+                            className="text-primary-700 focus-visible:outline-primary-500 -ml-2 min-h-11 rounded-full px-2 text-sm font-medium hover:underline focus-visible:outline-2"
                         >
-                            {showAll ? "Show less" : `+${facets.length - 8} more`}
+                            {showAll ? "Show less" : `Show ${facets.length - 8} more`}
                         </button>
                     )}
                 </div>
@@ -92,19 +98,25 @@ function FilterSection({ title, facets, paramKey }: { title: string; facets: Fac
 }
 
 export default function InventoryFilters({ brands, categories, itemTypes, total, filtered }: FilterSidebarProps) {
-    const router   = useRouter();
+    const router = useRouter();
     const pathname = usePathname();
-    const params   = useSearchParams();
+    const params = useSearchParams();
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    const [, , clearBrands]     = useFilterParam("brand");
+    const [, , clearBrands] = useFilterParam("brand");
     const [, , clearCategories] = useFilterParam("category");
-    const [, , clearTypes]      = useFilterParam("type");
+    const [, , clearTypes] = useFilterParam("type");
 
-    const search    = params.get("search") ?? "";
-    const inStock   = params.get("inStock") === "true";
-    const sort      = params.get("sort") ?? "name";
-    const hasFilters = params.toString().replace(/page=\d+/g, "").replace(/sort=[^&]+/g, "").replace(/&&/g, "").replace(/^&|&$/, "").length > 0;
+    const search = params.get("search") ?? "";
+    const inStock = params.get("inStock") === "true";
+    const sort = params.get("sort") ?? "name";
+    const hasFilters =
+        params
+            .toString()
+            .replace(/page=\d+/g, "")
+            .replace(/sort=[^&]+/g, "")
+            .replace(/&&/g, "")
+            .replace(/^&|&$/, "").length > 0;
 
     function setParam(key: string, val: string | null) {
         const next = new URLSearchParams(params.toString());
@@ -119,27 +131,32 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
     }
 
     const sidebar = (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-5">
             {/* Result count + clear */}
-            <div className="flex items-center justify-between">
-                <span className="text-sm text-neutral-500">
-                    <span className="font-semibold text-neutral-800">{filtered}</span> of {total}
+            <div className="-my-2 flex min-h-11 items-center justify-between">
+                <span className={RESULT_COUNT} aria-live="polite">
+                    {filtered} of {total}
                 </span>
                 {hasFilters && (
-                    <button onClick={clearAll} className="flex items-center gap-1 text-xs text-red-500 hover:text-red-700">
-                        <X size={12} /> Clear all
+                    <button
+                        type="button"
+                        onClick={clearAll}
+                        className="hover:text-primary-700 focus-visible:outline-primary-500 -mr-2 inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-sm font-medium text-neutral-600 focus-visible:outline-2"
+                    >
+                        <X className="h-3.5 w-3.5" aria-hidden="true" /> Clear all
                     </button>
                 )}
             </div>
 
             {/* Search */}
-            <div>
-                <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-500">Search</label>
+            <div className="relative">
+                <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-neutral-500" aria-hidden="true" />
                 <input
-                    type="text"
+                    type="search"
+                    aria-label="Search the catalog"
                     defaultValue={search}
-                    placeholder="Name, SKU, category…"
-                    className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-100"
+                    placeholder="Name, SKU, category"
+                    className={cn(SEARCH_INPUT, "pr-4")}
                     onKeyDown={(e) => {
                         if (e.key === "Enter") setParam("search", (e.target as HTMLInputElement).value || null);
                     }}
@@ -150,14 +167,9 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
             </div>
 
             {/* In-stock toggle */}
-            <label className="flex cursor-pointer items-center gap-2 text-sm">
-                <input
-                    type="checkbox"
-                    checked={inStock}
-                    onChange={(e) => setParam("inStock", e.target.checked ? "true" : null)}
-                    className="h-4 w-4 rounded accent-primary-500"
-                />
-                <span className="font-medium text-neutral-700">In stock only</span>
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 text-[15px]">
+                <input type="checkbox" checked={inStock} onChange={(e) => setParam("inStock", e.target.checked ? "true" : null)} className="accent-primary-700 h-4 w-4 rounded" />
+                <span className="font-medium text-neutral-800">In stock only</span>
             </label>
 
             {/* Brand */}
@@ -167,16 +179,14 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
             <FilterSection title="Category" facets={categories} paramKey="category" />
 
             {/* Item Type */}
-            <FilterSection title="Item Type" facets={itemTypes} paramKey="type" />
+            <FilterSection title="Item type" facets={itemTypes} paramKey="type" />
 
             {/* Sort */}
             <div>
-                <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-500">Sort by</label>
-                <select
-                    value={sort}
-                    onChange={(e) => setParam("sort", e.target.value)}
-                    className="w-full rounded-xl border border-neutral-200 px-3 py-2 text-sm outline-none focus:border-primary-400"
-                >
+                <label htmlFor="catalog-sort" className={cn(GROUP_TITLE, "mb-2 block")}>
+                    Sort by
+                </label>
+                <select id="catalog-sort" value={sort} onChange={(e) => setParam("sort", e.target.value)} className={cn(PILL_SELECT, "w-full")}>
                     <option value="name">Name (A–Z)</option>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
@@ -191,25 +201,27 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
             {/* Mobile toggle */}
             <div className="lg:hidden">
                 <button
+                    type="button"
                     onClick={() => setMobileOpen((o) => !o)}
-                    className="flex items-center gap-2 rounded-xl border border-neutral-100 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm"
+                    aria-expanded={mobileOpen}
+                    className="focus-visible:outline-primary-500 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-neutral-800 ring-1 ring-neutral-900/[0.08] transition-transform duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
                 >
-                    <SlidersHorizontal size={15} />
-                    Filters {hasFilters && <span className="ml-1 rounded-full bg-primary-500 px-1.5 py-0.5 text-xs text-white">ON</span>}
+                    <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
+                    Filters
+                    {hasFilters && (
+                        <>
+                            <span className="bg-primary-700 h-2 w-2 rounded-full" aria-hidden="true" />
+                            <span className="sr-only">(active)</span>
+                        </>
+                    )}
                 </button>
 
-                {mobileOpen && (
-                    <div className="mt-3 rounded-2xl border border-neutral-100 bg-white p-4 shadow-md">
-                        {sidebar}
-                    </div>
-                )}
+                {mobileOpen && <div className={cn(SURFACE_CARD, "mt-3 p-5")}>{sidebar}</div>}
             </div>
 
             {/* Desktop sidebar */}
-            <aside className="hidden w-60 shrink-0 lg:block">
-                <div className="sticky top-24 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm">
-                    {sidebar}
-                </div>
+            <aside className="hidden w-64 shrink-0 lg:block">
+                <div className={cn(SURFACE_CARD, "sticky top-24 p-5")}>{sidebar}</div>
             </aside>
         </>
     );

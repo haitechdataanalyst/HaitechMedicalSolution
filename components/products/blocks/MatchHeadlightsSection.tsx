@@ -28,23 +28,27 @@ export default function MatchHeadlightsSection({ config, headlightCategories }: 
             {/* Header with toggle */}
             <div className="flex items-start justify-between gap-4">
                 <div>
-                    <h4 className="text-sm font-semibold text-neutral-800">Match Headlights</h4>
-                    <p className="mt-0.5 text-xs text-neutral-500">Add a compatible LED headlight to your loupes order. Billed separately.</p>
+                    <h2 className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">Match Headlights</h2>
+                    <p className="mt-1 text-[13px] leading-relaxed text-neutral-500">Add a compatible LED headlight to your loupes order. Billed separately.</p>
                 </div>
                 <button
                     type="button"
                     role="switch"
+                    aria-label="Match Headlights"
                     aria-checked={isEnabled}
                     onClick={() => setIsEnabled(!isEnabled)}
-                    className={cn("relative inline-flex h-8 w-14 shrink-0 items-center rounded-full transition-colors duration-200", isEnabled ? "bg-primary-500" : "bg-neutral-300")}
+                    className={cn(
+                        "focus-visible:outline-primary-500 relative mt-0.5 inline-flex h-8 w-[52px] before:absolute before:-inset-1.5 before:content-[''] shrink-0 items-center rounded-full transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2",
+                        isEnabled ? "bg-primary-700" : "bg-neutral-300"
+                    )}
                 >
-                    <span className={cn("inline-block h-6 w-6 transform rounded-full bg-white shadow-sm transition-transform duration-200", isEnabled ? "translate-x-[30px]" : "translate-x-1")} />
+                    <span className={cn("inline-block h-7 w-7 rounded-full bg-white shadow-[0_1px_3px_rgba(15,23,42,0.25)] transition-transform duration-200 ease-out", isEnabled ? "translate-x-[22px]" : "translate-x-0.5")} />
                 </button>
             </div>
 
             {/* Content */}
             {isEnabled && (
-                <div className="space-y-4 rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                <div className="space-y-4 rounded-xl bg-neutral-50 p-4">
                     {/* Category Tabs */}
                     <div className="flex flex-wrap gap-2">
                         {filteredCategories.map((category) => (
@@ -52,11 +56,10 @@ export default function MatchHeadlightsSection({ config, headlightCategories }: 
                                 key={category.id}
                                 type="button"
                                 onClick={() => setActiveCategoryId(category.id)}
+                                aria-pressed={activeCategoryId === category.id}
                                 className={cn(
-                                    "rounded-full px-4 py-1.5 text-sm font-medium transition-all",
-                                    activeCategoryId === category.id
-                                        ? "bg-primary-500 text-white shadow-sm"
-                                        : "hover:border-primary-300 hover:text-primary-600 cursor-pointer border border-neutral-300 bg-white text-neutral-600"
+                                    "focus-visible:outline-primary-500 min-h-11 rounded-full px-4 text-[15px] font-medium transition-[transform,background-color,color] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]",
+                                    activeCategoryId === category.id ? "bg-primary-800 text-white" : "bg-white text-neutral-700 ring-1 ring-neutral-900/10 hover:text-neutral-900 hover:ring-neutral-900/25"
                                 )}
                             >
                                 {category.name}
@@ -68,12 +71,12 @@ export default function MatchHeadlightsSection({ config, headlightCategories }: 
                     <div className="flex gap-4 overflow-x-auto pb-2">
                         {products.map((product) => (
                             <div key={product.id} className="flex min-w-30 shrink-0 flex-col items-center gap-2">
-                                <div className="relative h-24 w-24 overflow-hidden rounded-lg bg-white p-1">
-                                    <Image src={product.image} alt={product.name} fill className="object-contain" sizes="96px" />
+                                <div className="relative h-24 w-24 overflow-hidden rounded-xl bg-white">
+                                    <Image src={product.image} alt={product.name} fill className="object-contain p-2" sizes="96px" />
                                 </div>
-                                <span className="text-center text-xs font-medium text-neutral-700">{product.name}</span>
-                                <Link href={`/our-headlights`} className="text-primary-600 hover:text-primary-700 inline-flex items-center gap-0.5 text-xs transition-colors">
-                                    Read More <ChevronRight className="h-3 w-3" />
+                                <span className="text-center text-[13px] font-medium text-neutral-800">{product.name}</span>
+                                <Link href={`/our-headlights`} className="text-primary-700 hover:text-primary-800 inline-flex min-h-11 items-center gap-0.5 rounded-full px-2 text-[13px] font-medium">
+                                    Read More <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
                                 </Link>
                             </div>
                         ))}

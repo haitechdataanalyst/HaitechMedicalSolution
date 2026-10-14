@@ -1,9 +1,10 @@
-    "use client";
+"use client";
 
 import { useState, useCallback } from "react";
 import { HeroBlock as HeroBlockType, Product } from "@/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { productNameWithBrand } from "@/lib/product-seo";
 
 const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
@@ -98,47 +99,49 @@ export default function HeroBlock({ data, product, externalSelectedImage }: Hero
     const hasFrameVariants = product?.frameVariants && Object.keys(product.frameVariants.images).length > 0;
     const showThumbnails = !hasFrameVariants && allImages.length > 1;
 
-    const productName = product?.name ?? "Product";
+    // Brand-prefixed ("Strauss A0") so bare model codes still describe the photo
+    const productName = product ? productNameWithBrand(product) : "Product";
 
     return (
         <div className="space-y-4">
             {/* Main Image */}
-            <div className="card group relative aspect-square overflow-hidden bg-neutral-50">
+            <div className="relative aspect-square overflow-hidden rounded-3xl bg-neutral-50">
                 <Image
                     key={selectedImage}
                     src={failedImages.has(selectedImage) ? PLACEHOLDER_IMAGE : selectedImage}
                     alt={productName}
                     fill
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="animate-in fade-in object-contain p-6 duration-500 transition-transform group-hover:scale-[1.03] sm:p-10"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="motion-safe:animate-in motion-safe:fade-in object-contain p-8 mix-blend-multiply duration-300 sm:p-14"
                     onError={() => handleImageError(selectedImage)}
                 />
             </div>
 
             {/* Thumbnails - hidden for products with frame variants */}
             {showThumbnails && (
-                <div className="flex gap-3 overflow-x-auto pb-2" role="listbox" aria-label={`${productName} images`}>
+                <div className="scrollbar-hide -mx-1 flex gap-2.5 overflow-x-auto px-1 py-1" role="listbox" aria-label={`${productName} images`}>
                     {allImages.map((image, index) => {
                         const isSelected = selectedImage === image;
                         return (
                             <button
                                 key={index}
+                                type="button"
                                 onClick={() => setUserSelectedImage(image)}
                                 role="option"
                                 aria-selected={isSelected}
                                 aria-label={`View ${productName} — image ${index + 1} of ${allImages.length}`}
                                 className={cn(
-                                    "h-20 w-20 shrink-0 overflow-hidden rounded-xl border-2 bg-neutral-50 transition-all duration-200 hover:scale-105 sm:h-24 sm:w-24",
-                                    isSelected ? "border-primary-600 ring-2 ring-primary-500 ring-offset-2 shadow-md" : "cursor-pointer border-transparent hover:border-neutral-300"
+                                    "focus-visible:outline-primary-500 h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-neutral-50 transition-[transform,opacity] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97] sm:h-20 sm:w-20",
+                                    isSelected ? "ring-primary-700 ring-2" : "opacity-70 hover:opacity-100"
                                 )}
                             >
                                 <Image
                                     src={failedImages.has(image) ? PLACEHOLDER_IMAGE : image}
-                                    alt={`${productName} — view ${index + 1}`}
+                                    alt="" // the surrounding button carries the descriptive aria-label
                                     width={96}
                                     height={96}
-                                    className="h-full w-full object-contain p-1.5"
+                                    className="h-full w-full object-contain p-2 mix-blend-multiply"
                                     onError={() => handleImageError(image)}
                                 />
                             </button>

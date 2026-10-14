@@ -1,12 +1,13 @@
 import { SpecificationsBlock as SpecificationsBlockType } from "@/types";
-import { ClipboardList } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ExpandableTable } from "@/components/ui/Expandable";
 
 interface SpecificationsTableProps {
     data: SpecificationsBlockType["data"];
+    /** Opt-in progressive disclosure: rows shown while collapsed. Rows are displayed in data order. */
+    visibleRows?: number;
 }
 
-export default function SpecificationsTable({ data }: SpecificationsTableProps) {
+export default function SpecificationsTable({ data, visibleRows }: SpecificationsTableProps) {
     // Handle both 'rows' and 'specs' field names for backwards compatibility
     const rows = data.rows ?? data.specs ?? [];
 
@@ -14,32 +15,45 @@ export default function SpecificationsTable({ data }: SpecificationsTableProps) 
         return null;
     }
 
+    const rowElements = rows.map((row: { label: string; value: string }, index: number) => (
+        <tr key={index} className="border-b border-neutral-900/[0.06] last:border-b-0">
+            <th scope="row" className="w-2/5 py-3.5 pr-4 text-left align-top text-[15px] font-normal text-neutral-500 sm:w-1/3">
+                {row.label}
+            </th>
+            <td className="py-3.5 align-top text-[15px] text-neutral-900">{row.value}</td>
+        </tr>
+    ));
+    const footnote = data.footnote ? <p className="mt-3 text-[13px] text-neutral-500">{data.footnote}</p> : null;
+    const heading = data.title && <h2 className="mb-2 text-xl font-semibold tracking-[-0.015em] text-neutral-900">{data.title}</h2>;
+
+    if (visibleRows) {
+        return (
+            <section id="specifications" aria-label={data.title ?? "Specifications"}>
+                {heading}
+                <ExpandableTable
+                    id="specifications-table"
+                    hashId="specifications"
+                    rows={rowElements}
+                    visibleRows={visibleRows}
+                    frameClassName="overflow-hidden"
+                    tableClassName="w-full border-collapse"
+                    footer={footnote}
+                    moreLabel={`View full specifications (${rows.length} rows)`}
+                    lessLabel="Show fewer specifications"
+                />
+            </section>
+        );
+    }
+
     return (
         <div>
-            {data.title && (
-                <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-neutral-900">
-                    <ClipboardList className="h-4 w-4 text-primary-500" aria-hidden="true" />
-                    {data.title}
-                </h3>
-            )}
-            <div className="card overflow-hidden">
+            {heading}
+            <div>
                 <table className="w-full border-collapse">
-                    <tbody>
-                        {rows.map((row: { label: string; value: string }, index: number) => (
-                            <tr
-                                key={index}
-                                className={cn(
-                                    "transition-colors hover:bg-primary-50/40",
-                                    index % 2 === 0 ? "bg-white" : "bg-neutral-50/60"
-                                )}
-                            >
-                                <td className="w-2/5 px-4 py-3 text-sm font-medium text-neutral-500 sm:w-1/3 sm:px-5">{row.label}</td>
-                                <td className="px-4 py-3 text-sm font-medium text-neutral-800 sm:px-5">{row.value}</td>
-                            </tr>
-                        ))}
-                    </tbody>
+                    <tbody>{rowElements}</tbody>
                 </table>
             </div>
+            {footnote}
         </div>
     );
 }

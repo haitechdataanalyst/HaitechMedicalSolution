@@ -1,6 +1,5 @@
 import { InfoBlock as InfoBlockType } from "@/types";
 import { CheckIcon } from "@/components/icons";
-import { Factory, ShieldCheck, Package } from "lucide-react";
 
 interface InfoBlockProps {
     data: InfoBlockType["data"];
@@ -11,43 +10,36 @@ export default function InfoBlock({ data }: InfoBlockProps) {
     if (!data.manufacturer && !data.warranty && !hasPackageContents) return null;
 
     return (
-        <div className="card divide-y divide-neutral-100">
+        <dl className="divide-y divide-neutral-900/[0.06]">
             {data.manufacturer && (
-                <div className="flex items-start gap-3 p-4 sm:p-5">
-                    <Factory className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden="true" />
-                    <div>
-                        <h4 className="text-xs font-semibold tracking-wide text-neutral-400 uppercase">Manufacturer</h4>
-                        <p className="mt-0.5 text-sm font-medium text-neutral-800">{data.manufacturer}</p>
-                    </div>
+                <div className="grid grid-cols-[2fr_3fr] py-3.5 sm:grid-cols-[1fr_2fr]">
+                    <dt className="pr-4 text-[15px] text-neutral-500">Manufacturer</dt>
+                    <dd className="text-[15px] text-neutral-900">{data.manufacturer}</dd>
                 </div>
             )}
 
             {data.warranty && (
-                <div className="flex items-start gap-3 p-4 sm:p-5">
-                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden="true" />
-                    <div>
-                        <h4 className="text-xs font-semibold tracking-wide text-neutral-400 uppercase">Warranty</h4>
-                        <p className="mt-0.5 text-sm font-medium text-neutral-800">{data.warranty}</p>
-                    </div>
+                <div className="grid grid-cols-[2fr_3fr] py-3.5 sm:grid-cols-[1fr_2fr]">
+                    <dt className="pr-4 text-[15px] text-neutral-500">Warranty</dt>
+                    <dd className="text-[15px] text-neutral-900">{data.warranty}</dd>
                 </div>
             )}
 
             {hasPackageContents && (
-                <div className="flex items-start gap-3 p-4 sm:p-5">
-                    <Package className="mt-0.5 h-4 w-4 shrink-0 text-primary-500" aria-hidden="true" />
-                    <div className="min-w-0 flex-1">
-                        <h4 className="mb-2 text-xs font-semibold tracking-wide text-neutral-400 uppercase">Package Contents</h4>
+                <div className="grid grid-cols-[2fr_3fr] py-3.5 sm:grid-cols-[1fr_2fr]">
+                    <dt className="pr-4 text-[15px] text-neutral-500">Package contents</dt>
+                    <dd>
                         <ul className="space-y-1.5">
                             {data.packageContents!.map((item, index) => (
-                                <li key={index} className="flex items-start gap-2 text-sm text-neutral-700">
-                                    <CheckIcon size={15} className="text-success mt-0.5 shrink-0" />
+                                <li key={index} className="flex items-start gap-2 text-[15px] text-neutral-900">
+                                    <CheckIcon size={16} className="text-primary-700 mt-0.5 shrink-0" />
                                     {item}
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </dd>
                 </div>
             )}
-        </div>
+        </dl>
     );
 }

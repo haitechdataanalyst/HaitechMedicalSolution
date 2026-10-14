@@ -1,7 +1,8 @@
 "use client";
 
 import { SalliCustomizationConfig } from "@/types";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
+import { OPTION_IDLE, OPTION_LABEL, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 
 export interface SalliSelection {
     piston: string | null;
@@ -25,49 +26,34 @@ export default function SalliCustomizationSection({ config, selection, onChange,
         update({ accessoryIds: next });
     };
 
+    const chip = (isSelected: boolean) => cn(OPTION_TILE, "px-4", isSelected ? OPTION_SELECTED : OPTION_IDLE);
+
     return (
-        <div className="space-y-5 border-b border-neutral-100 pb-5">
-            {config.warrantyText && <p className="text-xs font-medium text-emerald-600">{config.warrantyText}</p>}
+        <div className="space-y-7">
+            {config.warrantyText && <p className="text-[13px] font-medium text-emerald-700">{config.warrantyText}</p>}
 
             {/* Piston / cylinder height */}
             {config.pistons && config.pistons.length > 0 && (
-                <div>
-                    <label className="mb-2 block text-sm font-medium text-neutral-700">Piston Size</label>
-                    <div className="flex flex-wrap gap-2">
+                <div role="group" aria-label="Piston Size">
+                    <p className={OPTION_LABEL}>Piston Size</p>
+                    <div className="flex flex-wrap gap-2.5">
                         {config.pistons.map((p) => (
-                            <button
-                                key={p.value}
-                                type="button"
-                                title={p.description}
-                                onClick={() => update({ piston: p.value })}
-                                className={`rounded-lg border-2 px-3 py-1.5 text-sm transition-colors ${
-                                    selection.piston === p.value ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "border-neutral-300 hover:border-primary-400"
-                                }`}
-                            >
+                            <button key={p.value} type="button" title={p.description} aria-pressed={selection.piston === p.value} onClick={() => update({ piston: p.value })} className={chip(selection.piston === p.value)}>
                                 {p.label}
                             </button>
                         ))}
                     </div>
-                    {selection.piston && (
-                        <p className="mt-1.5 text-xs text-neutral-400">{config.pistons.find((p) => p.value === selection.piston)?.description}</p>
-                    )}
+                    {selection.piston && <p className="mt-2 text-[13px] text-neutral-500">{config.pistons.find((p) => p.value === selection.piston)?.description}</p>}
                 </div>
             )}
 
             {/* Seat size */}
             {config.seatSizes && config.seatSizes.length > 0 && (
-                <div>
-                    <label className="mb-2 block text-sm font-medium text-neutral-700">Seat Size</label>
-                    <div className="flex flex-wrap gap-2">
+                <div role="group" aria-label="Seat Size">
+                    <p className={OPTION_LABEL}>Seat Size</p>
+                    <div className="flex flex-wrap gap-2.5">
                         {config.seatSizes.map((s) => (
-                            <button
-                                key={s.value}
-                                type="button"
-                                onClick={() => update({ seatSize: s.value })}
-                                className={`rounded-lg border-2 px-3 py-1.5 text-sm transition-colors ${
-                                    selection.seatSize === s.value ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "border-neutral-300 hover:border-primary-400"
-                                }`}
-                            >
+                            <button key={s.value} type="button" aria-pressed={selection.seatSize === s.value} onClick={() => update({ seatSize: s.value })} className={chip(selection.seatSize === s.value)}>
                                 {s.label}
                             </button>
                         ))}
@@ -77,55 +63,52 @@ export default function SalliCustomizationSection({ config, selection, onChange,
 
             {/* Upholstery material */}
             {config.materials && config.materials.length > 0 && (
-                <div>
-                    <label className="mb-2 block text-sm font-medium text-neutral-700">Upholstery</label>
-                    <div className="flex flex-wrap gap-2">
-                        {config.materials.map((m) => (
-                            <button
-                                key={m.value}
-                                type="button"
-                                onClick={() => update({ material: m.value })}
-                                className={`rounded-lg border-2 px-3 py-1.5 text-sm transition-colors ${
-                                    (selection.material ?? config.materials?.[0]?.value) === m.value ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "border-neutral-300 hover:border-primary-400"
-                                }`}
-                            >
-                                {m.label}
-                                {typeof m.priceModifier === "number" && m.priceModifier !== 0 && (
-                                    <span className="ml-1 text-xs text-neutral-400">
-                                        ({m.priceModifier > 0 ? "+" : ""}
-                                        {formatPrice(m.priceModifier, currency)})
-                                    </span>
-                                )}
-                            </button>
-                        ))}
+                <div role="group" aria-label="Upholstery">
+                    <p className={OPTION_LABEL}>Upholstery</p>
+                    <div className="flex flex-wrap gap-2.5">
+                        {config.materials.map((m) => {
+                            const isSelected = (selection.material ?? config.materials?.[0]?.value) === m.value;
+                            return (
+                                <button key={m.value} type="button" aria-pressed={isSelected} onClick={() => update({ material: m.value })} className={chip(isSelected)}>
+                                    {m.label}
+                                    {typeof m.priceModifier === "number" && m.priceModifier !== 0 && (
+                                        <span className="ml-1.5 text-[13px] font-normal text-neutral-500 tabular-nums">
+                                            ({m.priceModifier > 0 ? "+" : ""}
+                                            {formatPrice(m.priceModifier, currency)})
+                                        </span>
+                                    )}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
             )}
 
             {/* Compatible accessories */}
             {config.accessories && config.accessories.length > 0 && (
-                <div>
-                    <label className="mb-2 block text-sm font-medium text-neutral-700">Add Accessories</label>
-                    <div className="space-y-2">
+                <fieldset>
+                    <legend className={OPTION_LABEL}>Add Accessories</legend>
+                    <div className="space-y-2.5">
                         {config.accessories.map((a) => {
                             const checked = selection.accessoryIds.includes(a.id);
                             return (
                                 <label
                                     key={a.id}
-                                    className={`flex cursor-pointer items-center justify-between rounded-lg border-2 px-3 py-2 text-sm transition-colors ${
-                                        checked ? "border-primary-500 bg-primary-50/50" : "border-neutral-200 hover:border-primary-300"
-                                    }`}
+                                    className={cn(
+                                        "has-[:focus-visible]:outline-primary-500 flex min-h-12 cursor-pointer items-center justify-between gap-3 rounded-xl px-4 py-2.5 text-[15px] transition-[box-shadow,background-color] duration-200 ease-out has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2",
+                                        checked ? "bg-primary-50/40 ring-primary-700 ring-2" : "ring-1 ring-neutral-900/10 hover:ring-neutral-900/25"
+                                    )}
                                 >
-                                    <span className="flex items-center gap-2.5">
-                                        <input type="checkbox" checked={checked} onChange={() => toggleAccessory(a.id)} className="accent-primary-600 h-4 w-4" />
+                                    <span className="flex items-center gap-3 text-neutral-900">
+                                        <input type="checkbox" checked={checked} onChange={() => toggleAccessory(a.id)} className="accent-primary-700 h-[18px] w-[18px] shrink-0" />
                                         {a.label}
                                     </span>
-                                    <span className="text-xs font-medium text-neutral-500">{a.price > 0 ? `+${formatPrice(a.price, currency)}` : "Price on request"}</span>
+                                    <span className="shrink-0 text-[13px] text-neutral-500 tabular-nums">{a.price > 0 ? `+${formatPrice(a.price, currency)}` : "Price on request"}</span>
                                 </label>
                             );
                         })}
                     </div>
-                </div>
+                </fieldset>
             )}
         </div>
     );

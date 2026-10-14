@@ -2,7 +2,41 @@
 export type EntityType = "category" | "product";
 
 // Content Block Types
-export type ContentBlock = HeroBlock | DescriptionBlock | SpecificationsBlock | InfoBlock | ActionsBlock | GalleryBlock;
+export type ContentBlock = HeroBlock | DescriptionBlock | SpecificationsBlock | InfoBlock | ActionsBlock | GalleryBlock | AudienceBlock | CareBlock | FaqBlock | SeoBlock | PresentationBlock;
+
+/** Per-breakpoint value: base (<640px), sm (640–1023px), lg (≥1024px). */
+export interface Responsive<T> {
+    base: T;
+    sm: T;
+    lg: T;
+}
+
+/**
+ * Opt-in page presentation for one product. Never rendered itself; it only
+ * changes how existing content is shown (progressive disclosure, section nav,
+ * quick-enquiry buttons). Products without it render exactly as before.
+ */
+export interface PresentationBlock {
+    type: "presentation";
+    data: {
+        sectionNav?: boolean;
+        quickEnquiry?: boolean;
+        overview?: {
+            /** Lines shown while collapsed. */
+            lines?: Responsive<number>;
+            /** "Read more" is rendered only where the overview is longer than this many characters. */
+            readMoreMinChars?: Responsive<number>;
+        };
+        features?: {
+            /** Feature items shown while collapsed. */
+            visible?: Responsive<number>;
+        };
+        specifications?: {
+            /** Spec rows shown while collapsed. */
+            visibleRows?: number;
+        };
+    };
+}
 
 // Category type for categories.json
 export interface Category {
@@ -47,6 +81,10 @@ export interface HeadlightProduct {
     image: string;
     description: string;
     features: string[];
+    /** Short "best for" note shown in the light comparison table. */
+    bestFor?: string;
+    /** Accessories are listed with their series but left out of the spec comparison. */
+    isAccessory?: boolean;
 }
 
 // Headlight Category type (Wireless/Wired)
@@ -57,6 +95,8 @@ export interface HeadlightCategory {
     tagline: string;
     image: string;
     products: HeadlightProduct[];
+    benefits?: { title: string; text: string }[];
+    inTheBox?: { items: string[]; note?: string; image?: string };
 }
 
 // Headlights data structure
@@ -65,6 +105,7 @@ export interface HeadlightsData {
         title: string;
         description: string;
         features: string[];
+        buyingGuide?: { title: string; text: string };
     };
     categories: HeadlightCategory[];
 }
@@ -190,6 +231,8 @@ export interface SpecificationsBlock {
             label: string;
             value: string;
         }>;
+        /** One line shown directly under the table, e.g. "Specifications are subject to change without notice." */
+        footnote?: string;
     };
 }
 
@@ -295,6 +338,51 @@ export interface ActionsBlock {
         templeTipEngraving?: EngravingConfig;
         boxEngraving?: EngravingConfig;
         salliCustomization?: SalliCustomizationConfig;
+    };
+}
+
+/**
+ * Optional product-page sections. Each renders only when it has content, so
+ * add one to a product's contentBlocks only with facts from the
+ * manufacturer's catalogue or Haitech's own service policy.
+ */
+export interface AudienceBlock {
+    type: "audience";
+    data: {
+        /** Who the product suits, e.g. "General dentists working at 3.0x to 4.0x". */
+        suitedFor?: string[];
+        /** Who should choose something else, ideally naming the alternative. */
+        notSuitedFor?: string[];
+    };
+}
+
+export interface CareBlock {
+    type: "care";
+    data: {
+        title?: string;
+        steps: string[];
+        /** Optional link to a full care guide (article or PDF). */
+        guideHref?: string;
+    };
+}
+
+/**
+ * Optional hand-written search title and meta description. Never rendered on
+ * the page; when present it replaces the generated title (used as-is, without
+ * the "| Haitech Medical" suffix) and description.
+ */
+export interface SeoBlock {
+    type: "seo";
+    data: {
+        title?: string;
+        description?: string;
+    };
+}
+
+export interface FaqBlock {
+    type: "faq";
+    data: {
+        items: Array<{ question: string; answer: string }>;
     };
 }
 

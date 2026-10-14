@@ -1,6 +1,8 @@
 "use client";
 
 import { ProductVariant } from "@/types";
+import { cn } from "@/lib/utils";
+import { OPTION_IDLE, OPTION_LABEL, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 
 interface LegacyVariantSelectorProps {
     variants: ProductVariant[];
@@ -11,50 +13,54 @@ interface LegacyVariantSelectorProps {
 
 export default function LegacyVariantSelector({ variants, variantType, selectedVariant, onVariantSelect }: LegacyVariantSelectorProps) {
     const isColorType = variantType === "color";
+    const groupLabel = isColorType ? "Select Color" : variantType === "model" ? "Select Model" : "Select Variant";
 
     return (
-        <div>
-            <label className="mb-3 block text-sm font-medium text-neutral-700">
-                {isColorType ? "Select Color" : variantType === "model" ? "Select Model" : "Select Variant"}
-            </label>
-            <div className="flex flex-wrap gap-4">
+        <div role="group" aria-label={groupLabel}>
+            <p className={OPTION_LABEL}>
+                {groupLabel}
+                {isColorType && selectedVariant && <span className="ml-2 font-normal text-neutral-500">{selectedVariant.name ?? selectedVariant.id}</span>}
+            </p>
+            <div className="flex flex-wrap gap-3">
                 {variants.map((variant) => {
                     const swatchColor = variant.color ?? variant.colorCode;
                     const isColorSwatch = Boolean(swatchColor);
                     const isSelected = selectedVariant?.id === variant.id;
+                    const name = variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku;
+
+                    if (isColorSwatch) {
+                        return (
+                            <button
+                                key={variant.id}
+                                type="button"
+                                onClick={() => onVariantSelect(variant)}
+                                title={name}
+                                aria-label={name}
+                                aria-pressed={isSelected}
+                                className={cn(
+                                    "focus-visible:outline-primary-500 flex h-11 w-11 items-center justify-center rounded-full transition-[transform,box-shadow] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.94]",
+                                    isSelected ? "ring-primary-700 ring-2" : "ring-1 ring-neutral-900/10 hover:ring-neutral-900/25"
+                                )}
+                            >
+                                <span className="block h-8 w-8 rounded-full ring-1 ring-neutral-900/10 ring-inset" style={{ backgroundColor: swatchColor }} />
+                            </button>
+                        );
+                    }
 
                     return (
                         <button
                             key={variant.id}
                             type="button"
                             onClick={() => onVariantSelect(variant)}
-                            className="group relative flex flex-col items-center gap-2"
-                            title={variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku}
-                            aria-label={variant.name ?? variant.color ?? variant.frameStyle ?? variant.sku}
+                            title={name}
                             aria-pressed={isSelected}
+                            className={cn(OPTION_TILE, "px-4", isSelected ? OPTION_SELECTED : OPTION_IDLE)}
                         >
-                            {isColorSwatch ? (
-                                <span
-                                    className={`block h-10 w-10 rounded-full border-2 shadow-sm transition-colors ${
-                                        isSelected ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "hover:border-primary-400 border-neutral-300"
-                                    }`}
-                                    style={{ backgroundColor: swatchColor }}
-                                />
-                            ) : (
-                                <span
-                                    className={`block rounded-lg border-2 px-3 py-1.5 text-sm transition-colors ${
-                                        isSelected ? "border-primary-500 ring-primary-500 ring-2 ring-offset-2" : "hover:border-primary-400 border-neutral-300"
-                                    }`}
-                                >
-                                    {variant.name ?? variant.frameStyle ?? variant.grit ?? variant.sku ?? variant.id}
-                                </span>
-                            )}
-                            {isColorType && variant.name && <span className={`text-xs ${isSelected ? "text-primary-700 font-medium" : "text-muted"}`}>{variant.name}</span>}
+                            {variant.name ?? variant.frameStyle ?? variant.grit ?? variant.sku ?? variant.id}
                         </button>
                     );
                 })}
             </div>
-            {isColorType && selectedVariant && <p className="text-muted mt-2 text-sm">Selected: {selectedVariant.name ?? selectedVariant.id}</p>}
         </div>
     );
 }

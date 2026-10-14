@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useLayoutEffect, useCallback } from "react";
 import { Frame, FrameVariantConfig } from "@/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { OPTION_IDLE, OPTION_LABEL, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 
 const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
@@ -198,103 +199,97 @@ export default function FrameColorSelector({ frames, frameVariants, onSelectionC
         setSelectedColorId(colorId);
     };
 
-    // Render hex color as a visual swatch
-    const renderColorSwatch = (hex: string | string[], isSelected: boolean) => {
-        const baseClasses = "block h-10 w-10 rounded-full border-4 shadow-sm transition-all";
-        const selectedClasses = "border-white rounded-full ring-primary-500 ring-2";
-        const unselectedClasses = "border-white cursor-pointer hover:scale-110";
+    // Render hex color as a visual swatch: the fill sits inside a ring that marks selection.
+    const renderColorSwatch = (hex: string | string[]) => {
+        const fillClasses = "block h-8 w-8 overflow-hidden rounded-full ring-1 ring-neutral-900/10 ring-inset";
 
-        // For compound colors (two-tone), render as split circle with dividing line
+        // For compound colors (two-tone), render as split circle
         if (Array.isArray(hex) && hex.length === 2) {
             return (
-                <div className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses, "rotate-0")}>
+                <span className={fillClasses} aria-hidden="true">
                     <svg viewBox="0 0 100 100" className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-                        {/* Left semicircle */}
-                        <circle cx="50" cy="50" r="45" fill={hex[0]} />
-                        {/* Right semicircle */}
-                        <path d="M 50 5 A 45 45 0 0 1 50 95 Z" fill={hex[1]} />
-                        {/* Dividing line */}
-                        {/* <line x1="50" y1="5" x2="50" y2="95" stroke="white" strokeWidth="1.5" opacity="0.6" /> */}
+                        <circle cx="50" cy="50" r="50" fill={hex[0]} />
+                        <path d="M 50 0 A 50 50 0 0 1 50 100 Z" fill={hex[1]} />
                     </svg>
-                </div>
+                </span>
             );
         }
 
-        // For single colors, simple solid background
-        return <span className={cn(baseClasses, isSelected ? selectedClasses : unselectedClasses)} style={{ backgroundColor: hex as string }} />;
+        const fill = Array.isArray(hex) ? hex[0] : hex;
+        return <span className={fillClasses} style={{ backgroundColor: fill }} aria-hidden="true" />;
     };
 
     if (parsedFrames.length === 0) {
         return null;
     }
 
+    const selectedColorName = availableColors.find((c) => c.id === selectedColorId)?.name;
+
     return (
-        <div className={cn("space-y-6", className)}>
+        <div className={cn("space-y-7", className)}>
             {/* Frame Selection */}
-            <div>
-                <label className="mb-3 block text-sm font-medium text-neutral-700">Select Frame</label>
-                <div className="flex flex-wrap gap-3">
-                    {parsedFrames.map((frame) => (
-                        <button
-                            key={frame.id}
-                            type="button"
-                            onClick={() => handleFrameSelect(frame.id)}
-                            aria-label={`Frame ${frame.name}`}
-                            aria-pressed={selectedFrameId === frame.id}
-                            className={cn(
-                                "group relative flex flex-col items-center gap-2 rounded-lg border-2 p-1 transition-all",
-                                selectedFrameId === frame.id ? "border-primary-500 bg-primary-50" : "hover:border-primary-300 cursor-pointer border-neutral-200 bg-white hover:bg-neutral-50"
-                            )}
-                        >
-                            <div className="relative h-16 w-24 overflow-hidden rounded">
-                                <Image
-                                    src={failedImages.has(frame.id) ? PLACEHOLDER_IMAGE : frame.image}
-                                    alt={frame.name}
-                                    fill
-                                    sizes="96px"
-                                    className="object-contain"
-                                    onError={() => handleImageError(frame.id)}
-                                />
-                            </div>
-                            <span className={cn("text-sm font-medium", selectedFrameId === frame.id ? "text-primary-700" : "text-neutral-600")}>{frame.name}</span>
-                        </button>
-                    ))}
+            <div role="group" aria-label="Select Frame">
+                <p className={OPTION_LABEL}>
+                    Frame
+                    {selectedFrame && <span className="ml-2 font-normal text-neutral-500">{selectedFrame.name}</span>}
+                </p>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {parsedFrames.map((frame) => {
+                        const isSelected = selectedFrameId === frame.id;
+                        return (
+                            <button
+                                key={frame.id}
+                                type="button"
+                                onClick={() => handleFrameSelect(frame.id)}
+                                aria-label={`Frame ${frame.name}`}
+                                aria-pressed={isSelected}
+                                className={cn(OPTION_TILE, "flex flex-col items-center gap-1.5 p-2 pb-2.5", isSelected ? OPTION_SELECTED : OPTION_IDLE)}
+                            >
+                                <span className="relative block h-14 w-full overflow-hidden rounded-lg bg-neutral-50">
+                                    <Image
+                                        src={failedImages.has(frame.id) ? PLACEHOLDER_IMAGE : frame.image}
+                                        alt=""
+                                        fill
+                                        sizes="120px"
+                                        className="object-contain p-1 mix-blend-multiply"
+                                        onError={() => handleImageError(frame.id)}
+                                    />
+                                </span>
+                                <span className={cn("text-[13px]", isSelected ? "font-semibold text-neutral-900" : "text-neutral-600")}>{frame.name}</span>
+                            </button>
+                        );
+                    })}
                 </div>
             </div>
 
             {/* Color Selection */}
             {selectedFrame && availableColors.length > 0 && (
-                <div>
-                    <label className="mb-3 block text-sm font-medium text-neutral-700">Select Color</label>
-                    <div className="flex flex-wrap gap-3">
-                        {availableColors.map((color) => (
-                            <button
-                                key={color.id}
-                                type="button"
-                                onClick={() => handleColorSelect(color.id)}
-                                className="group relative"
-                                title={color.name}
-                                aria-label={`Color ${color.name}`}
-                                aria-pressed={selectedColorId === color.id}
-                            >
-                                {renderColorSwatch(color.hex, selectedColorId === color.id)}
-                                {/* Tooltip */}
-                                <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 rounded bg-neutral-800 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity group-hover:opacity-100">
-                                    {color.name}
-                                </span>
-                            </button>
-                        ))}
+                <div role="group" aria-label="Select Color">
+                    <p className={OPTION_LABEL}>
+                        Color
+                        {selectedColorName && <span className="ml-2 font-normal text-neutral-500">{selectedColorName}</span>}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                        {availableColors.map((color) => {
+                            const isSelected = selectedColorId === color.id;
+                            return (
+                                <button
+                                    key={color.id}
+                                    type="button"
+                                    onClick={() => handleColorSelect(color.id)}
+                                    title={color.name}
+                                    aria-label={`Color ${color.name}`}
+                                    aria-pressed={isSelected}
+                                    className={cn(
+                                        "focus-visible:outline-primary-500 flex h-11 w-11 items-center justify-center rounded-full transition-[transform,box-shadow] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.94]",
+                                        isSelected ? "ring-primary-700 ring-2" : "hover:ring-1 hover:ring-neutral-900/20"
+                                    )}
+                                >
+                                    {renderColorSwatch(color.hex)}
+                                </button>
+                            );
+                        })}
                     </div>
-                </div>
-            )}
-
-            {/* Selected combination display */}
-            {selectedFrame && selectedColorId && (
-                <div className="text-muted text-sm">
-                    Selected:{" "}
-                    <span className="font-medium text-neutral-700">
-                        {selectedFrame.name} - {availableColors.find((c) => c.id === selectedColorId)?.name}
-                    </span>
                 </div>
             )}
         </div>

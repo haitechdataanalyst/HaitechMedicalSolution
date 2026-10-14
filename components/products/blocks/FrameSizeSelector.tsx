@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FrameSizeOption } from "@/types";
 import { cn } from "@/lib/utils";
 import { Info, X } from "lucide-react";
+import { OPTION_IDLE, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 
 const SIZE_GUIDE: Record<string, string> = {
     S: "Small — fits face width up to 130 mm. Typical for petite faces.",
@@ -21,35 +22,48 @@ export default function FrameSizeSelector({ sizes, selectedSize, onSizeChange }:
     const [showGuide, setShowGuide] = useState(false);
 
     return (
-        <div>
+        <div role="group" aria-labelledby="frame-size-label">
             <div className="mb-3 flex items-center justify-between">
-                <label className="text-sm font-medium text-neutral-700">Frame Size</label>
+                <p id="frame-size-label" className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">
+                    Frame Size
+                </p>
                 <button
                     type="button"
                     onClick={() => setShowGuide((v) => !v)}
-                    className="flex items-center gap-1 text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                    aria-expanded={showGuide}
+                    aria-controls="frame-size-guide"
+                    className="text-primary-700 hover:text-primary-800 focus-visible:outline-primary-500 -mr-2 inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 text-[13px] font-medium focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
-                    <Info className="h-3.5 w-3.5" />
+                    <Info className="h-4 w-4" aria-hidden="true" />
                     Size guide
                 </button>
             </div>
 
             {showGuide && (
-                <div className="mb-3 rounded-xl border border-blue-100 bg-blue-50 p-3">
-                    <div className="mb-1.5 flex items-center justify-between">
-                        <p className="text-xs font-semibold text-blue-700">Frame Size Guide</p>
-                        <button onClick={() => setShowGuide(false)} className="text-blue-400 hover:text-blue-600"><X className="h-3.5 w-3.5" /></button>
+                <div id="frame-size-guide" className="mb-4 rounded-xl bg-neutral-50 p-4">
+                    <div className="flex items-start justify-between gap-3">
+                        <p className="text-[15px] font-semibold text-neutral-900">Frame Size Guide</p>
+                        <button
+                            type="button"
+                            onClick={() => setShowGuide(false)}
+                            aria-label="Close size guide"
+                            className="focus-visible:outline-primary-500 -mt-2.5 -mr-2.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-500 hover:bg-neutral-200/60 hover:text-neutral-800 focus-visible:outline-2"
+                        >
+                            <X className="h-4 w-4" aria-hidden="true" />
+                        </button>
                     </div>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1.5">
                         {Object.entries(SIZE_GUIDE).map(([size, desc]) => (
-                            <li key={size} className="text-xs text-blue-700"><span className="font-semibold">{size}:</span> {desc}</li>
+                            <li key={size} className="text-[13px] leading-relaxed text-neutral-600">
+                                <span className="font-semibold text-neutral-900">{size}:</span> {desc}
+                            </li>
                         ))}
                     </ul>
-                    <p className="mt-2 text-[11px] text-blue-500">Not sure? Contact us and we&apos;ll help you choose.</p>
+                    <p className="mt-3 text-[13px] text-neutral-500">Not sure? Contact us and we&apos;ll help you choose.</p>
                 </div>
             )}
 
-            <div className="flex items-center gap-4">
+            <div className="grid grid-cols-3 gap-2.5">
                 {sizes.map((size) => {
                     const isSelected = selectedSize === size.value;
                     return (
@@ -60,12 +74,7 @@ export default function FrameSizeSelector({ sizes, selectedSize, onSizeChange }:
                             title={SIZE_GUIDE[size.value] ?? size.label}
                             aria-label={`Frame size ${size.label}`}
                             aria-pressed={isSelected}
-                            className={cn(
-                                "flex h-12 w-12 items-center justify-center rounded-full border-2 text-sm font-semibold transition-all",
-                                isSelected
-                                    ? "border-primary-500 bg-primary-500 text-white shadow-md"
-                                    : "hover:border-primary-300 hover:bg-primary-50 cursor-pointer border-neutral-300 bg-white text-neutral-600"
-                            )}
+                            className={cn(OPTION_TILE, "min-h-12 font-medium", isSelected ? OPTION_SELECTED : OPTION_IDLE)}
                         >
                             {size.label}
                         </button>

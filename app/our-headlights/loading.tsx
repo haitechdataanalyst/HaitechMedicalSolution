@@ -1,44 +1,35 @@
+import { BreadcrumbSkeleton, LoadingShell, SkeletonBar } from "@/components/catalog/listing";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+
 export default function OurHeadlightsLoading() {
     return (
-        <div className="animate-pulse">
-            {/* Breadcrumb */}
-            <div className="border-b border-neutral-100 bg-white px-4 py-3">
-                <div className="container mx-auto flex gap-2">
-                    <div className="h-4 w-16 rounded bg-neutral-200" />
-                    <div className="h-4 w-3 rounded bg-neutral-200" />
-                    <div className="h-4 w-28 rounded bg-neutral-200" />
+        <LoadingShell label="Loading headlights">
+            <BreadcrumbSkeleton />
+
+            {/* Hero band */}
+            <div className="h-64 bg-neutral-900/[0.06] sm:h-80" />
+
+            {/* Selector: two power-type tiles */}
+            <div className="container py-16">
+                <div className="mx-auto mb-12 flex max-w-xl flex-col items-center gap-4">
+                    <SkeletonBar className="h-9 w-72 max-w-full" />
+                    <SkeletonBar className="h-4 w-full" />
                 </div>
-            </div>
-
-            {/* Hero banner */}
-            <div className="h-56 bg-neutral-200 sm:h-72" />
-
-            {/* Category selector */}
-            <div className="container mx-auto px-4 py-8">
-                <div className="mb-8 flex justify-center gap-3">
-                    {[110, 130, 100].map((w, i) => (
-                        <div key={i} className="h-10 rounded-full bg-neutral-100" style={{ width: w }} />
-                    ))}
-                </div>
-
-                {/* Detail card */}
-                <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-neutral-100 bg-white">
-                    <div className="grid sm:grid-cols-2">
-                        <div className="aspect-square bg-neutral-100 sm:aspect-auto sm:min-h-72" />
-                        <div className="space-y-4 p-6">
-                            <div className="h-6 w-2/3 rounded bg-neutral-100" />
-                            <div className="h-3 w-full rounded bg-neutral-100" />
-                            <div className="h-3 w-5/6 rounded bg-neutral-100" />
-                            <div className="h-3 w-4/5 rounded bg-neutral-100" />
-                            <div className="mt-4 flex gap-2">
-                                {[1, 2, 3].map((j) => (
-                                    <div key={j} className="h-8 flex-1 rounded-xl bg-neutral-100" />
-                                ))}
+                <div className="mx-auto max-w-3xl">
+                    <SkeletonBar className="mb-5 h-6 w-56" />
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5">
+                        {[1, 2].map((i) => (
+                            <div key={i} className={`${SURFACE_CARD} p-2`}>
+                                <div className="aspect-[4/3] rounded-xl bg-neutral-50" />
+                                <div className="flex items-center justify-between px-3 pt-4 pb-3">
+                                    <SkeletonBar className="h-5 w-28" />
+                                    <div className="h-6 w-6 rounded-full bg-neutral-900/[0.06]" />
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
-        </div>
+        </LoadingShell>
     );
 }

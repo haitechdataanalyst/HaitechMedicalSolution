@@ -3,7 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { MedesyCategory, MedesyProduct } from "@/types";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+import { SelectionMark, StepHeading, selectorTileClass } from "@/components/catalog/listing";
 
 interface MedesyCategoryCardProps {
     category: MedesyCategory;
@@ -13,35 +16,25 @@ interface MedesyCategoryCardProps {
 
 function MedesyCategoryCard({ category, isSelected, onSelect }: MedesyCategoryCardProps) {
     return (
-        <button
-            onClick={onSelect}
-            className={`group relative w-full overflow-hidden rounded-2xl border-2 bg-white p-6 text-left shadow-sm transition-all hover:shadow-lg ${
-                isSelected ? "border-primary-500 ring-primary-200 ring-2" : "border-neutral-100 hover:border-neutral-200"
-            }`}
-        >
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
+        <button type="button" onClick={onSelect} aria-pressed={isSelected} className={selectorTileClass(isSelected)}>
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={category.image}
                     alt={category.name}
                     fill
-                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain p-6 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                 />
             </div>
-
-            <h3 className={`text-center text-base font-bold transition-colors ${isSelected ? "text-primary-700" : "text-neutral-800 group-hover:text-primary-700"}`}>
-                {category.name}
-            </h3>
-
-            <div className="absolute top-4 right-4 flex h-7 min-w-7 items-center justify-center rounded-full bg-neutral-100 px-2 text-xs font-semibold text-neutral-600">{category.products.length}</div>
-
-            {isSelected && (
-                <div className="bg-primary-500 absolute top-4 left-4 flex h-6 w-6 items-center justify-center rounded-full text-white">
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-            )}
+            <div className="flex min-h-11 items-center justify-between gap-3 px-2.5 pt-4 pb-2.5">
+                <span>
+                    <span className="block text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{category.name}</span>
+                    <span className="block text-[13px] text-neutral-500 tabular-nums">
+                        {category.products.length} {category.products.length === 1 ? "range" : "ranges"}
+                    </span>
+                </span>
+                <SelectionMark isSelected={isSelected} />
+            </div>
         </button>
     );
 }
@@ -52,45 +45,46 @@ interface MedesyProductCardProps {
 
 function MedesyProductCard({ product }: MedesyProductCardProps) {
     return (
-        <div className="group flex h-full flex-col rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm transition-all hover:border-primary-100 hover:shadow-lg">
-            <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
+        <div className={`${SURFACE_CARD} flex h-full flex-col p-2`}>
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                    className="object-contain p-6 mix-blend-multiply"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
             </div>
 
-            <h4 className="mb-2 text-center text-base font-bold text-neutral-900">{product.name}</h4>
+            <div className="flex flex-1 flex-col px-3 pt-5 pb-3">
+                <h4 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">{product.name}</h4>
 
-            <p className="mb-4 grow text-center text-sm text-neutral-600">{product.description}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{product.description}</p>
 
-            {product.features && product.features.length > 0 && (
-                <ul className="mb-4 space-y-1">
-                    {product.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-neutral-600">
-                            <svg className="text-primary-500 mt-0.5 h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                        </li>
-                    ))}
-                </ul>
-            )}
+                {product.features && product.features.length > 0 && (
+                    <ul className="mt-4 space-y-1.5">
+                        {product.features.slice(0, 3).map((feature, index) => (
+                            <li key={index} className="flex items-start gap-2 text-sm text-neutral-700">
+                                <Check className="text-primary-700 mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                                {feature}
+                            </li>
+                        ))}
+                    </ul>
+                )}
 
-            {product.catalogueFile ? (
-                <a href={product.catalogueFile} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
-                    Download Catalogue
-                </a>
-            ) : (
-                <div className="mt-auto pt-2">
-                    <Link href={`/our-instruments/${product.id}`} className="btn btn-ghost group-hover:bg-surface-tertiary w-full py-2 text-sm">
-                        View Models →
-                    </Link>
+                <div className="mt-auto pt-5">
+                    {product.catalogueFile ? (
+                        <a href={product.catalogueFile} target="_blank" rel="noopener noreferrer" className="btn btn-md btn-outline w-full">
+                            Download Catalogue
+                        </a>
+                    ) : (
+                        <Link href={`/our-instruments/${product.id}`} className="btn btn-md btn-secondary group w-full">
+                            View Models
+                            <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
+                        </Link>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }
@@ -121,31 +115,35 @@ export function MedesySelector({ categories, initialCategorySlug }: MedesySelect
     };
 
     return (
-        <div className="space-y-12">
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {categories.map((category) => (
-                    <MedesyCategoryCard key={category.id} category={category} isSelected={selectedCategoryId === category.id} onSelect={() => handleCategorySelect(category.id)} />
-                ))}
+        <div className="space-y-14 md:space-y-16">
+            <div className="mx-auto max-w-5xl">
+                <StepHeading step={1}>Choose an instrument type</StepHeading>
+                <div className="mt-5 grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-4">
+                    {categories.map((category) => (
+                        <MedesyCategoryCard key={category.id} category={category} isSelected={selectedCategoryId === category.id} onSelect={() => handleCategorySelect(category.id)} />
+                    ))}
+                </div>
             </div>
 
             {selectedCategory && (
-                <div className="animate-in fade-in slide-in-from-top-4 duration-300">
-                    <div className="mb-8 border-t-4 border-neutral-100 pt-8">
-                        <div className="mx-auto mb-8 flex max-w-4xl flex-col items-center gap-8 md:flex-row">
-                            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-neutral-50 md:w-1/2">
-                                <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-4" sizes="(max-width: 768px) 100vw, 50vw" />
+                <div className="motion-safe:animate-popover-in">
+                    <div className="mx-auto max-w-5xl">
+                        <StepHeading step={2}>Choose a range</StepHeading>
+                        <div className="mt-5 flex flex-col items-center gap-6 md:flex-row md:gap-10">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-white ring-1 ring-neutral-900/[0.05] md:w-1/2">
+                                <Image src={selectedCategory.image} alt={selectedCategory.name} fill className="object-contain p-6" sizes="(max-width: 768px) 100vw, 50vw" />
                             </div>
-                            <div className="flex-1 text-center md:text-left">
-                                <h3 className="heading-3 text-primary-800 mb-3">{selectedCategory.description}</h3>
-                                <p className="text-body text-neutral-600">{selectedCategory.tagline}</p>
+                            <div className="flex-1">
+                                <p className="text-2xl leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-[1.75rem]">{selectedCategory.description}</p>
+                                <p className="mt-3 text-base leading-relaxed text-neutral-600 md:text-[17px]">{selectedCategory.tagline}</p>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                            {selectedCategory.products.map((product) => (
-                                <MedesyProductCard key={product.id} product={product} />
-                            ))}
-                        </div>
+                    <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+                        {selectedCategory.products.map((product) => (
+                            <MedesyProductCard key={product.id} product={product} />
+                        ))}
                     </div>
                 </div>
             )}

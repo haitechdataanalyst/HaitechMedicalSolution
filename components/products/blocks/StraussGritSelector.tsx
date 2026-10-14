@@ -1,7 +1,9 @@
 "use client";
 
 import { ProductVariant } from "@/types";
+import { cn } from "@/lib/utils";
 import { getGritDiamondStyle } from "./variant-utils";
+import { OPTION_IDLE, OPTION_LABEL, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 import Image from "next/image";
 
 interface StraussGritSelectorProps {
@@ -12,9 +14,9 @@ interface StraussGritSelectorProps {
 
 export default function StraussGritSelector({ variants, selectedVariant, onVariantSelect }: StraussGritSelectorProps) {
     return (
-        <div>
-            <label className="mb-3 block text-sm font-semibold text-neutral-800">Select Variant</label>
-            <div className="flex flex-wrap gap-4">
+        <div role="group" aria-label="Select Variant">
+            <p className={OPTION_LABEL}>Select Variant</p>
+            <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-4">
                 {variants.map((variant) => {
                     const { bg, letter } = getGritDiamondStyle(variant);
                     const isSelected = selectedVariant?.id === variant.id;
@@ -25,29 +27,24 @@ export default function StraussGritSelector({ variants, selectedVariant, onVaria
                             key={variant.id}
                             type="button"
                             onClick={() => onVariantSelect(variant)}
-                            className={`relative flex w-30 flex-col rounded-xl border-2 bg-white shadow-sm transition-all hover:shadow-md ${
-                                isSelected ? "border-primary-500" : "border-neutral-200 hover:border-neutral-300"
-                            }`}
+                            aria-pressed={isSelected}
+                            className={cn(OPTION_TILE, "flex flex-col items-center p-2 pb-2.5", isSelected ? OPTION_SELECTED : OPTION_IDLE)}
                             title={variant.name ?? variant.sku}
                         >
-                            {/* Diamond shape in top-left */}
+                            {/* Grit diamond in top-left */}
                             <span
-                                className={`absolute top-2 left-2 flex h-7 w-7 items-center justify-center text-xs font-bold ${letter === "M" ? "text-neutral-700" : "text-white"} ${bg}`}
+                                aria-hidden="true"
+                                className={`absolute top-2 left-2 flex h-6 w-6 items-center justify-center text-xs font-bold ${letter === "M" ? "text-neutral-700" : "text-white"} ${bg}`}
                                 style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
                             >
                                 {letter}
                             </span>
 
-                            {/* Product image */}
-                            <div className="flex min-h-18 flex-1 items-center justify-center px-2 pt-9 pb-2">
-                                <div className="relative h-14 w-10 shrink-0">
-                                    <Image src={variant.image} alt={variant.name ?? variant.sku} fill className="object-contain object-center" sizes="40px" />
-                                </div>
-                            </div>
+                            <span className="relative block h-14 w-10 shrink-0">
+                                <Image src={variant.image} alt="" fill className="object-contain object-center" sizes="40px" />
+                            </span>
 
-                            <div className="border-t border-neutral-100 px-2 py-2">
-                                <span className="text-sm font-bold text-neutral-800">{codeLabel}</span>
-                            </div>
+                            <span className="mt-1.5 text-[13px] font-semibold text-neutral-900 tabular-nums">{codeLabel}</span>
                         </button>
                     );
                 })}
