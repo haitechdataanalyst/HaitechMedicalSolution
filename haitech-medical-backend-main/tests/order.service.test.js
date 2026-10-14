@@ -160,3 +160,102 @@ describe('createOrderService (fake repo injection)', () => {
 		);
 	});
 });
+
+describe('createOrder security regressions', () => {
+	const build = (overrides = {}) =>
+		createOrderService({
+			addressRepository: { findById: async () => ({ id: 'a1', userId: 'u1' }) },
+			productRepository: {
+				findByIds: async () => [{ id: 1, name: 'Widget', sku: 'W-1', basePrice: 5000, active: true }],
+			},
+			orderRepository: { create: async (userId, payload) => ({ id: 'o1', userId, ...payload }) },
+			emailService: { sendOrderConfirmationEmail: async () => {} },
+			runTransaction: (cb) => cb(undefined),
+			...overrides,
+		});
+
+	test('ignores client-supplied unitPrice, totalPrice, subtotal and total', async () => {
+		const order = await build().createOrder('u1', {
+			items: [{ productId: '1', quantity: 3, unitPrice: 1, totalPrice: 3 }],
+			total: 3,
+			subtotal: 3,
+		});
+		assert.equal(order.items[0].unitPrice, 5000);
+		assert.equal(order.subtotal, 15000);
+		assert.equal(order.total, 15000);
+	});
+
+	test('rejects an inactive product that the repository still returns', async () => {
+		const service = build({
+			productRepository: { findByIds: async () => [{ id: 1, name: 'W', basePrice: 5000, active: false }] },
+		});
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }] }), /is not available/);
+	});
+
+	test('rejects a product with no configured price', async () => {
+		const service = build({
+			productRepository: { findByIds: async () => [{ id: 1, name: 'W', basePrice: null, active: true }] },
+		});
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }] }), /price not configured/);
+	});
+
+	test('rejects an unknown product id', async () => {
+		const service = build({ productRepository: { findByIds: async () => [] } });
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 99, quantity: 1 }] }), /not found/);
+	});
+
+	test('rejects a non-integer productId before it reaches the product lookup', async () => {
+		const service = build({
+			productRepository: {
+				findByIds: async () => {
+					throw new Error('should not be reached');
+				},
+			},
+		});
+		for (const productId of ['abc', '1e3', '-5', '1.5', '0', '1,2', '9999999999']) {
+			await assert.rejects(
+				() => service.createOrder('u1', { items: [{ productId, quantity: 1 }] }),
+				/invalid productId/,
+				`productId ${productId}`,
+			);
+		}
+	});
+
+	test('rejects zero, negative and fractional quantities and an empty order', async () => {
+		const service = build();
+		for (const quantity of [0, -1, 1.5, '2', undefined]) {
+			await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity }] }), /invalid quantity/);
+		}
+		await assert.rejects(() => service.createOrder('u1', { items: [] }), /at least one item/);
+	});
+
+	test("rejects another user's shipping address", async () => {
+		const service = build({ addressRepository: { findById: async () => ({ id: 'a1', userId: 'someone-else' }) } });
+		await assert.rejects(
+			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }], shippingAddressId: 'a1' }),
+			/Invalid shipping address/,
+		);
+	});
+
+	test('does not create an order when any line fails validation', async () => {
+		let created = false;
+		const service = build({
+			productRepository: {
+				findByIds: async () => [
+					{ id: 1, name: 'A', basePrice: 100, active: true },
+					{ id: 2, name: 'B', basePrice: 100, active: false },
+				],
+			},
+			orderRepository: {
+				create: async () => {
+					created = true;
+				},
+			},
+		});
+		await assert.rejects(
+			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }, { productId: 2, quantity: 1 }] }),
+			/is not available/,
+		);
+		assert.equal(created, false);
+	});
+});

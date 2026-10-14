@@ -76,6 +76,12 @@ export const createOrderService = ({
 			if (!item.productId) {
 				throw badRequestError(`Item at index ${index} is missing productId`);
 			}
+			// Catalogue ids are positive integers. The id is later interpolated into the product
+			// lookup, so "abc" / "1e3" / "-5" must be rejected here as a 400, not reach the DB as a 500.
+			// Max is Postgres int4, since the lookup casts the ids to int[].
+			if (!/^[1-9]\d{0,9}$/.test(String(item.productId)) || Number(item.productId) > 2147483647) {
+				throw badRequestError(`Item at index ${index} has an invalid productId`);
+			}
 			if (typeof item.quantity !== 'number' || item.quantity < 1 || !Number.isInteger(item.quantity)) {
 				throw badRequestError(`Item at index ${index} has an invalid quantity`);
 			}
