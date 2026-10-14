@@ -21,6 +21,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
+    verification: { google: "dPMPe24kwfAv4_pMplU_g1WReUwy65ThALw00jTy-5U" },
     title: {
         template: "%s | Haitech Medical",
         default: "Haitech Medical | Premium Medical & Dental Equipment",
