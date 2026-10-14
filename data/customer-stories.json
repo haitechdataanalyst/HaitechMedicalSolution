@@ -1,0 +1,32 @@
+{
+    "_readme": [
+        "Customer stories for the homepage section 'Dentists who work with Haitech'.",
+        "Add each real clinician to 'stories' (copy the shape from '_template', which the site ignores).",
+        "Nothing appears on the live site until at least 3 entries pass every check in lib/customer-stories.ts.",
+        "An entry is held back automatically if published is false, any approval field is missing or false, the photo file does not exist, or reviewDueOn has passed.",
+        "Photos: a real photograph the clinician approved, saved in public/images/customers/ and referenced as /images/customers/<file>.",
+        "Quote: the clinician's own words about their experience, approved verbatim, max 240 characters. No patient-outcome or clinical-result claims.",
+        "materialConnection: write \"none\" only if no payment, gift, discount, free or loaned equipment, or other benefit was given. Otherwise describe it in plain language; it is shown next to the story.",
+        "Dates are YYYY-MM-DD. Set reviewDueOn about 12 months after consent and re-confirm before then."
+    ],
+    "_template": {
+        "id": "",
+        "published": false,
+        "name": "",
+        "speciality": "",
+        "city": "",
+        "clinic": "",
+        "photo": { "src": "/images/customers/", "alt": "" },
+        "quote": "",
+        "product": { "label": "", "href": "/product-category/" },
+        "approval": {
+            "consentRecordedOn": "",
+            "quoteApprovedOn": "",
+            "registrationVerified": false,
+            "purchaseVerified": false,
+            "materialConnection": "",
+            "reviewDueOn": ""
+        }
+    },
+    "stories": []
+}
