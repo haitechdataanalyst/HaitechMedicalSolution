@@ -8,6 +8,7 @@ import { formatPrice, cn } from "@/lib/utils";
 import { ArrowRight, Search, X, Heart } from "lucide-react";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { shouldShowPrice } from "@/lib/config";
+import { startsFrom } from "@/lib/product-pricing";
 import { detectBrand } from "@/lib/brand";
 import { isCatalogueProductId } from "@/lib/headlight-products";
 import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
@@ -102,7 +103,10 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 <p className="mt-1 line-clamp-2 h-[3.25em] text-[13px] leading-relaxed text-neutral-500">{product.description}</p>
                 {shouldShowPrice(brand.name) &&
                     (product.basePrice ? (
-                        <p className="mt-2 text-base font-semibold text-neutral-900 tabular-nums">{formatPrice(product.basePrice, product.currency ?? "INR")}</p>
+                        <p className="mt-2 text-base font-semibold text-neutral-900 tabular-nums">
+                            {startsFrom(product) && <span className="mr-1 text-xs font-normal text-neutral-500">From</span>}
+                            {formatPrice(product.basePrice, product.currency ?? "INR")}
+                        </p>
                     ) : (
                         <p className="mt-2 text-[13px] text-neutral-500">Price on request</p>
                     ))}

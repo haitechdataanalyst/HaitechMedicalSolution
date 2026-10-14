@@ -22,6 +22,7 @@ import { detectBrand, requiresConsultation } from "@/lib/brand";
 import ProductQuoteModal from "./ProductQuoteModal";
 import { isCatalogueProductId } from "@/lib/headlight-products";
 import { COMMERCE_ENABLED, shouldShowPrice } from "@/lib/config";
+import { chosenOptionPrice, startsFrom } from "@/lib/product-pricing";
 
 /** Quiet, pill-shaped convenience action (Save / Compare / Share): 44px tall, press feedback only. */
 const QUIET_ACTION =
@@ -125,6 +126,10 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
         Salli: "https://workdrive.zohoexternal.com/embed/ennpw95aa7f76e70640aca14258fec72e09e8?toolbar=false&appearance=light&themecolor=green",
     };
     const catalogueUrl = CATALOGUE_URLS[brandName];
+
+    // A product whose options are priced (Prismatic magnifications) shows the chosen option's price, or "From" the lowest until one is chosen.
+    const shownPrice = chosenOptionPrice(product, customFields) ?? product.basePrice;
+    const priceIsFrom = chosenOptionPrice(product, customFields) === undefined && startsFrom(product);
 
     const handleOpenCatalogue = () => {
         if (catalogueUrl) window.open(catalogueUrl, "_blank", "noopener,noreferrer");
@@ -243,10 +248,11 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                         {/* Price display */}
                         {shouldShowPrice(brandName) && (
                             <div>
-                                {product.basePrice ? (
+                                {shownPrice ? (
                                     <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+                                        {priceIsFrom && <span className="text-[15px] text-neutral-500">From</span>}
                                         <span className="text-[2rem] leading-none font-semibold tracking-[-0.02em] text-neutral-900 tabular-nums">
-                                            {formatPrice(product.basePrice, product.currency ?? "INR")}
+                                            {formatPrice(shownPrice, product.currency ?? "INR")}
                                         </span>
                                         <span className="text-[13px] text-neutral-500">incl. GST &amp; all taxes</span>
                                     </div>
@@ -303,10 +309,11 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                                             >
                                                 <option value="">Select {field.label}</option>
                                                 {field.options?.map((option) => {
-                                                    const opt = typeof option === "string" ? { value: option, label: option } : option;
+                                                    const opt: { value: string; label: string; price?: number } = typeof option === "string" ? { value: option, label: option } : option;
                                                     return (
                                                         <option key={opt.value} value={opt.value}>
                                                             {opt.label}
+                                                            {shouldShowPrice(brandName) && opt.price ? ` · ${formatPrice(opt.price, product.currency ?? "INR")}` : ""}
                                                         </option>
                                                     );
                                                 })}
@@ -317,7 +324,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                             })}
 
                         {/* Prescription Section */}
-                        {data.prescription?.enabled && <PrescriptionSection config={data.prescription} onFileChange={setPrescriptionFile} />}
+                        {data.prescription?.enabled && <PrescriptionSection config={data.prescription} showPrices={shouldShowPrice(brandName)} onFileChange={setPrescriptionFile} />}
 
                         {/* Match Headlights Section */}
                         {data.matchHeadlights?.enabled && headlightCategories.length > 0 && <MatchHeadlightsSection config={data.matchHeadlights} headlightCategories={headlightCategories} />}
@@ -474,8 +481,11 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                         </div>
                         <div className="min-w-0 flex-1">
                             <p className="truncate text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{product.name}</p>
-                            {shouldShowPrice(brandName) && product.basePrice && (
-                                <p className="text-[13px] text-neutral-500 tabular-nums">{formatPrice(product.basePrice, product.currency ?? "INR")}</p>
+                            {shouldShowPrice(brandName) && shownPrice && (
+                                <p className="text-[13px] text-neutral-500 tabular-nums">
+                                    {priceIsFrom && "From "}
+                                    {formatPrice(shownPrice, product.currency ?? "INR")}
+                                </p>
                             )}
                         </div>
                         {needsQuote ? (

@@ -128,7 +128,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -370,7 +381,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -612,7 +634,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -854,7 +887,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -1096,7 +1140,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -1338,7 +1393,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -1587,7 +1653,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -1832,7 +1909,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -2054,7 +2142,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -2253,7 +2352,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -2451,7 +2561,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -2649,19 +2770,23 @@
                             "options": [
                                 {
                                     "value": "3.8x",
-                                    "label": "3.8x"
+                                    "label": "3.8x",
+                                    "price": 207000
                                 },
                                 {
                                     "value": "4.8x",
-                                    "label": "4.8x"
+                                    "label": "4.8x",
+                                    "price": 218000
                                 },
                                 {
                                     "value": "5.8x",
-                                    "label": "5.8x"
+                                    "label": "5.8x",
+                                    "price": 230000
                                 },
                                 {
                                     "value": "7.2x",
-                                    "label": "7.2x"
+                                    "label": "7.2x",
+                                    "price": 242000
                                 }
                             ],
                             "required": true
@@ -2711,7 +2836,18 @@
                     ],
                     "prescription": {
                         "enabled": true,
-                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues.",
+                        "corrections": [
+                            {
+                                "label": "External correction",
+                                "price": 8300
+                            },
+                            {
+                                "label": "Internal correction",
+                                "price": 5200
+                            }
+                        ],
+                        "rangeNote": "Regular range: sphere −10 to +6, cylinder −6 to 0. Anything beyond is a special order. Please confirm your prescription with the Haitech team."
                     },
                     "matchHeadlights": {
                         "enabled": true,
@@ -14330,6 +14466,8 @@
                 }
             }
         ],
-        "relatedProducts": []
+        "relatedProducts": [],
+        "basePrice": 450000,
+        "currency": "INR"
     }
 ]

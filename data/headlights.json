@@ -36,7 +36,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: External (clip-on)"
                     ],
-                    "bestFor": "Everyday use, freedom of movement"
+                    "bestFor": "Everyday use, freedom of movement",
+                    "price": 115000
                 },
                 {
                     "id": "butterfly-s-evo",
@@ -52,7 +53,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: External (clip-on)"
                     ],
-                    "bestFor": "Higher magnification, cordless"
+                    "bestFor": "Higher magnification, cordless",
+                    "price": 120000
                 },
                 {
                     "id": "butterfly-evo-extender",
@@ -122,7 +124,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: External"
                     ],
-                    "bestFor": "Lightest, uniform round beam"
+                    "bestFor": "Lightest, uniform round beam",
+                    "price": 83000
                 },
                 {
                     "id": "orchid-f-headlight",
@@ -138,7 +141,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: Built-in"
                     ],
-                    "bestFor": "Restorative / composite work"
+                    "bestFor": "Restorative / composite work",
+                    "price": 90000
                 },
                 {
                     "id": "orchid-e-headlight",
@@ -154,7 +158,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: Built-in"
                     ],
-                    "bestFor": "High magnification, narrow beam"
+                    "bestFor": "High magnification, narrow beam",
+                    "price": 125000
                 },
                 {
                     "id": "orchid-s-headlight",
@@ -170,7 +175,8 @@
                         "Color temp.: 5,750K",
                         "Yellow filter: External"
                     ],
-                    "bestFor": "Surgery"
+                    "bestFor": "Surgery",
+                    "price": 115000
                 }
             ],
             "benefits": [

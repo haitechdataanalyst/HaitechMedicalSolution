@@ -81,6 +81,8 @@ export interface HeadlightProduct {
     image: string;
     description: string;
     features: string[];
+    /** INR, GST included. Left out when the model is not on the price list. */
+    price?: number;
     /** Short "best for" note shown in the light comparison table. */
     bestFor?: string;
     /** Accessories are listed with their series but left out of the spec comparison. */
@@ -251,7 +253,8 @@ export interface CustomField {
     label: string;
     type: "text" | "number" | "select" | "textarea";
     required?: boolean;
-    options?: (string | { value: string; label: string })[];
+    /** An option may carry its own price (INR): the product page then shows the price of the chosen option. */
+    options?: (string | { value: string; label: string; price?: number })[];
     min?: number;
     max?: number;
 }
@@ -266,6 +269,9 @@ export interface FrameSizeOption {
 export interface PrescriptionConfig {
     enabled: boolean;
     disclaimer?: string;
+    /** Extra cost of building the prescription into the loupes (INR, GST included). */
+    corrections?: { label: string; price: number }[];
+    rangeNote?: string;
 }
 
 // Match headlights section config
