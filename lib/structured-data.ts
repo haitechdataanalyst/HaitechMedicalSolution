@@ -6,7 +6,6 @@
 import siteConfig from "@/data/site-config.json";
 import { Breadcrumb, Product } from "@/types";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/metadata";
-import { optionPrices, startsFrom } from "@/lib/product-pricing";
 
 type JsonLd = Record<string, unknown>;
 
@@ -117,24 +116,13 @@ export function productSchema({ product, path, brandName, categoryName, showPric
         ...(categoryName ? { category: categoryName } : {}),
         ...(hasVisibleInrPrice
             ? {
-                  // A product priced per option (Prismatic magnifications) is a price range, not one exact price.
-                  offers: startsFrom(product)
-                      ? {
-                            "@type": "AggregateOffer",
-                            url,
-                            lowPrice: Math.min(...optionPrices(product)),
-                            highPrice: Math.max(...optionPrices(product)),
-                            offerCount: new Set(optionPrices(product)).size,
-                            priceCurrency: "INR",
-                            seller: { "@id": ORGANIZATION_ID },
-                        }
-                      : {
-                            "@type": "Offer",
-                            url,
-                            price: product.basePrice,
-                            priceCurrency: "INR",
-                            seller: { "@id": ORGANIZATION_ID },
-                        },
+                  offers: {
+                      "@type": "Offer",
+                      url,
+                      price: product.basePrice,
+                      priceCurrency: "INR",
+                      seller: { "@id": ORGANIZATION_ID },
+                  },
               }
             : {}),
     };

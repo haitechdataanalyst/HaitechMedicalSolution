@@ -68,8 +68,6 @@ export function headlightProducts(data: HeadlightsData, categoryId: number): Pro
             category: categoryId,
             order: index,
             sku: headlightSku(model.id),
-            basePrice: model.price,
-            currency: model.price === undefined ? undefined : "INR",
             hasVariants: false,
             defaultImage: model.image,
             gallery: [model.image],

@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, HeadlightCategory, MedesyData, MedesyCategory } from "@/types";
 import { findHubForCategoryTrail, hubPath, HubDefinition, HUBS } from "@/lib/hubs";
-import { detectBrand } from "@/lib/brand";
 import { HEADLIGHT_CATEGORY_SLUG, headlightProducts } from "@/lib/headlight-products";
 
 // ── Static JSON paths (frames / headlights / medesy only — NOT products or categories) ──
@@ -44,16 +43,6 @@ async function catalogFetch<T>(path: string): Promise<T> {
     return (body.data ?? body) as T;
 }
 
-// A product's catalogueFile only counts when the PDF is actually in public/. The database and data/products.json name
-// per-product PDFs (/catalogues/ergo-3.0x.pdf and about 60 more) that were never added, and every one of them showed
-// up as a 404 in Search Console. Drop the ones with no file; add the PDF to public/ and the link comes back by itself.
-function publishedCatalogueFile(file: unknown): string | undefined {
-    if (typeof file !== "string" || !file.startsWith("/") || file.includes("..")) return undefined;
-    return fs.existsSync(path.join(process.cwd(), "public", decodeURIComponent(file))) ? file : undefined;
-}
-
-const dropMissingCatalogueFiles = (key: string, value: unknown) => (key === "catalogueFile" ? publishedCatalogueFile(value) : value);
-
 // ── DB → Frontend type adapter ────────────────────────────────────────────────
 // The DB stores camelCase column aliases that differ from the frontend types.
 // products.json uses: category (number), order, relatedProducts (number[])
@@ -75,7 +64,7 @@ function dbToProduct(row: any): Product {
         hasVariants: row.hasVariants ?? false,
         variantType: row.variantType ?? undefined,
         defaultImage: row.defaultImage ?? undefined,
-        catalogueFile: publishedCatalogueFile(row.catalogueFile),
+        catalogueFile: row.catalogueFile ?? undefined,
         contentBlocks: Array.isArray(row.contentBlocks) ? row.contentBlocks : [],
         relatedProducts: Array.isArray(row.relatedProducts) ? row.relatedProducts : [],
         frameVariants: row.frameVariants ?? undefined,
@@ -177,7 +166,7 @@ function withHeadlights(base: Product[], lights: Product[]): Product[] {
 function readFileProducts(): Map<string, Product> {
     const cached = readCache(_fileProductCache);
     if (cached) return cached;
-    const rows = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "products.json"), "utf-8"), dropMissingCatalogueFiles) as Product[];
+    const rows = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "products.json"), "utf-8")) as Product[];
     const value = new Map(rows.map((p) => [p.slug, p]));
     _fileProductCache = { value, expiresAt: Date.now() + FILE_CACHE_TTL_MS };
     return value;
@@ -194,36 +183,13 @@ function reconcileCategory(product: Product): Product {
     return known && known.category !== product.category ? { ...product, category: known.category } : product;
 }
 
-/**
- * Admetec prices come from the committed price list (data/products.json), not from the database row. The list is
- * revised yearly and shown to the public, and the database only learns a revision when it is re-seeded, so a stale row
- * must not put last year's price (or none) on the site. The actions block carries the per-option prices (Prismatic
- * magnifications) and the prescription surcharges. Other brands stay database-first.
- */
-function reconcileAdmetecPricing(product: Product): Product {
-    const known = readFileProducts().get(product.slug);
-    if (!known || detectBrand(product.sku).name !== "Admetec") return product;
-    const listed = known.contentBlocks.find((b) => b.type === "actions");
-    return {
-        ...product,
-        basePrice: known.basePrice,
-        currency: known.currency,
-        contentBlocks: listed ? product.contentBlocks.map((b) => (b.type === "actions" ? listed : b)) : product.contentBlocks,
-    };
-}
-
-/** The database row, aligned with the committed catalogue files (category tree and Admetec price list). */
-function reconcile(product: Product): Product {
-    return reconcileAdmetecPricing(reconcileCategory(product));
-}
-
 export async function getAllProducts(): Promise<Product[]> {
     const cached = readCache(_prodCache);
     if (cached) return cached;
     const lights = await getHeadlightCatalogueProducts();
     try {
         const raw = await catalogFetch<{ items: unknown[]; meta: unknown }>("/api/v1/products?limit=500");
-        const value = withHeadlights((raw.items as unknown[]).map(dbToProduct).map(reconcile), lights);
+        const value = withHeadlights((raw.items as unknown[]).map(dbToProduct).map(reconcileCategory), lights);
         _prodCache = { value, expiresAt: Date.now() + BACKEND_CACHE_TTL_MS };
         return value;
     } catch {
@@ -240,7 +206,7 @@ export async function getProductById(id: number): Promise<Product | null> {
     if (light) return light;
     try {
         const raw = await catalogFetch<{ product: unknown }>(`/api/v1/products/${id}`);
-        return reconcile(dbToProduct(raw.product ?? raw));
+        return reconcileCategory(dbToProduct(raw.product ?? raw));
     } catch {
         return (await getAllProducts()).find((p) => p.id === id) ?? null;
     }
@@ -251,7 +217,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     if (light) return light;
     try {
         const raw = await catalogFetch<{ product: unknown }>(`/api/v1/products/${slug}`);
-        return reconcile(dbToProduct(raw.product ?? raw));
+        return reconcileCategory(dbToProduct(raw.product ?? raw));
     } catch {
         return (await getAllProducts()).find((p) => p.slug === slug) ?? null;
     }
@@ -544,7 +510,7 @@ export async function getHeadlightCategoryById(id: string): Promise<HeadlightCat
 
 function loadMedesy(): MedesyData {
     if (!medesyCache) {
-        medesyCache = JSON.parse(fs.readFileSync(medesyPath, "utf8"), dropMissingCatalogueFiles);
+        medesyCache = JSON.parse(fs.readFileSync(medesyPath, "utf8"));
     }
     return medesyCache!;
 }

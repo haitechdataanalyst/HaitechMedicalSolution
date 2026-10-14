@@ -10,7 +10,6 @@ import { productImageAlt } from "@/lib/product-seo";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { useCart } from "@/components/cart/CartProvider";
 import { COMMERCE_ENABLED, shouldShowPrice } from "@/lib/config";
-import { startsFrom } from "@/lib/product-pricing";
 import { useCompare } from "@/components/compare";
 import { getCompareGroup } from "@/lib/compare-group.resolve";
 import { isCatalogueProductId } from "@/lib/headlight-products";
@@ -143,7 +142,6 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
                     <p className="mt-2">
                         {product?.basePrice ? (
                             <>
-                                {startsFrom(product) && <span className="mr-1 text-xs text-neutral-500">From</span>}
                                 <span className="text-base font-semibold text-neutral-900 tabular-nums">{formatPrice(product.basePrice, product.currency ?? "INR")}</span>
                                 <span className="ml-1.5 text-xs text-neutral-500">incl. GST</span>
                             </>

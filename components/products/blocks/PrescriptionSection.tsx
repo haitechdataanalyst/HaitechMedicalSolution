@@ -2,16 +2,15 @@
 
 import { useState, useRef } from "react";
 import { PrescriptionConfig } from "@/types";
-import { cn, formatPrice } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Paperclip } from "lucide-react";
 
 interface PrescriptionSectionProps {
     config: PrescriptionConfig;
-    showPrices?: boolean;
     onFileChange: (file: File | null) => void;
 }
 
-export default function PrescriptionSection({ config, showPrices = false, onFileChange }: PrescriptionSectionProps) {
+export default function PrescriptionSection({ config, onFileChange }: PrescriptionSectionProps) {
     const [isEnabled, setIsEnabled] = useState(false);
     const [fileName, setFileName] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -42,18 +41,6 @@ export default function PrescriptionSection({ config, showPrices = false, onFile
                 <div>
                     <h2 className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">Add Prescription</h2>
                     <p className="mt-1 text-[13px] leading-relaxed text-neutral-500">Required if you need corrective lenses integrated into your loupes.</p>
-                    {showPrices && config.corrections && config.corrections.length > 0 && (
-                        <>
-                            <ul className="mt-2 space-y-0.5 text-[13px] text-neutral-700">
-                                {config.corrections.map((c) => (
-                                    <li key={c.label} className="tabular-nums">
-                                        {c.label}: <span className="font-medium text-neutral-900">{formatPrice(c.price)}</span> <span className="text-neutral-500">extra, incl. GST</span>
-                                    </li>
-                                ))}
-                            </ul>
-                            {config.rangeNote && <p className="mt-1.5 text-[13px] leading-relaxed text-neutral-500">{config.rangeNote}</p>}
-                        </>
-                    )}
                 </div>
                 <button
                     type="button"

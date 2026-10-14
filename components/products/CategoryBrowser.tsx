@@ -8,7 +8,6 @@ import { ArrowRight, ChevronLeft, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
 import { formatPrice, cn } from "@/lib/utils";
 import { shouldShowPrice } from "@/lib/config";
-import { startsFrom } from "@/lib/product-pricing";
 import { detectBrand } from "@/lib/brand";
 import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, SURFACE_CARD } from "@/components/ui/surfaces";
 import { CardSkeleton, PILL_SELECT, RESULT_COUNT, SEARCH_INPUT } from "@/components/catalog/listing";
@@ -112,7 +111,6 @@ function ProductCard({ product }: { product: ProductWithPath }) {
                 <h3 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{product.name}</h3>
                 {showPrice && (product.basePrice ? (
                     <p className="mt-2 text-base font-semibold text-neutral-900 tabular-nums">
-                        {startsFrom(product) && <span className="mr-1 text-xs font-normal text-neutral-500">From</span>}
                         {formatPrice(product.basePrice, product.currency ?? "INR")}
                     </p>
                 ) : (
