@@ -129,7 +129,7 @@ export default function OrdersPage() {
                                         <div className="min-w-0 flex-1">
                                             <p className="truncate text-[15px] font-medium text-neutral-900">{item.productName}</p>
                                             <p className="mt-0.5 text-[13px] text-neutral-500">
-                                                {item.productSku && `SKU: ${item.productSku} · `}Qty: {item.quantity}
+                                                Qty: {item.quantity}
                                             </p>
                                         </div>
                                         <div className="shrink-0 text-right">

@@ -98,10 +98,7 @@ export default function ProductQuoteModal({ isOpen, onClose, productName, produc
                 <div className="rounded-2xl bg-neutral-50 px-4 py-3.5">
                     <p className="text-[13px] text-neutral-500">Requesting quote for</p>
                     <p className="mt-0.5 text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{productName}</p>
-                    <p className="mt-0.5 text-[13px] text-neutral-500">
-                        SKU {productSku}
-                        {selectedVariant && <> · {selectedVariant}</>}
-                    </p>
+                    {selectedVariant && <p className="mt-0.5 text-[13px] text-neutral-500">{selectedVariant}</p>}
                 </div>
 
                 {/* Name & Email Row */}

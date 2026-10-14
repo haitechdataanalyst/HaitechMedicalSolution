@@ -143,7 +143,6 @@ export default function CartDrawer() {
                                                             <p className="shrink-0 text-[13px] text-neutral-500">On request</p>
                                                         )}
                                                     </div>
-                                                    <p className="mt-0.5 text-[13px] text-neutral-500">{item.sku}</p>
                                                     {item.customization &&
                                                         Object.entries(item.customization).map(([k, v]) => (
                                                             <span key={k} className="mt-0.5 block text-[13px] text-neutral-500 capitalize">

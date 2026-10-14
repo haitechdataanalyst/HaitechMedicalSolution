@@ -55,7 +55,6 @@ function ItemCard({ item }: { item: ZohoInventoryItem }) {
             <div className="flex flex-1 flex-col px-2.5 pt-4 pb-2.5">
                 {item.category && <span className="mb-1 text-[13px] text-neutral-500">{item.category}</span>}
                 <h3 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.name}</h3>
-                {item.sku && <p className="mt-1 text-xs text-neutral-500">SKU: {item.sku}</p>}
 
                 <div className="mt-auto flex flex-col gap-1 pt-3">
                     {item.rate > 0 ? (
@@ -283,7 +282,7 @@ function InventoryContent() {
                         <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-neutral-500" aria-hidden="true" />
                         <input
                             type="search"
-                            placeholder="Search by name, SKU, description"
+                            placeholder="Search by name or description"
                             aria-label="Search inventory"
                             value={search}
                             onChange={(e) => handleSearch(e.target.value)}

@@ -97,7 +97,6 @@ export default function CartPage() {
                                             <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                                                 <div className="min-w-0">
                                                     <h3 className="line-clamp-2 text-[17px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.productName}</h3>
-                                                    <p className="mt-1 text-[13px] text-neutral-500">{item.sku}</p>
                                                     {item.customization &&
                                                         Object.entries(item.customization).map(([k, v]) => (
                                                             <span key={k} className="mr-2 text-[13px] text-neutral-500 capitalize">

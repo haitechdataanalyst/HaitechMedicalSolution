@@ -7,7 +7,7 @@ import { inventoryApi, ZohoInventoryItem } from "@/lib/api";
 import { formatPrice } from "@/lib/utils";
 import {
     ArrowLeft, Package, CheckCircle2, AlertCircle, XCircle,
-    Tag, Hash, Building2, Layers, RefreshCw, ShoppingCart,
+    Tag, Building2, Layers, RefreshCw, ShoppingCart,
     FileText, Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -181,11 +181,6 @@ export default function InventoryItemPage() {
                                 {/* Name */}
                                 <h1 className="text-[1.75rem] leading-[1.15] font-semibold tracking-[-0.02em] text-neutral-900 md:text-[2rem]">{item.name}</h1>
 
-                                {/* SKU */}
-                                {item.sku && (
-                                    <p className="mt-2 text-sm text-neutral-500">SKU: <span className="font-mono font-medium text-neutral-700">{item.sku}</span></p>
-                                )}
-
                                 {/* Stock badge */}
                                 <div className="mt-4">
                                     <StockBadge qty={item.availableForSale} />
@@ -218,7 +213,6 @@ export default function InventoryItemPage() {
                                 {/* Specs */}
                                 <div className="mt-8 divide-y divide-neutral-900/[0.06]">
                                     <h2 className={cn(SECTION_TITLE, "pb-2")}>Item details</h2>
-                                    <SpecRow icon={Hash}      label="SKU"           value={item.sku} />
                                     <SpecRow icon={Layers}    label="Type"          value={item.itemType} />
                                     <SpecRow icon={Tag}       label="Unit"          value={item.unit} />
                                     <SpecRow icon={Building2} label="Brand"         value={item.brand} />

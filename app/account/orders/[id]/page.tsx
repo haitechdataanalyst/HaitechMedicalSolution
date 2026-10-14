@@ -133,7 +133,6 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                                 </div>
                                 <div className="min-w-0 flex-1">
                                     <p className="text-[15px] font-medium text-neutral-900">{item.productName}</p>
-                                    {item.productSku && <p className="mt-0.5 text-[13px] text-neutral-500">SKU: {item.productSku}</p>}
                                     <p className="text-[13px] text-neutral-500 tabular-nums">Qty: {item.quantity}</p>
                                 </div>
                                 <div className="shrink-0 text-right">

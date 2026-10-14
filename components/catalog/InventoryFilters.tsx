@@ -155,7 +155,7 @@ export default function InventoryFilters({ brands, categories, itemTypes, total,
                     type="search"
                     aria-label="Search the catalog"
                     defaultValue={search}
-                    placeholder="Name, SKU, category"
+                    placeholder="Name or category"
                     className={cn(SEARCH_INPUT, "pr-4")}
                     onKeyDown={(e) => {
                         if (e.key === "Enter") setParam("search", (e.target as HTMLInputElement).value || null);

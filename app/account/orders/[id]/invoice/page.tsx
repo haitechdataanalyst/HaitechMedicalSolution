@@ -84,7 +84,6 @@ export default function InvoicePage({ params }: { params: Promise<{ id: string }
                         <thead>
                             <tr className="border-y border-neutral-900/10 text-left text-[13px] text-neutral-500 print:text-neutral-700">
                                 <th scope="col" className="py-3 pr-3 font-medium">Item</th>
-                                <th scope="col" className="px-3 py-3 font-medium">SKU</th>
                                 <th scope="col" className="px-3 py-3 text-center font-medium">Qty</th>
                                 <th scope="col" className="px-3 py-3 text-right font-medium">Unit Price</th>
                                 <th scope="col" className="py-3 pl-3 text-right font-medium">Total</th>
@@ -94,7 +93,6 @@ export default function InvoicePage({ params }: { params: Promise<{ id: string }
                             {invoice.items.map((item) => (
                                 <tr key={item.id} className="break-inside-avoid">
                                     <td className="py-3.5 pr-3 text-neutral-900">{item.productName}</td>
-                                    <td className="px-3 py-3.5 text-neutral-600">{item.productSku ?? "—"}</td>
                                     <td className="px-3 py-3.5 text-center text-neutral-700 tabular-nums">{item.quantity}</td>
                                     <td className="px-3 py-3.5 text-right text-neutral-700 tabular-nums">{fmt(item.unitPrice, invoice.currency)}</td>
                                     <td className="py-3.5 pl-3 text-right font-semibold text-neutral-900 tabular-nums">{fmt(item.totalPrice, invoice.currency)}</td>

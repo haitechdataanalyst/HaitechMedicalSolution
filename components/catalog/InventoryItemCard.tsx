@@ -32,12 +32,11 @@ export default function InventoryItemCard({ item }: { item: InventoryItem }) {
             <h3 className="mt-4 line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.ProductName || item.OriginalName}</h3>
             {item.Variant && <p className="mt-1 text-[13px] text-neutral-600">{item.Variant}</p>}
 
-            {/* Category trail + SKU */}
+            {/* Category trail */}
             <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
                 {item.Category}
                 {item.Subcategory && item.Subcategory !== item.Category && <> / {item.Subcategory}</>}
             </p>
-            <p className="mt-0.5 font-mono text-xs text-neutral-500">{item.StandardSKU || item.OriginalSKU}</p>
 
             {/* Price + stock */}
             <div className="mt-5 flex items-center justify-between gap-2 pb-4">
@@ -64,7 +63,7 @@ export default function InventoryItemCard({ item }: { item: InventoryItem }) {
 
             {/* CTA */}
             <Link
-                href={`/support/contact?subject=${inStock ? "Quote+Request" : "Restock+Enquiry"}:+${encodeURIComponent(item.StandardSKU || item.OriginalSKU)}&product=${encodeURIComponent(item.ProductName || item.OriginalName)}`}
+                href={`/support/contact?subject=${inStock ? "Quote+Request" : "Restock+Enquiry"}:+${encodeURIComponent(item.ProductName || item.OriginalName)}&product=${encodeURIComponent(item.ProductName || item.OriginalName)}`}
                 className={cn(
                     "focus-visible:outline-primary-500 mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-full text-sm font-semibold transition-[transform,background-color] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]",
                     inStock ? "bg-primary-50 text-primary-800 hover:bg-primary-100" : "bg-neutral-900/[0.05] text-neutral-800 hover:bg-neutral-900/[0.08]"

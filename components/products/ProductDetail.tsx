@@ -99,11 +99,10 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
 
                 {/* Right Column - All Product Info */}
                 <div className="space-y-8 lg:w-[45%]">
-                    {/* Title & SKU */}
+                    {/* Title */}
                     <div className="space-y-4">
                         <div>
                             <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-neutral-900 lg:text-[2.75rem]">{product.name}</h1>
-                            <p className="mt-2 text-[13px] text-neutral-500 tabular-nums">SKU {product.sku}</p>
                         </div>
 
                         {/* Dynamic trust badges — only ever shows fields this product actually has */}

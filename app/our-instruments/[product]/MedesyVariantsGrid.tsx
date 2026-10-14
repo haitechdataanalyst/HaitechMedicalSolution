@@ -54,8 +54,7 @@ function VariantCard({ variant, product }: VariantCardProps) {
                 {/* Variant Name */}
                 <h3 className={TITLE}>{variant.name || variant.id}</h3>
 
-                {/* SKU */}
-                <p className="mt-1 grow text-[13px] text-neutral-500">SKU: {variant.sku}</p>
+                <div className="grow" />
 
                 {/* Add to Cart */}
                 {COMMERCE_ENABLED && (
@@ -104,9 +103,6 @@ function SingleProductCard({ product }: SingleProductCardProps) {
             <div className="flex flex-col px-4 pt-5 pb-4 text-center">
                 {/* Product Name */}
                 <h3 className="text-lg font-semibold tracking-[-0.015em] text-neutral-900">{product.name}</h3>
-
-                {/* SKU */}
-                <p className="mt-1 text-[13px] text-neutral-500">SKU: {product.sku}</p>
 
                 {/* Add to Cart */}
                 {COMMERCE_ENABLED && (
