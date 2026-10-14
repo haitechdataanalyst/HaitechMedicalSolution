@@ -162,15 +162,13 @@ export async function submitQuoteRequest(prevState: QuoteFormState, formData: Fo
             clientIp
         );
 
-        if (!leadResult.success || !leadResult.data?.lead) {
-            const isRateLimited = leadResult.statusCode === 429;
-            return {
-                success: false,
-                error: isRateLimited ? "Too many requests. Please wait a minute before trying again." : "Failed to submit quote request. Please try again or contact us directly.",
-            };
+        // Only the rate limit stops a submission. If the lead could not be saved (backend down), the email below still
+        // delivers the request, which is what the form is for.
+        if (leadResult.statusCode === 429) {
+            return { success: false, error: "Too many requests. Please wait a minute before trying again." };
         }
-
-        const lead = leadResult.data.lead;
+        const lead = leadResult.data?.lead ?? null;
+        if (!lead) console.error("Submission continues without a saved lead (status", leadResult.statusCode, ")");
 
         // Generate PDF
         const pdfBuffer = await generateQuotePDF({
@@ -197,7 +195,7 @@ export async function submitQuoteRequest(prevState: QuoteFormState, formData: Fo
                 items: cartItems,
                 message: data.message,
             });
-            await markLeadEmailSent(lead.id).catch((err) => console.error("Failed to mark lead email as sent:", err));
+            if (lead) await markLeadEmailSent(lead.id).catch((err) => console.error("Failed to mark lead email as sent:", err));
         } catch (emailError) {
             console.error("Quote email send error:", emailError);
             return {
