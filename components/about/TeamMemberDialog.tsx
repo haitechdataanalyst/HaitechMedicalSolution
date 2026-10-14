@@ -11,18 +11,43 @@ interface Props {
     onClose: () => void;
 }
 
+const FOCUSABLE = "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])";
+
 export function TeamMemberDialog({ member, onClose }: Props) {
     const dialogRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!member) return;
-        const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+        const previouslyFocused = document.activeElement as HTMLElement | null;
+
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                onClose();
+                return;
+            }
+            // Keep Tab inside the sheet while it is open.
+            if (e.key !== "Tab" || !dialogRef.current) return;
+            const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE));
+            if (focusable.length === 0) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+
         document.addEventListener("keydown", onKey);
         document.body.style.overflow = "hidden";
-        setTimeout(() => dialogRef.current?.focus(), 20);
+        const focusTimer = window.setTimeout(() => dialogRef.current?.focus(), 20);
         return () => {
+            window.clearTimeout(focusTimer);
             document.removeEventListener("keydown", onKey);
             document.body.style.overflow = "";
+            previouslyFocused?.focus();
         };
     }, [member, onClose]);
 
@@ -36,58 +61,56 @@ export function TeamMemberDialog({ member, onClose }: Props) {
     return createPortal(
         <div
             className="fixed inset-0 z-[200] flex items-end justify-center sm:items-center sm:p-6"
-            role="dialog"
-            aria-modal="true"
-            aria-label={`Profile: ${member.name}`}
-            onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+            onClick={(e) => {
+                if (e.target === e.currentTarget) onClose();
+            }}
         >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+            {/* Scrim */}
+            <div className="pointer-events-none absolute inset-0 bg-neutral-950/40 backdrop-blur-sm" aria-hidden="true" />
 
-            {/* Sheet/panel */}
+            {/* Sheet */}
             <div
                 ref={dialogRef}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="team-member-dialog-title"
                 tabIndex={-1}
-                className="relative z-10 flex w-full flex-col overflow-hidden rounded-t-2xl bg-white outline-none
-                           sm:max-w-xl sm:rounded-2xl md:max-w-2xl md:flex-row"
-                style={{ animation: "teamDialogIn 0.22s cubic-bezier(0.22,1,0.36,1) both", maxHeight: "92vh" }}
+                className="animate-popover-in relative z-10 flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-[0_24px_64px_-24px_rgba(15,23,42,0.4)] outline-none sm:max-w-xl sm:rounded-3xl md:max-w-2xl md:flex-row"
             >
-                {/* Close */}
                 <button
                     type="button"
                     onClick={onClose}
-                    aria-label="Close"
-                    className="absolute right-4 top-4 z-10 p-1 text-neutral-400 transition-colors hover:text-neutral-700"
+                    aria-label="Close profile"
+                    className="focus-visible:outline-primary-500 absolute top-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-900/[0.05] text-neutral-600 transition-colors duration-200 ease-out hover:bg-neutral-900/10 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
-                    <X size={18} strokeWidth={2} />
+                    <X className="h-[18px] w-[18px]" strokeWidth={2} aria-hidden="true" />
                 </button>
 
-                {/* Photo column */}
-                <div className="flex shrink-0 flex-col items-center justify-center bg-neutral-50 px-8 py-10 md:w-52 md:py-14 lg:w-60">
+                {/* Portrait */}
+                <div className="flex shrink-0 items-center justify-center bg-neutral-50 px-8 pt-10 pb-8 md:w-56 md:py-12 lg:w-64">
                     <MemberPhoto member={member} displayName={displayName} />
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-1 flex-col overflow-y-auto p-7 md:p-8">
-                    {/* Identity */}
-                    <div>
-                        <h2 className="text-xl font-semibold text-neutral-900">{displayName}</h2>
-                        <p className="mt-0.5 text-sm text-neutral-500">{member.designation}</p>
-                    </div>
+                <div className="flex flex-1 flex-col overflow-y-auto px-7 pt-7 pb-8 md:p-9 md:pr-14">
+                    <h2 id="team-member-dialog-title" className="text-2xl leading-tight font-semibold tracking-[-0.02em] text-neutral-900">
+                        {displayName}
+                    </h2>
+                    <p className="mt-1 text-[15px] text-neutral-500">{member.designation}</p>
 
-                    <hr className="my-5 border-neutral-100" />
+                    <p className="mt-6 flex-1 text-[16px] leading-relaxed text-neutral-700">{member.bio ?? "A valued member of the Haitech Medical family."}</p>
 
-                    {/* Bio */}
-                    <p className="flex-1 text-[15px] leading-[1.75] text-neutral-600">
-                        {member.bio ?? "A valued member of the Haitech Medical family."}
-                    </p>
-
-                    {/* Traits */}
                     {cleanTags.length > 0 && (
-                        <p className="mt-6 text-xs text-neutral-400">
-                            <span className="mr-2 font-medium uppercase tracking-wider text-neutral-300">Known for</span>
-                            {cleanTags.join(" · ")}
-                        </p>
+                        <div className="mt-7">
+                            <p className="text-[13px] font-medium text-neutral-500">Known for</p>
+                            <ul className="mt-2 flex flex-wrap gap-2">
+                                {cleanTags.map((tag) => (
+                                    <li key={tag} className="label-tag label-tag-neutral">
+                                        {tag}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     )}
                 </div>
             </div>
@@ -108,21 +131,11 @@ function MemberPhoto({ member, displayName }: { member: TeamMemberData; displayN
         .slice(0, 2);
 
     return (
-        <div className="h-28 w-28 shrink-0 overflow-hidden rounded-full md:h-32 md:w-32">
+        <div className="relative aspect-[4/5] w-32 shrink-0 overflow-hidden rounded-2xl bg-neutral-100 md:w-full">
             {member.image && !failed ? (
-                <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill={false}
-                    width={128}
-                    height={128}
-                    className="h-full w-full object-cover"
-                    onError={() => setFailed(true)}
-                />
+                <Image src={member.image} alt={member.name} fill sizes="(max-width: 768px) 128px, 256px" className="object-cover" onError={() => setFailed(true)} />
             ) : (
-                <div className="flex h-full w-full items-center justify-center bg-neutral-200 text-2xl font-semibold text-neutral-500">
-                    {initials}
-                </div>
+                <div className="bg-primary-50 text-primary-800 flex h-full w-full items-center justify-center text-2xl font-semibold">{initials}</div>
             )}
         </div>
     );

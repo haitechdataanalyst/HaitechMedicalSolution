@@ -3,6 +3,7 @@
 import { ButtonHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/icons";
+import { trackEvent } from "@/lib/analytics";
 
 export interface WhatsAppButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> {
     /** WhatsApp phone number (with country code, no spaces or special chars) */
@@ -19,9 +20,9 @@ export interface WhatsAppButtonProps extends Omit<ButtonHTMLAttributes<HTMLButto
 
 const WhatsAppButton = forwardRef<HTMLButtonElement, WhatsAppButtonProps>(({ phoneNumber, message, size = "md", iconOnly = false, label = "WhatsApp", className, ...props }, ref) => {
     const sizes = {
-        sm: "px-3 py-1.5 text-sm",
-        md: "px-4 py-2 text-base",
-        lg: "px-6 py-3 text-lg",
+        sm: "min-h-11 px-4 text-sm",
+        md: "min-h-12 px-6 text-[15px]",
+        lg: "min-h-14 px-8 text-base",
     };
 
     const iconSizes = {
@@ -41,7 +42,7 @@ const WhatsAppButton = forwardRef<HTMLButtonElement, WhatsAppButtonProps>(({ pho
             whatsappUrl += `?text=${encodeURIComponent(message)}`;
         }
 
-        // Open WhatsApp in new tab
+        trackEvent("whatsapp_click", { location: "button" });
         window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     };
 
@@ -51,17 +52,17 @@ const WhatsAppButton = forwardRef<HTMLButtonElement, WhatsAppButtonProps>(({ pho
             type="button"
             onClick={handleClick}
             className={cn(
-                "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors",
+                "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[background-color,transform] duration-200 ease-out motion-safe:active:scale-[0.97]",
                 "bg-whatsapp text-white hover:bg-[#20BD5A] active:bg-[#1DA851]",
-                "focus:ring-2 focus:ring-whatsapp focus:ring-offset-2 focus:outline-none",
+                "focus-visible:outline-whatsapp focus-visible:outline-2 focus-visible:outline-offset-2",
                 "disabled:cursor-not-allowed disabled:opacity-50",
                 sizes[size],
-                iconOnly && "!px-2",
+                iconOnly && "aspect-square !px-0",
                 className
             )}
             {...props}
         >
-            <WhatsAppIcon size={iconSizes[size]} />
+            <WhatsAppIcon size={iconSizes[size]} aria-hidden="true" />
             {!iconOnly && <span>{label}</span>}
         </button>
     );

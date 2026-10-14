@@ -1,22 +1,24 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useId, useState, useMemo } from "react";
 import type { CSSProperties } from "react";
 import { ChevronDown, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 
-interface FAQItem {
+export interface FAQItem {
     id: number;
     question: string;
     answer: string;
 }
 
-interface FAQSection {
+export interface FAQSection {
     title: string;
     faqs: FAQItem[];
 }
 
-interface FAQBrand {
+/** One tab of questions: a product category (e.g. Dental Loupes), optionally split into titled sections. */
+export interface FAQGroup {
     id: string;
     label: string;
     faqs?: FAQItem[];
@@ -24,46 +26,72 @@ interface FAQBrand {
 }
 
 interface FAQProps {
-    brands: FAQBrand[];
+    groups: FAQGroup[];
     title?: string;
     subtitle?: string;
+    /** Defaults to showing search only when the active group has more than SEARCH_THRESHOLD questions. */
+    searchable?: boolean;
 }
+
+const SEARCH_THRESHOLD = 8;
 
 function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) {
     const lines = item.answer.split("\n");
+    const uid = useId();
+    const buttonId = `${uid}-q`;
+    const panelId = `${uid}-a`;
     return (
-        <div className="border-b border-neutral-100 last:border-b-0">
-            <button onClick={onToggle} className="group flex w-full items-center justify-between py-5 text-left transition-colors" aria-expanded={isOpen}>
-                <span className={cn("pr-4 text-base font-medium transition-colors", isOpen ? "text-primary-600" : "text-neutral-900 group-hover:text-primary-600")}>{item.question}</span>
-                <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300", isOpen ? "bg-primary-500 text-white" : "bg-neutral-100 text-neutral-500")}>
-                    <ChevronDown className={cn("h-4 w-4 transition-transform duration-300 ease-in-out", isOpen && "rotate-180")} />
-                </div>
+        <div>
+            <button
+                id={buttonId}
+                type="button"
+                onClick={onToggle}
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                className="group flex min-h-14 w-full items-center justify-between gap-4 rounded-lg py-4 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+            >
+                <span className="text-[16px] leading-snug font-medium tracking-[-0.01em] text-neutral-900 transition-colors duration-200 ease-out group-hover:text-primary-800 md:text-[17px]">
+                    {item.question}
+                </span>
+                <ChevronDown
+                    className={cn("h-5 w-5 shrink-0 text-neutral-500 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out", isOpen && "rotate-180 text-neutral-900")}
+                    aria-hidden="true"
+                />
             </button>
-            <div className={cn("grid transition-all duration-300 ease-in-out", isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
-                <div className="overflow-hidden">
-                    <div className="space-y-1.5 pb-5 leading-relaxed text-neutral-600">
-                        {lines.map((line, i) =>
-                            line === "" ? (
-                                <div key={i} className="h-1" />
-                            ) : (
-                                <p key={i} className={cn("text-sm leading-relaxed", line.startsWith("• ") && "pl-3")}>
-                                    {line}
-                                </p>
-                            )
-                        )}
-                    </div>
+            <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="pr-9 pb-5">
+                <div className="space-y-2 text-[15px] leading-relaxed text-neutral-600 md:text-base">
+                    {lines.map((line, i) =>
+                        line === "" ? (
+                            <div key={i} className="h-1" />
+                        ) : (
+                            <p key={i} className={cn(line.startsWith("• ") && "pl-3")}>
+                                {line}
+                            </p>
+                        )
+                    )}
                 </div>
             </div>
         </div>
     );
 }
 
-export function FAQ({ brands, title = "Frequently Asked Questions", subtitle = "Find answers to common questions about our products and services." }: FAQProps) {
-    const [activeBrandId, setActiveBrandId] = useState(brands[0]?.id ?? "");
+/** A quiet card holding disclosure rows separated by hairlines. */
+function FAQList({ items, openId, onToggle }: { items: FAQItem[]; openId: number | null; onToggle: (id: number) => void }) {
+    return (
+        <div className={`${SURFACE_CARD} divide-y divide-neutral-900/[0.06] px-5 md:px-8`}>
+            {items.map((faq) => (
+                <AccordionItem key={faq.id} item={faq} isOpen={openId === faq.id} onToggle={() => onToggle(faq.id)} />
+            ))}
+        </div>
+    );
+}
+
+export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "Find answers to common questions about our products and services.", searchable }: FAQProps) {
+    const [activeBrandId, setActiveBrandId] = useState(groups[0]?.id ?? "");
     const [openId, setOpenId] = useState<number | null>(null);
     const [searchQuery, setSearchQuery] = useState("");
 
-    const brand = brands.find((b) => b.id === activeBrandId) ?? brands[0];
+    const brand = groups.find((b) => b.id === activeBrandId) ?? groups[0];
 
     const allFaqs = useMemo<FAQItem[]>(() => {
         if (!brand) return [];
@@ -71,7 +99,8 @@ export function FAQ({ brands, title = "Frequently Asked Questions", subtitle = "
         return brand.sections?.flatMap((s) => s.faqs) ?? [];
     }, [brand]);
 
-    const isSearching = searchQuery.trim().length > 0;
+    const showSearch = searchable ?? allFaqs.length > SEARCH_THRESHOLD;
+    const isSearching = showSearch && searchQuery.trim().length > 0;
 
     const filteredFaqs = useMemo(() => {
         const q = searchQuery.trim().toLowerCase();
@@ -88,91 +117,92 @@ export function FAQ({ brands, title = "Frequently Asked Questions", subtitle = "
     };
 
     return (
-        <section className="bg-neutral-50 py-16">
+        <section className="bg-neutral-50 py-16 md:py-20">
             <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-3xl">
-                    <div className="mb-8 text-center">
-                        <h2 className="heading-2 mb-3">{title}</h2>
-                        <p className="text-neutral-600">{subtitle}</p>
+                    <div className="mb-8 text-center md:mb-10">
+                        <h2 className="text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.022em] text-neutral-900 md:text-[2.5rem]">{title}</h2>
+                        <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{subtitle}</p>
                     </div>
 
-                    {/* Brand tabs */}
-                    {brands.length > 1 && (
+                    {/* Group tabs */}
+                    {groups.length > 1 && (
                         <div
-                            className="mb-6 flex gap-2 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden"
+                            className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1 [&::-webkit-scrollbar]:hidden"
                             style={{ scrollbarWidth: "none" } as CSSProperties}
                         >
-                            {brands.map((b) => (
-                                <button
-                                    key={b.id}
-                                    onClick={() => handleBrandChange(b.id)}
-                                    className={cn(
-                                        "flex-none rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200",
-                                        activeBrandId === b.id
-                                            ? "bg-primary-500 text-white shadow-md"
-                                            : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-300 hover:text-primary-600"
-                                    )}
-                                >
-                                    {b.label}
-                                </button>
-                            ))}
+                            {groups.map((b) => {
+                                const isActive = activeBrandId === b.id;
+                                return (
+                                    <button
+                                        key={b.id}
+                                        type="button"
+                                        aria-pressed={isActive}
+                                        onClick={() => handleBrandChange(b.id)}
+                                        className={cn(
+                                            "inline-flex min-h-11 flex-none items-center rounded-full px-5 text-[15px] font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500",
+                                            isActive ? "bg-neutral-900 text-white" : "bg-white text-neutral-700 ring-1 ring-neutral-900/[0.08] hover:bg-neutral-100"
+                                        )}
+                                    >
+                                        {b.label}
+                                    </button>
+                                );
+                            })}
                         </div>
                     )}
 
                     {/* Search bar */}
-                    <div className="relative mb-6">
-                        <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => { setSearchQuery(e.target.value); setOpenId(null); }}
-                            placeholder="Search questions…"
-                            className="w-full rounded-xl border border-neutral-200 bg-white py-3.5 pl-11 pr-11 text-sm text-neutral-800 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
-                        />
-                        {searchQuery && (
-                            <button
-                                onClick={() => setSearchQuery("")}
-                                className="absolute right-3.5 top-1/2 -translate-y-1/2 rounded-lg p-1 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
-                                aria-label="Clear search"
-                            >
-                                <X className="h-4 w-4" />
-                            </button>
-                        )}
-                    </div>
+                    {showSearch && (
+                        <div className="relative mb-6">
+                            <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-neutral-500" aria-hidden="true" />
+                            <input
+                                type="search"
+                                value={searchQuery}
+                                onChange={(e) => { setSearchQuery(e.target.value); setOpenId(null); }}
+                                placeholder="Search questions…"
+                                aria-label="Search questions"
+                                className="form-input pr-12 pl-11 [&::-webkit-search-cancel-button]:hidden"
+                            />
+                            {searchQuery && (
+                                <button
+                                    type="button"
+                                    onClick={() => setSearchQuery("")}
+                                    className="absolute top-1/2 right-1 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 ease-out hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-primary-500"
+                                    aria-label="Clear search"
+                                >
+                                    <X className="h-4 w-4" aria-hidden="true" />
+                                </button>
+                            )}
+                        </div>
+                    )}
 
                     {/* FAQ content */}
                     {isSearching ? (
-                        <div className="rounded-2xl border border-neutral-100 bg-white px-6 py-2 shadow-sm md:px-8">
-                            {filteredFaqs.length > 0 ? (
-                                filteredFaqs.map((faq) => (
-                                    <AccordionItem key={faq.id} item={faq} isOpen={openId === faq.id} onToggle={() => handleToggle(faq.id)} />
-                                ))
-                            ) : (
-                                <div className="py-10 text-center">
-                                    <p className="text-sm font-medium text-neutral-500">No results for &ldquo;{searchQuery}&rdquo;</p>
-                                    <button onClick={() => setSearchQuery("")} className="mt-2 text-xs text-primary-600 hover:underline">Clear search</button>
-                                </div>
-                            )}
-                        </div>
+                        filteredFaqs.length > 0 ? (
+                            <FAQList items={filteredFaqs} openId={openId} onToggle={handleToggle} />
+                        ) : (
+                            <div className={`${SURFACE_CARD} px-6 py-12 text-center`}>
+                                <p className="text-[15px] text-neutral-600">No results for &ldquo;{searchQuery}&rdquo;</p>
+                                <button
+                                    type="button"
+                                    onClick={() => setSearchQuery("")}
+                                    className="mt-2 inline-flex min-h-11 items-center rounded-full px-3 text-[15px] font-medium text-primary-700 hover:text-primary-800 focus-visible:outline-2 focus-visible:outline-primary-500"
+                                >
+                                    Clear search
+                                </button>
+                            </div>
+                        )
                     ) : brand?.sections ? (
-                        <div className="space-y-6">
+                        <div className="space-y-8">
                             {brand.sections.map((section, i) => (
                                 <div key={i}>
-                                    <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-400">{section.title}</h3>
-                                    <div className="rounded-2xl border border-neutral-100 bg-white px-6 py-2 shadow-sm md:px-8">
-                                        {section.faqs.map((faq) => (
-                                            <AccordionItem key={faq.id} item={faq} isOpen={openId === faq.id} onToggle={() => handleToggle(faq.id)} />
-                                        ))}
-                                    </div>
+                                    <h3 className="mb-3 px-1 text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{section.title}</h3>
+                                    <FAQList items={section.faqs} openId={openId} onToggle={handleToggle} />
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <div className="rounded-2xl border border-neutral-100 bg-white px-6 py-2 shadow-sm md:px-8">
-                            {allFaqs.map((faq) => (
-                                <AccordionItem key={faq.id} item={faq} isOpen={openId === faq.id} onToggle={() => handleToggle(faq.id)} />
-                            ))}
-                        </div>
+                        <FAQList items={allFaqs} openId={openId} onToggle={handleToggle} />
                     )}
                 </div>
             </div>

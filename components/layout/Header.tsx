@@ -7,13 +7,15 @@ import MobileMenu from "./MobileMenu";
 import { CartButton } from "@/components/cart";
 import { MenuIcon } from "@/components/icons";
 import Image from "next/image";
-import { Button } from "../ui";
 import { useHeaderNavigation } from "./NavigationProvider";
 import { FileText, Search, X, UserCircle, ChevronDown, LogOut, LayoutDashboard, ShoppingBag, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlobalSearchDropdown, GlobalSearchMobile } from "@/components/search/GlobalSearch";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { COMMERCE_ENABLED } from "@/lib/config";
+
+const MENU_ROW = "flex min-h-10 items-center gap-2.5 rounded-xl px-3 text-[15px] text-neutral-700 transition-colors hover:bg-neutral-900/[0.05] hover:text-neutral-900";
+const ICON_BUTTON = "flex h-11 w-11 items-center justify-center rounded-full text-neutral-700 transition-colors hover:bg-neutral-900/[0.05]";
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +32,9 @@ export default function Header() {
     const searchContainerRef = useRef<HTMLDivElement>(null);
     const searchInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => { setIsMac(/Mac|iPhone|iPad|iPod/.test(navigator.platform)); }, []);
+    useEffect(() => {
+        setIsMac(/Mac|iPhone|iPad|iPod/.test(navigator.platform));
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -95,37 +99,30 @@ export default function Header() {
 
     return (
         <>
-            <header className={cn("sticky top-0 z-50 bg-white transition-all duration-200", scrolled ? "shadow-[0_2px_16px_rgba(0,0,0,0.08)]" : "shadow-none")}>
-
+            <header className={cn("material-bar sticky top-0 z-50 transition-shadow duration-200", scrolled ? "shadow-[0_1px_0_rgba(15,23,42,0.08)]" : "shadow-none")}>
                 {/* ── Primary bar ── */}
-                <div className="border-b border-neutral-100 bg-white">
+                <div>
                     <div className="container">
                         <div className="flex h-16 items-center gap-4 md:gap-5">
-
                             {/* Logo */}
                             <Link href="/" className="shrink-0">
-                                <Image
-                                    width={180}
-                                    height={36}
-                                    src="/haitech_medical_logo.png"
-                                    alt="Haitech Medical"
-                                    priority
-                                    className="h-auto w-[140px] md:w-[175px]"
-                                />
+                                <Image width={180} height={36} src="/haitech_medical_logo.png" alt="Haitech Medical" priority className="h-auto w-[140px] md:w-[175px]" />
                             </Link>
 
+                            {/* Desktop nav inline from 1280px — one 64px header row instead of two (106px) */}
+                            <div className="hidden self-stretch xl:flex">
+                                <Navigation standalone />
+                            </div>
+
                             {/* Desktop search — real input + inline dropdown */}
-                            <div
-                                ref={searchContainerRef}
-                                className="relative hidden flex-1 sm:flex"
-                            >
-                                <div className={cn(
-                                    "flex w-full items-center gap-3 rounded-full border bg-neutral-50 px-4 py-2 text-sm transition-all duration-150",
-                                    searchOpen
-                                        ? "border-primary-400 bg-white shadow-sm"
-                                        : "border-neutral-200 hover:border-primary-300 hover:bg-white hover:shadow-sm"
-                                )}>
-                                    <Search className="h-4 w-4 shrink-0 text-neutral-400" />
+                            <div ref={searchContainerRef} className="relative hidden flex-1 sm:flex">
+                                <div
+                                    className={cn(
+                                        "flex h-10 w-full items-center gap-2.5 rounded-full px-4 text-sm transition-[background-color,box-shadow] duration-200 ease-out",
+                                        searchOpen ? "bg-white shadow-[0_0_0_1px_rgba(15,23,42,0.08),0_0_0_4px_var(--color-primary-100)]" : "bg-neutral-900/[0.05] hover:bg-neutral-900/[0.07]"
+                                    )}
+                                >
+                                    <Search className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
                                     <input
                                         ref={searchInputRef}
                                         type="text"
@@ -133,7 +130,8 @@ export default function Header() {
                                         onChange={(e) => setQuery(e.target.value)}
                                         onFocus={() => setSearchOpen(true)}
                                         placeholder="Search products, brands, categories…"
-                                        className="flex-1 truncate bg-transparent text-sm text-neutral-900 placeholder:text-neutral-400 outline-none"
+                                        aria-label="Search the catalogue"
+                                        className="flex-1 truncate bg-transparent text-[15px] text-neutral-900 outline-none placeholder:text-neutral-500"
                                         autoComplete="off"
                                         spellCheck={false}
                                     />
@@ -147,27 +145,18 @@ export default function Header() {
                                             <X className="h-3.5 w-3.5" />
                                         </button>
                                     ) : (
-                                        <kbd className="hidden items-center rounded-lg border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-[11px] font-medium text-neutral-400 lg:flex">
+                                        <kbd className="hidden items-center rounded-md bg-white/80 px-1.5 py-0.5 font-sans text-xs font-medium text-neutral-500 shadow-[0_0_0_1px_rgba(15,23,42,0.08)] lg:flex">
                                             {isMac ? "⌘K" : "Ctrl+K"}
                                         </kbd>
                                     )}
                                 </div>
 
                                 {/* Dropdown anchored below the search bar */}
-                                <GlobalSearchDropdown
-                                    isOpen={searchOpen}
-                                    onClose={closeSearch}
-                                    query={query}
-                                    onQueryChange={setQuery}
-                                />
+                                <GlobalSearchDropdown isOpen={searchOpen} onClose={closeSearch} query={query} onQueryChange={setQuery} />
                             </div>
 
                             {/* Mobile search icon */}
-                            <button
-                                onClick={() => setMobileSearchOpen(true)}
-                                className="ml-auto rounded-xl p-2 text-neutral-600 transition-colors hover:bg-neutral-100 sm:hidden"
-                                aria-label="Search"
-                            >
+                            <button onClick={() => setMobileSearchOpen(true)} className={cn("ml-auto sm:hidden", ICON_BUTTON)} aria-label="Search">
                                 <Search className="h-5 w-5" />
                             </button>
 
@@ -180,30 +169,49 @@ export default function Header() {
                                             <div ref={userMenuRef} className="relative">
                                                 <button
                                                     onClick={() => setUserMenuOpen((v) => !v)}
-                                                    className="flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 py-1.5 pl-3 pr-2.5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-300 hover:bg-white"
+                                                    aria-expanded={userMenuOpen}
+                                                    aria-haspopup="menu"
+                                                    className="flex h-10 items-center gap-2 rounded-full bg-neutral-900/[0.05] px-3 text-sm font-medium text-neutral-800 transition-colors hover:bg-neutral-900/[0.08]"
                                                 >
-                                                    <UserCircle className="h-4 w-4 text-primary-500" />
+                                                    <UserCircle className="text-primary-700 h-4 w-4" aria-hidden="true" />
                                                     <span className="max-w-[120px] truncate">{user.firstName}</span>
-                                                    <ChevronDown className={cn("h-3.5 w-3.5 text-neutral-400 transition-transform", userMenuOpen && "rotate-180")} />
+                                                    <ChevronDown className={cn("h-3.5 w-3.5 text-neutral-500 transition-transform duration-200 ease-out", userMenuOpen && "rotate-180")} aria-hidden="true" />
                                                 </button>
 
                                                 {userMenuOpen && (
-                                                    <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl border border-neutral-200 bg-white py-1.5 shadow-lg">
-                                                        <div className="border-b border-neutral-100 px-4 pb-2.5 pt-2">
-                                                            <p className="truncate text-sm font-semibold text-neutral-900">{user.firstName} {user.lastName}</p>
+                                                    <div role="menu" className="material-popover animate-popover-in absolute top-full right-0 mt-2 w-60 origin-top-right p-1.5">
+                                                        <div className="px-3 pt-2 pb-2.5">
+                                                            <p className="truncate text-sm font-semibold text-neutral-900">
+                                                                {user.firstName} {user.lastName}
+                                                            </p>
                                                             <p className="truncate text-xs text-neutral-500">{user.email}</p>
                                                         </div>
-                                                        <Link href="/account" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-primary-600">
+                                                        <Link
+                                                            href="/account"
+                                                            onClick={() => setUserMenuOpen(false)}
+                                                            role="menuitem"
+                                                            className={MENU_ROW}
+                                                        >
                                                             <LayoutDashboard className="h-4 w-4" /> Dashboard
                                                         </Link>
-                                                        <Link href="/account/orders" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-primary-600">
+                                                        <Link
+                                                            href="/account/orders"
+                                                            onClick={() => setUserMenuOpen(false)}
+                                                            role="menuitem"
+                                                            className={MENU_ROW}
+                                                        >
                                                             <ShoppingBag className="h-4 w-4" /> My Orders
                                                         </Link>
-                                                        <Link href="/account/settings" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 hover:text-primary-600">
+                                                        <Link
+                                                            href="/account/settings"
+                                                            onClick={() => setUserMenuOpen(false)}
+                                                            role="menuitem"
+                                                            className={MENU_ROW}
+                                                        >
                                                             <Settings className="h-4 w-4" /> Settings
                                                         </Link>
-                                                        <div className="my-1 border-t border-neutral-100" />
-                                                        <button onClick={handleLogout} className="flex w-full items-center gap-2.5 px-4 py-2 text-sm text-red-500 transition-colors hover:bg-red-50">
+                                                        <div className="mx-3 my-1 h-px bg-neutral-900/[0.06]" />
+                                                        <button role="menuitem" onClick={handleLogout} className="flex min-h-10 w-full items-center gap-2.5 rounded-xl px-3 text-[15px] text-red-600 transition-colors hover:bg-red-50">
                                                             <LogOut className="h-4 w-4" /> Sign Out
                                                         </button>
                                                     </div>
@@ -212,29 +220,29 @@ export default function Header() {
                                         ) : (
                                             /* ── Guest links ── */
                                             <>
-                                                <Link href="/login" className="rounded-lg px-3 py-1.5 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-primary-600">
+                                                <Link
+                                                    href="/login"
+                                                    className="flex h-10 items-center rounded-full px-3.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-900/[0.05] hover:text-neutral-900"
+                                                >
                                                     Sign In
                                                 </Link>
-                                                <Link href="/register" className="rounded-full bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-100">
+                                                <Link href="/register" className="bg-primary-50 text-primary-800 hover:bg-primary-100 flex h-10 items-center rounded-full px-4 text-sm font-semibold transition-colors">
                                                     Register
                                                 </Link>
                                             </>
                                         )}
                                     </div>
                                 )}
-                                {COMMERCE_ENABLED && <div className="mx-1 hidden h-5 w-px bg-neutral-200 md:block" />}
-                                <Link href="/support/contact" className="hidden md:flex">
-                                    <Button className="gap-2 rounded-full px-5 text-sm font-semibold" variant="primary">
-                                        <FileText size={14} />
-                                        Request a Quote
-                                    </Button>
+                                {COMMERCE_ENABLED && <div className="mx-1 hidden h-5 w-px bg-neutral-900/10 md:block" />}
+                                <Link
+                                    href="/support/contact"
+                                    className="bg-primary-800 hover:bg-primary-900 hidden h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold text-white transition-[background-color,transform] duration-200 ease-out motion-safe:active:scale-[0.97] md:inline-flex"
+                                >
+                                    <FileText size={14} aria-hidden="true" />
+                                    Request a Quote
                                 </Link>
                                 {COMMERCE_ENABLED && <CartButton />}
-                                <button
-                                    onClick={() => setMobileMenuOpen(true)}
-                                    className="rounded-xl p-2 text-neutral-600 transition-colors hover:bg-neutral-100 md:hidden"
-                                    aria-label="Open menu"
-                                >
+                                <button onClick={() => setMobileMenuOpen(true)} className={cn("md:hidden", ICON_BUTTON)} aria-label="Open menu" aria-expanded={mobileMenuOpen}>
                                     <MenuIcon size={22} />
                                 </button>
                             </div>
@@ -242,8 +250,8 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* ── Nav bar (desktop) ── */}
-                <div className="hidden border-b border-neutral-100 bg-white md:block">
+                {/* ── Nav bar (tablet / small laptop) — from 1280px the menu sits in the primary bar ── */}
+                <div className="hidden md:block xl:hidden">
                     <div className="container">
                         <div className="flex h-10 items-stretch">
                             <Navigation standalone />

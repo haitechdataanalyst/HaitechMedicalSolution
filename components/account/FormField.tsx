@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface FormFieldProps {
@@ -12,23 +13,29 @@ interface FormFieldProps {
 }
 
 export function FormField({ label, value, type = "text", placeholder, onChange, readOnly, hint, className }: FormFieldProps) {
+    const id = useId();
+    const hintId = hint ? `${id}-hint` : undefined;
+
     return (
         <div className={className}>
-            <label className="mb-1.5 block text-xs font-semibold text-neutral-700">{label}</label>
+            <label htmlFor={id} className="form-label">
+                {label}
+            </label>
             <input
+                id={id}
                 type={type}
                 value={value}
                 placeholder={placeholder}
                 readOnly={readOnly}
+                aria-describedby={hintId}
                 onChange={(e) => onChange?.(e.target.value)}
-                className={cn(
-                    "w-full rounded-xl border px-3 py-2.5 text-sm transition-all",
-                    readOnly
-                        ? "cursor-default border-neutral-100 bg-neutral-50 text-neutral-500"
-                        : "border-neutral-200 bg-white text-neutral-800 placeholder-neutral-400 focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
-                )}
+                className={cn("form-input", readOnly && "cursor-default border-transparent bg-neutral-50 text-neutral-600 hover:border-transparent focus:shadow-none")}
             />
-            {hint && <p className="mt-1 text-[10px] text-neutral-400">{hint}</p>}
+            {hint && (
+                <p id={hintId} className="mt-1.5 text-[13px] text-neutral-500">
+                    {hint}
+                </p>
+            )}
         </div>
     );
 }

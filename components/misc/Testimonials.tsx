@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "@/components/ui";
 import { StarIcon } from "@/components/icons";
-import { Quote } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
+import SectionHeader from "./SectionHeader";
 
 export interface Testimonial {
     id: string;
@@ -80,44 +81,34 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     const timeAgo = relativeTime(testimonial.publishTime);
 
     return (
-        <div className="flex h-full flex-col rounded-2xl border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary-100 md:p-8">
-            {/* Top row: Quote icon + Stars */}
-            <div className="mb-5 flex items-start justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50">
-                    <Quote size={20} className="text-primary-500" strokeWidth={2} />
-                </div>
-                <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                        <StarIcon
-                            key={i}
-                            size={15}
-                            className={i < testimonial.rating ? "text-amber-400" : "text-neutral-200"}
-                            filled={i < testimonial.rating}
-                        />
-                    ))}
-                </div>
+        <figure className={`flex h-full flex-col p-6 md:p-7 ${SURFACE_CARD}`}>
+            <div className="mb-4 flex gap-0.5" role="img" aria-label={`Rated ${testimonial.rating} out of 5`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                    <StarIcon
+                        key={i}
+                        size={15}
+                        className={i < testimonial.rating ? "text-amber-400" : "text-neutral-200"}
+                        filled={i < testimonial.rating}
+                    />
+                ))}
             </div>
 
-            {/* Testimonial Text */}
-            <div className="mb-6 flex-1">
-                <p className={`text-sm leading-relaxed text-neutral-600 ${!isExpanded ? "line-clamp-5" : ""}`}>
+            <blockquote className="flex-1">
+                <p className={`text-[15px] leading-relaxed text-neutral-700 ${!isExpanded ? "line-clamp-5" : ""}`}>
                     &ldquo;{testimonial.text}&rdquo;
                 </p>
                 {testimonial.text.length > 200 && (
                     <button
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="mt-2 cursor-pointer text-xs font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                        aria-expanded={isExpanded}
+                        className="-ml-2 mt-1 min-h-11 rounded-full px-2 text-sm font-medium text-primary-700 transition-colors hover:text-primary-800 focus-visible:outline-2 focus-visible:outline-primary-500"
                     >
                         {isExpanded ? "Show less" : "Read more"}
                     </button>
                 )}
-            </div>
+            </blockquote>
 
-            {/* Divider */}
-            <div className="mb-5 h-px bg-neutral-100" />
-
-            {/* Author */}
-            <div className="flex items-center justify-between gap-3.5">
+            <figcaption className="mt-6 flex items-center justify-between gap-3.5">
                 <div className="flex min-w-0 items-center gap-3.5">
                     {testimonial.image && imgLoaded && !imgError ? (
                         // eslint-disable-next-line @next/next/no-img-element -- avatars come from an external, unoptimized source (Google profile photos); a plain img avoids Next/Image config churn for a 40px thumbnail
@@ -135,7 +126,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                     )}
                     <div className="min-w-0">
                         <p className="truncate text-sm font-semibold text-neutral-900">{testimonial.name}</p>
-                        <p className="truncate text-xs text-neutral-400">
+                        <p className="truncate text-[13px] text-neutral-500">
                             {testimonial.role}
                             {testimonial.company ? `, ${testimonial.company}` : ""}
                             {timeAgo && ` · ${timeAgo}`}
@@ -150,52 +141,46 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Posted on Google"
-                        className="flex shrink-0 items-center gap-1 rounded-full border border-neutral-100 bg-neutral-50 px-2 py-1 transition-colors hover:border-neutral-200"
+                        aria-label={`View ${testimonial.name}'s review on Google`}
+                        className="-mr-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-primary-500"
                     >
-                        <GoogleGIcon className="h-3.5 w-3.5" />
+                        <GoogleGIcon className="h-4 w-4" />
                     </a>
                 )}
-            </div>
-        </div>
+            </figcaption>
+        </figure>
     );
 }
 
 export default function Testimonials({ testimonials, googleRating, googleReviewCount }: TestimonialsProps) {
     return (
-        <section className="section bg-neutral-50/60">
-            <div className="container">
-                {/* Section Header */}
-                <ScrollReveal variant="up">
-                    <div className="mb-12 text-center md:mb-14">
-                        <span className="label-tag label-tag-primary mb-5 inline-flex">
-                            Client Stories
-                        </span>
-                        <h2 className="heading-2 text-neutral-900 mb-3">Trusted by Dental Professionals</h2>
-                        <p className="text-body-lg mx-auto max-w-xl text-neutral-500">
-                            Real experiences from clinicians who rely on our products every day.
-                        </p>
+        <section className="bg-neutral-50">
+            <div className="section container">
+                <ScrollReveal variant="fade">
+                    <SectionHeader
+                        title="Trusted by Dental Professionals"
+                        subtitle="Real experiences from clinicians who rely on our products every day."
+                    >
                         {typeof googleRating === "number" && (
-                            <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 shadow-sm">
+                            <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 ring-1 ring-neutral-900/[0.06]">
                                 <GoogleGIcon className="h-4 w-4" />
-                                <span className="text-sm font-semibold text-neutral-800">{googleRating.toFixed(1)}</span>
-                                <div className="flex gap-0.5">
+                                <span className="text-sm font-semibold tabular-nums text-neutral-900">{googleRating.toFixed(1)}</span>
+                                <div className="flex gap-0.5" aria-hidden="true">
                                     {Array.from({ length: 5 }).map((_, i) => (
                                         <StarIcon key={i} size={12} className={i < Math.round(googleRating) ? "text-amber-400" : "text-neutral-200"} filled={i < Math.round(googleRating)} />
                                     ))}
                                 </div>
                                 {typeof googleReviewCount === "number" && (
-                                    <span className="text-xs text-neutral-400">({googleReviewCount} Google reviews)</span>
+                                    <span className="text-[13px] tabular-nums text-neutral-500">{googleReviewCount} Google reviews</span>
                                 )}
                             </div>
                         )}
-                    </div>
+                    </SectionHeader>
                 </ScrollReveal>
 
                 <Carousel
                     slidesToShow={1}
                     gap={20}
-                    autoPlay
-                    autoPlayInterval={6500}
                     showDots={true}
                     showArrows={true}
                     arrowVariant="default"

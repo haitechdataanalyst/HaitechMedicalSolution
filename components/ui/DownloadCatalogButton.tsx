@@ -15,9 +15,9 @@ export interface DownloadCatalogButtonProps extends ButtonHTMLAttributes<HTMLBut
 const DownloadCatalogButton = forwardRef<HTMLButtonElement, DownloadCatalogButtonProps>(
     ({ size = "md", iconOnly = false, label = "Download", fileUrl, fileName, className, onClick, ...props }, ref) => {
         const sizes = {
-            sm: "px-3 py-1.5 text-sm",
-            md: "px-4 py-2 text-base",
-            lg: "px-6 py-3 text-lg",
+            sm: "btn-sm",
+            md: "btn-md",
+            lg: "btn-lg",
         };
 
         const iconSizes = {
@@ -46,7 +46,7 @@ const DownloadCatalogButton = forwardRef<HTMLButtonElement, DownloadCatalogButto
                 ref={ref}
                 type="button"
                 onClick={handleClick}
-                className={cn("btn btn-solid inline-flex items-center justify-center gap-2 rounded-lg transition-colors", sizes[size], iconOnly && "px-2!", className)}
+                className={cn("btn btn-solid", sizes[size], iconOnly && "aspect-square px-0!", className)}
                 {...props}
             >
                 <CloudDownload size={iconSizes[size]} aria-hidden="true" />

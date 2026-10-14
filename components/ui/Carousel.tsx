@@ -109,8 +109,8 @@ export default function Carousel({
 
     // Arrow sizes
     const arrowSizes = {
-        sm: "w-8 h-8",
-        md: "w-10 h-10",
+        sm: "w-11 h-11",
+        md: "w-11 h-11",
         lg: "w-12 h-12",
     };
 
@@ -122,9 +122,9 @@ export default function Carousel({
 
     // Arrow variants
     const arrowVariants = {
-        default: "bg-white text-neutral-700 shadow-lg hover:bg-neutral-50 border border-neutral-200",
-        outline: "bg-transparent border-2 border-neutral-300 text-neutral-700 hover:bg-neutral-100",
-        ghost: "bg-black/30 text-white hover:bg-black/50 backdrop-blur-sm",
+        default: "bg-white/90 text-neutral-800 shadow-[0_0_0_1px_rgba(15,23,42,0.06),0_4px_14px_-4px_rgba(15,23,42,0.18)] backdrop-blur-md hover:bg-white",
+        outline: "bg-white/70 text-neutral-800 ring-1 ring-inset ring-neutral-900/10 hover:bg-white",
+        ghost: "bg-black/30 text-white hover:bg-black/45 backdrop-blur-md",
     };
 
     const goToSlide = useCallback(
@@ -311,9 +311,9 @@ export default function Carousel({
                         onClick={goToPrevious}
                         disabled={!loop && effectiveIndex === 0}
                         className={cn(
-                            "absolute top-1/2 left-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-all duration-200",
-                            "opacity-0 group-hover:opacity-100 focus:opacity-100",
-                            "disabled:cursor-not-allowed disabled:opacity-30",
+                            "absolute top-1/2 left-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-[opacity,background-color] duration-200 ease-out motion-safe:active:scale-[0.94]",
+                            "focus-visible:opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100",
+                            "disabled:cursor-not-allowed disabled:opacity-30 [@media(hover:hover)]:group-hover:disabled:opacity-30",
                             arrowSizes[arrowSize],
                             arrowVariants[arrowVariant]
                         )}
@@ -325,9 +325,9 @@ export default function Carousel({
                         onClick={goToNext}
                         disabled={!loop && effectiveIndex >= maxIndex}
                         className={cn(
-                            "absolute top-1/2 right-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-all duration-200",
-                            "opacity-0 group-hover:opacity-100 focus:opacity-100",
-                            "disabled:cursor-not-allowed disabled:opacity-30",
+                            "absolute top-1/2 right-2 z-10 flex -translate-y-1/2 items-center justify-center rounded-full transition-[opacity,background-color] duration-200 ease-out motion-safe:active:scale-[0.94]",
+                            "focus-visible:opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100",
+                            "disabled:cursor-not-allowed disabled:opacity-30 [@media(hover:hover)]:group-hover:disabled:opacity-30",
                             arrowSizes[arrowSize],
                             arrowVariants[arrowVariant]
                         )}
@@ -343,18 +343,21 @@ export default function Carousel({
                 <button
                     onClick={() => setIsPausedByUser((p) => !p)}
                     className={cn(
-                        "absolute right-6 bottom-6 z-30 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200",
-                        dotsPosition === "inside" ? "bg-black/30 text-white backdrop-blur-sm hover:bg-black/50" : "border border-neutral-200 bg-white/80 text-neutral-600 shadow-sm hover:bg-white"
+                        // Bottom-left: the fixed quote/WhatsApp buttons own the bottom-right corner
+                        "absolute bottom-4 left-4 z-30 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200 sm:bottom-6 sm:left-6",
+                        dotsPosition === "inside"
+                            ? "bg-black/30 text-white backdrop-blur-md hover:bg-black/45"
+                            : "bg-white/90 text-neutral-700 shadow-[0_0_0_1px_rgba(15,23,42,0.06)] backdrop-blur-md hover:bg-white"
                     )}
                     aria-label={isPausedByUser ? "Play slideshow" : "Pause slideshow"}
                     title={isPausedByUser ? "Play" : "Pause"}
                 >
                     {isPausedByUser ? (
-                        <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
+                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                             <path d="M6.79 5.093A.5.5 0 006 5.5v5a.5.5 0 00.79.407l3.5-2.5a.5.5 0 000-.814l-3.5-2.5z" />
                         </svg>
                     ) : (
-                        <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 16 16">
+                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                             <path d="M5.5 3.5A1.5 1.5 0 017 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5zm5 0A1.5 1.5 0 0112 5v6a1.5 1.5 0 01-3 0V5a1.5 1.5 0 011.5-1.5z" />
                         </svg>
                     )}
@@ -374,25 +377,25 @@ export default function Carousel({
                 tiny dots into tall capsules. The button keeps a comfortable
                 padded hit area; only the small round span is visible. */}
             {showDots && dotsPosition !== "none" && totalSlides > slidesToShow && (
-                <div className={cn("flex justify-center gap-1", dotsPosition === "outside" && "mt-4", dotsPosition === "inside" && "absolute bottom-6 left-1/2 z-30 -translate-x-1/2", dotsClassName)}>
+                <div className={cn("flex justify-center", dotsPosition === "outside" && "mt-4", dotsPosition === "inside" && "absolute bottom-6 left-1/2 z-30 -translate-x-1/2", dotsClassName)}>
                     {Array.from({ length: maxIndex + 1 }).map((_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
-                            className="group flex items-center justify-center p-2.5"
+                            className="group flex min-h-11 min-w-7 items-center justify-center px-1"
                             aria-label={`Go to slide ${index + 1}`}
                             aria-current={index === effectiveIndex ? "true" : "false"}
                         >
                             <span
                                 className={cn(
-                                    "block h-2.5 rounded-full transition-all duration-200",
+                                    "block h-2 rounded-full transition-colors duration-200 ease-out",
                                     index === effectiveIndex
                                         ? dotsPosition === "inside"
-                                            ? "w-6 bg-white"
-                                            : "bg-primary-600 w-6"
+                                            ? "w-5 bg-white"
+                                            : "w-5 bg-neutral-800"
                                         : dotsPosition === "inside"
-                                          ? "w-2.5 bg-white/50 group-hover:bg-white/70"
-                                          : "w-2.5 bg-neutral-300 group-hover:bg-neutral-400"
+                                          ? "w-2 bg-white/50 group-hover:bg-white/75"
+                                          : "w-2 bg-neutral-900/20 group-hover:bg-neutral-900/35"
                                 )}
                             />
                         </button>

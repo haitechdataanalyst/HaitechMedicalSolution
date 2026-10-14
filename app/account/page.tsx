@@ -8,6 +8,7 @@ import { orderApi, Order } from "@/lib/api";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { StatCard, StatusBadge } from "@/components/account";
 import { cn } from "@/lib/utils";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, SURFACE_CARD } from "@/components/ui/surfaces";
 
 const fmt = (paise: number, currency = "INR") =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 0 }).format(paise / 100);
@@ -42,86 +43,84 @@ export default function AccountDashboard() {
     ];
 
     return (
-        <div className="space-y-6">
-            {/* Welcome banner */}
-            <div className="overflow-hidden rounded-2xl bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-6 text-white shadow-sm">
-                <div className="flex items-start justify-between">
-                    <div>
-                        <p className="text-sm font-medium text-primary-100">Welcome back</p>
-                        <h1 className="mt-0.5 text-2xl font-bold">{user ? `${user.firstName} ${user.lastName}` : "—"}</h1>
-                        <p className="mt-1 text-sm text-primary-200">{user?.email}</p>
-                    </div>
-                    <div className="hidden rounded-xl bg-white/10 px-4 py-3 text-right sm:block">
-                        <p className="text-[10px] font-semibold uppercase tracking-widest text-primary-200">Member</p>
-                        <p className="mt-0.5 text-sm font-bold capitalize">{user?.role ?? "User"}</p>
-                    </div>
+        <div className="space-y-8">
+            {/* Welcome */}
+            <div className="flex flex-wrap items-end justify-between gap-4">
+                <div className="min-w-0">
+                    <p className="text-[15px] font-medium text-neutral-500">Welcome back</p>
+                    <h1 className="mt-1 text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-neutral-900 md:text-5xl">{user ? `${user.firstName} ${user.lastName}` : "—"}</h1>
+                    <p className="mt-2 truncate text-[15px] text-neutral-500">{user?.email}</p>
                 </div>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[13px] text-neutral-600 ring-1 ring-neutral-900/[0.06]">
+                    Member
+                    <span className="font-semibold text-neutral-900 capitalize">{user?.role ?? "User"}</span>
+                </span>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 md:gap-5 lg:grid-cols-3">
                 {stats.map((s) => (
                     <StatCard key={s.label} icon={s.icon} iconBg={s.iconBg} iconColor={s.iconColor} value={s.value} label={s.label} sub={s.sub} />
                 ))}
             </div>
 
             {/* Recent Orders */}
-            <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-4">
-                    <h2 className="text-base font-bold text-neutral-900">Recent Orders</h2>
-                    <Link href="/account/orders" className="flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-700">
-                        View all <ArrowRight className="h-3 w-3" />
+            <section className={cn(SURFACE_CARD, "overflow-hidden")}>
+                <div className="flex items-center justify-between gap-4 px-6 pt-6 pb-2 md:px-7">
+                    <h2 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">Recent Orders</h2>
+                    <Link href="/account/orders" className="inline-flex min-h-11 items-center gap-1 text-sm font-medium text-primary-700 hover:text-primary-800">
+                        View all <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                 </div>
 
                 {isLoading ? (
-                    <div className="space-y-3 p-4">
-                        {[1, 2, 3].map((i) => <div key={i} className="h-12 animate-pulse rounded-xl bg-neutral-100" />)}
+                    <div className="space-y-3 px-6 pt-2 pb-6">
+                        {[1, 2, 3].map((i) => <div key={i} className="h-12 rounded-xl bg-neutral-100 motion-safe:animate-pulse" />)}
                     </div>
                 ) : recentOrders.length === 0 ? (
-                    <div className="px-6 py-12 text-center">
-                        <ShoppingBag className="mx-auto mb-2 h-8 w-8 text-neutral-300" />
-                        <p className="text-sm text-neutral-500">No orders yet</p>
-                        <Link href="/products" className="mt-3 inline-block text-xs font-semibold text-primary-600 hover:underline">Browse products →</Link>
+                    <div className="px-6 pt-6 pb-12 text-center">
+                        <ShoppingBag className="mx-auto mb-3 h-8 w-8 text-neutral-400" aria-hidden="true" />
+                        <p className="text-[15px] text-neutral-500">No orders yet</p>
+                        <Link href="/products" className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-primary-700 hover:underline">Browse products</Link>
                     </div>
                 ) : (
                     <>
                         {/* Desktop table */}
-                        <div className="hidden sm:block">
+                        <div className="hidden px-3 pb-3 sm:block">
                             <table className="w-full">
                                 <thead>
-                                    <tr className="border-b border-neutral-50 bg-neutral-50/60">
-                                        <th className="px-6 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Order</th>
-                                        <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Items</th>
-                                        <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Date</th>
-                                        <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Amount</th>
-                                        <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Status</th>
-                                        <th className="px-6 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Action</th>
+                                    <tr className="text-left text-[13px] font-medium text-neutral-500">
+                                        <th scope="col" className="px-3 py-3 font-medium">Order</th>
+                                        <th scope="col" className="px-3 py-3 font-medium">Items</th>
+                                        <th scope="col" className="px-3 py-3 font-medium">Date</th>
+                                        <th scope="col" className="px-3 py-3 font-medium">Amount</th>
+                                        <th scope="col" className="px-3 py-3 font-medium">Status</th>
+                                        <th scope="col" className="px-3 py-3 text-right font-medium"><span className="sr-only">Action</span></th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-neutral-50">
+                                <tbody className="divide-y divide-neutral-900/[0.06] border-t border-neutral-900/[0.06]">
                                     {recentOrders.map((order) => (
-                                        <tr key={order.id} className="group transition-colors hover:bg-neutral-50/60">
-                                            <td className="px-6 py-4">
-                                                <Link href={`/account/orders/${order.id}`} className="font-mono text-sm font-bold text-primary-600 hover:underline">
+                                        <tr key={order.id} className="transition-colors duration-200 hover:bg-neutral-900/[0.02]">
+                                            <td className="px-3 py-4">
+                                                <Link href={`/account/orders/${order.id}`} className="font-mono text-sm font-semibold text-primary-700 hover:underline">
                                                     #{order.id.slice(0, 8).toUpperCase()}
                                                 </Link>
                                             </td>
-                                            <td className="px-4 py-4">
-                                                <p className="max-w-48 truncate text-sm font-medium text-neutral-800">
+                                            <td className="px-3 py-4">
+                                                <p className="max-w-48 truncate text-sm font-medium text-neutral-900">
                                                     {order.items?.[0]?.productName ?? "—"}
                                                 </p>
                                                 {(order.items?.length ?? 0) > 1 && (
-                                                    <p className="text-[11px] text-neutral-400">+{(order.items?.length ?? 0) - 1} more</p>
+                                                    <p className="text-[13px] text-neutral-500">+{(order.items?.length ?? 0) - 1} more</p>
                                                 )}
                                             </td>
-                                            <td className="px-4 py-4 text-sm text-neutral-500">{fmtDate(order.createdAt)}</td>
-                                            <td className="px-4 py-4 text-sm font-bold text-neutral-900">
-                                                {order.total ? fmt(order.total, order.currency) : <span className="italic text-neutral-400">Quote</span>}
+                                            <td className="px-3 py-4 text-sm text-neutral-600 tabular-nums">{fmtDate(order.createdAt)}</td>
+                                            <td className="px-3 py-4 text-sm font-semibold text-neutral-900 tabular-nums">
+                                                {order.total ? fmt(order.total, order.currency) : <span className="font-normal text-neutral-500">Quote</span>}
                                             </td>
-                                            <td className="px-4 py-4"><StatusBadge status={order.status} /></td>
-                                            <td className="px-6 py-4 text-right">
-                                                <Link href={`/account/orders/${order.id}`} className="text-xs font-semibold text-neutral-500 hover:text-primary-600">View →</Link>
+                                            <td className="px-3 py-4"><StatusBadge status={order.status} /></td>
+                                            <td className="px-3 py-4 text-right">
+                                                <Link href={`/account/orders/${order.id}`} className="inline-flex min-h-11 items-center text-sm font-medium text-primary-700 hover:text-primary-800">View</Link>
                                             </td>
                                         </tr>
                                     ))}
@@ -130,51 +129,50 @@ export default function AccountDashboard() {
                         </div>
 
                         {/* Mobile list */}
-                        <div className="divide-y divide-neutral-50 sm:hidden">
+                        <ul className="divide-y divide-neutral-900/[0.06] px-6 pb-2 sm:hidden">
                             {recentOrders.map((order) => (
-                                <Link key={order.id} href={`/account/orders/${order.id}`} className="block px-4 py-4 hover:bg-neutral-50">
-                                    <div className="flex items-start justify-between">
-                                        <div>
-                                            <p className="font-mono text-xs font-bold text-primary-600">#{order.id.slice(0, 8).toUpperCase()}</p>
-                                            <p className="mt-1 line-clamp-1 text-sm font-semibold text-neutral-800">{order.items?.[0]?.productName ?? "—"}</p>
-                                            <p className="mt-0.5 text-xs text-neutral-400">{fmtDate(order.createdAt)}</p>
+                                <li key={order.id}>
+                                    <Link href={`/account/orders/${order.id}`} className="flex items-start justify-between gap-4 py-4">
+                                        <div className="min-w-0">
+                                            <p className="font-mono text-[13px] font-semibold text-primary-700">#{order.id.slice(0, 8).toUpperCase()}</p>
+                                            <p className="mt-1 line-clamp-1 text-[15px] font-medium text-neutral-900">{order.items?.[0]?.productName ?? "—"}</p>
+                                            <p className="mt-0.5 text-[13px] text-neutral-500">{fmtDate(order.createdAt)}</p>
                                         </div>
-                                        <div className="mt-0.5 text-right">
-                                            <p className="mb-1.5 text-sm font-bold text-neutral-900">{order.total ? fmt(order.total, order.currency) : "—"}</p>
+                                        <div className="shrink-0 text-right">
+                                            <p className="mb-1.5 text-[15px] font-semibold text-neutral-900 tabular-nums">{order.total ? fmt(order.total, order.currency) : "—"}</p>
                                             <StatusBadge status={order.status} size="sm" />
                                         </div>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </>
                 )}
-            </div>
+            </section>
 
             {/* Quick Actions */}
-            <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                <div className="border-b border-neutral-100 px-6 py-4">
-                    <h2 className="text-base font-bold text-neutral-900">Quick Actions</h2>
-                </div>
-                <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-3">
+            <section>
+                <h2 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">Quick Actions</h2>
+                <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-5">
                     {[
-                        { href: "/products",        icon: Package,    label: "Browse Products",  sub: "Explore full catalogue",  iconBg: "bg-primary-50", iconColor: "text-primary-600" },
-                        { href: "/account/orders",  icon: RotateCcw,  label: "Reorder Previous", sub: "Quick repeat purchases",  iconBg: "bg-amber-50",   iconColor: "text-amber-600"   },
-                        { href: "/support/contact", icon: Headset,    label: "Contact Support",   sub: "Get expert help",         iconBg: "bg-emerald-50", iconColor: "text-emerald-600" },
+                        { href: "/products",        icon: Package,    label: "Browse Products",  sub: "Explore full catalogue",  iconBg: "bg-primary-50", iconColor: "text-primary-700" },
+                        { href: "/account/orders",  icon: RotateCcw,  label: "Reorder Previous", sub: "Quick repeat purchases",  iconBg: "bg-amber-50",   iconColor: "text-amber-700"   },
+                        { href: "/support/contact", icon: Headset,    label: "Contact Support",   sub: "Get expert help",         iconBg: "bg-emerald-50", iconColor: "text-emerald-700" },
                     ].map((a) => (
-                        <Link key={a.href} href={a.href} className="group flex items-center gap-4 rounded-xl border border-neutral-100 p-4 transition-all hover:border-primary-100 hover:shadow-sm">
-                            <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-xl", a.iconBg)}>
-                                <a.icon className={cn("h-5 w-5", a.iconColor)} />
-                            </div>
-                            <div>
-                                <p className="text-sm font-semibold text-neutral-800 group-hover:text-primary-700">{a.label}</p>
-                                <p className="text-[11px] text-neutral-400">{a.sub}</p>
-                            </div>
-                            <ArrowRight className="ml-auto h-4 w-4 text-neutral-300 transition-transform group-hover:translate-x-0.5 group-hover:text-primary-400" />
+                        <Link key={a.href} href={a.href} className={cn(INTERACTIVE_CARD, "flex-row items-center gap-4 p-5")}>
+                            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+                            <span className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-full", a.iconBg)}>
+                                <a.icon className={cn("h-5 w-5", a.iconColor)} aria-hidden="true" />
+                            </span>
+                            <span className="min-w-0 flex-1">
+                                <span className="block text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{a.label}</span>
+                                <span className="block text-[13px] text-neutral-500">{a.sub}</span>
+                            </span>
+                            <ArrowRight className="h-4 w-4 shrink-0 text-primary-700 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
                         </Link>
                     ))}
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

@@ -30,7 +30,7 @@ export function CardImage({ src, alt, className }: CardImageProps) {
             <ImageWithFallback
                 src={src}
                 alt={alt}
-                containerClassName={cn("aspect-square transition-transform duration-300 group-hover:scale-105", className)}
+                containerClassName={cn("aspect-square transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]", className)}
             />
         </div>
     );
@@ -51,7 +51,7 @@ interface CardTitleProps {
 }
 
 export function CardTitle({ children, className }: CardTitleProps) {
-    return <h3 className={cn("heading-5 text-primary-900 font-bold", className)}>{children}</h3>;
+    return <h3 className={cn("text-[17px] leading-snug font-semibold tracking-[-0.015em] text-neutral-900", className)}>{children}</h3>;
 }
 
 interface CardDescriptionProps {
@@ -60,5 +60,5 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ children, className }: CardDescriptionProps) {
-    return <p className={cn("text-muted mt-1 text-sm", className)}>{children}</p>;
+    return <p className={cn("mt-1 text-sm leading-relaxed text-neutral-500", className)}>{children}</p>;
 }

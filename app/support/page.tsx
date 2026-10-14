@@ -1,7 +1,8 @@
-import { Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, Clock, ChevronRight } from "lucide-react";
 import siteConfig from "@/data/site-config.json";
 import { getMetadata } from "@/lib/metadata";
 import { SupportSectionsGrid } from "@/components/support";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_PRIMARY, SURFACE_CARD } from "@/components/ui/surfaces";
 import Link from "next/link";
 
 export const metadata = getMetadata("support");
@@ -31,48 +32,54 @@ const quickContacts = [
 
 export default function SupportPage() {
     return (
-        <div className="mx-auto max-w-5xl space-y-14">
-            {/* Section grid */}
+        <div className="space-y-16 md:space-y-20">
+            {/* Topics */}
             <SupportSectionsGrid />
 
             {/* Quick Contact */}
-            <section>
-                <div className="mb-6">
-                    <h2 className="heading-3 text-neutral-900">Quick Contact</h2>
-                    <p className="mt-1 text-sm text-neutral-500">Reach us by your preferred method</p>
+            <section aria-labelledby="quick-contact-heading">
+                <div className="mb-6 md:mb-8">
+                    <h2 id="quick-contact-heading" className="text-2xl leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-[1.75rem]">
+                        Quick Contact
+                    </h2>
+                    <p className="mt-2 text-base text-neutral-500">Reach us by your preferred method</p>
                 </div>
-                <div className="grid gap-x-8 gap-y-5 border-t border-neutral-200 pt-5 sm:grid-cols-3">
+                <ul className="grid gap-5 sm:grid-cols-3 md:gap-6">
                     {quickContacts.map((c) => {
                         const Icon = c.icon;
                         const content = (
-                            <div className="flex items-start gap-3">
-                                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
-                                <div className="min-w-0">
-                                    <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">{c.title}</p>
-                                    <p className="mt-0.5 truncate text-sm font-semibold text-neutral-900">{c.value}</p>
-                                    <p className="mt-0.5 text-xs text-neutral-400">{c.description}</p>
-                                </div>
-                            </div>
+                            <>
+                                <Icon className="h-5 w-5 text-primary-700" aria-hidden="true" />
+                                <p className="mt-5 text-[13px] font-medium text-neutral-500">{c.title}</p>
+                                <p className="mt-1 text-[17px] font-semibold tracking-[-0.01em] break-words text-neutral-900">{c.value}</p>
+                                <p className="mt-1 text-[13px] text-neutral-500">{c.description}</p>
+                            </>
                         );
-                        return c.href ? (
-                            <a key={c.title} href={c.href} className="transition-opacity hover:opacity-70">{content}</a>
-                        ) : (
-                            <div key={c.title}>{content}</div>
+                        return (
+                            <li key={c.title} className="flex">
+                                {c.href ? (
+                                    <a href={c.href} className={`${INTERACTIVE_CARD} w-full p-6`}>
+                                        <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+                                        {content}
+                                    </a>
+                                ) : (
+                                    <div className={`${SURFACE_CARD} flex w-full flex-col p-6`}>{content}</div>
+                                )}
+                            </li>
                         );
                     })}
-                </div>
+                </ul>
             </section>
 
             {/* Still need help */}
-            <section className="rounded-2xl bg-navy-gradient p-8 text-center">
-                <h3 className="heading-3 mb-2 text-white">Can&apos;t find what you&apos;re looking for?</h3>
-                <p className="mb-6 text-sm text-navy-300">Call {siteConfig.company.phone} or email us — we typically reply within 24 hours.</p>
-                <Link
-                    href="/support/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-7 py-3 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-400"
-                >
+            <section className="rounded-3xl bg-neutral-50 px-6 py-12 text-center md:px-12 md:py-16">
+                <h2 className="text-2xl leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-[2rem]">Can&apos;t find what you&apos;re looking for?</h2>
+                <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-neutral-600 md:text-[17px]">
+                    Call {siteConfig.company.phone} or email us — we typically reply within 24 hours.
+                </p>
+                <Link href="/support/contact" className={`${PILL_PRIMARY} mt-8`}>
                     Contact Support
-                    <ArrowRight size={16} />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
             </section>
         </div>

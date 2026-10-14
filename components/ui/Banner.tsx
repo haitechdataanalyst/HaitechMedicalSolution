@@ -7,18 +7,14 @@ interface BannerProps {
 export default function Banner({ title, description, label }: BannerProps) {
     return (
         <section className="bg-brand-gradient relative overflow-hidden text-white">
-            {/* Decorative orbs */}
-            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-16 left-1/4 h-48 w-48 rounded-full bg-primary-400/10 blur-2xl" />
-
             <div className="section-lg container relative">
                 <div className="relative z-10 mx-auto max-w-3xl text-center">
                     {label && (
-                        <span className="label-tag label-tag-white mb-5 inline-flex">{label}</span>
+                        <span className="label-tag label-tag-white mb-5">{label}</span>
                     )}
-                    <h1 className="heading-1 mb-5">{title}</h1>
+                    <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance md:text-5xl">{title}</h1>
                     {description && (
-                        <p className="text-body-lg text-white/80">{description}</p>
+                        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pretty text-white/80 md:text-lg">{description}</p>
                     )}
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Shield, ArrowRight, FileText } from "lucide-react";
+import { Shield, ChevronRight, FileText } from "lucide-react";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
+import { cn } from "@/lib/utils";
 import { getMetadata } from "@/lib/metadata";
 
 export const metadata = getMetadata("supportPolicies");
@@ -25,53 +27,44 @@ const policies = [
 
 export default function PoliciesPage() {
     return (
-        <div className="mx-auto max-w-4xl space-y-8">
+        <div className="mx-auto max-w-3xl space-y-12">
             {/* Policy Cards */}
-            <section className="space-y-4">
+            <ul className="space-y-4">
                 {policies.map((policy) => {
                     const Icon = policy.icon;
                     return (
-                        <Link
-                            key={policy.id}
-                            href={policy.href}
-                            className="group flex items-center gap-6 rounded-2xl border border-neutral-100 bg-white p-6 transition-all duration-300 hover:border-primary-100 hover:shadow-lg"
-                        >
-                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-100">
-                                <Icon className="h-7 w-7" />
-                            </div>
-                            <div className="min-w-0 flex-1">
-                                <h3 className="font-semibold text-neutral-900 transition-colors group-hover:text-primary-600">
-                                    {policy.title}
-                                </h3>
-                                <p className="mt-1 text-sm text-neutral-500">{policy.description}</p>
-                                <p className="mt-1.5 text-xs text-neutral-400">Last updated: {policy.lastUpdated}</p>
-                            </div>
-                            <ArrowRight className="h-5 w-5 shrink-0 text-neutral-300 transition-all group-hover:translate-x-1 group-hover:text-primary-500" />
-                        </Link>
+                        <li key={policy.id}>
+                            <Link href={policy.href} className={cn(INTERACTIVE_CARD, "flex-row items-center gap-5 p-6 md:p-7")}>
+                                <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+                                <Icon className="h-6 w-6 shrink-0 text-primary-700" strokeWidth={1.6} aria-hidden="true" />
+                                <div className="min-w-0 flex-1">
+                                    <h2 className="text-lg font-semibold tracking-[-0.015em] text-neutral-900">{policy.title}</h2>
+                                    <p className="mt-1 text-[15px] leading-relaxed text-neutral-600">{policy.description}</p>
+                                    <p className="mt-2 text-[13px] text-neutral-500">Last updated: {policy.lastUpdated}</p>
+                                </div>
+                                <ChevronRight
+                                    className="h-5 w-5 shrink-0 text-neutral-500 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5"
+                                    aria-hidden="true"
+                                />
+                            </Link>
+                        </li>
                     );
                 })}
-            </section>
+            </ul>
 
             {/* Questions */}
-            <section className="rounded-2xl border border-neutral-100 bg-neutral-50 p-8">
-                <div className="flex items-start gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
-                        <FileText className="h-6 w-6 text-primary-600" />
-                    </div>
-                    <div>
-                        <h3 className="mb-2 font-semibold text-neutral-900">Questions about our policies?</h3>
-                        <p className="mb-4 text-sm text-neutral-500">
-                            If you have any questions or need clarification on any terms, our support team is here to help.
-                        </p>
-                        <Link
-                            href="/support/contact"
-                            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
-                        >
-                            Contact Support
-                            <ArrowRight className="h-4 w-4" />
-                        </Link>
-                    </div>
-                </div>
+            <section className="rounded-3xl bg-neutral-50 p-8 md:p-10">
+                <h2 className="text-xl font-semibold tracking-[-0.015em] text-neutral-900">Questions about our policies?</h2>
+                <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-neutral-600">
+                    If you have any questions or need clarification on any terms, our support team is here to help.
+                </p>
+                <Link
+                    href="/support/contact"
+                    className="mt-4 -ml-2 inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-[15px] font-medium text-primary-700 hover:text-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                    Contact Support
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
             </section>
         </div>
     );

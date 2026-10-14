@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Loader2, Printer } from "lucide-react";
 import { orderApi, Invoice } from "@/lib/api";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 
 const fmt = (paise: number, currency = "INR") =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 0 }).format(paise / 100);
@@ -30,80 +31,84 @@ export default function InvoicePage({ params }: { params: Promise<{ id: string }
 
     if (isLoading) {
         return (
-            <div className="flex min-h-64 items-center justify-center">
-                <Loader2 className="h-8 w-8 animate-spin text-primary-400" />
+            <div className="flex min-h-64 items-center justify-center" role="status" aria-label="Loading invoice">
+                <Loader2 className="h-7 w-7 text-neutral-400 motion-safe:animate-spin" aria-hidden="true" />
             </div>
         );
     }
 
     if (notFound || !invoice) {
         return (
-            <div className="rounded-2xl border border-neutral-100 bg-white px-6 py-14 text-center shadow-sm">
-                <p className="text-sm font-medium text-neutral-500">Invoice not available for this order yet.</p>
-                <Link href={`/account/orders/${id}`} className="mt-3 inline-block text-xs font-semibold text-primary-600 hover:underline">
-                    ← Back to Order
+            <div className={`${SURFACE_CARD} px-6 py-16 text-center`}>
+                <p className="text-[15px] text-neutral-600">Invoice not available for this order yet.</p>
+                <Link href={`/account/orders/${id}`} className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-primary-700 hover:underline">
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                    Back to Order
                 </Link>
             </div>
         );
     }
 
     return (
-        <div className="space-y-5">
-            <div className="flex items-center justify-between print:hidden">
-                <Link href={`/account/orders/${id}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-500 hover:text-primary-600">
-                    <ArrowLeft className="h-3.5 w-3.5" />
+        <div className="space-y-6 print:space-y-0">
+            <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
+                <Link
+                    href={`/account/orders/${id}`}
+                    className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 text-sm font-medium text-neutral-600 transition-colors duration-200 ease-out hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                     Back to Order
                 </Link>
-                <button
-                    onClick={() => window.print()}
-                    className="flex items-center gap-1.5 rounded-xl bg-primary-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
-                >
-                    <Printer className="h-4 w-4" />
+                <button type="button" onClick={() => window.print()} className="btn btn-primary btn-md">
+                    <Printer className="h-4 w-4" aria-hidden="true" />
                     Print / Save as PDF
                 </button>
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm print:border-0 print:shadow-none">
-                <div className="flex items-start justify-between border-b border-neutral-100 p-8">
+            {/* Invoice sheet — plain black-on-white in print, no shadows or rings */}
+            <article className={`${SURFACE_CARD} overflow-hidden print:rounded-none print:shadow-none print:ring-0`}>
+                <header className="flex flex-wrap items-start justify-between gap-6 px-6 pt-8 pb-6 md:px-10 md:pt-10 print:px-0">
                     <div>
-                        <p className="text-lg font-bold text-neutral-900">Haitech Medical Solutions Pvt. Ltd.</p>
-                        <p className="mt-1 text-xs text-neutral-500">info@haitechmedical.com.au</p>
+                        <p className="text-lg font-semibold tracking-[-0.01em] text-neutral-900">Haitech Medical Solutions Pvt. Ltd.</p>
+                        <p className="mt-1 text-[13px] text-neutral-600">sales@haitech-group.com</p>
                     </div>
-                    <div className="text-right">
-                        <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">Invoice</p>
-                        <p className="mt-1 font-mono text-sm font-bold text-neutral-900">{invoice.invoiceNo}</p>
-                        <p className="mt-1 text-xs text-neutral-400">Order #{invoice.orderId.slice(0, 8).toUpperCase()}</p>
+                    <div className="text-left sm:text-right">
+                        <p className="text-[13px] font-medium text-neutral-500 print:text-neutral-700">Invoice</p>
+                        <p className="mt-1 font-mono text-[15px] font-semibold text-neutral-900">{invoice.invoiceNo}</p>
+                        <p className="mt-1 text-[13px] text-neutral-500 print:text-neutral-700">Order #{invoice.orderId.slice(0, 8).toUpperCase()}</p>
                     </div>
-                </div>
+                </header>
 
-                <table className="w-full text-sm">
-                    <thead>
-                        <tr className="border-b border-neutral-100 text-left text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                            <th className="px-8 py-3 font-semibold">Item</th>
-                            <th className="px-3 py-3 font-semibold">SKU</th>
-                            <th className="px-3 py-3 text-center font-semibold">Qty</th>
-                            <th className="px-3 py-3 text-right font-semibold">Unit Price</th>
-                            <th className="px-8 py-3 text-right font-semibold">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-neutral-50">
-                        {invoice.items.map((item) => (
-                            <tr key={item.id}>
-                                <td className="px-8 py-3 text-neutral-800">{item.productName}</td>
-                                <td className="px-3 py-3 text-neutral-500">{item.productSku ?? "—"}</td>
-                                <td className="px-3 py-3 text-center text-neutral-600">{item.quantity}</td>
-                                <td className="px-3 py-3 text-right text-neutral-600">{fmt(item.unitPrice, invoice.currency)}</td>
-                                <td className="px-8 py-3 text-right font-semibold text-neutral-900">{fmt(item.totalPrice, invoice.currency)}</td>
+                <div className="overflow-x-auto px-6 md:px-10 print:overflow-visible print:px-0">
+                    <table className="w-full min-w-[520px] text-sm print:min-w-0">
+                        <thead>
+                            <tr className="border-y border-neutral-900/10 text-left text-[13px] text-neutral-500 print:text-neutral-700">
+                                <th scope="col" className="py-3 pr-3 font-medium">Item</th>
+                                <th scope="col" className="px-3 py-3 font-medium">SKU</th>
+                                <th scope="col" className="px-3 py-3 text-center font-medium">Qty</th>
+                                <th scope="col" className="px-3 py-3 text-right font-medium">Unit Price</th>
+                                <th scope="col" className="py-3 pl-3 text-right font-medium">Total</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-
-                <div className="flex items-center justify-end border-t border-neutral-100 bg-neutral-50/50 px-8 py-4">
-                    <span className="mr-4 text-sm font-semibold text-neutral-600">Total</span>
-                    <span className="text-xl font-bold text-neutral-900">{fmt(invoice.total, invoice.currency)}</span>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-900/[0.06]">
+                            {invoice.items.map((item) => (
+                                <tr key={item.id} className="break-inside-avoid">
+                                    <td className="py-3.5 pr-3 text-neutral-900">{item.productName}</td>
+                                    <td className="px-3 py-3.5 text-neutral-600">{item.productSku ?? "—"}</td>
+                                    <td className="px-3 py-3.5 text-center text-neutral-700 tabular-nums">{item.quantity}</td>
+                                    <td className="px-3 py-3.5 text-right text-neutral-700 tabular-nums">{fmt(item.unitPrice, invoice.currency)}</td>
+                                    <td className="py-3.5 pl-3 text-right font-semibold text-neutral-900 tabular-nums">{fmt(item.totalPrice, invoice.currency)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+
+                <div className="mx-6 mt-2 flex items-baseline justify-end gap-6 border-t border-neutral-900/10 py-6 md:mx-10 print:mx-0">
+                    <span className="text-[15px] font-semibold text-neutral-700">Total</span>
+                    <span className="text-2xl font-semibold tracking-[-0.015em] text-neutral-900 tabular-nums">{fmt(invoice.total, invoice.currency)}</span>
+                </div>
+            </article>
         </div>
     );
 }

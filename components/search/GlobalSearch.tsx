@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {
-    Search, X, Clock, TrendingUp, Package2, ArrowRight,
-    ChevronRight, Flame, ZoomIn, Zap, Monitor, Gem, Scissors, Activity,
+    Search, X, Clock, Package2, ArrowRight,
+    ChevronRight, ZoomIn, Zap, Monitor, Gem, Scissors, Activity,
 } from "lucide-react";
 import { searchCatalog, getTrendingProducts, type SearchResult } from "@/app/actions/search";
 import { cn, formatPrice } from "@/lib/utils";
@@ -22,6 +22,12 @@ const POPULAR_CATEGORIES = [
     { label: "Instruments", href: "/our-instruments", icon: Scissors, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
     { label: "Saddle Chairs", href: "/product-category/salli", icon: Activity, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
 ];
+
+// Shared row/label/footer styles for the search popover.
+const GROUP_LABEL = "mb-2 flex items-center gap-1.5 px-1 text-[13px] font-medium text-neutral-500";
+const ROW = "flex min-h-11 items-center rounded-xl px-2 transition-colors duration-150 hover:bg-neutral-900/[0.04]";
+const FOOT_CTA =
+    "flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full bg-neutral-900/[0.05] text-[15px] font-medium text-neutral-900 transition-colors duration-200 hover:bg-neutral-900/[0.08]";
 
 // One consistent treatment for every brand — a manufacturer label is
 // informational metadata, not a decorative tag (see lib/brand.ts).
@@ -48,7 +54,7 @@ function HighlightMatch({ text, query }: { text: string; query: string }) {
     return (
         <>
             {text.slice(0, idx)}
-            <mark className="bg-primary-100 text-primary-800 rounded px-0.5 not-italic font-bold">
+            <mark className="bg-primary-50 text-primary-800 rounded-sm font-semibold">
                 {text.slice(idx, idx + query.trim().length)}
             </mark>
             {text.slice(idx + query.trim().length)}
@@ -147,95 +153,90 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
     const hasQuery = query.trim().length > 0;
 
     return (
-        <div className="max-h-[72vh] overflow-y-auto">
+        <div className="max-h-[72vh] overflow-y-auto overscroll-contain">
             {/* ── Empty / idle state ── */}
             {!hasQuery && (
-                <div className="space-y-5 p-5">
+                <div className="space-y-6 p-4 sm:p-5">
                     {recentSearches.length > 0 && (
-                        <div>
-                            <p className="mb-3 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">
-                                <Clock className="h-3 w-3" /> Recent Searches
-                            </p>
-                            <div className="flex flex-wrap gap-2">
+                        <section>
+                            <h3 className={GROUP_LABEL}>
+                                <Clock className="h-3.5 w-3.5" aria-hidden="true" /> Recent searches
+                            </h3>
+                            <ul className="flex flex-wrap gap-2">
                                 {recentSearches.map((s) => (
-                                    <div
-                                        key={s}
-                                        onClick={() => onResultSelect(s)}
-                                        className="group flex cursor-pointer items-center gap-1 rounded-full border border-neutral-200 bg-white py-1.5 pl-3 pr-2 text-sm font-medium text-neutral-600 transition-all hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
-                                    >
-                                        <span>{s}</span>
-                                        <button
-                                            onClick={(e) => removeRecent(s, e)}
-                                            className="rounded-full p-0.5 text-neutral-300 transition-colors hover:bg-neutral-200 hover:text-neutral-600"
-                                        >
-                                            <X className="h-3 w-3" />
+                                    <li key={s} className="flex items-center rounded-full bg-neutral-900/[0.05] transition-colors hover:bg-neutral-900/[0.08]">
+                                        <button type="button" onClick={() => onResultSelect(s)} className="min-h-9 pr-1 pl-3.5 text-sm font-medium text-neutral-800">
+                                            {s}
                                         </button>
-                                    </div>
+                                        <button
+                                            type="button"
+                                            onClick={(e) => removeRecent(s, e)}
+                                            className="flex h-9 w-8 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900"
+                                            aria-label={`Remove ${s} from recent searches`}
+                                        >
+                                            <X className="h-3.5 w-3.5" aria-hidden="true" />
+                                        </button>
+                                    </li>
                                 ))}
-                            </div>
-                        </div>
+                            </ul>
+                        </section>
                     )}
 
-                    <div>
-                        <p className="mb-3 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">
-                            <TrendingUp className="h-3 w-3" /> Shop by Category
-                        </p>
-                        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    <section>
+                        <h3 className={GROUP_LABEL}>Shop by category</h3>
+                        <div className="grid grid-cols-1 gap-0.5 sm:grid-cols-2">
                             {POPULAR_CATEGORIES.map((cat) => (
-                                <Link
-                                    key={cat.href}
-                                    href={cat.href}
-                                    onClick={onClose}
-                                    className={cn("group flex items-center gap-2.5 rounded-xl border px-3.5 py-3 text-sm font-semibold transition-all duration-150", cat.bg, cat.text, cat.hover)}
-                                >
-                                    <cat.icon className="h-4 w-4 shrink-0" />
+                                <Link key={cat.href} href={cat.href} onClick={onClose} className={cn(ROW, "group gap-3 text-[15px] font-medium text-neutral-800")}>
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-900/[0.05] text-neutral-600">
+                                        <cat.icon className="h-4 w-4" aria-hidden="true" />
+                                    </span>
                                     <span className="flex-1 leading-tight">{cat.label}</span>
-                                    <ChevronRight className="h-3.5 w-3.5 opacity-30 transition-all duration-150 group-hover:translate-x-0.5 group-hover:opacity-70" />
+                                    <ChevronRight className="h-4 w-4 text-neutral-400 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
                                 </Link>
                             ))}
                         </div>
-                    </div>
+                    </section>
 
                     {trending.length > 0 && (
-                        <div>
-                            <div className="mb-3 flex items-center justify-between">
-                                <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-neutral-400">
-                                    <Flame className="h-3 w-3 text-orange-500" /> Trending Products
-                                </p>
-                                <Link href="/products" onClick={onClose} className="flex items-center gap-0.5 text-[11px] font-semibold text-primary-600 hover:text-primary-700">
-                                    See all <ChevronRight className="h-3 w-3" />
+                        <section>
+                            <div className="mb-2 flex items-center justify-between">
+                                <h3 className={cn(GROUP_LABEL, "mb-0")}>Trending products</h3>
+                                <Link href="/products" onClick={onClose} className="text-primary-700 hover:text-primary-800 inline-flex min-h-9 items-center gap-0.5 text-[13px] font-medium">
+                                    See all <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
                                 </Link>
                             </div>
-                            <div className="flex gap-3 overflow-x-auto pb-1">
+                            <div className="scrollbar-hide -mx-1 flex gap-3 overflow-x-auto px-1 pb-1">
                                 {trending.map((product) => (
-                                    <Link key={product.id} href={product.path} onClick={onClose} className="group w-[108px] shrink-0">
-                                        <div className="mb-2 flex aspect-square items-center justify-center overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 transition-all group-hover:border-neutral-200 group-hover:shadow-sm">
+                                    <Link key={product.id} href={product.path} onClick={onClose} className="group w-[112px] shrink-0 rounded-xl">
+                                        <div className="mb-2 flex aspect-square items-center justify-center overflow-hidden rounded-xl bg-neutral-50">
                                             {product.image ? (
-                                                <Image src={product.image} alt={product.name} width={84} height={84} className="object-contain p-2 transition-transform duration-200 group-hover:scale-[1.04]" />
+                                                <Image
+                                                    src={product.image}
+                                                    alt={product.name}
+                                                    width={84}
+                                                    height={84}
+                                                    className="object-contain p-2 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.04]"
+                                                />
                                             ) : (
-                                                <Package2 className="h-8 w-8 text-neutral-300" />
+                                                <Package2 className="h-8 w-8 text-neutral-300" aria-hidden="true" />
                                             )}
                                         </div>
-                                        <p className="line-clamp-2 text-xs font-medium leading-snug text-neutral-700 transition-colors group-hover:text-primary-700">{product.name}</p>
-                                        {shouldShowPrice(detectBrandFromPath(product.path)?.label) && (product.basePrice ? (
-                                            <p className="mt-0.5 text-xs font-bold text-neutral-900">{formatPrice(product.basePrice, product.currency)}</p>
-                                        ) : (
-                                            <p className="mt-0.5 text-[11px] text-neutral-400">On request</p>
-                                        ))}
+                                        <p className="group-hover:text-primary-700 line-clamp-2 text-[13px] leading-snug font-medium text-neutral-800 transition-colors">{product.name}</p>
+                                        {shouldShowPrice(detectBrandFromPath(product.path)?.label) &&
+                                            (product.basePrice ? (
+                                                <p className="mt-0.5 text-[13px] font-semibold text-neutral-900 tabular-nums">{formatPrice(product.basePrice, product.currency)}</p>
+                                            ) : (
+                                                <p className="mt-0.5 text-xs text-neutral-500">On request</p>
+                                            ))}
                                     </Link>
                                 ))}
                             </div>
-                        </div>
+                        </section>
                     )}
 
-                    <Link
-                        href="/products"
-                        onClick={onClose}
-                        className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 py-3 text-sm font-bold text-white shadow-[0_2px_10px_-2px_rgb(31_182_205/0.4)] transition-all hover:bg-primary-600 hover:shadow-md"
-                    >
-                        <Package2 className="h-4 w-4" />
+                    <Link href="/products" onClick={onClose} className={FOOT_CTA}>
                         Browse All Products
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                 </div>
             )}
@@ -245,91 +246,77 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                 <div>
                     {results.length > 0 ? (
                         <>
-                            <div className="border-b border-neutral-100 bg-neutral-50 px-5 py-2.5">
-                                <p className="text-[11px] font-bold uppercase tracking-widest text-neutral-400">
-                                    {isPending ? "Searching…" : `${results.length} result${results.length !== 1 ? "s" : ""} for "${query}"`}
-                                </p>
-                            </div>
-                            <ul className="divide-y divide-neutral-50">
-                                {results.map((result, i) => (
-                                    <li key={`${result.type}-${result.id}`}>
-                                        <button
-                                            onClick={() => handleSelect(result)}
-                                            className={cn(
-                                                "relative flex w-full items-center gap-4 px-5 py-3 text-left transition-all duration-100",
-                                                selectedIndex === i ? "bg-primary-50" : "hover:bg-neutral-50"
-                                            )}
-                                        >
-                                            {(() => {
-                                                const brand = detectBrandFromPath(result.path);
-                                                return brand ? <span className={cn("absolute left-0 top-0 h-full w-1 rounded-r-full", brand.bar)} /> : null;
-                                            })()}
-                                            <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm">
-                                                {result.image ? (
-                                                    <Image src={result.image} alt={result.name} fill className="object-contain p-2" sizes="72px" />
-                                                ) : (
-                                                    <div className="flex h-full w-full items-center justify-center bg-neutral-50">
-                                                        <Package2 className="h-7 w-7 text-neutral-300" />
-                                                    </div>
+                            <p className="px-5 pt-4 pb-2 text-[13px] text-neutral-500" aria-live="polite">
+                                {isPending ? "Searching…" : `${results.length} result${results.length !== 1 ? "s" : ""} for "${query}"`}
+                            </p>
+                            <ul className="px-2">
+                                {results.map((result, i) => {
+                                    const brand = detectBrandFromPath(result.path);
+                                    return (
+                                        <li key={`${result.type}-${result.id}`}>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleSelect(result)}
+                                                className={cn(
+                                                    "flex min-h-11 w-full items-center gap-3.5 rounded-xl px-3 py-2 text-left transition-colors duration-150",
+                                                    selectedIndex === i ? "bg-primary-50" : "hover:bg-neutral-900/[0.04]"
                                                 )}
-                                            </div>
-                                            <div className="min-w-0 flex-1">
-                                                <p className="truncate font-semibold text-neutral-900">
-                                                    <HighlightMatch text={result.name} query={query} />
-                                                </p>
-                                                <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                                                    {(() => {
-                                                        const brand = detectBrandFromPath(result.path);
-                                                        return brand ? (
-                                                            <span className={cn("inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold", brand.badge)}>
-                                                                {brand.label}
-                                                            </span>
-                                                        ) : null;
-                                                    })()}
-                                                    {result.categoryName && (
-                                                        <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-500">
-                                                            {result.categoryName}
-                                                        </span>
+                                            >
+                                                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-neutral-50">
+                                                    {result.image ? (
+                                                        <Image src={result.image} alt={result.name} fill className="object-contain p-1.5 mix-blend-multiply" sizes="56px" />
+                                                    ) : (
+                                                        <div className="flex h-full w-full items-center justify-center">
+                                                            <Package2 className="h-6 w-6 text-neutral-300" aria-hidden="true" />
+                                                        </div>
                                                     )}
                                                 </div>
-                                            </div>
-                                            <div className="shrink-0 text-right">
-                                                {shouldShowPrice(detectBrandFromPath(result.path)?.label) && (result.basePrice ? (
-                                                    <p className="font-bold text-neutral-900">{formatPrice(result.basePrice, result.currency)}</p>
-                                                ) : (
-                                                    <p className="text-xs text-neutral-400">On request</p>
-                                                ))}
-                                                <ArrowRight className={cn("ml-auto mt-1 h-4 w-4", selectedIndex === i ? "text-primary-400" : "text-neutral-300")} />
-                                            </div>
-                                        </button>
-                                    </li>
-                                ))}
+                                                <div className="min-w-0 flex-1">
+                                                    <p className="truncate text-[15px] font-medium text-neutral-900">
+                                                        <HighlightMatch text={result.name} query={query} />
+                                                    </p>
+                                                    {(brand || result.categoryName) && (
+                                                        <p className="mt-0.5 truncate text-[13px] text-neutral-500">{[brand?.label, result.categoryName].filter(Boolean).join(" · ")}</p>
+                                                    )}
+                                                </div>
+                                                <div className="shrink-0 text-right">
+                                                    {shouldShowPrice(brand?.label) &&
+                                                        (result.basePrice ? (
+                                                            <p className="text-sm font-semibold text-neutral-900 tabular-nums">{formatPrice(result.basePrice, result.currency)}</p>
+                                                        ) : (
+                                                            <p className="text-xs text-neutral-500">On request</p>
+                                                        ))}
+                                                </div>
+                                            </button>
+                                        </li>
+                                    );
+                                })}
                             </ul>
-                            <div className="border-t border-neutral-100 p-4">
+                            <div className="p-3 pt-2">
                                 <Link
                                     href={`/search?q=${encodeURIComponent(query.trim())}`}
-                                    onClick={() => { saveSearch(query); onClose(); }}
-                                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 py-3 text-sm font-bold text-white shadow-[0_2px_10px_-2px_rgb(31_182_205/0.4)] transition-all hover:bg-primary-600"
+                                    onClick={() => {
+                                        saveSearch(query);
+                                        onClose();
+                                    }}
+                                    className={FOOT_CTA}
                                 >
-                                    <Search className="h-4 w-4" />
                                     See all results for &ldquo;{query}&rdquo;
-                                    <ArrowRight className="h-4 w-4" />
+                                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                 </Link>
                             </div>
                         </>
                     ) : !isPending ? (
                         <div className="px-5 py-10 text-center">
-                            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-neutral-100">
-                                <Package2 className="h-8 w-8 text-neutral-300" />
-                            </div>
-                            <p className="mb-1 font-semibold text-neutral-700">No results for &ldquo;{query}&rdquo;</p>
-                            <p className="mb-5 text-sm text-neutral-400">Try a different term or browse a category</p>
+                            <p className="text-[17px] font-semibold tracking-[-0.01em] text-neutral-900">No results for &ldquo;{query}&rdquo;</p>
+                            <p className="mt-1 mb-5 text-sm text-neutral-500">Try a different term or browse a category</p>
                             <div className="flex flex-wrap justify-center gap-2">
                                 {["Dental Loupes", "LED Headlights", "Dental Chairs", "Diamond Burs"].map((s) => (
                                     <button
                                         key={s}
+                                        type="button"
                                         onClick={() => onResultSelect(s)}
-                                        className="rounded-full border border-neutral-200 px-3 py-1.5 text-sm font-medium text-neutral-600 transition-all hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+                                        className="min-h-9 rounded-full bg-neutral-900/[0.05] px-3.5 text-sm font-medium text-neutral-800 transition-colors hover:bg-neutral-900/[0.08]"
                                     >
                                         {s}
                                     </button>
@@ -337,8 +324,8 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                             </div>
                         </div>
                     ) : (
-                        <div className="flex items-center justify-center py-12">
-                            <span className="h-6 w-6 animate-spin rounded-full border-2 border-primary-400 border-t-transparent" />
+                        <div className="flex items-center justify-center py-12" role="status" aria-label="Searching">
+                            <span className="h-5 w-5 rounded-full border-2 border-neutral-300 border-t-neutral-700 motion-safe:animate-spin" />
                         </div>
                     )}
                 </div>
@@ -368,28 +355,36 @@ function MobileSearchOverlay({ isOpen, onClose }: MobileSearchOverlayProps) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[200] flex flex-col">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-            <div className="relative z-10 flex flex-col bg-white shadow-2xl" style={{ maxHeight: "90dvh" }}>
+        <div className="fixed inset-0 z-[200] flex flex-col" role="dialog" aria-modal="true" aria-label="Search">
+            <div className="absolute inset-0 bg-neutral-950/40 backdrop-blur-sm transition-opacity duration-200 ease-out starting:opacity-0" onClick={onClose} aria-hidden="true" />
+            <div
+                className="material-popover pt-safe relative z-10 flex flex-col rounded-t-none rounded-b-3xl transition-[opacity,transform] duration-200 ease-out starting:opacity-0 motion-safe:starting:-translate-y-2"
+                style={{ maxHeight: "90dvh" }}
+            >
                 {/* Input bar */}
-                <div className="flex items-center gap-3 border-b border-neutral-100 px-4 py-3.5">
-                    <Search className="h-5 w-5 shrink-0 text-primary-500" />
-                    <input
-                        ref={inputRef}
-                        type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        onKeyDown={(e) => e.key === "Escape" && onClose()}
-                        placeholder="Search products, brands, categories…"
-                        className="flex-1 bg-transparent text-base text-neutral-900 placeholder:text-neutral-400 outline-none"
-                        autoComplete="off"
-                        spellCheck={false}
-                    />
-                    <button
-                        onClick={query ? () => setQuery("") : onClose}
-                        className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-700"
-                    >
-                        <X className="h-4 w-4" />
+                <div className="flex items-center gap-2 px-3 py-2.5">
+                    <div className="flex h-11 flex-1 items-center gap-2.5 rounded-full bg-neutral-900/[0.06] px-4">
+                        <Search className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            onKeyDown={(e) => e.key === "Escape" && onClose()}
+                            placeholder="Search products, brands, categories…"
+                            aria-label="Search the catalogue"
+                            className="min-w-0 flex-1 bg-transparent text-base text-neutral-900 outline-none placeholder:text-neutral-500"
+                            autoComplete="off"
+                            spellCheck={false}
+                        />
+                        {query && (
+                            <button type="button" onClick={() => setQuery("")} className="-mr-2 flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900" aria-label="Clear search">
+                                <X className="h-4 w-4" aria-hidden="true" />
+                            </button>
+                        )}
+                    </div>
+                    <button type="button" onClick={onClose} className="text-primary-700 min-h-11 shrink-0 rounded-full px-2 text-[15px] font-medium">
+                        Cancel
                     </button>
                 </div>
                 <div className="overflow-y-auto">
@@ -413,7 +408,7 @@ interface GlobalSearchDropdownProps {
 export function GlobalSearchDropdown({ isOpen, onClose, query, onQueryChange }: GlobalSearchDropdownProps) {
     if (!isOpen) return null;
     return (
-        <div className="absolute top-full left-0 right-0 z-[200] mt-2 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_24px_64px_-12px_rgba(0,0,0,0.25)] animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="material-popover animate-popover-in absolute top-full right-0 left-0 z-[200] mt-2 origin-top overflow-hidden rounded-3xl bg-white/[0.96] backdrop-blur-2xl backdrop-saturate-150">
             <DropdownPanel query={query} onClose={onClose} onResultSelect={onQueryChange} />
         </div>
     );

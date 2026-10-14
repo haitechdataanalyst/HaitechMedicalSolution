@@ -7,8 +7,8 @@ export function calculateCartTotal(items: CartItem[]): number {
     }, 0);
 }
 
-export function formatCurrency(amount: number, currency: string = "AUD"): string {
-    return new Intl.NumberFormat("en-AU", {
+export function formatCurrency(amount: number, currency: string = "INR"): string {
+    return new Intl.NumberFormat("en-IN", {
         style: "currency",
         currency: currency,
     }).format(amount);

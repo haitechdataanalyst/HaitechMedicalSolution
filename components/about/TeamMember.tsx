@@ -17,51 +17,53 @@ interface TeamMemberProps {
     onClick?: () => void;
 }
 
-export function TeamMember({ member, onClick }: TeamMemberProps) {
-    const [imageError, setImageError] = useState(false);
-
-    const initials = member.name
+function getInitials(name: string): string {
+    return name
         .split(" ")
         .filter((n) => n.length > 0)
         .map((n) => n[0])
         .join("")
         .toUpperCase()
         .slice(0, 2);
+}
 
-    return (
-        <div
-            className={`group flex h-full flex-col items-center pt-2 text-center${onClick ? " cursor-pointer" : ""}`}
-            onClick={onClick}
-            role={onClick ? "button" : undefined}
-            tabIndex={onClick ? 0 : undefined}
-            onKeyDown={onClick ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } } : undefined}
-            aria-label={onClick ? `View profile of ${member.name}` : undefined}
-        >
-            {/* Photo circle */}
-            <div className="relative mb-4 h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 lg:h-48 lg:w-48 flex-none overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-[1.03]">
+/** Portrait tile: a consistent 4:5 frame, name and role underneath. Becomes a button when it opens a profile. */
+export function TeamMember({ member, onClick }: TeamMemberProps) {
+    const [imageError, setImageError] = useState(false);
+
+    const content = (
+        <>
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-neutral-100">
                 {member.image && !imageError ? (
                     <Image
                         src={member.image}
-                        alt={member.name}
+                        alt=""
                         fill
-                        sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, (max-width: 1024px) 160px, 192px"
-                        className="object-cover"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 240px"
+                        className="object-cover transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.02]"
                         onError={() => setImageError(true)}
                     />
                 ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-400 to-primary-600 text-4xl font-semibold text-white">
-                        {initials}
-                    </div>
+                    <div className="bg-primary-50 text-primary-800 flex h-full w-full items-center justify-center text-3xl font-semibold">{getInitials(member.name)}</div>
                 )}
             </div>
+            <h3 className="mt-3 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900 md:text-base">{member.name}</h3>
+            <p className="mt-0.5 text-[13px] leading-snug text-neutral-500">{member.designation}</p>
+        </>
+    );
 
-            {/* Name */}
-            <h3 className="mb-1 text-base font-semibold leading-snug text-neutral-800 transition-colors group-hover:text-primary-600">
-                {member.name}
-            </h3>
+    if (!onClick) {
+        return <div className="flex h-full flex-col text-left">{content}</div>;
+    }
 
-            {/* Designation */}
-            <p className="text-sm leading-snug text-neutral-400">{member.designation}</p>
-        </div>
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            aria-label={`View profile of ${member.name}`}
+            className="group focus-visible:outline-primary-500 flex h-full w-full flex-col rounded-2xl text-left transition-transform duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 motion-safe:active:scale-[0.985] motion-safe:active:duration-100"
+        >
+            {content}
+        </button>
     );
 }

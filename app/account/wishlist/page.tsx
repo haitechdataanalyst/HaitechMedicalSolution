@@ -8,10 +8,10 @@ export default async function WishlistPage() {
     );
 
     return (
-        <div className="space-y-5">
+        <div className="space-y-6">
             <div>
-                <h1 className="text-xl font-bold text-neutral-900">Wishlist</h1>
-                <p className="mt-0.5 text-sm text-neutral-500">Products you&apos;ve saved for later</p>
+                <h1 className="text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.025em] text-neutral-900 md:text-4xl">Wishlist</h1>
+                <p className="mt-2 text-[15px] leading-relaxed text-neutral-500 md:text-base">Products you&apos;ve saved for later</p>
             </div>
             <WishlistPageClient products={productsWithPaths} />
         </div>

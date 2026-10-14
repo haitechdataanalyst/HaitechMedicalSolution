@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 
 interface StatCardProps {
     icon: React.ComponentType<{ className?: string }>;
@@ -11,13 +12,15 @@ interface StatCardProps {
 
 export function StatCard({ icon: Icon, iconBg, iconColor, value, label, sub }: StatCardProps) {
     return (
-        <div className="rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm">
-            <div className={cn("mb-3 inline-flex rounded-xl p-2.5", iconBg)}>
-                <Icon className={cn("h-5 w-5", iconColor)} />
+        <div className={cn(SURFACE_CARD, "flex flex-col p-5")}>
+            <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-medium text-neutral-600">{label}</p>
+                <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-full", iconBg)}>
+                    <Icon className={cn("h-4 w-4", iconColor)} aria-hidden="true" />
+                </span>
             </div>
-            <p className="text-2xl font-bold text-neutral-900">{value}</p>
-            <p className="mt-0.5 text-[11px] font-semibold text-neutral-500">{label}</p>
-            {sub && <p className="text-[10px] text-neutral-400">{sub}</p>}
+            <p className="mt-3 text-[1.75rem] leading-none font-semibold tracking-[-0.02em] text-neutral-900 tabular-nums">{value}</p>
+            {sub && <p className="mt-2 text-[13px] text-neutral-500">{sub}</p>}
         </div>
     );
 }

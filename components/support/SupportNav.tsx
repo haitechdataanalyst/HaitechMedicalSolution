@@ -24,54 +24,47 @@ interface NavSection {
     children: NavChild[];
 }
 
-function NavIcon({ iconName, isActive, size = "lg" }: { iconName: string; isActive: boolean; size?: "sm" | "lg" }) {
-    const Icon = iconMap[iconName] || HelpCircle;
-    const sizeClasses = size === "lg" ? "w-12 h-12" : "w-8 h-8";
-    const iconSizeClasses = size === "lg" ? "w-6 h-6" : "w-4 h-4";
+const FOCUS_RING = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500";
 
-    return (
-        <div
-            className={cn(
-                sizeClasses,
-                "flex items-center justify-center rounded-full transition-all duration-300 ease-out",
-                "group-hover:scale-110 group-hover:shadow-lg",
-                isActive ? "bg-primary-500 text-white shadow-md" : "bg-primary-50 text-primary-600 group-hover:bg-primary-100"
-            )}
-        >
-            <Icon className={cn(iconSizeClasses, "transition-transform duration-300", "group-hover:scale-110")} aria-hidden="true" />
-        </div>
-    );
+function findActiveSection(pathname: string | null, matchChildPrefix: boolean): NavSection | undefined {
+    return supportNav.sections.find((section) => {
+        if (pathname === section.path) return true;
+        if (pathname?.startsWith(section.path + "/")) return true;
+        return section.children?.some((child) => pathname === child.path || (matchChildPrefix && pathname?.startsWith(child.path)));
+    });
 }
 
+/** One segment of the section switcher. The active segment is a raised white pill on the grey track. */
 function MainNavItem({ section, isActive }: { section: NavSection; isActive: boolean }) {
     return (
         <Link
             href={section.path}
-            className={cn("group flex flex-col items-center rounded-xl px-6 py-4 text-center transition-all duration-300", "hover:bg-surface-secondary", isActive && "bg-transparent")}
+            aria-current={isActive ? "page" : undefined}
+            className={cn(
+                "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full px-4 text-[15px] font-medium whitespace-nowrap transition-colors duration-200 ease-out sm:px-5",
+                FOCUS_RING,
+                isActive ? "bg-white text-neutral-900 shadow-[0_1px_3px_rgba(15,23,42,0.12)]" : "text-neutral-600 hover:text-neutral-900"
+            )}
         >
-            <NavIcon iconName={section.icon} isActive={isActive} />
-            <span className={cn("mt-3 text-base font-semibold transition-colors duration-200", isActive ? "text-foreground" : "text-muted group-hover:text-foreground")}>{section.title}</span>
-            {isActive && <div className="bg-primary-500 mt-2 h-0.5 w-12 rounded-full" />}
+            {section.title}
         </Link>
     );
 }
 
+/** Secondary links inside the active section: quiet text tabs with a teal underline for the current page. */
 function ChildNavItem({ child, isActive }: { child: NavChild; isActive: boolean }) {
-    const Icon = iconMap[child.icon] || HelpCircle;
-
     return (
-        <Link href={child.path} className={cn("group flex flex-col items-center rounded-lg px-4 py-3 text-center transition-all duration-200", "hover:bg-primary-50", isActive && "bg-primary-50")}>
-            <div
-                className={cn(
-                    "mb-2 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300",
-                    "border-2 border-neutral-200 bg-white",
-                    "group-hover:border-primary-300 group-hover:scale-105 group-hover:shadow-md",
-                    isActive && "border-primary-400 shadow-sm"
-                )}
-            >
-                <Icon className={cn("h-5 w-5 transition-all duration-200", "group-hover:text-primary-600 text-neutral-500", isActive && "text-primary-600")} aria-hidden="true" />
-            </div>
-            <span className={cn("text-sm font-medium transition-colors duration-200", "text-muted group-hover:text-foreground", isActive && "text-foreground")}>{child.title}</span>
+        <Link
+            href={child.path}
+            aria-current={isActive ? "page" : undefined}
+            className={cn(
+                "relative inline-flex min-h-11 shrink-0 items-center rounded-md text-[15px] whitespace-nowrap transition-colors duration-200 ease-out",
+                FOCUS_RING,
+                isActive ? "font-medium text-neutral-900" : "text-neutral-500 hover:text-neutral-900"
+            )}
+        >
+            {child.title}
+            {isActive && <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-primary-700" />}
         </Link>
     );
 }
@@ -82,41 +75,30 @@ export function SupportNav() {
     // Hide nav on the support root page — it has its own SupportSectionsGrid
     if (pathname === "/support") return null;
 
-    // Determine active section
-    const activeSection = supportNav.sections.find((section) => {
-        if (pathname === section.path) return true;
-        if (pathname?.startsWith(section.path + "/")) return true;
-        return section.children?.some((child) => pathname === child.path || pathname?.startsWith(child.path));
-    });
+    const activeSection = findActiveSection(pathname, true);
 
     return (
         <nav aria-label="Support navigation" className="w-full">
-            {/* Main Navigation */}
-            <div className="flex items-center justify-center gap-4 py-6 md:gap-8 lg:gap-16">
-                {supportNav.sections.map((section) => (
-                    <MainNavItem key={section.id} section={section} isActive={activeSection?.id === section.id} />
-                ))}
+            {/* Section switcher — a segmented control that scrolls sideways on narrow screens */}
+            <div className="-mx-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div className="inline-flex gap-1 rounded-full bg-neutral-900/[0.05] p-1">
+                    {supportNav.sections.map((section) => (
+                        <MainNavItem key={section.id} section={section} isActive={activeSection?.id === section.id} />
+                    ))}
+                </div>
             </div>
 
-            {/* Separator */}
-            <div className="w-full border-b border-neutral-200" />
-
-            {/* Child Navigation - Only show if section has children */}
-            {activeSection?.children && activeSection.children.length > 0 && (
-                <div className="py-8">
-                    {/* Section Title */}
-                    <div className="mb-6 text-center">
-                        <h2 className="heading-1 mb-2">{activeSection.title}</h2>
-                        <p className="text-muted">{activeSection.description}</p>
-                    </div>
-
-                    {/* Child Items */}
-                    <div className="flex flex-wrap items-start justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* Pages within the active section */}
+            {activeSection?.children && activeSection.children.length > 0 ? (
+                <div className="mt-4 border-b border-neutral-900/[0.08]">
+                    <div className="-mx-4 flex gap-6 overflow-x-auto px-4 [scrollbar-width:none] md:gap-8 [&::-webkit-scrollbar]:hidden">
                         {activeSection.children.map((child) => (
-                            <ChildNavItem key={child.id} child={child} isActive={pathname === child.path} />
+                            <ChildNavItem key={child.id} child={child} isActive={pathname === child.path || (!child.path.includes("#") && !!pathname?.startsWith(child.path + "/"))} />
                         ))}
                     </div>
                 </div>
+            ) : (
+                <div className="mt-6 border-b border-neutral-900/[0.08]" />
             )}
         </nav>
     );
@@ -124,15 +106,10 @@ export function SupportNav() {
 
 export function SupportNavCompact() {
     const pathname = usePathname();
-
-    const activeSection = supportNav.sections.find((section) => {
-        if (pathname === section.path) return true;
-        if (pathname?.startsWith(section.path + "/")) return true;
-        return section.children?.some((child) => pathname === child.path);
-    });
+    const activeSection = findActiveSection(pathname, false);
 
     return (
-        <nav aria-label="Support sections" className="flex items-center justify-center gap-2 border-b border-neutral-200 py-4 md:gap-4">
+        <nav aria-label="Support sections" className="flex items-center justify-center gap-2 border-b border-neutral-900/[0.08] py-4 md:gap-3">
             {supportNav.sections.map((section) => {
                 const Icon = iconMap[section.icon] || HelpCircle;
                 const isActive = activeSection?.id === section.id;
@@ -143,8 +120,9 @@ export function SupportNavCompact() {
                         href={section.path}
                         aria-current={isActive ? "page" : undefined}
                         className={cn(
-                            "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200",
-                            isActive ? "bg-primary-50 text-primary-700" : "text-muted hover:text-foreground hover:bg-neutral-100"
+                            "inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-[15px] font-medium transition-colors duration-200 ease-out",
+                            FOCUS_RING,
+                            isActive ? "bg-primary-50 text-primary-800" : "text-neutral-600 hover:bg-neutral-900/[0.05] hover:text-neutral-900"
                         )}
                     >
                         <Icon className="h-4 w-4" aria-hidden="true" />

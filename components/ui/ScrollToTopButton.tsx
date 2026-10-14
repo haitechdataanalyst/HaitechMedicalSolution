@@ -12,9 +12,9 @@ export interface ScrollToTopButtonProps extends ButtonHTMLAttributes<HTMLButtonE
 
 const ScrollToTopButton = forwardRef<HTMLButtonElement, ScrollToTopButtonProps>(({ size = "md", iconOnly = false, label = "Up", className, onClick, ...props }, ref) => {
     const sizes = {
-        sm: "px-3 py-1.5 text-sm",
-        md: "px-4 py-2 text-base",
-        lg: "px-6 py-3 text-lg",
+        sm: "btn-sm",
+        md: "btn-md",
+        lg: "btn-lg",
     };
 
     const iconSizes = {
@@ -34,9 +34,9 @@ const ScrollToTopButton = forwardRef<HTMLButtonElement, ScrollToTopButtonProps>(
             type="button"
             onClick={handleClick}
             className={cn(
-                "btn btn-solid inline-flex items-center justify-center gap-2 rounded-lg transition-colors",
+                "btn btn-solid",
                 sizes[size],
-                iconOnly && "px-2!",
+                iconOnly && "aspect-square px-0!",
                 className
             )}
             {...props}

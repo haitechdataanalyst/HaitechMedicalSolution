@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 
 export function NewsletterSignup() {
     const [email, setEmail] = useState("");
@@ -14,31 +13,35 @@ export function NewsletterSignup() {
         setEmail("");
     };
 
+    if (submitted) {
+        return (
+            <p className="text-primary-800 text-sm font-medium" role="status">
+                Thanks for subscribing — we&apos;ll be in touch!
+            </p>
+        );
+    }
+
     return (
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            {submitted ? (
-                <p className="text-sm font-medium text-primary-400">
-                    Thanks for subscribing — we&apos;ll be in touch!
-                </p>
-            ) : (
-                <form onSubmit={handleSubmit} className="flex w-full max-w-sm gap-2">
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="your@email.com"
-                        required
-                        className="flex-1 rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-white placeholder-navy-400 outline-none transition-colors focus:border-primary-400 focus:bg-white/12"
-                    />
-                    <button
-                        type="submit"
-                        className="flex shrink-0 items-center gap-1.5 rounded-full bg-primary-500 px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-400"
-                    >
-                        Subscribe
-                        <ArrowRight className="h-3.5 w-3.5" />
-                    </button>
-                </form>
-            )}
-        </div>
+        <form onSubmit={handleSubmit} className="flex w-full gap-2">
+            <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+            </label>
+            <input
+                id="newsletter-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                autoComplete="email"
+                required
+                className="focus:ring-primary-500 h-11 min-w-0 flex-1 rounded-full bg-white px-4 text-base text-neutral-900 ring-1 ring-neutral-900/[0.1] transition-shadow duration-200 ease-out outline-none placeholder:text-neutral-500 focus:ring-2 sm:text-[15px]"
+            />
+            <button
+                type="submit"
+                className="bg-primary-800 hover:bg-primary-900 focus-visible:outline-primary-500 h-11 shrink-0 rounded-full px-5 text-[15px] font-semibold text-white transition-[background-color,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
+            >
+                Subscribe
+            </button>
+        </form>
     );
 }

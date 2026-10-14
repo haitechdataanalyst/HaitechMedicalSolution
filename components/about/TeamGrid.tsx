@@ -16,19 +16,18 @@ export function TeamGrid({ members, title = "Our Team", subtitle = "Meet the ded
     return (
         <section id="team" className="section bg-white">
             <div className="container">
-                <div className="mb-10 text-center md:mb-12">
-                    <h2 className="heading-2 text-foreground mb-3">{title}</h2>
-                    <p className="text-body-lg text-muted mx-auto max-w-2xl">{subtitle}</p>
+                <div className="mb-8 max-w-2xl md:mb-10">
+                    <h2 className="heading-2 text-neutral-900">{title}</h2>
+                    <p className="mt-3 text-base leading-relaxed text-neutral-500 md:text-lg">{subtitle}</p>
                 </div>
 
-                <div
-                    className="grid justify-center gap-8 md:gap-10"
-                    style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, max-content))" }}
-                >
+                <ul className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 md:gap-x-6 md:gap-y-10 lg:grid-cols-4 xl:grid-cols-5">
                     {members.map((member) => (
-                        <TeamMember key={member.id} member={member} onClick={() => setActiveMember(member)} />
+                        <li key={member.id}>
+                            <TeamMember member={member} onClick={() => setActiveMember(member)} />
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
 
             <TeamMemberDialog member={activeMember} onClose={() => setActiveMember(null)} />

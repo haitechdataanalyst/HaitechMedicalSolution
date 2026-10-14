@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArticleData } from "./articleTypes";
 
 export const articleLoupeMaintenance: ArticleData = {
@@ -5,26 +6,28 @@ export const articleLoupeMaintenance: ArticleData = {
     title: "How to Clean and Maintain Your Loupes and Lights",
     slug: "clean-maintain-loupes-lights",
     category: "Lights & Loupes",
+    summary:
+        "Separate the battery before cleaning, wipe loupes and lights with a neutral detergent or a lens cleaner under 30% alcohol, and dry them with a microfiber cloth. Never submerge loupes, lights or batteries. Let batteries cool before charging, do not leave them on the charger overnight, and store everything in a cool, dry place.",
     excerpt: "A step-by-step guide to keeping your surgical loupes and LED lights clean, safe, and long-lasting.",
     content: (
         <>
             {/* Top Image */}
-            <img src="/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg" alt="Magnification comparison" className="mx-auto mb-6 block h-auto w-full max-w-md rounded-lg shadow-md" />
+            <Image src="/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg" width={1536} height={1536} sizes="(min-width: 448px) 448px, 100vw" alt="Admetec Butterfly headlight case with loupes, batteries, charger and accessories" className="mx-auto mb-10 block h-auto w-full max-w-md" />
 
             {/* Intro */}
-            <p className="mb-6 leading-relaxed text-gray-700">
+            <p className="mb-6">
                 Loupes, including Ergo Loupes (also known as Ergonomic loupes), are essential tools for medical professionals, providing enhanced vision and precision during procedures. Proper care
                 and maintenance of your loupes and lights are crucial to ensure their longevity and optimal performance.
             </p>
 
-            <p className="mb-10 leading-relaxed text-gray-700">
+            <p className="mb-10">
                 This comprehensive guide, brought to you by Byron Medical and Admetec, will walk you through the necessary steps to clean and maintain your surgical loupes effectively.
             </p>
 
             {/* Cleaning */}
-            <h2 className="mb-4 text-xl font-semibold text-gray-900">Cleaning Your Loupes</h2>
+            <h2 className="mb-4">Cleaning Your Loupes</h2>
 
-            <ol className="mb-10 list-inside list-decimal space-y-4 leading-relaxed text-gray-700">
+            <ol className="mb-10 list-decimal space-y-3 pl-5">
                 <li>
                     <strong>Separate Battery from Light:</strong> Before cleaning your loupes light, always separate the battery from the light to avoid any electrical issues.
                 </li>
@@ -41,9 +44,9 @@ export const articleLoupeMaintenance: ArticleData = {
             </ol>
 
             {/* Charging */}
-            <h2 className="mb-4 text-xl font-semibold text-gray-900">Charging Your Lights</h2>
+            <h2 className="mb-4">Charging Your Lights</h2>
 
-            <ol className="mb-10 list-inside list-decimal space-y-4 leading-relaxed text-gray-700">
+            <ol className="mb-10 list-decimal space-y-3 pl-5">
                 <li>
                     <strong>Cool Down:</strong> Allow your LED light batteries to cool after use before charging them.
                 </li>
@@ -60,9 +63,9 @@ export const articleLoupeMaintenance: ArticleData = {
             </ol>
 
             {/* Storage */}
-            <h2 className="mb-4 text-xl font-semibold text-gray-900">Storing Your Ergo Loupes, TTL Loupes, or Surgical Loupes</h2>
+            <h2 className="mb-4">Storing Your Ergo Loupes, TTL Loupes, or Surgical Loupes</h2>
 
-            <ol className="mb-10 list-inside list-decimal space-y-4 leading-relaxed text-gray-700">
+            <ol className="mb-10 list-decimal space-y-3 pl-5">
                 <li>
                     <strong>Cool, Dry Place:</strong> Store batteries, loupes, and lights in a cool, dry place when not in use.
                 </li>
@@ -81,7 +84,7 @@ export const articleLoupeMaintenance: ArticleData = {
             </ol>
 
             {/* Closing */}
-            <p className="mt-6 leading-relaxed text-gray-700">
+            <p className="mt-6">
                 By following these guidelines, you can ensure that your loupes remain in excellent condition, providing you with reliable performance for years to come. If you have any questions,
                 Byron Medical’s friendly customer service team is always happy to assist.
             </p>
@@ -93,5 +96,5 @@ export const articleLoupeMaintenance: ArticleData = {
     publishedTime: "02:39pm",
     views: 127,
     imageSrc: "/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg",
-    imageAlt: "Magnification comparison",
+    imageAlt: "Admetec Butterfly headlight case with loupes, batteries, charger and accessories",
 };

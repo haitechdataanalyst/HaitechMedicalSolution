@@ -21,7 +21,7 @@ export function truncate(text: string, length: number): string {
 
 export function formatDate(date: Date | string): string {
     const d = typeof date === "string" ? new Date(date) : date;
-    return d.toLocaleDateString("en-AU", {
+    return d.toLocaleDateString("en-IN", {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -36,7 +36,9 @@ export function formatPrice(amount: number, currency: string = "INR"): string {
             maximumFractionDigits: 0,
         }).format(amount);
     }
-    return new Intl.NumberFormat("en-AU", {
+    // Any non-INR currency still left in product data (see data/products.json)
+    // renders with its own symbol, never relabelled as rupees.
+    return new Intl.NumberFormat("en-IN", {
         style: "currency",
         currency,
         maximumFractionDigits: 0,

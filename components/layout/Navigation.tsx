@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import type { FocusEvent, KeyboardEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -13,7 +14,6 @@ interface MegaMenuProps {
     columns: MegaMenuColumn[];
     isOpen: boolean;
     onClose: () => void;
-    itemHref: string;
 }
 
 const BRAND_LOGOS: Record<string, string> = {
@@ -25,24 +25,20 @@ const BRAND_LOGOS: Record<string, string> = {
 };
 
 const LINKS_MAX = 5;
+const CLOSE_DELAY_MS = 150;
 
-function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
-    const triangleRef = useRef<HTMLDivElement>(null);
+const MENU_ROW = "flex min-h-10 items-center gap-2 rounded-xl px-3 text-[15px] transition-colors duration-200 ease-out";
+
+function MegaMenu({ columns, isOpen, onClose }: MegaMenuProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
+    // Pin the full-width panel to the bottom edge of the (sticky) header
     useEffect(() => {
         if (!isOpen) return;
         const updatePosition = () => {
-            const triggerElement = document.querySelector(`[data-nav-href="${itemHref}"]`);
-            if (triggerElement && triangleRef.current) {
-                const rect = triggerElement.getBoundingClientRect();
-                triangleRef.current.style.left = `${rect.left + rect.width / 2}px`;
-            }
-            if (containerRef.current) {
-                const header = document.querySelector("header");
-                const bottom = header?.getBoundingClientRect().bottom ?? 110;
-                containerRef.current.style.top = `${bottom}px`;
-            }
+            if (!containerRef.current) return;
+            const header = document.querySelector("header");
+            containerRef.current.style.top = `${header?.getBoundingClientRect().bottom ?? 110}px`;
         };
         updatePosition();
         window.addEventListener("scroll", updatePosition);
@@ -51,24 +47,15 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
             window.removeEventListener("scroll", updatePosition);
             window.removeEventListener("resize", updatePosition);
         };
-    }, [isOpen, itemHref]);
+    }, [isOpen]);
 
     if (!isOpen) return null;
 
     return (
-        <div
-            ref={containerRef}
-            className="fixed left-0 right-0 z-50"
-            style={{ top: "110px" }}
-        >
-            <div
-                ref={triangleRef}
-                className="absolute -translate-x-1/2"
-                style={{ left: "50%", top: -8, width: 0, height: 0, borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderBottom: "10px solid white", filter: "drop-shadow(0 -1px 2px rgb(0 0 0/0.06))" }}
-            />
-            <div className="border-t border-neutral-100 bg-white shadow-2xl">
-                <div className="grid w-full grid-cols-5">
-                    {columns.map((column, idx) => {
+        <div ref={containerRef} className="fixed right-0 left-0 z-50" style={{ top: "110px" }}>
+            <div className="material-bar animate-popover-in shadow-[0_1px_0_rgba(15,23,42,0.08),0_24px_48px_-24px_rgba(15,23,42,0.25)]">
+                <div className="container grid grid-cols-5 gap-6 py-8">
+                    {columns.map((column) => {
                         const logo = BRAND_LOGOS[column.title];
                         const featuredItem = column.items[0];
                         const linkItems = column.items.slice(1, 1 + LINKS_MAX);
@@ -76,80 +63,47 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                         const hasItems = column.items.length > 0;
 
                         return (
-                            <div
-                                key={column.href}
-                                className={cn(
-                                    "flex flex-col px-5 py-5",
-                                    idx < columns.length - 1 && "border-r border-neutral-100"
-                                )}
-                            >
-                                {/* ── Brand header ── */}
-                                <Link href={column.href} onClick={onClose} className="group mb-4 flex items-center gap-2.5">
+                            <div key={column.href} className="flex flex-col">
+                                <Link href={column.href} onClick={onClose} className="group mb-3 flex items-center gap-2.5">
                                     {logo && (
                                         <div className="relative h-6 w-12 shrink-0">
-                                            <Image src={logo} alt={column.title} fill className="object-contain" sizes="48px" />
+                                            <Image src={logo} alt="" fill className="object-contain mix-blend-multiply" sizes="48px" />
                                         </div>
                                     )}
-                                    <span className="text-sm font-bold text-neutral-800 transition-colors group-hover:text-primary-600">
-                                        {column.title}
-                                    </span>
+                                    <span className="group-hover:text-primary-800 text-[15px] font-semibold tracking-[-0.01em] text-neutral-900 transition-colors">{column.title}</span>
                                 </Link>
 
                                 {hasItems ? (
                                     <div className="flex flex-1 flex-col">
-                                        {/* ── Featured item ── */}
                                         {featuredItem && (
                                             <Link
                                                 href={featuredItem.href}
                                                 onClick={onClose}
-                                                className="group mb-3 flex items-center gap-2.5 rounded-xl bg-neutral-50 p-2.5 transition-all duration-150 hover:bg-primary-50 hover:shadow-sm"
+                                                className="group mb-2 flex items-center gap-3 rounded-2xl bg-neutral-900/[0.04] p-2.5 transition-colors duration-200 ease-out hover:bg-neutral-900/[0.07]"
                                             >
                                                 {featuredItem.image && (
-                                                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-white">
-                                                        <Image
-                                                            src={featuredItem.image}
-                                                            alt={featuredItem.label}
-                                                            fill
-                                                            className="mix-blend-multiply object-contain p-1"
-                                                            sizes="40px"
-                                                        />
+                                                    <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl bg-white">
+                                                        <Image src={featuredItem.image} alt="" fill className="object-contain p-1 mix-blend-multiply" sizes="44px" />
                                                     </div>
                                                 )}
-                                                <div className="min-w-0 flex-1">
-                                                    <p className="truncate text-xs font-bold text-neutral-800 transition-colors group-hover:text-primary-700">
-                                                        {featuredItem.label}
-                                                    </p>
-                                                    <span className="mt-0.5 text-[10px] font-semibold text-neutral-400">{column.title}</span>
-                                                </div>
+                                                <p className="min-w-0 flex-1 text-sm leading-snug font-semibold text-neutral-900">
+                                                    <span className="line-clamp-2">{featuredItem.label}</span>
+                                                </p>
                                             </Link>
                                         )}
 
-                                        {/* ── Category links ── */}
-                                        <ul className="flex-1 space-y-1.5">
+                                        <ul className="-mx-3 flex-1">
                                             {linkItems.map((item) => (
                                                 <li key={item.href}>
-                                                    <Link
-                                                        href={item.href}
-                                                        onClick={onClose}
-                                                        className="group flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-primary-600"
-                                                    >
-                                                        <span className="h-1 w-1 shrink-0 rounded-full bg-neutral-300 transition-colors group-hover:bg-primary-400" />
+                                                    <Link href={item.href} onClick={onClose} className={cn(MENU_ROW, "text-neutral-600 hover:bg-neutral-900/[0.05] hover:text-neutral-900")}>
                                                         <span className="truncate">{item.label}</span>
-                                                        {item.isNew && (
-                                                            <span className="shrink-0 rounded bg-primary-500 px-1.5 py-0.5 text-[9px] font-bold text-white">
-                                                                New
-                                                            </span>
-                                                        )}
+                                                        {item.isNew && <span className="bg-primary-50 text-primary-800 shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold">New</span>}
                                                     </Link>
                                                 </li>
                                             ))}
                                             {extraCount > 0 && (
                                                 <li>
-                                                    <Link
-                                                        href={column.href}
-                                                        onClick={onClose}
-                                                        className="text-xs font-medium text-neutral-400 transition-colors hover:text-primary-600"
-                                                    >
+                                                    <Link href={column.href} onClick={onClose} className={cn(MENU_ROW, "text-sm text-neutral-500 hover:text-neutral-900")}>
                                                         +{extraCount} more
                                                     </Link>
                                                 </li>
@@ -157,30 +111,22 @@ function MegaMenu({ columns, isOpen, onClose, itemHref }: MegaMenuProps) {
                                         </ul>
                                     </div>
                                 ) : (
-                                    /* ── Empty brand (e.g. Salli) ── show description blurb ── */
-                                    <p className="flex-1 text-xs leading-relaxed text-neutral-500 line-clamp-4">
-                                        {column.description ?? "Browse our full range of products."}
-                                    </p>
+                                    <p className="line-clamp-4 flex-1 text-sm leading-relaxed text-neutral-500">{column.description ?? "Browse our full range of products."}</p>
                                 )}
 
-                                {/* ── Footer ── */}
-                                <div className="mt-4 flex items-center justify-between border-t border-neutral-100 pt-3">
+                                <div className="mt-3 flex items-center justify-between">
                                     {column.aboutLink && (
-                                        <Link
-                                            href={column.aboutLink.href}
-                                            onClick={onClose}
-                                            className="text-xs text-neutral-400 transition-colors hover:text-primary-600"
-                                        >
+                                        <Link href={column.aboutLink.href} onClick={onClose} className="flex min-h-10 items-center text-sm text-neutral-500 transition-colors hover:text-neutral-900">
                                             {column.aboutLink.label}
                                         </Link>
                                     )}
                                     <Link
                                         href={column.href}
                                         onClick={onClose}
-                                        className="ml-auto flex items-center gap-1 text-xs font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                                        className="group text-primary-700 hover:text-primary-800 ml-auto flex min-h-10 items-center gap-1 text-sm font-medium transition-colors"
                                     >
-                                        View All
-                                        <ArrowRight className="h-3 w-3" />
+                                        View all
+                                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
                                     </Link>
                                 </div>
                             </div>
@@ -198,28 +144,34 @@ interface SimpleDropdownProps {
     onClose: () => void;
 }
 
+/** Anchored popover: grows out of its trigger, translucent material, 40px rows. */
 function SimpleDropdown({ items, isOpen, onClose }: SimpleDropdownProps) {
     const pathname = usePathname();
     return (
-        <div className={cn("absolute top-full left-1/2 z-50 -translate-x-1/2 pt-2 transition-all duration-200", isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0")}>
-            <div className="absolute left-1/2 -translate-x-1/2" style={{ top: -7, width: 0, height: 0, borderLeft: "7px solid transparent", borderRight: "7px solid transparent", borderBottom: "7px solid white" }} />
-            <div className="bg-surface min-w-[200px] rounded-xl border border-neutral-100 py-1.5 shadow-xl">
-                {items.map((child) => (
-                    <Link
-                        key={child.href}
-                        href={child.href}
-                        className={cn(
-                            "block px-4 py-2 text-sm transition-colors",
-                            pathname === child.href
-                                ? "text-primary-600 bg-primary-50 font-medium"
-                                : "hover:text-primary-600 hover:bg-neutral-50 text-neutral-700"
-                        )}
-                        onClick={onClose}
-                    >
-                        {child.label}
-                    </Link>
-                ))}
-            </div>
+        <div
+            className={cn(
+                "absolute top-full left-0 z-50 origin-top-left pt-2 transition-[opacity,transform] duration-200 ease-out",
+                isOpen ? "visible translate-y-0 scale-100 opacity-100" : "invisible -translate-y-1 scale-[0.98] opacity-0"
+            )}
+        >
+            <ul className="material-popover min-w-[240px] p-1.5">
+                {items.map((child) => {
+                    const isCurrent = pathname === child.href;
+                    return (
+                        <li key={child.href}>
+                            <Link
+                                href={child.href}
+                                aria-current={isCurrent ? "page" : undefined}
+                                tabIndex={isOpen ? undefined : -1}
+                                className={cn(MENU_ROW, isCurrent ? "text-primary-800 font-medium" : "text-neutral-700 hover:bg-neutral-900/[0.05] hover:text-neutral-900")}
+                                onClick={onClose}
+                            >
+                                {child.label}
+                            </Link>
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     );
 }
@@ -230,21 +182,42 @@ export default function Navigation({ standalone = false }: { standalone?: boolea
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    const handleMouseEnter = useCallback((href: string) => {
-        if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null; }
-        setOpenDropdown(href);
+    const cancelClose = useCallback(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
     }, []);
 
-    const handleMouseLeave = useCallback(() => {
-        timeoutRef.current = setTimeout(() => setOpenDropdown(null), 150);
+    const open = useCallback(
+        (href: string) => {
+            cancelClose();
+            setOpenDropdown(href);
+        },
+        [cancelClose]
+    );
+
+    const scheduleClose = useCallback(() => {
+        timeoutRef.current = setTimeout(() => setOpenDropdown(null), CLOSE_DELAY_MS);
     }, []);
 
     const handleClose = useCallback(() => setOpenDropdown(null), []);
 
-    useEffect(() => { return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }; }, []);
+    // Keyboard users: leaving the whole menu group with Tab closes it
+    const handleBlur = useCallback((e: FocusEvent<HTMLDivElement>) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpenDropdown(null);
+    }, []);
+
+    const handleKeyDown = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key !== "Escape") return;
+        setOpenDropdown(null);
+        (e.currentTarget.querySelector("a") as HTMLAnchorElement | null)?.focus();
+    }, []);
+
+    useEffect(() => cancelClose, [cancelClose]);
 
     return (
-        <nav className={cn("relative items-stretch gap-0", standalone ? "flex" : "hidden md:flex")}>
+        <nav aria-label="Main" className={cn("relative items-stretch gap-0", standalone ? "flex" : "hidden md:flex")}>
             {items.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
                 const hasMegaMenu = item.megaMenu && item.megaMenu.length > 0;
@@ -252,10 +225,8 @@ export default function Navigation({ standalone = false }: { standalone?: boolea
                 const isOpen = openDropdown === item.href;
 
                 const linkClass = cn(
-                    "flex items-center px-3.5 text-sm font-semibold border-b-2 transition-all duration-150",
-                    isActive
-                        ? "border-primary-500 text-primary-700"
-                        : "border-transparent text-neutral-600 hover:border-primary-400 hover:text-primary-700"
+                    "flex items-center px-3 text-[14px] font-medium tracking-[-0.01em] transition-colors duration-200 ease-out",
+                    isActive || isOpen ? "text-neutral-900" : "text-neutral-600 hover:text-neutral-900"
                 );
 
                 if (hasMegaMenu || hasChildren) {
@@ -263,21 +234,18 @@ export default function Navigation({ standalone = false }: { standalone?: boolea
                         <div
                             key={item.href}
                             className="relative flex items-stretch"
-                            onMouseEnter={() => handleMouseEnter(item.href)}
-                            onMouseLeave={handleMouseLeave}
-                            data-nav-href={item.href}
+                            onMouseEnter={() => open(item.href)}
+                            onMouseLeave={scheduleClose}
+                            onFocus={() => open(item.href)}
+                            onBlur={handleBlur}
+                            onKeyDown={handleKeyDown}
                         >
-                            <Link href={item.href} className={cn(linkClass, "gap-1.5")}>
+                            <Link href={item.href} aria-haspopup="true" aria-expanded={isOpen} aria-current={isActive ? "page" : undefined} className={cn(linkClass, "gap-1")}>
                                 {item.label}
-                                <ChevronDown
-                                    className={cn(
-                                        "h-3.5 w-3.5 transition-transform duration-200",
-                                        isOpen && "rotate-180"
-                                    )}
-                                />
+                                <ChevronDown aria-hidden="true" className={cn("h-3.5 w-3.5 text-neutral-400 transition-transform duration-200 ease-out", isOpen && "rotate-180")} />
                             </Link>
                             {hasMegaMenu ? (
-                                <MegaMenu columns={item.megaMenu!} isOpen={isOpen} onClose={handleClose} itemHref={item.href} />
+                                <MegaMenu columns={item.megaMenu!} isOpen={isOpen} onClose={handleClose} />
                             ) : (
                                 hasChildren && <SimpleDropdown items={item.children!} isOpen={isOpen} onClose={handleClose} />
                             )}
@@ -286,7 +254,7 @@ export default function Navigation({ standalone = false }: { standalone?: boolea
                 }
 
                 return (
-                    <Link key={item.href} href={item.href} className={linkClass}>
+                    <Link key={item.href} href={item.href} aria-current={isActive ? "page" : undefined} className={linkClass}>
                         {item.label}
                     </Link>
                 );

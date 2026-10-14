@@ -2,10 +2,11 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, MapPin, FileDown, CheckCircle2, Clock, Loader2 } from "lucide-react";
+import { ArrowLeft, Check, FileDown, CheckCircle2, Clock, Loader2 } from "lucide-react";
 import { orderApi, Order } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { StatusBadge } from "@/components/account";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 
 const fmt = (paise: number, currency = "INR") =>
     new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 0 }).format(paise / 100);
@@ -40,17 +41,20 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
 
     if (isLoading) {
         return (
-            <div className="flex min-h-64 items-center justify-center">
-                <Loader2 className="h-8 w-8 animate-spin text-primary-400" />
+            <div className="flex min-h-64 items-center justify-center" role="status" aria-label="Loading order">
+                <Loader2 className="h-7 w-7 text-neutral-400 motion-safe:animate-spin" aria-hidden="true" />
             </div>
         );
     }
 
     if (notFound || !order) {
         return (
-            <div className="rounded-2xl border border-neutral-100 bg-white px-6 py-14 text-center shadow-sm">
-                <p className="text-sm font-medium text-neutral-500">Order not found.</p>
-                <Link href="/account/orders" className="mt-3 inline-block text-xs font-semibold text-primary-600 hover:underline">← Back to Orders</Link>
+            <div className={cn(SURFACE_CARD, "px-6 py-16 text-center")}>
+                <p className="text-[15px] text-neutral-600">Order not found.</p>
+                <Link href="/account/orders" className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-primary-700 hover:underline">
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                    Back to Orders
+                </Link>
             </div>
         );
     }
@@ -58,147 +62,139 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
     const timeline = TIMELINE[order.status] ?? TIMELINE.pending;
 
     return (
-        <div className="space-y-5">
+        <div className="space-y-6">
             {/* Back + header */}
             <div>
-                <Link href="/account/orders" className="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-500 hover:text-primary-600">
-                    <ArrowLeft className="h-3.5 w-3.5" />
+                <Link
+                    href="/account/orders"
+                    className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 text-sm font-medium text-neutral-600 transition-colors duration-200 ease-out hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                     Back to Orders
                 </Link>
-                <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
                     <div>
-                        <h1 className="font-mono text-xl font-bold text-neutral-900">#{order.id.slice(0, 8).toUpperCase()}</h1>
-                        <p className="mt-0.5 text-sm text-neutral-500">Placed on {fmtDate(order.createdAt)}</p>
+                        <h1 className="font-mono text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.02em] text-neutral-900 md:text-4xl">#{order.id.slice(0, 8).toUpperCase()}</h1>
+                        <p className="mt-2 text-[15px] text-neutral-500">Placed on {fmtDate(order.createdAt)}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <Link
-                            href={`/account/orders/${order.id}/invoice`}
-                            className="flex items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-600 transition-all hover:border-neutral-300 hover:shadow-sm"
-                        >
-                            <FileDown className="h-4 w-4" />
+                    <div className="flex items-center gap-3">
+                        <StatusBadge status={order.status} size="lg" />
+                        <Link href={`/account/orders/${order.id}/invoice`} className="btn btn-secondary btn-md">
+                            <FileDown className="h-4 w-4" aria-hidden="true" />
                             Invoice
                         </Link>
-                        <StatusBadge status={order.status} size="lg" />
                     </div>
                 </div>
             </div>
 
             {/* Timeline */}
-            <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                <div className="border-b border-neutral-50 px-6 py-4">
-                    <h2 className="text-sm font-bold text-neutral-900">Order Status</h2>
-                </div>
-                <div className="px-6 py-6">
-                    <div className="flex items-start">
-                        {timeline.steps.map((step, i) => {
-                            const done = i <= timeline.current;
-                            const active = i === timeline.current;
-                            return (
-                                <div key={step} className="flex flex-1 flex-col items-center">
-                                    <div className="relative flex w-full items-center">
-                                        {i > 0 && <div className={cn("h-0.5 flex-1", done ? "bg-primary-400" : "bg-neutral-200")} />}
-                                        <div className={cn(
-                                            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-all",
-                                            done && !active ? "border-primary-500 bg-primary-500 text-white" : "",
-                                            active ? "border-primary-500 bg-white shadow-[0_0_0_4px_rgba(31,182,205,0.15)]" : "",
-                                            !done ? "border-neutral-200 bg-white text-neutral-300" : ""
-                                        )}>
-                                            {done && !active ? <CheckCircle2 className="h-4 w-4" />
-                                                : active ? <span className="h-3 w-3 rounded-full bg-primary-500" />
-                                                : <span className="h-2.5 w-2.5 rounded-full bg-neutral-200" />}
-                                        </div>
-                                        {i < timeline.steps.length - 1 && <div className={cn("h-0.5 flex-1", i < timeline.current ? "bg-primary-400" : "bg-neutral-200")} />}
+            <section className={cn(SURFACE_CARD, "px-6 py-6 md:px-7")}>
+                <h2 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">Order Status</h2>
+                <ol className="mt-6 flex items-start">
+                    {timeline.steps.map((step, i) => {
+                        const done = i <= timeline.current;
+                        const active = i === timeline.current;
+                        return (
+                            <li key={step} className="flex flex-1 flex-col items-center" aria-current={active ? "step" : undefined}>
+                                <div className="relative flex w-full items-center">
+                                    <div className={cn("h-0.5 flex-1", i === 0 ? "bg-transparent" : done ? "bg-primary-700" : "bg-neutral-200")} />
+                                    <div className={cn(
+                                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                                        done && !active && "bg-primary-800 text-white",
+                                        active && "bg-white ring-2 ring-primary-700 ring-offset-2",
+                                        !done && "bg-neutral-100"
+                                    )}>
+                                        {done && !active ? <Check className="h-4 w-4" aria-hidden="true" />
+                                            : active ? <span className="h-2.5 w-2.5 rounded-full bg-primary-700" />
+                                            : <span className="h-2 w-2 rounded-full bg-neutral-300" />}
                                     </div>
-                                    <p className={cn("mt-2 text-center text-[10px] font-semibold leading-tight", active ? "text-primary-600" : done ? "text-neutral-600" : "text-neutral-300")}>
-                                        {step}
-                                    </p>
+                                    <div className={cn("h-0.5 flex-1", i === timeline.steps.length - 1 ? "bg-transparent" : i < timeline.current ? "bg-primary-700" : "bg-neutral-200")} />
                                 </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
+                                <p className={cn("mt-3 px-1 text-center text-xs leading-tight sm:text-[13px]", active ? "font-semibold text-neutral-900" : done ? "font-medium text-neutral-700" : "text-neutral-500")}>
+                                    {step}
+                                </p>
+                            </li>
+                        );
+                    })}
+                </ol>
+            </section>
 
-            <div className="grid gap-5 lg:grid-cols-3">
+            <div className="grid gap-6 lg:grid-cols-3">
                 {/* Items — 2/3 width */}
-                <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm lg:col-span-2">
-                    <div className="border-b border-neutral-50 px-6 py-4">
-                        <h2 className="text-sm font-bold text-neutral-900">Order Items ({order.items?.length ?? 0})</h2>
-                    </div>
-                    <div className="divide-y divide-neutral-50">
+                <section className={cn(SURFACE_CARD, "overflow-hidden lg:col-span-2")}>
+                    <h2 className="px-6 pt-6 text-[17px] font-semibold tracking-[-0.015em] text-neutral-900 md:px-7">
+                        Order Items <span className="font-normal text-neutral-500 tabular-nums">({order.items?.length ?? 0})</span>
+                    </h2>
+                    <ul className="mt-2 divide-y divide-neutral-900/[0.06] px-6 md:px-7">
                         {(order.items ?? []).map((item) => (
-                            <div key={item.id} className="flex items-center gap-4 px-6 py-4">
-                                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-sm font-bold text-neutral-500">
+                            <li key={item.id} className="flex items-center gap-4 py-4">
+                                <div aria-hidden="true" className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-neutral-50 text-[13px] font-semibold text-neutral-500">
                                     {(item.productSku ?? item.productName).slice(0, 3).toUpperCase()}
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <p className="text-sm font-semibold text-neutral-800">{item.productName}</p>
-                                    {item.productSku && <p className="mt-0.5 text-xs text-neutral-400">SKU: {item.productSku}</p>}
-                                    <p className="text-xs text-neutral-400">Qty: {item.quantity}</p>
+                                    <p className="text-[15px] font-medium text-neutral-900">{item.productName}</p>
+                                    {item.productSku && <p className="mt-0.5 text-[13px] text-neutral-500">SKU: {item.productSku}</p>}
+                                    <p className="text-[13px] text-neutral-500 tabular-nums">Qty: {item.quantity}</p>
                                 </div>
                                 <div className="shrink-0 text-right">
                                     {item.totalPrice > 0
-                                        ? <p className="text-base font-bold text-neutral-900">{fmt(item.totalPrice, order.currency)}</p>
-                                        : <p className="text-xs italic text-neutral-400">Included</p>
+                                        ? <p className="text-[15px] font-semibold text-neutral-900 tabular-nums">{fmt(item.totalPrice, order.currency)}</p>
+                                        : <p className="text-[13px] text-neutral-500">Included</p>
                                     }
                                     {item.quantity > 1 && item.unitPrice > 0 && (
-                                        <p className="text-[11px] text-neutral-400">{fmt(item.unitPrice, order.currency)} each</p>
+                                        <p className="text-xs text-neutral-500 tabular-nums">{fmt(item.unitPrice, order.currency)} each</p>
                                     )}
                                 </div>
-                            </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                     {/* Total */}
-                    <div className="flex items-center justify-between border-t border-neutral-100 bg-neutral-50/50 px-6 py-4">
-                        <span className="text-sm font-semibold text-neutral-600">Order Total</span>
-                        <span className="text-xl font-bold text-neutral-900">
-                            {order.total ? fmt(order.total, order.currency) : <span className="italic text-neutral-400 text-base">Quote</span>}
+                    <div className="mx-6 flex items-baseline justify-between border-t border-neutral-900/[0.06] py-5 md:mx-7">
+                        <span className="text-[15px] font-semibold text-neutral-700">Order Total</span>
+                        <span className="text-xl font-semibold tracking-[-0.01em] text-neutral-900 tabular-nums">
+                            {order.total ? fmt(order.total, order.currency) : <span className="text-base font-normal text-neutral-500">Quote</span>}
                         </span>
                     </div>
-                </div>
+                </section>
 
                 {/* Sidebar */}
-                <div className="space-y-4">
+                <div className="space-y-6">
                     {/* Payment summary */}
-                    <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                        <div className="border-b border-neutral-50 px-5 py-3">
-                            <h2 className="text-xs font-bold text-neutral-700">Payment Summary</h2>
+                    <section className={cn(SURFACE_CARD, "p-6")}>
+                        <div className="flex items-center justify-between gap-3">
+                            <h2 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">Payment Summary</h2>
+                            <span className={cn(
+                                "inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium",
+                                order.paymentStatus === "paid" ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-800"
+                            )}>
+                                {order.paymentStatus === "paid" ? <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" /> : <Clock className="h-3.5 w-3.5" aria-hidden="true" />}
+                                {order.paymentStatus === "paid" ? "Paid" : "Unpaid"}
+                            </span>
                         </div>
-                        <div className="space-y-2.5 p-5">
+                        <dl className="mt-5 space-y-2.5 text-[15px]">
                             {[
                                 { label: "Subtotal",      value: fmt(order.subtotal, order.currency) },
                                 { label: "Tax",           value: order.tax ? fmt(order.tax, order.currency) : "—" },
                                 { label: "Shipping",      value: order.shippingFee ? fmt(order.shippingFee, order.currency) : "Free" },
                             ].map((row) => (
-                                <div key={row.label} className="flex items-center justify-between text-xs">
-                                    <span className="text-neutral-500">{row.label}</span>
-                                    <span className="font-semibold text-neutral-700">{row.value}</span>
+                                <div key={row.label} className="flex items-center justify-between">
+                                    <dt className="text-neutral-600">{row.label}</dt>
+                                    <dd className="font-medium text-neutral-900 tabular-nums">{row.value}</dd>
                                 </div>
                             ))}
-                            <div className="flex items-center justify-between border-t border-neutral-100 pt-2.5 text-sm font-bold">
-                                <span className="text-neutral-800">Total</span>
-                                <span className="text-neutral-900">{order.total ? fmt(order.total, order.currency) : "—"}</span>
+                            <div className="flex items-baseline justify-between border-t border-neutral-900/[0.06] pt-3">
+                                <dt className="font-semibold text-neutral-900">Total</dt>
+                                <dd className="text-lg font-semibold text-neutral-900 tabular-nums">{order.total ? fmt(order.total, order.currency) : "—"}</dd>
                             </div>
-                            <div className="pt-1">
-                                <span className={cn(
-                                    "inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold",
-                                    order.paymentStatus === "paid" ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
-                                )}>
-                                    {order.paymentStatus === "paid" ? <CheckCircle2 className="h-3 w-3" /> : <Clock className="h-3 w-3" />}
-                                    {order.paymentStatus === "paid" ? "Paid" : "Unpaid"}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                        </dl>
+                    </section>
 
                     {/* Notes */}
                     {order.notes && (
-                        <div className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                            <div className="border-b border-neutral-50 px-5 py-3">
-                                <h2 className="text-xs font-bold text-neutral-700">Order Notes</h2>
-                            </div>
-                            <p className="p-5 text-sm text-neutral-600 leading-relaxed">{order.notes}</p>
-                        </div>
+                        <section className={cn(SURFACE_CARD, "p-6")}>
+                            <h2 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">Order Notes</h2>
+                            <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">{order.notes}</p>
+                        </section>
                     )}
                 </div>
             </div>

@@ -11,22 +11,26 @@ import {
     FileText, Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PILL_PRIMARY, SURFACE_CARD } from "@/components/ui/surfaces";
+import { SkeletonBar } from "@/components/catalog/listing";
+
+const SECTION_TITLE = "text-[15px] font-semibold tracking-[-0.01em] text-neutral-900";
 
 // ── Stock badge ───────────────────────────────────────────────────────────────
 function StockBadge({ qty }: { qty: number }) {
     if (qty > 10) return (
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
-            <CheckCircle2 className="h-4 w-4" /> In Stock ({qty} available)
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-sm font-medium text-emerald-800">
+            <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> In Stock ({qty} available)
         </span>
     );
     if (qty > 0) return (
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700">
-            <AlertCircle className="h-4 w-4" /> Low Stock — Only {qty} left
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-800">
+            <AlertCircle className="h-4 w-4" aria-hidden="true" /> Low Stock — Only {qty} left
         </span>
     );
     return (
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-sm font-semibold text-red-600">
-            <XCircle className="h-4 w-4" /> Out of Stock
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1.5 text-sm font-medium text-red-700">
+            <XCircle className="h-4 w-4" aria-hidden="true" /> Out of Stock
         </span>
     );
 }
@@ -35,13 +39,11 @@ function StockBadge({ qty }: { qty: number }) {
 function SpecRow({ icon: Icon, label, value }: { icon: React.ComponentType<{ className?: string }>; label: string; value: React.ReactNode }) {
     if (!value && value !== 0) return null;
     return (
-        <div className="flex items-start gap-3 border-b border-neutral-50 py-3 last:border-0">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-neutral-50">
-                <Icon className="h-3.5 w-3.5 text-neutral-400" />
-            </div>
+        <div className="flex items-center gap-3 py-3">
+            <Icon className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
             <div className="flex flex-1 items-start justify-between gap-4">
                 <span className="text-sm text-neutral-500">{label}</span>
-                <span className="text-right text-sm font-semibold text-neutral-800">{value}</span>
+                <span className="text-right text-sm font-medium text-neutral-900">{value}</span>
             </div>
         </div>
     );
@@ -50,21 +52,21 @@ function SpecRow({ icon: Icon, label, value }: { icon: React.ComponentType<{ cla
 // ── Skeleton ──────────────────────────────────────────────────────────────────
 function DetailSkeleton() {
     return (
-        <div className="container py-8">
-            <div className="mb-6 h-4 w-32 animate-pulse rounded bg-neutral-200" />
-            <div className="grid gap-8 lg:grid-cols-2">
-                <div className="h-80 animate-pulse rounded-2xl bg-neutral-200" />
-                <div className="flex flex-col gap-4">
-                    <div className="h-3 w-20 animate-pulse rounded bg-neutral-100" />
-                    <div className="h-7 w-3/4 animate-pulse rounded bg-neutral-200" />
-                    <div className="h-4 w-32 animate-pulse rounded bg-neutral-100" />
-                    <div className="h-8 w-28 animate-pulse rounded-full bg-neutral-100" />
-                    <div className="h-10 w-40 animate-pulse rounded bg-neutral-100" />
-                    <div className="h-px bg-neutral-100" />
+        <div role="status" aria-label="Loading item" className="container py-8 md:py-12 motion-safe:animate-pulse">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+                <div className={cn(SURFACE_CARD, "p-2")}>
+                    <div className="aspect-square max-h-[420px] w-full rounded-xl bg-neutral-50" />
+                </div>
+                <div className={cn(SURFACE_CARD, "flex flex-col gap-4 p-6 md:p-8")}>
+                    <SkeletonBar className="h-3.5 w-24" />
+                    <SkeletonBar className="h-8 w-3/4" />
+                    <SkeletonBar className="h-4 w-32" />
+                    <SkeletonBar className="h-8 w-36" />
+                    <SkeletonBar className="h-9 w-40" />
                     {[...Array(5)].map((_, i) => (
-                        <div key={i} className="flex justify-between">
-                            <div className="h-4 w-24 animate-pulse rounded bg-neutral-100" />
-                            <div className="h-4 w-20 animate-pulse rounded bg-neutral-100" />
+                        <div key={i} className="flex justify-between pt-2">
+                            <SkeletonBar className="h-3.5 w-24" />
+                            <SkeletonBar className="h-3.5 w-20" />
                         </div>
                     ))}
                 </div>
@@ -93,47 +95,50 @@ export default function InventoryItemPage() {
     }, [itemId]);
 
     return (
-        <div className="min-h-screen bg-neutral-50">
-            {/* Back breadcrumb */}
-            <div className="border-b border-neutral-100 bg-white">
-                <div className="container py-3">
-                    <Link href="/inventory" className="inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-primary-600">
-                        <ArrowLeft className="h-4 w-4" />
-                        Back to Inventory
-                    </Link>
-                </div>
+        <div className="min-h-screen bg-neutral-50/50">
+            {/* Back link */}
+            <div className="container pt-4">
+                <Link
+                    href="/inventory"
+                    className="hover:text-primary-700 focus-visible:outline-primary-500 -ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 text-sm font-medium text-neutral-600 transition-colors focus-visible:outline-2"
+                >
+                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                    Back to Inventory
+                </Link>
             </div>
 
             {loading && <DetailSkeleton />}
 
             {error && (
-                <div className="container py-16 text-center">
-                    <AlertCircle className="mx-auto mb-4 h-12 w-12 text-red-300" />
-                    <p className="text-base font-semibold text-neutral-700">{error}</p>
-                    <Link href="/inventory" className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-primary-600 transition-colors">
-                        <ArrowLeft className="h-4 w-4" /> Go back
+                <div role="alert" className="container py-16 text-center md:py-24">
+                    <AlertCircle className="mx-auto mb-4 h-10 w-10 text-red-500" aria-hidden="true" />
+                    <p className="text-lg font-semibold text-neutral-900">{error}</p>
+                    <Link href="/inventory" className={cn(PILL_PRIMARY, "mt-6")}>
+                        <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Go back
                     </Link>
                 </div>
             )}
 
             {!loading && item && (
-                <div className="container py-8">
-                    <div className="grid gap-8 lg:grid-cols-2">
+                <div className="container pt-4 pb-16 md:pb-24">
+                    <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
 
                         {/* ── Left: Image ── */}
-                        <div className="flex flex-col gap-4">
-                            <div className="flex aspect-square max-h-[420px] w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                                {item.image ? (
-                                    <img src={item.image} alt={item.name} className="h-full w-full object-contain p-8" />
-                                ) : (
-                                    <Package className="h-20 w-20 text-neutral-200" />
-                                )}
+                        <div className="flex flex-col gap-4 lg:gap-6">
+                            <div className={cn(SURFACE_CARD, "p-2")}>
+                                <div className="flex aspect-square max-h-[420px] w-full items-center justify-center overflow-hidden rounded-xl bg-neutral-50">
+                                    {item.image ? (
+                                        <img src={item.image} alt={item.name} className="h-full w-full object-contain p-10 mix-blend-multiply" />
+                                    ) : (
+                                        <Package className="h-16 w-16 text-neutral-300" aria-hidden="true" />
+                                    )}
+                                </div>
                             </div>
 
                             {/* Stock detail card */}
-                            <div className="rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm">
-                                <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-400">Stock Levels</h3>
-                                <div className="grid grid-cols-3 divide-x divide-neutral-100">
+                            <div className={cn(SURFACE_CARD, "p-6")}>
+                                <h2 className={cn(SECTION_TITLE, "mb-4")}>Stock levels</h2>
+                                <div className="grid grid-cols-3 divide-x divide-neutral-900/[0.06]">
                                     {[
                                         { label: "On Hand", value: item.stockOnHand },
                                         { label: "Committed", value: item.committedStock },
@@ -141,12 +146,12 @@ export default function InventoryItemPage() {
                                     ].map(({ label, value }) => (
                                         <div key={label} className="flex flex-col items-center gap-0.5 px-3 text-center">
                                             <span className={cn(
-                                                "text-2xl font-bold",
-                                                label === "Available" && value === 0 ? "text-red-500"
-                                                    : label === "Available" && value <= 10 ? "text-amber-500"
-                                                    : "text-neutral-800"
+                                                "text-2xl font-semibold tracking-[-0.02em] tabular-nums",
+                                                label === "Available" && value === 0 ? "text-red-600"
+                                                    : label === "Available" && value <= 10 ? "text-amber-600"
+                                                    : "text-neutral-900"
                                             )}>{value}</span>
-                                            <span className="text-xs text-neutral-400">{label}</span>
+                                            <span className="text-[13px] text-neutral-500">{label}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -155,30 +160,30 @@ export default function InventoryItemPage() {
 
                         {/* ── Right: Details ── */}
                         <div className="flex flex-col">
-                            <div className="rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm">
+                            <div className={cn(SURFACE_CARD, "p-6 md:p-8")}>
                                 {/* Status + category */}
                                 <div className="mb-3 flex flex-wrap items-center gap-2">
                                     {item.category && (
-                                        <span className="rounded-full bg-primary-50 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-primary-600">
+                                        <span className="bg-primary-50 text-primary-800 rounded-full px-3 py-1 text-xs font-medium">
                                             {item.category}
                                         </span>
                                     )}
                                     {item.brand && (
-                                        <span className="rounded-full bg-neutral-100 px-3 py-0.5 text-xs font-semibold text-neutral-600">
+                                        <span className="rounded-full bg-neutral-900/[0.05] px-3 py-1 text-xs font-medium text-neutral-700">
                                             {item.brand}
                                         </span>
                                     )}
                                     {item.status === "inactive" && (
-                                        <span className="rounded-full bg-neutral-800 px-3 py-0.5 text-xs font-semibold text-white">Inactive</span>
+                                        <span className="rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white">Inactive</span>
                                     )}
                                 </div>
 
                                 {/* Name */}
-                                <h1 className="text-2xl font-bold leading-snug text-neutral-900">{item.name}</h1>
+                                <h1 className="text-[1.75rem] leading-[1.15] font-semibold tracking-[-0.02em] text-neutral-900 md:text-[2rem]">{item.name}</h1>
 
                                 {/* SKU */}
                                 {item.sku && (
-                                    <p className="mt-1 text-sm text-neutral-400">SKU: <span className="font-mono font-semibold text-neutral-600">{item.sku}</span></p>
+                                    <p className="mt-2 text-sm text-neutral-500">SKU: <span className="font-mono font-medium text-neutral-700">{item.sku}</span></p>
                                 )}
 
                                 {/* Stock badge */}
@@ -190,29 +195,29 @@ export default function InventoryItemPage() {
                                 <div className="mt-5 flex items-baseline gap-2">
                                     {item.rate > 0 ? (
                                         <>
-                                            <span className="text-3xl font-bold text-neutral-900">{formatPrice(item.rate)}</span>
-                                            {item.unit && <span className="text-sm text-neutral-400">per {item.unit}</span>}
+                                            <span className="text-3xl font-semibold tracking-[-0.02em] text-neutral-900 tabular-nums">{formatPrice(item.rate)}</span>
+                                            {item.unit && <span className="text-sm text-neutral-500">per {item.unit}</span>}
                                         </>
                                     ) : (
-                                        <span className="text-lg text-neutral-400">Price on request</span>
+                                        <span className="text-lg text-neutral-500">Price on request</span>
                                     )}
                                 </div>
                                 {item.taxRate != null && item.taxRate > 0 && (
-                                    <p className="mt-1 text-xs text-neutral-400">
+                                    <p className="mt-1 text-[13px] text-neutral-500">
                                         + {item.taxRate}% {item.taxName || "Tax"} · excl. taxes
                                     </p>
                                 )}
 
                                 {/* Description */}
                                 {item.description && (
-                                    <p className="mt-5 border-t border-neutral-100 pt-5 text-sm leading-relaxed text-neutral-600">
+                                    <p className="mt-6 text-[15px] leading-relaxed text-neutral-600">
                                         {item.description}
                                     </p>
                                 )}
 
                                 {/* Specs */}
-                                <div className="mt-5 border-t border-neutral-100 pt-5">
-                                    <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-neutral-400">Item Details</h3>
+                                <div className="mt-8 divide-y divide-neutral-900/[0.06]">
+                                    <h2 className={cn(SECTION_TITLE, "pb-2")}>Item details</h2>
                                     <SpecRow icon={Hash}      label="SKU"           value={item.sku} />
                                     <SpecRow icon={Layers}    label="Type"          value={item.itemType} />
                                     <SpecRow icon={Tag}       label="Unit"          value={item.unit} />
@@ -227,29 +232,29 @@ export default function InventoryItemPage() {
 
                                 {/* Last modified */}
                                 {item.lastModified && (
-                                    <p className="mt-4 text-xs text-neutral-400">
+                                    <p className="mt-4 text-[13px] text-neutral-500">
                                         Last updated: {new Date(item.lastModified).toLocaleString()}
                                     </p>
                                 )}
                             </div>
 
                             {/* CTA */}
-                            <div className="mt-4 rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm">
-                                <p className="mb-3 text-sm text-neutral-500">
+                            <div className={cn(SURFACE_CARD, "mt-4 p-6 lg:mt-6")}>
+                                <p className="mb-4 text-[15px] leading-relaxed text-neutral-600">
                                     Interested in this item? Contact us for availability and bulk pricing.
                                 </p>
                                 <div className="flex flex-wrap gap-3">
                                     <Link
                                         href={`/support/contact?subject=${encodeURIComponent(`Enquiry: ${item.name}`)}`}
-                                        className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_2px_10px_-2px_rgb(31_182_205/0.45)] transition-all hover:bg-primary-600"
+                                        className={PILL_PRIMARY}
                                     >
                                         Enquire Now
                                     </Link>
                                     <Link
                                         href="/inventory"
-                                        className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                                        className="focus-visible:outline-primary-500 inline-flex min-h-12 items-center gap-2 rounded-full bg-neutral-900/[0.05] px-7 text-[15px] font-semibold text-neutral-800 transition-[transform,background-color] duration-200 ease-out hover:bg-neutral-900/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:active:scale-[0.97]"
                                     >
-                                        <ArrowLeft className="h-4 w-4" /> All Items
+                                        <ArrowLeft className="h-4 w-4" aria-hidden="true" /> All Items
                                     </Link>
                                 </div>
                             </div>

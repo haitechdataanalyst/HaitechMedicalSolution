@@ -33,7 +33,7 @@ export async function generateQuotePDF(data: QuotePDFData): Promise<Buffer> {
             .fontSize(10)
             .fillColor("#666")
             .text(
-                `Date: ${new Date().toLocaleDateString("en-AU", {
+                `Date: ${new Date().toLocaleDateString("en-IN", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
@@ -165,7 +165,7 @@ export async function generateQuotePDF(data: QuotePDFData): Promise<Buffer> {
             .fillColor("#666")
             .text("This is a quote request. Final pricing may vary based on customization options and shipping.", 50, footerY, { width: 500, align: "center" })
             .text(`${siteConfig.company.name} | ${siteConfig.emails.contact} | ${siteConfig.company.phone}`, 50, footerY + 15, { width: 500, align: "center" })
-            .text("haitechmedical.com.au", 50, footerY + 30, { width: 500, align: "center" });
+            .text("medical.haitech-group.com", 50, footerY + 30, { width: 500, align: "center" });
 
         doc.end();
     });

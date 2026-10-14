@@ -10,13 +10,15 @@ import { CompareBar, CompareModal, useCompare } from "@/components/compare";
 import Link from "next/link";
 import { MessageSquare } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
+import { trackEvent } from "@/lib/analytics";
 
 const AUTH_ROUTES = ["/login", "/signup", "/register", "/forgot-password", "/dashboard/update-password", "/auth/mfa-verify"];
 
-// Pill expands on hover (desktop); icon-only on mobile to save screen space
-const PILL = "group flex items-center overflow-hidden rounded-full transition-all duration-300";
-const ICON_WRAP = "flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12";
-const LABEL = "hidden sm:block max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold transition-all duration-300 group-hover:max-w-[120px] group-hover:pr-4";
+// Two calm round actions. On hover-capable devices a label fades in beside the button (opacity/transform only).
+const ACTION =
+    "group relative flex h-12 w-12 items-center justify-center rounded-full text-white shadow-[0_6px_20px_-6px_rgba(15,23,42,0.35)] transition-[background-color,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 motion-safe:active:scale-[0.94]";
+const LABEL =
+    "pointer-events-none absolute right-full mr-3 hidden translate-x-1 rounded-full bg-neutral-900/85 px-3 py-1.5 text-[13px] font-medium whitespace-nowrap text-white opacity-0 transition-[opacity,transform] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 [@media(hover:hover)]:block";
 
 function FloatingButtons() {
     const { items } = useCompare();
@@ -24,45 +26,25 @@ function FloatingButtons() {
 
     const handleWhatsApp = () => {
         const clean = siteConfig.company.phone.replace(/\D/g, "");
+        trackEvent("whatsapp_click", { location: "floating_button" });
         window.open(`https://wa.me/${clean}`, "_blank", "noopener,noreferrer");
     };
 
-    const bottom = hasCompareBar
-        ? "calc(68px + env(safe-area-inset-bottom, 0px) + 1rem)"
-        : "calc(env(safe-area-inset-bottom, 0px) + 1.25rem)";
+    const bottom = hasCompareBar ? "calc(68px + env(safe-area-inset-bottom, 0px) + 1rem)" : "calc(env(safe-area-inset-bottom, 0px) + 1.25rem)";
 
     return (
-        <div
-            className="fixed right-4 z-40 flex flex-col gap-2 transition-all duration-300 sm:right-6"
-            style={{ bottom }}
-        >
+        <div className="floating-actions fixed right-4 z-40 flex flex-col gap-3 sm:right-6" style={{ bottom }}>
             {/* Get a Quote */}
-            <Link
-                href="/support/contact"
-                className={`${PILL} bg-primary-500 shadow-[0_4px_16px_-2px_rgb(31_182_205/0.5)] hover:shadow-[0_6px_24px_-2px_rgb(31_182_205/0.6)]`}
-                aria-label="Get a Quote"
-            >
-                <span className={`${ICON_WRAP} text-white`}>
-                    <MessageSquare size={18} />
-                </span>
-                <span className={`${LABEL} text-white`}>Get a Quote</span>
+            <Link href="/support/contact" className={`${ACTION} bg-primary-800 hover:bg-primary-900`} aria-label="Get a Quote">
+                <MessageSquare size={20} aria-hidden="true" />
+                <span className={LABEL}>Get a Quote</span>
             </Link>
 
-            {/* WhatsApp — pulse ring only on icon circle */}
-            <div className="relative">
-                <span className="pointer-events-none absolute left-0 top-0 h-11 w-11 rounded-full bg-whatsapp animate-whatsapp-ping sm:h-12 sm:w-12" />
-                <button
-                    type="button"
-                    onClick={handleWhatsApp}
-                    className={`${PILL} relative bg-whatsapp hover:bg-[#20BD5A] active:bg-[#1DA851]`}
-                    aria-label="Chat with us on WhatsApp"
-                >
-                    <span className={`${ICON_WRAP} text-white`}>
-                        <WhatsAppIcon size={18} />
-                    </span>
-                    <span className={`${LABEL} text-white`}>WhatsApp</span>
-                </button>
-            </div>
+            {/* WhatsApp */}
+            <button type="button" onClick={handleWhatsApp} className={`${ACTION} bg-whatsapp hover:bg-[#20BD5A] active:bg-[#1DA851]`} aria-label="Chat with us on WhatsApp">
+                <WhatsAppIcon size={20} aria-hidden="true" />
+                <span className={LABEL}>WhatsApp</span>
+            </button>
         </div>
     );
 }
@@ -83,11 +65,11 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
                 closeButton
                 toastOptions={{
                     classNames: {
-                        toast: "!font-sans !rounded-2xl !border !border-neutral-200 !shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12)]",
-                        title: "!text-sm !font-semibold !text-neutral-900",
-                        description: "!text-xs !text-neutral-500",
-                        actionButton: "!rounded-full !text-xs !font-semibold !bg-primary-500 !text-white hover:!bg-primary-600",
-                        closeButton: "!rounded-full !border-neutral-200",
+                        toast: "!font-sans !rounded-2xl !border-0 !shadow-[0_0_0_1px_rgba(15,23,42,0.06),0_18px_48px_-16px_rgba(15,23,42,0.28)]",
+                        title: "!text-[15px] !font-semibold !tracking-[-0.01em] !text-neutral-900",
+                        description: "!text-[13px] !text-neutral-600",
+                        actionButton: "!rounded-full !text-[13px] !font-semibold !bg-primary-800 !text-white hover:!bg-primary-900",
+                        closeButton: "!rounded-full !border-0 !bg-white !text-neutral-500 !shadow-[0_0_0_1px_rgba(15,23,42,0.08)] hover:!text-neutral-900",
                     },
                 }}
             />

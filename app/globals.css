@@ -39,9 +39,6 @@
     /* Font → font-sans uses Inter */
     --font-sans: var(--font-inter, "Inter"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-    /* Page transition animation */
-    --animate-page-enter: page-enter 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
-
     /* WhatsApp floating button pulse */
     --animate-whatsapp-ping: whatsapp-ping 2.2s ease-out infinite;
 
@@ -130,7 +127,13 @@
 
     /* Spacing — responsive via clamp so mobile sections aren't huge */
     --container-padding: 1.125rem;
-    --section-spacing: clamp(2.75rem, 8vw, 5rem);
+    /* Scales with the smaller of width and height: a 1366x657 laptop gets
+       ~59px instead of the full 80px, while tall desktop screens keep 5rem. */
+    --section-spacing: clamp(3.5rem, min(10vw, 11vh), 7rem);
+
+    /* Motion — one curve for everything the user touches (ease-out, 200ms) */
+    --ease-out-ui: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --duration-ui: 200ms;
 
     /* Border Radius */
     --radius-xs: 0.25rem;
@@ -168,10 +171,21 @@
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /* Prevent horizontal overflow globally */
-        overflow-x: hidden;
+        text-rendering: optimizeLegibility;
+        /* Prevent horizontal overflow globally. clip, not hidden: hidden turns
+           <body> into a scroll container that never scrolls, which silently
+           disables every position: sticky element (header, sticky columns). */
+        overflow-x: clip;
         /* Smooth momentum scroll on iOS */
         -webkit-overflow-scrolling: touch;
+    }
+
+    /* Balanced headings avoid one-word last lines; pretty avoids orphans in short body copy */
+    h1, h2, h3, h4 {
+        text-wrap: balance;
+    }
+    p, li, figcaption {
+        text-wrap: pretty;
     }
 
     /* Prevent images from ever overflowing */
@@ -236,22 +250,26 @@
 
 @layer components {
     /* ---------- Cards ---------- */
+    /* One card material: hairline edge + whisper shadow at rest; depth arrives on hover. */
     .card {
         background: var(--background);
         border-radius: var(--radius-2xl);
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--border-color-light);
+        box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+        border: 1px solid rgb(15 23 42 / 0.06);
         overflow: hidden;
     }
 
     .card-hover {
-        transition: box-shadow var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal);
+        transition: box-shadow var(--duration-ui) var(--ease-out-ui), transform var(--duration-ui) var(--ease-out-ui);
     }
 
     .card-hover:hover {
-        box-shadow: var(--shadow-md);
-        border-color: var(--color-primary-200);
-        transform: translateY(-2px);
+        box-shadow: 0 12px 32px -12px rgb(15 23 42 / 0.18);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .card-hover:hover { transform: translateY(-2px); }
+        .card-hover:active { transform: scale(0.985); transition-duration: 100ms; }
     }
 
     /* Same radius token as .card — a light drop-shadow doesn't read on a dark
@@ -265,46 +283,75 @@
 
     .card-dark.card-hover:hover {
         border-color: rgb(51 203 219 / 0.35);
-        transform: translateY(-2px);
     }
 
-    /* ---------- Label Tag ---------- */
+    /* ---------- Label Tag ----------
+       A quiet eyebrow: sentence case, tinted fill, no outline — it labels, it doesn't shout. */
     .label-tag {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.375rem 1rem;
+        gap: 0.375rem;
+        padding: 0.3125rem 0.75rem;
         border-radius: var(--radius-full);
-        font-size: 0.7rem;
+        font-size: 0.8125rem;
         font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        letter-spacing: -0.005em;
+        line-height: 1.2;
     }
 
     .label-tag-primary {
         background: var(--color-primary-50);
-        color: var(--color-primary-700);
-        border: 1px solid var(--color-primary-200);
+        color: var(--color-primary-800);
     }
 
     .label-tag-white {
         background: rgba(255, 255, 255, 0.12);
-        color: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.92);
     }
 
     .label-tag-navy {
         background: rgba(9, 28, 46, 0.06);
         color: var(--color-navy-700);
-        border: 1px solid rgba(9, 28, 46, 0.1);
     }
 
     /* Informational metadata (trust badges, specs) — not a decorative
        accent, so it stays neutral rather than borrowing the brand color. */
     .label-tag-neutral {
-        background: var(--color-neutral-50);
-        color: var(--color-neutral-600);
-        border: 1px solid var(--color-neutral-200);
+        background: rgb(15 23 42 / 0.05);
+        color: var(--color-neutral-700);
+    }
+
+    /* ---------- Materials ----------
+       Translucent layers float over content (bars, menus, sheets). Content scrolls underneath. */
+    /* The blur is routed through a custom property on purpose: with literal values the CSS
+       minifier keeps only -webkit-backdrop-filter and drops the standard property, so Chromium
+       renders no blur at all. var() values are left untouched. */
+    .material-bar {
+        --material-blur: saturate(180%) blur(20px);
+        background: rgb(255 255 255 / 0.78);
+        backdrop-filter: var(--material-blur);
+        -webkit-backdrop-filter: var(--material-blur);
+    }
+
+    .material-popover {
+        --material-blur: saturate(180%) blur(24px);
+        background: rgb(255 255 255 / 0.92);
+        backdrop-filter: var(--material-blur);
+        -webkit-backdrop-filter: var(--material-blur);
+        border-radius: var(--radius-2xl);
+        box-shadow: 0 0 0 1px rgb(15 23 42 / 0.06), 0 18px 48px -16px rgb(15 23 42 / 0.28);
+    }
+
+    @media (prefers-reduced-transparency: reduce) {
+        .material-bar, .material-popover {
+            --material-blur: none;
+            background: #fff;
+        }
+    }
+
+    @media (prefers-contrast: more) {
+        .material-bar { background: #fff; border-bottom: 1px solid var(--color-neutral-500); }
+        .material-popover { background: #fff; box-shadow: 0 0 0 1px var(--color-neutral-600), 0 18px 48px -16px rgb(15 23 42 / 0.28); }
     }
 
     /* ---------- Glass ---------- */
@@ -334,24 +381,28 @@
 
     .form-input {
         width: 100%;
+        min-height: 3rem;
         padding: 0.75rem 1rem;
-        border: 1.5px solid var(--color-neutral-300);
-        border-radius: var(--radius-lg);
+        border: 1px solid rgb(15 23 42 / 0.14);
+        border-radius: var(--radius-xl);
         background: var(--background);
         color: var(--foreground);
-        font-size: 0.9375rem;
-        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        font-size: 1rem; /* 16px also stops iOS from zooming the page on focus */
+        transition: border-color var(--duration-ui) var(--ease-out-ui), box-shadow var(--duration-ui) var(--ease-out-ui);
+    }
+
+    .form-input::placeholder {
+        color: var(--color-neutral-400);
     }
 
     .form-input:hover {
-        border-color: var(--color-neutral-400);
+        border-color: rgb(15 23 42 / 0.24);
     }
 
     .form-input:focus {
         outline: none;
         border-color: var(--color-primary-500);
-        box-shadow: 0 0 0 3px rgb(31 182 205 / 0.12);
-        box-shadow: 0 0 0 3px var(--color-primary-100);
+        box-shadow: 0 0 0 4px var(--color-primary-100);
     }
 
     .form-input:disabled {
@@ -375,49 +426,59 @@
     }
 
     /* ---------- Buttons ---------- */
+    /* Pill buttons. Colour changes on hover; the only motion is a press-down scale. */
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        min-height: 2.75rem;
         font-weight: 600;
-        border-radius: var(--radius-lg);
-        transition: all var(--transition-fast);
+        border-radius: var(--radius-full);
+        transition:
+            background-color var(--duration-ui) var(--ease-out-ui),
+            color var(--duration-ui) var(--ease-out-ui),
+            border-color var(--duration-ui) var(--ease-out-ui),
+            transform var(--duration-ui) var(--ease-out-ui);
         cursor: pointer;
         white-space: nowrap;
         letter-spacing: -0.01em;
     }
 
     .btn:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 3px var(--color-primary-200);
+        outline: 2px solid var(--color-primary-500);
+        outline-offset: 2px;
     }
 
     .btn:disabled {
-        opacity: 0.5;
+        opacity: 0.45;
         cursor: not-allowed;
     }
 
-    .btn:active:not(:disabled) {
-        transform: scale(0.97) translateY(0) !important;
-        transition-duration: 80ms;
+    @media (prefers-reduced-motion: no-preference) {
+        .btn:active:not(:disabled) {
+            transform: scale(0.97);
+            transition-duration: 100ms;
+        }
     }
 
     .btn-sm {
-        padding: 0.375rem 0.875rem;
-        font-size: 0.8125rem;
+        min-height: 2.25rem;
+        padding: 0.375rem 1rem;
+        font-size: 0.875rem;
         gap: 0.375rem;
     }
 
     .btn-md {
-        padding: 0.5625rem 1.125rem;
+        padding: 0.625rem 1.25rem;
         font-size: 0.9375rem;
         gap: 0.5rem;
     }
 
     .btn-lg {
-        padding: 0.8125rem 1.75rem;
+        min-height: 3rem;
+        padding: 0.75rem 1.75rem;
         font-size: 1rem;
-        gap: 0.625rem;
+        gap: 0.5rem;
     }
 
     .btn-primary {
@@ -425,62 +486,51 @@
            primary-800 clears WCAG AA (6.0:1) while staying recognizably teal. */
         background: var(--color-primary-800);
         color: white;
-        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.08);
     }
 
     .btn-primary:hover:not(:disabled) {
         background: var(--color-primary-900);
-        box-shadow: var(--shadow-brand);
-        transform: translateY(-1px);
-    }
-
-    .btn-primary:active:not(:disabled) {
-        transform: translateY(0);
     }
 
     .btn-secondary {
-        background: var(--background-tertiary);
+        background: rgb(15 23 42 / 0.06);
         color: var(--foreground);
     }
 
     .btn-secondary:hover:not(:disabled) {
-        background: var(--color-neutral-200);
+        background: rgb(15 23 42 / 0.1);
     }
 
     .btn-outline {
         background: transparent;
-        border: 1.5px solid var(--color-primary-500);
-        color: var(--color-primary-600);
+        border: 1px solid rgb(21 107 138 / 0.4);
+        color: var(--color-primary-800);
     }
 
     .btn-outline:hover:not(:disabled) {
-        background: var(--color-primary-500);
-        color: white;
-        box-shadow: var(--shadow-sm);
+        background: var(--color-primary-50);
+        border-color: var(--color-primary-800);
     }
 
     .btn-ghost {
         background: transparent;
-        color: var(--text-muted);
+        color: var(--color-neutral-600);
     }
 
     .btn-ghost:hover:not(:disabled) {
-        background: var(--background-tertiary);
+        background: rgb(15 23 42 / 0.05);
         color: var(--foreground);
     }
 
     .btn-solid {
         background: white;
         color: var(--color-navy-900);
-        border: 1.5px solid var(--color-neutral-200);
-        box-shadow: var(--shadow-xs);
+        border: 1px solid rgb(15 23 42 / 0.12);
     }
 
     .btn-solid:hover:not(:disabled) {
         background: var(--color-neutral-50);
-        border-color: var(--color-neutral-300);
-        box-shadow: var(--shadow-sm);
-        transform: translateY(-1px);
+        border-color: rgb(15 23 42 / 0.2);
     }
 
     /* ---------- Icon Button ---------- */
@@ -492,9 +542,9 @@
         min-width: 2.75rem;
         min-height: 2.75rem;
         padding: 0.5rem;
-        border-radius: var(--radius-lg);
+        border-radius: var(--radius-full);
         color: var(--text-muted);
-        transition: all var(--transition-fast);
+        transition: background-color var(--duration-ui) var(--ease-out-ui), color var(--duration-ui) var(--ease-out-ui);
     }
 
     .icon-btn:hover {
@@ -627,34 +677,37 @@
 /* ---------- Typography ---------- */
 @utility display-1 {
     font-size: clamp(2.75rem, 6vw, 5rem);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.05;
     letter-spacing: -0.03em;
 }
 
 @utility display-2 {
     font-size: clamp(2.25rem, 5vw, 4rem);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.08;
     letter-spacing: -0.025em;
 }
 
+/* Headings scale with the smaller of width and height, so short laptop
+   screens (650–800px tall) get proportionally smaller display type while
+   tall desktops keep the full size. Phones are unchanged (vw is smaller). */
 @utility heading-1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(2rem, min(5vw, 6.5vh), 3.5rem);
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.025em;
 }
 
 @utility heading-2 {
-    font-size: clamp(1.625rem, 4vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.75rem, min(4vw, 5vh), 2.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
 }
 
 @utility heading-3 {
-    font-size: clamp(1.25rem, 3vw, 1.625rem);
+    font-size: clamp(1.25rem, min(3vw, 3.6vh), 1.625rem);
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: -0.015em;
@@ -753,6 +806,16 @@
 }
 
 /* ---------- Animations ---------- */
+/* Menus and popovers materialise from their trigger: a short fade + rise, never a bounce. */
+@keyframes popover-in {
+    from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+
+@utility animate-popover-in {
+    animation: popover-in var(--duration-ui) var(--ease-out-ui) both;
+}
+
 @utility animate-fade-in {
     animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -878,9 +941,50 @@
 .reveal-d4 { transition-delay: 0.4s; }
 .reveal-d5 { transition-delay: 0.5s; }
 
+/* ---------- Page navigation ----------
+   Browsers with View Transitions: <PageTransition> cross-fades the page content (old out, new in)
+   while the header, footer and floating buttons stay put. Everyone else gets a plain fade-in. */
 @keyframes page-enter {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0);    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@supports not (view-transition-name: none) {
+    @media (prefers-reduced-motion: no-preference) {
+        .page-enter-fallback { animation: page-enter 0.3s var(--ease-out-ui) both; }
+    }
+}
+
+@keyframes page-fade-out {
+    to { opacity: 0; }
+}
+
+@keyframes page-fade-in {
+    from { opacity: 0; }
+}
+
+::view-transition-old(.page-fade) {
+    animation: page-fade-out 160ms ease-in both;
+}
+
+::view-transition-new(.page-fade) {
+    /* Starts as the old page finishes leaving, so the swap never shows a blank frame */
+    animation: page-fade-in 320ms var(--ease-out-ui) 120ms both;
+}
+
+/* The unchanged shell (header/footer) must not flash while the content swaps */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
 }
 
 @keyframes teamDialogIn {
@@ -944,4 +1048,179 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     &::-webkit-scrollbar { display: none; }
+}
+
+/* ---------- Progressive disclosure (components/ui/expandable) ----------
+   Everything below applies only under html.js, which an inline script in the
+   root layout sets before first paint. Without JavaScript nothing collapses
+   and the toggles stay hidden, so all content remains readable.
+
+   Collapsed content is never removed: text is line-clamped and surplus
+   items/rows are clipped the same way as .sr-only, so search engines and
+   screen readers still get the full text.
+
+   Breakpoints: base < 640px, sm 640–1023px, lg ≥ 1024px. Each component
+   sets data-more-{base,sm,lg}="on" where it has hidden content at that size. */
+/* Measured sticky header height (components/layout/Header.tsx): 65px below
+   768px, 106px from 768px. The section nav is desktop-only. */
+:root {
+    --site-header-h: 65px;
+    --section-nav-h: 0px;
+}
+@media (min-width: 768px) {
+    :root {
+        --site-header-h: 106px;
+    }
+}
+/* From 1280px the main menu sits in the logo row (components/layout/Header.tsx). */
+@media (min-width: 1280px) {
+    :root {
+        --site-header-h: 65px;
+    }
+}
+
+.xp-toggle,
+.xp-fade {
+    display: none;
+}
+
+.js .xp[data-more-base="on"] > .xp-toggle {
+    display: inline-flex;
+}
+.js .xp[data-state="collapsed"][data-more-base="on"] .xp-fade {
+    display: block;
+}
+.js .xp-text[data-state="collapsed"][data-more-base="on"] .xp-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--xp-lines-base);
+    line-clamp: var(--xp-lines-base);
+    overflow: hidden;
+}
+.js .xp[data-state="collapsed"] [data-xp-hide-base] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (min-width: 640px) {
+    .js .xp[data-more-sm="off"] > .xp-toggle,
+    .js .xp[data-state][data-more-sm="off"] .xp-fade {
+        display: none;
+    }
+    .js .xp[data-more-sm="on"] > .xp-toggle {
+        display: inline-flex;
+    }
+    .js .xp[data-state="collapsed"][data-more-sm="on"] .xp-fade {
+        display: block;
+    }
+    .js .xp-text[data-state="collapsed"][data-more-sm="off"] .xp-clamp {
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        overflow: visible;
+    }
+    .js .xp-text[data-state="collapsed"][data-more-sm="on"] .xp-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--xp-lines-sm);
+        line-clamp: var(--xp-lines-sm);
+        overflow: hidden;
+    }
+    .js .xp[data-state="collapsed"] [data-xp-hide-base]:not([data-xp-hide-sm]) {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+    .js .xp[data-state="collapsed"] [data-xp-hide-sm] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --section-nav-h: 49px;
+    }
+    .js .xp[data-more-lg="off"] > .xp-toggle,
+    .js .xp[data-state][data-more-lg="off"] .xp-fade {
+        display: none;
+    }
+    .js .xp[data-more-lg="on"] > .xp-toggle {
+        display: inline-flex;
+    }
+    .js .xp[data-state="collapsed"][data-more-lg="on"] .xp-fade {
+        display: block;
+    }
+    .js .xp-text[data-state="collapsed"][data-more-lg="off"] .xp-clamp {
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+        overflow: visible;
+    }
+    .js .xp-text[data-state="collapsed"][data-more-lg="on"] .xp-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--xp-lines-lg);
+        line-clamp: var(--xp-lines-lg);
+        overflow: hidden;
+    }
+    .js .xp[data-state="collapsed"] [data-xp-hide-sm]:not([data-xp-hide-lg]) {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+    .js .xp[data-state="collapsed"] [data-xp-hide-lg] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+/* Anchored sections clear the sticky header and, on desktop, the section nav. */
+.pd-sections [id] {
+    scroll-margin-top: calc(var(--site-header-h) + var(--section-nav-h) + 1rem);
+}
+
+/* With the desktop section nav, sticky columns sit below it instead of under it. */
+@media (min-width: 1024px) {
+    .pd-has-section-nav .sticky.top-24,
+    .pd-has-section-nav .pd-sticky-col {
+        top: calc(var(--site-header-h) + var(--section-nav-h) + 1rem);
+    }
+}
+
+/* Mobile enquiry bar: keep page content and the floating buttons clear of it. */
+@media (max-width: 1023px) {
+    body:has([data-mobile-enquiry-bar]) {
+        padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    }
+    body:has([data-mobile-enquiry-bar]) .floating-actions {
+        bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
 }

@@ -1,14 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import type { CSSProperties } from "react";
-
-type FilterCategory = "All" | "Optical" | "Dental Chairs" | "Surgical" | "Ergonomic" | "Burs" | "Endo & Imaging";
+import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
+import SectionHeader from "./SectionHeader";
 
 const brands = [
     {
@@ -17,7 +12,6 @@ const brands = [
         image: "/BrandLogo/AdmetecLogo.jpeg",
         href: "/product/admetec",
         badge: "Optical",
-        filter: "Optical" as FilterCategory,
         productCount: 12,
         credibility: "Israeli-made · ISO certified",
         priceFrom: "₹1,12,000",
@@ -28,7 +22,6 @@ const brands = [
         image: "/BrandLogo/AlmadentLogo.jpeg",
         href: "/product/almadent",
         badge: "Dental Chairs",
-        filter: "Dental Chairs" as FilterCategory,
         productCount: 7,
         credibility: "CE marked · Clinical-grade",
         priceFrom: null,
@@ -39,7 +32,6 @@ const brands = [
         image: "/BrandLogo/MedesyLogo.jpeg",
         href: "/product/medesy",
         badge: "Surgical",
-        filter: "Surgical" as FilterCategory,
         productCount: 21,
         credibility: "Italian-made · Hospital approved",
         priceFrom: null,
@@ -50,7 +42,6 @@ const brands = [
         image: "/BrandLogo/SalliLogo.jpeg",
         href: "/product/salli",
         badge: "Ergonomic",
-        filter: "Ergonomic" as FilterCategory,
         productCount: 5,
         credibility: "Finnish-engineered · Clinically proven",
         priceFrom: "₹23,999",
@@ -61,7 +52,6 @@ const brands = [
         image: "/BrandLogo/StraussLogo.jpeg",
         href: "/product/strauss",
         badge: "Burs",
-        filter: "Burs" as FilterCategory,
         productCount: 39,
         credibility: "ISO 9001 · Industry standard",
         priceFrom: null,
@@ -72,57 +62,44 @@ const brands = [
         image: "/BrandLogo/BondentGroupLogo.jpg",
         href: "/product/bondent",
         badge: "Endo & Imaging",
-        filter: "Endo & Imaging" as FilterCategory,
         productCount: 50,
         credibility: "German-registered · CE certified",
         priceFrom: null,
     },
 ];
 
-const FILTER_TABS: FilterCategory[] = ["All", "Optical", "Dental Chairs", "Surgical", "Ergonomic", "Burs", "Endo & Imaging"];
-
-type BrandItem = typeof brands[number];
+type BrandItem = (typeof brands)[number];
 
 function BrandCard({ brand }: { brand: BrandItem }) {
     return (
-        <Link
-            href={brand.href}
-            className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-200 hover:border-primary-200 hover:shadow-[0_6px_24px_rgba(0,0,0,0.11)]"
-        >
-            {/* Image */}
-            <div className="relative h-36 w-full overflow-hidden bg-white sm:h-40">
+        <Link href={brand.href} className={`${INTERACTIVE_CARD} h-full p-2`}>
+            <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-neutral-50">
                 <Image
                     src={brand.image}
-                    alt={brand.name}
+                    alt={`${brand.name} logo`}
                     fill
-                    sizes="(max-width: 768px) 180px, (max-width: 1024px) 33vw, 20vw"
-                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 280px, (max-width: 1024px) 33vw, 400px"
+                    className="object-contain p-6 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]"
                 />
             </div>
 
-            {/* Info */}
-            <div className="flex flex-1 flex-col border-t border-neutral-100 px-3.5 py-3.5">
-                <span className="mb-2 w-fit rounded-full border border-primary-100 bg-primary-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700">
-                    {brand.badge}
-                </span>
+            <div className="flex flex-1 flex-col px-3 pt-4 pb-3">
+                <p className="text-primary-700 text-[13px] font-medium">{brand.badge}</p>
+                <h3 className="mt-1 text-lg font-semibold tracking-[-0.015em] text-neutral-900">{brand.name}</h3>
+                <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-neutral-500">{brand.tagline}</p>
 
-                <h3 className="mb-1 text-sm font-bold text-neutral-900 transition-colors group-hover:text-primary-700">
-                    {brand.name}
-                </h3>
-                <p className="mb-2.5 flex-1 line-clamp-2 text-[11px] leading-relaxed text-neutral-500">
-                    {brand.tagline}
-                </p>
-
-                <div className="flex items-center justify-between pt-1">
-                    <span className="text-[11px] font-medium text-neutral-400">{brand.productCount} products</span>
-                    {brand.priceFrom && (
-                        <span className="text-[11px] font-semibold text-neutral-700">from {brand.priceFrom}</span>
-                    )}
-                </div>
-
-                <div className="mt-2.5 flex items-center gap-1 text-xs font-semibold text-primary-600 transition-all duration-150 group-hover:gap-1.5">
-                    Explore
-                    <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
+                <div className="mt-auto flex items-center justify-between gap-3 pt-5 text-[13px]">
+                    <span className="text-neutral-500 tabular-nums">
+                        {brand.productCount} products
+                        {brand.priceFrom && (
+                            <>
+                                {" · from "}
+                                <span className="font-medium text-neutral-800">{brand.priceFrom}</span>
+                            </>
+                        )}
+                    </span>
+                    <ArrowRight className="text-primary-700 h-4 w-4 shrink-0 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
                 </div>
             </div>
         </Link>
@@ -130,81 +107,30 @@ function BrandCard({ brand }: { brand: BrandItem }) {
 }
 
 export default function BrandsSection() {
-    const [activeFilter, setActiveFilter] = useState<FilterCategory>("All");
-
-    const filteredBrands = activeFilter === "All" ? brands : brands.filter((b) => b.filter === activeFilter);
-
-    const gridClass = cn(
-        "gap-3 md:gap-4",
-        filteredBrands.length >= 6
-            ? "grid-cols-3 sm:grid-cols-6 lg:grid-cols-6"
-            : filteredBrands.length >= 4
-            ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
-            : filteredBrands.length === 3
-            ? "grid-cols-1 sm:grid-cols-3"
-            : filteredBrands.length === 2
-            ? "grid-cols-2 max-w-lg mx-auto"
-            : "grid-cols-1 max-w-xs mx-auto"
-    );
-
     return (
-        <section className="bg-white py-10 md:py-14">
-            <div className="container">
-
-                {/* Section header */}
-                <ScrollReveal variant="up">
-                    <div className="mb-6 flex items-center justify-between">
-                        <div>
-                            <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Trusted Manufacturers</p>
-                            <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Shop by Brand</h2>
-                        </div>
-                        <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            View all
-                            <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
-                        </Link>
-                    </div>
+        <section className="bg-white">
+            <div className="section container">
+                <ScrollReveal variant="fade">
+                    <SectionHeader title="Shop by Brand" subtitle="Six specialist manufacturers, one supplier." link={{ href: "/products", label: "View all" }} />
                 </ScrollReveal>
 
-                {/* Filter pills */}
-                <ScrollReveal variant="fade" delay={100}>
-                    <div className="mb-6 flex flex-wrap items-center gap-2">
-                        {FILTER_TABS.map((tab) => (
-                            <button
-                                key={tab}
-                                onClick={() => setActiveFilter(tab)}
-                                className={cn(
-                                    "rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-150",
-                                    activeFilter === tab
-                                        ? "bg-primary-500 text-white shadow-sm"
-                                        : "border border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 hover:text-primary-600"
-                                )}
-                            >
-                                {tab}
-                            </button>
-                        ))}
-                    </div>
-                </ScrollReveal>
-
-                {/* Mobile: horizontal scroll */}
-                <div
-                    className="flex gap-3 overflow-x-auto pb-3 md:hidden [&::-webkit-scrollbar]:hidden"
-                    style={{ scrollbarWidth: "none" } as CSSProperties}
-                >
-                    {filteredBrands.map((brand) => (
-                        <div key={`mob-${brand.name}`} className="w-[180px] flex-none">
+                {/* Mobile: a snapping shelf that bleeds to the screen edge */}
+                <ul className="scrollbar-hide -mx-(--container-padding) flex snap-x snap-mandatory scroll-px-(--container-padding) gap-4 overflow-x-auto px-(--container-padding) pb-4 md:hidden">
+                    {brands.map((brand) => (
+                        <li key={brand.name} className="w-[78%] max-w-[300px] flex-none snap-start">
                             <BrandCard brand={brand} />
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
 
-                {/* md+: grid */}
-                <div className={cn("hidden md:grid", gridClass)}>
-                    {filteredBrands.map((brand, i) => (
-                        <ScrollReveal key={brand.name} variant="up" delay={i * 75} threshold={0.05}>
+                {/* md+: calm 3 × 2 grid */}
+                <ul className="hidden gap-5 md:grid md:grid-cols-3 lg:gap-6">
+                    {brands.map((brand) => (
+                        <li key={brand.name}>
                             <BrandCard brand={brand} />
-                        </ScrollReveal>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );

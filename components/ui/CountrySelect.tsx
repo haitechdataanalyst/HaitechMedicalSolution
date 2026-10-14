@@ -119,11 +119,11 @@ export default function CountrySelect({ label, error, value, onChange, name, req
     };
 
     return (
-        <div className="w-full" ref={containerRef}>
+        <div className="relative w-full" ref={containerRef}>
             {label && (
                 <label className="form-label">
                     {label}
-                    {required && <span className="text-error ml-1">*</span>}
+                    {required && <span className="text-error ml-0.5" aria-hidden="true">*</span>}
                 </label>
             )}
 
@@ -134,7 +134,7 @@ export default function CountrySelect({ label, error, value, onChange, name, req
             <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className={cn("form-input flex w-full items-center justify-between text-left", error && "form-input-error", !selectedCountry && "text-muted")}
+                className={cn("form-input flex w-full items-center justify-between text-left", error && "form-input-error", !selectedCountry && "text-neutral-500")}
             >
                 <span className="flex items-center gap-2">
                     {selectedCountry ? (
@@ -146,44 +146,45 @@ export default function CountrySelect({ label, error, value, onChange, name, req
                         placeholder
                     )}
                 </span>
-                <ChevronDown className={cn("text-muted h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")} />
+                <ChevronDown className={cn("h-4 w-4 shrink-0 text-neutral-500 transition-transform duration-200 ease-out", isOpen && "rotate-180")} aria-hidden="true" />
             </button>
 
             {/* Dropdown */}
             {isOpen && (
-                <div className="absolute z-50 mt-1 w-full max-w-md overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
+                <div className="material-popover animate-popover-in absolute z-50 mt-2 w-full max-w-md origin-top overflow-hidden">
                     {/* Search */}
-                    <div className="border-b border-neutral-100 p-2">
+                    <div className="p-2">
                         <div className="relative">
-                            <Search className="text-muted absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+                            <Search className="absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-neutral-500" aria-hidden="true" />
                             <input
                                 ref={inputRef}
                                 type="text"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 placeholder="Search countries..."
-                                className="focus:ring-primary-500 w-full rounded-md border border-neutral-200 py-2 pr-3 pl-9 text-sm focus:border-transparent focus:ring-2 focus:outline-none"
+                                aria-label="Search countries"
+                                className="focus:ring-primary-500 h-11 w-full rounded-full bg-neutral-900/[0.05] pr-4 pl-10 text-base text-neutral-900 placeholder:text-neutral-500 focus:bg-white focus:ring-2 focus:outline-none sm:text-[15px]"
                             />
                         </div>
                     </div>
 
                     {/* Country list */}
-                    <div className="max-h-60 overflow-y-auto">
+                    <div className="max-h-64 overflow-y-auto overscroll-contain px-1.5 pb-1.5">
                         {filteredCountries.length > 0 ? (
                             filteredCountries.map((country) => (
                                 <button
                                     key={country.code}
                                     type="button"
                                     onClick={() => handleSelect(country)}
-                                    className={cn("flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors hover:bg-neutral-50", value === country.code && "bg-primary-50")}
+                                    className={cn("flex min-h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-[15px] text-neutral-800 transition-colors hover:bg-neutral-900/[0.05]", value === country.code && "bg-primary-50 text-primary-800")}
                                 >
                                     <span className="text-xl">{country.flag}</span>
                                     <span className="flex-1">{country.name}</span>
-                                    <span className="text-muted text-sm">{country.dialCode}</span>
+                                    <span className="text-[13px] text-neutral-500 tabular-nums">{country.dialCode}</span>
                                 </button>
                             ))
                         ) : (
-                            <div className="text-muted px-4 py-8 text-center">No countries found</div>
+                            <div className="px-4 py-8 text-center text-sm text-neutral-500">No countries found</div>
                         )}
                     </div>
                 </div>

@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className, label, erro
             {label && (
                 <label htmlFor={inputId} className="form-label">
                     {label}
-                    {props.required && <span className="text-error ml-1">*</span>}
+                    {props.required && <span className="text-error ml-0.5" aria-hidden="true">*</span>}
                 </label>
             )}
             <input

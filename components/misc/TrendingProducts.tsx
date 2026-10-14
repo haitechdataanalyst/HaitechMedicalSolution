@@ -1,11 +1,7 @@
-"use client";
-
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { Product } from "@/types";
 import ProductCard from "@/components/products/ProductCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import type { CSSProperties } from "react";
+import SectionHeader from "./SectionHeader";
 
 interface ProductWithPath extends Product {
     path: string;
@@ -15,47 +11,39 @@ interface TrendingProductsProps {
     products: ProductWithPath[];
 }
 
+// Three calm rows of four on desktop; "See all" carries the rest of the catalog.
+const VISIBLE_COUNT = 12;
+
 function productImage(product: ProductWithPath) {
     return product.defaultImage || product.variants?.[0]?.image || product.gallery?.[0];
 }
 
 export default function TrendingProducts({ products }: TrendingProductsProps) {
-    const items = products.slice(0, 18); // 6 cols × 3 rows at the widest breakpoint
+    const items = products.slice(0, VISIBLE_COUNT);
 
     return (
-        <section className="bg-neutral-50/60 py-10 md:py-14">
-            <div className="container">
-                <ScrollReveal variant="up">
-                    <div className="mb-6 flex items-center justify-between">
-                        <div>
-                            <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary-600">Featured Selection</p>
-                            <h2 className="text-xl font-bold text-neutral-900 md:text-2xl">Trending Products</h2>
-                        </div>
-                        <Link href="/products" className="group flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            See all
-                            <ChevronRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
-                        </Link>
-                    </div>
+        <section className="bg-neutral-50">
+            <div className="section container">
+                <ScrollReveal variant="fade">
+                    <SectionHeader title="Trending Products" link={{ href: "/products", label: "See all" }} />
                 </ScrollReveal>
 
-                {/* Mobile: horizontal scroll */}
-                <div
-                    className="flex gap-3 overflow-x-auto pb-3 md:hidden [&::-webkit-scrollbar]:hidden"
-                    style={{ scrollbarWidth: "none" } as CSSProperties}
-                >
+                {/* Mobile: a snapping shelf that bleeds to the screen edge */}
+                <ul className="scrollbar-hide -mx-(--container-padding) flex snap-x snap-mandatory scroll-px-(--container-padding) gap-3 overflow-x-auto px-(--container-padding) pb-4 md:hidden">
                     {items.map((product) => (
-                        <div key={`mob-${product.slug}`} className="w-[160px] flex-none">
+                        <li key={product.slug} className="w-[46%] max-w-[200px] flex-none snap-start">
                             <ProductCard entity={product} href={product.path} image={productImage(product)} />
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
 
-                {/* Tablet+: static grid — three rows at the widest breakpoint, not a shuffled carousel */}
-                <div className="hidden gap-4 md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+                <ul className="hidden gap-5 md:grid md:grid-cols-3 lg:gap-6 xl:grid-cols-4">
                     {items.map((product) => (
-                        <ProductCard key={product.slug} entity={product} href={product.path} image={productImage(product)} />
+                        <li key={product.slug} className="grid">
+                            <ProductCard entity={product} href={product.path} image={productImage(product)} />
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );

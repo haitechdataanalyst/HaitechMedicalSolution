@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "./surfaces";
 
 interface SkeletonProps {
     className?: string;
@@ -7,7 +8,7 @@ interface SkeletonProps {
 export function Skeleton({ className }: SkeletonProps) {
     return (
         <div
-            className={cn("animate-pulse rounded-md bg-neutral-200", className)}
+            className={cn("rounded-lg bg-neutral-900/[0.06] motion-safe:animate-pulse", className)}
             aria-hidden="true"
         />
     );
@@ -15,15 +16,15 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function ProductCardSkeleton() {
     return (
-        <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white">
-            <Skeleton className="aspect-square w-full rounded-none" />
-            <div className="flex flex-col gap-2 p-3.5">
+        <div className={cn(SURFACE_CARD, "flex flex-col p-2")}>
+            <Skeleton className="aspect-square w-full rounded-xl" />
+            <div className="flex flex-col gap-2 px-2.5 pt-4 pb-2.5">
                 <Skeleton className="h-3 w-16 rounded-full" />
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-3/4" />
                 <div className="mt-2 flex items-center justify-between">
                     <Skeleton className="h-3 w-20" />
-                    <Skeleton className="h-6 w-6 rounded-lg" />
+                    <Skeleton className="h-3 w-12" />
                 </div>
             </div>
         </div>
@@ -32,11 +33,11 @@ export function ProductCardSkeleton() {
 
 export function CategoryCardSkeleton() {
     return (
-        <div className="flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white">
-            <Skeleton className="aspect-square w-full rounded-none" />
-            <div className="flex flex-col gap-2 p-3.5">
+        <div className={cn(SURFACE_CARD, "flex flex-col p-2")}>
+            <Skeleton className="aspect-square w-full rounded-xl" />
+            <div className="flex flex-col gap-2 px-2.5 pt-4 pb-2.5">
                 <Skeleton className="h-4 w-3/4" />
-                <Skeleton className="h-7 w-24 rounded-full" />
+                <Skeleton className="h-4 w-20 rounded-full" />
             </div>
         </div>
     );
@@ -44,10 +45,10 @@ export function CategoryCardSkeleton() {
 
 export function PageHeaderSkeleton() {
     return (
-        <div className="border-b border-neutral-100 bg-white">
-            <div className="container py-10 md:py-12">
+        <div className="bg-white">
+            <div className="container py-10 md:py-14">
                 <Skeleton className="mb-3 h-4 w-32" />
-                <Skeleton className="mb-2 h-8 w-64 sm:w-96" />
+                <Skeleton className="mb-3 h-9 w-64 sm:w-96" />
                 <Skeleton className="h-5 w-48" />
             </div>
         </div>

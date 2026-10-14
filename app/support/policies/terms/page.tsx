@@ -1,36 +1,34 @@
-import { FileText, ArrowLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { getMetadata } from "@/lib/metadata";
 
-export const metadata = getMetadata("supportPolicies");
+export const metadata = getMetadata("supportTerms");
 
 export default function TermsOfServicePage() {
     return (
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
             {/* Back Link */}
-            <Link href="/support/policies" className="text-muted hover:text-foreground mb-6 inline-flex items-center gap-2 text-sm">
-                <ArrowLeft className="h-4 w-4" />
+            <Link
+                href="/support/policies"
+                className="-ml-2 inline-flex min-h-11 items-center gap-1 rounded-full px-2 text-[15px] font-medium text-primary-700 hover:text-primary-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+            >
+                <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 Back to Policies
             </Link>
 
             {/* Header */}
-            <div className="mb-10 flex items-center gap-5 rounded-2xl border border-emerald-100 bg-emerald-50 p-6">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm">
-                    <FileText className="h-8 w-8 text-emerald-600" />
-                </div>
-                <div>
-                    <h1 className="heading-2">Terms of Service</h1>
-                    <p className="mt-1 text-sm text-neutral-500">Last updated: February 2026</p>
-                </div>
-            </div>
+            <header className="mt-6 mb-12 border-b border-neutral-900/[0.08] pb-8">
+                <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-neutral-900 md:text-5xl">Terms of Service</h1>
+                <p className="mt-3 text-[15px] text-neutral-500">Last updated: February 2026</p>
+            </header>
 
             {/* Content */}
-            <div className="prose prose-neutral max-w-none">
+            <div className="max-w-[68ch] [&_section]:mb-12 [&_section:last-child]:mb-0 [&_h2]:mb-4 [&_h2]:text-xl [&_h2]:leading-snug [&_h2]:font-semibold [&_h2]:tracking-[-0.015em] [&_h2]:text-neutral-900 md:[&_h2]:text-[1.375rem] [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:text-[17px] [&_h3]:font-semibold [&_h3]:tracking-[-0.01em] [&_h3]:text-neutral-900 [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-neutral-700 md:[&_p]:text-[17px] [&_li]:text-base [&_li]:leading-[1.7] [&_li]:text-neutral-700 md:[&_li]:text-[17px] [&_li]:marker:text-neutral-400 [&_strong]:font-semibold [&_strong]:text-neutral-900 [&_a]:font-medium [&_a]:text-primary-700 [&_a]:underline [&_a]:underline-offset-4">
                 <section className="mb-8">
                     <h2 className="heading-4 mb-4">1. Introduction</h2>
                     <p className="text-muted mb-4">
                         Welcome to Haitech Medical. These Terms of Service (&quot;Terms&quot;) govern your use of our website, products, and services. By accessing or
-                        using our website at haitechmedical.com.au, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not
+                        using our website at medical.haitech-group.com, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not
                         use our services.
                     </p>
                 </section>
@@ -67,7 +65,7 @@ export default function TermsOfServicePage() {
                     <h3 className="mb-2 font-semibold">Pricing and Quotes</h3>
                     <p className="text-muted mb-4">
                         Products listed on our website are available on a quote-request basis. Prices provided in quote responses are valid for the period specified in the
-                        quote and are subject to change without prior notice. All prices are in AUD unless otherwise stated.
+                        quote and are subject to change without prior notice. All prices are in INR unless otherwise stated.
                     </p>
                     <h3 className="mb-2 font-semibold">Availability</h3>
                     <p className="text-muted mb-4">
@@ -166,9 +164,9 @@ export default function TermsOfServicePage() {
                 <section>
                     <h2 className="heading-4 mb-4">12. Contact Us</h2>
                     <p className="text-muted mb-4">If you have any questions about these Terms of Service, please contact us at:</p>
-                    <div className="rounded-2xl border border-neutral-100 bg-neutral-50 p-5">
+                    <div className="space-y-1 rounded-2xl bg-neutral-50 p-6">
                         <p className="font-medium">Haitech Medical</p>
-                        <p className="text-muted text-sm">Email: info@haitechmedical.com.au</p>
+                        <p className="text-muted text-sm">Email: sales@haitech-group.com</p>
                         <p className="text-muted text-sm">Phone: +91 8291939355</p>
                         <p className="text-muted text-sm">
                             Address: Office No. 912, 9th Floor, Kohinoor Compound, Swastik Disa Corporate Park, Lal Bahadur Shastri Marg, Opp. Shreyas Cinema Road,

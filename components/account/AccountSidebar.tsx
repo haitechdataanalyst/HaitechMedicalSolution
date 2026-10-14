@@ -2,18 +2,22 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, ShoppingBag, Heart, MapPin, Settings, HelpCircle, LogOut, ChevronRight, BadgeCheck } from "lucide-react";
+import { LayoutDashboard, ShoppingBag, Heart, MapPin, Settings, HelpCircle, LogOut, BadgeCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SURFACE_CARD } from "@/components/ui/surfaces";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { useAuth } from "@/components/auth/AuthProvider";
 
 const NAV = [
-    { href: "/account",           label: "Dashboard",      icon: LayoutDashboard },
-    { href: "/account/orders",    label: "My Orders",      icon: ShoppingBag     },
-    { href: "/account/wishlist",  label: "Wishlist",       icon: Heart           },
-    { href: "/account/addresses", label: "Addresses",      icon: MapPin          },
-    { href: "/account/settings",  label: "Account Settings", icon: Settings      },
+    { href: "/account", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/account/orders", label: "My Orders", icon: ShoppingBag },
+    { href: "/account/wishlist", label: "Wishlist", icon: Heart },
+    { href: "/account/addresses", label: "Addresses", icon: MapPin },
+    { href: "/account/settings", label: "Account Settings", icon: Settings },
 ];
+
+const ROW =
+    "flex min-h-11 w-full items-center gap-3 rounded-xl px-3 text-[15px] font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500";
 
 export default function AccountSidebar() {
     const pathname = usePathname();
@@ -21,14 +25,11 @@ export default function AccountSidebar() {
     const { count: wishlistCount } = useWishlist();
     const { user, logout } = useAuth();
 
-    const isActive = (href: string) =>
-        href === "/account" ? pathname === "/account" : pathname.startsWith(href);
+    const isActive = (href: string) => (href === "/account" ? pathname === "/account" : pathname.startsWith(href));
 
     const fullName = user ? `${user.firstName} ${user.lastName}`.trim() : "";
     const initials = user ? `${user.firstName?.[0] ?? ""}${user.lastName?.[0] ?? ""}`.toUpperCase() : "";
-    const joinedDate = user
-        ? new Date(user.createdAt).toLocaleDateString("en-IN", { month: "long", year: "numeric" })
-        : "";
+    const joinedDate = user ? new Date(user.createdAt).toLocaleDateString("en-IN", { month: "long", year: "numeric" }) : "";
 
     const handleSignOut = async () => {
         await logout();
@@ -36,86 +37,70 @@ export default function AccountSidebar() {
     };
 
     return (
-        <aside className="flex w-full flex-col lg:w-72 lg:shrink-0">
-            {/* User Card */}
-            <div className="mb-4 overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                {/* Gradient band */}
-                <div className="h-14 bg-gradient-to-r from-primary-500 to-primary-600" />
-
-                <div className="px-5 pb-5">
-                    {/* Avatar */}
-                    <div className="-mt-7 mb-3 flex items-end justify-between">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white bg-primary-700 text-lg font-bold text-white shadow-md">
-                            {initials}
-                        </div>
+        <aside className="flex w-full flex-col gap-4 lg:w-64 lg:shrink-0">
+            {/* Identity */}
+            <div className={cn(SURFACE_CARD, "p-5")}>
+                <div className="flex items-center gap-3">
+                    <div aria-hidden="true" className="bg-primary-50 text-primary-800 flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold">
+                        {initials}
+                    </div>
+                    <div className="min-w-0">
+                        <p className="truncate text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{fullName}</p>
+                        <p className="truncate text-[13px] text-neutral-500">{user?.email}</p>
+                    </div>
+                </div>
+                {(user?.phone || user?.emailVerified) && (
+                    <div className="mt-4 flex flex-wrap items-center gap-2 text-[13px] text-neutral-500">
                         {user?.emailVerified && (
-                            <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700 border border-emerald-200">
-                                <BadgeCheck className="h-3 w-3" />
-                                Email Verified
+                            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                                <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                                Email verified
                             </span>
                         )}
+                        {user?.phone && <span className="tabular-nums">{user.phone}</span>}
                     </div>
-
-                    <p className="text-sm font-bold text-neutral-900">{fullName}</p>
-                    <p className="mt-0.5 text-xs text-neutral-500">{user?.email}</p>
-                    {user?.phone && <p className="mt-1 text-[11px] font-medium text-neutral-500">{user.phone}</p>}
-                </div>
+                )}
             </div>
 
             {/* Navigation */}
-            <nav className="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm">
-                <div className="px-3 py-3">
+            <nav aria-label="Account" className={cn(SURFACE_CARD, "p-2")}>
+                <ul className="flex flex-col gap-0.5">
                     {NAV.map(({ href, label, icon: Icon }) => {
                         const active = isActive(href);
                         const badge = href === "/account/wishlist" && wishlistCount > 0 ? wishlistCount : null;
                         return (
-                            <Link
-                                key={href}
-                                href={href}
-                                className={cn(
-                                    "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
-                                    active
-                                        ? "bg-primary-50 text-primary-700"
-                                        : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
-                                )}
-                            >
-                                <Icon className={cn("h-4 w-4 shrink-0 transition-colors", active ? "text-primary-600" : "text-neutral-400 group-hover:text-neutral-600")} />
-                                <span className="flex-1">{label}</span>
-                                {badge && (
-                                    <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-rose-500 px-1.5 text-[10px] font-bold text-white">
-                                        {badge}
-                                    </span>
-                                )}
-                                {active && <ChevronRight className="h-3.5 w-3.5 text-primary-400" />}
-                            </Link>
+                            <li key={href}>
+                                <Link
+                                    href={href}
+                                    aria-current={active ? "page" : undefined}
+                                    className={cn(ROW, active ? "bg-primary-50 text-primary-800 font-semibold" : "text-neutral-700 hover:bg-neutral-900/[0.04] hover:text-neutral-900")}
+                                >
+                                    <Icon className={cn("h-[18px] w-[18px] shrink-0", active ? "text-primary-700" : "text-neutral-500")} aria-hidden="true" />
+                                    <span className="flex-1">{label}</span>
+                                    {badge && (
+                                        <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-neutral-900/[0.06] px-2 text-xs font-semibold text-neutral-700 tabular-nums">
+                                            {badge}
+                                        </span>
+                                    )}
+                                </Link>
+                            </li>
                         );
                     })}
-                </div>
+                </ul>
 
-                <div className="border-t border-neutral-100 px-3 py-3">
-                    <Link
-                        href="/support"
-                        className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-700"
-                    >
-                        <HelpCircle className="h-4 w-4 shrink-0 text-neutral-400" />
-                        Help & Support
-                    </Link>
-                    <button
-                        onClick={handleSignOut}
-                        className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-500 transition-colors hover:bg-red-50 hover:text-red-600"
-                    >
-                        <LogOut className="h-4 w-4 shrink-0 text-neutral-400" />
-                        Sign Out
-                    </button>
-                </div>
+                <div className="mx-3 my-2 h-px bg-neutral-900/[0.06]" aria-hidden="true" />
+
+                <Link href="/support" className={cn(ROW, "text-neutral-600 hover:bg-neutral-900/[0.04] hover:text-neutral-900")}>
+                    <HelpCircle className="h-[18px] w-[18px] shrink-0 text-neutral-500" aria-hidden="true" />
+                    Help & Support
+                </Link>
+                <button type="button" onClick={handleSignOut} className={cn(ROW, "text-neutral-600 hover:bg-red-50 hover:text-red-700")}>
+                    <LogOut className="h-[18px] w-[18px] shrink-0 text-neutral-500" aria-hidden="true" />
+                    Sign out
+                </button>
             </nav>
 
-            {/* Member since */}
-            {joinedDate && (
-                <p className="mt-3 px-2 text-center text-[10px] text-neutral-400">
-                    Member since {joinedDate}
-                </p>
-            )}
+            {joinedDate && <p className="px-2 text-center text-[13px] text-neutral-500">Member since {joinedDate}</p>}
         </aside>
     );
 }

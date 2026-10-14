@@ -4,6 +4,7 @@ export { default as Select } from "./Select";
 export { default as Textarea } from "./Textarea";
 export { default as Card, CardImage, CardContent, CardTitle, CardDescription } from "./Card";
 export { default as Breadcrumbs } from "./Breadcrumbs";
+export { default as JsonLd } from "./JsonLd";
 export { default as ImageWithFallback } from "./ImageWithFallback";
 export { default as Carousel } from "./Carousel";
 export { default as CountrySelect, countries } from "./CountrySelect";
