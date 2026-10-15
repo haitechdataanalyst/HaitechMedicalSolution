@@ -24,6 +24,19 @@ export interface HubComparisonRow {
     values?: Record<string, string>;
 }
 
+export interface HubBuyersGuide {
+    title: string;
+    intro?: string;
+    steps: { heading: string; body: string }[];
+}
+
+/** A real customer review, verbatim. Never invent one: an empty list renders nothing. */
+export interface HubReview {
+    author: string;
+    text: string;
+    source?: string;
+}
+
 export interface HubDefinition {
     slug: string;
     name: string;
@@ -46,6 +59,10 @@ export interface HubDefinition {
     /** Article slugs from components/articles. */
     guideSlugs?: string[];
     offerLoupeFitting?: boolean;
+    /** Buyer's guide section; nothing is shown until it is supplied (components/hubs/HubContentSections.tsx). */
+    buyersGuide?: HubBuyersGuide;
+    /** Real customer reviews only; nothing is shown until they are supplied. */
+    reviews?: HubReview[];
 }
 
 export const HUBS: HubDefinition[] = [
@@ -70,6 +87,10 @@ export const HUBS: HubDefinition[] = [
         ],
         guideSlugs: ["choose-perfect-dental-loupes", "choosing-right-magnification", "what-are-ergo-loupes", "clean-maintain-loupes-lights"],
         offerLoupeFitting: true,
+        // TODO(content): buyersGuide (Galilean vs prismatic, which magnification, loupes with light, prescription loupes) -
+        // supply the steps and wording. TODO(content): reviews - supply real customer reviews. TODO(content): showComparison /
+        // comparisonRows - Ergo-V labels its specs per magnification ("Field of View @ 3.8x"), the other loupes do not, so the
+        // rows to compare need to be chosen.
     },
     {
         slug: "dental-chairs",
@@ -85,6 +106,7 @@ export const HUBS: HubDefinition[] = [
         breadcrumbCategories: ["dental-chairs"],
         faqCategory: "dental-chairs",
         showComparison: true,
+        // TODO(content): buyersGuide (electric vs hydraulic, choosing for your clinic) and reviews - supply the content.
         extraLinks: [
             { label: "Saddle chairs", href: "/saddle-chairs", description: "Salli operator seating for dentists and assistants." },
             { label: "About Almadent", href: "/product/almadent", description: "Chairs, handpieces, implant motors and auxiliary equipment." },
@@ -102,6 +124,8 @@ export const HUBS: HubDefinition[] = [
         productCategories: ["salli"],
         breadcrumbCategories: ["salli"],
         faqCategory: "saddle-chairs",
+        // TODO(content): buyersGuide (saddle chair vs a normal stool, choosing a model), reviews and showComparison /
+        // comparisonRows - supply the content; the Salli spec labels are in data/products.json ("specs").
         extraLinks: [
             { label: "Dental loupes", href: "/dental-loupes", description: "Ergo loupes help you keep an upright working posture." },
             { label: "About Salli", href: "/product/salli", description: "The company and research behind the split saddle seat." },

@@ -11,6 +11,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_GHOST_ON_DARK, PILL_ON_DARK, 
 import { PAGE_TITLE, chipClass } from "@/components/catalog/listing";
 import { ProductGrid } from "@/components/products";
 import { FAQ, FAQGroup } from "@/components/misc/FAQ";
+import { HubBuyersGuide, HubReviews } from "./HubContentSections";
 import { articles } from "@/components/articles";
 import faqData from "@/data/faq.json";
 import siteConfig from "@/data/site-config.json";
@@ -317,6 +318,9 @@ export default async function HubPage({ slug }: { slug: string }) {
                     </div>
                 )}
             </div>
+
+            <HubBuyersGuide guide={hub.buyersGuide} />
+            <HubReviews reviews={hub.reviews} />
 
             {/* ── FAQ ── */}
             {faqGroup && <FAQ groups={[faqGroup]} title={`${hub.name} FAQs`} subtitle="Answers based on the product specifications and Haitech's support team." />}
