@@ -42,29 +42,31 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: bool
     const panelId = `${uid}-a`;
     return (
         <div>
-            <button
-                id={buttonId}
-                type="button"
-                onClick={onToggle}
-                aria-expanded={isOpen}
-                aria-controls={panelId}
-                className="group flex min-h-14 w-full items-center justify-between gap-4 rounded-lg py-4 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
-            >
-                <span className="text-[16px] leading-snug font-medium tracking-[-0.01em] text-neutral-900 transition-colors duration-200 ease-out group-hover:text-primary-800 md:text-[17px]">
-                    {item.question}
-                </span>
-                <ChevronDown
-                    className={cn("h-5 w-5 shrink-0 text-neutral-500 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out", isOpen && "rotate-180 text-neutral-900")}
-                    aria-hidden="true"
-                />
-            </button>
+            <h3 className="m-0 text-[length:inherit] font-normal">
+                <button
+                    id={buttonId}
+                    type="button"
+                    onClick={onToggle}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="group focus-visible:outline-primary-500 flex min-h-14 w-full items-center justify-between gap-4 rounded-lg py-4 text-left focus-visible:outline-2 focus-visible:outline-offset-2"
+                >
+                    <span className="group-hover:text-primary-800 text-[16px] leading-snug font-medium tracking-[-0.01em] text-neutral-900 transition-colors duration-200 ease-out md:text-[17px]">
+                        {item.question}
+                    </span>
+                    <ChevronDown
+                        className={cn("h-5 w-5 shrink-0 text-neutral-500 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out", isOpen && "rotate-180 text-neutral-900")}
+                        aria-hidden="true"
+                    />
+                </button>
+            </h3>
             <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="pr-9 pb-5">
                 <div className="space-y-2 text-[15px] leading-relaxed text-neutral-600 md:text-base">
                     {lines.map((line, i) =>
                         line === "" ? (
                             <div key={i} className="h-1" />
                         ) : (
-                            <p key={i} className={cn(line.startsWith("• ") && "pl-3")}>
+                            <p key={i} className={cn(line.startsWith("•") && "pl-3")}>
                                 {line}
                             </p>
                         )
@@ -127,10 +129,7 @@ export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "
 
                     {/* Group tabs */}
                     {groups.length > 1 && (
-                        <div
-                            className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1 [&::-webkit-scrollbar]:hidden"
-                            style={{ scrollbarWidth: "none" } as CSSProperties}
-                        >
+                        <div className="-mx-4 mb-6 flex gap-2 overflow-x-auto px-4 pb-1 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" } as CSSProperties}>
                             {groups.map((b) => {
                                 const isActive = activeBrandId === b.id;
                                 return (
@@ -140,7 +139,7 @@ export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "
                                         aria-pressed={isActive}
                                         onClick={() => handleBrandChange(b.id)}
                                         className={cn(
-                                            "inline-flex min-h-11 flex-none items-center rounded-full px-5 text-[15px] font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500",
+                                            "focus-visible:outline-primary-500 inline-flex min-h-11 flex-none items-center rounded-full px-5 text-[15px] font-medium transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2",
                                             isActive ? "bg-neutral-900 text-white" : "bg-white text-neutral-700 ring-1 ring-neutral-900/[0.08] hover:bg-neutral-100"
                                         )}
                                     >
@@ -158,7 +157,10 @@ export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "
                             <input
                                 type="search"
                                 value={searchQuery}
-                                onChange={(e) => { setSearchQuery(e.target.value); setOpenId(null); }}
+                                onChange={(e) => {
+                                    setSearchQuery(e.target.value);
+                                    setOpenId(null);
+                                }}
                                 placeholder="Search questions…"
                                 aria-label="Search questions"
                                 className="form-input pr-12 pl-11 [&::-webkit-search-cancel-button]:hidden"
@@ -167,7 +169,7 @@ export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "
                                 <button
                                     type="button"
                                     onClick={() => setSearchQuery("")}
-                                    className="absolute top-1/2 right-1 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 ease-out hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-primary-500"
+                                    className="focus-visible:outline-primary-500 absolute top-1/2 right-1 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 ease-out hover:text-neutral-900 focus-visible:outline-2"
                                     aria-label="Clear search"
                                 >
                                     <X className="h-4 w-4" aria-hidden="true" />
@@ -186,7 +188,7 @@ export function FAQ({ groups, title = "Frequently Asked Questions", subtitle = "
                                 <button
                                     type="button"
                                     onClick={() => setSearchQuery("")}
-                                    className="mt-2 inline-flex min-h-11 items-center rounded-full px-3 text-[15px] font-medium text-primary-700 hover:text-primary-800 focus-visible:outline-2 focus-visible:outline-primary-500"
+                                    className="text-primary-700 hover:text-primary-800 focus-visible:outline-primary-500 mt-2 inline-flex min-h-11 items-center rounded-full px-3 text-[15px] font-medium focus-visible:outline-2"
                                 >
                                     Clear search
                                 </button>

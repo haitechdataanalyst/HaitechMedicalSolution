@@ -82,20 +82,20 @@ export default function Footer({ sections, config }: FooterProps) {
                     <div className="hidden gap-8 md:grid md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.35fr)]">
                         {sections.map((section) => (
                             <div key={section.title}>
-                                <h3 className="mb-4 text-[13px] font-semibold text-neutral-900">{section.title}</h3>
+                                <p className="mb-4 text-[13px] font-semibold text-neutral-900">{section.title}</p>
                                 <SectionLinks section={section} />
                             </div>
                         ))}
 
                         <div>
-                            <h3 className="mb-4 text-[13px] font-semibold text-neutral-900">Contact</h3>
+                            <p className="mb-4 text-[13px] font-semibold text-neutral-900">Contact</p>
                             <ContactList config={config} mapsQuery={mapsQuery} />
                         </div>
                     </div>
 
                     {/* Mobile contact */}
                     <div className="mt-8 md:hidden">
-                        <h3 className="mb-2 text-[15px] font-semibold text-neutral-900">Contact</h3>
+                        <p className="mb-2 text-[15px] font-semibold text-neutral-900">Contact</p>
                         <ContactList config={config} mapsQuery={mapsQuery} />
                     </div>
                 </div>

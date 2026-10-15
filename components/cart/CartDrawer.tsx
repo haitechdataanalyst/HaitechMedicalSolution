@@ -72,10 +72,10 @@ export default function CartDrawer() {
                 >
                     {/* Header */}
                     <div className="flex items-center justify-between gap-3 px-6 pt-5 pb-3">
-                        <h2 id="cart-drawer-title" className="text-xl font-semibold tracking-[-0.015em] text-neutral-900">
+                        <p id="cart-drawer-title" className="text-xl font-semibold tracking-[-0.015em] text-neutral-900">
                             My Cart
                             {itemCount > 0 && <span className="ml-2 text-base font-normal text-neutral-500 tabular-nums">{itemCount}</span>}
-                        </h2>
+                        </p>
                         <button
                             type="button"
                             onClick={closeCart}
@@ -91,7 +91,7 @@ export default function CartDrawer() {
                         {items.length === 0 ? (
                             <div className="flex h-full flex-col items-center justify-center px-8 pb-10 text-center">
                                 <CartIcon size={40} className="text-neutral-400" aria-hidden="true" />
-                                <h3 className="mt-5 text-lg font-semibold tracking-[-0.01em] text-neutral-900">Your cart is empty</h3>
+                                <p className="mt-5 text-lg font-semibold tracking-[-0.01em] text-neutral-900">Your cart is empty</p>
                                 <p className="mt-1.5 text-[15px] text-neutral-500">Add products to get started</p>
                                 <button
                                     type="button"
@@ -136,7 +136,7 @@ export default function CartDrawer() {
                                                 {/* Info */}
                                                 <div className="min-w-0 flex-1">
                                                     <div className="flex items-start justify-between gap-3">
-                                                        <h4 className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.productName}</h4>
+                                                        <p className="line-clamp-2 text-[15px] leading-snug font-semibold tracking-[-0.01em] text-neutral-900">{item.productName}</p>
                                                         {lineTotal ? (
                                                             <p className="shrink-0 text-[15px] font-semibold text-neutral-900 tabular-nums">{formatPrice(lineTotal)}</p>
                                                         ) : (
