@@ -972,6 +972,14 @@
     animation: page-fade-in 320ms var(--ease-out-ui) 120ms both;
 }
 
+/* The mobile menu is its own transition group so it is not frozen into the "old page" snapshot. Without this, tapping a
+   link photographed the screen with the menu still open and kept that photo on top until the next page had loaded, so
+   the menu looked stuck. The live menu is already closed by then; its snapshots are simply not shown. */
+::view-transition-group(menu-sheet),
+::view-transition-group(menu-scrim) {
+    display: none;
+}
+
 /* The unchanged shell (header/footer) must not flash while the content swaps */
 ::view-transition-old(root),
 ::view-transition-new(root) {

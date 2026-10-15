@@ -102,7 +102,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
             {/* Scrim */}
             <div
                 aria-hidden="true"
-                className={cn("fixed inset-0 z-60 bg-neutral-950/40 transition-opacity duration-300 ease-out", isOpen ? "visible opacity-100" : "invisible opacity-0")}
+                className={cn("fixed inset-0 z-60 [view-transition-name:menu-scrim] bg-neutral-950/40 transition-opacity duration-300 ease-out", isOpen ? "visible opacity-100" : "invisible opacity-0")}
                 onClick={onClose}
             />
 
@@ -111,7 +111,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                 ref={panelRef}
                 inert={!isOpen}
                 className={cn(
-                    "fixed inset-y-0 right-0 z-70 flex w-[88vw] max-w-sm flex-col rounded-l-3xl bg-white/[0.94] shadow-[0_0_0_1px_rgba(15,23,42,0.06),-24px_0_64px_-24px_rgba(15,23,42,0.35)] backdrop-blur-2xl backdrop-saturate-150 transition-[transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] [@media(prefers-reduced-transparency:reduce)]:bg-white",
+                    "fixed inset-y-0 right-0 z-70 [view-transition-name:menu-sheet] flex w-[88vw] max-w-sm flex-col rounded-l-3xl bg-white/[0.94] shadow-[0_0_0_1px_rgba(15,23,42,0.06),-24px_0_64px_-24px_rgba(15,23,42,0.35)] backdrop-blur-2xl backdrop-saturate-150 transition-[transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] [@media(prefers-reduced-transparency:reduce)]:bg-white",
                     isOpen ? "visible translate-x-0" : "invisible translate-x-full"
                 )}
                 role="dialog"
@@ -215,7 +215,7 @@ export default function MobileMenu({ items, isOpen, onClose }: MobileMenuProps) 
                                         <ul id={panelId} hidden={!isExpanded} className="animate-popover-in mt-0.5 mb-2 ml-3 space-y-0.5 border-l border-neutral-900/[0.08] pl-2">
                                             {item.children!.map((child) => (
                                                 <li key={child.href}>
-                                                    <Link href={child.href} className={cn(SUB_ROW, pathname === child.href ? ROW_ACTIVE : SUB_IDLE)}>
+                                                    <Link href={child.href} onClick={onClose} className={cn(SUB_ROW, pathname === child.href ? ROW_ACTIVE : SUB_IDLE)}>
                                                         {child.label}
                                                     </Link>
                                                 </li>
