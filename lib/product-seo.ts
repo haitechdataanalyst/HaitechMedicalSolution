@@ -45,9 +45,30 @@ export function categoryMetaDescription(name: string, description: string | unde
     return `Browse ${name} from Haitech Medical: ${listed}${itemNames.length > LISTED_ITEMS ? " and more" : ""}. Supplied in India.`;
 }
 
+const META_DESCRIPTION_MAX = 160;
+const META_DESCRIPTION_SUFFIX = " Supplied in India by Haitech Medical.";
+
+/**
+ * The longest start of `text` that fits in `room` characters and ends where a sentence or clause ends, so a long
+ * description is shortened without an ellipsis and without cutting a phrase in half. Only the product's own words are used.
+ */
+function shortenAtClause(text: string, room: number): string {
+    const clean = text.replace(/\s+/g, " ").trim();
+    if (clean.length <= room) return clean;
+    const boundary = /[.!?;,:]\s|\s[—–-]\s/g;
+    let cut = 0;
+    for (let m = boundary.exec(clean); m && m.index <= room; m = boundary.exec(clean)) cut = m.index;
+    const clipped = cut > 0 ? clean.slice(0, cut) : clean.slice(0, room).replace(/\s+\S*$/, "");
+    return clipped.replace(/[\s,;:—–-]+$/, "");
+}
+
+/** "<Brand Name>: <the product's own description>. Supplied in India by Haitech Medical." in at most 160 characters. */
 export function productMetaDescription(product: Product): string {
     const block = product.contentBlocks.find((b) => b.type === "description");
     const summary = product.description || (block?.type === "description" ? block.data.primary : "") || productNameWithBrand(product);
-    const sentence = /[.!?]$/.test(summary.trim()) ? summary.trim() : `${summary.trim()}.`;
-    return `${productNameWithBrand(product)}: ${sentence} Supplied in India by Haitech Medical.`;
+    const lead = `${productNameWithBrand(product)}: `;
+    // The closing sentence and the final full stop are kept; the description gives way.
+    const room = META_DESCRIPTION_MAX - lead.length - META_DESCRIPTION_SUFFIX.length - 1;
+    const body = shortenAtClause(summary, room).replace(/[.!?]+$/, "");
+    return `${lead}${body}.${META_DESCRIPTION_SUFFIX}`;
 }

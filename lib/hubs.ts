@@ -76,7 +76,7 @@ export const HUBS: HubDefinition[] = [
         summary: "Anya AY-3000, AY-6000 and AY-8000 chairs from Almadent.",
         name: "Dental Chairs",
         metaTitle: "Anya Dental Chairs in India",
-        metaDescription: "Compare Anya dental chairs from Almadent: the hydraulic AY-3000, electric AY-6000 and AY-8000 with servo motors. Specifications, warranty and quotes from Haitech Medical.",
+        metaDescription: "Compare Anya dental chairs from Almadent: the hydraulic AY-3000, electric AY-6000 and AY-8000 with servo motors. Specifications, warranty and quote requests.",
         intro: [
             "Haitech Medical supplies the Anya range of dental chairs from Almadent. The AY-3000 is a hydraulic chair, the AY-6000 is electric with six programmable positions and an LED shadowless light, and the AY-8000 is fully electric with servo motors and twelve preset positions.",
             "Compare the listed specifications below, then request a quote or book a demo for the model that suits your clinic.",
@@ -95,7 +95,7 @@ export const HUBS: HubDefinition[] = [
         summary: "Five Salli saddle chair models from Finland.",
         name: "Saddle Chairs",
         metaTitle: "Salli Saddle Chairs for Dentists in India",
-        metaDescription: "Salli saddle chairs from Finland for dentists and clinicians: Ultra Triple Fit, Triple Fit, Chin Tilt, Sway Fit and Light. Prices in INR and model guidance from Haitech.",
+        metaDescription: "Salli saddle chairs from Finland for dentists and clinicians: Ultra Triple Fit, Triple Fit, Chin Tilt, Sway Fit and Light. Prices in INR and model guidance.",
         intro: [
             "Salli saddle chairs are Finnish ergonomic chairs designed to promote healthy posture and reduce strain during long clinical hours. Haitech Medical supplies five Salli models in India, from the lightweight Salli Light to the Ultra Triple Fit with movable armrests.",
         ],
