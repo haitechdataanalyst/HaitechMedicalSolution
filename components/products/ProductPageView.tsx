@@ -5,7 +5,7 @@ import { hubPath } from "@/lib/hubs";
 import { detectBrand } from "@/lib/brand";
 import { shouldShowPrice } from "@/lib/config";
 import { getDynamicMetadata } from "@/lib/metadata";
-import { productMetaDescription, productPageTitle } from "@/lib/product-seo";
+import { productMetaDescription, productNameWithBrand, productPageTitle } from "@/lib/product-seo";
 import { faqSchema, productSchema } from "@/lib/structured-data";
 import { Breadcrumbs, JsonLd } from "@/components/ui";
 import ProductDetail from "./ProductDetail";
@@ -26,6 +26,9 @@ export async function getProductMetadata(product: Product): Promise<Metadata> {
 async function withPaths(products: Product[]): Promise<(Product & { path: string })[]> {
     return Promise.all(products.map(async (p) => ({ ...p, path: await getProductPath(p) })));
 }
+
+/** Hubs whose product pages open with "<Brand> <Name>" as their H1. */
+const HEADING_WITH_BRAND_HUBS = new Set(["dental-loupes", "dental-chairs", "saddle-chairs"]);
 
 /** Mirrors ActionsBlock: a price is visible only on an add-to-cart panel for a price-visible brand. */
 function isPriceVisible(product: Product, brandName: string): boolean {
@@ -48,6 +51,8 @@ export default async function ProductPageView({ product }: { product: Product })
         getProductHub(product),
     ]);
     const compareHref = hub?.showComparison ? `${hubPath(hub)}#compare-heading` : undefined;
+    // On the loupe and chair pages the H1 carries the brand, like the page title does ("Admetec Ergo 5.0x"); the name itself is the catalogue's.
+    const heading = hub && HEADING_WITH_BRAND_HUBS.has(hub.slug) ? productNameWithBrand(product) : undefined;
     const [relatedProducts, accessories] = await Promise.all([withPaths(recommendations.items), withPaths(accessoriesRaw)]);
 
     const brandName = detectBrand(product.sku).name;
@@ -67,6 +72,7 @@ export default async function ProductPageView({ product }: { product: Product })
                 frames={getAllFrames()}
                 headlightCategories={headlightCategories}
                 compareHref={compareHref}
+                heading={heading}
             />
         </>
     );

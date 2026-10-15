@@ -34,9 +34,11 @@ interface ProductDetailProps {
     relatedTitle?: string;
     /** Hub comparison for this product type, linked from the section nav. */
     compareHref?: string;
+    /** The page's H1 when it should differ from the catalogue name (brand added); defaults to the name. */
+    heading?: string;
 }
 
-export default function ProductDetail({ product, relatedProducts = [], accessories = [], frames = [], headlightCategories = [], relatedTitle = "Related Products", compareHref }: ProductDetailProps) {
+export default function ProductDetail({ product, relatedProducts = [], accessories = [], frames = [], headlightCategories = [], relatedTitle = "Related Products", compareHref, heading }: ProductDetailProps) {
     const [selectedVariantImage, setSelectedVariantImage] = useState<string | undefined>(undefined);
     const [enquiryOpen, setEnquiryOpen] = useState(false);
     // Stable identity — ProductQuoteModal's success effect depends on onClose.
@@ -102,7 +104,7 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
                     {/* Title */}
                     <div className="space-y-4">
                         <div>
-                            <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-neutral-900 lg:text-[2.75rem]">{product.name}</h1>
+                            <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-neutral-900 lg:text-[2.75rem]">{heading ?? product.name}</h1>
                         </div>
 
                         {/* Dynamic trust badges — only ever shows fields this product actually has */}
