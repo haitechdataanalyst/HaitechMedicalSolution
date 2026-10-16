@@ -29,10 +29,7 @@ export const assertValidTransition = (currentStatus, nextStatus) => {
 		throw badRequestError(`Unknown current order status: ${currentStatus}`);
 	}
 	if (!allowedNext.includes(nextStatus)) {
-		throw badRequestError(
-			`Cannot transition order from '${currentStatus}' to '${nextStatus}'. ` +
-				`Allowed transitions: [${allowedNext.join(', ') || 'none'}]`,
-		);
+		throw badRequestError(`Cannot transition order from '${currentStatus}' to '${nextStatus}'. ` + `Allowed transitions: [${allowedNext.join(', ') || 'none'}]`);
 	}
 };
 
@@ -151,7 +148,7 @@ export const createOrderService = ({
 					shippingAddressId: shippingAddressId || null,
 					notes,
 				},
-				tx,
+				tx
 			);
 		});
 
@@ -220,10 +217,7 @@ export const createOrderService = ({
 
 		return runTransaction(async (tx) => {
 			const updated = await orderRepo.updateStatus(orderId, adminId, status, tx);
-			await orderRepo.recordStatusHistory(
-				{ orderId, fromStatus: order.status, toStatus: status, changedBy: adminId, reason },
-				tx
-			);
+			await orderRepo.recordStatusHistory({ orderId, fromStatus: order.status, toStatus: status, changedBy: adminId, reason }, tx);
 			return updated;
 		});
 	};
@@ -269,16 +263,7 @@ export const createOrderService = ({
 
 const defaultOrderService = createOrderService();
 
-export const {
-	createOrder,
-	getUserOrders,
-	getOrderDetail,
-	cancelOrder,
-	adminGetOrders,
-	adminGetOrderDetail,
-	adminUpdateOrderStatus,
-	getOrderInvoice,
-} = defaultOrderService;
+export const { createOrder, getUserOrders, getOrderDetail, cancelOrder, adminGetOrders, adminGetOrderDetail, adminUpdateOrderStatus, getOrderInvoice } = defaultOrderService;
 
 const orderService = { ...defaultOrderService, VALID_TRANSITIONS, assertValidTransition, createOrderService };
 

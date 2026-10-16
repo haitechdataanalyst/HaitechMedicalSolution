@@ -71,10 +71,7 @@ describe('createOrderService (fake repo injection)', () => {
 			runTransaction: (cb) => cb(undefined),
 		});
 
-		await assert.rejects(
-			() => service.adminUpdateOrderStatus('admin1', 'o1', 'confirmed'),
-			/Cannot transition order/,
-		);
+		await assert.rejects(() => service.adminUpdateOrderStatus('admin1', 'o1', 'confirmed'), /Cannot transition order/);
 		assert.equal(wrote, false);
 	});
 
@@ -140,10 +137,7 @@ describe('createOrderService (fake repo injection)', () => {
 			},
 			runTransaction: (cb) => cb(undefined),
 		});
-		await assert.rejects(
-			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }] }),
-			/is not available/,
-		);
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }] }), /is not available/);
 	});
 
 	test('createOrder rejects a non-integer quantity before touching any repo', async () => {
@@ -154,10 +148,7 @@ describe('createOrderService (fake repo injection)', () => {
 				},
 			},
 		});
-		await assert.rejects(
-			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1.5 }] }),
-			/invalid quantity/,
-		);
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1.5 }] }), /invalid quantity/);
 	});
 });
 
@@ -213,11 +204,7 @@ describe('createOrder security regressions', () => {
 			},
 		});
 		for (const productId of ['abc', '1e3', '-5', '1.5', '0', '1,2', '9999999999']) {
-			await assert.rejects(
-				() => service.createOrder('u1', { items: [{ productId, quantity: 1 }] }),
-				/invalid productId/,
-				`productId ${productId}`,
-			);
+			await assert.rejects(() => service.createOrder('u1', { items: [{ productId, quantity: 1 }] }), /invalid productId/, `productId ${productId}`);
 		}
 	});
 
@@ -231,10 +218,7 @@ describe('createOrder security regressions', () => {
 
 	test("rejects another user's shipping address", async () => {
 		const service = build({ addressRepository: { findById: async () => ({ id: 'a1', userId: 'someone-else' }) } });
-		await assert.rejects(
-			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }], shippingAddressId: 'a1' }),
-			/Invalid shipping address/,
-		);
+		await assert.rejects(() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }], shippingAddressId: 'a1' }), /Invalid shipping address/);
 	});
 
 	test('does not create an order when any line fails validation', async () => {
@@ -253,8 +237,14 @@ describe('createOrder security regressions', () => {
 			},
 		});
 		await assert.rejects(
-			() => service.createOrder('u1', { items: [{ productId: 1, quantity: 1 }, { productId: 2, quantity: 1 }] }),
-			/is not available/,
+			() =>
+				service.createOrder('u1', {
+					items: [
+						{ productId: 1, quantity: 1 },
+						{ productId: 2, quantity: 1 },
+					],
+				}),
+			/is not available/
 		);
 		assert.equal(created, false);
 	});

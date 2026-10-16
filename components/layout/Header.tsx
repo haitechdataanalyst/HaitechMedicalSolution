@@ -182,7 +182,10 @@ export default function Header() {
                                                 >
                                                     <UserCircle className="text-primary-700 h-4 w-4" aria-hidden="true" />
                                                     <span className="max-w-[120px] truncate">{user.firstName}</span>
-                                                    <ChevronDown className={cn("h-3.5 w-3.5 text-neutral-500 transition-transform duration-200 ease-out", userMenuOpen && "rotate-180")} aria-hidden="true" />
+                                                    <ChevronDown
+                                                        className={cn("h-3.5 w-3.5 text-neutral-500 transition-transform duration-200 ease-out", userMenuOpen && "rotate-180")}
+                                                        aria-hidden="true"
+                                                    />
                                                 </button>
 
                                                 {userMenuOpen && (
@@ -193,32 +196,21 @@ export default function Header() {
                                                             </p>
                                                             <p className="truncate text-xs text-neutral-500">{user.email}</p>
                                                         </div>
-                                                        <Link
-                                                            href="/account"
-                                                            onClick={() => setUserMenuOpen(false)}
-                                                            role="menuitem"
-                                                            className={MENU_ROW}
-                                                        >
+                                                        <Link href="/account" onClick={() => setUserMenuOpen(false)} role="menuitem" className={MENU_ROW}>
                                                             <LayoutDashboard className="h-4 w-4" /> Dashboard
                                                         </Link>
-                                                        <Link
-                                                            href="/account/orders"
-                                                            onClick={() => setUserMenuOpen(false)}
-                                                            role="menuitem"
-                                                            className={MENU_ROW}
-                                                        >
+                                                        <Link href="/account/orders" onClick={() => setUserMenuOpen(false)} role="menuitem" className={MENU_ROW}>
                                                             <ShoppingBag className="h-4 w-4" /> My Orders
                                                         </Link>
-                                                        <Link
-                                                            href="/account/settings"
-                                                            onClick={() => setUserMenuOpen(false)}
-                                                            role="menuitem"
-                                                            className={MENU_ROW}
-                                                        >
+                                                        <Link href="/account/settings" onClick={() => setUserMenuOpen(false)} role="menuitem" className={MENU_ROW}>
                                                             <Settings className="h-4 w-4" /> Settings
                                                         </Link>
                                                         <div className="mx-3 my-1 h-px bg-neutral-900/[0.06]" />
-                                                        <button role="menuitem" onClick={handleLogout} className="flex min-h-10 w-full items-center gap-2.5 rounded-xl px-3 text-[15px] text-red-600 transition-colors hover:bg-red-50">
+                                                        <button
+                                                            role="menuitem"
+                                                            onClick={handleLogout}
+                                                            className="flex min-h-10 w-full items-center gap-2.5 rounded-xl px-3 text-[15px] text-red-600 transition-colors hover:bg-red-50"
+                                                        >
                                                             <LogOut className="h-4 w-4" /> Sign Out
                                                         </button>
                                                     </div>
@@ -233,7 +225,10 @@ export default function Header() {
                                                 >
                                                     Sign In
                                                 </Link>
-                                                <Link href="/register" className="bg-primary-50 text-primary-800 hover:bg-primary-100 flex h-10 items-center rounded-full px-4 text-sm font-semibold transition-colors">
+                                                <Link
+                                                    href="/register"
+                                                    className="bg-primary-50 text-primary-800 hover:bg-primary-100 flex h-10 items-center rounded-full px-4 text-sm font-semibold transition-colors"
+                                                >
                                                     Register
                                                 </Link>
                                             </>
