@@ -11,6 +11,7 @@ import { shouldShowPrice } from "@/lib/config";
 import { detectBrand } from "@/lib/brand";
 import { isCatalogueProductId } from "@/lib/headlight-products";
 import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
+import BalancedGrid from "./BalancedGrid";
 
 interface CategoryPageClientProps {
     initialItems: CategoryWithPath[] | ProductWithPath[];
@@ -225,8 +226,6 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
         );
     }
 
-    const gridClass = hasPriceRange ? "grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 xl:grid-cols-4" : "grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6 2xl:grid-cols-4";
-
     return (
         <div className="flex gap-6 lg:gap-8">
             {/* ── Sidebar: only earns its space when there is a price range to filter ── */}
@@ -318,16 +317,13 @@ export function CategoryPageClient({ initialItems, initialType }: CategoryPageCl
                     </div>
                 )}
 
+                {/* Every card is in the HTML so each product link is crawlable; "Load More" only reveals the rest. */}
                 {displayItems.length > 0 && (
-                    <div className={gridClass}>
-                        {/* Every card is in the HTML so each product link is crawlable; "Load More" only reveals the rest.
-                            `contents` leaves the grid layout untouched, `hidden` keeps the not-yet-loaded cards out of view. */}
-                        {displayItems.map((item, index) => (
-                            <div key={item.id} className={index < visibleCount ? "contents" : "hidden"}>
-                                {initialType === "categories" ? <CategoryCard category={item as CategoryWithPath} /> : <ProductCard product={item as ProductWithPath} />}
-                            </div>
-                        ))}
-                    </div>
+                    <BalancedGrid layout={hasPriceRange ? "dense" : "wide"} visibleCount={visibleCount}>
+                        {displayItems.map((item) =>
+                            initialType === "categories" ? <CategoryCard key={item.id} category={item as CategoryWithPath} /> : <ProductCard key={item.id} product={item as ProductWithPath} />
+                        )}
+                    </BalancedGrid>
                 )}
 
                 {hasMore && (

@@ -8,6 +8,7 @@ import { ArrowRight, ChevronLeft, Search, X } from "lucide-react";
 import { Category, Product } from "@/types";
 import { formatPrice, cn } from "@/lib/utils";
 import { shouldShowPrice } from "@/lib/config";
+import BalancedGrid from "@/components/catalog/BalancedGrid";
 import { detectBrand } from "@/lib/brand";
 import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, SURFACE_CARD } from "@/components/ui/surfaces";
 import { CardSkeleton, PILL_SELECT, RESULT_COUNT, SEARCH_INPUT } from "@/components/catalog/listing";
@@ -391,11 +392,11 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                 )}
 
                 {content.status === "categories" && displayItems.length > 0 && (
-                    <div className={GRID}>
+                    <BalancedGrid>
                         {(visibleItems as CategoryWithPath[]).map((cat) => (
                             <CategoryCard key={cat.id} category={cat} onClick={() => handleSubCategoryClick(cat)} />
                         ))}
-                    </div>
+                    </BalancedGrid>
                 )}
 
                 {content.status === "products" && displayItems.length === 0 && (
@@ -403,11 +404,11 @@ export default function CategoryBrowser({ initialCategories, fetchCategoryConten
                 )}
 
                 {content.status === "products" && displayItems.length > 0 && (
-                    <div className={GRID}>
+                    <BalancedGrid>
                         {(visibleItems as ProductWithPath[]).map((prod) => (
                             <ProductCard key={prod.id} product={prod} />
                         ))}
-                    </div>
+                    </BalancedGrid>
                 )}
             </div>
 

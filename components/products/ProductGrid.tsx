@@ -1,6 +1,7 @@
 import { Product, Category } from "@/types";
 import ProductCard from "./ProductCard";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
+import BalancedGrid from "@/components/catalog/BalancedGrid";
 
 // Items should include a path property for linking
 interface ItemWithPath {
@@ -19,10 +20,10 @@ export default function ProductGrid({ items, emptyMessage = "No products found" 
     }
 
     return (
-        <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+        <BalancedGrid>
             {items.map((item) => (
                 <ProductCard key={item.id} entity={item} href={item.path} image={item.defaultImage} />
             ))}
-        </div>
+        </BalancedGrid>
     );
 }
