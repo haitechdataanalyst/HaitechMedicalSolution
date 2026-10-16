@@ -25,7 +25,7 @@ export default async function OurFramesPage() {
                         <span className="label-tag label-tag-white mb-5 inline-flex">Frame Styles</span>
                         <h1 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance md:text-5xl">Frames Built for All-Day Wear</h1>
                         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
-                            Five frame families — Blues, Indie, Jazz, Soul, and Progear — in a range of colors and fits, included free with every Admetec loupe.
+                            Four frame families — Blues, Indie, Jazz and Soul — in a range of colors and fits, included free with every Admetec loupe.
                         </p>
                     </div>
                 </div>

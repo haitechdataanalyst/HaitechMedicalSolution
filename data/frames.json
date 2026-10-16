@@ -187,38 +187,6 @@
                     "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308536/haitech/images/products/admetec/our-frames/soul-frame/soul-frame-white-snow.jpg"
                 }
             ]
-        },
-        {
-            "id": "progear",
-            "name": "Progear",
-            "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-black-color.webp",
-            "priceModifier": 75,
-            "colors": [
-                {
-                    "id": "black",
-                    "name": "Black",
-                    "hex": "#1a1a1a",
-                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-black-color.webp"
-                },
-                {
-                    "id": "green",
-                    "name": "Green",
-                    "hex": "#6A7D79",
-                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308530/haitech/images/products/admetec/our-frames/progear-frames/progear-green-color.webp"
-                },
-                {
-                    "id": "red-black",
-                    "name": "Red & Black",
-                    "hex": "#524A42",
-                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308531/haitech/images/products/admetec/our-frames/progear-frames/progear-redblack-color.webp"
-                },
-                {
-                    "id": "white-blue",
-                    "name": "White & Blue",
-                    "hex": "#E2DFE2",
-                    "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308532/haitech/images/products/admetec/our-frames/progear-frames/progear-whiteblue-color.webp"
-                }
-            ]
         }
     ]
 }
