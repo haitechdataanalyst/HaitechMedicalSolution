@@ -6,6 +6,8 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_PRIMARY } from "@/components/
 import { ArticlesPageClient } from "../articles/ArticlesPageClient";
 import { getMetadata } from "@/lib/metadata";
 import { phone } from "@/data/site-config.json";
+import { JsonLd } from "@/components/ui";
+import { faqSchema, flattenFaqGroup } from "@/lib/structured-data";
 
 export const metadata = getMetadata("supportFaq");
 
@@ -36,6 +38,9 @@ const helpResources = [
 export default function HelpCenterPage() {
     return (
         <div className="space-y-16 md:space-y-20">
+            {/* The accordion opens on its first tab, so that tab's questions are the ones on the page; marked up from the same data. */}
+            <JsonLd data={faqSchema(flattenFaqGroup(data.categories[0]))} />
+
             {/* Service number banner */}
             <div className="flex items-center gap-3 rounded-2xl bg-primary-50 px-5 py-4">
                 <MessageCircle className="h-5 w-5 shrink-0 text-primary-700" aria-hidden="true" />

@@ -2,13 +2,14 @@ import Link from "next/link";
 import { getFeaturedProducts, getProductPath } from "@/lib/catalog";
 import { getGooglePlaceReviews } from "@/lib/google-reviews";
 import { ScrollReveal } from "@/components/ui";
-import { Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
+import { FAQ, Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
 import { PILL_GHOST_ON_DARK, PILL_ON_DARK } from "@/components/ui/surfaces";
 import CustomerStories from "@/components/stories/CustomerStories";
 import { Award, ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 import { JsonLd } from "@/components/ui";
 import { getDynamicMetadata } from "@/lib/metadata";
-import { organizationSchema, websiteSchema } from "@/lib/structured-data";
+import { faqSchema, organizationSchema, websiteSchema } from "@/lib/structured-data";
+import { HOME_FAQ } from "@/lib/home-faq";
 
 export const metadata = {
     ...getDynamicMetadata(
@@ -19,6 +20,9 @@ export const metadata = {
     // Absolute so the root "%s | Haitech Medical" template does not repeat the brand.
     title: { absolute: "Haitech Medical | Dental Equipment Supplier in India" },
 };
+
+// The homepage FAQ: the same list is shown below and published as FAQPage JSON-LD (lib/home-faq.ts).
+const HOME_FAQ_GROUP = { id: "home", label: "About Haitech", faqs: HOME_FAQ.map((entry, index) => ({ id: index + 1, question: entry.question, answer: entry.answer })) };
 
 const SERVICE_PROMISES = [
     { icon: Award, title: "Premium Quality", detail: "ISO certified products" },
@@ -41,6 +45,7 @@ export default async function Home() {
         <>
             <JsonLd data={organizationSchema()} />
             <JsonLd data={websiteSchema()} />
+            <JsonLd data={faqSchema([...HOME_FAQ])} />
 
             {/* Visually-hidden H1 for SEO — the hero uses a video carousel with no visible heading */}
             <h1 className="sr-only">Premium Dental &amp; Medical Equipment — Haitech Medical Solutions</h1>
@@ -79,6 +84,8 @@ export default async function Home() {
 
             {/* Testimonials Section — hidden entirely if Google Places isn't configured or returns nothing */}
             {googleReviews.length > 0 && <Testimonials testimonials={googleReviews} googleRating={googleRating} googleReviewCount={googleReviewCount} />}
+
+            <FAQ groups={[HOME_FAQ_GROUP]} title="Frequently asked questions" subtitle="Quick answers about Haitech Medical and how to get a quote." />
 
             {/* CTA Section */}
             <section className="bg-brand-gradient">
