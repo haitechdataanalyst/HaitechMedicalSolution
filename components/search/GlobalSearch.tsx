@@ -1,13 +1,10 @@
 "use client";
 
-import { useState, useEffect, useTransition, useRef, useCallback } from "react";
+import { useState, useEffect, useTransition, useRef, useCallback, useId } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import {
-    Search, X, Clock, Package2, ArrowRight,
-    ChevronRight, ZoomIn, Zap, Monitor, Gem, Scissors, Activity,
-} from "lucide-react";
+import { Search, X, Clock, Package2, ArrowRight, ChevronRight, ZoomIn, Zap, Monitor, Gem, Scissors, Activity } from "lucide-react";
 import { searchCatalog, getTrendingProducts, type SearchResult } from "@/app/actions/search";
 import { cn, formatPrice } from "@/lib/utils";
 import { shouldShowPrice } from "@/lib/config";
@@ -15,28 +12,50 @@ import { shouldShowPrice } from "@/lib/config";
 // One consistent treatment for every quick-link category — the icon already
 // differentiates them, so color doesn't need to do that job too.
 const POPULAR_CATEGORIES = [
-    { label: "Dental Loupes", href: "/product-category/admetec", icon: ZoomIn, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    {
+        label: "Dental Loupes",
+        href: "/product-category/admetec",
+        icon: ZoomIn,
+        bg: "bg-neutral-50 border-neutral-200",
+        text: "text-neutral-700",
+        hover: "hover:bg-primary-50 hover:border-primary-200",
+    },
     { label: "LED Headlights", href: "/our-headlights", icon: Zap, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
-    { label: "Dental Chairs", href: "/product-category/almadent/chairs", icon: Monitor, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    {
+        label: "Dental Chairs",
+        href: "/product-category/almadent/chairs",
+        icon: Monitor,
+        bg: "bg-neutral-50 border-neutral-200",
+        text: "text-neutral-700",
+        hover: "hover:bg-primary-50 hover:border-primary-200",
+    },
     { label: "Diamond Burs", href: "/product-category/strauss", icon: Gem, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
     { label: "Instruments", href: "/our-instruments", icon: Scissors, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
-    { label: "Saddle Chairs", href: "/product-category/salli", icon: Activity, bg: "bg-neutral-50 border-neutral-200", text: "text-neutral-700", hover: "hover:bg-primary-50 hover:border-primary-200" },
+    {
+        label: "Saddle Chairs",
+        href: "/product-category/salli",
+        icon: Activity,
+        bg: "bg-neutral-50 border-neutral-200",
+        text: "text-neutral-700",
+        hover: "hover:bg-primary-50 hover:border-primary-200",
+    },
 ];
 
 // Shared row/label/footer styles for the search popover.
 const GROUP_LABEL = "mb-2 flex items-center gap-1.5 px-1 text-[13px] font-medium text-neutral-500";
-const ROW = "flex min-h-11 items-center rounded-xl px-2 transition-colors duration-150 hover:bg-neutral-900/[0.04]";
+// Feedback lands on the press itself (active:), not on release.
+const ROW = "flex min-h-11 items-center rounded-xl px-2 transition-colors duration-150 hover:bg-neutral-900/[0.04] active:bg-neutral-900/[0.07]";
 const FOOT_CTA =
     "flex min-h-11 w-full items-center justify-center gap-1.5 rounded-full bg-neutral-900/[0.05] text-[15px] font-medium text-neutral-900 transition-colors duration-200 hover:bg-neutral-900/[0.08]";
 
 // One consistent treatment for every brand — a manufacturer label is
 // informational metadata, not a decorative tag (see lib/brand.ts).
 const BRAND_STYLES: Record<string, { label: string; bar: string; badge: string }> = {
-    admetec:  { label: "Admetec",  bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    admetec: { label: "Admetec", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
     almadent: { label: "Almadent", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
-    medesy:   { label: "Medesy",   bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
-    salli:    { label: "Salli",    bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
-    strauss:  { label: "Strauss",  bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    medesy: { label: "Medesy", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    salli: { label: "Salli", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
+    strauss: { label: "Strauss", bar: "bg-primary-400", badge: "bg-neutral-100 text-neutral-600" },
 };
 
 function detectBrandFromPath(path: string) {
@@ -54,29 +73,37 @@ function HighlightMatch({ text, query }: { text: string; query: string }) {
     return (
         <>
             {text.slice(0, idx)}
-            <mark className="bg-primary-50 text-primary-800 rounded-sm font-semibold">
-                {text.slice(idx, idx + query.trim().length)}
-            </mark>
+            <mark className="bg-primary-50 text-primary-800 rounded-sm font-semibold">{text.slice(idx, idx + query.trim().length)}</mark>
             {text.slice(idx + query.trim().length)}
         </>
     );
 }
 
+// The results list ids the two search inputs name in aria-controls (Header.tsx for the first).
+export const HEADER_LIST_ID = "header-search-results";
+const MOBILE_LIST_ID = "mobile-search-results";
+
 // ── Desktop dropdown (no input — input lives in Header) ──────────────────────
 
 interface DropdownPanelProps {
+    /** id of the results list, the one the owning input names in aria-controls. */
+    listId: string;
     query: string;
     onClose: () => void;
     onResultSelect: (term: string) => void;
 }
 
-function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
+function DropdownPanel({ listId, query, onClose, onResultSelect }: DropdownPanelProps) {
     const [results, setResults] = useState<SearchResult[]>([]);
     const [trending, setTrending] = useState<SearchResult[]>([]);
     const [recentSearches, setRecentSearches] = useState<string[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isPending, startTransition] = useTransition();
     const trendingLoaded = useRef(false);
+    // Answers can arrive out of order; only the newest search may fill the list.
+    const latestSearch = useRef(0);
+    const idPrefix = useId();
+    const optionId = (index: number) => `${idPrefix}-option-${index}`;
     const router = useRouter();
 
     // Load recents once
@@ -99,10 +126,16 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
 
     // Live search
     useEffect(() => {
-        if (!query.trim()) { setResults([]); setSelectedIndex(-1); return; }
+        const search = ++latestSearch.current;
+        if (!query.trim()) {
+            setResults([]);
+            setSelectedIndex(-1);
+            return;
+        }
         const t = setTimeout(() => {
             startTransition(async () => {
                 const res = await searchCatalog(query);
+                if (search !== latestSearch.current) return;
                 setResults(res);
                 setSelectedIndex(-1);
             });
@@ -110,32 +143,53 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
         return () => clearTimeout(t);
     }, [query]);
 
-    const saveSearch = useCallback((term: string) => {
-        if (!term.trim()) return;
-        const updated = [term, ...recentSearches.filter((s) => s !== term)].slice(0, 5);
-        setRecentSearches(updated);
-        try { localStorage.setItem("haitech_searches", JSON.stringify(updated)); } catch {}
-    }, [recentSearches]);
+    const saveSearch = useCallback(
+        (term: string) => {
+            if (!term.trim()) return;
+            const updated = [term, ...recentSearches.filter((s) => s !== term)].slice(0, 5);
+            setRecentSearches(updated);
+            try {
+                localStorage.setItem("haitech_searches", JSON.stringify(updated));
+            } catch {}
+        },
+        [recentSearches]
+    );
 
-    const removeRecent = useCallback((term: string, e: React.MouseEvent) => {
-        e.stopPropagation();
-        const updated = recentSearches.filter((s) => s !== term);
-        setRecentSearches(updated);
-        try { localStorage.setItem("haitech_searches", JSON.stringify(updated)); } catch {}
-    }, [recentSearches]);
+    const removeRecent = useCallback(
+        (term: string, e: React.MouseEvent) => {
+            e.stopPropagation();
+            const updated = recentSearches.filter((s) => s !== term);
+            setRecentSearches(updated);
+            try {
+                localStorage.setItem("haitech_searches", JSON.stringify(updated));
+            } catch {}
+        },
+        [recentSearches]
+    );
 
-    const handleSelect = useCallback((result: SearchResult) => {
-        saveSearch(result.name);
-        onResultSelect(result.name);
-        router.push(result.path);
-        onClose();
-    }, [saveSearch, onResultSelect, router, onClose]);
+    const handleSelect = useCallback(
+        (result: SearchResult) => {
+            saveSearch(result.name);
+            onResultSelect(result.name);
+            router.push(result.path);
+            onClose();
+        },
+        [saveSearch, onResultSelect, router, onClose]
+    );
 
-    // Expose keyboard nav to parent via window event — Header's input fires keydown
+    // The input lives in another component (Header or the mobile overlay), so its keys arrive as window events. Only keys
+    // typed into a search input count; Enter on a focused link or button elsewhere must not start a search.
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
-            if (e.key === "ArrowDown") { e.preventDefault(); setSelectedIndex((i) => Math.min(i + 1, results.length - 1)); }
-            if (e.key === "ArrowUp")   { e.preventDefault(); setSelectedIndex((i) => Math.max(i - 1, -1)); }
+            if (e.isComposing || !(e.target instanceof Element) || !e.target.closest("[data-search-input]")) return;
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                setSelectedIndex((i) => Math.min(i + 1, results.length - 1));
+            }
+            if (e.key === "ArrowUp") {
+                e.preventDefault();
+                setSelectedIndex((i) => Math.max(i - 1, -1));
+            }
             if (e.key === "Enter") {
                 if (selectedIndex >= 0 && results[selectedIndex]) {
                     handleSelect(results[selectedIndex]);
@@ -151,6 +205,20 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
     }, [selectedIndex, results, query, handleSelect, saveSearch, router, onClose]);
 
     const hasQuery = query.trim().length > 0;
+
+    // The focused search input is outside this component, so the active option is set on it directly. React renders no
+    // aria-activedescendant on those inputs, so nothing here is overwritten.
+    useEffect(() => {
+        const input = document.activeElement;
+        if (!(input instanceof HTMLElement) || !input.matches("[data-search-input]")) return;
+        if (selectedIndex >= 0 && results[selectedIndex]) input.setAttribute("aria-activedescendant", `${idPrefix}-option-${selectedIndex}`);
+        else input.removeAttribute("aria-activedescendant");
+    }, [results, selectedIndex, idPrefix]);
+
+    // Keep the keyboard-selected row in view.
+    useEffect(() => {
+        if (selectedIndex >= 0) document.getElementById(`${idPrefix}-option-${selectedIndex}`)?.scrollIntoView({ block: "nearest" });
+    }, [selectedIndex, idPrefix]);
 
     return (
         <div className="max-h-[72vh] overflow-y-auto overscroll-contain">
@@ -249,16 +317,25 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                             <p className="px-5 pt-4 pb-2 text-[13px] text-neutral-500" aria-live="polite">
                                 {isPending ? "Searching…" : `${results.length} result${results.length !== 1 ? "s" : ""} for "${query}"`}
                             </p>
-                            <ul className="px-2">
+                            <ul className="px-2" role="listbox" id={listId} aria-label="Search results">
                                 {results.map((result, i) => {
                                     const brand = detectBrandFromPath(result.path);
                                     return (
-                                        <li key={`${result.type}-${result.id}`}>
-                                            <button
-                                                type="button"
-                                                onClick={() => handleSelect(result)}
+                                        <li key={`${result.type}-${result.id}`} role="presentation">
+                                            <Link
+                                                href={result.path}
+                                                prefetch={false}
+                                                role="option"
+                                                id={optionId(i)}
+                                                aria-selected={selectedIndex === i}
+                                                tabIndex={-1}
+                                                onClick={() => {
+                                                    saveSearch(result.name);
+                                                    onResultSelect(result.name);
+                                                    onClose();
+                                                }}
                                                 className={cn(
-                                                    "flex min-h-11 w-full items-center gap-3.5 rounded-xl px-3 py-2 text-left transition-colors duration-150",
+                                                    "flex min-h-11 w-full items-center gap-3.5 rounded-xl px-3 py-2 text-left transition-colors duration-150 active:bg-neutral-900/[0.07]",
                                                     selectedIndex === i ? "bg-primary-50" : "hover:bg-neutral-900/[0.04]"
                                                 )}
                                             >
@@ -287,7 +364,7 @@ function DropdownPanel({ query, onClose, onResultSelect }: DropdownPanelProps) {
                                                             <p className="text-xs text-neutral-500">On request</p>
                                                         ))}
                                                 </div>
-                                            </button>
+                                            </Link>
                                         </li>
                                     );
                                 })}
@@ -343,31 +420,60 @@ interface MobileSearchOverlayProps {
 
 function MobileSearchOverlay({ isOpen, onClose }: MobileSearchOverlayProps) {
     const [query, setQuery] = useState("");
+    // The sheet stays in the page, hidden, so it can animate out the way it came in (a component that unmounts on close
+    // can only vanish). Its panel loads trending products when it mounts, so that waits for the first open.
+    const [hasOpened, setHasOpened] = useState(false);
+    const [wasOpen, setWasOpen] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    if (isOpen && !hasOpened) setHasOpened(true);
+    // Each opening starts with an empty field; clearing on open (not on close) keeps the content steady while the sheet fades out.
+    if (isOpen !== wasOpen) {
+        setWasOpen(isOpen);
+        if (isOpen) setQuery("");
+    }
+
+    // While open: the page behind does not scroll, focus moves to the field, and goes back to the search button on close.
     useEffect(() => {
-        if (isOpen) {
-            setQuery("");
-            setTimeout(() => inputRef.current?.focus(), 60);
-        }
+        if (!isOpen) return;
+        const previouslyFocused = document.activeElement as HTMLElement | null;
+        document.body.style.overflow = "hidden";
+        const focusTimer = window.setTimeout(() => inputRef.current?.focus(), 60);
+        return () => {
+            window.clearTimeout(focusTimer);
+            document.body.style.overflow = "";
+            previouslyFocused?.focus?.();
+        };
     }, [isOpen]);
 
-    if (!isOpen) return null;
-
     return (
-        <div className="fixed inset-0 z-[200] flex flex-col" role="dialog" aria-modal="true" aria-label="Search">
-            <div className="absolute inset-0 bg-neutral-950/40 backdrop-blur-sm transition-opacity duration-200 ease-out starting:opacity-0" onClick={onClose} aria-hidden="true" />
+        <div className={cn("fixed inset-0 z-[200] flex flex-col", !isOpen && "pointer-events-none")} role="dialog" aria-modal="true" aria-label="Search" inert={!isOpen}>
             <div
-                className="material-popover pt-safe relative z-10 flex flex-col rounded-t-none rounded-b-3xl transition-[opacity,transform] duration-200 ease-out starting:opacity-0 motion-safe:starting:-translate-y-2"
+                className={cn("absolute inset-0 bg-neutral-950/40 backdrop-blur-sm transition-[opacity,visibility] duration-300 ease-out", isOpen ? "visible opacity-100" : "invisible opacity-0")}
+                onClick={onClose}
+                aria-hidden="true"
+            />
+            <div
+                className={cn(
+                    "material-popover pt-safe relative z-10 flex flex-col rounded-t-none rounded-b-3xl transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
+                    isOpen ? "visible translate-y-0 opacity-100" : "invisible opacity-0 motion-safe:-translate-y-3"
+                )}
                 style={{ maxHeight: "90dvh" }}
             >
                 {/* Input bar */}
                 <div className="flex items-center gap-2 px-3 py-2.5">
-                    <div className="flex h-11 flex-1 items-center gap-2.5 rounded-full bg-neutral-900/[0.06] px-4">
+                    <div className="flex h-11 min-w-0 flex-1 items-center gap-2.5 rounded-full bg-neutral-900/[0.06] px-4">
                         <Search className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
                         <input
                             ref={inputRef}
                             type="text"
+                            data-search-input
+                            role="combobox"
+                            aria-controls={MOBILE_LIST_ID}
+                            aria-expanded={isOpen}
+                            aria-autocomplete="list"
+                            enterKeyHint="search"
+                            inputMode="search"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                             onKeyDown={(e) => e.key === "Escape" && onClose()}
@@ -378,7 +484,12 @@ function MobileSearchOverlay({ isOpen, onClose }: MobileSearchOverlayProps) {
                             spellCheck={false}
                         />
                         {query && (
-                            <button type="button" onClick={() => setQuery("")} className="-mr-2 flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900" aria-label="Clear search">
+                            <button
+                                type="button"
+                                onClick={() => setQuery("")}
+                                className="-mr-2 flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 hover:text-neutral-900"
+                                aria-label="Clear search"
+                            >
                                 <X className="h-4 w-4" aria-hidden="true" />
                             </button>
                         )}
@@ -387,9 +498,7 @@ function MobileSearchOverlay({ isOpen, onClose }: MobileSearchOverlayProps) {
                         Cancel
                     </button>
                 </div>
-                <div className="overflow-y-auto">
-                    <DropdownPanel query={query} onClose={onClose} onResultSelect={setQuery} />
-                </div>
+                <div className="overflow-y-auto">{hasOpened && <DropdownPanel listId={MOBILE_LIST_ID} query={query} onClose={onClose} onResultSelect={setQuery} />}</div>
             </div>
         </div>
     );
@@ -409,7 +518,7 @@ export function GlobalSearchDropdown({ isOpen, onClose, query, onQueryChange }: 
     if (!isOpen) return null;
     return (
         <div className="material-popover animate-popover-in absolute top-full right-0 left-0 z-[200] mt-2 origin-top overflow-hidden rounded-3xl bg-white/[0.96] backdrop-blur-2xl backdrop-saturate-150">
-            <DropdownPanel query={query} onClose={onClose} onResultSelect={onQueryChange} />
+            <DropdownPanel listId={HEADER_LIST_ID} query={query} onClose={onClose} onResultSelect={onQueryChange} />
         </div>
     );
 }

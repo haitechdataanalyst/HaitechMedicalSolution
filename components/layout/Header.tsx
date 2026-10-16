@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useHeaderNavigation } from "./NavigationProvider";
 import { FileText, Search, X, UserCircle, ChevronDown, LogOut, LayoutDashboard, ShoppingBag, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { GlobalSearchDropdown, GlobalSearchMobile } from "@/components/search/GlobalSearch";
+import { GlobalSearchDropdown, GlobalSearchMobile, HEADER_LIST_ID } from "@/components/search/GlobalSearch";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { COMMERCE_ENABLED } from "@/lib/config";
 
@@ -126,6 +126,13 @@ export default function Header() {
                                     <input
                                         ref={searchInputRef}
                                         type="text"
+                                        data-search-input
+                                        role="combobox"
+                                        aria-controls={HEADER_LIST_ID}
+                                        aria-expanded={searchOpen}
+                                        aria-autocomplete="list"
+                                        enterKeyHint="search"
+                                        inputMode="search"
                                         value={query}
                                         onChange={(e) => setQuery(e.target.value)}
                                         onFocus={() => setSearchOpen(true)}
