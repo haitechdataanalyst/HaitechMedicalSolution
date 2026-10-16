@@ -12,8 +12,28 @@ type JsonLd = Record<string, unknown>;
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const LOGO_PATH = "/haitech_medical_logo.png";
 
+const LEGAL_NAME = "Haitech Medical Solutions Private Limited";
+const ORGANIZATION_DESCRIPTION =
+    "Mumbai-based supplier of premium dental and medical equipment in India: dental loupes, dental chairs, saddle chairs, endodontics, CBCT, burs and surgical instruments.";
+const KNOWS_ABOUT = ["Dental loupes", "Dental chairs", "Ergonomic saddle chairs", "Endodontics", "CBCT imaging", "Dental burs", "Surgical instruments"];
+// brand -> what Haitech supplies from it, as listed on the homepage and in llms.txt
+const BRAND_OFFERS = [
+    ["Admetec", "Admetec dental loupes and headlights"],
+    ["Almadent", "Almadent dental chairs"],
+    ["Medesy", "Medesy surgical instruments"],
+    ["Salli", "Salli saddle chairs"],
+    ["Strauss", "Strauss diamond burs"],
+    ["Bondent", "Bondent endodontics and CBCT imaging"],
+] as const;
+
+/**
+ * Not in data/site-config.json yet, so deliberately left out of the schema rather than guessed: geo coordinates,
+ * opening hours, a Google Business Profile URL and a YouTube URL (sameAs). Add them to the config and read them here.
+ */
+
 export function organizationSchema(): JsonLd {
-    const { company } = siteConfig;
+    const { company, social } = siteConfig;
+    const socialProfiles = Object.values(social ?? {}).filter((url): url is string => typeof url === "string" && url.startsWith("https://"));
     const address = {
         "@type": "PostalAddress",
         streetAddress: company.address.street,
@@ -30,11 +50,31 @@ export function organizationSchema(): JsonLd {
                 "@type": "Organization",
                 "@id": ORGANIZATION_ID,
                 name: SITE_NAME,
+                legalName: LEGAL_NAME,
                 url: SITE_URL,
                 logo: absoluteUrl(LOGO_PATH),
+                description: ORGANIZATION_DESCRIPTION,
                 email: company.email,
                 telephone: company.phone,
                 address,
+                areaServed: { "@type": "Country", name: "India" },
+                knowsAbout: KNOWS_ABOUT,
+                // The profiles listed in data/site-config.json (the same ones the footer links to).
+                ...(socialProfiles.length > 0 ? { sameAs: socialProfiles } : {}),
+                contactPoint: [
+                    {
+                        "@type": "ContactPoint",
+                        contactType: "sales",
+                        telephone: company.phone,
+                        email: company.email,
+                        areaServed: "IN",
+                        availableLanguage: ["English", "Hindi"],
+                    },
+                ],
+                makesOffer: BRAND_OFFERS.map(([brand, name]) => ({
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Product", name, brand: { "@type": "Brand", name: brand } },
+                })),
             },
             {
                 "@type": "LocalBusiness",
@@ -44,6 +84,7 @@ export function organizationSchema(): JsonLd {
                 image: absoluteUrl(LOGO_PATH),
                 email: company.email,
                 telephone: company.phone,
+                priceRange: "₹₹",
                 address,
                 parentOrganization: { "@id": ORGANIZATION_ID },
             },
@@ -95,6 +136,17 @@ function productImages(product: Product): string[] {
     return [...new Set(all)].slice(0, 6).map((src) => absoluteUrl(src));
 }
 
+/** The 2026-2027 price list runs to the end of the financial year. */
+const PRICE_VALID_UNTIL = "2027-03-31";
+
+/**
+ * Products carry no stock or availability field (not in data/products.json, the Product type or the catalogue adapter),
+ * so there is nothing to derive it from and every listed product is InStock. Pass the product in and read a real field once one exists.
+ */
+function offerAvailability(): string {
+    return "https://schema.org/InStock";
+}
+
 export function productSchema({ product, path, brandName, categoryName, showPrice }: ProductSchemaInput): JsonLd {
     const description = product.contentBlocks.find((b) => b.type === "description");
     const info = product.contentBlocks.find((b) => b.type === "info");
@@ -121,7 +173,15 @@ export function productSchema({ product, path, brandName, categoryName, showPric
                       url,
                       price: product.basePrice,
                       priceCurrency: "INR",
+                      priceValidUntil: PRICE_VALID_UNTIL,
+                      availability: offerAvailability(),
+                      itemCondition: "https://schema.org/NewCondition",
                       seller: { "@id": ORGANIZATION_ID },
+                      shippingDetails: {
+                          "@type": "OfferShippingDetails",
+                          shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "INR" },
+                          shippingDestination: { "@type": "DefinedRegion", addressCountry: "IN" },
+                      },
                   },
               }
             : {}),
@@ -131,6 +191,22 @@ export function productSchema({ product, path, brandName, categoryName, showPric
 export interface FaqEntry {
     question: string;
     answer: string;
+}
+
+/** The questions of one FAQ tab, in the order the page lists them (a tab is either flat or split into titled sections). */
+export function flattenFaqGroup(group?: { faqs?: FaqEntry[]; sections?: { faqs: FaqEntry[] }[] }): FaqEntry[] {
+    if (!group) return [];
+    return group.faqs ?? group.sections?.flatMap((section) => section.faqs) ?? [];
+}
+
+export function aboutPageSchema(): JsonLd {
+    return {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        url: absoluteUrl("/about"),
+        name: "About Haitech Medical",
+        about: { "@id": ORGANIZATION_ID },
+    };
 }
 
 export function faqSchema(entries: FaqEntry[]): JsonLd | null {
