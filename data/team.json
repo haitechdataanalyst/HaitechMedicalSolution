@@ -196,6 +196,12 @@
             "image": "/images/team/prathamesh-matekar.jpg",
             "bio": "Prathamesh brings fresh energy and genuine curiosity to every client conversation. He takes the time to understand what a clinic really needs, then matches it with the right product and a clear, honest recommendation — building trust one call at a time.",
             "tags": ["⚡ Fresh Energy", "🎯 Needs Matcher", "😊 Honest Advisor"]
+        },
+        {
+            "id": "29",
+            "name": "Mr. Siddhant Kadam",
+            "designation": "Inside Sales Executive",
+            "image": "/images/team/siddhant-kadam.jpg"
         }
     ]
 }
