@@ -5,6 +5,7 @@ import { AdmetecFlamingo } from "@/components/admetec/AdmetecFlamingo";
 import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
+import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
@@ -32,6 +33,7 @@ export default async function AboutAdmetecPage() {
     return (
         <>
             <BrandHero
+                underName={<AdmetecBrandBadge size="brand" />}
                 name="Admetec"
                 tagline="Israeli precision, made for dentistry"
                 description="World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision."

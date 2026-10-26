@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Globe, ShieldCheck, BadgeCheck, Factory } from "lucide-react";
 import type { Product } from "@/types";
 import { getProductTrustBadges, type TrustBadge } from "@/lib/product-badges";
@@ -9,9 +10,11 @@ const ICONS: Record<TrustBadge["icon"], typeof Globe> = {
     manufacturer: Factory,
 };
 
-export default function TrustBadges({ product }: { product: Product }) {
-    const badges = getProductTrustBadges(product);
-    if (badges.length === 0) return null;
+/** `manufacturerLogo`, when given, stands in for the manufacturer's text tag, and is shown even if the product has no such tag. */
+export default function TrustBadges({ product, manufacturerLogo }: { product: Product; manufacturerLogo?: ReactNode }) {
+    const all = getProductTrustBadges(product);
+    const badges = manufacturerLogo ? all.filter((badge) => badge.icon !== "manufacturer") : all;
+    if (badges.length === 0 && !manufacturerLogo) return null;
 
     return (
         <ul className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Product highlights">
@@ -24,6 +27,7 @@ export default function TrustBadges({ product }: { product: Product }) {
                     </li>
                 );
             })}
+            {manufacturerLogo && <li className="inline-flex items-center">{manufacturerLogo}</li>}
         </ul>
     );
 }

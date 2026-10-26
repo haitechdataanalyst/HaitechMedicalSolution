@@ -8,6 +8,7 @@ import ContentRenderer from "./ContentRenderer";
 import ProductGrid from "./ProductGrid";
 import { CompareActionPanel, InlineComparisonSection } from "@/components/compare";
 import { detectBrand } from "@/lib/brand";
+import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import { isCatalogueProductId } from "@/lib/headlight-products";
 import { resolvePresentation } from "@/lib/product-presentation";
 import TrustBadges from "./TrustBadges";
@@ -106,7 +107,8 @@ export default function ProductDetail({ product, relatedProducts = [], accessori
                         </div>
 
                         {/* Dynamic trust badges — only ever shows fields this product actually has */}
-                        <TrustBadges product={product} />
+                        {/* Admetec requires its logo, linked to admetec.com, in the first fold of every Admetec product page: it takes the place of the small "Admetec" tag */}
+                        <TrustBadges product={product} manufacturerLogo={brand.name === "Admetec" ? <AdmetecBrandBadge size="tag" /> : undefined} />
                     </div>
 
                     {/* Description — with presentation: short description, quick enquiry, then collapsible overview and features */}

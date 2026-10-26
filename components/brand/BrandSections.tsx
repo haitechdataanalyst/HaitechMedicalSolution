@@ -48,10 +48,12 @@ interface BrandHeroProps {
     secondary: BrandAction;
     /** The brand page's own route; defaults to /product/<name> (all brand pages follow that pattern). */
     path?: string;
+    /** Shown directly under the name, e.g. a manufacturer's required logo and link. */
+    underName?: ReactNode;
 }
 
 /** Brand hero: breadcrumb, name as the H1, one-line tagline, two actions, then a wide image tile. Renders immediately (no reveal). */
-export function BrandHero({ name, tagline, description, image, imageAlt, imageFit = "cover", primary, secondary, path = `/product/${name.toLowerCase()}` }: BrandHeroProps) {
+export function BrandHero({ name, tagline, description, image, imageAlt, imageFit = "cover", primary, secondary, path = `/product/${name.toLowerCase()}`, underName }: BrandHeroProps) {
     return (
         <section className="bg-white">
             {/* Same trail as the visible breadcrumb below */}
@@ -88,6 +90,7 @@ export function BrandHero({ name, tagline, description, image, imageAlt, imageFi
                 <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center text-center md:mt-12">
                     <p className="text-primary-700 text-[15px] font-medium md:text-base">{tagline}</p>
                     <h1 className="mt-3 text-[3rem] leading-[1.02] font-semibold tracking-[-0.035em] text-neutral-900 sm:text-7xl md:text-8xl">{name}</h1>
+                    {underName && <div className="mt-2">{underName}</div>}
                     <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-xl">{description}</p>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
                         <Link href={primary.href} className={PILL_PRIMARY}>
