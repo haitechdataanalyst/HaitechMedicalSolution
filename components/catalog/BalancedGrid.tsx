@@ -9,11 +9,14 @@ const CELL_DENSE = "flex w-[calc((100%-1rem)/2)] sm:w-[calc((100%-2.5rem)/3)] xl
 // Full-width category page: 2, then 3 from lg, 4 only from 2xl.
 const CELL_WIDE = "flex w-[calc((100%-1rem)/2)] sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3rem)/3)] 2xl:w-[calc((100%-4.5rem)/4)]";
 
-const CELLS = { standard: CELL_STANDARD, dense: CELL_DENSE, wide: CELL_WIDE } as const;
+// Large tiles: one column on a phone, two from md.
+const CELL_HALF = "flex w-full md:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-1.5rem)/2)]";
+
+const CELLS = { standard: CELL_STANDARD, dense: CELL_DENSE, wide: CELL_WIDE, half: CELL_HALF } as const;
 
 interface BalancedGridProps {
     children: ReactNode;
-    /** Column breakpoints: standard = 2 / 3 at lg / 4 at xl; dense = 2 / 3 at sm / 4 at xl; wide = 2 / 3 at lg / 4 at 2xl. */
+    /** Column breakpoints: standard = 2 / 3 at lg / 4 at xl; dense = 2 / 3 at sm / 4 at xl; wide = 2 / 3 at lg / 4 at 2xl; half = 1, then 2 from md. */
     layout?: keyof typeof CELLS;
     /** Cards from this index on stay in the HTML (so their links are crawlable) but are hidden and take no space. */
     visibleCount?: number;
