@@ -20,7 +20,9 @@
             "id": "28",
             "name": "Mr. Viren Gosar",
             "designation": "Sales Team Leader",
-            "image": "/images/team/viren-gosar.jpg"
+            "image": "/images/team/viren-gosar.jpg",
+            "bio": "As Sales Team Leader at Haitech Medical, Viren guides the sales team in helping dental professionals find the right equipment from Haitech's six brands.",
+            "tags": ["🧭 Team Leader", "🤝 Sales", "🦷 Dental Equipment"]
         },
         {
             "id": "3",
@@ -202,7 +204,9 @@
             "id": "29",
             "name": "Mr. Siddhant Kadam",
             "designation": "Inside Sales Executive",
-            "image": "/images/team/siddhant-kadam.jpg"
+            "image": "/images/team/siddhant-kadam.jpg",
+            "bio": "As an Inside Sales Executive at Haitech Medical, Siddhant helps dental professionals find the right equipment from Haitech's six brands.",
+            "tags": ["📞 Inside Sales", "🤝 Sales", "🦷 Dental Equipment"]
         }
     ]
 }
