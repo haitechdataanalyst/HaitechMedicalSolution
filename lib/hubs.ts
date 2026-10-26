@@ -38,6 +38,8 @@ export interface HubDefinition {
     breadcrumbCategories: string[];
     /** Key into data/faq.json categories. */
     faqCategory?: string;
+    /** Admetec requires its logo, linked to admetec.com, on every page about its products. */
+    showsAdmetecLogo?: boolean;
     /** Show a specification comparison table built from catalog spec rows. */
     showComparison?: boolean;
     /** Curated rows; when absent the table shows every spec row. */
@@ -62,6 +64,7 @@ export const HUBS: HubDefinition[] = [
         productCategories: ["galilean-loupes", "prismatic-loupes", "ergo-loupes", "ergo-v-series"],
         breadcrumbCategories: ["admetec", "galilean-loupes", "prismatic-loupes", "ergo-loupes", "ergo-v-series", "admetec-frames", "admetec-headlights", "admetec-camera"],
         faqCategory: "dental-loupes",
+        showsAdmetecLogo: true,
         extraLinks: [
             { label: "LED headlights", href: "/our-headlights", description: "Wireless and wired headlights for Admetec loupes." },
             { label: "Loupe frames", href: "/our-frames", description: "Frame styles and colours compatible with Admetec loupe systems." },

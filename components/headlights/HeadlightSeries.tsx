@@ -1,3 +1,4 @@
+import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import Image from "next/image";
 import type { HeadlightCategory, HeadlightProduct } from "@/types";
 import { cn } from "@/lib/utils";
@@ -115,6 +116,10 @@ export function HeadlightSeries({ category, tone, paths = {} }: { category: Head
                         <h2 id={headingId} className="mt-2 text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-neutral-900 md:text-5xl">
                             {category.description}
                         </h2>
+                        {/* Admetec requires its logo on every page about its products; a link to #wireless or #wired lands here, below the page heading */}
+                        <div className="mt-2 flex justify-center">
+                            <AdmetecBrandBadge size="category" />
+                        </div>
                         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{cleanText(category.tagline)}</p>
                     </div>
                 </ScrollReveal>

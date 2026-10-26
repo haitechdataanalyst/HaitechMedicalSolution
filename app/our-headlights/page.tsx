@@ -10,6 +10,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, SURFACE_CARD } from "@/components/
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { BRAND_LEAD, BrandChecklist, BrandCTA, BrandFeature, BrandSection, MediaTile } from "@/components/brand/BrandSections";
 import { HeadlightSeries } from "@/components/headlights/HeadlightSeries";
+import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 
 export const metadata = getMetadata("ourHeadlights");
 
@@ -39,6 +40,9 @@ export default async function OurHeadlightsPage() {
                     <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
                         <p className="text-primary-700 text-[15px] font-medium md:text-base">LED Technology</p>
                         <h1 className="mt-3 text-[3rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-neutral-900 sm:text-7xl md:text-8xl">{intro.title}</h1>
+                        <div className="mt-2">
+                            <AdmetecBrandBadge size="brand" />
+                        </div>
                         <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-xl">{intro.description}</p>
                     </div>
 

@@ -11,6 +11,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_GHOST_ON_DARK, PILL_ON_DARK, 
 import { PAGE_TITLE, chipClass } from "@/components/catalog/listing";
 import { ProductGrid } from "@/components/products";
 import { FAQ, FAQGroup } from "@/components/misc/FAQ";
+import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import { articles } from "@/components/articles";
 import faqData from "@/data/faq.json";
 import siteConfig from "@/data/site-config.json";
@@ -134,6 +135,7 @@ export default async function HubPage({ slug }: { slug: string }) {
                             {productCount} {productCount === 1 ? "product" : "products"} · Supplied in India
                         </span>
                         <h1 className={`${PAGE_TITLE} max-w-3xl`}>{hub.name}</h1>
+                        {hub.showsAdmetecLogo && <AdmetecBrandBadge size="category" className="mt-2" />}
                         <div className="mt-5 max-w-3xl space-y-3 text-base leading-relaxed text-neutral-600 md:text-lg">
                             {hub.intro.map((paragraph) => (
                                 <p key={paragraph}>{paragraph}</p>
