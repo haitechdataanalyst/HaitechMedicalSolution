@@ -2526,7 +2526,7 @@
         "id": 301,
         "slug": "prismatic-3.8x",
         "name": "Prismatic 3.8x",
-        "description": "Keplerian prismatic loupes at 3.8x: high magnification with an advanced ergonomic design, a 90mm field of view and 85mm depth of field at a 450mm working distance.",
+        "description": "Prismatic (Keplerian) 3.8x loupes: high magnification and a sharp, true-colour image from edge to edge, handcrafted to your eyes and your working distance.",
         "category": 5,
         "order": 1,
         "sku": "ADM-P-38",
@@ -2559,8 +2559,18 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
-                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                    "primary": "Prismatic (Keplerian) loupes give you high magnification and a sharp, true-colour image from edge to edge. The ergonomic design keeps you upright through long implant, endo and surgical cases.",
+                    "secondary": "Each pair is handcrafted to your eyes, your working distance and the way you work. 1. Ultra-lightweight, 50–52 g: Up to 7.2x magnification without strain on the nose or neck. 2. Made for you alone: Built to your interpupillary distance, working distance and preferences. 3. Clear to the edges, true to colour: Sharp detail across the whole field, with no colour shift. 4. Better posture by design: Helps protect your back and neck through every long case. 5. Frames to suit your style: Compatible with all five Admetec frames: Blues™, Soul™, Indie™, Jazz™ and Swing™."
+                }
+            },
+            {
+                "type": "audience",
+                "data": {
+                    "suitedFor": [
+                        "Restorative",
+                        "Prosthodontics",
+                        "Orthodontics"
+                    ]
                 }
             },
             {
@@ -2592,7 +2602,8 @@
                             "label": "Lens Type",
                             "value": "Keplerian (Prismatic)"
                         }
-                    ]
+                    ],
+                    "footnote": "Values were measured at a 450 mm working distance. Your working distance is customised to you, so your actual figures will differ."
                 }
             },
             {
@@ -2601,12 +2612,11 @@
                     "manufacturer": "Admetec",
                     "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Prismatic 3.8x loupe system",
-                        "Selected frame",
-                        "Customized storage case",
+                        "Your customised Prismatic 3.8x loupes",
+                        "Personalised storage case",
                         "Head strap",
                         "Side shields",
-                        "Microfiber cleaning cloth",
+                        "Microfiber cloth",
                         "Allen key",
                         "User manual"
                     ]
@@ -2729,7 +2739,7 @@
         "id": 302,
         "slug": "prismatic-4.8x",
         "name": "Prismatic 4.8x",
-        "description": "Keplerian prismatic loupes at 4.8x: high magnification with an advanced ergonomic design, a 70mm field of view and 70mm depth of field at a 450mm working distance.",
+        "description": "Prismatic (Keplerian) 4.8x loupes: high magnification and a sharp, true-colour image from edge to edge, handcrafted to your eyes and your working distance.",
         "category": 5,
         "order": 2,
         "sku": "ADM-P-48",
@@ -2762,8 +2772,17 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
-                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                    "primary": "Prismatic (Keplerian) loupes give you high magnification and a sharp, true-colour image from edge to edge. The ergonomic design keeps you upright through long implant, endo and surgical cases.",
+                    "secondary": "Each pair is handcrafted to your eyes, your working distance and the way you work. 1. Ultra-lightweight, 50–52 g: Up to 7.2x magnification without strain on the nose or neck. 2. Made for you alone: Built to your interpupillary distance, working distance and preferences. 3. Clear to the edges, true to colour: Sharp detail across the whole field, with no colour shift. 4. Better posture by design: Helps protect your back and neck through every long case. 5. Frames to suit your style: Compatible with all five Admetec frames: Blues™, Soul™, Indie™, Jazz™ and Swing™."
+                }
+            },
+            {
+                "type": "audience",
+                "data": {
+                    "suitedFor": [
+                        "Everyday endo and perio",
+                        "Implant planning"
+                    ]
                 }
             },
             {
@@ -2795,7 +2814,8 @@
                             "label": "Lens Type",
                             "value": "Keplerian (Prismatic)"
                         }
-                    ]
+                    ],
+                    "footnote": "Values were measured at a 450 mm working distance. Your working distance is customised to you, so your actual figures will differ."
                 }
             },
             {
@@ -2804,12 +2824,11 @@
                     "manufacturer": "Admetec",
                     "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Prismatic 4.8x loupe system",
-                        "Selected frame",
-                        "Customized storage case",
+                        "Your customised Prismatic 4.8x loupes",
+                        "Personalised storage case",
                         "Head strap",
                         "Side shields",
-                        "Microfiber cleaning cloth",
+                        "Microfiber cloth",
                         "Allen key",
                         "User manual"
                     ]
@@ -2932,7 +2951,7 @@
         "id": 303,
         "slug": "prismatic-5.8x",
         "name": "Prismatic 5.8x",
-        "description": "Keplerian prismatic loupes at 5.8x: high magnification with an advanced ergonomic design, a 56mm field of view and 55mm depth of field at a 450mm working distance.",
+        "description": "Prismatic (Keplerian) 5.8x loupes: high magnification and a sharp, true-colour image from edge to edge, handcrafted to your eyes and your working distance.",
         "category": 5,
         "order": 3,
         "sku": "ADM-P-58",
@@ -2965,8 +2984,18 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
-                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                    "primary": "Prismatic (Keplerian) loupes give you high magnification and a sharp, true-colour image from edge to edge. The ergonomic design keeps you upright through long implant, endo and surgical cases.",
+                    "secondary": "Each pair is handcrafted to your eyes, your working distance and the way you work. 1. Ultra-lightweight, 50–52 g: Up to 7.2x magnification without strain on the nose or neck. 2. Made for you alone: Built to your interpupillary distance, working distance and preferences. 3. Clear to the edges, true to colour: Sharp detail across the whole field, with no colour shift. 4. Better posture by design: Helps protect your back and neck through every long case. 5. Frames to suit your style: Compatible with all five Admetec frames: Blues™, Soul™, Indie™, Jazz™ and Swing™."
+                }
+            },
+            {
+                "type": "audience",
+                "data": {
+                    "suitedFor": [
+                        "Implantology",
+                        "Oral surgery",
+                        "Micro-detail"
+                    ]
                 }
             },
             {
@@ -2998,7 +3027,8 @@
                             "label": "Lens Type",
                             "value": "Keplerian (Prismatic)"
                         }
-                    ]
+                    ],
+                    "footnote": "Values were measured at a 450 mm working distance. Your working distance is customised to you, so your actual figures will differ."
                 }
             },
             {
@@ -3007,12 +3037,11 @@
                     "manufacturer": "Admetec",
                     "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Prismatic 5.8x loupe system",
-                        "Selected frame",
-                        "Customized storage case",
+                        "Your customised Prismatic 5.8x loupes",
+                        "Personalised storage case",
                         "Head strap",
                         "Side shields",
-                        "Microfiber cleaning cloth",
+                        "Microfiber cloth",
                         "Allen key",
                         "User manual"
                     ]
@@ -3135,7 +3164,7 @@
         "id": 304,
         "slug": "prismatic-7.2x",
         "name": "Prismatic 7.2x",
-        "description": "Keplerian prismatic loupes at 7.2x: high magnification with an advanced ergonomic design, a 40mm field of view and 50mm depth of field at a 450mm working distance.",
+        "description": "Prismatic (Keplerian) 7.2x loupes: high magnification and a sharp, true-colour image from edge to edge, handcrafted to your eyes and your working distance.",
         "category": 5,
         "order": 4,
         "sku": "ADM-P-72",
@@ -3168,8 +3197,18 @@
             {
                 "type": "description",
                 "data": {
-                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
-                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                    "primary": "Prismatic (Keplerian) loupes give you high magnification and a sharp, true-colour image from edge to edge. The ergonomic design keeps you upright through long implant, endo and surgical cases.",
+                    "secondary": "Each pair is handcrafted to your eyes, your working distance and the way you work. 1. Ultra-lightweight, 50–52 g: Up to 7.2x magnification without strain on the nose or neck. 2. Made for you alone: Built to your interpupillary distance, working distance and preferences. 3. Clear to the edges, true to colour: Sharp detail across the whole field, with no colour shift. 4. Better posture by design: Helps protect your back and neck through every long case. 5. Frames to suit your style: Compatible with all five Admetec frames: Blues™, Soul™, Indie™, Jazz™ and Swing™."
+                }
+            },
+            {
+                "type": "audience",
+                "data": {
+                    "suitedFor": [
+                        "Canal location",
+                        "Micro-endo",
+                        "Fine surgical work"
+                    ]
                 }
             },
             {
@@ -3201,7 +3240,8 @@
                             "label": "Lens Type",
                             "value": "Keplerian (Prismatic)"
                         }
-                    ]
+                    ],
+                    "footnote": "Values were measured at a 450 mm working distance. Your working distance is customised to you, so your actual figures will differ."
                 }
             },
             {
@@ -3210,12 +3250,11 @@
                     "manufacturer": "Admetec",
                     "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Prismatic 7.2x loupe system",
-                        "Selected frame",
-                        "Customized storage case",
+                        "Your customised Prismatic 7.2x loupes",
+                        "Personalised storage case",
                         "Head strap",
                         "Side shields",
-                        "Microfiber cleaning cloth",
+                        "Microfiber cloth",
                         "Allen key",
                         "User manual"
                     ]

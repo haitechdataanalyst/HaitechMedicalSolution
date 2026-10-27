@@ -29,7 +29,7 @@ export default async function AboutAdmetecPage() {
         {
             name: "Prismatic",
             mags: "3.8x · 4.8x · 5.8x · 7.2x",
-            description: "Sharper detail at higher power.",
+            description: "High magnification and a sharp, true-colour image from edge to edge.",
             image: "/images/products/admetec/prismatic/prismatic-1.jpg",
             href: "/product-category/admetec/prismatic-loupes",
         },
