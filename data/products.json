@@ -2524,12 +2524,12 @@
     },
     {
         "id": 301,
-        "slug": "prismatic-loupe",
-        "name": "Prismatic Loupes",
-        "description": "Keplerian prismatic loupes combining high magnification with advanced ergonomic design — crystal-clear, edge-to-edge, color-true images across four magnification options.",
+        "slug": "prismatic-3.8x",
+        "name": "Prismatic 3.8x",
+        "description": "Keplerian prismatic loupes at 3.8x: high magnification with an advanced ergonomic design, a 90mm field of view and 85mm depth of field at a 450mm working distance.",
         "category": 5,
         "order": 1,
-        "sku": "ADM-PL",
+        "sku": "ADM-P-38",
         "basePrice": 207000,
         "currency": "INR",
         "hasVariants": false,
@@ -2569,44 +2569,20 @@
                     "title": "Technical Specifications",
                     "rows": [
                         {
-                            "label": "Magnification Options",
-                            "value": "3.8x / 4.8x / 5.8x / 7.2x"
+                            "label": "Magnification",
+                            "value": "3.8x"
                         },
                         {
                             "label": "Working Distance",
                             "value": "450mm (fully customizable)"
                         },
                         {
-                            "label": "Field of View @ 3.8x",
+                            "label": "Field of View",
                             "value": "90mm"
                         },
                         {
-                            "label": "Field of View @ 4.8x",
-                            "value": "70mm"
-                        },
-                        {
-                            "label": "Field of View @ 5.8x",
-                            "value": "56mm"
-                        },
-                        {
-                            "label": "Field of View @ 7.2x",
-                            "value": "40mm"
-                        },
-                        {
-                            "label": "Depth of Field @ 3.8x",
+                            "label": "Depth of Field",
                             "value": "85mm"
-                        },
-                        {
-                            "label": "Depth of Field @ 4.8x",
-                            "value": "70mm"
-                        },
-                        {
-                            "label": "Depth of Field @ 5.8x",
-                            "value": "55mm"
-                        },
-                        {
-                            "label": "Depth of Field @ 7.2x",
-                            "value": "50mm"
                         },
                         {
                             "label": "Weight",
@@ -2625,7 +2601,7 @@
                     "manufacturer": "Admetec",
                     "warranty": "5-year all-inclusive (Admetec Guarantee)",
                     "packageContents": [
-                        "Prismatic loupe system",
+                        "Prismatic 3.8x loupe system",
                         "Selected frame",
                         "Customized storage case",
                         "Head strap",
@@ -2642,30 +2618,6 @@
                     "addToCart": true,
                     "customization": true,
                     "customFields": [
-                        {
-                            "name": "magnification",
-                            "label": "Magnification",
-                            "type": "select",
-                            "options": [
-                                {
-                                    "value": "3.8x",
-                                    "label": "3.8x"
-                                },
-                                {
-                                    "value": "4.8x",
-                                    "label": "4.8x"
-                                },
-                                {
-                                    "value": "5.8x",
-                                    "label": "5.8x"
-                                },
-                                {
-                                    "value": "7.2x",
-                                    "label": "7.2x"
-                                }
-                            ],
-                            "required": true
-                        },
                         {
                             "name": "workingDistance",
                             "label": "Working Distance",
@@ -2765,6 +2717,618 @@
             }
         ],
         "relatedProducts": [
+            302,
+            303,
+            304,
+            104,
+            105,
+            107
+        ]
+    },
+    {
+        "id": 302,
+        "slug": "prismatic-4.8x",
+        "name": "Prismatic 4.8x",
+        "description": "Keplerian prismatic loupes at 4.8x: high magnification with an advanced ergonomic design, a 70mm field of view and 70mm depth of field at a 450mm working distance.",
+        "category": 5,
+        "order": 2,
+        "sku": "ADM-P-48",
+        "basePrice": 207000,
+        "currency": "INR",
+        "hasVariants": false,
+        "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+        "gallery": [
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+        ],
+        "catalogueFile": "/catalogues/prismatic-loupe.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                    "gallery": [
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
+                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Magnification",
+                            "value": "4.8x"
+                        },
+                        {
+                            "label": "Working Distance",
+                            "value": "450mm (fully customizable)"
+                        },
+                        {
+                            "label": "Field of View",
+                            "value": "70mm"
+                        },
+                        {
+                            "label": "Depth of Field",
+                            "value": "70mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "50–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Keplerian (Prismatic)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Admetec",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
+                    "packageContents": [
+                        "Prismatic 4.8x loupe system",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
+                        "User manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": true,
+                    "customFields": [
+                        {
+                            "name": "workingDistance",
+                            "label": "Working Distance",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "value": "340mm",
+                                    "label": "340mm"
+                                },
+                                {
+                                    "value": "380mm",
+                                    "label": "380mm"
+                                },
+                                {
+                                    "value": "420mm",
+                                    "label": "420mm"
+                                },
+                                {
+                                    "value": "460mm",
+                                    "label": "460mm"
+                                },
+                                {
+                                    "value": "500mm",
+                                    "label": "500mm"
+                                }
+                            ],
+                            "required": true
+                        }
+                    ],
+                    "frameSizes": [
+                        {
+                            "value": "S",
+                            "label": "S"
+                        },
+                        {
+                            "value": "M",
+                            "label": "M"
+                        },
+                        {
+                            "value": "L",
+                            "label": "L"
+                        }
+                    ],
+                    "prescription": {
+                        "enabled": true,
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                    },
+                    "matchHeadlights": {
+                        "enabled": true,
+                        "categories": [
+                            "wireless",
+                            "wired"
+                        ]
+                    },
+                    "templeTipEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/temple-tip-engraving-preview.png",
+                        "maxLength": 25,
+                        "placeholder": "Your Name"
+                    },
+                    "boxEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
+                        "maxLength": 30,
+                        "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
+            }
+        ],
+        "relatedProducts": [
+            301,
+            303,
+            304,
+            104,
+            105,
+            107
+        ]
+    },
+    {
+        "id": 303,
+        "slug": "prismatic-5.8x",
+        "name": "Prismatic 5.8x",
+        "description": "Keplerian prismatic loupes at 5.8x: high magnification with an advanced ergonomic design, a 56mm field of view and 55mm depth of field at a 450mm working distance.",
+        "category": 5,
+        "order": 3,
+        "sku": "ADM-P-58",
+        "basePrice": 207000,
+        "currency": "INR",
+        "hasVariants": false,
+        "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+        "gallery": [
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+        ],
+        "catalogueFile": "/catalogues/prismatic-loupe.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                    "gallery": [
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
+                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Magnification",
+                            "value": "5.8x"
+                        },
+                        {
+                            "label": "Working Distance",
+                            "value": "450mm (fully customizable)"
+                        },
+                        {
+                            "label": "Field of View",
+                            "value": "56mm"
+                        },
+                        {
+                            "label": "Depth of Field",
+                            "value": "55mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "50–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Keplerian (Prismatic)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Admetec",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
+                    "packageContents": [
+                        "Prismatic 5.8x loupe system",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
+                        "User manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": true,
+                    "customFields": [
+                        {
+                            "name": "workingDistance",
+                            "label": "Working Distance",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "value": "340mm",
+                                    "label": "340mm"
+                                },
+                                {
+                                    "value": "380mm",
+                                    "label": "380mm"
+                                },
+                                {
+                                    "value": "420mm",
+                                    "label": "420mm"
+                                },
+                                {
+                                    "value": "460mm",
+                                    "label": "460mm"
+                                },
+                                {
+                                    "value": "500mm",
+                                    "label": "500mm"
+                                }
+                            ],
+                            "required": true
+                        }
+                    ],
+                    "frameSizes": [
+                        {
+                            "value": "S",
+                            "label": "S"
+                        },
+                        {
+                            "value": "M",
+                            "label": "M"
+                        },
+                        {
+                            "value": "L",
+                            "label": "L"
+                        }
+                    ],
+                    "prescription": {
+                        "enabled": true,
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                    },
+                    "matchHeadlights": {
+                        "enabled": true,
+                        "categories": [
+                            "wireless",
+                            "wired"
+                        ]
+                    },
+                    "templeTipEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/temple-tip-engraving-preview.png",
+                        "maxLength": 25,
+                        "placeholder": "Your Name"
+                    },
+                    "boxEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
+                        "maxLength": 30,
+                        "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
+            }
+        ],
+        "relatedProducts": [
+            301,
+            302,
+            304,
+            104,
+            105,
+            107
+        ]
+    },
+    {
+        "id": 304,
+        "slug": "prismatic-7.2x",
+        "name": "Prismatic 7.2x",
+        "description": "Keplerian prismatic loupes at 7.2x: high magnification with an advanced ergonomic design, a 40mm field of view and 50mm depth of field at a 450mm working distance.",
+        "category": 5,
+        "order": 4,
+        "sku": "ADM-P-72",
+        "basePrice": 207000,
+        "currency": "INR",
+        "hasVariants": false,
+        "defaultImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+        "gallery": [
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+            "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+        ],
+        "catalogueFile": "/catalogues/prismatic-loupe.pdf",
+        "contentBlocks": [
+            {
+                "type": "hero",
+                "data": {
+                    "primaryImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                    "gallery": [
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308183/haitech/images/products/admetec/prismatic/prismatic-2.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308184/haitech/images/products/admetec/prismatic/prismatic-3.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308185/haitech/images/products/admetec/prismatic/prismatic-4.jpg",
+                        "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308186/haitech/images/products/admetec/prismatic/prismatic-5.jpg"
+                    ]
+                }
+            },
+            {
+                "type": "description",
+                "data": {
+                    "primary": "Prismatic loupes, also known as Keplerian loupes, combine high magnification with an advanced ergonomic design, delivering a precise, edge-to-edge, crystal-clear, and color-true image while supporting comfortable posture during extended procedures.",
+                    "secondary": "Designed for specialists requiring the highest level of magnification and image quality. Available in multiple magnification levels from 3.8x to 7.2x."
+                }
+            },
+            {
+                "type": "specifications",
+                "data": {
+                    "title": "Technical Specifications",
+                    "rows": [
+                        {
+                            "label": "Magnification",
+                            "value": "7.2x"
+                        },
+                        {
+                            "label": "Working Distance",
+                            "value": "450mm (fully customizable)"
+                        },
+                        {
+                            "label": "Field of View",
+                            "value": "40mm"
+                        },
+                        {
+                            "label": "Depth of Field",
+                            "value": "50mm"
+                        },
+                        {
+                            "label": "Weight",
+                            "value": "50–52g"
+                        },
+                        {
+                            "label": "Lens Type",
+                            "value": "Keplerian (Prismatic)"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "info",
+                "data": {
+                    "manufacturer": "Admetec",
+                    "warranty": "5-year all-inclusive (Admetec Guarantee)",
+                    "packageContents": [
+                        "Prismatic 7.2x loupe system",
+                        "Selected frame",
+                        "Customized storage case",
+                        "Head strap",
+                        "Side shields",
+                        "Microfiber cleaning cloth",
+                        "Allen key",
+                        "User manual"
+                    ]
+                }
+            },
+            {
+                "type": "actions",
+                "data": {
+                    "addToCart": true,
+                    "customization": true,
+                    "customFields": [
+                        {
+                            "name": "workingDistance",
+                            "label": "Working Distance",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "value": "340mm",
+                                    "label": "340mm"
+                                },
+                                {
+                                    "value": "380mm",
+                                    "label": "380mm"
+                                },
+                                {
+                                    "value": "420mm",
+                                    "label": "420mm"
+                                },
+                                {
+                                    "value": "460mm",
+                                    "label": "460mm"
+                                },
+                                {
+                                    "value": "500mm",
+                                    "label": "500mm"
+                                }
+                            ],
+                            "required": true
+                        }
+                    ],
+                    "frameSizes": [
+                        {
+                            "value": "S",
+                            "label": "S"
+                        },
+                        {
+                            "value": "M",
+                            "label": "M"
+                        },
+                        {
+                            "value": "L",
+                            "label": "L"
+                        }
+                    ],
+                    "prescription": {
+                        "enabled": true,
+                        "disclaimer": "If no prescription is attached, Haitech Medical holds no liability for any health issues."
+                    },
+                    "matchHeadlights": {
+                        "enabled": true,
+                        "categories": [
+                            "wireless",
+                            "wired"
+                        ]
+                    },
+                    "templeTipEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/temple-tip-engraving-preview.png",
+                        "maxLength": 25,
+                        "placeholder": "Your Name"
+                    },
+                    "boxEngraving": {
+                        "enabled": true,
+                        "previewImage": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308029/haitech/images/products/box-engraving-preview.jpg",
+                        "maxLength": 30,
+                        "placeholder": "Your Name"
+                    }
+                }
+            },
+            {
+                "type": "presentation",
+                "data": {
+                    "sectionNav": true,
+                    "quickEnquiry": false,
+                    "overview": {
+                        "lines": {
+                            "base": 4,
+                            "sm": 4,
+                            "lg": 6
+                        },
+                        "readMoreMinChars": {
+                            "base": 180,
+                            "sm": 400,
+                            "lg": 420
+                        }
+                    },
+                    "features": {
+                        "visible": {
+                            "base": 6,
+                            "sm": 6,
+                            "lg": 8
+                        }
+                    },
+                    "specifications": {
+                        "visibleRows": 8
+                    }
+                }
+            }
+        ],
+        "relatedProducts": [
+            301,
+            302,
+            303,
             104,
             105,
             107

@@ -1,5 +1,10 @@
 [
   {
+    "from": "/product-category/admetec/prismatic-loupes/prismatic-loupe",
+    "to": "/product-category/admetec/prismatic-loupes",
+    "reason": "Prismatic loupes were split into one product per magnification (3.8x, 4.8x, 5.8x, 7.2x); the category lists them"
+  },
+  {
     "from": "/product-category/almadent/auxiliary-equipment",
     "to": "/product-category/almadent/implant-motor",
     "reason": "category 12 was retired; its products now live here (seen in 4532946)"
