@@ -14,7 +14,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_GHOST_ON_DARK, PILL_ON_DARK, 
 // ── Static data ────────────────────────────────────────────────────────────
 
 const TIMELINE = [
-    { year: "2013", title: "Founded in Mumbai", body: "Haitech Medical Solutions incorporated with a focus on importing precision dental instruments." },
+    { year: "2011", title: "Founded in Mumbai", body: "Haitech Medical Solutions incorporated with a focus on importing precision dental instruments." },
     { year: "2015", title: "First Brand Partnership", body: "Became the authorised distributor for Admetec surgical loupes across India." },
     { year: "2018", title: "Network Expansion", body: "Grew to 15+ dealer partners spanning major metros — Delhi, Bangalore, Chennai, Pune." },
     { year: "2026", title: "6 Brands · 27+ Dealers", body: "Now India's most trusted partner for six world-class global dental brands." },
@@ -30,7 +30,7 @@ const BRANDS = [
 ];
 
 const STATS = [
-    { value: "2013", label: "Year we were founded", fixed: true },
+    { value: "2011", label: "Year we were founded", fixed: true },
     { value: "27+", label: "Dealer partners" },
     { value: "6", label: "Global brands" },
     { value: "1000+", label: "Professionals served" },
@@ -54,14 +54,14 @@ function Hero() {
         <section className="bg-white">
             <div className="container pt-12 pb-10 text-center md:pt-20 md:pb-14">
                 <Reveal>
-                    <p className="text-primary-700 text-[15px] font-medium">Est. 2013 · Mumbai, India</p>
+                    <p className="text-primary-700 text-[15px] font-medium">Est. 2011 · Mumbai, India</p>
                 </Reveal>
                 <h1 className="mx-auto mt-4 max-w-4xl text-[2.75rem] leading-[1.04] font-semibold tracking-[-0.035em] text-balance text-neutral-900 md:text-7xl">
                     <MaskReveal delay={120}>Haitech Medical</MaskReveal>
                 </h1>
                 <Reveal delay={320}>
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-balance text-neutral-600 md:text-[1.375rem] md:leading-[1.5]">
-                        India&apos;s most trusted partner for premium dental &amp; medical equipment — empowering professionals since 2013.
+                        India&apos;s most trusted partner for premium dental &amp; medical equipment — empowering professionals since 2011.
                     </p>
                 </Reveal>
                 <Reveal delay={460} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -99,7 +99,7 @@ function Origin() {
                         <h2 className="mt-3 text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.022em] text-neutral-900 md:text-[2.5rem]">A company built on clinical excellence</h2>
                         <p className="mt-6 text-[17px] leading-relaxed text-neutral-600">
                             At <strong className="font-semibold text-neutral-900">Haitech Medical Solutions Pvt. Ltd.</strong>, we import and market top-tier dental solutions across India. Founded in
-                            Mumbai in 2013, we&apos;ve grown from a vision into a trusted network connecting 27+ dealers and thousands of dental professionals nationwide.
+                            Mumbai in 2011, we&apos;ve grown from a vision into a trusted network connecting 27+ dealers and thousands of dental professionals nationwide.
                         </p>
                         <p className="mt-5 text-[17px] leading-relaxed text-neutral-600">
                             Every product we carry is chosen with one goal: helping clinicians deliver the highest standard of care to their patients.

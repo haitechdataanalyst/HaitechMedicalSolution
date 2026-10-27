@@ -48,7 +48,7 @@ export default function Footer({ sections, config }: FooterProps) {
                             </span>
                         </Link>
                         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-                            Premium medical and dental equipment for dental and medical professionals across India — proudly distributed from Mumbai since 2013, with a growing international footprint.
+                            Premium medical and dental equipment for dental and medical professionals across India — proudly distributed from Mumbai since 2011, with a growing international footprint.
                         </p>
                     </div>
 
