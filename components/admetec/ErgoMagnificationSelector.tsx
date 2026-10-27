@@ -33,7 +33,7 @@ const VARIANTS: Variant[] = [
         key: "ergo-v",
         label: "Ergo V",
         href: "/product/ergo-v",
-        image: "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg",
+        image: "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg",
         weight: "55g",
         mags: [
             { label: "3.8x", fov: 100, dof: 110, wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-3.8x-350x350.webp` },
@@ -45,7 +45,7 @@ const VARIANTS: Variant[] = [
         key: "ergo-v-pro",
         label: "Ergo V Pro",
         href: "/product/ergo-v-pro",
-        image: "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg",
+        image: "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg",
         weight: "60g",
         mags: [
             { label: "5.6x", fov: 70,  dof: 83,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-pro-5.6x-350x350.webp` },

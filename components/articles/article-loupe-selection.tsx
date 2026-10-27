@@ -80,7 +80,7 @@ export const articleLoupeSelection: ArticleData = {
             </p>
 
             {/* Final Image */}
-            <Image src="/images/articles/article-demo-image-1024x7000.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Close-up of dental magnification loupes" className="w-full object-cover" />
+            <Image src="/images/articles/article-demo-image-1024x700.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Close-up of dental magnification loupes" className="w-full object-cover" />
         </>
     ),
     publishedAt: "2024-08-27",
