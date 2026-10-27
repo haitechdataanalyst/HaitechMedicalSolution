@@ -40,7 +40,9 @@ export function AdmetecAbout() {
                 )}
             </p>
             <p className={BRAND_LEAD}>
-                {linkAdmetec("Haitech Medical Solutions is Admetec's authorised dealer in India. We help you choose the right magnification and light, take your fitting measurements, place your order with Admetec, and support you after delivery.")}
+                {linkAdmetec(
+                    "Haitech Medical Solutions is Admetec's authorised dealer in India. We help you choose the right magnification and light, take your fitting measurements, place your order with Admetec, and support you after delivery."
+                )}
             </p>
 
             <div>
@@ -51,7 +53,7 @@ export function AdmetecAbout() {
                 </ul>
                 <p className="mt-4 text-[13px] leading-relaxed text-neutral-500">
                     {linkAdmetec("Haitech Medical Solutions Pvt. Ltd. is listed as Admetec's distributor for India on")}{" "}
-                    <a href={DISTRIBUTORS_URL} target="_blank" rel="noopener" className="decoration-current/50 underline underline-offset-2 hover:text-neutral-900">
+                    <a href={DISTRIBUTORS_URL} target="_blank" rel="noopener" className="underline decoration-current/50 underline-offset-2 hover:text-neutral-900">
                         admetec.com
                     </a>
                     .

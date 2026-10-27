@@ -55,7 +55,7 @@ const VARIANTS: Variant[] = [
     },
 ];
 
-export function ErgoMagnificationSelector() {
+export function ErgoMagnificationSelector({ embedded = false }: { embedded?: boolean }) {
     const [variantKey, setVariantKey] = useState("ergo-v");
     const [magIdx, setMagIdx] = useState(0);
 
@@ -67,11 +67,10 @@ export function ErgoMagnificationSelector() {
         setMagIdx(0);
     };
 
-    return (
-        <section className="overflow-hidden bg-white">
-            <div className="section container">
+    const content = (
+        <>
                 <SectionHeader
-                    title="Choose your magnification."
+                    title="Ergo V & V Pro: choose your magnification."
                     subtitle="Higher magnification reveals finer detail — at the cost of a narrower field and shallower depth. Pick the power that fits your procedure."
                 />
 
@@ -190,7 +189,14 @@ export function ErgoMagnificationSelector() {
                         </p>
                     </div>
                 </div>
-            </div>
+        </>
+    );
+
+    if (embedded) return <div className="overflow-hidden rounded-3xl bg-neutral-50 p-6 md:p-12 lg:p-16">{content}</div>;
+
+    return (
+        <section className="overflow-hidden bg-white">
+            <div className="section container">{content}</div>
         </section>
     );
 }

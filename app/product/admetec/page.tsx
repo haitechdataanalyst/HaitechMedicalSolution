@@ -17,8 +17,6 @@ export default async function AboutAdmetecPage() {
     const lightModels = headlightFigures(headlights.categories).models;
     const flamingo = await getProductBySlug("flamingo");
     const flamingoHref = flamingo ? await getProductPath(flamingo) : null;
-    const prismatic = await getProductBySlug("prismatic-loupe");
-    const prismaticHref = prismatic ? await getProductPath(prismatic) : "/product-category/admetec";
 
     const loupeSeries: LoupeSeries[] = [
         {
@@ -26,29 +24,21 @@ export default async function AboutAdmetecPage() {
             mags: "2.5x · 2.7x · 3.2x",
             description: "Lightweight, with a wide field and excellent depth of field. For general dentistry and routine procedures.",
             image: "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
-            href: "/product-category/admetec/galilean-loupes/galilean-2.5x",
+            href: "/product-category/admetec/galilean-loupes",
         },
         {
             name: "Prismatic",
             mags: "3.8x · 4.8x · 5.8x · 7.2x",
             description: "Sharper detail at higher power.",
             image: "/images/products/admetec/prismatic/prismatic-1.jpg",
-            href: prismaticHref,
+            href: "/product-category/admetec/prismatic-loupes",
         },
         {
             name: "Ergo",
             mags: "3.0x to 10x",
             description: "Higher magnification with an ergonomic declination angle that promotes natural posture.",
             image: "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
-            href: "/product-category/admetec/ergo-loupes/ergo-5.0x",
-        },
-        {
-            name: "Ergo V & V Pro",
-            mags: "3.8x to 10x",
-            description: "Ergo loupes with adjustable magnification, in two models.",
-            image: "/images/products/admetec/ergo-v/ergo-v-category.jpg",
-            href: "/product-category/admetec/ergo-v-series",
-            cta: "View series",
+            href: "/product-category/admetec/ergo-loupes",
         },
     ];
 
@@ -75,10 +65,10 @@ export default async function AboutAdmetecPage() {
                 ]}
             />
 
-            <AdmetecLoupes series={loupeSeries} />
-
-            {/* Ergo V / Ergo V Pro magnification selector */}
-            <ErgoMagnificationSelector />
+            <AdmetecLoupes series={loupeSeries}>
+                {/* Ergo V / Ergo V Pro, with the magnification chooser, continue the same section */}
+                <ErgoMagnificationSelector embedded />
+            </AdmetecLoupes>
 
             {/* Lights get a full-width band of their own: both series, headline figures and a way into /our-headlights */}
             <AdmetecLights {...headlights} />
