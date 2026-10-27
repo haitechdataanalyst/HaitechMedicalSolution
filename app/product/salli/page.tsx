@@ -119,6 +119,7 @@ export default function AboutSalliPage() {
                         Is Hurting You.
                     </>
                 }
+                cta={{ href: "/product-category/salli/sway-fit" }}
                 media={<MediaTile href="/product-category/salli/sway-fit" src="/images/products/salli/sway-fit-black.jpg" alt="Salli SwayFit saddle chair" aspect="aspect-square" />}
             >
                 <p className={BRAND_LEAD}>
@@ -145,6 +146,7 @@ export default function AboutSalliPage() {
                         Transform How You Sit.
                     </>
                 }
+                cta={{ href: "/product-category/salli/triple-fit" }}
                 media={<MediaTile href="/product-category/salli/triple-fit" src="/images/products/salli/triple-fit-black.jpg" alt="Salli TripleLift saddle chair" />}
             >
                 <p className={BRAND_LEAD}>

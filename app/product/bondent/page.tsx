@@ -49,6 +49,7 @@ export default function BondentAboutPage() {
                         Every Angle.
                     </>
                 }
+                cta={{ href: "/product-category/bondent/endo-files/rotary-files/cc-premium" }}
                 media={<MediaTile href="/product-category/bondent/endo-files/rotary-files/cc-premium" src="/images/products/bondent/CC Premium.jpg" alt="Bondent rotary endodontic files" />}
             >
                 <p className={BRAND_LEAD}>
@@ -68,6 +69,7 @@ export default function BondentAboutPage() {
                         Miss Nothing.
                     </>
                 }
+                cta={{ href: "/product-category/bondent/imaging/cbct-1020ms" }}
                 media={<MediaTile href="/product-category/bondent/imaging/cbct-1020ms" src="/images/products/bondent/CBCT 1020MS.png" alt="Bondent CBCT imaging system" />}
             >
                 <p className={BRAND_LEAD}>High-resolution CBCT systems with advanced metal-artifact reduction technology and surgical loupes built for enhanced clinical precision.</p>

@@ -52,7 +52,8 @@ export default async function AboutAdmetecPage() {
                         Wide. Clear.
                     </>
                 }
-                media={<MediaTile href="/product-category/admetec" src="/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg" alt="Admetec Galilean Loupes" />}
+                cta={{ href: "/product-category/admetec/galilean-loupes/galilean-2.5x" }}
+                media={<MediaTile href="/product-category/admetec/galilean-loupes/galilean-2.5x" src="/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg" alt="Admetec Galilean Loupes" />}
             >
                 <p className={BRAND_LEAD}>
                     Galilean loupes offer a wide field of view with excellent depth of field. Perfect for general dentistry and routine procedures — compact and remarkably comfortable for all-day
@@ -72,7 +73,8 @@ export default async function AboutAdmetecPage() {
                         Better Posture.
                     </>
                 }
-                media={<MediaTile href="/product-category/admetec" src="/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg" alt="Admetec Ergo Prismatic Loupes" />}
+                cta={{ href: "/product-category/admetec/ergo-loupes/ergo-5.0x" }}
+                media={<MediaTile href="/product-category/admetec/ergo-loupes/ergo-5.0x" src="/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg" alt="Admetec Ergo Prismatic Loupes" />}
             >
                 <p className={BRAND_LEAD}>
                     The Ergo series delivers higher magnification with superior optical clarity. An ergonomic declination angle promotes natural posture — ideal for detailed procedures that demand

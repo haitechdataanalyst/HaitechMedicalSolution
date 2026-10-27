@@ -144,17 +144,27 @@ interface BrandFeatureProps {
     /** Put the media on the left at lg+. */
     reverse?: boolean;
     tone?: Tone;
+    /** A way into the product the media shows: use when the media is one product, with the same href as its tile. */
+    cta?: { href: string; label?: string };
 }
 
 /** Split section: copy on one side, media on the other. Stacks copy-first on mobile. */
-export function BrandFeature({ eyebrow, title, children, media, reverse = false, tone = "white" }: BrandFeatureProps) {
+export function BrandFeature({ eyebrow, title, children, media, reverse = false, tone = "white", cta }: BrandFeatureProps) {
     return (
         <BrandSection tone={tone}>
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
                 <div className={cn(reverse && "lg:order-2")}>
                     {eyebrow && <p className="text-primary-700 mb-2 text-[15px] font-medium">{eyebrow}</p>}
                     <h2 className="text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-neutral-900 md:text-5xl">{title}</h2>
-                    <div className="mt-5 space-y-6">{children}</div>
+                    <div className="mt-5 space-y-6">
+                        {children}
+                        {cta && (
+                            <Link href={cta.href} className={PILL_PRIMARY}>
+                                {cta.label ?? "View product"}
+                                <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                            </Link>
+                        )}
+                    </div>
                 </div>
                 <div className={cn(reverse && "lg:order-1")}>{media}</div>
             </div>
