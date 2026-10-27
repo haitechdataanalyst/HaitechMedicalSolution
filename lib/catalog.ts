@@ -467,7 +467,7 @@ export function getProductImage(product: Product): string {
     if (product.defaultImage) return product.defaultImage;
     if (product.variants?.length) return product.variants[0].image;
     if (product.gallery?.length) return product.gallery[0];
-    return "/images/placeholder.jpg";
+    return "/images/site/placeholder.svg";
 }
 
 // ── Frames (static JSON — unchanged) ─────────────────────────────────────────

@@ -6,7 +6,7 @@ import { GalleryBlock as GalleryBlockType } from "@/types";
 import { cn } from "@/lib/utils";
 import { CloseIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
-const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
+const PLACEHOLDER_IMAGE = "/images/site/placeholder.svg";
 
 const LIGHTBOX_BUTTON =
     "flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-[transform,background-color] duration-200 ease-out hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-safe:active:scale-[0.94]";

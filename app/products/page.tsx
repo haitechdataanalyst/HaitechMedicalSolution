@@ -21,13 +21,13 @@ const equipmentLinks = [...HUBS.map((hub) => ({ label: hub.name, href: hubPath(h
 
 // A real catalogue photo per equipment type (UI only — keyed by the existing hub / category paths).
 const EQUIPMENT_IMAGE: Record<string, string> = {
-    "/dental-loupes": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
-    "/dental-chairs": "/images/products/almadent/almadent-primary.jpg",
+    "/dental-loupes": "/images/products/admetec/loupes/ergo/gallery/ergo-10x-blues-black.jpg",
+    "/dental-chairs": "/images/products/almadent/brand/almadent-primary.jpg",
     "/saddle-chairs": "/images/products/salli/sway-fit-black.jpg",
-    "/endodontics": "/images/products/bondent/Actor I pro.png",
-    "/cbct": "/images/products/bondent/Bondent CBCT-1030 Pro.png",
-    "/product-category/strauss": "/images/products/strauss/a-series/A0C.jpg",
-    "/product-category/medesy": "/images/products/medesy/elevator/700slash8.jpg",
+    "/endodontics": "/images/products/bondent/actor-i-pro.png",
+    "/cbct": "/images/products/bondent/bondent-cbct-1030-pro.png",
+    "/product-category/strauss": "/images/products/strauss/a-series/a0c.jpg",
+    "/product-category/medesy": "/images/products/medesy/elevators/700slash8.jpg",
 };
 
 export default async function ProductsPage() {

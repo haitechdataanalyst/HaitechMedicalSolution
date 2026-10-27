@@ -1,0 +1,174 @@
+[
+  {
+    "from": "/BrandLogo/AdmetecLogo.jpeg",
+    "to": "/brand/manufacturers/admetec-logo.jpeg"
+  },
+  {
+    "from": "/BrandLogo/AlmadentLogo.jpeg",
+    "to": "/brand/manufacturers/almadent-logo.jpeg"
+  },
+  {
+    "from": "/BrandLogo/BondentGroupLogo.jpg",
+    "to": "/brand/manufacturers/bondent-logo.jpg"
+  },
+  {
+    "from": "/BrandLogo/MedesyLogo.jpeg",
+    "to": "/brand/manufacturers/medesy-logo.jpeg"
+  },
+  {
+    "from": "/BrandLogo/SalliLogo.jpeg",
+    "to": "/brand/manufacturers/salli-logo.jpeg"
+  },
+  {
+    "from": "/BrandLogo/StraussLogo.jpeg",
+    "to": "/brand/manufacturers/strauss-logo.jpeg"
+  },
+  {
+    "from": "/BrandLogo/admetec-logo.webp",
+    "to": "/brand/manufacturers/admetec-logo.webp"
+  },
+  {
+    "from": "/electric_motor/EM_1.webp",
+    "to": "/images/products/almadent/electric-motor/em-1.webp"
+  },
+  {
+    "from": "/electric_motor/EM_2.webp",
+    "to": "/images/products/almadent/electric-motor/em-2.webp"
+  },
+  {
+    "from": "/electric_motor/EM_3.webp",
+    "to": "/images/products/almadent/electric-motor/em-3.webp"
+  },
+  {
+    "from": "/haitech-medical.png",
+    "to": "/brand/haitech/mark.png"
+  },
+  {
+    "from": "/haitech_medical_logo.png",
+    "to": "/brand/haitech/logo.png"
+  },
+  {
+    "from": "/haitech_medical_logo_email.png",
+    "to": "/brand/haitech/logo-email.png"
+  },
+  {
+    "from": "/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg",
+    "to": "/images/articles/admetec-butterfly-s-case-loupes-included.jpg"
+  },
+  {
+    "from": "/images/Article-Demo-Image-1024x700.jpg",
+    "to": "/images/articles/article-demo-image-1024x700.jpg"
+  },
+  {
+    "from": "/images/Article-Demo-Image-1024x7000.jpg",
+    "to": "/images/articles/article-demo-image-1024x7000.jpg"
+  },
+  {
+    "from": "/images/Top-6-question-TN.jpg",
+    "to": "/images/articles/top-6-question-tn.jpg"
+  },
+  {
+    "from": "/images/choosing-the-perfect-loupes.jpg",
+    "to": "/images/articles/choosing-the-perfect-loupes.jpg"
+  },
+  {
+    "from": "/images/maginficent.jpg",
+    "to": "/images/articles/maginficent.jpg"
+  },
+  {
+    "from": "/images/placeholder.svg",
+    "to": "/images/site/placeholder.svg"
+  },
+  {
+    "from": "/images/products/admetec/Loupes-ErgoV-ErgoV/Blues_Frame/Blues-Black-Ergo-V.jpg",
+    "to": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
+  },
+  {
+    "from": "/images/products/admetec/Loupes-ErgoV-ErgoVPro/Blues_Frame/Blues-Black-Ergo-V-Pro.jpg",
+    "to": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+  },
+  {
+    "from": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
+    "to": "/images/products/admetec/loupes/ergo/gallery/ergo-10x-blues-black.jpg"
+  },
+  {
+    "from": "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
+    "to": "/images/products/admetec/loupes/ergo/gallery/ergo-5.0x-blues-rose-gold.jpg"
+  },
+  {
+    "from": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
+    "to": "/images/products/admetec/loupes/galilean/gallery/galilean-2.5x-blues-pink.jpg"
+  },
+  {
+    "from": "/images/products/admetec/prismatic/prismatic-1.jpg",
+    "to": "/images/products/admetec/loupes/prismatic/gallery/prismatic-1.jpg"
+  },
+  {
+    "from": "/images/products/almadent/almadent-primary.jpg",
+    "to": "/images/products/almadent/brand/almadent-primary.jpg"
+  },
+  {
+    "from": "/images/products/medesy/elevator/700slash8.jpg",
+    "to": "/images/products/medesy/elevators/700slash8.jpg"
+  },
+  {
+    "from": "/images/products/medesy/periosteal/periosteal-category.jpg",
+    "to": "/images/products/medesy/periosteal-elevators/periosteal-category.jpg"
+  },
+  {
+    "from": "/og-default.png",
+    "to": "/brand/haitech/og-default.png"
+  },
+  {
+    "from": "/three_in_one_Dental_Piezo/file_1.webp",
+    "to": "/images/products/almadent/three-in-one-piezo/file-1.webp"
+  },
+  {
+    "from": "/three_in_one_Dental_Piezo/file_2.webp",
+    "to": "/images/products/almadent/three-in-one-piezo/file-2.webp"
+  },
+  {
+    "from": "/three_in_one_Dental_Piezo/file_3.webp",
+    "to": "/images/products/almadent/three-in-one-piezo/file-3.webp"
+  },
+  {
+    "from": "/three_in_one_Dental_Piezo/file_4.webp",
+    "to": "/images/products/almadent/three-in-one-piezo/file-4.webp"
+  },
+  {
+    "from": "/vids/hero-1-1080.mp4",
+    "to": "/videos/home-hero/hero-1-1080.mp4"
+  },
+  {
+    "from": "/vids/hero-1-540.mp4",
+    "to": "/videos/home-hero/hero-1-540.mp4"
+  },
+  {
+    "from": "/vids/hero-1-poster.jpg",
+    "to": "/videos/home-hero/hero-1-poster.jpg"
+  },
+  {
+    "from": "/vids/hero-2-1080.mp4",
+    "to": "/videos/home-hero/hero-2-1080.mp4"
+  },
+  {
+    "from": "/vids/hero-2-540.mp4",
+    "to": "/videos/home-hero/hero-2-540.mp4"
+  },
+  {
+    "from": "/vids/hero-2-poster.jpg",
+    "to": "/videos/home-hero/hero-2-poster.jpg"
+  },
+  {
+    "from": "/vids/hero-3-1080.mp4",
+    "to": "/videos/home-hero/hero-3-1080.mp4"
+  },
+  {
+    "from": "/vids/hero-3-540.mp4",
+    "to": "/videos/home-hero/hero-3-540.mp4"
+  },
+  {
+    "from": "/vids/hero-3-poster.jpg",
+    "to": "/videos/home-hero/hero-3-poster.jpg"
+  }
+]

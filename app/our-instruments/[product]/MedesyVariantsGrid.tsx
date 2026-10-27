@@ -76,7 +76,7 @@ interface SingleProductCardProps {
 function SingleProductCard({ product }: SingleProductCardProps) {
     const { addItem, openCart } = useCart();
     const [added, setAdded] = useState(false);
-    const image = product.defaultImage || product.gallery?.[0] || "/images/placeholder.jpg";
+    const image = product.defaultImage || product.gallery?.[0] || "/images/site/placeholder.svg";
 
     const handleAddToCart = () => {
         const cartItem: CartItem = {

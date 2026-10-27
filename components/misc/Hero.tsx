@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Carousel } from "@/components/ui";
 
-// Each slide has three files, all encoded from the 4K originals (public/vids/Website Carousal*.mp4, kept in the repo):
+// Each slide has three files, all encoded from the 4K originals (public/videos/home-hero/source/website-carousal*.mp4, kept in the repo):
 // a poster that shows at once and is the page's LCP image, a 1080p video for wide screens and a 540p one for phones.
 // The originals were 3840x2160 with an unused audio track (22.8 MB for the three); these total about 4.1 MB for a wide
 // screen and about 1.3 MB for a phone (posters included), and only the slides actually shown are fetched.
 const heroSlides = [
-    { poster: "/vids/hero-1-poster.jpg", wide: "/vids/hero-1-1080.mp4", narrow: "/vids/hero-1-540.mp4" },
-    { poster: "/vids/hero-2-poster.jpg", wide: "/vids/hero-2-1080.mp4", narrow: "/vids/hero-2-540.mp4" },
-    { poster: "/vids/hero-3-poster.jpg", wide: "/vids/hero-3-1080.mp4", narrow: "/vids/hero-3-540.mp4" },
+    { poster: "/videos/home-hero/hero-1-poster.jpg", wide: "/videos/home-hero/hero-1-1080.mp4", narrow: "/videos/home-hero/hero-1-540.mp4" },
+    { poster: "/videos/home-hero/hero-2-poster.jpg", wide: "/videos/home-hero/hero-2-1080.mp4", narrow: "/videos/home-hero/hero-2-540.mp4" },
+    { poster: "/videos/home-hero/hero-3-poster.jpg", wide: "/videos/home-hero/hero-3-1080.mp4", narrow: "/videos/home-hero/hero-3-540.mp4" },
 ];
 
 const WIDE_SCREEN = "(min-width: 768px)";

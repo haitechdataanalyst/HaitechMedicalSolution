@@ -137,8 +137,8 @@ function clampDescription(description?: string): string | undefined {
     return clean.slice(0, DESCRIPTION_MAX - 1).replace(/\s+\S*$/, "") + "…";
 }
 
-/** Branded 1200x630 card (public/og-default.png) for pages that have no image of their own. */
-const DEFAULT_SHARE_IMAGE = { url: "/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} — premium medical and dental equipment in India` };
+/** Branded 1200x630 card (public/brand/haitech/og-default.png) for pages that have no image of their own. */
+const DEFAULT_SHARE_IMAGE = { url: "/brand/haitech/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} — premium medical and dental equipment in India` };
 
 function buildMetadata(title: string, rawDescription: string | undefined, options: MetadataOptions = {}): Metadata {
     const description = clampDescription(rawDescription);

@@ -12,7 +12,7 @@ export const articleErgoLoupes: ArticleData = {
     content: (
         <>
             {/* Hero Image */}
-            <Image src="/images/Top-6-question-TN.jpg" width={1228} height={829} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist using ergonomic loupes in proper posture" className="mb-10 aspect-[16/9] h-auto w-full object-cover" />
+            <Image src="/images/articles/top-6-question-tn.jpg" width={1228} height={829} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist using ergonomic loupes in proper posture" className="mb-10 aspect-[16/9] h-auto w-full object-cover" />
 
             {/* Introduction */}
             <p className="mb-6">
@@ -108,6 +108,6 @@ export const articleErgoLoupes: ArticleData = {
     readTime: "8 min read",
     publishedTime: "12:54pm",
     views: 98,
-    imageSrc: "/images/Top-6-question-TN.jpg",
+    imageSrc: "/images/articles/top-6-question-tn.jpg",
     imageAlt: "Dentist using ergonomic loupes in proper posture",
 };

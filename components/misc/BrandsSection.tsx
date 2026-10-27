@@ -9,7 +9,7 @@ const brands = [
     {
         name: "Admetec",
         tagline: "Surgical loupes & LED headlights engineered for dental professionals.",
-        image: "/BrandLogo/AdmetecLogo.jpeg",
+        image: "/brand/manufacturers/admetec-logo.jpeg",
         href: "/product/admetec",
         badge: "Optical",
         productCount: 12,
@@ -19,7 +19,7 @@ const brands = [
     {
         name: "Almadent",
         tagline: "Premium dental chairs & units for the modern clinic.",
-        image: "/BrandLogo/AlmadentLogo.jpeg",
+        image: "/brand/manufacturers/almadent-logo.jpeg",
         href: "/product/almadent",
         badge: "Dental Chairs",
         productCount: 7,
@@ -29,7 +29,7 @@ const brands = [
     {
         name: "Medesy",
         tagline: "Precision stainless steel instruments trusted by surgeons worldwide.",
-        image: "/BrandLogo/MedesyLogo.jpeg",
+        image: "/brand/manufacturers/medesy-logo.jpeg",
         href: "/product/medesy",
         badge: "Surgical",
         productCount: 21,
@@ -39,7 +39,7 @@ const brands = [
     {
         name: "Salli",
         tagline: "Ergonomic saddle chairs designed for the modern clinic.",
-        image: "/BrandLogo/SalliLogo.jpeg",
+        image: "/brand/manufacturers/salli-logo.jpeg",
         href: "/product/salli",
         badge: "Ergonomic",
         productCount: 5,
@@ -49,7 +49,7 @@ const brands = [
     {
         name: "Strauss",
         tagline: "Diamond burs & precision cutting instruments for every procedure.",
-        image: "/BrandLogo/StraussLogo.jpeg",
+        image: "/brand/manufacturers/strauss-logo.jpeg",
         href: "/product/strauss",
         badge: "Burs",
         productCount: 39,
@@ -59,7 +59,7 @@ const brands = [
     {
         name: "Bondent",
         tagline: "German-registered endodontics, imaging & digital implant systems.",
-        image: "/BrandLogo/BondentGroupLogo.jpg",
+        image: "/brand/manufacturers/bondent-logo.jpg",
         href: "/product/bondent",
         badge: "Endo & Imaging",
         productCount: 50,

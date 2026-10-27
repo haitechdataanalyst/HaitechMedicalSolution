@@ -31,7 +31,7 @@ export function CompareActionPanel({ product }: CompareActionPanelProps) {
         return {
             id: String(product.id),
             name: product.name,
-            image: product.defaultImage ?? product.gallery?.[0] ?? "/images/placeholder.jpg",
+            image: product.defaultImage ?? product.gallery?.[0] ?? "/images/site/placeholder.svg",
             href: pathname,
             price: product.basePrice,
             currency: product.currency,

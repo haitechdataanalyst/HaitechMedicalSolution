@@ -17,7 +17,7 @@ const heritage = [
 const categories = [
     { name: "Elevators", image: "/images/products/medesy/elevators/elevators-category.jpg", meta: "20+ instruments", href: "/product-category/medesy/elevators" },
     { name: "Forceps", image: "/images/products/medesy/forceps/forceps-category.jpg", meta: "30+ instruments", href: "/product-category/medesy/forceps" },
-    { name: "Periosteal Elevators", image: "/images/products/medesy/periosteal/periosteal-category.jpg", meta: "15+ instruments", href: "/product-category/medesy/periosteal-elevators" },
+    { name: "Periosteal Elevators", image: "/images/products/medesy/periosteal-elevators/periosteal-category.jpg", meta: "15+ instruments", href: "/product-category/medesy/periosteal-elevators" },
     { name: "Scissors", image: "/images/products/medesy/scissors/scissors-category.jpg", meta: "10+ instruments", href: "/product-category/medesy/scissors" },
 ];
 

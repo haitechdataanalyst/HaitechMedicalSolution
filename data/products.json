@@ -4021,22 +4021,22 @@
         "basePrice": null,
         "currency": "AUD",
         "hasVariants": false,
-        "defaultImage": "/electric_motor/EM_1.webp",
+        "defaultImage": "/images/products/almadent/electric-motor/em-1.webp",
         "gallery": [
-            "/electric_motor/EM_1.webp",
-            "/electric_motor/EM_2.webp",
-            "/electric_motor/EM_3.webp"
+            "/images/products/almadent/electric-motor/em-1.webp",
+            "/images/products/almadent/electric-motor/em-2.webp",
+            "/images/products/almadent/electric-motor/em-3.webp"
         ],
-        "catalogueFile": "/electric_motor/Electric micromotor.pdf",
+        "catalogueFile": "/documents/catalogues/almadent/electric-micromotor.pdf",
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/electric_motor/EM_1.webp",
+                    "primaryImage": "/images/products/almadent/electric-motor/em-1.webp",
                     "gallery": [
-                        "/electric_motor/EM_1.webp",
-                        "/electric_motor/EM_2.webp",
-                        "/electric_motor/EM_3.webp"
+                        "/images/products/almadent/electric-motor/em-1.webp",
+                        "/images/products/almadent/electric-motor/em-2.webp",
+                        "/images/products/almadent/electric-motor/em-3.webp"
                     ]
                 }
             },
@@ -4123,23 +4123,23 @@
         "basePrice": null,
         "currency": "AUD",
         "hasVariants": false,
-        "defaultImage": "/three_in_one_Dental_Piezo/file_1.webp",
+        "defaultImage": "/images/products/almadent/three-in-one-piezo/file-1.webp",
         "gallery": [
-            "/three_in_one_Dental_Piezo/file_1.webp",
-            "/three_in_one_Dental_Piezo/file_2.webp",
-            "/three_in_one_Dental_Piezo/file_3.webp",
-            "/three_in_one_Dental_Piezo/file_4.webp"
+            "/images/products/almadent/three-in-one-piezo/file-1.webp",
+            "/images/products/almadent/three-in-one-piezo/file-2.webp",
+            "/images/products/almadent/three-in-one-piezo/file-3.webp",
+            "/images/products/almadent/three-in-one-piezo/file-4.webp"
         ],
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/three_in_one_Dental_Piezo/file_1.webp",
+                    "primaryImage": "/images/products/almadent/three-in-one-piezo/file-1.webp",
                     "gallery": [
-                        "/three_in_one_Dental_Piezo/file_1.webp",
-                        "/three_in_one_Dental_Piezo/file_2.webp",
-                        "/three_in_one_Dental_Piezo/file_3.webp",
-                        "/three_in_one_Dental_Piezo/file_4.webp"
+                        "/images/products/almadent/three-in-one-piezo/file-1.webp",
+                        "/images/products/almadent/three-in-one-piezo/file-2.webp",
+                        "/images/products/almadent/three-in-one-piezo/file-3.webp",
+                        "/images/products/almadent/three-in-one-piezo/file-4.webp"
                     ]
                 }
             },

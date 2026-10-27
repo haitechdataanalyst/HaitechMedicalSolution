@@ -8,7 +8,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_PRIMARY, SURFACE_CARD } from 
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const PHOTOS = {
-    system: "/images/products/admetec/Lights/Flamingo/Flamingo-with-Loupes-and-PowerPack.webp",
+    system: "/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack.webp",
     clinician: "/images/products/admetec/catalog/flamingo-product.jpg",
     controlUnit: "/images/products/admetec/catalog/flamingo-camera.jpg",
     kit: "/images/products/admetec/catalog/flamingo-kit.webp",

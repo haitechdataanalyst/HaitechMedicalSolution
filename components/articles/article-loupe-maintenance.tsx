@@ -13,7 +13,7 @@ export const articleLoupeMaintenance: ArticleData = {
     content: (
         <>
             {/* Top Image */}
-            <Image src="/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg" width={1536} height={1536} sizes="(min-width: 448px) 448px, 100vw" alt="Admetec Butterfly headlight case with loupes, batteries, charger and accessories" className="mx-auto mb-10 block h-auto w-full max-w-md" />
+            <Image src="/images/articles/admetec-butterfly-s-case-loupes-included.jpg" width={1536} height={1536} sizes="(min-width: 448px) 448px, 100vw" alt="Admetec Butterfly headlight case with loupes, batteries, charger and accessories" className="mx-auto mb-10 block h-auto w-full max-w-md" />
 
             {/* Intro */}
             <p className="mb-6">
@@ -96,6 +96,6 @@ export const articleLoupeMaintenance: ArticleData = {
     readTime: "5 min read",
     publishedTime: "02:39pm",
     views: 127,
-    imageSrc: "/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg",
+    imageSrc: "/images/articles/admetec-butterfly-s-case-loupes-included.jpg",
     imageAlt: "Admetec Butterfly headlight case with loupes, batteries, charger and accessories",
 };

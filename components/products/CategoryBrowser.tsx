@@ -38,7 +38,7 @@ type SortOption = "default" | "price-asc" | "price-desc" | "name-asc";
 const PAGE_SIZE = 12;
 // Search and sort only earn their space on longer lists; a handful of categories needs neither.
 const SEARCH_SORT_MIN_ITEMS = 8;
-const PLACEHOLDER = "/images/placeholder.jpg";
+const PLACEHOLDER = "/images/site/placeholder.svg";
 
 const BRAND_CATEGORY: Record<string, string> = {
     Admetec: "Loupes · Optics",

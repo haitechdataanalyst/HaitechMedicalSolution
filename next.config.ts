@@ -8,6 +8,8 @@ const isDev = process.env.NODE_ENV !== "production";
 // "endo-device" / "endo-files"). Generated from git history by scripts/build-url-redirects.mjs; rerun it after
 // changing a category slug or moving a product, and commit the result.
 const catalogueRedirects: { from: string; to: string }[] = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "url-redirects.json"), "utf8"));
+// Static files that moved when public/ was reorganised (see public/README.md): their old URLs may still be cached, bookmarked or sent in emails.
+const assetRedirects: { from: string; to: string }[] = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "asset-redirects.json"), "utf8"));
 
 const nextConfig: NextConfig = {
     transpilePackages: ["lucide-react"],
@@ -126,6 +128,7 @@ const nextConfig: NextConfig = {
                 permanent: true,
             },
             ...catalogueRedirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true })),
+            ...assetRedirects.map(({ from, to }) => ({ source: from, destination: to, permanent: true })),
         ];
     },
 

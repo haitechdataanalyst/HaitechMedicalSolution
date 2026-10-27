@@ -21,7 +21,7 @@ interface CategoryPageClientProps {
 type SortOption = "default" | "price-asc" | "price-desc" | "name-asc";
 
 const PAGE_SIZE = 16;
-const PLACEHOLDER = "/images/placeholder.jpg";
+const PLACEHOLDER = "/images/site/placeholder.svg";
 
 function SafeImage({ src, alt, ...props }: React.ComponentProps<typeof Image>) {
     const [imgSrc, setImgSrc] = useState((src as string) || PLACEHOLDER);

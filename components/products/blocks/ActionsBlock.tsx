@@ -470,7 +470,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
                 >
                     <div className="container flex items-center gap-3 py-2.5" style={{ paddingBottom: "max(0.625rem, env(safe-area-inset-bottom, 0px))" }}>
                         <div className="relative hidden h-11 w-11 shrink-0 overflow-hidden rounded-xl bg-neutral-50 sm:block">
-                            <Image src={product.defaultImage || product.gallery?.[0] || "/images/placeholder.jpg"} alt="" fill className="object-contain p-1 mix-blend-multiply" sizes="44px" />
+                            <Image src={product.defaultImage || product.gallery?.[0] || "/images/site/placeholder.svg"} alt="" fill className="object-contain p-1 mix-blend-multiply" sizes="44px" />
                         </div>
                         <div className="min-w-0 flex-1">
                             <p className="truncate text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{product.name}</p>

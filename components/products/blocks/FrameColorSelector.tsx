@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { OPTION_IDLE, OPTION_LABEL, OPTION_SELECTED, OPTION_TILE } from "./option-styles";
 
-const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
+const PLACEHOLDER_IMAGE = "/images/site/placeholder.svg";
 
 // Color mapping for deriving hex values from color IDs
 // This makes products.json independent - colors are derived from frameVariants.images keys

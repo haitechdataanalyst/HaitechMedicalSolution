@@ -1,4 +1,4 @@
-// One-off migration: upload public/images, public/BrandLogo, and public/Camera
+// One-off migration: upload public/images and public/brand
 // to Cloudinary, then rewrite every matching local path in data/*.json to the
 // resulting Cloudinary URL.
 //
@@ -43,7 +43,7 @@ cloudinary.config({
     api_secret: CLOUDINARY_API_SECRET,
 });
 
-const MEDIA_DIRS = ["images", "BrandLogo", "Camera"].map((d) => path.join(ROOT, "public", d));
+const MEDIA_DIRS = ["images", "brand"].map((d) => path.join(ROOT, "public", d));
 const MAP_PATH = path.join(__dirname, ".cloudinary-upload-map.json");
 const DATA_FILES = ["products.json", "categories.json", "frames.json", "headlights.json", "medesy.json"]
     .map((f) => path.join(ROOT, "data", f));
@@ -127,7 +127,7 @@ function deepReplace(value, map, stats) {
             stats.replacements++;
             return hit.url;
         }
-        if (value.startsWith("/images/") || value.startsWith("/BrandLogo/") || value.startsWith("/Camera/")) {
+        if (value.startsWith("/images/") || value.startsWith("/brand/")) {
             stats.missing.add(value);
         }
         return value;

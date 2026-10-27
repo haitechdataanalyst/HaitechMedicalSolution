@@ -58,7 +58,7 @@ export default function WishlistPageClient({ products }: Props) {
         <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {wishedProducts.map((product) => {
                 const brand = detectBrand(product.sku);
-                const image = product.defaultImage || product.gallery?.[0] || "/images/placeholder.jpg";
+                const image = product.defaultImage || product.gallery?.[0] || "/images/site/placeholder.svg";
                 return (
                     <li key={product.id} className={cn(SURFACE_CARD, "group flex flex-col p-2")}>
                         {/* Image */}

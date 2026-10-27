@@ -42,7 +42,7 @@ function CardCta({ needsQuote }: { needsQuote: boolean }) {
 export default function ProductCard({ entity, href, image }: ProductCardProps) {
     const entityIsProduct = isProduct(entity);
     const product = entityIsProduct ? (entity as Product) : null;
-    const displayImage = image || "/images/placeholder.jpg";
+    const displayImage = image || "/images/site/placeholder.svg";
     const brand = product ? detectBrand(product.sku) : null;
     const needsQuote = brand ? requiresConsultation(brand.name) : false;
     const compareAllowed = brand?.name === "Admetec" || brand?.name === "Salli";

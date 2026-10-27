@@ -16,7 +16,7 @@ export default function CategoryCard({ category, href, childCount }: CategoryCar
             <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
             <div className="relative aspect-square overflow-hidden rounded-xl bg-neutral-50">
                 <Image
-                    src={category.image || "/images/placeholder.jpg"}
+                    src={category.image || "/images/site/placeholder.svg"}
                     alt={category.name}
                     fill
                     className="object-contain p-6 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]"

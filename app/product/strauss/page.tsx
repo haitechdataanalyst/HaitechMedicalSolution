@@ -18,19 +18,19 @@ const burSeries = [
     {
         name: "A-Series",
         description: "Standard diamond burs for general preparation and restorative procedures.",
-        image: "/images/products/strauss/a-series/A1M.jpg",
+        image: "/images/products/strauss/a-series/a1m.jpg",
         href: "/product-category/strauss/a-series",
     },
     {
         name: "B-Series",
         description: "Fine-grit burs designed for contouring, adjustment, and finishing work.",
-        image: "/images/products/strauss/b-series/B1M.jpg",
+        image: "/images/products/strauss/b-series/b1m.jpg",
         href: "/product-category/strauss/b-series",
     },
     {
         name: "P-Series",
         description: "Specialty shapes and configurations for specific clinical indications.",
-        image: "/images/products/strauss/p-series/PR13M.jpg",
+        image: "/images/products/strauss/p-series/pr13m.jpg",
         href: "/product-category/strauss/p-series",
     },
 ];

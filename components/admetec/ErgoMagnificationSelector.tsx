@@ -9,7 +9,7 @@ import SectionHeader from "@/components/misc/SectionHeader";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
 import { OPTION_IDLE, OPTION_SELECTED, OPTION_TILE } from "@/components/products/blocks/option-styles";
 
-const MAG_IMAGES_BASE = "/images/products/admetec/magnification";
+const MAG_IMAGES_BASE = "/images/products/admetec/loupes/ergo-v/magnification";
 
 type Mag = {
     label: string;
@@ -33,7 +33,7 @@ const VARIANTS: Variant[] = [
         key: "ergo-v",
         label: "Ergo V",
         href: "/product/ergo-v",
-        image: "/images/products/admetec/Loupes-ErgoV-ErgoV/Blues_Frame/Blues-Black-Ergo-V.jpg",
+        image: "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg",
         weight: "55g",
         mags: [
             { label: "3.8x", fov: 100, dof: 110, wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-3.8x-350x350.webp` },
@@ -45,7 +45,7 @@ const VARIANTS: Variant[] = [
         key: "ergo-v-pro",
         label: "Ergo V Pro",
         href: "/product/ergo-v-pro",
-        image: "/images/products/admetec/Loupes-ErgoV-ErgoVPro/Blues_Frame/Blues-Black-Ergo-V-Pro.jpg",
+        image: "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg",
         weight: "60g",
         mags: [
             { label: "5.6x", fov: 70,  dof: 83,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-pro-5.6x-350x350.webp` },

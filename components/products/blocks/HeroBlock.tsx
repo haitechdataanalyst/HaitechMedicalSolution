@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { productNameWithBrand } from "@/lib/product-seo";
 
-const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
+const PLACEHOLDER_IMAGE = "/images/site/placeholder.svg";
 
 interface HeroBlockProps {
     data: HeroBlockType["data"];

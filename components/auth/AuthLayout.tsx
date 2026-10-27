@@ -29,7 +29,7 @@ export default function AuthLayout({ title, subtitle, children, footer, icon, sh
             {/* Quiet top bar: way back + brand */}
             <div className="container flex h-16 items-center justify-between">
                 <Link href="/" className="focus-visible:outline-primary-500 inline-flex min-h-11 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2">
-                    <Image src="/haitech_medical_logo.png" alt="Haitech Medical home" width={170} height={34} className="h-auto w-[132px] sm:w-[150px]" priority />
+                    <Image src="/brand/haitech/logo.png" alt="Haitech Medical home" width={170} height={34} className="h-auto w-[132px] sm:w-[150px]" priority />
                 </Link>
                 <Link
                     href={backHref}

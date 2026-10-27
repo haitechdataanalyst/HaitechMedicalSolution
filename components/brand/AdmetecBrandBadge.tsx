@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const ADMETEC_URL = "https://www.admetec.com";
-export const ADMETEC_LOGO_SRC = "/BrandLogo/admetec-logo.webp";
+export const ADMETEC_LOGO_SRC = "/brand/manufacturers/admetec-logo.webp";
 // The file's own size (397 x 100); only the ratio matters, the logo's width is set per context below.
 const LOGO_WIDTH = 397;
 const LOGO_HEIGHT = 100;
