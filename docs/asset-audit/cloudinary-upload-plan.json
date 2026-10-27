@@ -1,0 +1,4223 @@
+[
+ {
+  "path": "public/images/products/admetec/camera/flamingo/photography/flamingo-image-1.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-1",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/photography",
+  "bytes": 177147,
+  "width": 600,
+  "height": 478,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/photography/flamingo-image-2.jpeg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-2",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/photography",
+  "bytes": 4820013,
+  "width": 6000,
+  "height": 4000,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/photography/flamingo-image-3.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-3",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/photography",
+  "bytes": 1153953,
+  "width": 4096,
+  "height": 2730,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/product",
+  "bytes": 168893,
+  "width": 1280,
+  "height": 720,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/product",
+  "bytes": 159710,
+  "width": 1280,
+  "height": 720,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/product/flamingo-camera",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/product",
+  "bytes": 166419,
+  "width": 1276,
+  "height": 850,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/product/flamingo-kit.webp",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/product/flamingo-kit",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/product",
+  "bytes": 272638,
+  "width": 1024,
+  "height": 601,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/camera/flamingo/product/flamingo-product.jpg",
+  "public_id": "haitech/images/products/admetec/camera/flamingo/product/flamingo-product",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/camera/flamingo/product",
+  "bytes": 22948,
+  "width": 800,
+  "height": 600,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/frames/thumbnails/blues-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/frames/thumbnails/blues-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/frames/thumbnails",
+  "bytes": 88391,
+  "width": 1400,
+  "height": 782,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/blues-black"
+ },
+ {
+  "path": "public/images/products/admetec/frames/thumbnails/indie-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/frames/thumbnails/indie-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/frames/thumbnails",
+  "bytes": 77152,
+  "width": 1400,
+  "height": 762,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/indie-black"
+ },
+ {
+  "path": "public/images/products/admetec/frames/thumbnails/jazz-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/frames/thumbnails/jazz-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/frames/thumbnails",
+  "bytes": 113683,
+  "width": 1400,
+  "height": 603,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/jazz-blue-black"
+ },
+ {
+  "path": "public/images/products/admetec/frames/thumbnails/soul-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/frames/thumbnails/soul-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/frames/thumbnails",
+  "bytes": 85776,
+  "width": 1400,
+  "height": 737,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/soul-black"
+ },
+ {
+  "path": "public/images/products/admetec/frames/thumbnails/swing-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/frames/thumbnails/swing-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/frames/thumbnails",
+  "bytes": 39870,
+  "width": 1000,
+  "height": 339,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/swing-black-1"
+ },
+ {
+  "path": "public/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wired/orchid-e",
+  "bytes": 112949,
+  "width": 785,
+  "height": 785,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wired/orchid-e/orchid-e-image-1.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wired/orchid-e/orchid-e-image-1",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wired/orchid-e",
+  "bytes": 363672,
+  "width": 1937,
+  "height": 1323,
+  "reuse": "haitech/images/products/admetec/lights/headlights/wired/orchid-e"
+ },
+ {
+  "path": "public/images/products/admetec/lights/wired/orchid-f/orchid-f-image-1.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wired/orchid-f/orchid-f-image-1",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wired/orchid-f",
+  "bytes": 190013,
+  "width": 1400,
+  "height": 1093,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wired/orchid/orchid-image-1.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wired/orchid/orchid-image-1",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wired/orchid",
+  "bytes": 299680,
+  "width": 1757,
+  "height": 1362,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wired/orchid/orchid-in-use.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wired/orchid/orchid-in-use",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wired/orchid",
+  "bytes": 42647,
+  "width": 812,
+  "height": 600,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case.webp",
+  "public_id": "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wireless/butterfly-evo",
+  "bytes": 82808,
+  "width": 950,
+  "height": 535,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-category-image.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-category-image",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wireless/butterfly-evo",
+  "bytes": 212186,
+  "width": 1283,
+  "height": 1234,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wireless/butterfly-evo",
+  "bytes": 84904,
+  "width": 900,
+  "height": 900,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-image-1.jpg",
+  "public_id": "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-image-1",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/lights/wireless/butterfly-evo",
+  "bytes": 243794,
+  "width": 1056,
+  "height": 1334,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 145453,
+  "width": 1600,
+  "height": 955,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 160402,
+  "width": 1600,
+  "height": 983,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-blue-bronze-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 88391,
+  "width": 1400,
+  "height": 782,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/blues-black"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 141359,
+  "width": 1600,
+  "height": 923,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-navy-blue-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 142352,
+  "width": 1600,
+  "height": 922,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-pink-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 165842,
+  "width": 1500,
+  "height": 937,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-purple-grey-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues",
+  "bytes": 165196,
+  "width": 1500,
+  "height": 958,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-rose-gold-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 133874,
+  "width": 1600,
+  "height": 943,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 130014,
+  "width": 1600,
+  "height": 937,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-champagne-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 77152,
+  "width": 1400,
+  "height": 762,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/indie-black"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 159968,
+  "width": 1600,
+  "height": 979,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-green-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 139967,
+  "width": 1600,
+  "height": 974,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-midnight-blue-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 149920,
+  "width": 1600,
+  "height": 1004,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-orange-lava-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/indie",
+  "bytes": 147327,
+  "width": 1500,
+  "height": 971,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-turquoise-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 181910,
+  "width": 1600,
+  "height": 926,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-blue-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 113683,
+  "width": 1400,
+  "height": 603,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/jazz-blue-black"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 173047,
+  "width": 1600,
+  "height": 1006,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-green-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 171562,
+  "width": 1600,
+  "height": 891,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-orange-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 179662,
+  "width": 1600,
+  "height": 898,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-red-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/jazz",
+  "bytes": 201815,
+  "width": 1600,
+  "height": 998,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-turquoise-rose-gold-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 147417,
+  "width": 1600,
+  "height": 968,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 147487,
+  "width": 1600,
+  "height": 950,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-blue-brown-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 85776,
+  "width": 1400,
+  "height": 737,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/soul-black"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 179305,
+  "width": 1600,
+  "height": 1087,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-pink-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 153332,
+  "width": 1600,
+  "height": 975,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-red-gold-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 191491,
+  "width": 1600,
+  "height": 999,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-turquoise-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/soul",
+  "bytes": 177423,
+  "width": 1600,
+  "height": 977,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-white-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 151927,
+  "width": 1600,
+  "height": 784,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-black-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 161216,
+  "width": 1600,
+  "height": 791,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-blue-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-frame-thumbnail.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-frame-thumbnail",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 39870,
+  "width": 1000,
+  "height": 339,
+  "reuse": "haitech/images/products/admetec/frames-for-select-frames/swing-black-1"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 153687,
+  "width": 1600,
+  "height": 793,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-grey-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 162470,
+  "width": 1600,
+  "height": 789,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-red-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 141912,
+  "width": 1600,
+  "height": 796,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-rose-gold-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v-pro/swing",
+  "bytes": 118254,
+  "width": 1600,
+  "height": 792,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-white-ergo-v-pro"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 142549,
+  "width": 1600,
+  "height": 896,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 156808,
+  "width": 1600,
+  "height": 930,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-blue-bronze-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 137984,
+  "width": 1600,
+  "height": 865,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-navy-blue-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 139472,
+  "width": 1600,
+  "height": 871,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-pink-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 160644,
+  "width": 1500,
+  "height": 885,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-purple-grey-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/blues",
+  "bytes": 161309,
+  "width": 1500,
+  "height": 900,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-rose-gold-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 131582,
+  "width": 1600,
+  "height": 926,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 127418,
+  "width": 1600,
+  "height": 914,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-champagne-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 159742,
+  "width": 1600,
+  "height": 925,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-green-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 138207,
+  "width": 1600,
+  "height": 956,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-midnight-blue-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 146390,
+  "width": 1600,
+  "height": 943,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-orange-lava-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/indie",
+  "bytes": 145281,
+  "width": 1500,
+  "height": 920,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-turquoise-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/jazz",
+  "bytes": 181568,
+  "width": 1600,
+  "height": 881,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-blue-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/jazz",
+  "bytes": 171514,
+  "width": 1600,
+  "height": 963,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-green-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/jazz",
+  "bytes": 173464,
+  "width": 1600,
+  "height": 849,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-orange-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/jazz",
+  "bytes": 179652,
+  "width": 1600,
+  "height": 853,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-red-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/jazz",
+  "bytes": 205166,
+  "width": 1600,
+  "height": 964,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-turquoise-rose-gold-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 147141,
+  "width": 1600,
+  "height": 928,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-black-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 146238,
+  "width": 1600,
+  "height": 910,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-blue-brown-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 177199,
+  "width": 1600,
+  "height": 1039,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-pink-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 153132,
+  "width": 1600,
+  "height": 935,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-red-gold-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 176793,
+  "width": 1500,
+  "height": 901,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-turquoise-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/soul",
+  "bytes": 160505,
+  "width": 1500,
+  "height": 866,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-white-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 152818,
+  "width": 1600,
+  "height": 743,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-black-ergo-v-1"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 161984,
+  "width": 1600,
+  "height": 745,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-blue-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 154760,
+  "width": 1600,
+  "height": 752,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-grey-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 162793,
+  "width": 1600,
+  "height": 752,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-red-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 142914,
+  "width": 1600,
+  "height": 757,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-rose-gold-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo-v/ergo-v/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo-v/ergo-v/swing",
+  "bytes": 118512,
+  "width": 1600,
+  "height": 752,
+  "reuse": "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-white-ergo-v"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 180943,
+  "width": 1500,
+  "height": 1082,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-black-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 195195,
+  "width": 1500,
+  "height": 1129,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-bronze-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 179932,
+  "width": 1500,
+  "height": 1111,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-blue-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 174434,
+  "width": 1500,
+  "height": 1084,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-pink-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 229055,
+  "width": 1500,
+  "height": 1243,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-purple-grey-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/blues",
+  "bytes": 230203,
+  "width": 1500,
+  "height": 1240,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/blues-frame/blues-rose-gold-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 164976,
+  "width": 1500,
+  "height": 1020,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-black-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 158759,
+  "width": 1500,
+  "height": 1034,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-champagne-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 195484,
+  "width": 1500,
+  "height": 1141,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-green-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 194752,
+  "width": 1500,
+  "height": 1222,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-midnight-blue-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 190172,
+  "width": 1500,
+  "height": 1157,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-orange-lava-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/indie",
+  "bytes": 194221,
+  "width": 1500,
+  "height": 1201,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/indie-frame/indie-turquoise-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/jazz",
+  "bytes": 215219,
+  "width": 1500,
+  "height": 1114,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/jazz-frame/jazz-blueblack-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/jazz",
+  "bytes": 193031,
+  "width": 1500,
+  "height": 1139,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/jazz-frame/jazz-green-black-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/jazz",
+  "bytes": 185910,
+  "width": 1500,
+  "height": 993,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/jazz-frame/jazz-orangeblack-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/jazz",
+  "bytes": 204768,
+  "width": 1500,
+  "height": 1042,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/jazz-frame/jazz-redblack-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/jazz",
+  "bytes": 221547,
+  "width": 1500,
+  "height": 1175,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/jazz-frame/jazz-turquoise-rose-gold-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 179259,
+  "width": 1500,
+  "height": 1067,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-black-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 167622,
+  "width": 1500,
+  "height": 1008,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-brown-blue-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 208996,
+  "width": 1500,
+  "height": 1223,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-pink-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 179177,
+  "width": 1500,
+  "height": 1078,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-red-gold-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 219330,
+  "width": 1500,
+  "height": 1145,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-turquoise-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/soul",
+  "bytes": 204789,
+  "width": 1500,
+  "height": 1126,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-10-0x/soul-frame/soul-white-snow-ergo-10"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 213015,
+  "width": 2006,
+  "height": 1313,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 208067,
+  "width": 2009,
+  "height": 1298,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 219764,
+  "width": 2018,
+  "height": 1306,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 217459,
+  "width": 2009,
+  "height": 1313,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 196961,
+  "width": 2010,
+  "height": 1309,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/10.0x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/10-0x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/10.0x/swing",
+  "bytes": 184382,
+  "width": 2008,
+  "height": 1306,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 143795,
+  "width": 1500,
+  "height": 872,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-black-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 162013,
+  "width": 1500,
+  "height": 907,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-bronze-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 158164,
+  "width": 1500,
+  "height": 1018,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-blue-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 141557,
+  "width": 1500,
+  "height": 851,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-pink-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 171224,
+  "width": 1500,
+  "height": 944,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-purple-grey-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/blues",
+  "bytes": 175641,
+  "width": 1500,
+  "height": 953,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/blues-frame/blues-rose-gold-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 157625,
+  "width": 1500,
+  "height": 909,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-black-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 127379,
+  "width": 1500,
+  "height": 831,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-champagne-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 147563,
+  "width": 1500,
+  "height": 885,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-green-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 140292,
+  "width": 1500,
+  "height": 891,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-midnight-blue-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 151596,
+  "width": 1500,
+  "height": 898,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-orange-lava-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/indie",
+  "bytes": 153482,
+  "width": 1500,
+  "height": 971,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/indie-frame/indie-turquoise-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/jazz",
+  "bytes": 178483,
+  "width": 1500,
+  "height": 835,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/jazz-frame/jazz-blueblack-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/jazz",
+  "bytes": 158486,
+  "width": 1500,
+  "height": 937,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/jazz-frame/jazz-green-black-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/jazz",
+  "bytes": 162322,
+  "width": 1500,
+  "height": 776,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/jazz-frame/jazz-orangeblack-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/jazz",
+  "bytes": 174858,
+  "width": 1500,
+  "height": 806,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/jazz-frame/jazz-redblack-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/jazz",
+  "bytes": 186223,
+  "width": 1500,
+  "height": 938,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/jazz-frame/jazz-turquoise-rose-gold-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 140959,
+  "width": 1500,
+  "height": 836,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-black-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 135854,
+  "width": 1500,
+  "height": 816,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-brown-blue-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 163593,
+  "width": 1500,
+  "height": 968,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-pink-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 182633,
+  "width": 1500,
+  "height": 921,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-red-gold-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 174916,
+  "width": 1500,
+  "height": 851,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-turquoise-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/soul",
+  "bytes": 157611,
+  "width": 1500,
+  "height": 850,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-3-0x/soul-frame/soul-white-snow-ergo-3"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 158712,
+  "width": 1947,
+  "height": 927,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 181144,
+  "width": 1925,
+  "height": 942,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 164365,
+  "width": 1934,
+  "height": 939,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 186756,
+  "width": 1921,
+  "height": 930,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 157801,
+  "width": 1925,
+  "height": 952,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/3.0x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/3-0x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/3.0x/swing",
+  "bytes": 126995,
+  "width": 1917,
+  "height": 922,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 145434,
+  "width": 1500,
+  "height": 895,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-black-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 166343,
+  "width": 1500,
+  "height": 955,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-bronze-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 150667,
+  "width": 1500,
+  "height": 949,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-blue-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 166511,
+  "width": 1500,
+  "height": 919,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-pink-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 177505,
+  "width": 1500,
+  "height": 971,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-purple-grey-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/blues",
+  "bytes": 176464,
+  "width": 1500,
+  "height": 958,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/blues-frame/blues-rose-gold-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 135233,
+  "width": 1500,
+  "height": 874,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-black-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 147321,
+  "width": 1500,
+  "height": 887,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-champagne-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 150049,
+  "width": 1500,
+  "height": 879,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-green-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 140562,
+  "width": 1500,
+  "height": 915,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-midnight-blue-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 153077,
+  "width": 1500,
+  "height": 949,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-orange-lava-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/indie",
+  "bytes": 155010,
+  "width": 1500,
+  "height": 952,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/indie-frame/indie-turquoise-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/jazz",
+  "bytes": 180776,
+  "width": 1500,
+  "height": 886,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/jazz-frame/jazz-blueblack-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/jazz",
+  "bytes": 160080,
+  "width": 1500,
+  "height": 941,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/jazz-frame/jazz-green-black-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/jazz",
+  "bytes": 157563,
+  "width": 1500,
+  "height": 807,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/jazz-frame/jazz-orangeblack-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/jazz",
+  "bytes": 176683,
+  "width": 1500,
+  "height": 869,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/jazz-frame/jazz-redblack-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/jazz",
+  "bytes": 181912,
+  "width": 1500,
+  "height": 939,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/jazz-frame/jazz-turquoise-rose-gold-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 141338,
+  "width": 1500,
+  "height": 858,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-black-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 157063,
+  "width": 1500,
+  "height": 980,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-brown-blue-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 160007,
+  "width": 1500,
+  "height": 945,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-pink-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 145829,
+  "width": 1500,
+  "height": 858,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-red-gold-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 176729,
+  "width": 1500,
+  "height": 889,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-turquoise-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/soul",
+  "bytes": 163174,
+  "width": 1500,
+  "height": 855,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-4-0x/soul-frame/soul-white-snow-ergo-4"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 153454,
+  "width": 1914,
+  "height": 915,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 169672,
+  "width": 1916,
+  "height": 917,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 155049,
+  "width": 1912,
+  "height": 924,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 168110,
+  "width": 1905,
+  "height": 936,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 144328,
+  "width": 1902,
+  "height": 914,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/4.0x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/4-0x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/4.0x/swing",
+  "bytes": 126572,
+  "width": 1916,
+  "height": 910,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 153234,
+  "width": 1500,
+  "height": 943,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-black-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 174306,
+  "width": 1500,
+  "height": 1000,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-bronze-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 151474,
+  "width": 1500,
+  "height": 943,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-blue-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 167011,
+  "width": 1500,
+  "height": 933,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-pink-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 198267,
+  "width": 1500,
+  "height": 1115,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-purple-grey-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues",
+  "bytes": 196310,
+  "width": 1500,
+  "height": 1119,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/blues-frame/blues-rose-gold-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 158213,
+  "width": 1500,
+  "height": 921,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-black-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 137639,
+  "width": 1500,
+  "height": 921,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-champagne-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 166012,
+  "width": 1500,
+  "height": 1030,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-green-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 154416,
+  "width": 1500,
+  "height": 938,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-midnight-blue-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 164944,
+  "width": 1500,
+  "height": 950,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-orange-lava-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/indie",
+  "bytes": 175128,
+  "width": 1500,
+  "height": 1135,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/indie-frame/indie-turquoise-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/jazz",
+  "bytes": 185776,
+  "width": 1500,
+  "height": 858,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/jazz-frame/jazz-blueblack-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/jazz",
+  "bytes": 178871,
+  "width": 1500,
+  "height": 1073,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/jazz-frame/jazz-green-black-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/jazz",
+  "bytes": 162794,
+  "width": 1500,
+  "height": 781,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/jazz-frame/jazz-orangeblack-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/jazz",
+  "bytes": 185552,
+  "width": 1500,
+  "height": 862,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/jazz-frame/jazz-redblack-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/jazz",
+  "bytes": 204238,
+  "width": 1500,
+  "height": 1066,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/jazz-frame/jazz-turquoise-rose-gold-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 176565,
+  "width": 1500,
+  "height": 956,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-black-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 149814,
+  "width": 1500,
+  "height": 915,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-brown-blue-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 174228,
+  "width": 1500,
+  "height": 1025,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-pink-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 183530,
+  "width": 1500,
+  "height": 944,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-red-gold-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 193704,
+  "width": 1500,
+  "height": 1037,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-turquoise-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/soul",
+  "bytes": 179391,
+  "width": 1500,
+  "height": 1037,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-5-0x/soul-frame/soul-white-snow-ergo-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 171825,
+  "width": 1940,
+  "height": 997,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 194325,
+  "width": 1932,
+  "height": 999,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 178300,
+  "width": 1922,
+  "height": 1002,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 183710,
+  "width": 1914,
+  "height": 977,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 161259,
+  "width": 1912,
+  "height": 1005,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/5.0x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/5-0x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/swing",
+  "bytes": 136421,
+  "width": 1924,
+  "height": 1006,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 166853,
+  "width": 1500,
+  "height": 1045,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-black-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 173352,
+  "width": 1500,
+  "height": 998,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-bronze-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 149048,
+  "width": 1500,
+  "height": 927,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-blue-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 151119,
+  "width": 1500,
+  "height": 938,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-pink-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 185021,
+  "width": 1500,
+  "height": 1032,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-purple-grey-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/blues",
+  "bytes": 182704,
+  "width": 1500,
+  "height": 1018,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/blues-frame/blues-rose-gold-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 144024,
+  "width": 1500,
+  "height": 924,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-black-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 135947,
+  "width": 1500,
+  "height": 908,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-champagne-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 163895,
+  "width": 1500,
+  "height": 977,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-green-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 154775,
+  "width": 1500,
+  "height": 922,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-midnight-blue-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 167780,
+  "width": 1500,
+  "height": 901,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-orange-lava-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/indie",
+  "bytes": 169039,
+  "width": 1500,
+  "height": 1042,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/indie-frame/indie-turquoise-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/jazz",
+  "bytes": 186624,
+  "width": 1500,
+  "height": 907,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/jazz-frame/jazz-blueblack-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/jazz",
+  "bytes": 173863,
+  "width": 1500,
+  "height": 1021,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/jazz-frame/jazz-green-black-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/jazz",
+  "bytes": 166325,
+  "width": 1500,
+  "height": 837,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/jazz-frame/jazz-orangeblack-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/jazz",
+  "bytes": 181445,
+  "width": 1500,
+  "height": 883,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/jazz-frame/jazz-redblack-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/jazz",
+  "bytes": 198487,
+  "width": 1500,
+  "height": 996,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/jazz-frame/jazz-turquoise-rose-gold-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 148679,
+  "width": 1500,
+  "height": 914,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-black-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 145075,
+  "width": 1500,
+  "height": 881,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-brown-blue-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 167376,
+  "width": 1500,
+  "height": 982,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-pink-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 183419,
+  "width": 1500,
+  "height": 978,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-red-gold-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 191456,
+  "width": 1500,
+  "height": 966,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-turquoise-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/soul",
+  "bytes": 173042,
+  "width": 1500,
+  "height": 937,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-6-0x/soul-frame/soul-white-snow-ergo-6"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 167987,
+  "width": 1923,
+  "height": 1005,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 176954,
+  "width": 1925,
+  "height": 1005,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 168750,
+  "width": 1911,
+  "height": 1005,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 183261,
+  "width": 1909,
+  "height": 1005,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 155233,
+  "width": 1905,
+  "height": 996,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/6.0x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/6-0x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/6.0x/swing",
+  "bytes": 124473,
+  "width": 1906,
+  "height": 989,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 160936,
+  "width": 1500,
+  "height": 960,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-black-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 184776,
+  "width": 1500,
+  "height": 1001,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-bronze-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 164420,
+  "width": 1500,
+  "height": 988,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-blue-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 164351,
+  "width": 1500,
+  "height": 958,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-pink-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 195187,
+  "width": 1500,
+  "height": 1034,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-purple-grey-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/blues",
+  "bytes": 711400,
+  "width": 2200,
+  "height": 1760,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 154428,
+  "width": 1500,
+  "height": 941,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-black-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 146356,
+  "width": 1500,
+  "height": 914,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-champagne-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 169578,
+  "width": 1500,
+  "height": 988,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-green-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 155639,
+  "width": 1500,
+  "height": 942,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-midnight-blue-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 174382,
+  "width": 1500,
+  "height": 1001,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-orange-lava-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/indie",
+  "bytes": 180891,
+  "width": 1500,
+  "height": 1095,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/indie-frame/indie-turquoise-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/jazz",
+  "bytes": 206935,
+  "width": 1500,
+  "height": 986,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/jazz-frame/jazz-blueblack-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/jazz",
+  "bytes": 185850,
+  "width": 1500,
+  "height": 1043,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/jazz-frame/jazz-green-black-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/jazz",
+  "bytes": 178404,
+  "width": 1500,
+  "height": 890,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/jazz-frame/jazz-orangeblack-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/jazz",
+  "bytes": 195778,
+  "width": 1500,
+  "height": 937,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/jazz-frame/jazz-redblack-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/jazz",
+  "bytes": 206355,
+  "width": 1500,
+  "height": 1053,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/jazz-frame/jazz-turquoise-rose-gold-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 160749,
+  "width": 1500,
+  "height": 928,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-black-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 171888,
+  "width": 1500,
+  "height": 1000,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-brown-blue-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 183656,
+  "width": 1500,
+  "height": 1047,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-pink-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 164735,
+  "width": 1500,
+  "height": 924,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-red-gold-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 200338,
+  "width": 1500,
+  "height": 991,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-turquoise-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/soul",
+  "bytes": 178815,
+  "width": 1500,
+  "height": 955,
+  "reuse": "haitech/images/products/admetec/loupes-ergo-7-5x/soul-frame/soul-white-snow-ergo-7-5"
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 177697,
+  "width": 1930,
+  "height": 1061,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 190952,
+  "width": 1941,
+  "height": 1071,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 186627,
+  "width": 1933,
+  "height": 1080,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 199550,
+  "width": 1925,
+  "height": 1086,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 158078,
+  "width": 1937,
+  "height": 1064,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/ergo/7.5x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/ergo/7-5x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/ergo/7.5x/swing",
+  "bytes": 155528,
+  "width": 1928,
+  "height": 1057,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 150349,
+  "width": 2053,
+  "height": 1060,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 152353,
+  "width": 1973,
+  "height": 1013,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 137392,
+  "width": 2057,
+  "height": 1006,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 103004,
+  "width": 1500,
+  "height": 856,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 144787,
+  "width": 1784,
+  "height": 913,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/blues",
+  "bytes": 128419,
+  "width": 1719,
+  "height": 875,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 110369,
+  "width": 2008,
+  "height": 912,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 110519,
+  "width": 2009,
+  "height": 906,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 118894,
+  "width": 1778,
+  "height": 904,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 118002,
+  "width": 1960,
+  "height": 921,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 115513,
+  "width": 1883,
+  "height": 909,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/indie",
+  "bytes": 126170,
+  "width": 1784,
+  "height": 966,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/jazz",
+  "bytes": 134685,
+  "width": 1500,
+  "height": 851,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/jazz",
+  "bytes": 125672,
+  "width": 1759,
+  "height": 918,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/jazz",
+  "bytes": 170597,
+  "width": 1500,
+  "height": 826,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/jazz",
+  "bytes": 165470,
+  "width": 1500,
+  "height": 822,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/jazz",
+  "bytes": 151520,
+  "width": 1746,
+  "height": 911,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 121747,
+  "width": 1999,
+  "height": 974,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 125975,
+  "width": 1967,
+  "height": 972,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 121849,
+  "width": 1832,
+  "height": 1032,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 125503,
+  "width": 1949,
+  "height": 971,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 131795,
+  "width": 1665,
+  "height": 849,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/soul",
+  "bytes": 104894,
+  "width": 1722,
+  "height": 835,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 116683,
+  "width": 1897,
+  "height": 802,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 124477,
+  "width": 1893,
+  "height": 802,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 132911,
+  "width": 1909,
+  "height": 806,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 131483,
+  "width": 1902,
+  "height": 789,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 107029,
+  "width": 1907,
+  "height": 799,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.5x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-5x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.5x/swing",
+  "bytes": 87797,
+  "width": 1893,
+  "height": 802,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 114642,
+  "width": 1500,
+  "height": 887,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 144082,
+  "width": 1500,
+  "height": 948,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 110170,
+  "width": 1500,
+  "height": 808,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 113418,
+  "width": 1500,
+  "height": 826,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 146846,
+  "width": 1784,
+  "height": 908,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/blues",
+  "bytes": 130706,
+  "width": 1709,
+  "height": 874,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 109714,
+  "width": 1500,
+  "height": 847,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 102935,
+  "width": 1500,
+  "height": 848,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 128326,
+  "width": 1775,
+  "height": 946,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 118298,
+  "width": 1500,
+  "height": 888,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 123647,
+  "width": 1500,
+  "height": 851,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/indie",
+  "bytes": 131362,
+  "width": 1789,
+  "height": 1020,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/jazz",
+  "bytes": 159220,
+  "width": 1941,
+  "height": 946,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/jazz",
+  "bytes": 133933,
+  "width": 1758,
+  "height": 974,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/jazz",
+  "bytes": 151319,
+  "width": 1937,
+  "height": 937,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/jazz",
+  "bytes": 147456,
+  "width": 1797,
+  "height": 916,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/jazz",
+  "bytes": 150355,
+  "width": 1753,
+  "height": 958,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 117728,
+  "width": 1500,
+  "height": 840,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 120055,
+  "width": 1500,
+  "height": 856,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 139524,
+  "width": 1500,
+  "height": 916,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 127711,
+  "width": 1500,
+  "height": 857,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 133460,
+  "width": 1686,
+  "height": 879,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/soul",
+  "bytes": 111270,
+  "width": 1716,
+  "height": 868,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 138301,
+  "width": 1901,
+  "height": 821,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 147061,
+  "width": 1902,
+  "height": 823,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 147843,
+  "width": 1909,
+  "height": 826,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 142693,
+  "width": 1910,
+  "height": 820,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 127113,
+  "width": 1904,
+  "height": 815,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/2.7x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/2-7x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/2.7x/swing",
+  "bytes": 103196,
+  "width": 1908,
+  "height": 820,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 117956,
+  "width": 1500,
+  "height": 841,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 137312,
+  "width": 1500,
+  "height": 890,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 134414,
+  "width": 1500,
+  "height": 934,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 124897,
+  "width": 1943,
+  "height": 986,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 160651,
+  "width": 1797,
+  "height": 1011,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/blues",
+  "bytes": 146165,
+  "width": 1729,
+  "height": 971,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 113164,
+  "width": 1500,
+  "height": 847,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 106931,
+  "width": 1500,
+  "height": 832,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 129044,
+  "width": 1909,
+  "height": 989,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 120938,
+  "width": 1500,
+  "height": 874,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 127826,
+  "width": 1500,
+  "height": 891,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/indie",
+  "bytes": 141724,
+  "width": 1872,
+  "height": 1088,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/jazz",
+  "bytes": 145881,
+  "width": 1786,
+  "height": 946,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/jazz",
+  "bytes": 145830,
+  "width": 1873,
+  "height": 1065,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/jazz",
+  "bytes": 149039,
+  "width": 1798,
+  "height": 925,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/jazz",
+  "bytes": 164225,
+  "width": 1768,
+  "height": 892,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/jazz",
+  "bytes": 157750,
+  "width": 1734,
+  "height": 982,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 119778,
+  "width": 1500,
+  "height": 843,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 126702,
+  "width": 1500,
+  "height": 886,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 145153,
+  "width": 1500,
+  "height": 952,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 131175,
+  "width": 1500,
+  "height": 864,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 145042,
+  "width": 1749,
+  "height": 937,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/soul",
+  "bytes": 134639,
+  "width": 1844,
+  "height": 946,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 150486,
+  "width": 1908,
+  "height": 875,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 167541,
+  "width": 1910,
+  "height": 868,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 153154,
+  "width": 1899,
+  "height": 863,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-red.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 141758,
+  "width": 1909,
+  "height": 874,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 135085,
+  "width": 1898,
+  "height": 869,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/galilean/3.2x/swing/swing-white.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/galilean/3-2x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/galilean/3.2x/swing",
+  "bytes": 117795,
+  "width": 1896,
+  "height": 871,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 197440,
+  "width": 1972,
+  "height": 1215,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 190486,
+  "width": 1952,
+  "height": 1211,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 181758,
+  "width": 1982,
+  "height": 1205,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 179424,
+  "width": 1973,
+  "height": 1205,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 209983,
+  "width": 1824,
+  "height": 1122,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/blues",
+  "bytes": 189474,
+  "width": 1738,
+  "height": 1083,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 191352,
+  "width": 1989,
+  "height": 1177,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 173130,
+  "width": 1993,
+  "height": 1187,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 189422,
+  "width": 1923,
+  "height": 1219,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 198822,
+  "width": 1966,
+  "height": 1220,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 199593,
+  "width": 1877,
+  "height": 1207,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/indie",
+  "bytes": 175338,
+  "width": 1853,
+  "height": 1243,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/jazz",
+  "bytes": 227312,
+  "width": 1897,
+  "height": 1133,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/jazz",
+  "bytes": 204588,
+  "width": 1843,
+  "height": 1213,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/jazz",
+  "bytes": 193443,
+  "width": 1935,
+  "height": 1134,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/jazz",
+  "bytes": 210229,
+  "width": 1946,
+  "height": 1124,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/jazz",
+  "bytes": 191022,
+  "width": 1768,
+  "height": 1162,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 191655,
+  "width": 1993,
+  "height": 1174,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 183595,
+  "width": 1974,
+  "height": 1166,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 203483,
+  "width": 1860,
+  "height": 1267,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 192476,
+  "width": 1954,
+  "height": 1174,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 206820,
+  "width": 1801,
+  "height": 1071,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/soul",
+  "bytes": 193752,
+  "width": 1840,
+  "height": 1088,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-black.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 2011971,
+  "width": 1855,
+  "height": 971,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-blue.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 1696580,
+  "width": 1854,
+  "height": 962,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-grey.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 1960532,
+  "width": 1848,
+  "height": 967,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-red.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 1711891,
+  "width": 1854,
+  "height": 967,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-rose-gold.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 1963897,
+  "width": 1852,
+  "height": 965,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/3.8x/swing/swing-white.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/3.8x/swing",
+  "bytes": 1171050,
+  "width": 1860,
+  "height": 973,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 173604,
+  "width": 1993,
+  "height": 1203,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 188049,
+  "width": 1951,
+  "height": 1212,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 160898,
+  "width": 1989,
+  "height": 1215,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 160638,
+  "width": 1966,
+  "height": 1185,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 181240,
+  "width": 1826,
+  "height": 1128,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/blues",
+  "bytes": 180019,
+  "width": 1743,
+  "height": 1082,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 165629,
+  "width": 1980,
+  "height": 1171,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 144665,
+  "width": 1997,
+  "height": 1160,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 176014,
+  "width": 1918,
+  "height": 1189,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 167070,
+  "width": 1962,
+  "height": 1191,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 161723,
+  "width": 1868,
+  "height": 1151,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/indie",
+  "bytes": 169339,
+  "width": 1845,
+  "height": 1247,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/jazz",
+  "bytes": 183034,
+  "width": 1888,
+  "height": 1141,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/jazz",
+  "bytes": 181595,
+  "width": 1839,
+  "height": 1194,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/jazz",
+  "bytes": 188094,
+  "width": 1913,
+  "height": 1108,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/jazz",
+  "bytes": 187359,
+  "width": 1941,
+  "height": 1129,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/jazz",
+  "bytes": 191059,
+  "width": 1785,
+  "height": 1162,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 167222,
+  "width": 1995,
+  "height": 1172,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 167316,
+  "width": 1956,
+  "height": 1160,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 176889,
+  "width": 1883,
+  "height": 1283,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 169479,
+  "width": 1937,
+  "height": 1166,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 191051,
+  "width": 1780,
+  "height": 1069,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/soul",
+  "bytes": 177193,
+  "width": 1836,
+  "height": 1060,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-black.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 2011971,
+  "width": 1855,
+  "height": 971,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-blue.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 1883317,
+  "width": 1834,
+  "height": 967,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-grey.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 1912995,
+  "width": 1836,
+  "height": 969,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-red.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 1926925,
+  "width": 1836,
+  "height": 974,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-rose-gold.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 1822048,
+  "width": 1836,
+  "height": 967,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/4.8x/swing/swing-white.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/4.8x/swing",
+  "bytes": 1046377,
+  "width": 1840,
+  "height": 978,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 191410,
+  "width": 2007,
+  "height": 1218,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 204863,
+  "width": 1960,
+  "height": 1211,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 192777,
+  "width": 1994,
+  "height": 1204,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 189921,
+  "width": 1966,
+  "height": 1199,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 208982,
+  "width": 1844,
+  "height": 1111,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/blues",
+  "bytes": 194896,
+  "width": 1734,
+  "height": 1090,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 185810,
+  "width": 1978,
+  "height": 1183,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 180371,
+  "width": 1988,
+  "height": 1164,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 189870,
+  "width": 1918,
+  "height": 1220,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 189428,
+  "width": 1963,
+  "height": 1197,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 187677,
+  "width": 1862,
+  "height": 1180,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/indie",
+  "bytes": 197077,
+  "width": 1839,
+  "height": 1244,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/jazz",
+  "bytes": 220712,
+  "width": 1883,
+  "height": 1167,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/jazz",
+  "bytes": 197233,
+  "width": 1818,
+  "height": 1223,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/jazz",
+  "bytes": 216613,
+  "width": 1944,
+  "height": 1122,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/jazz",
+  "bytes": 224544,
+  "width": 1945,
+  "height": 1138,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/jazz",
+  "bytes": 206203,
+  "width": 1768,
+  "height": 1165,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 196616,
+  "width": 1987,
+  "height": 1194,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 191179,
+  "width": 1966,
+  "height": 1171,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 190177,
+  "width": 1875,
+  "height": 1254,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 197918,
+  "width": 1958,
+  "height": 1182,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 204864,
+  "width": 1806,
+  "height": 1102,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/soul",
+  "bytes": 191922,
+  "width": 1845,
+  "height": 1101,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-black.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 1741976,
+  "width": 1857,
+  "height": 984,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-blue.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 1542067,
+  "width": 1854,
+  "height": 975,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-grey.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 1559023,
+  "width": 1852,
+  "height": 979,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-red.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 1563562,
+  "width": 1860,
+  "height": 981,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-rose-gold.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 1581968,
+  "width": 1849,
+  "height": 981,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/5.8x/swing/swing-white.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/5-8x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/5.8x/swing",
+  "bytes": 974680,
+  "width": 1847,
+  "height": 997,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 175709,
+  "width": 2038,
+  "height": 1256,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-bronze-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-bronze-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 184864,
+  "width": 1977,
+  "height": 1249,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-navy-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-navy-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 170388,
+  "width": 2017,
+  "height": 1256,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 180083,
+  "width": 1978,
+  "height": 1274,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-purple-and-grey.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-purple-and-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 196961,
+  "width": 1858,
+  "height": 1160,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/blues/blues-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/blues/blues-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/blues",
+  "bytes": 186987,
+  "width": 1738,
+  "height": 1150,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 174723,
+  "width": 1985,
+  "height": 1230,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-champagne.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-champagne",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 169844,
+  "width": 1986,
+  "height": 1238,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-green.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-green",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 167914,
+  "width": 1856,
+  "height": 1236,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-midnight-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-midnight-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 180010,
+  "width": 1975,
+  "height": 1245,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-orange-lava.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-orange-lava",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 176007,
+  "width": 1871,
+  "height": 1231,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/indie/indie-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/indie/indie-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/indie",
+  "bytes": 165983,
+  "width": 1768,
+  "height": 1273,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/jazz/jazz-blue-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/jazz/jazz-blue-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/jazz",
+  "bytes": 208250,
+  "width": 1882,
+  "height": 1192,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/jazz/jazz-green-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/jazz/jazz-green-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/jazz",
+  "bytes": 183945,
+  "width": 1817,
+  "height": 1245,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/jazz/jazz-orange-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/jazz/jazz-orange-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/jazz",
+  "bytes": 203946,
+  "width": 1921,
+  "height": 1160,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/jazz/jazz-red-and-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/jazz/jazz-red-and-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/jazz",
+  "bytes": 213730,
+  "width": 1928,
+  "height": 1172,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/jazz/jazz-turquoise-and-rose-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/jazz/jazz-turquoise-and-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/jazz",
+  "bytes": 194395,
+  "width": 1756,
+  "height": 1212,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-black.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 186366,
+  "width": 1996,
+  "height": 1217,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-brown-and-blue.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-brown-and-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 180919,
+  "width": 1970,
+  "height": 1217,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-pink.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-pink",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 175773,
+  "width": 1869,
+  "height": 1308,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-red-and-gold.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-red-and-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 186292,
+  "width": 1941,
+  "height": 1222,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-turquoise.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-turquoise",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 193811,
+  "width": 1792,
+  "height": 1147,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/soul/soul-white-snow.jpg",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/soul/soul-white-snow",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/soul",
+  "bytes": 181347,
+  "width": 1817,
+  "height": 1118,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-black.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-black",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 1672413,
+  "width": 1817,
+  "height": 1016,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-blue.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-blue",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 1516430,
+  "width": 1822,
+  "height": 1020,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-grey.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-grey",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 1542853,
+  "width": 1824,
+  "height": 1019,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-red.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-red",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 1550770,
+  "width": 1824,
+  "height": 1023,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-rose-gold.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-rose-gold",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 1552270,
+  "width": 1819,
+  "height": 1019,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/admetec/loupes/prismatic/7.2x/swing/swing-white.png",
+  "public_id": "haitech/images/products/admetec/loupes/prismatic/7-2x/swing/swing-white",
+  "asset_folder": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/7.2x/swing",
+  "bytes": 972672,
+  "width": 1824,
+  "height": 1029,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/electric-motor/em-1.webp",
+  "public_id": "haitech/images/products/almadent/electric-motor/em-1",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/electric-motor",
+  "bytes": 30240,
+  "width": 800,
+  "height": 800,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/electric-motor/em-2.webp",
+  "public_id": "haitech/images/products/almadent/electric-motor/em-2",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/electric-motor",
+  "bytes": 27478,
+  "width": 800,
+  "height": 800,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/electric-motor/em-3.webp",
+  "public_id": "haitech/images/products/almadent/electric-motor/em-3",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/electric-motor",
+  "bytes": 22890,
+  "width": 800,
+  "height": 800,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/three-in-one-piezo/file-1.webp",
+  "public_id": "haitech/images/products/almadent/three-in-one-piezo/file-1",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/three-in-one-piezo",
+  "bytes": 36728,
+  "width": 1700,
+  "height": 1700,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/three-in-one-piezo/file-2.webp",
+  "public_id": "haitech/images/products/almadent/three-in-one-piezo/file-2",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/three-in-one-piezo",
+  "bytes": 190422,
+  "width": 3750,
+  "height": 3750,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/three-in-one-piezo/file-3.webp",
+  "public_id": "haitech/images/products/almadent/three-in-one-piezo/file-3",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/three-in-one-piezo",
+  "bytes": 35600,
+  "width": 1700,
+  "height": 1700,
+  "reuse": null
+ },
+ {
+  "path": "public/images/products/almadent/three-in-one-piezo/file-4.webp",
+  "public_id": "haitech/images/products/almadent/three-in-one-piezo/file-4",
+  "asset_folder": "Haitech Medical Solution/images/products/almadent/three-in-one-piezo",
+  "bytes": 55706,
+  "width": 1700,
+  "height": 1700,
+  "reuse": null
+ }
+]
