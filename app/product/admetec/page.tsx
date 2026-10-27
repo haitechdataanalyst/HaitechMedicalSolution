@@ -1,26 +1,15 @@
-import { Eye, Crosshair, Lightbulb, Sparkles, Award, Shield } from "lucide-react";
 import type { Metadata } from "next";
 import { getDynamicMetadata } from "@/lib/metadata";
 import { AdmetecFlamingo } from "@/components/admetec/AdmetecFlamingo";
 import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
-import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
+import { AdmetecAbout } from "@/components/admetec/AdmetecAbout";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
-import { linkAdmetec } from "@/components/brand/AdmetecText";
-import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
+import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
 
 export const metadata: Metadata = getDynamicMetadata("Admetec | Premium Dental Loupes & Headlights", "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.", { path: "/product/admetec" });
-
-const features = [
-    { icon: <Eye />, title: "Superior Optics", description: "Crystal-clear magnification with edge-to-edge sharpness for precise clinical work." },
-    { icon: <Crosshair />, title: "Precision Engineering", description: "Each loupe is meticulously crafted with aerospace-grade materials for lasting performance." },
-    { icon: <Lightbulb />, title: "Advanced LED Lights", description: "Powerful, lightweight headlights delivering optimal illumination for any procedure." },
-    { icon: <Sparkles />, title: "Ergonomic Design", description: "Thoughtfully designed frames that reduce neck strain and enhance all-day comfort." },
-    { icon: <Award />, title: "Award-Winning Innovation", description: "Recognized globally for pioneering advancements in dental magnification technology." },
-    { icon: <Shield />, title: "Built to Last", description: "Premium materials and rigorous quality control ensure years of reliable performance." },
-];
 
 const galileanMags = ["2.5x", "2.7x", "3.2x"].map((m) => ({ label: m, href: `/product-category/admetec/galilean-loupes/galilean-${m}` }));
 const ergoMags = ["3.0x", "4.0x", "5.0x", "6.0x", "7.5x", "10x"].map((m) => ({ label: m, href: `/product-category/admetec/ergo-loupes/ergo-${m}` }));
@@ -101,9 +90,7 @@ export default async function AboutAdmetecPage() {
             {/* Flamingo, the loupe camera + light, gets its own section right after the lights */}
             {flamingo && flamingoHref && <AdmetecFlamingo product={flamingo} href={flamingoHref} />}
 
-            <BrandPillars title="Built on Six Pillars" subtitle={linkAdmetec("Why professionals choose Admetec.")} items={features} />
-
-            <HaitechPartnership brand="Admetec" />
+            <AdmetecAbout />
 
             <BrandCTA
                 title="Try Before You Order"
