@@ -37,8 +37,8 @@ export default function Footer({ sections, config }: FooterProps) {
     return (
         <footer className="bg-neutral-50 text-neutral-600">
             <div className="container pt-14 pb-8 md:pt-16">
-                {/* Brand + newsletter */}
-                <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                {/* Brand + newsletter: one calm raised panel, so the footer opens with a single clear action */}
+                <div className="grid grid-cols-[minmax(0,1fr)] gap-8 rounded-3xl bg-white p-6 ring-1 ring-neutral-900/[0.04] md:p-10 lg:grid-cols-2 lg:items-center lg:gap-16">
                     <div className="max-w-md">
                         <Link href="/" className="inline-flex items-center gap-3 rounded-lg">
                             <Image src="/haitech-medical.png" alt="" width={36} height={36} className="shrink-0" />
@@ -52,7 +52,7 @@ export default function Footer({ sections, config }: FooterProps) {
                         </p>
                     </div>
 
-                    <div className="w-full max-w-md">
+                    <div className="w-full max-w-md lg:justify-self-end">
                         <p className="text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">Get product updates &amp; clinical tips</p>
                         <p className="mt-1 text-[13px] text-neutral-500">No spam. Unsubscribe anytime.</p>
                         <div className="mt-4">
@@ -76,10 +76,19 @@ export default function Footer({ sections, config }: FooterProps) {
                                 </div>
                             </details>
                         ))}
+                        <details className="group">
+                            <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between text-[15px] font-semibold text-neutral-900 [&::-webkit-details-marker]:hidden">
+                                Contact
+                                <ChevronDown className="h-4 w-4 text-neutral-500 transition-transform duration-200 ease-out group-open:rotate-180" aria-hidden="true" />
+                            </summary>
+                            <div className="pb-3">
+                                <ContactList config={config} mapsQuery={mapsQuery} />
+                            </div>
+                        </details>
                     </div>
 
                     {/* md+: open columns */}
-                    <div className="hidden gap-8 md:grid md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.35fr)]">
+                    <div className="hidden gap-8 md:grid md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.6fr)]">
                         {sections.map((section) => (
                             <div key={section.title}>
                                 <h3 className="mb-4 text-[13px] font-semibold text-neutral-900">{section.title}</h3>
@@ -91,12 +100,6 @@ export default function Footer({ sections, config }: FooterProps) {
                             <h3 className="mb-4 text-[13px] font-semibold text-neutral-900">Contact</h3>
                             <ContactList config={config} mapsQuery={mapsQuery} />
                         </div>
-                    </div>
-
-                    {/* Mobile contact */}
-                    <div className="mt-8 md:hidden">
-                        <h3 className="mb-2 text-[15px] font-semibold text-neutral-900">Contact</h3>
-                        <ContactList config={config} mapsQuery={mapsQuery} />
                     </div>
                 </div>
 
@@ -135,9 +138,6 @@ export default function Footer({ sections, config }: FooterProps) {
                                 <LinkedInIcon size={18} />
                             </a>
                         )}
-                        <a href={`mailto:${config.company.email}`} className={SOCIAL} aria-label="Email">
-                            <EmailIcon size={18} />
-                        </a>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@ function ContactList({ config, mapsQuery }: { config: SiteConfig; mapsQuery: str
             </a>
             <a href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`} target="_blank" rel="noopener noreferrer" className={`${row} items-start py-2.5 md:py-0`}>
                 <LocationIcon size={14} className="mt-[3px] shrink-0 text-neutral-500" aria-hidden="true" />
-                <span>
+                <span className="text-pretty">
                     {address.street}
                     <br />
                     {address.city}, {address.state} {address.postcode}
