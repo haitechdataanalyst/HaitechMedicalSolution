@@ -187,6 +187,50 @@
                     "image": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308536/haitech/images/products/admetec/our-frames/soul-frame/soul-frame-white-snow.jpg"
                 }
             ]
+        },
+        {
+            "id": "swing",
+            "name": "Swing",
+            "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-frame-thumbnail.jpg",
+            "priceModifier": 0,
+            "colors": [
+                {
+                    "id": "black",
+                    "name": "Black",
+                    "hex": "#000000",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-black.jpg"
+                },
+                {
+                    "id": "blue",
+                    "name": "Blue",
+                    "hex": "#0390d5",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-blue.jpg"
+                },
+                {
+                    "id": "grey",
+                    "name": "Grey",
+                    "hex": "#6b7280",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-grey.jpg"
+                },
+                {
+                    "id": "red",
+                    "name": "Red",
+                    "hex": "#dc2626",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-red.jpg"
+                },
+                {
+                    "id": "rose-gold",
+                    "name": "Rose Gold",
+                    "hex": "#d9ad8a",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-rose-gold.jpg"
+                },
+                {
+                    "id": "white",
+                    "name": "White",
+                    "hex": "#edefee",
+                    "image": "/images/products/admetec/loupes/ergo/3.0x/swing/swing-white.jpg"
+                }
+            ]
         }
     ]
 }

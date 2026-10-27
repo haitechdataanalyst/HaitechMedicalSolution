@@ -25,10 +25,13 @@ public/
 │       ├── shared/                images used by more than one product (engraving previews)
 │       ├── admetec/
 │       │   ├── brand/             brand-level banners
-│       │   ├── loupes/<series>/   galilean, prismatic, ergo, ergo-v: gallery/, by-frame/, magnification/
-│       │   ├── lights/            flamingo/, headlights/{wired,wireless}/
+│       │   ├── loupes/<series>/<model>/<frame>/<frame>-<colour>.jpg
+│       │   │                      the photos behind the product-page frame and colour selector
+│       │   │                      (series: galilean, prismatic, ergo, ergo-v; frames: blues, indie, jazz, soul, swing).
+│       │   │                      gallery/, by-frame/ and magnification/ beside them are older originals.
+│       │   ├── lights/            flamingo/, headlights/{wired,wireless}/, models/<light>/
 │       │   ├── frames/            our-frames/, select-frames/
-│       │   ├── flamingo/          camera photography
+│       │   ├── flamingo/          camera photography; gallery/ for the product gallery
 │       │   └── catalog/
 │       ├── almadent/              chairs/, auxiliary/, handpiece/, electric-motor/, three-in-one-piezo/
 │       ├── bondent/               product photos (flat)
@@ -49,4 +52,5 @@ public/
 - **One home per image.** Put it under the brand and product area it belongs to; use `products/shared/` or `site/` only when it really is shared.
 - **Product, category, frame and headlight photography is served from Cloudinary** (the data files hold the URLs). The copies under `images/products/` are the originals, kept in the repository; only the paths named in code (the brand pages, logos, hero, team) are served from here.
 - **Reference an asset by its full path** (`"/images/team/viren-gosar.jpg"`), not by building it from pieces, so it can be found by searching the code.
+- **A frame photo is named `<frame>-<colour>.jpg`** and its colour becomes the key `frame-colour` in the product's `frameVariants` (`data/products.json`); a colour made of two words uses a single `-` (`bronze-and-blue.jpg` is the colour `bronze-blue`). A new frame also needs an entry in `data/frames.json`.
 - **Moving a file changes its URL.** Redirects for the old URLs that code or data used live in `data/asset-redirects.json` and are applied by `next.config.ts`.
