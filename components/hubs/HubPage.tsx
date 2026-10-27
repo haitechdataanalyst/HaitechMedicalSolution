@@ -12,6 +12,7 @@ import { PAGE_TITLE, chipClass } from "@/components/catalog/listing";
 import { ProductGrid } from "@/components/products";
 import { FAQ, FAQGroup } from "@/components/misc/FAQ";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import { articles } from "@/components/articles";
 import faqData from "@/data/faq.json";
 import siteConfig from "@/data/site-config.json";
@@ -138,7 +139,7 @@ export default async function HubPage({ slug }: { slug: string }) {
                         {hub.showsAdmetecLogo && <AdmetecBrandBadge size="category" className="mt-2" />}
                         <div className="mt-5 max-w-3xl space-y-3 text-base leading-relaxed text-neutral-600 md:text-lg">
                             {hub.intro.map((paragraph) => (
-                                <p key={paragraph}>{paragraph}</p>
+                                <p key={paragraph}>{linkAdmetec(paragraph)}</p>
                             ))}
                         </div>
                         <div className="mt-8 flex flex-wrap gap-3">

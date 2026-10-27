@@ -9,6 +9,7 @@ import { getBreadcrumbs } from "@/lib/breadcrumbs";
 import { ArrowRight } from "lucide-react";
 import { PILL_GHOST_ON_DARK, PILL_ON_DARK } from "@/components/ui/surfaces";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { AdmetecLink } from "@/components/brand/AdmetecText";
 import { SECTION_H2, SECTION_LEAD } from "@/components/catalog/listing";
 
 export const metadata = getMetadata("ourFrames");
@@ -37,7 +38,7 @@ export default async function OurFramesPage() {
                             <AdmetecBrandBadge size="brand" />
                         </div>
                         <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-xl">
-                            {count} frame families — {names} — in a range of colors and fits, included free with every Admetec loupe.
+                            {count} frame families — {names} — in a range of colors and fits, included free with every <AdmetecLink /> loupe.
                         </p>
                     </div>
                 </div>
@@ -60,8 +61,8 @@ export default async function OurFramesPage() {
                         <div className="mx-auto max-w-3xl text-center">
                             <h2 className={SECTION_H2}>Premium Frames for Every Professional</h2>
                             <p className={SECTION_LEAD}>
-                                All our Admetec loupes can be customized with your choice of frame style and color. Whether you prefer the classic elegance of Blues, the bold statement of Jazz, or the
-                                timeless appeal of Soul — we have the perfect frame waiting for you.
+                                All our <AdmetecLink /> loupes can be customized with your choice of frame style and color. Whether you prefer the classic elegance of Blues, the bold statement of
+                                Jazz, or the timeless appeal of Soul — we have the perfect frame waiting for you.
                             </p>
                         </div>
                     </ScrollReveal>

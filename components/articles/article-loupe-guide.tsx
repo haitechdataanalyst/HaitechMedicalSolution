@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArticleData } from "./articleTypes";
+import { AdmetecLink } from "@/components/brand/AdmetecText";
 
 export const articleLoupeGuide: ArticleData = {
     id: 2,
@@ -78,7 +79,7 @@ export const articleLoupeGuide: ArticleData = {
 
             <h3 className="mt-6 mb-3">Ergonomic options with Admetec dental loupes</h3>
             <p className="mb-4">
-                The ERGO range from Admetec is designed to combine advanced magnification with a comfortable working posture. Each loupe is built to reduce forward head tilt and support long-term
+                The ERGO range from <AdmetecLink /> is designed to combine advanced magnification with a comfortable working posture. Each loupe is built to reduce forward head tilt and support long-term
                 comfort without compromising clarity. Options include:
             </p>
 
@@ -109,7 +110,7 @@ export const articleLoupeGuide: ArticleData = {
             </ul>
 
             <p className="mb-6">
-                By offering a full spectrum of magnifications, Admetec ergonomic dental and surgical loupes allow clinicians to select the option that best matches their practice and comfort
+                By offering a full spectrum of magnifications, <AdmetecLink /> ergonomic dental and surgical loupes allow clinicians to select the option that best matches their practice and comfort
                 preferences.
             </p>
 
@@ -186,7 +187,7 @@ export const articleLoupeGuide: ArticleData = {
 
             <h2 className="mt-8 mb-4">Explore ergonomic dental loupes with Haitech Medical</h2>
             <p className="mb-4">
-                At Haitech Medical, we support dental and surgical professionals with innovative solutions like Admetec dental and surgical loupes. These loupes are designed to align with your
+                At Haitech Medical, we support dental and surgical professionals with innovative solutions like <AdmetecLink /> dental and surgical loupes. These loupes are designed to align with your
                 workflow, improve visual clarity and promote long-term comfort during procedures. Each model is made to meet the demands of clinical precision while supporting a healthier working
                 posture.
             </p>
@@ -196,7 +197,7 @@ export const articleLoupeGuide: ArticleData = {
             </p>
 
             <p className="mb-4">
-                Explore the full collection of Admetec dental and surgical loupes, or get in touch with our team for expert guidance on choosing the right loupe magnifier for your needs.
+                Explore the full collection of <AdmetecLink /> dental and surgical loupes, or get in touch with our team for expert guidance on choosing the right loupe magnifier for your needs.
             </p>
         </>
     ),

@@ -1,4 +1,5 @@
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import Image from "next/image";
 import type { HeadlightCategory, HeadlightProduct } from "@/types";
 import { cn } from "@/lib/utils";
@@ -120,7 +121,7 @@ export function HeadlightSeries({ category, tone, paths = {} }: { category: Head
                         <div className="mt-2 flex justify-center">
                             <AdmetecBrandBadge size="category" />
                         </div>
-                        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{cleanText(category.tagline)}</p>
+                        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{linkAdmetec(cleanText(category.tagline))}</p>
                     </div>
                 </ScrollReveal>
 
@@ -152,7 +153,7 @@ export function HeadlightSeries({ category, tone, paths = {} }: { category: Head
                                         {category.benefits.map((benefit) => (
                                             <li key={benefit.title} className="text-sm leading-relaxed text-neutral-600">
                                                 <span className="mb-0.5 block text-[15px] font-semibold text-neutral-900">{cleanText(benefit.title)}</span>
-                                                {cleanText(benefit.text)}
+                                                {linkAdmetec(cleanText(benefit.text))}
                                             </li>
                                         ))}
                                     </ul>

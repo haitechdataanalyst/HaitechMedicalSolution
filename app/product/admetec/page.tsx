@@ -6,6 +6,7 @@ import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
@@ -100,7 +101,7 @@ export default async function AboutAdmetecPage() {
             {/* Flamingo, the loupe camera + light, gets its own section right after the lights */}
             {flamingo && flamingoHref && <AdmetecFlamingo product={flamingo} href={flamingoHref} />}
 
-            <BrandPillars title="Built on Six Pillars" subtitle="Why professionals choose Admetec." items={features} />
+            <BrandPillars title="Built on Six Pillars" subtitle={linkAdmetec("Why professionals choose Admetec.")} items={features} />
 
             <HaitechPartnership brand="Admetec" />
 

@@ -1,3 +1,4 @@
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Star, Clock, ArrowRight } from "lucide-react";
@@ -23,7 +24,7 @@ export function HaitechPartnership({ brand }: { brand: string }) {
                         <h2 className="mt-2 text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.022em] text-neutral-900 text-balance md:text-[2.5rem]">Backed by Haitech Medical Solutions</h2>
                     </ScrollReveal>
                     <p className="mt-4 text-base leading-relaxed text-neutral-600 md:text-lg">
-                        Haitech Medical Solutions brings {brand} to dental professionals across India — with local stock, service, warranty support, and a team that knows the equipment inside out.
+                        Haitech Medical Solutions brings {linkAdmetec(brand)} to dental professionals across India — with local stock, service, warranty support, and a team that knows the equipment inside out.
                     </p>
                     <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                         {TRUST_POINTS.map(({ icon: Icon, label }) => (

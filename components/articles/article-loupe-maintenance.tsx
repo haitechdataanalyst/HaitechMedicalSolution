@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArticleData } from "./articleTypes";
+import { AdmetecLink } from "@/components/brand/AdmetecText";
 
 export const articleLoupeMaintenance: ArticleData = {
     id: 3,
@@ -21,7 +22,7 @@ export const articleLoupeMaintenance: ArticleData = {
             </p>
 
             <p className="mb-10">
-                This comprehensive guide, brought to you by Byron Medical and Admetec, will walk you through the necessary steps to clean and maintain your surgical loupes effectively.
+                This comprehensive guide, brought to you by Byron Medical and <AdmetecLink />, will walk you through the necessary steps to clean and maintain your surgical loupes effectively.
             </p>
 
             {/* Cleaning */}

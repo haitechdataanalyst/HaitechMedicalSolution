@@ -7,6 +7,7 @@ import { CategoryPageClient } from "@/components/catalog/CategoryPageClient";
 import { getDynamicMetadata, getMetadata } from "@/lib/metadata";
 import { categoryMetaDescription } from "@/lib/product-seo";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 
 interface PageProps {
     params: Promise<{ path: string[] }>;
@@ -110,7 +111,7 @@ export default async function CategoryPage({ params }: PageProps) {
                         <h1 className="text-3xl leading-[1.1] font-semibold tracking-tight text-neutral-900 sm:text-4xl">{await getCategoryHeading(category)}</h1>
                         {/* Admetec requires its logo, linked to admetec.com, under the heading of its category pages: the Admetec category and the ones inside it */}
                         {(await getCategoryPath(category)).split("/")[2] === "admetec" && <AdmetecBrandBadge size="category" className="mt-2" />}
-                        {category.description && <p className="mt-3 line-clamp-2 max-w-2xl text-base leading-relaxed text-neutral-500">{category.description}</p>}
+                        {category.description && <p className="mt-3 line-clamp-2 max-w-2xl text-base leading-relaxed text-neutral-500">{linkAdmetec(category.description)}</p>}
                     </div>
 
                     <CategoryPageClient initialItems={initialItemsWithPaths} initialType={contents.type} />

@@ -11,6 +11,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { BRAND_LEAD, BrandChecklist, BrandCTA, BrandFeature, BrandSection, MediaTile } from "@/components/brand/BrandSections";
 import { HeadlightSeries } from "@/components/headlights/HeadlightSeries";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 
 export const metadata = getMetadata("ourHeadlights");
 
@@ -95,7 +96,7 @@ export default async function OurHeadlightsPage() {
             )}
 
             <BrandFeature
-                eyebrow="Why Admetec lights"
+                eyebrow={linkAdmetec("Why Admetec lights")}
                 title="Premium Quality Lighting"
                 media={caseImage?.inTheBox?.image ? <MediaTile src={caseImage.inTheBox.image} alt={`${caseImage.name} headlight case contents`} /> : <div />}
             >

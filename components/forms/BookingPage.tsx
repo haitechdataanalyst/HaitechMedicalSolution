@@ -1,3 +1,4 @@
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import Link from "next/link";
 import { Check, ChevronRight, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui";
@@ -44,7 +45,7 @@ export default function BookingPage({ eyebrow, title, intro, path, whatYouBook, 
                 <div className="container pt-10 pb-10 md:pt-16 md:pb-14">
                     <p className="text-[15px] font-medium text-primary-700">{eyebrow}</p>
                     <h1 className="mt-3 max-w-3xl text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-neutral-900 md:text-5xl">{title}</h1>
-                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{intro}</p>
+                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-500 md:text-lg">{linkAdmetec(intro)}</p>
                 </div>
             </section>
 

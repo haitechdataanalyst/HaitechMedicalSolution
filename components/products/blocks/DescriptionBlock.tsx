@@ -3,6 +3,7 @@ import { DescriptionBlock as DescriptionBlockType } from "@/types";
 import sanitizeHtml from "sanitize-html";
 import { ExpandableList, ExpandableText } from "@/components/ui/Expandable";
 import type { ResolvedPresentation } from "@/lib/product-presentation";
+import { linkAdmetec, linkAdmetecHtml } from "@/components/brand/AdmetecText";
 
 interface DescriptionBlockProps {
     data: DescriptionBlockType["data"];
@@ -63,10 +64,10 @@ function toSecondaryHtml(value: string): string {
 
 export default function DescriptionBlock({ data, presentation, afterPrimary }: DescriptionBlockProps) {
     if (!presentation) {
-        const secondaryHtml = data.secondary ? toSecondaryHtml(data.secondary) : "";
+        const secondaryHtml = data.secondary ? linkAdmetecHtml(toSecondaryHtml(data.secondary)) : "";
         return (
             <div className="space-y-4">
-                <p className="text-[17px] leading-relaxed text-neutral-700">{data.primary}</p>
+                <p className="text-[17px] leading-relaxed text-neutral-700">{linkAdmetec(data.primary)}</p>
                 {afterPrimary}
                 {secondaryHtml && <div className="text-[15px] leading-relaxed text-neutral-600 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5" dangerouslySetInnerHTML={{ __html: secondaryHtml }} />}
             </div>
@@ -79,7 +80,7 @@ export default function DescriptionBlock({ data, presentation, afterPrimary }: D
     return (
         <div id="overview" className="space-y-4">
             {/* Short description — never collapsed */}
-            <p className="text-[17px] leading-relaxed text-neutral-700">{data.primary}</p>
+            <p className="text-[17px] leading-relaxed text-neutral-700">{linkAdmetec(data.primary)}</p>
             {afterPrimary}
 
             {introHtml && (
@@ -90,7 +91,7 @@ export default function DescriptionBlock({ data, presentation, afterPrimary }: D
                     readMoreMinChars={presentation.overviewReadMoreMinChars}
                     className="text-[15px] leading-relaxed text-neutral-600"
                 >
-                    <span dangerouslySetInnerHTML={{ __html: introHtml }} />
+                    <span dangerouslySetInnerHTML={{ __html: linkAdmetecHtml(introHtml) }} />
                 </ExpandableText>
             )}
 
@@ -99,7 +100,7 @@ export default function DescriptionBlock({ data, presentation, afterPrimary }: D
                     id="features"
                     ordered
                     items={itemHtmls.map((html) => (
-                        <span key={html} dangerouslySetInnerHTML={{ __html: html }} />
+                        <span key={html} dangerouslySetInnerHTML={{ __html: linkAdmetecHtml(html) }} />
                     ))}
                     visible={presentation.featuresVisible}
                     listClassName="list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-neutral-600 marker:text-neutral-500"

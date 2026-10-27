@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import { ChevronDown, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 
 export interface FAQItem {
     id: number;
@@ -65,7 +66,7 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: bool
                             <div key={i} className="h-1" />
                         ) : (
                             <p key={i} className={cn(line.startsWith("• ") && "pl-3")}>
-                                {line}
+                                {linkAdmetec(line)}
                             </p>
                         )
                     )}

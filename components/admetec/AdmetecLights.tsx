@@ -1,3 +1,4 @@
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -56,7 +57,7 @@ export function AdmetecLights({ intro, categories }: HeadlightsData) {
             <div className="section container">
                 <ScrollReveal variant="fade">
                     <div className="mx-auto max-w-3xl text-center">
-                        <p className="text-[15px] font-medium text-white/70">{intro.title}</p>
+                        <p className="text-[15px] font-medium text-white/70">{linkAdmetec(intro.title, { onDark: true })}</p>
                         <h2 id="admetec-lights-heading" className="mt-2 text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance text-white md:text-5xl">
                             Loupes and lights, as one solution.
                         </h2>

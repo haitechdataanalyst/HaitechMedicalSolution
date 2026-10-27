@@ -137,7 +137,7 @@ export function BrandStatement({ quote, stats }: { quote: string; stats: { v: st
 }
 
 interface BrandFeatureProps {
-    eyebrow?: string;
+    eyebrow?: ReactNode;
     title: ReactNode;
     children: ReactNode;
     media: ReactNode;
@@ -235,7 +235,7 @@ export interface BrandPillar {
 }
 
 /** "Why choose X" grid: quiet cards, icon in brand colour, no numbering or icon tiles. */
-export function BrandPillars({ title, subtitle, items, columns = 3, tone = "white" }: { title: string; subtitle?: string; items: BrandPillar[]; columns?: 3 | 4; tone?: Tone }) {
+export function BrandPillars({ title, subtitle, items, columns = 3, tone = "white" }: { title: string; subtitle?: ReactNode; items: BrandPillar[]; columns?: 3 | 4; tone?: Tone }) {
     return (
         <BrandSection tone={tone}>
             <ScrollReveal variant="fade">

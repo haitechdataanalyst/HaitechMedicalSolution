@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
     title: string;
-    subtitle?: string;
+    subtitle?: ReactNode;
     link?: { href: string; label: string };
     tone?: "light" | "dark";
     /** Extra content under the subtitle, e.g. a rating badge. */
