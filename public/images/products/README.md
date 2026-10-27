@@ -15,5 +15,5 @@ Inside a brand the folder names follow the site's own category names, so a produ
 `/product-category/bondent/endo-files/rotary-files/cc-premium` has its photo in `bondent/endo-files/rotary-files/`.
 
 - `brand/` inside a brand folder holds brand-level banners, not product photos.
-- `archive/` (where it appears) holds older originals that a newer set replaced. The site does not use them; they are kept, not deleted.
+- Photos that exist as identical copies elsewhere, or that live only on Cloudinary, are not kept here: see `docs/asset-audit/removed-files.csv` for each removed file and where its replacement is.
 - `uncatalogued/` holds photos of products that have no page on the site yet.

@@ -32,5 +32,5 @@ images/                      kind of image
 - **Lowercase kebab-case**, no spaces, brackets or underscores: `cc-premium.jpg`, not `CC Premium (1).jpg`. Linux hosts are case-sensitive and spaces break links.
 - **One home per file.** Put it in the brand and product area it shows. Use `images/products/shared/` or `images/site/` only for what is really shared.
 - **Reference a file by its full path** (`"/images/team/viren-gosar.jpg"`) so a search of the code finds it. Never assemble a path from pieces.
-- **Not every file here is used by the code.** Product, frame and headlight photography is served from Cloudinary (the data files hold those URLs); the copies here are the originals kept in the repository. To check whether a file is in use, search the code for its path.
+- **Product photography is served from Cloudinary** (the data files hold those URLs); only the files code names by path (logos, hero, team, brand pages) are served from here. Before removing a file, search the code for its path; `docs/asset-audit/` lists what was checked and removed.
 - **Moving a file changes its URL.** Old URLs that code or data used are kept alive by `data/asset-redirects.json`, applied in `next.config.ts`.

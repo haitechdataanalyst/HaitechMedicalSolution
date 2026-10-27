@@ -61,7 +61,7 @@
   },
   {
     "from": "/images/Article-Demo-Image-1024x7000.jpg",
-    "to": "/images/articles/article-demo-image-1024x7000.jpg"
+    "to": "/images/articles/article-demo-image-1024x700.jpg"
   },
   {
     "from": "/images/Top-6-question-TN.jpg",
@@ -81,11 +81,11 @@
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoV/Blues_Frame/Blues-Black-Ergo-V.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg"
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoVPro/Blues_Frame/Blues-Black-Ergo-V-Pro.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/butterfly-evo-case.webp",
@@ -137,11 +137,11 @@
   },
   {
     "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg"
   },
   {
     "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg"
   },
   {
     "from": "/images/products/admetec/prismatic/prismatic-1.jpg",
