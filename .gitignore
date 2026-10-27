@@ -55,3 +55,5 @@ next-env.d.ts
 
 # confidential commercial data (this repository is public)
 /data/seed/*price*.xlsx
+# tool caches
+.ruff_cache/

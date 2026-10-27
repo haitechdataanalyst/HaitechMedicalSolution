@@ -81,11 +81,43 @@
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoV/Blues_Frame/Blues-Black-Ergo-V.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoVPro/Blues_Frame/Blues-Black-Ergo-V-Pro.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/butterfly-evo-case.webp",
+    "to": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case.webp"
+  },
+  {
+    "from": "/images/products/admetec/catalog/butterfly-evo-extender.jpg",
+    "to": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/flamingo-25mm-lens.jpg",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/flamingo-camera.jpg",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/flamingo-kit.webp",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-kit.webp"
+  },
+  {
+    "from": "/images/products/admetec/catalog/flamingo-product.jpg",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-product.jpg"
+  },
+  {
+    "from": "/images/products/admetec/catalog/orchid-e-headlight.jpg",
+    "to": "/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight.jpg"
   },
   {
     "from": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
@@ -100,6 +132,18 @@
     "to": "/images/products/admetec/loupes/galilean/gallery/galilean-2.5x-blues-pink.jpg"
   },
   {
+    "from": "/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack.webp",
+    "to": "/images/products/admetec/camera/flamingo/product/flamingo-with-loupes-and-powerpack.webp"
+  },
+  {
+    "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg",
+    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg"
+  },
+  {
+    "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg",
+    "to": "/images/products/admetec/loupes/ergo-v/archive/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg"
+  },
+  {
     "from": "/images/products/admetec/prismatic/prismatic-1.jpg",
     "to": "/images/products/admetec/loupes/prismatic/gallery/prismatic-1.jpg"
   },
@@ -108,12 +152,60 @@
     "to": "/images/products/almadent/brand/almadent-primary.jpg"
   },
   {
+    "from": "/images/products/bondent/actor-i-pro.png",
+    "to": "/images/products/bondent/endo-device/irrigation/actor-i-pro.png"
+  },
+  {
+    "from": "/images/products/bondent/bondent-cbct-1030-pro.png",
+    "to": "/images/products/bondent/imaging/bondent-cbct-1030-pro.png"
+  },
+  {
+    "from": "/images/products/bondent/cbct-1020ms.png",
+    "to": "/images/products/bondent/imaging/cbct-1020ms.png"
+  },
+  {
+    "from": "/images/products/bondent/cc-premium.jpg",
+    "to": "/images/products/bondent/endo-files/rotary-files/cc-premium.jpg"
+  },
+  {
     "from": "/images/products/medesy/elevator/700slash8.jpg",
     "to": "/images/products/medesy/elevators/700slash8.jpg"
   },
   {
     "from": "/images/products/medesy/periosteal/periosteal-category.jpg",
     "to": "/images/products/medesy/periosteal-elevators/periosteal-category.jpg"
+  },
+  {
+    "from": "/images/products/salli/benefits-bad-pelvis-angle.jpg",
+    "to": "/images/products/salli/benefits/benefits-bad-pelvis-angle.jpg"
+  },
+  {
+    "from": "/images/products/salli/benefits-bad-posture.jpg",
+    "to": "/images/products/salli/benefits/benefits-bad-posture.jpg"
+  },
+  {
+    "from": "/images/products/salli/benefits-good-pelvis-angle.jpg",
+    "to": "/images/products/salli/benefits/benefits-good-pelvis-angle.jpg"
+  },
+  {
+    "from": "/images/products/salli/benefits-good-posture.jpg",
+    "to": "/images/products/salli/benefits/benefits-good-posture.jpg"
+  },
+  {
+    "from": "/images/products/salli/benefits-spine-comparison.jpg",
+    "to": "/images/products/salli/benefits/benefits-spine-comparison.jpg"
+  },
+  {
+    "from": "/images/products/salli/sway-fit-black.jpg",
+    "to": "/images/products/salli/sway-fit/sway-fit-black.jpg"
+  },
+  {
+    "from": "/images/products/salli/triple-fit-black.jpg",
+    "to": "/images/products/salli/triple-fit/triple-fit-black.jpg"
+  },
+  {
+    "from": "/images/products/salli/ultra-triple-fit-black.jpg",
+    "to": "/images/products/salli/ultra-triple-fit/ultra-triple-fit-black.jpg"
   },
   {
     "from": "/og-default.png",

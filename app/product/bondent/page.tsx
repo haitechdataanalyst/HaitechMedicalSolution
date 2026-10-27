@@ -20,14 +20,14 @@ const range = [
         name: "Endo & ortho",
         meta: "Rotary Files · Hand Files & Obturation · Orthodontics · Endo Accessories",
         description: "Rotary root canal files, obturation instruments, endodontic accessories, orthodontic brackets, archwires, and molar bands designed for reliable everyday clinical performance.",
-        image: "/images/products/bondent/cc-premium.jpg",
+        image: "/images/products/bondent/endo-files/rotary-files/cc-premium.jpg",
         href: "/product-category/bondent/endo-files",
     },
     {
         name: "Imaging & optics",
         meta: "CBCT with metal-artifact reduction · Surgical loupes for precision work",
         description: "High-resolution CBCT systems with advanced metal-artifact reduction technology and surgical loupes built for enhanced clinical precision.",
-        image: "/images/products/bondent/cbct-1020ms.png",
+        image: "/images/products/bondent/imaging/cbct-1020ms.png",
         href: "/product-category/bondent/imaging",
     },
 ];

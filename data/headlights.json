@@ -57,7 +57,7 @@
                 {
                     "id": "butterfly-evo-extender",
                     "name": "Butterfly EVO Extender",
-                    "image": "/images/products/admetec/catalog/butterfly-evo-extender.jpg",
+                    "image": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender.jpg",
                     "description": "Shifts the battery from the loupes mount to a remote clip-on socket, reducing weight on the nose bridge for improved comfort and extreme lightweight.",
                     "features": [
                         "Accessory for Butterfly™ EVO and Butterfly-S™ EVO"
@@ -98,7 +98,7 @@
                     "External composite (yellow) filter"
                 ],
                 "note": "Battery count may differ by country.",
-                "image": "/images/products/admetec/catalog/butterfly-evo-case.webp"
+                "image": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case.webp"
             }
         },
         {
@@ -143,7 +143,7 @@
                 {
                     "id": "orchid-e-headlight",
                     "name": "Orchid-E Headlight",
-                    "image": "/images/products/admetec/catalog/orchid-e-headlight.jpg",
+                    "image": "/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight.jpg",
                     "description": "Orchid-E™ is designed for a high-intensity, narrow light beam. Particularly well suited for high magnifications.",
                     "features": [
                         "Intensity: 150K LUX",

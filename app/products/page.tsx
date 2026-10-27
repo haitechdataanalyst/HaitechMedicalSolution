@@ -23,9 +23,9 @@ const equipmentLinks = [...HUBS.map((hub) => ({ label: hub.name, href: hubPath(h
 const EQUIPMENT_IMAGE: Record<string, string> = {
     "/dental-loupes": "/images/products/admetec/loupes/ergo/gallery/ergo-10x-blues-black.jpg",
     "/dental-chairs": "/images/products/almadent/brand/almadent-primary.jpg",
-    "/saddle-chairs": "/images/products/salli/sway-fit-black.jpg",
-    "/endodontics": "/images/products/bondent/actor-i-pro.png",
-    "/cbct": "/images/products/bondent/bondent-cbct-1030-pro.png",
+    "/saddle-chairs": "/images/products/salli/sway-fit/sway-fit-black.jpg",
+    "/endodontics": "/images/products/bondent/endo-device/irrigation/actor-i-pro.png",
+    "/cbct": "/images/products/bondent/imaging/bondent-cbct-1030-pro.png",
     "/product-category/strauss": "/images/products/strauss/a-series/a0c.jpg",
     "/product-category/medesy": "/images/products/medesy/elevators/700slash8.jpg",
 };

@@ -8,10 +8,10 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD, PILL_PRIMARY, SURFACE_CARD } from 
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const PHOTOS = {
-    system: "/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack.webp",
-    clinician: "/images/products/admetec/catalog/flamingo-product.jpg",
-    controlUnit: "/images/products/admetec/catalog/flamingo-camera.jpg",
-    kit: "/images/products/admetec/catalog/flamingo-kit.webp",
+    system: "/images/products/admetec/camera/flamingo/product/flamingo-with-loupes-and-powerpack.webp",
+    clinician: "/images/products/admetec/camera/flamingo/product/flamingo-product.jpg",
+    controlUnit: "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
+    kit: "/images/products/admetec/camera/flamingo/product/flamingo-kit.webp",
 };
 
 // The capabilities worth leading with, by their catalogue titles; falls back to the first few if the copy changes.

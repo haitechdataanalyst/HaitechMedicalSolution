@@ -15089,25 +15089,25 @@
         "order": 1,
         "sku": "ADM-FLAMINGO",
         "hasVariants": false,
-        "defaultImage": "/images/products/admetec/catalog/flamingo-camera.jpg",
+        "defaultImage": "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
         "gallery": [
-            "/images/products/admetec/catalog/flamingo-camera.jpg",
-            "/images/products/admetec/catalog/flamingo-product.jpg",
-            "/images/products/admetec/catalog/flamingo-kit.webp",
-            "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
-            "/images/products/admetec/catalog/flamingo-25mm-lens.jpg"
+            "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
+            "/images/products/admetec/camera/flamingo/product/flamingo-product.jpg",
+            "/images/products/admetec/camera/flamingo/product/flamingo-kit.webp",
+            "/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg",
+            "/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg"
         ],
         "contentBlocks": [
             {
                 "type": "hero",
                 "data": {
-                    "primaryImage": "/images/products/admetec/catalog/flamingo-camera.jpg",
+                    "primaryImage": "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
                     "gallery": [
-                        "/images/products/admetec/catalog/flamingo-camera.jpg",
-                        "/images/products/admetec/catalog/flamingo-product.jpg",
-                        "/images/products/admetec/catalog/flamingo-kit.webp",
-                        "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
-                        "/images/products/admetec/catalog/flamingo-25mm-lens.jpg"
+                        "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg",
+                        "/images/products/admetec/camera/flamingo/product/flamingo-product.jpg",
+                        "/images/products/admetec/camera/flamingo/product/flamingo-kit.webp",
+                        "/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg",
+                        "/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg"
                     ]
                 }
             },
