@@ -28,9 +28,9 @@ const PILL_SECONDARY_LIGHT =
 /** Lead paragraph inside a feature section. */
 export const BRAND_LEAD = "text-base leading-relaxed text-neutral-600 md:text-lg";
 
-export function BrandSection({ tone = "white", className, children }: { tone?: Tone; className?: string; children: ReactNode }) {
+export function BrandSection({ tone = "white", className, id, children }: { tone?: Tone; className?: string; id?: string; children: ReactNode }) {
     return (
-        <section className={TONE_BG[tone]}>
+        <section id={id} className={cn(TONE_BG[tone], id && "scroll-mt-24")}>
             <div className={cn("section container", className)}>{children}</div>
         </section>
     );
@@ -272,38 +272,72 @@ export interface BrandProduct {
     href: string;
     description?: string;
     meta?: string;
+    /** The cue at the foot of the card; "Explore" when left out. */
+    cta?: string;
 }
 
-/** Product / category cards in the same material as the home page brand cards. */
-export function BrandProductCards({ title, subtitle, items, columns = 3, tone = "white" }: { title: string; subtitle?: string; items: BrandProduct[]; columns?: 3 | 4; tone?: Tone }) {
+const PRODUCT_COLUMNS = { 2: "md:grid-cols-2", 3: "md:grid-cols-3", 4: "md:grid-cols-2 lg:grid-cols-4" } as const;
+
+/**
+ * Product / category cards in the same material as the home page brand cards: the whole card is one link. A phone
+ * gets a single row to swipe (the next card peeking in) instead of a tall stack; from md up they sit in a grid.
+ * Children continue the same section below the cards.
+ */
+export function BrandProductCards({
+    id,
+    title,
+    subtitle,
+    items,
+    columns = 3,
+    tone = "white",
+    children,
+}: {
+    id?: string;
+    title: string;
+    subtitle?: string;
+    items: BrandProduct[];
+    columns?: 2 | 3 | 4;
+    tone?: Tone;
+    children?: ReactNode;
+}) {
     return (
-        <BrandSection tone={tone}>
+        <BrandSection tone={tone} id={id}>
             <ScrollReveal variant="fade">
                 <SectionHeader title={title} subtitle={subtitle} />
             </ScrollReveal>
-            <ul className={cn("grid gap-5 sm:grid-cols-2 md:gap-6", columns === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4")}>
+            <ul
+                className={cn(
+                    "-mx-[var(--container-padding)] flex snap-x snap-mandatory scroll-pl-[var(--container-padding)] gap-4 overflow-x-auto px-[var(--container-padding)] pb-3 [scrollbar-width:none] md:mx-0 md:grid md:snap-none md:gap-5 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden",
+                    PRODUCT_COLUMNS[columns]
+                )}
+            >
                 {items.map((item) => (
-                    <li key={item.name}>
-                        <Link href={item.href} className={cn(INTERACTIVE_CARD, "h-full p-2")}>
+                    <li key={item.name} className="flex w-[78%] shrink-0 snap-start md:w-auto">
+                        <Link href={item.href} className={cn(INTERACTIVE_CARD, "w-full p-2")}>
                             <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
                             <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-50">
                                 <Image
                                     src={item.image}
                                     alt={item.name}
                                     fill
-                                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 78vw"
                                     className="object-contain p-8 mix-blend-multiply transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]"
                                 />
                             </div>
                             <div className="flex flex-1 flex-col px-3 pt-4 pb-3">
                                 <h3 className="text-[17px] font-semibold tracking-[-0.015em] text-neutral-900">{item.name}</h3>
-                                {item.description && <p className="mt-1.5 text-[15px] leading-relaxed text-neutral-600">{item.description}</p>}
                                 {item.meta && <p className="mt-1 text-[13px] text-neutral-500">{item.meta}</p>}
+                                {item.description && <p className="mt-1.5 text-[15px] leading-relaxed text-neutral-600">{item.description}</p>}
+                                <span className="text-primary-700 mt-auto inline-flex items-center gap-1 pt-4 text-[15px] font-medium">
+                                    {item.cta ?? "Explore"}
+                                    <ChevronRight className="h-4 w-4 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-0.5" aria-hidden="true" />
+                                </span>
                             </div>
                         </Link>
                     </li>
                 ))}
             </ul>
+            {children && <div className="mt-12 md:mt-16">{children}</div>}
         </BrandSection>
     );
 }

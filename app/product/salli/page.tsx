@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { HeartPulse, ArrowDownUp, Brain, Armchair, Activity, CheckCircle, Wind, Shield, Droplets, Bone, RefreshCw } from "lucide-react";
+import { Activity, CheckCircle, Wind, Shield, Droplets, Bone, RefreshCw } from "lucide-react";
 import type { Metadata } from "next";
 import { getDynamicMetadata } from "@/lib/metadata";
+import { BrandAbout } from "@/components/brand/BrandAbout";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
-import { BRAND_LEAD, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandProductCards, BrandSection, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
+import { BRAND_LEAD, BrandCTA, BrandHero, BrandPillars, BrandProductCards, BrandSection, BrandStatement } from "@/components/brand/BrandSections";
 
 export const metadata: Metadata = getDynamicMetadata("Salli | Ergonomic Dental Saddle Chairs", "Salli Systems — pioneers in ergonomic saddle chair design. Solving sitting-related problems through research-driven innovation for dental and medical professionals.", { path: "/product/salli" });
 
@@ -52,10 +53,10 @@ const healthBenefits = [
 ];
 
 const pillars = [
-    { icon: <Brain className="h-6 w-6" />, title: "Research in Sitting Physiology", description: "Decades of scientific research into how sitting affects the body, informing every design decision." },
-    { icon: <ArrowDownUp className="h-6 w-6" />, title: "Continuous Innovation", description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals." },
-    { icon: <Armchair className="h-6 w-6" />, title: "High-Quality Manufacturing", description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance." },
-    { icon: <HeartPulse className="h-6 w-6" />, title: "Customer-Oriented Approach", description: "Solving real sitting problems through an integrated, user-focused design philosophy." },
+    { title: "Research in Sitting Physiology", description: "Decades of scientific research into how sitting affects the body, informing every design decision." },
+    { title: "Continuous Innovation", description: "Relentless product development to deliver cutting-edge ergonomic solutions for modern professionals." },
+    { title: "High-Quality Manufacturing", description: "Premium materials and precise engineering ensure durability, comfort, and long-lasting performance." },
+    { title: "Customer-Oriented Approach", description: "Solving real sitting problems through an integrated, user-focused design philosophy." },
 ];
 
 const products = [
@@ -110,58 +111,44 @@ export default function AboutSalliPage() {
                 ]}
             />
 
-            <BrandFeature
-                eyebrow="The problem"
-                title={
-                    <>
-                        Traditional Sitting
-                        <br />
-                        Is Hurting You.
-                    </>
-                }
-                cta={{ href: "/product-category/salli/sway-fit" }}
-                media={<MediaTile href="/product-category/salli/sway-fit" src="/images/products/salli/sway-fit-black.jpg" alt="Salli SwayFit saddle chair" aspect="aspect-square" />}
-            >
-                <p className={BRAND_LEAD}>
-                    Salli has demonstrated through research that traditional sitting is closely linked to numerous health issues. Hours in a conventional chair create compounding problems for dental professionals.
-                </p>
-                <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-                    {sittingProblems.map((problem) => (
-                        <li key={problem} className="flex items-start gap-3 text-[15px] leading-relaxed text-neutral-700">
-                            <Activity className="mt-1 h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />
-                            {problem}
-                        </li>
-                    ))}
-                </ul>
-            </BrandFeature>
+            <BrandProductCards id="range" title="The Salli Range" subtitle="Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals." items={products} />
 
-            <BrandFeature
-                tone="gray"
-                reverse
-                eyebrow="The solution"
-                title={
-                    <>
-                        Designed to
-                        <br />
-                        Transform How You Sit.
-                    </>
-                }
-                cta={{ href: "/product-category/salli/triple-fit" }}
-                media={<MediaTile href="/product-category/salli/triple-fit" src="/images/products/salli/triple-fit-black.jpg" alt="Salli TripleLift saddle chair" />}
-            >
-                <p className={BRAND_LEAD}>
-                    The Salli saddle chair tilts the pelvis forward naturally, restoring the spine&apos;s healthy S-curve. The result is active, healthy sitting that reduces pain and boosts circulation — even during
-                    long procedures.
-                </p>
-                <ul className="flex flex-wrap gap-2">
-                    {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((b) => (
-                        <li key={b} className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] text-neutral-800 ring-1 ring-neutral-900/[0.06]">
-                            <CheckCircle className="text-primary-700 h-4 w-4 shrink-0" aria-hidden="true" />
-                            {b}
-                        </li>
-                    ))}
-                </ul>
-            </BrandFeature>
+            <BrandSection tone="gray">
+                <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+                    <div className="rounded-3xl bg-white p-8 ring-1 ring-neutral-900/[0.04] md:p-10">
+                        <p className="text-primary-700 text-[15px] font-medium">The problem</p>
+                        <h2 className="mt-2 text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.022em] text-neutral-900 md:text-[2rem]">Traditional Sitting Is Hurting You.</h2>
+                        <p className={`mt-4 ${BRAND_LEAD}`}>
+                            Salli has demonstrated through research that traditional sitting is closely linked to numerous health issues. Hours in a conventional chair create compounding problems for dental
+                            professionals.
+                        </p>
+                        <ul className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                            {sittingProblems.map((problem) => (
+                                <li key={problem} className="flex items-start gap-3 text-[15px] leading-relaxed text-neutral-700">
+                                    <Activity className="mt-1 h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />
+                                    {problem}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="rounded-3xl bg-white p-8 ring-1 ring-neutral-900/[0.04] md:p-10">
+                        <p className="text-primary-700 text-[15px] font-medium">The solution</p>
+                        <h2 className="mt-2 text-[1.75rem] leading-[1.1] font-semibold tracking-[-0.022em] text-neutral-900 md:text-[2rem]">Designed to Transform How You Sit.</h2>
+                        <p className={`mt-4 ${BRAND_LEAD}`}>
+                            The Salli saddle chair tilts the pelvis forward naturally, restoring the spine&apos;s healthy S-curve. The result is active, healthy sitting that reduces pain and boosts circulation —
+                            even during long procedures.
+                        </p>
+                        <ul className="mt-6 flex flex-wrap gap-2">
+                            {["Better Posture", "Less Pain", "More Circulation", "Higher Productivity"].map((b) => (
+                                <li key={b} className="flex items-center gap-2 rounded-full bg-neutral-50 px-4 py-2 text-[15px] text-neutral-800 ring-1 ring-neutral-900/[0.06]">
+                                    <CheckCircle className="text-primary-700 h-4 w-4 shrink-0" aria-hidden="true" />
+                                    {b}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </BrandSection>
 
             {/* The science / benefits */}
             <BrandSection>
@@ -213,9 +200,7 @@ export default function AboutSalliPage() {
                 </p>
             </div>
 
-            <BrandProductCards title="The Salli Range" subtitle="Purpose-built saddle chairs that redefine seated comfort for dental and medical professionals." items={products} />
-
-            <BrandPillars tone="gray" title="Four Pillars of Design" subtitle="Why choose Salli." items={pillars} columns={4} />
+            <BrandAbout brand="Salli" eyebrow="Why choose Salli" title="Four pillars of design." highlights={pillars.map((p) => ({ title: p.title, text: p.description }))} />
 
             <BrandCTA
                 tone="light"

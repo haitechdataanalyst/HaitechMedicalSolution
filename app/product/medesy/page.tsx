@@ -1,18 +1,17 @@
-import { Gem, Factory, Wrench, Microscope, Globe, Flame } from "lucide-react";
 import type { Metadata } from "next";
 import { getDynamicMetadata } from "@/lib/metadata";
-import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
-import { BRAND_LEAD, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandProductCards, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
+import { BrandAbout } from "@/components/brand/BrandAbout";
+import { BrandCTA, BrandHero, BrandProductCards, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
 
 export const metadata: Metadata = getDynamicMetadata("Medesy | Italian Dental Instruments & Equipment", "MEDESY — Italian dental instruments rooted in 600+ years of blade-making heritage from Maniago. Precision, craftsmanship, and innovation in every instrument.", { path: "/product/medesy" });
 
 const heritage = [
-    { icon: <Flame />, title: "600+ Years of Heritage", description: "Rooted in Maniago, Italy — internationally recognized for six centuries as a center of excellence in blade production." },
-    { icon: <Factory />, title: "Family Legacy", description: "A brand built on generations of passion, precision, and craftsmanship — carrying forward a proud artisan tradition." },
-    { icon: <Gem />, title: "Artisan Expertise", description: "Blending centuries-old hand-crafting techniques with modern innovation to achieve unmatched quality." },
-    { icon: <Microscope />, title: "Advanced Design", description: "Continuous innovation in ergonomics, materials, and functionality for superior instrument performance." },
-    { icon: <Wrench />, title: "Reliable Functionality", description: "Every instrument engineered for consistent, dependable results in demanding clinical environments." },
-    { icon: <Globe />, title: "Trusted Worldwide", description: "A comprehensive range of dental solutions trusted by professionals globally for durability and precision." },
+    { title: "600+ Years of Heritage", description: "Rooted in Maniago, Italy — internationally recognized for six centuries as a center of excellence in blade production." },
+    { title: "Family Legacy", description: "A brand built on generations of passion, precision, and craftsmanship — carrying forward a proud artisan tradition." },
+    { title: "Artisan Expertise", description: "Blending centuries-old hand-crafting techniques with modern innovation to achieve unmatched quality." },
+    { title: "Advanced Design", description: "Continuous innovation in ergonomics, materials, and functionality for superior instrument performance." },
+    { title: "Reliable Functionality", description: "Every instrument engineered for consistent, dependable results in demanding clinical environments." },
+    { title: "Trusted Worldwide", description: "A comprehensive range of dental solutions trusted by professionals globally for durability and precision." },
 ];
 
 const categories = [
@@ -46,38 +45,30 @@ export default function AboutMedesyPage() {
                 ]}
             />
 
-            <BrandFeature
-                eyebrow="Heritage"
-                title={
-                    <>
-                        A Legacy
-                        <br />
-                        Forged in Steel.
-                    </>
-                }
-                media={<MediaTile href="/product-category/medesy/forceps" src="/images/products/medesy/forceps/forceps-category.jpg" alt="Medesy dental forceps craftsmanship" />}
-            >
-                <p className={BRAND_LEAD}>
-                    Rooted in the historic steel-making town of Maniago, MEDESY carries forward a family legacy built on passion, precision, and craftsmanship. For over 600 years, Maniago has been
-                    internationally recognized as a center of excellence in blade production.
-                </p>
-                <p className="text-[15px] leading-relaxed text-neutral-500 md:text-base">
-                    Blending centuries-old artisan expertise with continuous innovation, MEDESY focuses on advanced design, superior ergonomics, and reliable functionality — trusted by professionals
-                    worldwide.
-                </p>
-            </BrandFeature>
-
             <BrandProductCards
-                tone="gray"
+                id="range"
                 title="Every Procedure. Every Instrument."
                 subtitle="A comprehensive portfolio of precision instruments designed for every clinical need."
                 items={categories}
                 columns={4}
             />
 
-            <BrandPillars title="Where Craft Meets Clinic" subtitle="Where centuries of Italian craftsmanship meets modern dental innovation." items={heritage} />
-
-            <HaitechPartnership brand="Medesy" />
+            <BrandAbout
+                brand="Medesy"
+                eyebrow="Heritage"
+                title="A Legacy Forged in Steel."
+                highlights={heritage.map((p) => ({ title: p.title, text: p.description }))}
+                media={<MediaTile href="/product-category/medesy/forceps" src="/images/products/medesy/forceps/forceps-category.jpg" alt="Medesy dental forceps craftsmanship" />}
+            >
+                <p>
+                    Rooted in the historic steel-making town of Maniago, MEDESY carries forward a family legacy built on passion, precision, and craftsmanship. For over 600 years, Maniago has been
+                    internationally recognized as a center of excellence in blade production.
+                </p>
+                <p>
+                    Blending centuries-old artisan expertise with continuous innovation, MEDESY focuses on advanced design, superior ergonomics, and reliable functionality — trusted by professionals
+                    worldwide.
+                </p>
+            </BrandAbout>
 
             <BrandCTA
                 title="Built in Maniago, Trusted in Your Clinic"

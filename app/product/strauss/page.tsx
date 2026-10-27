@@ -1,19 +1,17 @@
-import { Diamond, Zap, ThermometerSun, Target, Clock, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import { getDynamicMetadata } from "@/lib/metadata";
-import { HaitechPartnership } from "@/components/brand/HaitechPartnership";
-import { BRAND_LEAD, BrandCTA, BrandFeature, BrandHero, BrandPillars, BrandProductCards, BrandSection, BrandStatement, BrandTags, MediaTile } from "@/components/brand/BrandSections";
-import SectionHeader from "@/components/misc/SectionHeader";
+import { BrandAbout } from "@/components/brand/BrandAbout";
+import { BrandCTA, BrandHero, BrandProductCards, BrandStatement, BrandTags } from "@/components/brand/BrandSections";
 
 export const metadata: Metadata = getDynamicMetadata("Strauss | Precision Diamond Burs for Dentistry", "Strauss Diamond Burs — precision-engineered rotary instruments delivering efficient cutting, smooth performance, and consistent clinical results for dental professionals.", { path: "/product/strauss" });
 
 const advantages = [
-    { icon: <Diamond />, title: "Uniform Diamond Distribution", description: "Precisely distributed diamond particles ensure consistent cutting efficiency across the entire working surface." },
-    { icon: <Zap />, title: "Efficient Cutting", description: "Advanced bonding technology delivers smooth, effortless cutting performance with every use." },
-    { icon: <ThermometerSun />, title: "Minimal Heat & Vibration", description: "Engineered to minimize heat generation and vibration for safer, more comfortable procedures." },
-    { icon: <Target />, title: "Consistent Geometry", description: "Stable handling and predictable performance when working with enamel, dentin, and restorative materials." },
-    { icon: <Clock />, title: "Long Service Life", description: "Known for exceptional sharpness and durability that outlast conventional diamond burs." },
-    { icon: <ShieldCheck />, title: "Safety & Control", description: "Excellent control and visibility during procedures, prioritizing accuracy and patient safety." },
+    { title: "Uniform Diamond Distribution", description: "Precisely distributed diamond particles ensure consistent cutting efficiency across the entire working surface." },
+    { title: "Efficient Cutting", description: "Advanced bonding technology delivers smooth, effortless cutting performance with every use." },
+    { title: "Minimal Heat & Vibration", description: "Engineered to minimize heat generation and vibration for safer, more comfortable procedures." },
+    { title: "Consistent Geometry", description: "Stable handling and predictable performance when working with enamel, dentin, and restorative materials." },
+    { title: "Long Service Life", description: "Known for exceptional sharpness and durability that outlast conventional diamond burs." },
+    { title: "Safety & Control", description: "Excellent control and visibility during procedures, prioritizing accuracy and patient safety." },
 ];
 
 const burSeries = [
@@ -35,13 +33,6 @@ const burSeries = [
         image: "/images/products/strauss/p-series/PR13M.jpg",
         href: "/product-category/strauss/p-series",
     },
-];
-
-const burTiles = [
-    { href: "/product-category/strauss/a-series", src: "/images/products/strauss/a-series/A2M.jpg", alt: "Strauss A-series bur" },
-    { href: "/product-category/strauss/b-series", src: "/images/products/strauss/b-series/B2M.jpg", alt: "Strauss B-series bur" },
-    { href: "/product-category/strauss/p-series", src: "/images/products/strauss/p-series/PR24M.jpg", alt: "Strauss P-series bur" },
-    { href: "/product-category/strauss/a-series", src: "/images/products/strauss/a-series/A4M.jpg", alt: "Strauss bur closeup" },
 ];
 
 export default function AboutStraussPage() {
@@ -68,48 +59,30 @@ export default function AboutStraussPage() {
                 ]}
             />
 
-            <BrandFeature
-                eyebrow="Engineering"
-                title={
-                    <>
-                        Excellence in
-                        <br />
-                        Every Bur.
-                    </>
-                }
-                media={
-                    <div className="grid grid-cols-2 gap-4">
-                        {burTiles.map((t) => (
-                            <MediaTile key={t.src} href={t.href} src={t.src} alt={t.alt} aspect="aspect-square" />
-                        ))}
-                    </div>
-                }
-            >
-                <p className={BRAND_LEAD}>
-                    Manufactured using high-quality materials and advanced bonding technology, Strauss burs provide excellent durability and uniform diamond distribution for reliable cutting
-                    efficiency.
-                </p>
-                <p className="text-[15px] leading-relaxed text-neutral-500 md:text-base">
-                    Specifically developed for precise cutting and controlled material removal in restorative dentistry — multiple shapes, grits, and configurations to support preparation, adjustment,
-                    and finishing across all common clinical indications.
-                </p>
-            </BrandFeature>
-
             <BrandProductCards
-                tone="gray"
+                id="range"
                 title="Three Series. Every Indication."
                 subtitle="Covering preparation, adjustment, and finishing across all common clinical indications."
                 items={burSeries}
-            />
+            >
+                <div className="text-center">
+                    <p className="text-[13px] text-neutral-500">Built for the chair: clinical applications</p>
+                    <div className="mt-3 flex justify-center">
+                        <BrandTags items={["Crown Preparation", "Cavity Preparation", "Material Adjustment", "Surface Finishing"]} />
+                    </div>
+                </div>
+            </BrandProductCards>
 
-            <BrandSection>
-                <SectionHeader title="Built for the Chair" subtitle="Clinical applications." />
-                <BrandTags items={["Crown Preparation", "Cavity Preparation", "Material Adjustment", "Surface Finishing"]} />
-            </BrandSection>
-
-            <BrandPillars tone="gray" title="Six Clinical Advantages" subtitle="Why choose Strauss." items={advantages} />
-
-            <HaitechPartnership brand="Strauss" />
+            <BrandAbout brand="Strauss" eyebrow="Engineering" title="Excellence in Every Bur." highlights={advantages.map((p) => ({ title: p.title, text: p.description }))}>
+                <p>
+                    Manufactured using high-quality materials and advanced bonding technology, Strauss burs provide excellent durability and uniform diamond distribution for reliable cutting
+                    efficiency.
+                </p>
+                <p>
+                    Specifically developed for precise cutting and controlled material removal in restorative dentistry — multiple shapes, grits, and configurations to support preparation, adjustment,
+                    and finishing across all common clinical indications.
+                </p>
+            </BrandAbout>
 
             <BrandCTA
                 title="Cut with Confidence"
