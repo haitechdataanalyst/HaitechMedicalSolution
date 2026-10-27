@@ -4,21 +4,53 @@ import { AdmetecFlamingo } from "@/components/admetec/AdmetecFlamingo";
 import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
 import { AdmetecAbout } from "@/components/admetec/AdmetecAbout";
+import { AdmetecLoupes, type LoupeSeries } from "@/components/admetec/AdmetecLoupes";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
-import { BRAND_LEAD, BrandChipLinks, BrandCTA, BrandFeature, BrandHero, BrandStatement, MediaTile } from "@/components/brand/BrandSections";
+import { BrandCTA, BrandHero, BrandStatement } from "@/components/brand/BrandSections";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
 
 export const metadata: Metadata = getDynamicMetadata("Admetec | Premium Dental Loupes & Headlights", "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.", { path: "/product/admetec" });
-
-const galileanMags = ["2.5x", "2.7x", "3.2x"].map((m) => ({ label: m, href: `/product-category/admetec/galilean-loupes/galilean-${m}` }));
-const ergoMags = ["3.0x", "4.0x", "5.0x", "6.0x", "7.5x", "10x"].map((m) => ({ label: m, href: `/product-category/admetec/ergo-loupes/ergo-${m}` }));
 
 export default async function AboutAdmetecPage() {
     const headlights = await getHeadlightsData();
     const lightModels = headlightFigures(headlights.categories).models;
     const flamingo = await getProductBySlug("flamingo");
     const flamingoHref = flamingo ? await getProductPath(flamingo) : null;
+    const prismatic = await getProductBySlug("prismatic-loupe");
+    const prismaticHref = prismatic ? await getProductPath(prismatic) : "/product-category/admetec";
+
+    const loupeSeries: LoupeSeries[] = [
+        {
+            name: "Galilean",
+            mags: "2.5x · 2.7x · 3.2x",
+            description: "Lightweight, with a wide field and excellent depth of field. For general dentistry and routine procedures.",
+            image: "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
+            href: "/product-category/admetec/galilean-loupes/galilean-2.5x",
+        },
+        {
+            name: "Prismatic",
+            mags: "3.8x · 4.8x · 5.8x · 7.2x",
+            description: "Sharper detail at higher power.",
+            image: "/images/products/admetec/prismatic/prismatic-1.jpg",
+            href: prismaticHref,
+        },
+        {
+            name: "Ergo",
+            mags: "3.0x to 10x",
+            description: "Higher magnification with an ergonomic declination angle that promotes natural posture.",
+            image: "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
+            href: "/product-category/admetec/ergo-loupes/ergo-5.0x",
+        },
+        {
+            name: "Ergo V & V Pro",
+            mags: "3.8x to 10x",
+            description: "Ergo loupes with adjustable magnification, in two models.",
+            image: "/images/products/admetec/ergo-v/ergo-v-category.jpg",
+            href: "/product-category/admetec/ergo-v-series",
+            cta: "View series",
+        },
+    ];
 
     return (
         <>
@@ -43,45 +75,7 @@ export default async function AboutAdmetecPage() {
                 ]}
             />
 
-            <BrandFeature
-                eyebrow="Galilean loupes"
-                title={
-                    <>
-                        Lightweight.
-                        <br />
-                        Wide. Clear.
-                    </>
-                }
-                cta={{ href: "/product-category/admetec/galilean-loupes/galilean-2.5x" }}
-                media={<MediaTile href="/product-category/admetec/galilean-loupes/galilean-2.5x" src="/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg" alt="Admetec Galilean Loupes" />}
-            >
-                <p className={BRAND_LEAD}>
-                    Galilean loupes offer a wide field of view with excellent depth of field. Perfect for general dentistry and routine procedures — compact and remarkably comfortable for all-day
-                    wear.
-                </p>
-                <BrandChipLinks items={galileanMags} />
-            </BrandFeature>
-
-            <BrandFeature
-                tone="gray"
-                reverse
-                eyebrow="Prismatic Ergo"
-                title={
-                    <>
-                        Higher Power.
-                        <br />
-                        Better Posture.
-                    </>
-                }
-                cta={{ href: "/product-category/admetec/ergo-loupes/ergo-5.0x" }}
-                media={<MediaTile href="/product-category/admetec/ergo-loupes/ergo-5.0x" src="/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg" alt="Admetec Ergo Prismatic Loupes" />}
-            >
-                <p className={BRAND_LEAD}>
-                    The Ergo series delivers higher magnification with superior optical clarity. An ergonomic declination angle promotes natural posture — ideal for detailed procedures that demand
-                    precision.
-                </p>
-                <BrandChipLinks items={ergoMags} />
-            </BrandFeature>
+            <AdmetecLoupes series={loupeSeries} />
 
             {/* Ergo V / Ergo V Pro magnification selector */}
             <ErgoMagnificationSelector />
