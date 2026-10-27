@@ -28,9 +28,6 @@ export default function AboutMedesyPage() {
                 name="MEDESY"
                 tagline="Made in Italy · Maniago"
                 description="Italian dental instruments blending six centuries of artisan expertise with continuous innovation — precision, craftsmanship, and performance in every piece."
-                image="/images/products/medesy/medesy-banner.jpg"
-                imageAlt="Medesy dental instruments"
-                imageFit="contain"
                 primary={{ href: "/product-category/medesy", label: "Explore Instruments" }}
                 secondary={{ href: "/support/contact", label: "Contact Us" }}
             />

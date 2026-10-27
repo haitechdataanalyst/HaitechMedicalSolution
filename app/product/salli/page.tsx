@@ -94,9 +94,6 @@ export default function AboutSalliPage() {
                 name="Salli"
                 tagline="Finnish-engineered · Clinically proven"
                 description="Advancing research in sitting physiology, continuous product innovation, and solving sitting-related problems through a customer-oriented, integrated approach."
-                image="/images/products/salli/triple-fit-black.jpg"
-                imageAlt="Salli ergonomic saddle chairs"
-                imageFit="contain"
                 primary={{ href: "/product-category/salli", label: "Explore Salli Chairs" }}
                 secondary={{ href: "/support/contact", label: "Get in Touch" }}
             />

@@ -49,8 +49,6 @@ export default async function AboutAdmetecPage() {
                 name="Admetec"
                 tagline="Israeli precision, made for dentistry"
                 description="World-leading manufacturer of dental loupes, surgical magnification systems, and LED headlights — empowering professionals with unmatched clarity and precision."
-                image="/images/products/admetec/admetec-banner.jpg"
-                imageAlt="Admetec dental loupes"
                 primary={{ href: "/product-category/admetec", label: "Explore Loupes" }}
                 secondary={{ href: "/our-headlights", label: "Explore Lights" }}
             />

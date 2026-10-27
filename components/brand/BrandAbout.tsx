@@ -62,7 +62,8 @@ export function BrandAbout({
                             <p className="text-primary-700 mt-5 text-[15px] font-medium">Authorized distribution partner</p>
                             <h3 className="mt-1 text-[1.375rem] leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-2xl">Backed by Haitech Medical Solutions</h3>
                             <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
-                                Haitech Medical Solutions brings {brand} to dental professionals across India — with local stock, service, warranty support, and a team that knows the equipment inside out.
+                                Haitech Medical Solutions brings {brand} to dental professionals across India — with local stock, service, warranty support, and a team that knows the equipment inside
+                                out.
                             </p>
                             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                                 <Link href="/support/contact" className={PILL_PRIMARY}>

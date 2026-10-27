@@ -40,10 +40,6 @@ interface BrandHeroProps {
     name: string;
     tagline: string;
     description: string;
-    image: string;
-    imageAlt: string;
-    /** "contain" for product shots on white; "cover" for wide banner photography. */
-    imageFit?: "cover" | "contain";
     primary: BrandAction;
     secondary: BrandAction;
     /** The brand page's own route; defaults to /product/<name> (all brand pages follow that pattern). */
@@ -52,8 +48,8 @@ interface BrandHeroProps {
     underName?: ReactNode;
 }
 
-/** Brand hero: breadcrumb, name as the H1, one-line tagline, two actions, then a wide image tile. Renders immediately (no reveal). */
-export function BrandHero({ name, tagline, description, image, imageAlt, imageFit = "cover", primary, secondary, path = `/product/${name.toLowerCase()}`, underName }: BrandHeroProps) {
+/** Brand hero: breadcrumb, name as the H1, one-line tagline and two actions, with no photo: the page opens on its content. Renders immediately (no reveal). */
+export function BrandHero({ name, tagline, description, primary, secondary, path = `/product/${name.toLowerCase()}`, underName }: BrandHeroProps) {
     return (
         <section className="bg-white">
             {/* Same trail as the visible breadcrumb below */}
@@ -64,7 +60,7 @@ export function BrandHero({ name, tagline, description, image, imageAlt, imageFi
                     { name, path },
                 ])}
             />
-            <div className="container pt-4 pb-14 md:pb-20">
+            <div className="container pt-4 pb-12 md:pb-16">
                 <nav aria-label="Breadcrumb" className="text-[13px] text-neutral-500">
                     <ol className="flex flex-wrap items-center">
                         <li>
@@ -100,17 +96,6 @@ export function BrandHero({ name, tagline, description, image, imageAlt, imageFi
                             {secondary.label}
                         </Link>
                     </div>
-                </div>
-
-                <div className={cn("relative mt-12 aspect-[4/3] overflow-hidden rounded-3xl sm:aspect-[16/9] md:mt-16 lg:aspect-[21/9]", imageFit === "contain" ? "bg-neutral-50" : "bg-neutral-100")}>
-                    <Image
-                        src={image}
-                        alt={imageAlt}
-                        fill
-                        priority
-                        sizes="(max-width: 1280px) 100vw, 1280px"
-                        className={imageFit === "contain" ? "object-contain p-8 mix-blend-multiply md:p-12" : "object-cover"}
-                    />
                 </div>
             </div>
         </section>

@@ -41,9 +41,6 @@ export default function AlmadentAboutPage() {
                 name="Almadent"
                 tagline="By Haitech Medical · CE marked"
                 description="Complete dental equipment for the modern practice — from chairs to handpieces, every product engineered for performance, ergonomics, and day-to-day clinical convenience."
-                image="/images/products/almadent/almadent-banner.jpg"
-                imageAlt="Almadent dental equipment"
-                imageFit="contain"
                 primary={{ href: "/product-category/almadent", label: "Browse Products" }}
                 secondary={{ href: "/support/contact", label: "Contact Us" }}
             />

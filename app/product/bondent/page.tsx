@@ -39,9 +39,6 @@ export default function BondentAboutPage() {
                 name="Bondent"
                 tagline="German-registered · Global dental innovation"
                 description="A full-spectrum dental technology group offering equipment, consumables, and digital solutions—from diagnostic imaging to precision endodontics—built on over a decade of in-house research and manufacturing."
-                image="/images/products/bondent/Bondent CBCT-1030 Pro.png"
-                imageAlt="Bondent dental technology"
-                imageFit="contain"
                 primary={{ href: "/product-category/bondent", label: "Explore Bondent Range" }}
                 secondary={{ href: "/support/contact", label: "Contact Us" }}
             />

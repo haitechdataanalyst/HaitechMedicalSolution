@@ -42,9 +42,6 @@ export default function AboutStraussPage() {
                 name="Strauss"
                 tagline="Precision diamond technology · ISO 9001"
                 description="Precision-engineered rotary instruments designed to deliver efficient cutting, smooth performance, and consistent clinical results for the modern dental practice."
-                image="/images/products/strauss/strauss-banner.jpg"
-                imageAlt="Strauss diamond burs"
-                imageFit="contain"
                 primary={{ href: "/product-category/strauss", label: "Explore Diamond Burs" }}
                 secondary={{ href: "/support/contact", label: "Request Samples" }}
             />
