@@ -26,8 +26,8 @@ interface StaticMetadataEntry {
 
 const staticMetadataMap = {
     about: {
-        title: "About Us",
-        description: "Learn about Haitech Medical Solutions - your trusted partner for premium dental and medical equipment in India. Discover our mission, vision, and dedicated team.",
+        title: "About Us: Mumbai Dental Equipment Supplier",
+        description: "Haitech Medical Solutions was founded in Mumbai in 2011 and supplies dental and medical equipment across India from six brands. Meet our team and our story.",
         path: "/about",
     },
     products: {
@@ -37,13 +37,13 @@ const staticMetadataMap = {
         path: "/products",
     },
     ourFrames: {
-        title: "Our Frames",
+        title: "Admetec Loupe Frames: 5 Styles",
         description:
             "Discover our premium frame collection for Admetec loupes. Available in multiple styles including Blues, Indie, Jazz, Soul, and Swing - each with a variety of colors to match your personality.",
         path: "/our-frames",
     },
     ourHeadlights: {
-        title: "Our Headlights",
+        title: "Admetec LED Headlights for Loupes",
         description:
             "Discover our premium LED headlights for dental loupes. Choose from wireless Butterfly EVO series or reliable wired Orchid headlights. High-quality, ultra-lightweight, and designed for optimal illumination.",
         path: "/our-headlights",

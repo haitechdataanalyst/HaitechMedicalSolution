@@ -45,9 +45,43 @@ export function categoryMetaDescription(name: string, description: string | unde
     return `Browse ${name} from Haitech Medical: ${listed}${itemNames.length > LISTED_ITEMS ? " and more" : ""}. Supplied in India.`;
 }
 
+const META_SUFFIX = " Supplied in India by Haitech Medical.";
+/** Search results show roughly 120-160 characters; buildMetadata clamps at the upper end. */
+const META_MIN_LENGTH = 120;
+const META_MAX_LENGTH = 160;
+const MAX_SPEC_FACTS = 2;
+const MAX_SPEC_VALUE_LENGTH = 32;
+
+/** Short "Label value" facts from the product's own specification table, in table order, skipping anything the summary already says. */
+function specFacts(product: Product, summary: string): string[] {
+    const block = product.contentBlocks.find((b) => b.type === "specifications");
+    const rows = block?.type === "specifications" ? (block.data.rows ?? block.data.specs ?? []) : [];
+    const said = summary.toLowerCase();
+    return rows
+        .map((row) => ({ label: row.label?.trim(), value: row.value?.trim() }))
+        .filter((row): row is { label: string; value: string } => Boolean(row.label && row.value) && row.value.length <= MAX_SPEC_VALUE_LENGTH && !said.includes(row.value.toLowerCase()))
+        .map((row) => `${row.label} ${row.value}`);
+}
+
+/**
+ * "<Brand name>: <summary> Supplied in India by Haitech Medical." When that is too short to use the space a search
+ * result offers, up to two key facts from the product's specification table are added. Nothing is written that the
+ * catalogue does not already hold.
+ */
 export function productMetaDescription(product: Product): string {
     const block = product.contentBlocks.find((b) => b.type === "description");
     const summary = product.description || (block?.type === "description" ? block.data.primary : "") || productNameWithBrand(product);
     const sentence = /[.!?]$/.test(summary.trim()) ? summary.trim() : `${summary.trim()}.`;
-    return `${productNameWithBrand(product)}: ${sentence} Supplied in India by Haitech Medical.`;
+    const lead = `${productNameWithBrand(product)}: ${sentence}`;
+
+    const facts: string[] = [];
+    for (const fact of specFacts(product, summary)) {
+        if (facts.length === MAX_SPEC_FACTS || lead.length + META_SUFFIX.length >= META_MIN_LENGTH) break;
+        const next = [...facts, fact];
+        const candidate = `${lead} ${next.join("; ")}.${META_SUFFIX}`;
+        if (candidate.length > META_MAX_LENGTH) break;
+        facts.push(fact);
+        if (candidate.length >= META_MIN_LENGTH) break;
+    }
+    return facts.length > 0 ? `${lead} ${facts.join("; ")}.${META_SUFFIX}` : `${lead}${META_SUFFIX}`;
 }

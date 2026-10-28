@@ -108,8 +108,8 @@
     "lastmod": "2026-10-14"
   },
   "category:5": {
-    "hash": "ac24c6f7310bc524",
-    "lastmod": "2026-10-14"
+    "hash": "39dd0427627517ab",
+    "lastmod": "2026-10-28"
   },
   "category:50": {
     "hash": "c86557f5f29d5412",
@@ -192,20 +192,20 @@
     "lastmod": "2026-10-14"
   },
   "hubs": {
-    "hash": "63376fa732fdbd96",
-    "lastmod": "2026-10-14"
+    "hash": "4f7c4c421133a75c",
+    "lastmod": "2026-10-28"
   },
   "lights": {
-    "hash": "85b9dac2056d40da",
-    "lastmod": "2026-10-14"
+    "hash": "4c184325ab067608",
+    "lastmod": "2026-10-28"
   },
   "page:/": {
-    "hash": "798acafe44cf7440",
-    "lastmod": "2026-10-14"
+    "hash": "296749e085f18845",
+    "lastmod": "2026-10-28"
   },
   "page:/about": {
-    "hash": "21d2f006a8c58a85",
-    "lastmod": "2026-07-03"
+    "hash": "2e7b57f5eda2fa02",
+    "lastmod": "2026-10-28"
   },
   "page:/book-demo": {
     "hash": "120be6eaf7c7d619",
@@ -216,40 +216,40 @@
     "lastmod": "2026-10-14"
   },
   "page:/our-frames": {
-    "hash": "386057b5eaded45f",
-    "lastmod": "2026-10-14"
+    "hash": "b20f540b4600e40e",
+    "lastmod": "2026-10-28"
   },
   "page:/our-headlights": {
-    "hash": "1476b968fea8b942",
-    "lastmod": "2026-10-14"
+    "hash": "b92ddaeb26614a12",
+    "lastmod": "2026-10-28"
   },
   "page:/product/admetec": {
-    "hash": "e1c6e5a8d05368af",
-    "lastmod": "2026-10-14"
+    "hash": "e33dd1e06992f875",
+    "lastmod": "2026-10-28"
   },
   "page:/product/almadent": {
-    "hash": "3d732035fb2daac2",
-    "lastmod": "2026-10-14"
+    "hash": "c4568e57ccf9c8e9",
+    "lastmod": "2026-10-28"
   },
   "page:/product/bondent": {
-    "hash": "0504c5d3d860f929",
-    "lastmod": "2026-10-14"
+    "hash": "d3bf8c88972db1c8",
+    "lastmod": "2026-10-28"
   },
   "page:/product/medesy": {
-    "hash": "eedd534e241f2b04",
-    "lastmod": "2026-10-14"
+    "hash": "fb20836dfbeb142a",
+    "lastmod": "2026-10-28"
   },
   "page:/product/salli": {
-    "hash": "639f4eb6d62f39fd",
-    "lastmod": "2026-10-14"
+    "hash": "61b13ecb7a802d97",
+    "lastmod": "2026-10-28"
   },
   "page:/product/strauss": {
-    "hash": "931ac831ecc75939",
-    "lastmod": "2026-10-14"
+    "hash": "7b7e2e8d419609fb",
+    "lastmod": "2026-10-28"
   },
   "page:/products": {
-    "hash": "a430c1630f97915d",
-    "lastmod": "2026-10-14"
+    "hash": "aca06e54775ce892",
+    "lastmod": "2026-10-28"
   },
   "page:/support": {
     "hash": "93c56a160cf0b0c8",
@@ -264,8 +264,8 @@
     "lastmod": "2026-10-14"
   },
   "page:/support/faq": {
-    "hash": "b73f3de733c14727",
-    "lastmod": "2026-10-14"
+    "hash": "8be19bc3912f52ef",
+    "lastmod": "2026-10-28"
   },
   "page:/support/policies": {
     "hash": "92a03c2db185f960",
@@ -472,8 +472,8 @@
     "lastmod": "2026-10-14"
   },
   "product:electric-motor": {
-    "hash": "226ea138af51d116",
-    "lastmod": "2026-10-14"
+    "hash": "9921901e49a67477",
+    "lastmod": "2026-10-28"
   },
   "product:endo-box": {
     "hash": "01af70ca9913b584",
@@ -496,36 +496,36 @@
     "lastmod": "2026-10-14"
   },
   "product:ergo-10x": {
-    "hash": "b9c8ccd23c334746",
-    "lastmod": "2026-10-14"
+    "hash": "3ca0a51849e5bf07",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-3.0x": {
-    "hash": "22cf7b6d2e6df2a9",
-    "lastmod": "2026-10-14"
+    "hash": "d8c19e9d363b7e9c",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-4.0x": {
-    "hash": "9539bd44a2a1638e",
-    "lastmod": "2026-10-14"
+    "hash": "016482f9c07c4ad0",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-5.0x": {
-    "hash": "a85184df7881711f",
-    "lastmod": "2026-10-14"
+    "hash": "a4fd553d09a627a6",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-6.0x": {
-    "hash": "948a311c6a0c1e20",
-    "lastmod": "2026-10-14"
+    "hash": "41ccef4730f59c19",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-7.5x": {
-    "hash": "01a2754052b4c448",
-    "lastmod": "2026-10-14"
+    "hash": "d65c83f29059d2f9",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-v": {
-    "hash": "a444a8a7519836d6",
-    "lastmod": "2026-10-14"
+    "hash": "3282d6f6313a25f8",
+    "lastmod": "2026-10-28"
   },
   "product:ergo-v-pro": {
-    "hash": "b5c44a421f19eab3",
-    "lastmod": "2026-10-14"
+    "hash": "0e1262df6cfc9682",
+    "lastmod": "2026-10-28"
   },
   "product:f09r": {
     "hash": "9654712db7a992e6",
@@ -544,8 +544,8 @@
     "lastmod": "2026-10-14"
   },
   "product:flamingo": {
-    "hash": "562699b6c9f4b12c",
-    "lastmod": "2026-10-14"
+    "hash": "792a9e05d9343825",
+    "lastmod": "2026-10-28"
   },
   "product:forceps-2400": {
     "hash": "90755e1178059e78",
@@ -564,16 +564,16 @@
     "lastmod": "2026-10-14"
   },
   "product:galilean-2.5x": {
-    "hash": "a20f5f2207816583",
-    "lastmod": "2026-10-14"
+    "hash": "e06539cbce2d4586",
+    "lastmod": "2026-10-28"
   },
   "product:galilean-2.7x": {
-    "hash": "db4b0395106f3501",
-    "lastmod": "2026-10-14"
+    "hash": "41cd5f42ad9b68c2",
+    "lastmod": "2026-10-28"
   },
   "product:galilean-3.2x": {
-    "hash": "6e4ebb1621650144",
-    "lastmod": "2026-10-14"
+    "hash": "62397177a04dd32a",
+    "lastmod": "2026-10-28"
   },
   "product:goldman-fox-scissors": {
     "hash": "6cef12d4c74fb50b",
@@ -751,9 +751,21 @@
     "hash": "28a5d01808235e19",
     "lastmod": "2026-10-14"
   },
-  "product:prismatic-loupe": {
-    "hash": "df7d3522ce1285a9",
-    "lastmod": "2026-10-14"
+  "product:prismatic-3.8x": {
+    "hash": "135cf0c1ba99951a",
+    "lastmod": "2026-10-27"
+  },
+  "product:prismatic-4.8x": {
+    "hash": "df945e192d39d5e4",
+    "lastmod": "2026-10-27"
+  },
+  "product:prismatic-5.8x": {
+    "hash": "dd10bbd0f26128c5",
+    "lastmod": "2026-10-27"
+  },
+  "product:prismatic-7.2x": {
+    "hash": "fab2697403c0d3c3",
+    "lastmod": "2026-10-27"
   },
   "product:rsi-intro": {
     "hash": "77f9c161ec3a713b",
@@ -792,8 +804,8 @@
     "lastmod": "2026-10-14"
   },
   "product:three-in-one-dental-piezo": {
-    "hash": "b6477f6e68478018",
-    "lastmod": "2026-10-14"
+    "hash": "7bbea3e9e127055b",
+    "lastmod": "2026-10-28"
   },
   "product:training-block": {
     "hash": "b06c084259cd0800",
