@@ -100,3 +100,44 @@ Goal: every image in a clear folder, none unorganised, none misplaced. Repeatabl
 | Images in use that carry the `unused` tag | 0 |
 
 **Limits of this audit.** A file name agreeing with its folder is checked by naming rules, not by looking at each picture; the folder placement itself comes from where each image lived locally and from the product data. The site was not re-crawled after this pass (the dev server was not running); only folder and tag metadata changed and every URL was re-fetched. The local tree is now a subset of the Cloudinary tree: 87 Cloudinary folders have no local counterpart because their local copies were removed in the clean-up and now live only on Cloudinary.
+
+## 8. Serving every image and video from Cloudinary (2026-10-28)
+
+Measured from the browser's own network requests across all 212 sitemap pages plus cart, login, register, contact and search (desktop 1440px), not from reading the code.
+
+| | Before | After |
+|---|---:|---:|
+| Distinct media URLs requested | 335 (334 images, 1 video) | 532 images (one URL per width the pages ask for) |
+| Served from Cloudinary | 261 (78%) | 526 (99%) |
+| Served from the local `public/` folder | 73 | **0** |
+| Other hosts | 1 (Google Maps) | 6: 5 Google reviewers' profile pictures and the Google Maps static map |
+| Requests that failed (HTTP 400 or above) | 0 | 0 |
+| Passed through the app server's image optimiser (`/_next/image`) | all of them | **0** |
+
+**What the 73 local requests were:** 34 product and brand photos, 23 team portraits, 7 manufacturer logos, 5 article images, 2 Haitech logos and the Admetec logo, and the home hero video.
+
+**What changed**
+- 18 files had no Cloudinary copy and were uploaded without overwriting (folder = local path): Haitech logo, mark and share image, Admetec's webp logo, 5 team portraits, the 6 hero videos and 3 posters; map in `cloudinary-media-upload-map.json`.
+- 114 local paths in code and data (27 files) now hold verified Cloudinary URLs, each fetched first and answering HTTP 200.
+- `lib/cloudinary-loader.ts` is the `next/image` loader: `f_auto` (AVIF/WebP), `q_auto`, `c_limit` (never enlarge) and the width Next asks for, so Cloudinary does the resizing and the app server does none. The 4 plain `<img>` tags in cart, checkout and inventory, which fetched full-size originals, use the same URL builder at 128-768 px.
+- **Videos are deliberately not transformed.** A video URL with `f_auto,q_auto` returns `Accept-Ranges: none` (no seeking, no partial download); the plain upload returns `206 Partial Content`. The hero files were already encoded at 1080p and 540p, and the component already loads only the slide in view, at the size that suits the screen, and none for reduced-motion or Save-Data visitors.
+- Above-the-fold and lazy loading were already correct (the hero poster is the preloaded LCP image; other images load lazily) and were not changed.
+
+**Measured effect.** On a random sample of 79 images the page asked for, the delivered files total 0.6 MB against 23.9 MB for the originals (98% smaller; the largest, a 3.4 MB photo, arrives as 1 KB at thumbnail width). The logo went from a 59 KB PNG to 13 KB WebP. Not measured: Lighthouse, LCP or total page weight before and after, because the earlier state was not captured; run Lighthouse on the deployed site for those.
+
+**Local media removed.** 555 of 562 media files (139 MB) that no code or data names and whose Cloudinary copy answers 200, each copied to `D:/haitech-asset-backup-2026-10-27` first and listed with its Cloudinary URL in `removed-local-media.csv`. The git tag `pre-media-cleanup` also holds them. The 64 redirects that pointed at a removed file now point at its Cloudinary URL.
+
+**Remaining local media (7 files)**
+| File | Why it stays |
+|---|---|
+| `images/site/placeholder.svg` | the fallback shown when an image fails; it must not depend on Cloudinary being reachable |
+| `favicon.ico`, `llms.txt`, `google893dc9e00413be13.html` | must be served from the site root |
+| `brand/haitech/logo-email.png`, `images/icons/premium-badge.svg` | not on Cloudinary and not used by the site (the email logo is for outgoing mail; the badge is unreferenced); not uploaded because nothing needs them |
+| `videos/home-hero/source/website-carousal*.mp4` (3, 21.8 MB) | the 4K originals the hero videos were encoded from; never served |
+
+**Needs a decision**
+1. **Cloudinary cost.** `next/image` no longer caches images on your server, so each distinct width is a Cloudinary transformation, cached after its first request. Usage was 1.9 credits at the start of this work; check it in the Cloudinary dashboard after a week of real traffic.
+2. **Third-party images.** Google reviewers' avatars and the static map come from Google and are not ours to move.
+3. **Six testimonial photos** named in `data/testimonials.json` do not exist anywhere; that file is not used by the home page.
+4. **Deploy order.** Push, deploy, then run `npm run db:seed`; old URLs on the live site keep working through `data/asset-redirects.json`.
+5. **Not run:** `next build` (it would overwrite the dev server's `.next`) and tests (none defined). Run `npm run build` before deploying. The hero video was checked by its `src` and a byte-range request, not by playing it, because the headless browser has no H.264 decoder.

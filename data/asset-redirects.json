@@ -1,51 +1,51 @@
 [
   {
     "from": "/BrandLogo/AdmetecLogo.jpeg",
-    "to": "/brand/manufacturers/admetec-logo.jpeg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/admeteclogo.jpg"
   },
   {
     "from": "/BrandLogo/AlmadentLogo.jpeg",
-    "to": "/brand/manufacturers/almadent-logo.jpeg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/almadentlogo.jpg"
   },
   {
     "from": "/BrandLogo/BondentGroupLogo.jpg",
-    "to": "/brand/manufacturers/bondent-logo.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308665/haitech/brandlogo/bondentgrouplogo.jpg"
   },
   {
     "from": "/BrandLogo/MedesyLogo.jpeg",
-    "to": "/brand/manufacturers/medesy-logo.jpeg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308666/haitech/brandlogo/medesylogo.jpg"
   },
   {
     "from": "/BrandLogo/SalliLogo.jpeg",
-    "to": "/brand/manufacturers/salli-logo.jpeg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308667/haitech/brandlogo/sallilogo.jpg"
   },
   {
     "from": "/BrandLogo/StraussLogo.jpeg",
-    "to": "/brand/manufacturers/strauss-logo.jpeg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308668/haitech/brandlogo/strausslogo.jpg"
   },
   {
     "from": "/BrandLogo/admetec-logo.webp",
-    "to": "/brand/manufacturers/admetec-logo.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162554/haitech/brand/manufacturers/admetec-logo.webp"
   },
   {
     "from": "/electric_motor/EM_1.webp",
-    "to": "/images/products/almadent/electric-motor/em-1.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102257/haitech/images/products/almadent/electric-motor/em-1.webp"
   },
   {
     "from": "/electric_motor/EM_2.webp",
-    "to": "/images/products/almadent/electric-motor/em-2.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102258/haitech/images/products/almadent/electric-motor/em-2.webp"
   },
   {
     "from": "/electric_motor/EM_3.webp",
-    "to": "/images/products/almadent/electric-motor/em-3.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102259/haitech/images/products/almadent/electric-motor/em-3.webp"
   },
   {
     "from": "/haitech-medical.png",
-    "to": "/brand/haitech/mark.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162553/haitech/brand/haitech/mark.webp"
   },
   {
     "from": "/haitech_medical_logo.png",
-    "to": "/brand/haitech/logo.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162552/haitech/brand/haitech/logo.webp"
   },
   {
     "from": "/haitech_medical_logo_email.png",
@@ -53,27 +53,27 @@
   },
   {
     "from": "/images/Admetec-Butterfly-S-Case-Loupes-Included.jpg",
-    "to": "/images/articles/admetec-butterfly-s-case-loupes-included.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308016/haitech/images/admetec-butterfly-s-case-loupes-included.jpg"
   },
   {
     "from": "/images/Article-Demo-Image-1024x700.jpg",
-    "to": "/images/articles/article-demo-image-1024x700.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308017/haitech/images/article-demo-image-1024x700.jpg"
   },
   {
     "from": "/images/Article-Demo-Image-1024x7000.jpg",
-    "to": "/images/articles/article-demo-image-1024x700.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308017/haitech/images/article-demo-image-1024x700.jpg"
   },
   {
     "from": "/images/Top-6-question-TN.jpg",
-    "to": "/images/articles/top-6-question-tn.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308025/haitech/images/top-6-question-tn.jpg"
   },
   {
     "from": "/images/choosing-the-perfect-loupes.jpg",
-    "to": "/images/articles/choosing-the-perfect-loupes.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308019/haitech/images/choosing-the-perfect-loupes.jpg"
   },
   {
     "from": "/images/maginficent.jpg",
-    "to": "/images/articles/maginficent.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308020/haitech/images/maginficent.jpg"
   },
   {
     "from": "/images/placeholder.svg",
@@ -81,186 +81,186 @@
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoV/Blues_Frame/Blues-Black-Ergo-V.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308545/haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-black-ergo-v.jpg"
   },
   {
     "from": "/images/products/admetec/Loupes-ErgoV-ErgoVPro/Blues_Frame/Blues-Black-Ergo-V-Pro.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308566/haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-black-ergo-v-pro.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/butterfly-evo-case.webp",
-    "to": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102094/haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-case.webp"
   },
   {
     "from": "/images/products/admetec/catalog/butterfly-evo-extender.jpg",
-    "to": "/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102095/haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-extender.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/flamingo-21mm-lens.jpg",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102091/haitech/images/products/admetec/camera/flamingo/product/flamingo-21mm-lens.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/flamingo-25mm-lens.jpg",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102092/haitech/images/products/admetec/camera/flamingo/product/flamingo-25mm-lens.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/flamingo-camera.jpg",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102092/haitech/images/products/admetec/camera/flamingo/product/flamingo-camera.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/flamingo-kit.webp",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-kit.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102094/haitech/images/products/admetec/camera/flamingo/product/flamingo-kit.webp"
   },
   {
     "from": "/images/products/admetec/catalog/flamingo-product.jpg",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-product.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102093/haitech/images/products/admetec/camera/flamingo/product/flamingo-product.jpg"
   },
   {
     "from": "/images/products/admetec/catalog/orchid-e-headlight.jpg",
-    "to": "/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102093/haitech/images/products/admetec/lights/wired/orchid-e/orchid-e-headlight.jpg"
   },
   {
     "from": "/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
-    "to": "/images/products/admetec/loupes/ergo/gallery/ergo-10x-blues-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308134/haitech/images/products/admetec/ergo/ergo-10x-blues-black.jpg"
   },
   {
     "from": "/images/products/admetec/ergo/ergo-5.0x-blues-rose-gold.jpg",
-    "to": "/images/products/admetec/loupes/ergo/gallery/ergo-5.0x-blues-rose-gold.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308147/haitech/images/products/admetec/ergo/ergo-5-0x-blues-rose-gold.jpg"
   },
   {
     "from": "/images/products/admetec/galilean/galilean-2.5x-blues-pink.jpg",
-    "to": "/images/products/admetec/loupes/galilean/gallery/galilean-2.5x-blues-pink.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308169/haitech/images/products/admetec/galilean/galilean-2-5x-blues-pink.jpg"
   },
   {
     "from": "/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack.webp",
-    "to": "/images/products/admetec/camera/flamingo/product/flamingo-with-loupes-and-powerpack.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308361/haitech/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack.webp"
   },
   {
     "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v-pro/blues-frame/blues-black-ergo-v-pro.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308566/haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-black-ergo-v-pro.jpg"
   },
   {
     "from": "/images/products/admetec/loupes/ergo-v/by-frame/ergo-v/blues-frame/blues-black-ergo-v.jpg",
-    "to": "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308545/haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-black-ergo-v.jpg"
   },
   {
     "from": "/images/products/admetec/prismatic/prismatic-1.jpg",
-    "to": "/images/products/admetec/loupes/prismatic/gallery/prismatic-1.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308182/haitech/images/products/admetec/prismatic/prismatic-1.jpg"
   },
   {
     "from": "/images/products/almadent/almadent-primary.jpg",
-    "to": "/images/products/almadent/brand/almadent-primary.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/almadent/almadent-primary.jpg"
   },
   {
     "from": "/images/products/bondent/actor-i-pro.png",
-    "to": "/images/products/bondent/endo-device/irrigation/actor-i-pro.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/bondent/actor-i-pro.png"
   },
   {
     "from": "/images/products/bondent/bondent-cbct-1030-pro.png",
-    "to": "/images/products/bondent/imaging/bondent-cbct-1030-pro.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png"
   },
   {
     "from": "/images/products/bondent/cbct-1020ms.png",
-    "to": "/images/products/bondent/imaging/cbct-1020ms.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308057/haitech/images/products/bondent/cbct-1020ms.png"
   },
   {
     "from": "/images/products/bondent/cc-premium.jpg",
-    "to": "/images/products/bondent/endo-files/rotary-files/cc-premium.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308060/haitech/images/products/bondent/cc-premium.jpg"
   },
   {
     "from": "/images/products/medesy/elevator/700slash8.jpg",
-    "to": "/images/products/medesy/elevators/700slash8.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308213/haitech/images/products/medesy/elevator/700slash8.jpg"
   },
   {
     "from": "/images/products/medesy/periosteal/periosteal-category.jpg",
-    "to": "/images/products/medesy/periosteal-elevators/periosteal-category.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308240/haitech/images/products/medesy/periosteal/periosteal-category.jpg"
   },
   {
     "from": "/images/products/salli/benefits-bad-pelvis-angle.jpg",
-    "to": "/images/products/salli/benefits/benefits-bad-pelvis-angle.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308119/haitech/images/products/salli/benefits-bad-pelvis-angle.jpg"
   },
   {
     "from": "/images/products/salli/benefits-bad-posture.jpg",
-    "to": "/images/products/salli/benefits/benefits-bad-posture.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308120/haitech/images/products/salli/benefits-bad-posture.jpg"
   },
   {
     "from": "/images/products/salli/benefits-good-pelvis-angle.jpg",
-    "to": "/images/products/salli/benefits/benefits-good-pelvis-angle.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308121/haitech/images/products/salli/benefits-good-pelvis-angle.jpg"
   },
   {
     "from": "/images/products/salli/benefits-good-posture.jpg",
-    "to": "/images/products/salli/benefits/benefits-good-posture.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308122/haitech/images/products/salli/benefits-good-posture.jpg"
   },
   {
     "from": "/images/products/salli/benefits-spine-comparison.jpg",
-    "to": "/images/products/salli/benefits/benefits-spine-comparison.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308122/haitech/images/products/salli/benefits-spine-comparison.jpg"
   },
   {
     "from": "/images/products/salli/sway-fit-black.jpg",
-    "to": "/images/products/salli/sway-fit/sway-fit-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg"
   },
   {
     "from": "/images/products/salli/triple-fit-black.jpg",
-    "to": "/images/products/salli/triple-fit/triple-fit-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308128/haitech/images/products/salli/triple-fit-black.jpg"
   },
   {
     "from": "/images/products/salli/ultra-triple-fit-black.jpg",
-    "to": "/images/products/salli/ultra-triple-fit/ultra-triple-fit-black.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308132/haitech/images/products/salli/ultra-triple-fit-black.jpg"
   },
   {
     "from": "/og-default.png",
-    "to": "/brand/haitech/og-default.png"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162554/haitech/brand/haitech/og-default.png"
   },
   {
     "from": "/three_in_one_Dental_Piezo/file_1.webp",
-    "to": "/images/products/almadent/three-in-one-piezo/file-1.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102260/haitech/images/products/almadent/three-in-one-piezo/file-1.webp"
   },
   {
     "from": "/three_in_one_Dental_Piezo/file_2.webp",
-    "to": "/images/products/almadent/three-in-one-piezo/file-2.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102260/haitech/images/products/almadent/three-in-one-piezo/file-2.webp"
   },
   {
     "from": "/three_in_one_Dental_Piezo/file_3.webp",
-    "to": "/images/products/almadent/three-in-one-piezo/file-3.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102260/haitech/images/products/almadent/three-in-one-piezo/file-3.webp"
   },
   {
     "from": "/three_in_one_Dental_Piezo/file_4.webp",
-    "to": "/images/products/almadent/three-in-one-piezo/file-4.webp"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793102260/haitech/images/products/almadent/three-in-one-piezo/file-4.webp"
   },
   {
     "from": "/vids/hero-1-1080.mp4",
-    "to": "/videos/home-hero/hero-1-1080.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162558/haitech/videos/home-hero/hero-1-1080.mp4"
   },
   {
     "from": "/vids/hero-1-540.mp4",
-    "to": "/videos/home-hero/hero-1-540.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162559/haitech/videos/home-hero/hero-1-540.mp4"
   },
   {
     "from": "/vids/hero-1-poster.jpg",
-    "to": "/videos/home-hero/hero-1-poster.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162560/haitech/videos/home-hero/hero-1-poster.jpg"
   },
   {
     "from": "/vids/hero-2-1080.mp4",
-    "to": "/videos/home-hero/hero-2-1080.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162561/haitech/videos/home-hero/hero-2-1080.mp4"
   },
   {
     "from": "/vids/hero-2-540.mp4",
-    "to": "/videos/home-hero/hero-2-540.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162562/haitech/videos/home-hero/hero-2-540.mp4"
   },
   {
     "from": "/vids/hero-2-poster.jpg",
-    "to": "/videos/home-hero/hero-2-poster.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162563/haitech/videos/home-hero/hero-2-poster.jpg"
   },
   {
     "from": "/vids/hero-3-1080.mp4",
-    "to": "/videos/home-hero/hero-3-1080.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162564/haitech/videos/home-hero/hero-3-1080.mp4"
   },
   {
     "from": "/vids/hero-3-540.mp4",
-    "to": "/videos/home-hero/hero-3-540.mp4"
+    "to": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162566/haitech/videos/home-hero/hero-3-540.mp4"
   },
   {
     "from": "/vids/hero-3-poster.jpg",
-    "to": "/videos/home-hero/hero-3-poster.jpg"
+    "to": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162567/haitech/videos/home-hero/hero-3-poster.jpg"
   }
 ]
