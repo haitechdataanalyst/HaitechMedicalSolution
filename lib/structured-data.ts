@@ -28,11 +28,12 @@ const BRAND_OFFERS = [
 
 /**
  * Not in data/site-config.json yet, so deliberately left out of the schema rather than guessed: geo coordinates,
- * opening hours, a Google Business Profile URL and a YouTube URL (sameAs). Add them to the config and read them here.
+ * a Google Business Profile URL and a YouTube URL (sameAs). Add them to the config and read them here. Opening hours
+ * come from the config's "hours" and are the same ones the Contact and Support pages show.
  */
 
 export function organizationSchema(): JsonLd {
-    const { company, social } = siteConfig;
+    const { company, social, hours } = siteConfig;
     const socialProfiles = Object.values(social ?? {}).filter((url): url is string => typeof url === "string" && url.startsWith("https://"));
     const address = {
         "@type": "PostalAddress",
@@ -86,6 +87,16 @@ export function organizationSchema(): JsonLd {
                 telephone: company.phone,
                 priceRange: "₹₹",
                 address,
+                ...(hours
+                    ? {
+                          openingHoursSpecification: {
+                              "@type": "OpeningHoursSpecification",
+                              dayOfWeek: hours.days,
+                              opens: hours.opens,
+                              closes: hours.closes,
+                          },
+                      }
+                    : {}),
                 parentOrganization: { "@id": ORGANIZATION_ID },
             },
         ],
@@ -139,14 +150,6 @@ function productImages(product: Product): string[] {
 /** The 2026-2027 price list runs to the end of the financial year. */
 const PRICE_VALID_UNTIL = "2027-03-31";
 
-/**
- * Products carry no stock or availability field (not in data/products.json, the Product type or the catalogue adapter),
- * so there is nothing to derive it from and every listed product is InStock. Pass the product in and read a real field once one exists.
- */
-function offerAvailability(): string {
-    return "https://schema.org/InStock";
-}
-
 export function productSchema({ product, path, brandName, categoryName, showPrice }: ProductSchemaInput): JsonLd {
     const description = product.contentBlocks.find((b) => b.type === "description");
     const info = product.contentBlocks.find((b) => b.type === "info");
@@ -174,7 +177,6 @@ export function productSchema({ product, path, brandName, categoryName, showPric
                       price: product.basePrice,
                       priceCurrency: "INR",
                       priceValidUntil: PRICE_VALID_UNTIL,
-                      availability: offerAvailability(),
                       itemCondition: "https://schema.org/NewCondition",
                       seller: { "@id": ORGANIZATION_ID },
                       shippingDetails: {

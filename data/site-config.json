@@ -14,6 +14,12 @@
     "phone": {
         "service": "+91 9769403892"
     },
+    "hours": {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00",
+        "timeZone": "Asia/Kolkata"
+    },
     "emails": {
         "quotes": "sales@haitech-group.com",
         "contact": "sales@haitech-group.com",

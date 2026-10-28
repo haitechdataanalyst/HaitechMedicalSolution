@@ -13,7 +13,7 @@ const quickContacts = [
         title: "Call Us",
         value: siteConfig.company.phone,
         href: `tel:${siteConfig.company.phone.replace(/\s/g, "")}`,
-        description: "Mon–Fri, 10am–6pm IST",
+        description: "Mon–Fri, 9am–7pm IST",
     },
     {
         icon: Mail,
@@ -25,7 +25,7 @@ const quickContacts = [
     {
         icon: Clock,
         title: "Business Hours",
-        value: "Mon–Fri, 10am–6pm",
+        value: "Mon–Fri, 9am–7pm",
         description: "Indian Standard Time (IST)",
     },
 ];

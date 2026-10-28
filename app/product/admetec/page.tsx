@@ -9,6 +9,10 @@ import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import { BrandCTA, BrandHero, BrandStatement } from "@/components/brand/BrandSections";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
+import { FAQ } from "@/components/misc";
+import JsonLd from "@/components/ui/JsonLd";
+import { ADMETEC_FAQ } from "@/lib/admetec-faq";
+import { faqSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = getDynamicMetadata("Admetec | Premium Dental Loupes & Headlights", "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.", { path: "/product/admetec" });
 
@@ -75,6 +79,14 @@ export default async function AboutAdmetecPage() {
             {flamingo && flamingoHref && <AdmetecFlamingo product={flamingo} href={flamingoHref} />}
 
             <AdmetecAbout />
+
+            {/* The same list is shown here and published as FAQPage JSON-LD (lib/admetec-faq.ts). */}
+            <JsonLd data={faqSchema([...ADMETEC_FAQ])} />
+            <FAQ
+                groups={[{ id: "admetec", label: "Admetec", faqs: ADMETEC_FAQ.map((entry, index) => ({ id: index + 1, question: entry.question, answer: entry.answer })) }]}
+                title="Admetec questions, answered"
+                subtitle="Who makes the loupes, how they are fitted, and what Haitech does for you in India."
+            />
 
             <BrandCTA
                 title="Try Before You Order"
