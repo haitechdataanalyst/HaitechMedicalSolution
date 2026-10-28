@@ -1,0 +1,72 @@
+[
+ {
+  "check": "no asset deleted or added by the organisation",
+  "pass": true,
+  "detail": "1044 -> 1044"
+ },
+ {
+  "check": "every public ID is unchanged",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "check": "assets with no folder",
+  "pass": true,
+  "detail": "0"
+ },
+ {
+  "check": "assets outside \"Haitech Medical Solution/\"",
+  "pass": true,
+  "detail": "0"
+ },
+ {
+  "check": "one root folder only",
+  "pass": true,
+  "detail": "['Haitech Medical Solution']"
+ },
+ {
+  "check": "every asset folder follows the hierarchy",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "check": "no uppercase letters or spaces below the root folder",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "check": "empty folders",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "check": "file name disagrees with its folder (loupes, strauss, salli, frames)",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "check": "uploaded images: Cloudinary folder equals the local folder",
+  "pass": true,
+  "detail": "263 checked, 0 differ"
+ },
+ {
+  "check": "unused and duplicate assets carry their tag",
+  "pass": true,
+  "detail": "unused 317, duplicate 92"
+ },
+ {
+  "check": "every delivery URL answers HTTP 200",
+  "pass": true,
+  "detail": "1044/1044"
+ },
+ {
+  "check": "every Cloudinary image the site uses exists",
+  "pass": true,
+  "detail": "719 used, 0 missing"
+ },
+ {
+  "check": "no image in use carries the \"unused\" tag",
+  "pass": true,
+  "detail": "0"
+ }
+]

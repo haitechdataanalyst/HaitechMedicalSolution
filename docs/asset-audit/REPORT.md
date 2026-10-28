@@ -30,8 +30,8 @@ Account `gwnakzdo`. Inspected read-only first (Admin API).
 | | Before | After |
 |---|---:|---:|
 | Image assets | 781 | 1,044 |
-| Assets in a folder | 1 | 1,037 |
-| Folders that hold assets | 1 | 166 |
+| Assets in a folder | 1 | 1,044 (100%) |
+| Folders (all hold assets, none empty) | 1 | 217 |
 
 - **Finding:** 780 of 781 assets had no folder. Their public IDs look like paths (`haitech/images/products/...`) but the Media Library only shows `asset_folder`, so everything sat in one flat list.
 - **Existing assets:** 773 were given an `asset_folder` mirroring the local hierarchy under the existing root folder `Haitech Medical Solution/` (for example `Haitech Medical Solution/images/products/admetec/loupes/ergo/5.0x/blues`). This changes only the folder; public IDs and delivery URLs are unchanged, which was checked on a probe asset first. Plan: `cloudinary-folder-plan.json`.
@@ -73,3 +73,30 @@ Cloudinary: `Haitech Medical Solution/` -> `images/{products,team,site,articles}
 5. **Missing photos that were never in the repository:** six testimonial photos named in `data/testimonials.json` (`/images/testimonials/*.jpg`). Not caused by this clean-up (no commit ever held them). The file does not appear to be used by the home page.
 6. **Local originals of the newly uploaded photos are retained** (about 435 frame photos, 117 MB) although the site now serves the Cloudinary copies. They are safe to remove with the same procedure once you confirm Cloudinary is the source of truth.
 7. **Disk:** drive C: has about 1.8 GB free. The backup is on D:.
+
+## 7. Final Cloudinary organisation audit (2026-10-28)
+
+Goal: every image in a clear folder, none unorganised, none misplaced. Repeatable with `scripts/audit-cloudinary-folders.py` after refreshing the two inventory files; result in `cloudinary-final-audit.json`.
+
+**Corrections made in this pass** (all metadata-only: no asset deleted, renamed or re-uploaded, no URL changed):
+- 8 assets that are not ours (7 Cloudinary demo images at the library root and `My Brand/mark_...`) moved into `Haitech Medical Solution/_cloudinary-defaults/`; the then-empty `My Brand` folder removed.
+- 20 old magnification sets (Galilean 2.5x/2.7x/3.2, Prisma 4.0x/4.8x/5.5x) were sitting in a folder called `by-frame` although they are not frame photos; moved to `.../loupes/<series>/archive/<model>/`. The 8 folders this left empty were removed.
+- Unused and duplicate images are **tagged, not deleted**: `unused-by-current-site` (317 assets, 305 MB, nothing in the current code or data names them) and `duplicate-content` (92 assets, extra copies of an identical file; the copy in use, or else the one in the primary folder, is the one left untagged). Filter by tag in the Media Library. Reason for tagging: the deployed backend database may still hold the old URLs until `npm run db:seed` runs, so deleting now could break images. After reseeding and checking the live site, these can be deleted in one step (`cloudinary-final-plan.json` lists them; to undo a tag, remove it).
+
+**Result: 14 of 14 checks pass.**
+
+| Check | Result |
+|---|---|
+| Assets in the library / assets with no folder | 1,044 / 0 |
+| Assets outside `Haitech Medical Solution/` | 0 |
+| Public IDs changed, assets deleted or added | 0 |
+| Folder paths outside the hierarchy (`images/products/<brand>/...`, `images/{team,articles,icons,site}`, `brand/{haitech,manufacturers}`, `_cloudinary-defaults`) | 0 |
+| Uppercase or spaces below the root folder | 0 |
+| Empty folders (225 -> 217 folders, all hold assets) | 0 |
+| File name disagrees with its folder (loupes, Strauss series, Salli models, frames) | 0 |
+| Uploaded images whose Cloudinary folder differs from the local folder (263 checked) | 0 |
+| Delivery URLs that do not answer HTTP 200 | 0 of 1,044 |
+| Cloudinary images used by the site that are missing | 0 of 719 |
+| Images in use that carry the `unused` tag | 0 |
+
+**Limits of this audit.** A file name agreeing with its folder is checked by naming rules, not by looking at each picture; the folder placement itself comes from where each image lived locally and from the product data. The site was not re-crawled after this pass (the dev server was not running); only folder and tag metadata changed and every URL was re-fetched. The local tree is now a subset of the Cloudinary tree: 87 Cloudinary folders have no local counterpart because their local copies were removed in the clean-up and now live only on Cloudinary.

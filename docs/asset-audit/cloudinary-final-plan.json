@@ -1,0 +1,1296 @@
+{
+ "moves": [
+  {
+   "public_id": "My Brand/mark_i3u0xd",
+   "from": "My Brand",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-04",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-5.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-5.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-03",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-5.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-5.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-5.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-5.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-5.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-5.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-04",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.8x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.8x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-03",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.8x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.8x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.8x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.8x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.8x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.8x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-04",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.0x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.0x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-03",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.0x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.0x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.0x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.0x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/by-frame/prisma-4.0x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/prismatic/archive/prisma-4.0x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-3-2/galilean-3-2-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-3.2",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-3.2",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-3-2/galilean-3-2-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-3.2",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-3.2",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-03",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.7x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.7x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.7x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.7x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.7x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.7x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-03",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-02",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-01",
+   "from": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/by-frame/galilean-2.5x",
+   "to": "Haitech Medical Solution/images/products/admetec/loupes/galilean/archive/galilean-2.5x",
+   "why": "old magnification set, not a by-frame set"
+  },
+  {
+   "public_id": "main-sample",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "cld-sample-5",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "cld-sample-4",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "cld-sample-3",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "cld-sample-2",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "cld-sample",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  },
+  {
+   "public_id": "sample",
+   "from": "",
+   "to": "Haitech Medical Solution/_cloudinary-defaults",
+   "why": "Cloudinary's own demo image, not ours"
+  }
+ ],
+ "tag_unused": [
+  "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-image-1",
+  "haitech/images/products/admetec/lights/wireless/butterfly-evo/butterfly-evo-category-image",
+  "haitech/images/products/admetec/lights/wired/orchid/orchid-in-use",
+  "haitech/images/products/admetec/lights/wired/orchid/orchid-image-1",
+  "haitech/images/products/admetec/lights/wired/orchid-f/orchid-f-image-1",
+  "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-2",
+  "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-3",
+  "haitech/images/products/admetec/camera/flamingo/photography/flamingo-image-1",
+  "haitech/camera/grii3736",
+  "haitech/camera/grii3448",
+  "haitech/camera/grii3276",
+  "haitech/camera/grii3264",
+  "haitech/camera/grii3221",
+  "haitech/camera/adm04287",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-pink-color-male-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-pink-color-female-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-burgundy-gold-color-male-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-burgundy-gold-color-female-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-brown-light-blue-color-male-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-brown-light-blue-color-female-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-black-color-male-model",
+  "haitech/images/products/admetec/our-frames/soul-frame/soul-frame-on-person/soul-frame-black-color-female-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-red-color-male-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-red-color-female-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-orange-black-female-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-orange-black-color-male-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-blue-color-male-model",
+  "haitech/images/products/admetec/our-frames/jazz-frame/jazz-frame-on-person/jazz-frame-blue-color-female-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-orange-lava-color-male-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-orange-lava-color-female-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-champagne-color-male-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-champagne-color-female-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-blue-color-male-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-blue-color-female-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-black-color-male-model",
+  "haitech/images/products/admetec/our-frames/indie-frame/indie-frame-on-person/indie-frame-black-color-female-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-pink-color-male-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-pink-color-female-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-bronze-light-blue-color-male-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-bronze-light-blue-color-female-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-blue-color-male-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-blue-color-female-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-black-color-male-model",
+  "haitech/images/products/admetec/our-frames/blues-frame/blues-frame-on-person/blues-frame-black-color-female-model",
+  "haitech/images/products/admetec/lights/headlights/wireless/grii2447-1",
+  "haitech/images/products/admetec/lights/headlights/wired/orchid-e",
+  "haitech/images/products/admetec/lights/headlights/wired/ergo-5-0x-loupes",
+  "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-04",
+  "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-03",
+  "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-02",
+  "haitech/images/products/admetec/prisma-loupes/prisma-5-5x/prism-5-5-01",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-04",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-03",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-02",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-8x/prism-4-8-01",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-04",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-03",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-02",
+  "haitech/images/products/admetec/prisma-loupes/prisma-4-0x/prism-4-0-01",
+  "haitech/images/products/admetec/our-frames/progear-frames/progear-whiteblue-color",
+  "haitech/images/products/admetec/our-frames/progear-frames/progear-redblack-color",
+  "haitech/images/products/admetec/our-frames/progear-frames/progear-green-color",
+  "haitech/images/products/admetec/our-frames/progear-frames/progear-black-color",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-white-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-rose-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-red-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-grey-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-white-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-turquoise-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-red-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-pink-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-blue-brown-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-turquoise-rose-gold-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-red-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-orange-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-green-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-blue-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-turquoise-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-orange-lava-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-midnight-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-green-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-champagne-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-rose-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-purple-grey-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-pink-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-navy-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-blue-bronze-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-white-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-rose-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-red-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-grey-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-black-ergo-v-1",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-white-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-turquoise-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-red-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-pink-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-blue-brown-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-turquoise-rose-gold-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-red-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-orange-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-green-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-blue-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-turquoise-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-orange-lava-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-midnight-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-green-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-champagne-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-rose-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-purple-grey-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-pink-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-navy-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-blue-bronze-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergo-7-5x/blues-frame/blues-rose-gold-ergo-7-5-2048x1638",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-with-loupes",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-with-loupes-and-powerpack",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-with-loupes-no-cables",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-product",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-product-light-on",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-product-light-off",
+  "haitech/images/products/admetec/lights/flamingo/flamingo-insert",
+  "haitech/images/products/admetec/galilean-loupes/galilean-3-2/galilean-3-2-02",
+  "haitech/images/products/admetec/galilean-loupes/galilean-3-2/galilean-3-2-01",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-03",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-02",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-7x/galilean-2-7-01",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-03",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-02",
+  "haitech/images/products/admetec/galilean-loupes/galilean-2-5x/galilean-2-5-01",
+  "haitech/images/products/strauss/p-series/pr24m",
+  "haitech/images/products/strauss/p-series/pr23m",
+  "haitech/images/products/strauss/kits/kits-category",
+  "haitech/images/products/strauss/kits/endo-kit-main",
+  "haitech/images/products/strauss/kits/endo-kit-1",
+  "haitech/images/products/strauss/kits/crown-prep-kit-main",
+  "haitech/images/products/strauss/kits/crown-prep-kit-1",
+  "haitech/images/products/strauss/k-series/k2pf",
+  "haitech/images/products/strauss/j-series/j316sf",
+  "haitech/images/products/strauss/j-series/j316pf",
+  "haitech/images/products/strauss/j-series/j10sf",
+  "haitech/images/products/strauss/g-series/g5c",
+  "haitech/images/products/strauss/g-series/g4m",
+  "haitech/images/products/strauss/g-series/g4c",
+  "haitech/images/products/strauss/g-series/g3m",
+  "haitech/images/products/strauss/g-series/g3c",
+  "haitech/images/products/strauss/fg-series/fgb702",
+  "haitech/images/products/strauss/fg-series/fgb1558",
+  "haitech/images/products/strauss/fg-series/fgb1557",
+  "haitech/images/products/strauss/fg-series/fg-ceros-packed-az",
+  "haitech/images/products/strauss/fg-series/fg-cer-packed-az-removebg-preview",
+  "haitech/images/products/strauss/f-series/f09sc",
+  "haitech/images/products/strauss/e-series/e3sf",
+  "haitech/images/products/strauss/e-series/e3sc",
+  "haitech/images/products/strauss/e-series/e3rsf",
+  "haitech/images/products/strauss/e-series/e11sf",
+  "haitech/images/products/strauss/diamond/f-series-main",
+  "haitech/images/products/strauss/diamond/e-series-main",
+  "haitech/images/products/strauss/diamond/diamond-category",
+  "haitech/images/products/strauss/diamond/d-series-main",
+  "haitech/images/products/strauss/d-series/d3m",
+  "haitech/images/products/strauss/d-series/d3c",
+  "haitech/images/products/strauss/d-series/d32rc",
+  "haitech/images/products/strauss/d-series/d12frm",
+  "haitech/images/products/strauss/d-series/d12frc",
+  "haitech/images/products/strauss/carbide/carbide-category",
+  "haitech/images/products/strauss/carbide/c-series-main",
+  "haitech/images/products/strauss/carbide/b-series-main",
+  "haitech/images/products/strauss/carbide/a-series-main",
+  "haitech/images/products/strauss/carbide/a-series-1",
+  "haitech/images/products/strauss/c-series/c4m",
+  "haitech/images/products/strauss/c-series/c4f",
+  "haitech/images/products/strauss/c-series/c4c",
+  "haitech/images/products/strauss/c-series/c3m",
+  "haitech/images/products/strauss/c-series/c3f",
+  "haitech/images/products/strauss/c-series/c3c",
+  "haitech/images/products/strauss/a-series/ad20c",
+  "haitech/images/products/strauss/a-series/ad15c",
+  "haitech/images/products/strauss/a-series/a4xlm",
+  "haitech/images/products/strauss/a-series/a3xlm",
+  "haitech/images/products/strauss/a-series/a2xlm",
+  "haitech/images/products/medesy/scissors/scissors-category",
+  "haitech/images/products/medesy/scissors/3500-14-main",
+  "haitech/images/products/medesy/periosteal/periosteal-category",
+  "haitech/images/products/medesy/periosteal/1300-6-main",
+  "haitech/images/products/medesy/forceps/forceps-category",
+  "haitech/images/products/medesy/forceps/2500-18-main",
+  "haitech/images/products/medesy/forceps/2500-17-main",
+  "haitech/images/products/medesy/elevators/elevators-category",
+  "haitech/images/products/medesy/elevators/710-1-main",
+  "haitech/images/products/medesy/elevators/700-8-main",
+  "haitech/images/products/almadent/chairs/chairs-category",
+  "haitech/images/products/almadent/auxiliary/ptx-3",
+  "haitech/images/products/almadent/auxiliary/ptx-2",
+  "haitech/images/products/almadent/auxiliary/ptx-1",
+  "haitech/images/products/almadent/auxiliary/auxiliary-category",
+  "haitech/images/products/admetec/our-frames/admatec-bolle-gun-brown-color",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-pro-7-4x-350x350",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-pro-5-6x-350x350",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-pro-10x-350x350",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-74x-350x350",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-5-3x-350x350",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-3-8x-350x350",
+  "haitech/images/products/admetec/galilean/galilean-3-2x-swing-black",
+  "haitech/images/products/admetec/galilean/galilean-3-2x-soul-brown",
+  "haitech/images/products/admetec/galilean/galilean-2-7x-indie-blue",
+  "haitech/images/products/admetec/galilean/galilean-2-5x-jazz-orange",
+  "haitech/images/products/admetec/galilean/galilean-2-5x-jazz-blue",
+  "haitech/images/products/admetec/frames-for-select-frames/soul-black",
+  "haitech/images/products/admetec/frames-for-select-frames/jazz-blue-black",
+  "haitech/images/products/admetec/frames-for-select-frames/indie-black",
+  "haitech/images/products/admetec/ergo/ergo-7-5x-soul-brown",
+  "haitech/images/products/admetec/ergo/ergo-7-5x-indie-green",
+  "haitech/images/products/admetec/ergo/ergo-7-5x-indie-black",
+  "haitech/images/products/admetec/ergo/ergo-7-5x-blues-blue",
+  "haitech/images/products/admetec/ergo/ergo-7-5x-blues-black",
+  "haitech/images/products/admetec/ergo/ergo-6-0x-indie-orange-lava",
+  "haitech/images/products/admetec/ergo/ergo-6-0x-indie-black",
+  "haitech/images/products/admetec/ergo/ergo-6-0x-burgundy-gold",
+  "haitech/images/products/admetec/ergo/ergo-6-0x-blues-black",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-soul-burgundy-gold",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-soul-black",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-jazz-turquoise",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-blues-rose-gold",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-blues-purple",
+  "haitech/images/products/admetec/ergo/ergo-4-0x-soul-brown",
+  "haitech/images/products/admetec/ergo/ergo-4-0x-indie-champagne",
+  "haitech/images/products/admetec/ergo/ergo-4-0x-blues-pink",
+  "haitech/images/products/admetec/ergo/ergo-4-0x-blues-blue",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-soul-turquoise",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-soul-burgundy-gold",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-indie-black",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-blues-bronze",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-blues-blue",
+  "haitech/images/products/admetec/ergo/ergo-10x-soul-brown",
+  "haitech/images/products/admetec/ergo/ergo-10x-soul-black",
+  "haitech/images/products/admetec/ergo/ergo-10x-indie-black",
+  "haitech/images/products/admetec/ergo/ergo-10x-blues-black",
+  "haitech/images/products/strauss/strauss-banner",
+  "haitech/images/products/salli/benefits-spine-comparison",
+  "haitech/images/products/salli/benefits-good-posture",
+  "haitech/images/products/salli/benefits-good-pelvis-angle",
+  "haitech/images/products/salli/benefits-bad-posture",
+  "haitech/images/products/salli/benefits-bad-pelvis-angle",
+  "haitech/images/products/medesy/medesy-banner",
+  "haitech/images/products/bondent/uni-trans",
+  "haitech/images/products/bondent/uni-clear-pro",
+  "haitech/images/products/bondent/tme-training-microscope",
+  "haitech/images/products/bondent/stainless-steel-archwires",
+  "haitech/images/products/bondent/springs",
+  "haitech/images/products/bondent/separators",
+  "haitech/images/products/bondent/reverse-back-archwires",
+  "haitech/images/products/bondent/power-chain",
+  "haitech/images/products/bondent/orthodontic-molar-band-assorted-kit",
+  "haitech/images/products/bondent/omni-sl-6th-generation",
+  "haitech/images/products/bondent/omni-mim",
+  "haitech/images/products/bondent/o-rings",
+  "haitech/images/products/bondent/niti-thermal-active-archwires",
+  "haitech/images/products/bondent/niti-super-elastic",
+  "haitech/images/products/bondent/naked-eye-3d-microscope",
+  "haitech/images/products/bondent/micro-implants",
+  "haitech/images/products/bondent/micro-implants-handles",
+  "haitech/images/products/bondent/lingual-buttons",
+  "haitech/images/products/bondent/ligature-ties",
+  "haitech/images/products/bondent/innovative-aligner-and-service-system",
+  "haitech/images/products/bondent/iezguide-surgical-guide-system",
+  "haitech/images/products/bondent/iez-dental-implant",
+  "haitech/images/products/bondent/g4",
+  "haitech/images/products/bondent/g4-pro",
+  "haitech/images/products/bondent/dom-3000d-4k-pro",
+  "haitech/images/products/bondent/dom-3000-microscope",
+  "haitech/images/products/bondent/dental-simulation-practice-system",
+  "haitech/images/products/bondent/crimple-hooks",
+  "haitech/images/products/bondent/clear-max-pro",
+  "haitech/images/products/bondent/buccal-tubes",
+  "haitech/images/products/almadent/almadent-banner",
+  "haitech/images/products/admetec/admetec-banner",
+  "haitech/images/team/vanshika-pakhare",
+  "haitech/images/team/supriya-joshi",
+  "haitech/images/team/shrudi-pullani",
+  "haitech/images/team/shailendra-jadhav",
+  "haitech/images/team/sejal-dalvi",
+  "haitech/images/team/sanjay-kumar-ram",
+  "haitech/images/team/sandeep-jadhav",
+  "haitech/images/team/riya-kamble",
+  "haitech/images/team/ranvijay-singh",
+  "haitech/images/team/priyanka-palav",
+  "haitech/images/team/parth-parmar",
+  "haitech/images/team/omkar-santosh-nikam",
+  "haitech/images/team/nitin-ghanekar",
+  "haitech/images/team/nitin-chavan",
+  "haitech/images/team/mehul-rajesh-nagar",
+  "haitech/images/team/manish-satam",
+  "haitech/images/team/kavita-jukunte",
+  "haitech/images/team/kaushiki-singh",
+  "haitech/images/team/jyotsna-patil",
+  "haitech/images/team/dhiraj-bane",
+  "haitech/images/team/atharva-chavan",
+  "haitech/images/team/anand-singh-rajput",
+  "haitech/images/team/akshada-pawar",
+  "haitech/images/hero/website",
+  "haitech/images/hero/website-1",
+  "haitech/images/hero/untitled-design-54",
+  "haitech/images/top-6-question-tn",
+  "haitech/images/mseries-dental-mirrors",
+  "haitech/images/maginficent",
+  "haitech/images/choosing-the-perfect-loupes",
+  "haitech/images/article-demo-image-1024x7000",
+  "haitech/images/article-demo-image-1024x700",
+  "haitech/images/admetec-butterfly-s-case-loupes-included"
+ ],
+ "tag_duplicate": [
+  "haitech/images/products/admetec/lights/headlights/wired/ergo-5-0x-loupes",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-white-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-rose-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-red-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-grey-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-white-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-turquoise-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-red-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-pink-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-blue-brown-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-turquoise-rose-gold-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-red-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-orange-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-green-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-blue-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-turquoise-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-orange-lava-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-midnight-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-green-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-champagne-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-rose-gold-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-purple-grey-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-pink-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-navy-blue-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-blue-bronze-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-black-ergo-v-pro",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-white-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-rose-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-red-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-grey-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-black-ergo-v-1",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-white-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-turquoise-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-red-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-pink-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-blue-brown-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-turquoise-rose-gold-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-red-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-orange-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-green-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-blue-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-turquoise-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-orange-lava-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-midnight-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-green-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-champagne-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-black-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-rose-gold-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-purple-grey-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-pink-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-navy-blue-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-blue-bronze-ergo-v",
+  "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-black-ergo-v",
+  "haitech/images/products/strauss/kits/kits-category",
+  "haitech/images/products/strauss/kits/endo-kit-main",
+  "haitech/images/products/strauss/kits/endo-kit-1",
+  "haitech/images/products/strauss/kits/crown-prep-kit-main",
+  "haitech/images/products/strauss/kits/crown-prep-kit-1",
+  "haitech/images/products/strauss/diamond/f-series-main",
+  "haitech/images/products/strauss/diamond/e-series-main",
+  "haitech/images/products/strauss/diamond/diamond-category",
+  "haitech/images/products/strauss/d-series/d3c",
+  "haitech/images/products/strauss/carbide/carbide-category",
+  "haitech/images/products/strauss/carbide/a-series-main",
+  "haitech/images/products/strauss/strauss-banner",
+  "haitech/images/products/strauss/carbide/c-series-main",
+  "haitech/images/products/strauss/carbide/b-series-main",
+  "haitech/images/products/strauss/carbide/a-series-1",
+  "haitech/images/products/medesy/scissors/scissors-category",
+  "haitech/images/products/medesy/scissors/3500-14-main",
+  "haitech/images/products/medesy/periosteal/periosteal-category",
+  "haitech/images/products/medesy/periosteal/1300-6-main",
+  "haitech/images/products/medesy/forceps/forceps-category",
+  "haitech/images/products/medesy/forceps/2500-17-main",
+  "haitech/images/products/medesy/forceps/2500-18-main",
+  "haitech/images/products/medesy/elevators/elevators-category",
+  "haitech/images/products/medesy/elevators/700-8-main",
+  "haitech/images/products/medesy/medesy-banner",
+  "haitech/images/products/medesy/elevators/710-1-main",
+  "haitech/images/products/almadent/chairs/chairs-category",
+  "haitech/images/products/almadent/almadent-banner",
+  "haitech/images/products/almadent/auxiliary/ptx-1",
+  "haitech/images/products/admetec/magnification/admetec-ergo-v-pro-7-4x-350x350",
+  "haitech/images/products/admetec/ergo/ergo-3-0x-blues-blue",
+  "haitech/images/products/admetec/ergo/ergo-5-0x-blues-purple",
+  "haitech/images/article-demo-image-1024x7000"
+ ],
+ "duplicate_groups": [
+  {
+   "kept": [
+    "haitech/images/products/admetec/loupes/prismatic/3-8x/swing/swing-black",
+    "haitech/images/products/admetec/loupes/prismatic/4-8x/swing/swing-black"
+   ],
+   "duplicates": []
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/lights/headlights/wired/wired"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/lights/headlights/wired/ergo-5-0x-loupes"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-white-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-white-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-rose-gold-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-rose-gold-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-red-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-red-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-grey-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-grey-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-blue-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-blue-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/swing/swing-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/swing-frame/swing-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-white-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-white-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-turquoise-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-turquoise-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-red-gold-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-red-gold-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-pink-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-pink-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-blue-brown-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-blue-brown-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/soul/soul-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/soul-frame/soul-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-turquoise-rose-gold-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-turquoise-rose-gold-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-red-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-red-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-orange-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-orange-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-green-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-green-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/jazz/jazz-blue-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/jazz-frame/jazz-blue-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-turquoise-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-turquoise-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-orange-lava-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-orange-lava-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-midnight-blue-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-midnight-blue-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-green-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-green-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-champagne-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-champagne-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/indies/indie-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/indie-frame/indie-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-rose-gold-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-rose-gold-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-purple-grey-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-purple-grey-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-pink-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-pink-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-navy-blue-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-navy-blue-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-blue-bronze-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-blue-bronze-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-black-ergo-v-pro"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergovpro/blues-frame/blues-black-ergo-v-pro"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-white-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-white-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-rose-gold-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-rose-gold-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-red-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-red-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-grey-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-grey-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-blue-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-blue-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/swing/swing-black-ergo-v-1"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/swing-frame/swing-black-ergo-v-1"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-white-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-white-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-turquoise-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-turquoise-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-red-gold-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-red-gold-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-pink-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-pink-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-blue-brown-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-blue-brown-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/soul/soul-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/soul-frame/soul-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-turquoise-rose-gold-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-turquoise-rose-gold-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-red-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-red-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-orange-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-orange-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-green-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-green-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/jazz/jazz-blue-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/jazz-frame/jazz-blue-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-turquoise-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-turquoise-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-orange-lava-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-orange-lava-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-midnight-blue-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-midnight-blue-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-green-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-green-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-champagne-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-champagne-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/indies/indie-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/indie-frame/indie-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-rose-gold-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-rose-gold-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-purple-grey-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-purple-grey-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-pink-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-pink-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-navy-blue-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-navy-blue-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-blue-bronze-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-blue-bronze-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-black-ergo-v"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/loupes-ergov-ergov/blues-frame/blues-black-ergo-v"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/kits/rsi-intro"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/kits/kits-category",
+    "haitech/images/products/strauss/kits/endo-kit-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/kits/magict1"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/kits/endo-kit-1"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/kits/c0mset1"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/kits/crown-prep-kit-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/kits/comset3"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/kits/crown-prep-kit-1"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/f-series/f09rc"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/diamond/f-series-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/e-series/e11c"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/diamond/e-series-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/d-series/d11c"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/diamond/diamond-category"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/diamond/d-series-main"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/d-series/d3c"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/a-series/a0c"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/carbide/carbide-category",
+    "haitech/images/products/strauss/carbide/a-series-main",
+    "haitech/images/products/strauss/strauss-banner"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/c-series/c2m"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/carbide/c-series-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/b-series/b2m"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/carbide/b-series-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/strauss/a-series/a1f"
+   ],
+   "duplicates": [
+    "haitech/images/products/strauss/carbide/a-series-1"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/scissors/3509"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/scissors/scissors-category",
+    "haitech/images/products/medesy/scissors/3500-14-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/periosteal-elevators/856"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/periosteal/periosteal-category",
+    "haitech/images/products/medesy/periosteal/1300-6-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/forceps/2500slash17"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/forceps/forceps-category",
+    "haitech/images/products/medesy/forceps/2500-17-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/forceps/2500slash18"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/forceps/2500-18-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/elevator/700slash8"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/elevators/elevators-category",
+    "haitech/images/products/medesy/elevators/700-8-main",
+    "haitech/images/products/medesy/medesy-banner"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/medesy/elevator/700slash10"
+   ],
+   "duplicates": [
+    "haitech/images/products/medesy/elevators/710-1-main"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/almadent/almadent-primary",
+    "haitech/images/products/almadent/chairs/ay-3000-1"
+   ],
+   "duplicates": [
+    "haitech/images/products/almadent/chairs/chairs-category"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/almadent/chairs/ay-6000-3",
+    "haitech/images/products/almadent/chairs/ay-6000-7"
+   ],
+   "duplicates": []
+  },
+  {
+   "kept": [
+    "haitech/images/products/almadent/chairs/ay-3000-8"
+   ],
+   "duplicates": [
+    "haitech/images/products/almadent/almadent-banner"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/almadent/auxiliary/auxiliary-category"
+   ],
+   "duplicates": [
+    "haitech/images/products/almadent/auxiliary/ptx-1"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/magnification/admetec-ergo-v-74x-350x350"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/magnification/admetec-ergo-v-pro-7-4x-350x350"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/galilean/galilean-2-5x-blues-pink",
+    "haitech/images/products/admetec/galilean/galilean-category"
+   ],
+   "duplicates": []
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo-v/ergo-v",
+    "haitech/images/products/admetec/ergo-v/ergo-v-category"
+   ],
+   "duplicates": []
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/ergo/ergo-category"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/ergo/ergo-3-0x-blues-blue"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/products/admetec/admetec-banner"
+   ],
+   "duplicates": [
+    "haitech/images/products/admetec/ergo/ergo-5-0x-blues-purple"
+   ]
+  },
+  {
+   "kept": [
+    "haitech/images/article-demo-image-1024x700"
+   ],
+   "duplicates": [
+    "haitech/images/article-demo-image-1024x7000"
+   ]
+  }
+ ]
+}
