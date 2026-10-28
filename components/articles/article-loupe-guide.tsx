@@ -13,7 +13,7 @@ export const articleLoupeGuide: ArticleData = {
         "Comprehensive guide to magnification loupes in dentistry. Learn about different types including Galilean, prismatic, and ergonomic ERGO loupes, their benefits for posture and precision, and how to choose the right magnification for your practice.",
     content: (
         <>
-            <Image src="/images/articles/maginficent.jpg" width={1536} height={917} sizes="(min-width: 448px) 448px, 100vw" alt="Admetec Ergo V loupes mounted on a black titanium frame" className="mx-auto mb-10 block h-auto w-full max-w-md" />
+            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308020/haitech/images/maginficent.jpg" width={1536} height={917} sizes="(min-width: 448px) 448px, 100vw" alt="Admetec Ergo V loupes mounted on a black titanium frame" className="mx-auto mb-10 block h-auto w-full max-w-md" />
 
             <p className="mb-6">
                 Clear vision and posture are critical in dentistry. Whether you're performing a routine check-up or complex procedure, magnification loupes help you see details more clearly while
@@ -206,6 +206,6 @@ export const articleLoupeGuide: ArticleData = {
     readTime: "8 min read",
     publishedTime: "04:13pm",
     views: 57,
-    imageSrc: "/images/articles/maginficent.jpg",
+    imageSrc: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308020/haitech/images/maginficent.jpg",
     imageAlt: "Admetec Ergo V loupes mounted on a black titanium frame",
 };

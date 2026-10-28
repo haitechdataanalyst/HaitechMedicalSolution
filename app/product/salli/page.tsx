@@ -60,9 +60,9 @@ const pillars = [
 ];
 
 const products = [
-    { name: "Salli SwayFit", image: "/images/products/salli/sway-fit/sway-fit-black.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment.", href: "/product-category/salli/sway-fit" },
-    { name: "Salli TripleLift", image: "/images/products/salli/triple-fit/triple-fit-black.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution.", href: "/product-category/salli/triple-fit" },
-    { name: "Salli Ultra", image: "/images/products/salli/ultra-triple-fit/ultra-triple-fit-black.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience.", href: "/product-category/salli/ultra-triple-fit" },
+    { name: "Salli SwayFit", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg", description: "Dynamic saddle chair with a split seat that promotes active sitting and natural spinal alignment.", href: "/product-category/salli/sway-fit" },
+    { name: "Salli TripleLift", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308128/haitech/images/products/salli/triple-fit-black.jpg", description: "Versatile height-adjustable saddle chair designed for optimal pelvic tilt and pressure distribution.", href: "/product-category/salli/triple-fit" },
+    { name: "Salli Ultra", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308132/haitech/images/products/salli/ultra-triple-fit-black.jpg", description: "Premium option with ultra-smooth tilt mechanisms for the most comfortable sitting experience.", href: "/product-category/salli/ultra-triple-fit" },
 ];
 
 const comparisons = [
@@ -70,8 +70,8 @@ const comparisons = [
         title: "Traditional 90\u00b0 Sitting",
         tone: "text-red-700",
         images: [
-            { src: "/images/products/salli/benefits/benefits-bad-posture.jpg", alt: "Man sitting in a slouched, poor position on an ordinary office chair", width: 500, height: 667 },
-            { src: "/images/products/salli/benefits/benefits-bad-pelvis-angle.jpg", alt: "Diagram showing a 90-degree hip angle and 30-degree flattening of the lumbar region in traditional sitting", width: 500, height: 709 },
+            { src: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308120/haitech/images/products/salli/benefits-bad-posture.jpg", alt: "Man sitting in a slouched, poor position on an ordinary office chair", width: 500, height: 667 },
+            { src: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308119/haitech/images/products/salli/benefits-bad-pelvis-angle.jpg", alt: "Diagram showing a 90-degree hip angle and 30-degree flattening of the lumbar region in traditional sitting", width: 500, height: 709 },
         ],
         body: "In traditional 90-degree sitting, the vertebrae and discs are loaded incorrectly — pressed together at the front while the back muscles and ligaments stay constantly stretched. This leads to poor circulation, weak muscles, and a higher risk of back aches, lumbago and herniated discs. Out of balance, the body looks for something to lean on, and poor circulation over time can contribute to serious conditions such as heart disease, high blood pressure and stroke.",
     },
@@ -79,8 +79,8 @@ const comparisons = [
         title: "Salli Saddle Sitting",
         tone: "text-emerald-700",
         images: [
-            { src: "/images/products/salli/benefits/benefits-good-posture.jpg", alt: "Woman sitting in an upright, balanced position on a Salli saddle chair", width: 500, height: 898 },
-            { src: "/images/products/salli/benefits/benefits-good-pelvis-angle.jpg", alt: "Diagram showing the ergonomic 135-degree hip angle achieved on a Salli saddle chair", width: 500, height: 709 },
+            { src: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308122/haitech/images/products/salli/benefits-good-posture.jpg", alt: "Woman sitting in an upright, balanced position on a Salli saddle chair", width: 500, height: 898 },
+            { src: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308121/haitech/images/products/salli/benefits-good-pelvis-angle.jpg", alt: "Diagram showing the ergonomic 135-degree hip angle achieved on a Salli saddle chair", width: 500, height: 709 },
         ],
         body: "The Salli saddle chair offers an unburdened, standing-like, active way of sitting in balance. You sit in an upright vertical position — where the body is at its strongest, physically and mentally. The pelvis rests in its neutral position, the spine holds up the upper body, and the muscles relax. Discs are evenly loaded, and the small movements you make when turning or reaching activate and strengthen your back and core muscles, all while circulation stays undisturbed throughout the day.",
     },
@@ -160,7 +160,7 @@ export default function AboutSalliPage() {
 
                 <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-3xl bg-neutral-50 md:mt-16">
                     <Image
-                        src="/images/products/salli/benefits/benefits-spine-comparison.jpg"
+                        src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308122/haitech/images/products/salli/benefits-spine-comparison.jpg"
                         alt="Illustration comparing spine position when sitting on a one-part chair versus a two-part Salli saddle chair"
                         width={1000}
                         height={550}

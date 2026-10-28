@@ -22,7 +22,7 @@ export function AdmetecAbout() {
             title={linkAdmetec("Admetec, brought to India by Haitech")}
             media={
                 <div className="space-y-5">
-                    <MediaTile src="/images/products/admetec/loupes/ergo/gallery/ergo-5.0x-blues-rose-gold.jpg" alt="Admetec Ergo loupes, handcrafted to the clinician's measurements" />
+                    <MediaTile src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308147/haitech/images/products/admetec/ergo/ergo-5-0x-blues-rose-gold.jpg" alt="Admetec Ergo loupes, handcrafted to the clinician's measurements" />
                     {/* The logo is the larger of the two, so it is clear whose product this is and who is the dealer */}
                     <div className="flex items-center justify-center gap-4">
                         <AdmetecBrandBadge size="brand" />

@@ -15,16 +15,16 @@ const dataDir = join(__dirname, '../../data');
 
 // ── Load JSON files ───────────────────────────────────────────────────────────
 const categoriesRaw = JSON.parse(readFileSync(join(dataDir, 'categories.json'), 'utf-8'));
-const productsRaw   = JSON.parse(readFileSync(join(dataDir, 'products.json'),   'utf-8'));
+const productsRaw = JSON.parse(readFileSync(join(dataDir, 'products.json'), 'utf-8'));
 
 // ── Connect ───────────────────────────────────────────────────────────────────
 const sql = postgres({
-	host:     process.env.POSTGRES_HOST     || 'localhost',
-	port:     Number(process.env.POSTGRES_PORT) || 5432,
-	user:     process.env.POSTGRES_USER     || 'postgres',
-	password: process.env.POSTGRES_PASS     || '',
-	database: process.env.POSTGRES_DB       || 'haitech_medical',
-	ssl:      process.env.POSTGRES_SSL === 'true' ? 'require' : false,
+	host: process.env.POSTGRES_HOST || 'localhost',
+	port: Number(process.env.POSTGRES_PORT) || 5432,
+	user: process.env.POSTGRES_USER || 'postgres',
+	password: process.env.POSTGRES_PASS || '',
+	database: process.env.POSTGRES_DB || 'haitech_medical',
+	ssl: process.env.POSTGRES_SSL === 'true' ? 'require' : false,
 	max: 1,
 });
 const db = drizzle(sql);
@@ -93,8 +93,8 @@ const products = pgTable('products', {
 // AUD/USD prices are in the main unit (e.g. 12.99) → convert to cents (1299).
 const toSubunit = (price) => {
 	if (price === null || price === undefined) return null;
-	if (Number.isInteger(price)) return price;        // already paise / whole number
-	return Math.round(price * 100);                   // 12.99 AUD → 1299 cents
+	if (Number.isInteger(price)) return price; // already paise / whole number
+	return Math.round(price * 100); // 12.99 AUD → 1299 cents
 };
 
 // Build a parent→rootBrand map for product brand resolution
@@ -124,25 +124,28 @@ async function seed() {
 
 	console.log(`📦 Inserting ${rootCats.length} brands…`);
 	for (const c of rootCats) {
-		await db.insert(brands).values({
-			id:          c.id,
-			slug:        c.slug,
-			name:        c.name,
-			description: c.description ?? null,
-			image:       c.image ?? null,
-			sortOrder:   c.order ?? 0,
-			active:      true,
-		}).onConflictDoUpdate({
-			target: brands.id,
-			set: {
-				slug:        c.slug,
-				name:        c.name,
+		await db
+			.insert(brands)
+			.values({
+				id: c.id,
+				slug: c.slug,
+				name: c.name,
 				description: c.description ?? null,
-				image:       c.image ?? null,
-				sortOrder:   c.order ?? 0,
-				modifiedAt:  new Date(),
-			},
-		});
+				image: c.image ?? null,
+				sortOrder: c.order ?? 0,
+				active: true,
+			})
+			.onConflictDoUpdate({
+				target: brands.id,
+				set: {
+					slug: c.slug,
+					name: c.name,
+					description: c.description ?? null,
+					image: c.image ?? null,
+					sortOrder: c.order ?? 0,
+					modifiedAt: new Date(),
+				},
+			});
 	}
 	console.log('  ✓ Brands done');
 
@@ -152,32 +155,35 @@ async function seed() {
 
 	for (const c of categoriesRaw) {
 		const brandId = c.parent === null ? c.id : brandMap[c.id];
-		await db.insert(categories).values({
-			id:          c.id,
-			slug:        c.slug,
-			name:        c.name,
-			type:        c.type ?? 'category',
-			description: c.description ?? null,
-			image:       c.image ?? null,
-			parentId:    c.parent ?? null,
-			brandId:     brandId ?? null,
-			sortOrder:   c.order ?? 0,
-			specialPage: c.specialPage ?? null,
-			active:      true,
-		}).onConflictDoUpdate({
-			target: categories.id,
-			set: {
-				slug:        c.slug,
-				name:        c.name,
+		await db
+			.insert(categories)
+			.values({
+				id: c.id,
+				slug: c.slug,
+				name: c.name,
+				type: c.type ?? 'category',
 				description: c.description ?? null,
-				image:       c.image ?? null,
-				parentId:    c.parent ?? null,
-				brandId:     brandId ?? null,
-				sortOrder:   c.order ?? 0,
+				image: c.image ?? null,
+				parentId: c.parent ?? null,
+				brandId: brandId ?? null,
+				sortOrder: c.order ?? 0,
 				specialPage: c.specialPage ?? null,
-				modifiedAt:  new Date(),
-			},
-		});
+				active: true,
+			})
+			.onConflictDoUpdate({
+				target: categories.id,
+				set: {
+					slug: c.slug,
+					name: c.name,
+					description: c.description ?? null,
+					image: c.image ?? null,
+					parentId: c.parent ?? null,
+					brandId: brandId ?? null,
+					sortOrder: c.order ?? 0,
+					specialPage: c.specialPage ?? null,
+					modifiedAt: new Date(),
+				},
+			});
 	}
 	console.log('  ✓ Categories done');
 
@@ -187,53 +193,56 @@ async function seed() {
 	for (const p of productsRaw) {
 		const brandId = brandMap[p.category] ?? null;
 
-		await db.insert(products).values({
-			id:             p.id,
-			slug:           p.slug,
-			name:           p.name,
-			description:    p.description ?? null,
-			categoryId:     p.category ?? null,
-			brandId:        brandId,
-			sku:            p.sku ?? null,
-			basePrice:      toSubunit(p.basePrice),
-			currency:       p.currency ?? 'INR',
-			hasVariants:    p.hasVariants ?? false,
-			variantType:    p.variantType ?? null,
-			defaultImage:   p.defaultImage ?? null,
-			gallery:        p.gallery ?? null,
-			videos:         p.videos ?? null,
-			catalogueFile:  p.catalogueFile ?? null,
-			colorCode:      p.colorCode ?? null,
-			sortOrder:      p.order ?? 0,
-			contentBlocks:  p.contentBlocks  ? JSON.stringify(p.contentBlocks)  : null,
-			relatedProducts:p.relatedProducts ? JSON.stringify(p.relatedProducts): null,
-			frameVariants:  p.frameVariants   ? JSON.stringify(p.frameVariants)  : null,
-			active:         true,
-		}).onConflictDoUpdate({
-			target: products.id,
-			set: {
-				slug:           p.slug,
-				name:           p.name,
-				description:    p.description ?? null,
-				categoryId:     p.category ?? null,
-				brandId:        brandId,
-				sku:            p.sku ?? null,
-				basePrice:      toSubunit(p.basePrice),
-				currency:       p.currency ?? 'INR',
-				hasVariants:    p.hasVariants ?? false,
-				variantType:    p.variantType ?? null,
-				defaultImage:   p.defaultImage ?? null,
-				gallery:        p.gallery ?? null,
-				videos:         p.videos ?? null,
-				catalogueFile:  p.catalogueFile ?? null,
-				colorCode:      p.colorCode ?? null,
-				sortOrder:      p.order ?? 0,
-				contentBlocks:  p.contentBlocks  ? JSON.stringify(p.contentBlocks)  : null,
-				relatedProducts:p.relatedProducts ? JSON.stringify(p.relatedProducts): null,
-				frameVariants:  p.frameVariants   ? JSON.stringify(p.frameVariants)  : null,
-				modifiedAt:     new Date(),
-			},
-		});
+		await db
+			.insert(products)
+			.values({
+				id: p.id,
+				slug: p.slug,
+				name: p.name,
+				description: p.description ?? null,
+				categoryId: p.category ?? null,
+				brandId: brandId,
+				sku: p.sku ?? null,
+				basePrice: toSubunit(p.basePrice),
+				currency: p.currency ?? 'INR',
+				hasVariants: p.hasVariants ?? false,
+				variantType: p.variantType ?? null,
+				defaultImage: p.defaultImage ?? null,
+				gallery: p.gallery ?? null,
+				videos: p.videos ?? null,
+				catalogueFile: p.catalogueFile ?? null,
+				colorCode: p.colorCode ?? null,
+				sortOrder: p.order ?? 0,
+				contentBlocks: p.contentBlocks ? JSON.stringify(p.contentBlocks) : null,
+				relatedProducts: p.relatedProducts ? JSON.stringify(p.relatedProducts) : null,
+				frameVariants: p.frameVariants ? JSON.stringify(p.frameVariants) : null,
+				active: true,
+			})
+			.onConflictDoUpdate({
+				target: products.id,
+				set: {
+					slug: p.slug,
+					name: p.name,
+					description: p.description ?? null,
+					categoryId: p.category ?? null,
+					brandId: brandId,
+					sku: p.sku ?? null,
+					basePrice: toSubunit(p.basePrice),
+					currency: p.currency ?? 'INR',
+					hasVariants: p.hasVariants ?? false,
+					variantType: p.variantType ?? null,
+					defaultImage: p.defaultImage ?? null,
+					gallery: p.gallery ?? null,
+					videos: p.videos ?? null,
+					catalogueFile: p.catalogueFile ?? null,
+					colorCode: p.colorCode ?? null,
+					sortOrder: p.order ?? 0,
+					contentBlocks: p.contentBlocks ? JSON.stringify(p.contentBlocks) : null,
+					relatedProducts: p.relatedProducts ? JSON.stringify(p.relatedProducts) : null,
+					frameVariants: p.frameVariants ? JSON.stringify(p.frameVariants) : null,
+					modifiedAt: new Date(),
+				},
+			});
 	}
 	console.log('  ✓ Products done');
 
@@ -247,6 +256,7 @@ async function seed() {
 
 seed().catch((err) => {
 	console.error('❌ Seed failed:', err.message);
+	if (err.cause) console.error('   Cause:', err.cause.message ?? err.cause);
 	sql.end();
 	process.exit(1);
 });

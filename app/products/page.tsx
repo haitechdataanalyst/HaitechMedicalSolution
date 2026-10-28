@@ -21,13 +21,13 @@ const equipmentLinks = [...HUBS.map((hub) => ({ label: hub.name, href: hubPath(h
 
 // A real catalogue photo per equipment type (UI only — keyed by the existing hub / category paths).
 const EQUIPMENT_IMAGE: Record<string, string> = {
-    "/dental-loupes": "/images/products/admetec/loupes/ergo/gallery/ergo-10x-blues-black.jpg",
-    "/dental-chairs": "/images/products/almadent/brand/almadent-primary.jpg",
-    "/saddle-chairs": "/images/products/salli/sway-fit/sway-fit-black.jpg",
-    "/endodontics": "/images/products/bondent/endo-device/irrigation/actor-i-pro.png",
-    "/cbct": "/images/products/bondent/imaging/bondent-cbct-1030-pro.png",
-    "/product-category/strauss": "/images/products/strauss/a-series/a0c.jpg",
-    "/product-category/medesy": "/images/products/medesy/elevators/700slash8.jpg",
+    "/dental-loupes": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308134/haitech/images/products/admetec/ergo/ergo-10x-blues-black.jpg",
+    "/dental-chairs": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/almadent/almadent-primary.jpg",
+    "/saddle-chairs": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308124/haitech/images/products/salli/sway-fit-black.jpg",
+    "/endodontics": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308052/haitech/images/products/bondent/actor-i-pro.png",
+    "/cbct": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308054/haitech/images/products/bondent/bondent-cbct-1030-pro.png",
+    "/product-category/strauss": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308255/haitech/images/products/strauss/a-series/a0c.jpg",
+    "/product-category/medesy": "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308213/haitech/images/products/medesy/elevator/700slash8.jpg",
 };
 
 export default async function ProductsPage() {

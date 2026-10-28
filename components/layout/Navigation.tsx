@@ -17,11 +17,11 @@ interface MegaMenuProps {
 }
 
 const BRAND_LOGOS: Record<string, string> = {
-    Admetec: "/brand/manufacturers/admetec-logo.jpeg",
-    Almadent: "/brand/manufacturers/almadent-logo.jpeg",
-    Medesy: "/brand/manufacturers/medesy-logo.jpeg",
-    Salli: "/brand/manufacturers/salli-logo.jpeg",
-    Strauss: "/brand/manufacturers/strauss-logo.jpeg",
+    Admetec: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/admeteclogo.jpg",
+    Almadent: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/almadentlogo.jpg",
+    Medesy: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308666/haitech/brandlogo/medesylogo.jpg",
+    Salli: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308667/haitech/brandlogo/sallilogo.jpg",
+    Strauss: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308668/haitech/brandlogo/strausslogo.jpg",
 };
 
 const LINKS_MAX = 5;

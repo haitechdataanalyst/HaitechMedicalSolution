@@ -14,6 +14,7 @@ import { CARD_HOVER_SHADOW, INTERACTIVE_CARD } from "@/components/ui/surfaces";
 import {
     CardSkeleton, EmptyState, LISTING_GRID, PAGE_SUBTITLE, PAGE_TITLE, PILL_SELECT, RESULT_COUNT, SEARCH_INPUT, chipClass,
 } from "@/components/catalog/listing";
+import { cloudinaryUrl } from "@/lib/cloudinary-loader";
 
 const PER_PAGE = 24;
 
@@ -43,7 +44,7 @@ function ItemCard({ item }: { item: ZohoInventoryItem }) {
             <span aria-hidden="true" className={CARD_HOVER_SHADOW} />
             <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-xl bg-neutral-50">
                 {item.image ? (
-                    <img src={item.image} alt={item.name} className="h-full w-full object-contain p-6 mix-blend-multiply" />
+                    <img src={cloudinaryUrl(item.image, 512)} alt={item.name} className="h-full w-full object-contain p-6 mix-blend-multiply" />
                 ) : (
                     <Package className="h-10 w-10 text-neutral-300" aria-hidden="true" />
                 )}

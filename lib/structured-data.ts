@@ -10,7 +10,7 @@ import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/metadata";
 type JsonLd = Record<string, unknown>;
 
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
-const LOGO_PATH = "/brand/haitech/logo.png";
+const LOGO_PATH = "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162552/haitech/brand/haitech/logo.webp";
 
 const LEGAL_NAME = "Haitech Medical Solutions Private Limited";
 const ORGANIZATION_DESCRIPTION =

@@ -12,7 +12,7 @@ export const articleLoupeSelection: ArticleData = {
     content: (
         <>
             {/* Hero Image */}
-            <Image src="/images/articles/choosing-the-perfect-loupes.jpg" width={1536} height={938} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist working with magnification loupes" className="mb-10 aspect-[16/9] h-auto w-full object-cover" />
+            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308019/haitech/images/choosing-the-perfect-loupes.jpg" width={1536} height={938} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist working with magnification loupes" className="mb-10 aspect-[16/9] h-auto w-full object-cover" />
 
             {/* Introduction */}
             <p className="mb-6">
@@ -41,7 +41,7 @@ export const articleLoupeSelection: ArticleData = {
             </p>
 
             {/* Posture Image */}
-            <Image src="/images/articles/article-demo-image-1024x700.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist maintaining proper posture using ergonomic loupes" className="mb-10 w-full object-cover" />
+            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308017/haitech/images/article-demo-image-1024x700.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Dentist maintaining proper posture using ergonomic loupes" className="mb-10 w-full object-cover" />
 
             {/* Posture & Comfort */}
             <h2 className="mb-4">Posture and Comfort</h2>
@@ -80,7 +80,7 @@ export const articleLoupeSelection: ArticleData = {
             </p>
 
             {/* Final Image */}
-            <Image src="/images/articles/article-demo-image-1024x700.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Close-up of dental magnification loupes" className="w-full object-cover" />
+            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308017/haitech/images/article-demo-image-1024x700.jpg" width={1024} height={700} sizes="(min-width: 768px) 768px, 100vw" alt="Close-up of dental magnification loupes" className="w-full object-cover" />
         </>
     ),
     publishedAt: "2024-08-27",
@@ -88,6 +88,6 @@ export const articleLoupeSelection: ArticleData = {
     readTime: "7 min read",
     publishedTime: "08:42am",
     views: 191,
-    imageSrc: "/images/articles/choosing-the-perfect-loupes.jpg",
+    imageSrc: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308019/haitech/images/choosing-the-perfect-loupes.jpg",
     imageAlt: "Dentist working with magnification loupes",
 };

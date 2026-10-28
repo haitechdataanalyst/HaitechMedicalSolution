@@ -41,7 +41,7 @@ export default function Footer({ sections, config }: FooterProps) {
                 <div className="grid grid-cols-[minmax(0,1fr)] gap-8 rounded-3xl bg-white p-6 ring-1 ring-neutral-900/[0.04] md:p-10 lg:grid-cols-2 lg:items-center lg:gap-16">
                     <div className="max-w-md">
                         <Link href="/" className="inline-flex items-center gap-3 rounded-lg">
-                            <Image src="/brand/haitech/mark.png" alt="" width={36} height={36} className="shrink-0" />
+                            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1793162553/haitech/brand/haitech/mark.webp" alt="" width={36} height={36} className="shrink-0" />
                             <span>
                                 <span className="block text-base leading-tight font-semibold tracking-[-0.01em] text-neutral-900">Haitech</span>
                                 <span className="block text-[13px] text-neutral-500">Medical Solutions Pvt. Ltd.</span>

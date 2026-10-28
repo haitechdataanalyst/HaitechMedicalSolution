@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { PILL_PRIMARY, SURFACE_CARD } from "@/components/ui/surfaces";
 import { SkeletonBar } from "@/components/catalog/listing";
+import { cloudinaryUrl } from "@/lib/cloudinary-loader";
 
 const SECTION_TITLE = "text-[15px] font-semibold tracking-[-0.01em] text-neutral-900";
 
@@ -128,7 +129,7 @@ export default function InventoryItemPage() {
                             <div className={cn(SURFACE_CARD, "p-2")}>
                                 <div className="flex aspect-square max-h-[420px] w-full items-center justify-center overflow-hidden rounded-xl bg-neutral-50">
                                     {item.image ? (
-                                        <img src={item.image} alt={item.name} className="h-full w-full object-contain p-10 mix-blend-multiply" />
+                                        <img src={cloudinaryUrl(item.image, 768)} alt={item.name} className="h-full w-full object-contain p-10 mix-blend-multiply" />
                                     ) : (
                                         <Package className="h-16 w-16 text-neutral-300" aria-hidden="true" />
                                     )}

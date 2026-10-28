@@ -9,8 +9,6 @@ import SectionHeader from "@/components/misc/SectionHeader";
 import { SURFACE_CARD } from "@/components/ui/surfaces";
 import { OPTION_IDLE, OPTION_SELECTED, OPTION_TILE } from "@/components/products/blocks/option-styles";
 
-const MAG_IMAGES_BASE = "/images/products/admetec/loupes/ergo-v/magnification";
-
 type Mag = {
     label: string;
     fov: number;
@@ -33,24 +31,24 @@ const VARIANTS: Variant[] = [
         key: "ergo-v",
         label: "Ergo V",
         href: "/product/ergo-v",
-        image: "/images/products/admetec/loupes/ergo-v/ergo-v/blues/blues-black.jpg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308545/haitech/images/products/admetec/ergo-v/ergo-v/blues/blues-black-ergo-v.jpg",
         weight: "55g",
         mags: [
-            { label: "3.8x", fov: 100, dof: 110, wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-3.8x-350x350.webp` },
-            { label: "5.3x", fov: 75,  dof: 85,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-5.3x-350x350.webp` },
-            { label: "7.0x", fov: 48,  dof: 62,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-74x-350x350.webp` },
+            { label: "3.8x", fov: 100, dof: 110, wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308176/haitech/images/products/admetec/magnification/admetec-ergo-v-3-8x-350x350.webp" },
+            { label: "5.3x", fov: 75,  dof: 85,  wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308177/haitech/images/products/admetec/magnification/admetec-ergo-v-5-3x-350x350.webp" },
+            { label: "7.0x", fov: 48,  dof: 62,  wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308178/haitech/images/products/admetec/magnification/admetec-ergo-v-74x-350x350.webp" },
         ],
     },
     {
         key: "ergo-v-pro",
         label: "Ergo V Pro",
         href: "/product/ergo-v-pro",
-        image: "/images/products/admetec/loupes/ergo-v/ergo-v-pro/blues/blues-black.jpg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308566/haitech/images/products/admetec/ergo-v/ergo-v-pro/blues/blues-black-ergo-v-pro.jpg",
         weight: "60g",
         mags: [
-            { label: "5.6x", fov: 70,  dof: 83,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-pro-5.6x-350x350.webp` },
-            { label: "7.4x", fov: 45,  dof: 58,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-pro-7.4x-350x350.webp` },
-            { label: "10x",  fov: 35,  dof: 43,  wd: 500, previewImage: `${MAG_IMAGES_BASE}/admetec-ergo-v-pro-10x-350x350.webp` },
+            { label: "5.6x", fov: 70,  dof: 83,  wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308179/haitech/images/products/admetec/magnification/admetec-ergo-v-pro-5-6x-350x350.webp" },
+            { label: "7.4x", fov: 45,  dof: 58,  wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308180/haitech/images/products/admetec/magnification/admetec-ergo-v-pro-7-4x-350x350.webp" },
+            { label: "10x",  fov: 35,  dof: 43,  wd: 500, previewImage: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308179/haitech/images/products/admetec/magnification/admetec-ergo-v-pro-10x-350x350.webp" },
         ],
     },
 ];

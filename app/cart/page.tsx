@@ -8,6 +8,7 @@ import { getCartItemKey } from "@/lib/cart";
 import { ShoppingCart, Trash2, Truck, Shield, Tag, ChevronRight, Minus, Plus } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 import { PILL_PRIMARY, SURFACE_CARD } from "@/components/ui/surfaces";
+import { cloudinaryUrl } from "@/lib/cloudinary-loader";
 
 const STEPPER_BTN =
     "flex h-11 w-11 items-center justify-center rounded-full text-neutral-700 transition-colors duration-200 ease-out hover:bg-neutral-900/[0.06] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary-500";
@@ -84,7 +85,7 @@ export default function CartPage() {
                                         {/* Image */}
                                         <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-neutral-50 md:h-28 md:w-28">
                                             {item.image ? (
-                                                <img src={item.image} alt={item.productName} className="h-full w-full object-contain p-3 mix-blend-multiply" />
+                                                <img src={cloudinaryUrl(item.image, 256)} alt={item.productName} className="h-full w-full object-contain p-3 mix-blend-multiply" />
                                             ) : (
                                                 <div className="flex h-full w-full items-center justify-center text-neutral-400">
                                                     <ShoppingCart className="h-8 w-8" aria-hidden="true" />

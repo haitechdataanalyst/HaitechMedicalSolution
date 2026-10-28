@@ -15,10 +15,10 @@ const heritage = [
 ];
 
 const categories = [
-    { name: "Elevators", image: "/images/products/medesy/elevators/elevators-category.jpg", meta: "20+ instruments", href: "/product-category/medesy/elevators" },
-    { name: "Forceps", image: "/images/products/medesy/forceps/forceps-category.jpg", meta: "30+ instruments", href: "/product-category/medesy/forceps" },
-    { name: "Periosteal Elevators", image: "/images/products/medesy/periosteal-elevators/periosteal-category.jpg", meta: "15+ instruments", href: "/product-category/medesy/periosteal-elevators" },
-    { name: "Scissors", image: "/images/products/medesy/scissors/scissors-category.jpg", meta: "10+ instruments", href: "/product-category/medesy/scissors" },
+    { name: "Elevators", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308226/haitech/images/products/medesy/elevators/elevators-category.jpg", meta: "20+ instruments", href: "/product-category/medesy/elevators" },
+    { name: "Forceps", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308239/haitech/images/products/medesy/forceps/forceps-category.jpg", meta: "30+ instruments", href: "/product-category/medesy/forceps" },
+    { name: "Periosteal Elevators", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308240/haitech/images/products/medesy/periosteal/periosteal-category.jpg", meta: "15+ instruments", href: "/product-category/medesy/periosteal-elevators" },
+    { name: "Scissors", image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308254/haitech/images/products/medesy/scissors/scissors-category.jpg", meta: "10+ instruments", href: "/product-category/medesy/scissors" },
 ];
 
 export default function AboutMedesyPage() {
@@ -55,7 +55,7 @@ export default function AboutMedesyPage() {
                 eyebrow="Heritage"
                 title="A Legacy Forged in Steel."
                 highlights={heritage.map((p) => ({ title: p.title, text: p.description }))}
-                media={<MediaTile href="/product-category/medesy/forceps" src="/images/products/medesy/forceps/forceps-category.jpg" alt="Medesy dental forceps craftsmanship" />}
+                media={<MediaTile href="/product-category/medesy/forceps" src="https://res.cloudinary.com/gwnakzdo/image/upload/v1785308239/haitech/images/products/medesy/forceps/forceps-category.jpg" alt="Medesy dental forceps craftsmanship" />}
             >
                 <p>
                     Rooted in the historic steel-making town of Maniago, MEDESY carries forward a family legacy built on passion, precision, and craftsmanship. For over 600 years, Maniago has been

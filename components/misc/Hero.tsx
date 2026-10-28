@@ -9,9 +9,9 @@ import { Carousel } from "@/components/ui";
 // The originals were 3840x2160 with an unused audio track (22.8 MB for the three); these total about 4.1 MB for a wide
 // screen and about 1.3 MB for a phone (posters included), and only the slides actually shown are fetched.
 const heroSlides = [
-    { poster: "/videos/home-hero/hero-1-poster.jpg", wide: "/videos/home-hero/hero-1-1080.mp4", narrow: "/videos/home-hero/hero-1-540.mp4" },
-    { poster: "/videos/home-hero/hero-2-poster.jpg", wide: "/videos/home-hero/hero-2-1080.mp4", narrow: "/videos/home-hero/hero-2-540.mp4" },
-    { poster: "/videos/home-hero/hero-3-poster.jpg", wide: "/videos/home-hero/hero-3-1080.mp4", narrow: "/videos/home-hero/hero-3-540.mp4" },
+    { poster: "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162560/haitech/videos/home-hero/hero-1-poster.jpg", wide: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162558/haitech/videos/home-hero/hero-1-1080.mp4", narrow: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162559/haitech/videos/home-hero/hero-1-540.mp4" },
+    { poster: "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162563/haitech/videos/home-hero/hero-2-poster.jpg", wide: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162561/haitech/videos/home-hero/hero-2-1080.mp4", narrow: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162562/haitech/videos/home-hero/hero-2-540.mp4" },
+    { poster: "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162567/haitech/videos/home-hero/hero-3-poster.jpg", wide: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162564/haitech/videos/home-hero/hero-3-1080.mp4", narrow: "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162566/haitech/videos/home-hero/hero-3-540.mp4" },
 ];
 
 const WIDE_SCREEN = "(min-width: 768px)";

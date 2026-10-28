@@ -1,0 +1,164 @@
+{
+ "/brand/haitech/logo.png": {
+  "public_id": "haitech/brand/haitech/logo",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162552/haitech/brand/haitech/logo.webp",
+  "bytes": 64408,
+  "width": 1600,
+  "height": 423,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/brand/haitech"
+ },
+ "/brand/haitech/mark.png": {
+  "public_id": "haitech/brand/haitech/mark",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162553/haitech/brand/haitech/mark.webp",
+  "bytes": 13872,
+  "width": 497,
+  "height": 485,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/brand/haitech"
+ },
+ "/brand/haitech/og-default.png": {
+  "public_id": "haitech/brand/haitech/og-default",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162554/haitech/brand/haitech/og-default.png",
+  "bytes": 206064,
+  "width": 1200,
+  "height": 630,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/brand/haitech"
+ },
+ "/brand/manufacturers/admetec-logo.webp": {
+  "public_id": "haitech/brand/manufacturers/admetec-logo",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162554/haitech/brand/manufacturers/admetec-logo.webp",
+  "bytes": 2996,
+  "width": 397,
+  "height": 100,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/brand/manufacturers"
+ },
+ "/images/team/shraddharani-salunkhe.jpg": {
+  "public_id": "haitech/images/team/shraddharani-salunkhe",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162555/haitech/images/team/shraddharani-salunkhe.jpg",
+  "bytes": 90965,
+  "width": 800,
+  "height": 800,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/images/team"
+ },
+ "/images/team/viren-gosar.jpg": {
+  "public_id": "haitech/images/team/viren-gosar",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162556/haitech/images/team/viren-gosar.jpg",
+  "bytes": 72022,
+  "width": 800,
+  "height": 800,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/images/team"
+ },
+ "/videos/home-hero/hero-1-1080.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-1-1080",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162558/haitech/videos/home-hero/hero-1-1080.mp4",
+  "bytes": 2612182,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-1-540.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-1-540",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162559/haitech/videos/home-hero/hero-1-540.mp4",
+  "bytes": 588742,
+  "width": 960,
+  "height": 540,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-1-poster.jpg": {
+  "public_id": "haitech/videos/home-hero/hero-1-poster",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162560/haitech/videos/home-hero/hero-1-poster.jpg",
+  "bytes": 76215,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-2-1080.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-2-1080",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162561/haitech/videos/home-hero/hero-2-1080.mp4",
+  "bytes": 997622,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-2-540.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-2-540",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162562/haitech/videos/home-hero/hero-2-540.mp4",
+  "bytes": 311516,
+  "width": 960,
+  "height": 540,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-2-poster.jpg": {
+  "public_id": "haitech/videos/home-hero/hero-2-poster",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162563/haitech/videos/home-hero/hero-2-poster.jpg",
+  "bytes": 151457,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-3-1080.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-3-1080",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162564/haitech/videos/home-hero/hero-3-1080.mp4",
+  "bytes": 151536,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-3-540.mp4": {
+  "public_id": "haitech/videos/home-hero/hero-3-540",
+  "url": "https://res.cloudinary.com/gwnakzdo/video/upload/v1793162566/haitech/videos/home-hero/hero-3-540.mp4",
+  "bytes": 46869,
+  "width": 960,
+  "height": 540,
+  "resource_type": "video",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/videos/home-hero/hero-3-poster.jpg": {
+  "public_id": "haitech/videos/home-hero/hero-3-poster",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162567/haitech/videos/home-hero/hero-3-poster.jpg",
+  "bytes": 78412,
+  "width": 1920,
+  "height": 1080,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/videos/home-hero"
+ },
+ "/images/team/kimaya-shinde.jpg": {
+  "public_id": "haitech/images/team/kimaya-shinde",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162715/haitech/images/team/kimaya-shinde.jpg",
+  "bytes": 67062,
+  "width": 800,
+  "height": 800,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/images/team"
+ },
+ "/images/team/prathamesh-matekar.jpg": {
+  "public_id": "haitech/images/team/prathamesh-matekar",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162716/haitech/images/team/prathamesh-matekar.jpg",
+  "bytes": 49129,
+  "width": 800,
+  "height": 800,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/images/team"
+ },
+ "/images/team/siddhant-kadam.jpg": {
+  "public_id": "haitech/images/team/siddhant-kadam",
+  "url": "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162716/haitech/images/team/siddhant-kadam.jpg",
+  "bytes": 54457,
+  "width": 800,
+  "height": 800,
+  "resource_type": "image",
+  "asset_folder": "Haitech Medical Solution/images/team"
+ }
+}

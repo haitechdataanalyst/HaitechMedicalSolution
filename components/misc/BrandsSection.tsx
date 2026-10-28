@@ -9,7 +9,7 @@ const brands = [
     {
         name: "Admetec",
         tagline: "Surgical loupes & LED headlights engineered for dental professionals.",
-        image: "/brand/manufacturers/admetec-logo.jpeg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/admeteclogo.jpg",
         href: "/product/admetec",
         badge: "Optical",
         productCount: 12,
@@ -19,7 +19,7 @@ const brands = [
     {
         name: "Almadent",
         tagline: "Premium dental chairs & units for the modern clinic.",
-        image: "/brand/manufacturers/almadent-logo.jpeg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308664/haitech/brandlogo/almadentlogo.jpg",
         href: "/product/almadent",
         badge: "Dental Chairs",
         productCount: 7,
@@ -29,7 +29,7 @@ const brands = [
     {
         name: "Medesy",
         tagline: "Precision stainless steel instruments trusted by surgeons worldwide.",
-        image: "/brand/manufacturers/medesy-logo.jpeg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308666/haitech/brandlogo/medesylogo.jpg",
         href: "/product/medesy",
         badge: "Surgical",
         productCount: 21,
@@ -39,7 +39,7 @@ const brands = [
     {
         name: "Salli",
         tagline: "Ergonomic saddle chairs designed for the modern clinic.",
-        image: "/brand/manufacturers/salli-logo.jpeg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308667/haitech/brandlogo/sallilogo.jpg",
         href: "/product/salli",
         badge: "Ergonomic",
         productCount: 5,
@@ -49,7 +49,7 @@ const brands = [
     {
         name: "Strauss",
         tagline: "Diamond burs & precision cutting instruments for every procedure.",
-        image: "/brand/manufacturers/strauss-logo.jpeg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308668/haitech/brandlogo/strausslogo.jpg",
         href: "/product/strauss",
         badge: "Burs",
         productCount: 39,
@@ -59,7 +59,7 @@ const brands = [
     {
         name: "Bondent",
         tagline: "German-registered endodontics, imaging & digital implant systems.",
-        image: "/brand/manufacturers/bondent-logo.jpg",
+        image: "https://res.cloudinary.com/gwnakzdo/image/upload/v1785308665/haitech/brandlogo/bondentgrouplogo.jpg",
         href: "/product/bondent",
         badge: "Endo & Imaging",
         productCount: 50,

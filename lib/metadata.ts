@@ -138,7 +138,7 @@ function clampDescription(description?: string): string | undefined {
 }
 
 /** Branded 1200x630 card (public/brand/haitech/og-default.png) for pages that have no image of their own. */
-const DEFAULT_SHARE_IMAGE = { url: "/brand/haitech/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} — premium medical and dental equipment in India` };
+const DEFAULT_SHARE_IMAGE = { url: "https://res.cloudinary.com/gwnakzdo/image/upload/v1793162554/haitech/brand/haitech/og-default.png", width: 1200, height: 630, alt: `${SITE_NAME} — premium medical and dental equipment in India` };
 
 function buildMetadata(title: string, rawDescription: string | undefined, options: MetadataOptions = {}): Metadata {
     const description = clampDescription(rawDescription);

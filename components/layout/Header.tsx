@@ -106,7 +106,7 @@ export default function Header() {
                         <div className="flex h-16 items-center gap-4 md:gap-5">
                             {/* Logo */}
                             <Link href="/" className="shrink-0">
-                                <Image width={180} height={36} src="/brand/haitech/logo.png" alt="Haitech Medical" priority className="h-auto w-[140px] md:w-[175px]" />
+                                <Image width={180} height={36} src="https://res.cloudinary.com/gwnakzdo/image/upload/v1793162552/haitech/brand/haitech/logo.webp" alt="Haitech Medical" priority className="h-auto w-[140px] md:w-[175px]" />
                             </Link>
 
                             {/* Desktop nav inline from 1280px — one 64px header row instead of two (106px) */}

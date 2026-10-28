@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
 
     // Image optimization — allow local images and future CDN/backend sources
     images: {
+        // Cloudinary resizes and re-encodes every product image (f_auto, q_auto, one width per breakpoint) instead of this server.
+        loader: "custom",
+        loaderFile: "./lib/cloudinary-loader.ts",
         remotePatterns: [
             {
                 protocol: "https",

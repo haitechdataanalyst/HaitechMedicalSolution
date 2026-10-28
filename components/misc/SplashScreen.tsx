@@ -124,7 +124,7 @@ export default function SplashScreen() {
                         }}
                     >
                         <Image
-                            src="/brand/haitech/logo.png"
+                            src="https://res.cloudinary.com/gwnakzdo/image/upload/v1793162552/haitech/brand/haitech/logo.webp"
                             alt="Haitech Medical Solutions"
                             width={480}
                             height={122}

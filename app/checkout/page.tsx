@@ -20,6 +20,7 @@ const PAYMENT_METHOD_ICONS: Record<string, React.ComponentType<{ className?: str
 };
 import { formatPrice } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
+import { cloudinaryUrl } from "@/lib/cloudinary-loader";
 
 declare global {
     interface Window {
@@ -394,7 +395,7 @@ export default function CheckoutPage() {
                                     <li key={getCartItemKey(item)} className="flex items-center gap-3 py-3">
                                         <div className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-neutral-50">
                                             {item.image ? (
-                                                <img src={item.image} alt={item.productName} className="h-full w-full object-contain p-1.5 mix-blend-multiply" />
+                                                <img src={cloudinaryUrl(item.image, 128)} alt={item.productName} className="h-full w-full object-contain p-1.5 mix-blend-multiply" />
                                             ) : (
                                                 <div className="flex h-full w-full items-center justify-center text-xs text-neutral-400">—</div>
                                             )}

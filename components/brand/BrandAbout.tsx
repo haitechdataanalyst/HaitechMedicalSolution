@@ -58,7 +58,7 @@ export function BrandAbout({
                     <div className="space-y-5">
                         {media}
                         <div className="rounded-3xl bg-white p-6 ring-1 ring-neutral-900/[0.04] md:p-8">
-                            <Image src="/brand/haitech/mark.png" alt="Haitech Medical" width={40} height={40} />
+                            <Image src="https://res.cloudinary.com/gwnakzdo/image/upload/v1793162553/haitech/brand/haitech/mark.webp" alt="Haitech Medical" width={40} height={40} />
                             <p className="text-primary-700 mt-5 text-[15px] font-medium">Authorized distribution partner</p>
                             <h3 className="mt-1 text-[1.375rem] leading-tight font-semibold tracking-[-0.02em] text-neutral-900 md:text-2xl">Backed by Haitech Medical Solutions</h3>
                             <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
