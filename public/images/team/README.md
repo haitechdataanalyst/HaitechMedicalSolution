@@ -1,7 +1,11 @@
 # Team Photos — Upload Guide
 
-Drop each team member's photo into this folder following the spec below.
-The site automatically uses the photo or falls back to initials if the file is missing.
+Team photos are served from Cloudinary, not from this folder. To add or replace one:
+1. Upload the photo to Cloudinary under `Haitech Medical Solution/images/team` with the public ID `haitech/images/team/<firstname-lastname>` (overwrite to replace).
+2. Put the resulting `secure_url` in that person's `image` field in `data/team.json`. A replaced photo gets a new version number in its URL; use the new URL, or visitors keep seeing the cached old photo.
+3. Keep a copy of the original outside the repository.
+
+The site falls back to initials if the image is missing. The naming and photo spec below still apply.
 
 ---
 
