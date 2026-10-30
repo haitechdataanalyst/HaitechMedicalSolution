@@ -3,6 +3,7 @@ import path from "path";
 import { Product, Category, Breadcrumb, Frame, FramesData, HeadlightsData, HeadlightCategory, MedesyData, MedesyCategory } from "@/types";
 import { findHubForCategoryTrail, hubPath, HubDefinition, HUBS } from "@/lib/hubs";
 import { HEADLIGHT_CATEGORY_SLUG, headlightProducts } from "@/lib/headlight-products";
+import { categorySlugPath, categoryTrail, indexCategories } from "@/lib/category-tree";
 
 // ── Static JSON paths (frames / headlights / medesy only — NOT products or categories) ──
 const framesPath = path.join(process.cwd(), "data", "frames.json");
@@ -315,16 +316,8 @@ export async function getCategoryContents(categoryId: number): Promise<{ type: "
 // ── Path helpers ──────────────────────────────────────────────────────────────
 
 export async function getCategoryPath(category: Category): Promise<string> {
-    const cats = await getAllCategories();
-    const catMap = new Map(cats.map((c) => [c.id, c]));
-
-    const parts: string[] = [];
-    let cur: Category | undefined = category;
-    while (cur) {
-        parts.unshift(cur.slug);
-        cur = cur.parent !== null ? catMap.get(cur.parent) : undefined;
-    }
-    return `/product-category/${parts.join("/")}`;
+    const byId = indexCategories(await getAllCategories());
+    return `/product-category/${categorySlugPath(category, byId)}`;
 }
 
 export async function getProductPath(product: Product): Promise<string> {
@@ -343,18 +336,8 @@ export async function resolvePathToEntity(pathSegments: string[]): Promise<{ typ
     const prods = await getAllProducts();
 
     // Build a slug-path → category map
-    const catMap = new Map(cats.map((c) => [c.id, c]));
-    const categoryPathMap = new Map<string, Category>();
-
-    for (const cat of cats) {
-        const parts: string[] = [];
-        let cur: Category | undefined = cat;
-        while (cur) {
-            parts.unshift(cur.slug);
-            cur = cur.parent !== null ? catMap.get(cur.parent) : undefined;
-        }
-        categoryPathMap.set(parts.join("/"), cat);
-    }
+    const byId = indexCategories(cats);
+    const categoryPathMap = new Map<string, Category>(cats.map((cat) => [categorySlugPath(cat, byId), cat]));
 
     const fullPath = pathSegments.join("/");
 
@@ -381,14 +364,8 @@ export async function resolvePathToEntity(pathSegments: string[]): Promise<{ typ
 
 export async function getCategoryBreadcrumbs(category: Category): Promise<Breadcrumb[]> {
     const cats = await getAllCategories();
-    const catMap = new Map(cats.map((c) => [c.id, c]));
-
-    const trail: Category[] = [];
-    let cur: Category | undefined = category;
-    while (cur) {
-        trail.unshift(cur);
-        cur = cur.parent !== null ? catMap.get(cur.parent) : undefined;
-    }
+    const byId = indexCategories(cats);
+    const trail = categoryTrail(category, byId);
 
     // Product-type hub first (Home → Dental Loupes → Admetec → …) when one
     // claims this trail; brand-only trails keep the generic Products crumb.
@@ -397,13 +374,7 @@ export async function getCategoryBreadcrumbs(category: Category): Promise<Breadc
     for (const cat of trail) {
         // "Home → Dental Chairs → Almadent → Dental Chairs" reads as a stutter; the hub already stands in for it.
         if (hub && cat.name.toLowerCase() === hub.name.toLowerCase()) continue;
-        const parts: string[] = [];
-        let c: Category | undefined = cat;
-        while (c) {
-            parts.unshift(c.slug);
-            c = c.parent !== null ? catMap.get(c.parent) : undefined;
-        }
-        crumbs.push({ name: cat.name, path: `/product-category/${parts.join("/")}` });
+        crumbs.push({ name: cat.name, path: `/product-category/${categorySlugPath(cat, byId)}` });
     }
     return crumbs;
 }
@@ -425,26 +396,16 @@ export async function getProductBreadcrumbs(product: Product): Promise<Breadcrum
 export async function getAllStaticPaths(): Promise<string[][]> {
     const cats = await getAllCategories();
     const prods = await getAllProducts();
-    const catMap = new Map(cats.map((c) => [c.id, c]));
-
-    const buildCatPath = (cat: Category): string => {
-        const parts: string[] = [];
-        let cur: Category | undefined = cat;
-        while (cur) {
-            parts.unshift(cur.slug);
-            cur = cur.parent !== null ? catMap.get(cur.parent) : undefined;
-        }
-        return parts.join("/");
-    };
+    const byId = indexCategories(cats);
 
     const paths: string[][] = [];
     for (const cat of cats) {
-        paths.push(buildCatPath(cat).split("/"));
+        paths.push(categorySlugPath(cat, byId).split("/"));
     }
     for (const prod of prods) {
-        const cat = prod.category ? catMap.get(prod.category) : null;
+        const cat = prod.category ? byId.get(prod.category) : null;
         if (cat) {
-            paths.push([...buildCatPath(cat).split("/"), prod.slug]);
+            paths.push([...categorySlugPath(cat, byId).split("/"), prod.slug]);
         }
     }
     return paths;
