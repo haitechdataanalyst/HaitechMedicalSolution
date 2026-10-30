@@ -4,6 +4,7 @@
  * Pure, so client components can import it.
  */
 import { Product } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 import { detectBrand } from "@/lib/brand";
 
 /** "A0" -> "Strauss A0"; names that already carry the brand are left alone. */
@@ -54,10 +55,8 @@ const MAX_SPEC_VALUE_LENGTH = 32;
 
 /** Short "Label value" facts from the product's own specification table, in table order, skipping anything the summary already says. */
 function specFacts(product: Product, summary: string): string[] {
-    const block = product.contentBlocks.find((b) => b.type === "specifications");
-    const rows = block?.type === "specifications" ? (block.data.rows ?? block.data.specs ?? []) : [];
     const said = summary.toLowerCase();
-    return rows
+    return specRows(product)
         .map((row) => ({ label: row.label?.trim(), value: row.value?.trim() }))
         .filter((row): row is { label: string; value: string } => Boolean(row.label && row.value) && row.value.length <= MAX_SPEC_VALUE_LENGTH && !said.includes(row.value.toLowerCase()))
         .map((row) => `${row.label} ${row.value}`);
