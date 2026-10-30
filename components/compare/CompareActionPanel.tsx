@@ -3,7 +3,8 @@
 import { GitCompareArrows, Check, ChevronDown } from "lucide-react";
 import { useCompare, type CompareItem } from "./CompareProvider";
 import { usePathname } from "next/navigation";
-import { type Product, type SpecificationsBlock } from "@/types";
+import { type Product } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 import { detectBrand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { getCompareGroup } from "@/lib/compare-group.resolve";
@@ -25,9 +26,7 @@ export function CompareActionPanel({ product }: CompareActionPanelProps) {
     if (brand.name !== "Admetec" && brand.name !== "Salli") return null;
 
     const buildItem = (): CompareItem => {
-        const specs = product.contentBlocks
-            ?.filter((b): b is SpecificationsBlock => b.type === "specifications")
-            .flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+        const specs = specRows(product);
         return {
             id: String(product.id),
             name: product.name,

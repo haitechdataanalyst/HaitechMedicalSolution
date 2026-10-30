@@ -1,4 +1,5 @@
 import type { Product } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 
 // Reads marketing-ready pieces out of a catalogue product's content blocks, so a brand page can feature a
 // product without copying its facts into the page. Pure, so it can be checked directly.
@@ -23,9 +24,7 @@ export function longDescription(product: Product): string {
 }
 
 export function specValue(product: Product, label: string): string | undefined {
-    const block = product.contentBlocks.find((b) => b.type === "specifications");
-    const rows = block?.type === "specifications" ? (block.data.rows ?? block.data.specs ?? []) : [];
-    return rows.find((r) => r.label.toLowerCase() === label.toLowerCase())?.value;
+    return specRows(product).find((r) => r.label.toLowerCase() === label.toLowerCase())?.value;
 }
 
 export function packageContents(product: Product): string[] {

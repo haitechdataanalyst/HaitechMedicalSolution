@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Heart, ArrowRight, FileText, GitCompareArrows, Plus } from "lucide-react";
-import { Product, Category, SpecificationsBlock } from "@/types";
+import { Product, Category } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 import { cn, formatPrice } from "@/lib/utils";
 import { detectBrand, requiresConsultation } from "@/lib/brand";
 import { productImageAlt } from "@/lib/product-seo";
@@ -168,7 +169,7 @@ export default function ProductCard({ entity, href, image }: ProductCardProps) {
                                         if (compareAdded) {
                                             compareRemove(String(product.id));
                                         } else if (!compareFull) {
-                                            const specs = product.contentBlocks?.filter((b): b is SpecificationsBlock => b.type === "specifications").flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+                                            const specs = specRows(product);
                                             compareAdd({
                                                 id: String(product.id),
                                                 name: product.name,

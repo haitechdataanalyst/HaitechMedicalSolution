@@ -2,7 +2,8 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory, SpecificationsBlock } from "@/types";
+import { ActionsBlock as ActionsBlockType, Product, CartItem, Frame, HeadlightCategory } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 import { useCart } from "@/components/cart/CartProvider";
 import { useWishlist } from "@/components/cart/WishlistProvider";
 import { useCompare } from "@/components/compare";
@@ -90,7 +91,7 @@ export default function ActionsBlock({ data, product, onVariantSelect, frames = 
             return;
         }
         if (compareFull) return;
-        const specs = product.contentBlocks?.filter((b): b is SpecificationsBlock => b.type === "specifications").flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+        const specs = specRows(product);
         compareAdd({
             id: String(product.id),
             name: product.name,

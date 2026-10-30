@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, Glasses, MessageSquare, Phone } from "lucide-react";
 import { Product } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 import { getHubProductGroups, HubProductGroup } from "@/lib/catalog";
 import { getHub, hubPath, HUBS, PRODUCT_TYPE_LINKS, HubComparisonRow } from "@/lib/hubs";
 import { faqSchema } from "@/lib/structured-data";
@@ -32,10 +33,6 @@ interface SectionLink {
     id: string;
     label: string;
     count?: number;
-}
-
-function specRows(product: Product): { label: string; value: string }[] {
-    return product.contentBlocks.flatMap((b) => (b.type === "specifications" ? (b.data.rows ?? b.data.specs ?? []) : []));
 }
 
 function warrantyOf(product: Product): string | undefined {

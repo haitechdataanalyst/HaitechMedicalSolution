@@ -1,4 +1,5 @@
-import type { Product, SpecificationsBlock, InfoBlock } from "@/types";
+import type { Product, InfoBlock } from "@/types";
+import { specRows } from "@/lib/product-blocks";
 
 export interface TrustBadge {
     icon: "origin" | "warranty" | "certification" | "manufacturer";
@@ -17,17 +18,15 @@ const CERTIFICATION_LABEL = /^(certifications?|ce mark|ce certification)$/i;
 export function getProductTrustBadges(product: Product): TrustBadge[] {
     const badges: TrustBadge[] = [];
 
-    const specRows = product.contentBlocks
-        .filter((b): b is SpecificationsBlock => b.type === "specifications")
-        .flatMap((b) => b.data.rows ?? b.data.specs ?? []);
+    const rows = specRows(product);
     const info = product.contentBlocks.find((b): b is InfoBlock => b.type === "info")?.data;
 
-    const origin = specRows.find((r) => ORIGIN_LABEL.test(r.label.trim()));
+    const origin = rows.find((r) => ORIGIN_LABEL.test(r.label.trim()));
     if (origin?.value) badges.push({ icon: "origin", label: `Made in ${origin.value}` });
 
     if (info?.warranty) badges.push({ icon: "warranty", label: info.warranty });
 
-    const certification = specRows.find((r) => CERTIFICATION_LABEL.test(r.label.trim()));
+    const certification = rows.find((r) => CERTIFICATION_LABEL.test(r.label.trim()));
     if (certification?.value) badges.push({ icon: "certification", label: certification.value });
 
     if (info?.manufacturer) badges.push({ icon: "manufacturer", label: info.manufacturer });
