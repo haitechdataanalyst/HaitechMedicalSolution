@@ -5,7 +5,9 @@ import { hubPath } from "@/lib/hubs";
 import { detectBrand } from "@/lib/brand";
 import { shouldShowPrice } from "@/lib/config";
 import { getDynamicMetadata } from "@/lib/metadata";
-import { productMetaDescription, productPageTitle } from "@/lib/product-seo";
+import { productMetaDescription, productNameWithBrand, productPageTitle } from "@/lib/product-seo";
+import { admetecLoupeSeo } from "@/lib/admetec-seo";
+import { specRows } from "@/lib/product-blocks";
 import { faqSchema, productSchema } from "@/lib/structured-data";
 import { Breadcrumbs, JsonLd } from "@/components/ui";
 import ProductDetail from "./ProductDetail";
@@ -16,7 +18,8 @@ export async function getProductMetadata(product: Product): Promise<Metadata> {
     // A hand-written SEO entry wins over the generated title/description, and its title is used verbatim.
     const seo = product.contentBlocks.find((b) => b.type === "seo");
     const seoData = seo?.type === "seo" ? seo.data : undefined;
-    return getDynamicMetadata(seoData?.title ?? productPageTitle(product, typeLabel), seoData?.description ?? productMetaDescription(product), {
+    const loupe = admetecLoupeSeo(product.sku, productNameWithBrand(product), specRows(product));
+    return getDynamicMetadata(seoData?.title ?? loupe?.title ?? productPageTitle(product, typeLabel), seoData?.description ?? loupe?.description ?? productMetaDescription(product), {
         path,
         image: product.defaultImage ?? product.gallery?.[0],
         absoluteTitle: Boolean(seoData?.title),

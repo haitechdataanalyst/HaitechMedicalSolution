@@ -100,8 +100,8 @@ const nextConfig: NextConfig = {
                             ]
                                 .filter(Boolean)
                                 .join(" "),
-                            // Google + Razorpay iframes + Turnstile challenge widget
-                            "frame-src 'self' https://www.google.com https://maps.google.com https://accounts.google.com https://api.razorpay.com https://checkout.razorpay.com https://workdrive.zohoexternal.com https://challenges.cloudflare.com",
+                            // Google + Razorpay iframes + Turnstile challenge widget + Admetec's YouTube films (privacy-enhanced embed only)
+                            "frame-src 'self' https://www.google.com https://maps.google.com https://accounts.google.com https://api.razorpay.com https://checkout.razorpay.com https://workdrive.zohoexternal.com https://challenges.cloudflare.com https://www.youtube-nocookie.com",
                             "object-src 'none'",
                             "base-uri 'self'",
                             "form-action 'self'",

@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/ui";
 import { CategoryPageClient } from "@/components/catalog/CategoryPageClient";
 import { getDynamicMetadata, getMetadata } from "@/lib/metadata";
 import { categoryMetaDescription } from "@/lib/product-seo";
+import { ADMETEC_CATEGORY_SEO } from "@/lib/admetec-seo";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
 import { linkAdmetec } from "@/components/brand/AdmetecText";
 
@@ -64,13 +65,15 @@ export async function generateMetadata({ params }: PageProps) {
     const canonical = category.specialPage ?? (await getCategoryPath(category));
     const { items } = await getCategoryContents(category.id);
     const firstPhoto = items.map((item) => ("children" in item ? item.image : item.defaultImage)).find(Boolean);
+    const admetec = ADMETEC_CATEGORY_SEO[category.slug];
     return getDynamicMetadata(
-        await getCategoryHeading(category),
-        categoryMetaDescription(
-            category.name,
-            category.description,
-            items.map((item) => item.name)
-        ),
+        admetec?.title ?? (await getCategoryHeading(category)),
+        admetec?.description ??
+            categoryMetaDescription(
+                category.name,
+                category.description,
+                items.map((item) => item.name)
+            ),
         { path: canonical, image: category.image ?? firstPhoto }
     );
 }

@@ -3,10 +3,14 @@ import { getDynamicMetadata } from "@/lib/metadata";
 import { AdmetecFlamingo } from "@/components/admetec/AdmetecFlamingo";
 import { AdmetecLights } from "@/components/admetec/AdmetecLights";
 import { ErgoMagnificationSelector } from "@/components/admetec/ErgoMagnificationSelector";
-import { AdmetecAbout } from "@/components/admetec/AdmetecAbout";
+import { BrandAbout } from "@/components/brand/BrandAbout";
+import { linkAdmetec } from "@/components/brand/AdmetecText";
 import { AdmetecLoupes, type LoupeSeries } from "@/components/admetec/AdmetecLoupes";
 import AdmetecBrandBadge from "@/components/brand/AdmetecBrandBadge";
-import { BrandCTA, BrandHero, BrandStatement } from "@/components/brand/BrandSections";
+import { BrandCTA, BrandHero, BrandSection, BrandStatement } from "@/components/brand/BrandSections";
+import { AdmetecVideo } from "@/components/admetec/AdmetecVideo";
+import { ADMETEC_VIDEOS } from "@/lib/admetec-videos";
+import SectionHeader from "@/components/misc/SectionHeader";
 import { getHeadlightsData, getProductBySlug, getProductPath } from "@/lib/catalog";
 import { headlightFigures } from "@/lib/headlight-specs";
 import { FAQ } from "@/components/misc";
@@ -14,14 +18,17 @@ import JsonLd from "@/components/ui/JsonLd";
 import { ADMETEC_FAQ } from "@/lib/admetec-faq";
 import { faqSchema } from "@/lib/structured-data";
 
-export const metadata: Metadata = getDynamicMetadata("Admetec | Premium Dental Loupes & Headlights", "Discover Admetec — world-leading manufacturer of dental loupes, surgical magnification, and LED headlights. Galilean, Prismatic & Ergo systems for precision care.", { path: "/product/admetec" });
+export const metadata: Metadata = getDynamicMetadata(
+    "Admetec: Israeli Loupes & Headlights in India",
+    "Admetec, the Israeli maker of dental loupes and LED headlights. Haitech Medical is its authorised dealer in India: Galilean, prismatic and Ergo loupes.",
+    { path: "/product/admetec" }
+);
 
 export default async function AboutAdmetecPage() {
     const headlights = await getHeadlightsData();
     const lightModels = headlightFigures(headlights.categories).models;
     const flamingo = await getProductBySlug("flamingo");
     const flamingoHref = flamingo ? await getProductPath(flamingo) : null;
-
     const loupeSeries: LoupeSeries[] = [
         {
             name: "Galilean",
@@ -72,13 +79,36 @@ export default async function AboutAdmetecPage() {
                 <ErgoMagnificationSelector embedded />
             </AdmetecLoupes>
 
+            {/* Admetec's films sit right after the loupes they explain, before the lights; the India facts close the set */}
+            <BrandSection tone="gray" id="watch">
+                <SectionHeader title="Watch before you choose" subtitle="Five short films from Admetec on its loupes, posture and getting fitted." />
+                <div className="space-y-6 md:space-y-8">
+                    {ADMETEC_VIDEOS.map((video, index) => (
+                        <AdmetecVideo key={video.id} video={video} showIndiaFacts={index === ADMETEC_VIDEOS.length - 1} />
+                    ))}
+                </div>
+            </BrandSection>
+
             {/* Lights get a full-width band of their own: both series, headline figures and a way into /our-headlights */}
             <AdmetecLights {...headlights} />
 
             {/* Flamingo, the loupe camera + light, gets its own section right after the lights */}
             {flamingo && flamingoHref && <AdmetecFlamingo product={flamingo} href={flamingoHref} />}
 
-            <AdmetecAbout />
+            <BrandAbout
+                brand="Admetec"
+                title="About Admetec"
+                highlights={[
+                    { title: "Since 2006", text: "Founded in Haifa, Israel, where every product is made." },
+                    { title: "45+ countries", text: "Used by dental and medical professionals worldwide." },
+                ]}
+            >
+                <p>
+                    {linkAdmetec(
+                        "Admetec is an Israeli company that designs and manufactures custom ergonomic loupes, LED headlights and the Flamingo procedure camera. Every pair of loupes is handcrafted to the clinician's own measurements, and Admetec develops its optics, electronics and software in-house."
+                    )}
+                </p>
+            </BrandAbout>
 
             {/* The same list is shown here and published as FAQPage JSON-LD (lib/admetec-faq.ts). */}
             <JsonLd data={faqSchema([...ADMETEC_FAQ])} />

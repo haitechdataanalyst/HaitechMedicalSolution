@@ -60,7 +60,6 @@ for (const path of STATIC_PATHS) {
     const file = pageSource(path);
     if (file) add(`page:${path}`, fingerprint(read(file)), [file]);
 }
-add("stories", fingerprint(read("data/customer-stories.json")), ["data/customer-stories.json"]);
 add("hubs", fingerprint(read("lib/hubs.ts") + read("app/[hub]/page.tsx")), ["lib/hubs.ts", "app/[hub]/page.tsx"]);
 
 const previous = existsSync(OUT) ? json(OUT) : {};

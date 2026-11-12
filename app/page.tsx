@@ -4,7 +4,6 @@ import { getGooglePlaceReviews } from "@/lib/google-reviews";
 import { ScrollReveal } from "@/components/ui";
 import { FAQ, Hero, SupportBanner, Testimonials, TrendingProducts, WhySection, BrandsSection } from "@/components/misc";
 import { PILL_GHOST_ON_DARK, PILL_ON_DARK } from "@/components/ui/surfaces";
-import CustomerStories from "@/components/stories/CustomerStories";
 import { Award, ClockIcon, Headset, ArrowRight, ShieldCheck } from "lucide-react";
 import { JsonLd } from "@/components/ui";
 import { getDynamicMetadata } from "@/lib/metadata";
@@ -79,8 +78,6 @@ export default async function Home() {
 
             <WhySection />
 
-            {/* Renders nothing until real, approved clinician stories exist — see lib/customer-stories.ts */}
-            <CustomerStories />
 
             {/* Testimonials Section — hidden entirely if Google Places isn't configured or returns nothing */}
             {googleReviews.length > 0 && <Testimonials testimonials={googleReviews} googleRating={googleRating} googleReviewCount={googleReviewCount} />}

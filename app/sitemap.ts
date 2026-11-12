@@ -2,8 +2,6 @@ import type { MetadataRoute } from "next";
 import { getAllCategories, getAllProducts, getCategoryPath, getProductPath } from "@/lib/catalog";
 import { HUBS, hubPath } from "@/lib/hubs";
 import { absoluteUrl } from "@/lib/metadata";
-import { isStoriesPageLive } from "@/lib/customer-stories.server";
-import { STORIES_PAGE_PATH } from "@/lib/customer-story-listing";
 import { articles } from "@/components/articles";
 import { isCatalogueProductId } from "@/lib/headlight-products";
 import lastmodData from "@/data/lastmod.json";
@@ -64,8 +62,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const entries: MetadataRoute.Sitemap = [
         ...STATIC_PATHS.map((path) => ({ url: absoluteUrl(path), lastModified: lastmodOf(`page:${path}`) })),
-        // Listed only once enough approved customer stories exist; before that the page is a 404.
-        ...(isStoriesPageLive() ? [{ url: absoluteUrl(STORIES_PAGE_PATH), lastModified: lastmodOf("stories") }] : []),
         ...HUBS.map((hub) => ({ url: absoluteUrl(hubPath(hub)), lastModified: lastmodOf("hubs") })),
         ...categoryEntries,
         ...productEntries,

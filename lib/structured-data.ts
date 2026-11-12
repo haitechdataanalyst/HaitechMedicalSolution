@@ -247,3 +247,36 @@ export function articleSchema({ title, description, path, publishedAt, author, i
         ...(image ? { image: absoluteUrl(image) } : {}),
     };
 }
+
+export interface VideoSchemaInput {
+    /** YouTube video id. */
+    id: string;
+    name: string;
+    description: string;
+    /** ISO 8601, as YouTube reports it. */
+    uploadDate: string;
+    seconds: number;
+}
+
+/** "PT4M15S": ISO 8601 duration. */
+function isoDuration(seconds: number): string {
+    const minutes = Math.floor(seconds / 60);
+    const rest = seconds % 60;
+    return `PT${minutes ? `${minutes}M` : ""}${rest ? `${rest}S` : ""}`;
+}
+
+/** A YouTube video embedded on the page, made by Admetec. The name and description are the ones the page shows. */
+export function videoSchema({ id, name, description, uploadDate, seconds }: VideoSchemaInput): JsonLd {
+    return {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name,
+        description,
+        thumbnailUrl: [`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`, `https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
+        uploadDate,
+        duration: isoDuration(seconds),
+        embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
+        inLanguage: "en",
+        creator: { "@type": "Organization", name: "Admetec", url: "https://www.admetec.com" },
+    };
+}
